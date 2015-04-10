@@ -1,4 +1,4 @@
-bioguide: SLe003483
+bioguide: MOL000014
 contact_form:
   method: post
   action: Contact.aspx
@@ -20,10 +20,6 @@ contact_form:
         - name: txtZip
           selector: "#txtZip"
           value: $ADDRESS_ZIP5
-          required: true
-        - name: txtZip4
-          selector: "#txtZip4"
-          value: $ADDRESS_ZIP4
           required: true
         - name: txtEmail
           selector: "#txtEmail"

@@ -39,7 +39,7 @@ contact_form:
           required: true
         - name: phone7
           selector: "input[name='phonenum']"
-          value: $PHONE_LAST_7
+          value: $PHONE_NO_AREA_CODE
           required: true
         - name: emailaddress
           selector: "input[name='email']"

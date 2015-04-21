@@ -23,7 +23,7 @@ contact_form:
           required: true
         - name: phone7
           selector: "form[action='http://www.senate.state.tx.us/bin/distemail-csrf.php'] #phone2"
-          value: $PHONE_LAST_7
+          value: $PHONE_NO_AREA_CODE
           required: true
         - name: street
           selector: "form[action='http://www.senate.state.tx.us/bin/distemail-csrf.php'] #address1"

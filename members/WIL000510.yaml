@@ -25,10 +25,6 @@ contact_form:
           selector: "#legis-cf-city-state"
           value: $ADDRESS_CITY
           required: true
-        - name: name
-          selector: "#legis-cf-name"
-          value: $NAME_FULL
-          required: true
         - name: subject
           selector: "#legis-cf-phone"
           value: $PHONE

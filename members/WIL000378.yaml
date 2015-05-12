@@ -29,7 +29,7 @@ contact_form:
           selector: "#legis-cf-name"
           value: $NAME_FULL
           required: true
-        - name: subject
+        - name: phone
           selector: "#legis-cf-phone"
           value: $PHONE
           required: true

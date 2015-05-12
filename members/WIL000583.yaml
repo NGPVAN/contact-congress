@@ -1,7 +1,7 @@
 bioguide: WIL000583
 contact_form:
   method: post
-  action: Contact.aspx
+  action: /assembly/19/brostoff/contact-me/
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/19/brostoff/contact-me/"
     - fill_in:

@@ -1,7 +1,7 @@
 bioguide: WIL000450
 contact_form:
   method: post
-  action: Contact.aspx
+  action: Contact-Senator-Moulton.aspx
   steps:
     - visit: "http://legis.wisconsin.gov/senate/moulton/Pages/Contact-Senator-Moulton.aspx"
     - fill_in:

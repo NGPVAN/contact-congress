@@ -1,9 +1,9 @@
 bioguide: ILL000927
 contact_form:
   method: post
-  action:  III"
+  action:  http://senatornapoleonharris.com/district-info/contact-us
   steps:
-    - visit: " III""
+    - visit: "http://senatornapoleonharris.com/district-info/contact-us"
     - fill_in:
         - name: prefix
           selector: "#prefix"

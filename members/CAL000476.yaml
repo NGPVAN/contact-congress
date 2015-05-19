@@ -32,7 +32,9 @@ contact_form:
         - name: jv_text
           selector: "#ContactForm textarea[name='jv_text']"
           value: $MESSAGE
-          max_length: 2000
+          options:
+            options:
+            max_length: 2000
           required: true
     - click_on:
         - value: Submit

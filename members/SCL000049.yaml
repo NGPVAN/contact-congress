@@ -10,7 +10,7 @@ contact_form:
           value: $NAME_FIRST
           required: true
         - name: lname
-          selector: "#contactform_LASTNAME"
+          selector: "#contactform_LASTNAMEtralalala"
           value: $NAME_LAST
           required: true
         - name: address

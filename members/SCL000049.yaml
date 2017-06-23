@@ -6,7 +6,7 @@ contact_form:
     - visit: "http://www.scstatehouse.gov/email.php?T=M&C=0015340908"
     - fill_in:
         - name: fname
-          selector: "#contactform_FIRSTNAME"
+          selector: "#contactform_FIRSTNAMEblahahhaahah"
           value: $NAME_FIRST
           required: true
         - name: lname

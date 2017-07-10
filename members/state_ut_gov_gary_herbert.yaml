@@ -44,7 +44,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: form p.editor-label input[type='submit'][value='Submit Feedback']
+        - selector: form p.editor-label input[type='submit'][value='Submit']
     - wait:
         - value: 4
     - find:

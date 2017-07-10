@@ -69,4 +69,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Your message has been successfully submitted."
+      contains: "Thank you for contacting the Office of Governor, Eric Greitens."

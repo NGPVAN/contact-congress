@@ -30,6 +30,8 @@ contact_form:
         required: false
     - click_on:
       - selector: div.GIY1LSJISC button.primary
+    - wait:
+      - value: 3
     - find:
       - selector: input#gwt-uid-255
     - click_on:

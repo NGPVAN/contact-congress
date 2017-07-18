@@ -25,12 +25,16 @@ contact_form:
           selector: div.phone input
           value: $PHONE
           required: false
+        - name: subject
+          selector: div.messagesubject input
+          value: $SUBJECT
+          required: false
         - name: message
           selector: div.dearsenatorerpenbach textarea
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: div#contour_form_Contact input[name='submitbtn']
+        - selector: div.contourNavigation input[name='submitbtn']
     - find:
         - selector: p.contourMessageOnSubmit
   success:

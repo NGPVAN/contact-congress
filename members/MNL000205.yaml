@@ -1,32 +1,52 @@
 bioguide: MNL000205
 contact_form:
   method: post
-  action:
+  action: ""
+  usePhantomJsLogging: true
   steps:
-    - visit: "http://www.mnsenaterepublicans.com/our-senators/roger-chamberlain/"
+    - visit: "https://www.senate.mn/members/member_emailform.php?mem_id=1187&ls=90"
     - fill_in:
       - name: name
-        selector: input#us_form_1_name
-        value: "$NAME_FULL"
+        selector: input#form_firstname
+        value: $NAME_FIRST
+        required: true
+      - name: name
+        selector: input#form_lastname
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#form_Street1
+        value: $ADDRESS_STREET
+        required: true
+      - name: city
+        selector: input#form_City
+        value: ADDRESS_CITY
+        required: true
+      - name: state
+        selector: input#form_State
+        value: $ADDRESS_STATE_POSTAL_ABBREV
+        required: true
+      - name: zip
+        selector: input#form_Zip
+        value: $ADDRESS_ZIP5
         required: true
       - name: email
-        selector: input#us_form_1_email
-        value: "$EMAIL"
+        selector: input#form_Email
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: input#form_Subject
+        value: $SUBJECT
         required: true
       - name: message
-        selector: textarea#us_form_1_message
-        value: "$MESSAGE"
+        selector: textarea#form_Message
+        value: $MESSAGE
         required: true
-    - math:
-      - name: math_qna
-        question_selector: label[for=us_form_1_captcha]
-        answer_selector: input#us_form_1_captcha
     - click_on:
-      - selector: form.w-form-h button.w-btn
-    - find:
-      - selector: div.type_success
+        - value: Submit
+          selector: "input[type='submit'][value='Submit Information']"
   success:
     headers:
       status: 200
     body:
-      contains: "Your message was sent"
+      contains: Your message has been successfully sent

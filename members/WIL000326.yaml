@@ -35,7 +35,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: div.contourNavigation input[name='submitbtn']
+          selector: div#contour_form_8fcdc00b464e42e5aa4d01f252f38795 div.contourNavigation input[name='submitbtn']
   success:
     headers:
       status: 200

@@ -3,41 +3,45 @@ contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/senate/darling/pages/Email-Senator-Darling.aspx"
+    - visit: "http://legis.wisconsin.gov/senate/08/darling/contact/"
     - fill_in:
         - name: email
-          selector: "#legis-es-email"
+          selector: input#c9204231-7756-4e10-cb50-60870fb4bb73
           value: $EMAIL
           required: true
         - name: name
-          selector: "#legis-es-name"
+          selector: input#f6718dda-0e45-48f9-bf8f-ecfe8a500a9e
           value: $NAME_FULL
           required: true
         - name: address
-          selector: "#legis-es-address"
+          selector: input#41fda3dd-30b3-4040-f647-06d2a9fc19a8
           value: $ADDRESS_STREET
           required: true
-        - name: citystatezip
-          selector: "#legis-es-city-state"
-          value: $ADDRESS_CITY_STATE_ZIP
+        - name: city
+          selector: input#af62507b-08e9-4ee0-fb91-940f9ac15a13
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: input#4a8557a1-69fb-4221-a973-8b218875ec8e
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip
+          selector: input#d2938780-bfdb-4ca8-9d0d-da666c7bdfb0
+          value: $ADDRESS_ZIP5
           required: true
         - name: subject
           selector: "#legis-es-phone"
           value: $PHONE
           required: true
-        - name: subject
-          selector: "#legis-es-subject"
-          value: $SUBJECT
-          required: true
         - name: message
-          selector: "textarea[name='Legis-message']"
+          selector: textarea#d69e4ea5-4957-4b27-f572-cae872e2dc75
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
-          selector: ".legis-email-submit-btn"
+          selector: div#contour_form_38b8736e02df466a93320efb34076ca1 input[type='submit'][value='Submit']
   success:
     headers:
       status: 200
     body:
-      contains: Dear Friend
+      contains: Thank you!

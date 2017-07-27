@@ -56,15 +56,7 @@ contact_form:
             Mr.: Mr.
             Mrs.: Mrs.
             Ms.: Ms.
-            Mr. and Mrs.: Mr. and Mrs.
             Dr.: Dr.
-            Dr. and Mrs.: Dr. and Mrs.
-            Reverend: Reverend
-            Sister: Sister
-            Pastor: Pastor
-            The Honorable: The Honorable
-            Representative: Representative
-            Senator: Senator
         - name: Topic
           selector: select#field_BF07744F-FC8C-45C9-B660-5BE4F2AA0B7E
           value: $TOPIC

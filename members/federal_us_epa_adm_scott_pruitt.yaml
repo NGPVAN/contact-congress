@@ -36,9 +36,6 @@ contact_form:
       - name: topic
         selectors: [ "#request_custom_fields_27999287" ]
         commands: [ "elements[0].value = 'other_not_listed'"]
-      - name: subtopic
-        selectors: [ "#request_custom_fields_27999187" ]
-        commands: [ "elements[0].value = 'other'"]
     - find:
       - selector: form#new_request input[type='submit']
     - click_on:

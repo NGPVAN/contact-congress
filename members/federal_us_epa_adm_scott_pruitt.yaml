@@ -36,9 +36,17 @@ contact_form:
     - click_on:
       - selector: div.request_custom_fields_27999287 a.nesty-input
     - find:
-      - selector: ul[value=other_not_listed]
+      - selector: option[value=other_not_listed]
     - click_on:
-      - selector: ul[value=other_not_listed]
+      - selector: option[value=other_not_listed]
+    - find:
+      - selector: div.request_custom_fields_27999187 a.nesty-input
+    - click_on:
+      - selector: div.request_custom_fields_27999187 a.nesty-input
+    - find:
+      - selector: option[value=other]
+    - click_on:
+      - selector: option[value=other]
     - find:
       - selector: form#new_request input[type='submit']
     - click_on:

@@ -213,6 +213,7 @@ Example:
   - name: topic
     selectors: [ "#request_custom_fields_27999287" ]
     commands: [ "elements[0].value = 'other_not_listed'"]
+```
 
 ---
 

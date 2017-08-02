@@ -2,6 +2,7 @@ bioguide: federal_us_epa_adm_scott_pruitt
 contact_form:
   method: post
   action: ""
+  usePhantomJsLogging: true
   steps:
     - visit: "https://compliancegov.zendesk.com/hc/en-us/requests/new"
     - wait:
@@ -31,22 +32,13 @@ contact_form:
         selector: input#request_custom_fields_28006408
         value: $ADDRESS_CITY
         required: false
-    - find:
-      - selector: div.request_custom_fields_27999287 a.nesty-input
-    - click_on:
-      - selector: div.request_custom_fields_27999287 a.nesty-input
-    - find:
-      - selector: option[value=other_not_listed]
-    - click_on:
-      - selector: option[value=other_not_listed]
-    - find:
-      - selector: div.request_custom_fields_27999187 a.nesty-input
-    - click_on:
-      - selector: div.request_custom_fields_27999187 a.nesty-input
-    - find:
-      - selector: option[value=other]
-    - click_on:
-      - selector: option[value=other]
+    - javascript:
+      - name: topic
+        selectors: [ "#request_custom_fields_27999287" ]
+        commands: [ "elements[0].value = 'other_not_listed'"]
+      - name: subtopic
+        selectors: [ "#request_custom_fields_27999187" ]
+        commands: [ "elements[0].value = 'other'"]
     - find:
       - selector: form#new_request input[type='submit']
     - click_on:

@@ -205,7 +205,7 @@ A click_on step terminates the preceding list of input-related steps, by submitt
 
 ### javascript
 
-A javascript step allows running arbitrary client-side javascript on the page that yamltron is on.
+A javascript step allows running arbitrary client-side javascript on the page that yamltron is on. The `selectors` property is used to inject an array of elements. The `values` property is used to inject an array of values, which is useful for injecting our $ variables, such as `$PHONE`, etc.
 
 Example:
 ```yaml

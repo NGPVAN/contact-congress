@@ -2,7 +2,6 @@ bioguide: federal_us_epa_adm_scott_pruitt
 contact_form:
   method: post
   action: ""
-  usePhantomJsLogging: true
   steps:
     - visit: "https://compliancegov.zendesk.com/hc/en-us/requests/new"
     - wait:

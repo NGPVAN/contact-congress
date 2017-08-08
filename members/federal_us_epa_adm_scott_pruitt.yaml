@@ -31,14 +31,10 @@ contact_form:
         selector: input#request_custom_fields_28006408
         value: $ADDRESS_CITY
         required: false
-    - find:
-      - selector: div.request_custom_fields_27999287 a.nesty-input
-    - click_on:
-      - selector: div.request_custom_fields_27999287 a.nesty-input
-    - find:
-      - selector: ul[value=other_not_listed]
-    - click_on:
-      - selector: ul[value=other_not_listed]
+    - javascript:
+      - name: topic
+        selectors: [ "#request_custom_fields_27999287" ]
+        commands: [ "elements[0].value = 'other_not_listed'"]
     - find:
       - selector: form#new_request input[type='submit']
     - click_on:

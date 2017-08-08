@@ -49,6 +49,7 @@ a subset of [Capybara methods](http://rubydoc.info/github/jnicklas/capybara/mast
 - [`remove`](#remove) Removes DOM element
 - [`picker`](#picker) Uses provided key-selector mapping to select element based on provided value
 - [`recaptcha`](#recaptcha) Handles reCAPTCHA V2
+- [`javascript`](#javascript) Allows running javascript commands
 
 **success**
 
@@ -201,6 +202,18 @@ Like the other input-related steps, `select`s can list either one or many hashes
 ### click_on
 
 A click_on step terminates the preceding list of input-related steps, by submitting the web form. It is a list containing a hash with only two possible keys: `selector` and `value`. `selector` is the CSS selector for finding the button or link to click, and `value` is the HTML value attribute if present, both to disambiguate and for the benefit of clients which may be POSTing directly instead of using a headless browser, though this is not recommended. `selector` is the only attribute you must provide/should expect to be guaranteed.
+
+### javascript
+
+A javascript step allows running arbitrary client-side javascript on the page that yamltron is on. The `selectors` property is used to inject an array of elements. The `values` property is used to inject an array of values, which is useful for injecting our $ variables, such as `$PHONE`, etc.
+
+Example:
+```yaml
+- javascript:
+  - name: topic
+    selectors: [ "#request_custom_fields_27999287" ]
+    commands: [ "elements[0].value = 'other_not_listed'"]
+```
 
 ---
 

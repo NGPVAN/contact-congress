@@ -1,0 +1,32 @@
+bioguide: TempCustomTarget
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.regulations.gov/comment?D=EPA-HQ-OW-2017-0203-0001"
+    - wait:
+      - value: 3
+    - find:
+      - selector: div.GIY1LSJAQC form
+    - fill_in:
+        - name: message
+          selector: textarea#x-auto-0-input
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: div.GIY1LSJISC button.primary
+    - find:
+        - selector: input#gwt-uid-255
+    - click_on:
+        - selector: input#gwt-uid-255
+    - find:
+        - selector: button#gwt-uid-377
+    - click_on:
+        - selector: button#gwt-uid-377
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your Comment Tracking Number"

@@ -207,34 +207,20 @@ contact_form:
             Appropriations: Appropriations
             Banking: Banking
             Campaign Finance: Campaign Finance
-            Children: Children
             Civil Rights: Civil Rights
             Commerce: Commerce
-            Communications: Communications
-            Congratulations: Congratulations
-            Congressional Issues: Congressional Issues
-            Crime: Crime
             Defense: Defense
-            Drugs: Drugs
             Economy: Economy
-            Education Higher: Education Higher
-            Education K through 12: Education K through 12
-            Elections: Elections
             Energy: Energy
             Environment: Environment
-            Family: Family
-            Food Stamps: Food Stamps
+            Finance: Finance
             Foreign Affairs: Foreign Affairs
             Gun Control: Gun Control
             Health: Health
             Homeland Security: Homeland Security
             Housing: Housing
             Immigration: Immigration
-            Insurance Health: Insurance Health
-            Insurance Other: Insurance Other
             Interior: Interior
-            Iran: Iran
-            Iraq: Iraq
             Judiciary: Judiciary
             Labor: Labor
             Medicaid: Medicaid
@@ -242,14 +228,12 @@ contact_form:
             Military: Military
             NASA: NASA
             Nutrition: Nutrition
-            Other: Other
             Patents: Patents
             Pensions: Pensions
-            Securities: Securities
             Small Business: Small Business
             Social: Social
             Taxes: Taxes
-            Tobacco: Tobacco
+            Telecommunications: Telecommunications
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans

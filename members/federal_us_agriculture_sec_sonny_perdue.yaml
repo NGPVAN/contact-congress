@@ -28,10 +28,18 @@ contact_form:
     - click_on:
       - selector: a#ygtvlabelel24
     - find:
-      - selector: input#rn_FormSubmit_10_Button
+      - selector: button#rn_FormSubmit_10_Button
     - click_on:
       - value: Continue
-        selector: input#rn_FormSubmit_10_Button
+        selector: button#rn_FormSubmit_10_Button
+    - find:
+      - selector: div#rnDialog1
+    - click_on:
+      - value: Edit
+        selector: div.yui3-widget-ft a
+    - click_on:
+      - value: Continue
+        selector: button#rn_FormSubmit_10_Button
     - find:
       - selector: div.rn_wrap div.rn_refno
   success:

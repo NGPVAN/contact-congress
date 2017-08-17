@@ -27,6 +27,8 @@ contact_form:
         selector: "#message"
         value: $MESSAGE
         required: true
+        options:
+          max_length: 4800
       - name: captcha
         captcha_selector: "#RadCaptcha1_CaptchaImage"
         selector: "#rcTextBox1"

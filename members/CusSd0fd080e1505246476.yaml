@@ -1,0 +1,60 @@
+bioguide: CusSd0fd080e1505246476
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.regulations.gov/comment?D=WHD-2017-0002-0001"
+    - wait:
+      - value: 5
+    - find:
+      - selector: div.GIY1LSJGSC form
+    - fill_in:
+        - name: message
+          selector: textarea#x-auto-0-input
+          value: $MESSAGE
+          required: true
+        - name: first
+          selector: input#x-auto-1-input
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: input#x-auto-2-input
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#x-auto-3-input
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: input#x-auto-5-input
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip5
+          selector: input#x-auto-8-input
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: email
+          selector: input#x-auto-10-input
+          value: $EMAIL
+          required: false
+    - click_on:
+        - selector: div.GIY1LSJISC button.primary
+    - find:
+        - selector: input#gwt-uid-250
+    - click_on:
+        - selector: input#gwt-uid-250
+    - find:
+        - selector: button#gwt-uid-384
+    - click_on:
+        - selector: button#gwt-uid-384
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your Comment Tracking Number"

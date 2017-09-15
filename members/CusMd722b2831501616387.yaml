@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.regulations.gov/comment?D=ED-2017-OS-0074-0001"
     - wait:
-      - value: 3
+      - value: 10
     - find:
       - selector: div.GIY1LSJAQC form
     - fill_in:
@@ -64,7 +64,7 @@ contact_form:
     - click_on:
         - selector: div.GIY1LSJERD button.primary
     - wait:
-        - value: 3
+        - value: 10
   success:
     headers:
       status: 200

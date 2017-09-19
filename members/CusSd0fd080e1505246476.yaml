@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.regulations.gov/comment?D=WHD-2017-0002-0001"
     - wait:
-      - value: 10
+      - value: 15
     - find:
       - selector: div.GIY1LSJGSC form
     - fill_in:
@@ -47,10 +47,12 @@ contact_form:
         - selector: input#gwt-uid-250
     - click_on:
         - selector: input#gwt-uid-250
+    - wait:
+        - value: 5
     - find:
         - selector: button#gwt-uid-384
     - click_on:
-        - selector: button#gwt-uid-384
+        - selector: div.GIY1LSJERD button#gwt-uid-384
     - wait:
         - value: 10
   success:

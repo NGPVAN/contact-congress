@@ -28,6 +28,10 @@ The URL the form should submit to. An empty string ('') can be used to represent
 
 This should be set to true when the contact form uses a browser alert to indicate a successful submission.
 
+**IgnoreWebSecurity**
+
+Set this to true to ignore web securities set on the page by the server. For example, this should be true to ignore Content-Security-Policy errors.
+
 **steps**
 
 A list of the steps that make up a successful submission of the form. Steps are

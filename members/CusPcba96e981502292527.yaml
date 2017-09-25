@@ -5,9 +5,9 @@ contact_form:
   steps:
     - visit: "https://www.regulations.gov/comment?D=EPA-HQ-OW-2017-0203-0001"
     - wait:
-      - value: 3
+      - value: 5
     - find:
-      - selector: div.GIY1LSJAQC form
+      - selector: div.GIY1LSJGSC form
     - fill_in:
         - name: message
           selector: textarea#x-auto-0-input
@@ -15,16 +15,20 @@ contact_form:
           required: true
     - click_on:
         - selector: div.GIY1LSJISC button.primary
-    - find:
-        - selector: input#gwt-uid-255
-    - click_on:
-        - selector: input#gwt-uid-255
-    - find:
-        - selector: button#gwt-uid-377
-    - click_on:
-        - selector: button#gwt-uid-377
     - wait:
-        - value: 3
+        - value: 5
+    - find:
+        - selector: div.GIY1LSJFRD span.gwt-CheckBox input[type=checkbox]
+    - click_on:
+        - selector: div.GIY1LSJFRD span.gwt-CheckBox input[type=checkbox]
+    - wait:
+        - value: 5
+    - find:
+        - selector: div.GIY1LSJERD button.primary
+    - click_on:
+        - selector: div.GIY1LSJERD button.primary
+    - wait:
+        - value: 5
   success:
     headers:
       status: 200

@@ -52,9 +52,9 @@ contact_form:
     - wait:
         - value: 5
     - find:
-        - selector: button#gwt-uid-384
+        - selector: div.GIY1LSJERD button.primary
     - click_on:
-        - selector: div.GIY1LSJERD button#gwt-uid-384
+        - selector: div.GIY1LSJERD button.primary
     - wait:
         - value: 5
   success:

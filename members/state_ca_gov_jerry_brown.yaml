@@ -45,6 +45,7 @@ contact_form:
         - name: subject
           selector: "input[name='newsubject']"
           value: $SUBJECT
+          required: true
     - check:
         - name: position
           selector: "input[type='radio'][name='position'][value='2']"
@@ -56,4 +57,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: EMAIL COMPLETE
+      contains: You have successfully sent your email

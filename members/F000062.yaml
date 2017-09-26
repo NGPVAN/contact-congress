@@ -39,41 +39,8 @@ contact_form:
           required: true
           options:
             blacklist: "\""
-    - picker:
-        - name: topic
-          value: $TOPIC
-          required: true
-          options:
-            Agriculture: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_1"
-            Animals: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_2"
-            Banking / Finance: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_3"
-            Budget: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_4"
-            Communications / FCC: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_5"
-            Defense: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_6"
-            Education / Student Loans: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_7"
-            Energy: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_8"
-            Environment: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_9"
-            Foreign Affairs: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_10"
-            Gun Control: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_11"
-            Health: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_12"
-            Homeland Security: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_13"
-            Housing: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_14"
-            Human Services / Welfare: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_15"
-            Immigration: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_16"
-            Native American Affairs: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_17"
-            Intelligence Committee: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_18"
-            Internship: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_19"
-            Judiciary, Narcotics / Illicit Drugs: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_20"
-            Labor: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_21"
-            LGBT: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_22"
-            Science / Space / Technology: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_23"
-            Social Security: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_24"
-            Taxes: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_25"
-            Trade: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_26"
-            Transportation: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_27"
-            U.S. Postal Service: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_28"
-            Veterans: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_29"
-            Water: "#field_302E8A41-000D-419E-991E-40C7CB96F97C_30"
+    - click_on:
+        - selector: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_4
     - select:
         - name: prefix
           selector: "#field_9444DBC2-BBE1-469D-9B8F-AB10EB838284"

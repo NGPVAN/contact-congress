@@ -21,7 +21,7 @@ contact_form:
     - select:
         - name: topic
           selector: "#subject"
-          value: $TOPIC
+          value: OTHER
           required: true
           options:
             OTHER: OTHER

@@ -4,6 +4,10 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.gillibrand.senate.gov/contact/email-me"
+    - wait:
+        - value: 4
+    - find:
+        - selector: input#input-41379D65-C84B-E83D-BC59-3E535C89FC46
     - fill_in:
         - name: first
           selector: input#input-41379D65-C84B-E83D-BC59-3E535C89FC46

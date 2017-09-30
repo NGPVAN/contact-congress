@@ -1,0 +1,45 @@
+bioguide: someGuy
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "http://www.apscservices.info/PublicCommentForm.asp?DocNum=16-027-R"
+    - fill_in:
+      - name: full
+        selector: input[name=FullName]
+        value: $NAME_FULL
+        required: true
+      - name: street
+        selector: input[name=address1]
+        value: $ADDRESS_STREET
+        required: true
+      - name: city
+        selector: input[name=City]
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input[name=zipcode]
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: email
+        selector: input[name=email]
+        value: $EMAIL
+        required: true
+      - name: message
+        selector: textarea[name=Comments]
+        value: $MESSAGE
+        required: true
+      - name: captcha
+        selector: "#securityCode"
+        captcha_selector: "#SecureCode"
+        value: $CAPTCHA_SOLUTION
+        required: true
+    - click_on:
+      - selector: input[name=submit]
+    - wait:
+      - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for submitting your comment

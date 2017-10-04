@@ -1,9 +1,11 @@
-bioguide: someGuy
+bioguide: CusPbec0164c1507131887
 contact_form:
   method: post
   action: ""
   steps:
     - visit: "http://www.apscservices.info/PublicCommentForm.asp?DocNum=16-027-R"
+    - find:
+      - selector: input[name=FullName]
     - fill_in:
       - name: full
         selector: input[name=FullName]

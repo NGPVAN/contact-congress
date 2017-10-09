@@ -3,55 +3,68 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://walker.wi.gov/contact-governor-walker"
+    - visit: "https://walker.wi.gov/contact/contact-form"
+    - wait:
+        - value: 3
     - find:
-        - selector: div#scopedByScopedPolyfill_1 button.prefix-overlay-close
+        - selector: div#prefix-overlay-header button.prefix-overlay-close
     - click_on:
-        - selector: div#scopedByScopedPolyfill_1 button.prefix-overlay-close
+        - selector: div#prefix-overlay-header button.prefix-overlay-close
+    - find:
+        - selector: label#edit-submitted-contact-reason-1-label
+    - click_on:
+        - selector: label#edit-submitted-contact-reason-1-label
     - find:
         - selector: input#edit-submitted-contact-information-first-name
     - fill_in:
         - name: firstName
-          selector: "#edit-submitted-contact-information-first-name"
+          selector: "#edit-submitted-contact-information-contact-first-name"
           value: $NAME_FIRST
           required: true
         - name: lastName
-          selector: "#edit-submitted-contact-information-last-name"
+          selector: "#edit-submitted-contact-information-contact-last-name"
           value: $NAME_LAST
         - name: phone
-          selector: "#edit-submitted-contact-information-phone-number"
+          selector: "#edit-submitted-contact-information-contact-phone-number"
           value: $PHONE
           required: true
         - name: email
-          selector: "#edit-submitted-contact-information-email"
+          selector: "#edit-submitted-contact-information-contact-email"
           value: $EMAIL
           required: true
         - name: street
-          selector: "#edit-submitted-address-info-address-line-1"
+          selector: "#edit-submitted-contact-information-contact-address-1"
           value: $ADDRESS_STREET
         - name: street2
-          selector: "#edit-submitted-address-info-address-line-2"
+          selector: "#edit-submitted-contact-information-contact-address-2"
           value: $ADDRESS_STREET_2
         - name: city
-          selector: input#edit-submitted-address-information-city
+          selector: input#edit-submitted-contact-information-contact-city
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: input#edit-submitted-address-information-zip-code
+          selector: input#edit-submitted-contact-information-contact-zip-code
           value: $ADDRESS_ZIP5
           required: true
         - name: subject
-          selector: "#edit-submitted-main-content-section-subject"
+          selector: "#edit-submitted-governor-walker-contact-governor-walker-contact-subject"
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#edit-submitted-main-content-section-message"
+          selector: "#edit-submitted-governor-walker-contact-governor-walker-contact-message"
           value: $MESSAGE
           required: true
+    - select:
+        - name: topic
+          selector: "#edit-submitted-governor-walker-contact-governor-walker-contact-issue"
+          value: General
+          required: true
+          options:
+            General: General
     - click_on:
-        - selector: form#webform-client-form-10 button.webform-submit
+        - selector: form#webform-client-form-3043 button.webform-submit
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for your message"
+      contains: "Thank you for your request"

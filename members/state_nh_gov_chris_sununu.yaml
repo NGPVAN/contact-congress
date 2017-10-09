@@ -43,6 +43,8 @@ contact_form:
           selector: textarea#comments
           value: $MESSAGE
           required: true
+          options:
+            blacklist: "‘’“”"
     - click_on:
         - selector: form#Form1 input#Submit1
     - wait:

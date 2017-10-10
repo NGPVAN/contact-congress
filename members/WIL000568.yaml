@@ -4,6 +4,8 @@ contact_form:
   action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/senate/02/cowles/write-rob/"
+    - find:
+        - selector: div.selectwhatyourrequestisbestcategorizedas select
     - select:
         - name: category
           selector: div.selectwhatyourrequestisbestcategorizedas select
@@ -11,6 +13,10 @@ contact_form:
           required: true
           options:
             Comment on an issue or bill: Comment on an issue or bill
+    - wait:
+        - value: 1
+    - find:
+        - selector: div.fullname input
     - fill_in:
         - name: name
           selector: div.fullname input
@@ -48,8 +54,12 @@ contact_form:
           selector: div.summaryofrequest textarea
           value: $MESSAGE
           required: true
+    - wait:
+        - value: 1
     - click_on:
-        - selector: div#contour_form_WritetoRob input[name='submitbtn']
+        - selector: div.contour_form_WritetoRob input[name=submitbtn]
+    - wait:
+        - value: 15
   success:
     headers:
       status: 200

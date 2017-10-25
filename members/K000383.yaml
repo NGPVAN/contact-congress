@@ -1,7 +1,8 @@
 bioguide: K000383
 contact_form:
   method: post
-  action: /contact
+  action: ""
+  usePhantomJsLogging: true
   steps:
     - visit: "http://www.king.senate.gov/contact"
     - fill_in:

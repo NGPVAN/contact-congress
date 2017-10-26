@@ -1,4 +1,4 @@
-bioguide: npsOne
+bioguide: CusR3f7b63e01509045695
 contact_form:
   method: post
   action: ""
@@ -30,7 +30,7 @@ contact_form:
         value: $ADDRESS_STREET
         required: false
       - name: street2
-        selector: "id_authorAddress2"
+        selector: "#id_authorAddress2"
         value: $ADDRESS_STREET_2
         required: false
       - name: email
@@ -48,6 +48,15 @@ contact_form:
         required: true
         options:
           Alabama: Alabama
+          Alaska: Alaska
+          American Samoa: American Samoa
+          Arizona: Arizona
+      - name: source
+        selector: "#id_howDidYouHear"
+        value: Other Website
+        required: true
+        options:
+          Other: Other Website
     - click_on:
       - selector: form#commentForm input.submitButton
     - wait:

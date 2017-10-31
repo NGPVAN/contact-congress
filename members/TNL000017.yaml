@@ -1,72 +1,45 @@
 bioguide: TNL000017
 contact_form:
   method: post
-  action: //www.tngopsenate.com/contact/#FSContact1
+  action: ""
   steps:
     - visit: "http://www.tngopsenate.com/contact/#FSContact1"
     - fill_in:
-        - name: fname
-          selector: "#fscf_f_name1"
-          value: $NAME_FIRST
-          required: true
-        - name: lname
-          selector: "#fscf_l_name1"
-          value: $NAME_LAST
+        - name: name
+          selector: span.your-name input
+          value: $NAME_FULL
           required: true
         - name: email
-          selector: "#fscf_email1"
+          selector: span.your-email input
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#fscf_field1_5"
-          value: $PHONE
-          required: true
-        - name: phone2
-          selector: "#fscf_field1_6"
+          selector: span.telephone input
           value: $PHONE
           required: true
         - name: address
-          selector: "#fscf_field1_7"
+          selector: span.streetaddress input
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#fscf_field1_8"
+          selector: span.city input
           value: $ADDRESS_CITY
           required: true
         - name: state
-          selector: "#fscf_field1_9"
+          selector: span.state input
           value: $ADDRESS_STATE_FULL
           required: true
         - name: zip
-          selector: "#fscf_field1_10"
+          selector: span.zipcode input
           value: $ADDRESS_ZIP5
           required: true
-        - name: country
-          selector: "#fscf_field1_11"
-          value: "United States"
-          required: true
         - name: message
-          selector: "#fscf_field1_14"
+          selector: span.your-message textarea
           value: $MESSAGE
           required: true
-        - name: captcha
-          selector: "#fscf_captcha_code1"
-          captcha_selector: "#fscf_captcha_image1"
-          value: "$CAPTCHA_SOLUTION"
-          required: true
     - select:
-      - name: prefix
-        selector: "#fscf_field1_4"
-        value: $NAME_PREFIX
-        required: true
-        options:
-            MR: MR
-            MISS: MISS
-            DR: DR
-            MRS: MRS
-            MS: MS
       - name: legislator
-        selector: "#fscf_field1_12"
+        selector: span.SenatorYouWishtoContact select
         value: "Sen. Brian Kelsey"
         required: true
         options:
@@ -96,10 +69,15 @@ contact_form:
           - Sen. Steven Dickerson
           - Sen. Todd Gardenhire
     - click_on:
-        - value: Submit
-          selector: "#fscf_submit1"
+        - selector: span.contactmethod input[value=Email]
+    - find:
+        - selector: div#content input[value=Send]
+    - click_on:
+        - selector: div#content input[value=Send]
+    - wait:
+        - value: 4
   success:
     headers:
       status: 200
     body:
-      contains: Your message has been sent
+      contains: Thank you for your message. It has been sent.

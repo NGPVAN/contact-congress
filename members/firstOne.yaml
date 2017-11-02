@@ -1,0 +1,66 @@
+bioguide: firstOne
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.regulations.gov/comment?D=CMS-2017-0133-0002"
+    - wait:
+      - value: 5
+    - find:
+      - selector: textarea#x-auto-0-input
+    - fill_in:
+        - name: message
+          selector: textarea#x-auto-0-input
+          value: $MESSAGE
+          required: true
+        - name: first
+          selector: input#x-auto-1-input
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: input#x-auto-2-input
+          value: $NAME_LAST
+          required: true
+        - name: city
+          selector: input#x-auto-5-input
+          value: $ADDRESS_CITY
+          required: false
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip5
+          selector: input#x-auto-8-input
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: input#x-auto-10-input
+          value: $EMAIL
+          required: false
+        - name: org
+          selector: input#x-auto-14-input
+          value: none
+          required: false
+    - find:
+        - selector: span.inlineBlock button.primary
+    - click_on:
+        - selector: span.inlineBlock button.primary
+    - wait:
+        - value: 5
+    - find:
+        - selector: div.GIY1LSJDRD span.gwt-CheckBox input
+    - click_on:
+        - selector: div.GIY1LSJDRD span.gwt-CheckBox input
+    - wait:
+        - value: 5
+    - find:
+        - selector: div.clearfix button.primary
+    - click_on:
+        - selector: div.clearfix button.primary
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Your Comment Tracking Number

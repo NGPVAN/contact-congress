@@ -1,0 +1,38 @@
+bioguide: newGuy
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://data.oregon.gov/w/jw4e-6w5c/k5vp-q3pt?cur=3-5GS71EAGC&from=root"
+    - find:
+        - selector: "#form_field_first_name"
+    - fill_in:
+        - name: first
+          selector: "#form_field_first_name"
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: "#form_field_last_name"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#form_field_email"
+          value: $EMAIL
+          required: true
+        - name: state
+          selector: "#form_field_state"
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: message
+          selector: "#form_field_comment"
+          value: $MESSAGE
+          required: true
+    - find:
+        - selector: div.submitLine a.submit
+    - click_on:
+        - selector: div.submitLine a.submit
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Success!

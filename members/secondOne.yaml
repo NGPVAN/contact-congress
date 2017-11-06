@@ -16,11 +16,11 @@ contact_form:
         - name: first
           selector: input#x-auto-1-input
           value: $NAME_FIRST
-          required: true
+          required: false
         - name: last
           selector: input#x-auto-2-input
           value: $NAME_LAST
-          required: true
+          required: false
         - name: city
           selector: input#x-auto-5-input
           value: $ADDRESS_CITY
@@ -37,10 +37,12 @@ contact_form:
           selector: input#x-auto-10-input
           value: $EMAIL
           required: false
-        - name: org
-          selector: input#x-auto-14-input
-          value: none
-          required: false
+    - find:
+        - selector: "#gwt-uid-164"
+    - click_on:
+        - selector: "#gwt-uid-164"
+    - wait:
+        - value: 2
     - find:
         - selector: span.inlineBlock button.primary
     - click_on:

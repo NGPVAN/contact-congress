@@ -53,10 +53,16 @@ contact_form:
           Arizona: Arizona
       - name: source
         selector: "#id_howDidYouHear"
-        value: Other Website
+        value: Facebook
         required: true
         options:
-          Other: Other Website
+          Facebook: Facebook
+    - find:
+      - selector: form#commentForm input[value='5']
+    - click_on:
+      - selector: form#commentForm input[value='5']
+    - find:
+      - selector: form#commentForm input.submitButton
     - click_on:
       - selector: form#commentForm input.submitButton
     - wait:

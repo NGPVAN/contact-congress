@@ -3,55 +3,55 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.harris.senate.gov/content/contact-senator"
+    - visit: "https://www.harris.senate.gov/contact/email"
     - find:
-        - selector: form#webform-client-form-78 input#edit-submitted-constituent-information-first-name
+        - selector: "#input-67423504-9AAC-EB15-51B1-3DF559E135D4"
     - fill_in:
         - name: firstname
-          selector: input#edit-submitted-constituent-information-first-name
+          selector: "#input-67423504-9AAC-EB15-51B1-3DF559E135D4"
           value: $NAME_FIRST
           required: true
         - name: lastname
-          selector: input#edit-submitted-constituent-information-last-name
+          selector: "#input-67423519-DD68-8D83-92BB-023E9CDE7E25"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#edit-submitted-constituent-information-address-1
+          selector: "#input-674731A9-DC93-F057-3129-DDFC402FFCF6"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#edit-submitted-constituent-information-address-2
+          selector: "#input-67473215-DFDC-3E56-5689-D72B183E426E"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#edit-submitted-constituent-information-city
+          selector: "#input-67473231-0058-AF90-5FA2-9D4977FFAE08"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#edit-submitted-constituent-information-zip
+          selector: "#input-67473264-EF36-677B-E5BD-177CC730BF76"
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone
-          selector: input#edit-submitted-constituent-information-phone
-          value: $PHONE
-          required: false
         - name: email
-          selector: input#edit-submitted-constituent-information-email
+          selector: "#email"
           value: $EMAIL
           required: true
-        - name: subject
-          selector: input#edit-submitted-message-details-please-type-the-subject-of-your-message
-          value: $SUBJECT
+        - name: verify_email
+          selector: "#input-674B2464-04AE-529C-EF20-DA82FEC8CAFC"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#input-674C04D0-0622-BF1E-6BED-994E3BDE74CF"
+          value: 222-222-2222
           required: true
         - name: message
-          selector: textarea#edit-submitted-message-details-message
+          selector: "#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B"
           value: $MESSAGE
           required: true
           options:
             blacklist: "-"
     - select:
         - name: prefix
-          selector: select#edit-submitted-constituent-information-prefix
+          selector: "#input-674234EB-FE2E-E1D2-DA0B-544DB1E29219"
           value: $NAME_PREFIX
           required: true
           options:
@@ -67,18 +67,18 @@ contact_form:
             The Honorable: The Honorable
             Representative: Representative
             Senator: Senator
-        - name: topic
-          selector: select#edit-submitted-message-details-topic
-          value: $TOPIC
-          required: true
-          options:
-            Other: Other
+    - find:
+        - selector: "#issue-44"
     - click_on:
-        - selector: form#webform-client-form-78 input.form-submit
+        - selector: "#issue-44"
+    - find:
+        - selector: div#content input.btn
+    - click_on:
+        - selector: div#content input.btn
     - wait:
         - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "your message has been received"
+      contains: "Thank you for contacting my office"

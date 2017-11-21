@@ -17,6 +17,10 @@ contact_form:
           selector: "#edit-submitted-email"
           value: $EMAIL
           required: true
+        - name: phone
+          selector: "#edit-submitted-telephone-number"
+          value: $PHONE
+          required: true
         - name: street
           selector: "#edit-submitted-address"
           value: $ADDRESS_STREET

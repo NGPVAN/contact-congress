@@ -43,6 +43,10 @@ contact_form:
           selector: "#input-674C04D0-0622-BF1E-6BED-994E3BDE74CF"
           value: 222-222-2222
           required: true
+        - name: subject
+          selector: "#input-8896A1BE-5056-A066-604F-3010D7864A7D"
+          value: $SUBJECT
+          required: true
         - name: message
           selector: "#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B"
           value: $MESSAGE

@@ -51,25 +51,6 @@ contact_form:
           value: $MESSAGE
           required: true
     - select:
-        - name: salutation
-          selector: "#salutation"
-          value: $NAME_PREFIX
-          required: true
-          options:
-            Mr.: Mr.
-            Ms.: Ms.
-            Mrs.: Mrs.
-            Miss: Miss
-            Mr. and Mrs.: Mr. and Mrs.
-            Dr.: Dr.
-            Prof.: Prof.
-            Senator: Senator
-            Gov.: Gov.
-            Congressman: Congressman
-            Hon.: Hon.
-            Sister: Sister
-            Rabbi: Rabbi
-            Reverend: Reverend
         - name: topic
           selector: "#topic"
           value: $TOPIC

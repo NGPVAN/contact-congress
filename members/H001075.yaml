@@ -6,6 +6,8 @@ contact_form:
     - visit: "https://www.harris.senate.gov/contact/email"
     - find:
         - selector: "#input-67423504-9AAC-EB15-51B1-3DF559E135D4"
+    - wait:
+        - value: 3
     - fill_in:
         - name: firstname
           selector: "#input-67423504-9AAC-EB15-51B1-3DF559E135D4"
@@ -62,15 +64,13 @@ contact_form:
             Mr.: Mr.
             Mrs.: Mrs.
             Ms.: Ms.
-            Mr. and Mrs.: Mr. and Mrs.
+            Professor: Professor
             Dr.: Dr.
-            Dr. and Mrs.: Dr. and Mrs.
+            Father: Father
             Reverend: Reverend
             Sister: Sister
-            Pastor: Pastor
-            The Honorable: The Honorable
-            Representative: Representative
-            Senator: Senator
+            Mx.: Mx.
+            None: None
     - find:
         - selector: "#issue-3"
     - click_on:

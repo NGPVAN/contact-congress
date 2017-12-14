@@ -1,55 +1,49 @@
 bioguide: MIL000035
 contact_form:
   method: post
-  action: ima_form_post.asp
+  action: ""
   steps:
-    - visit: "http://www.senate.michigan.gov/ima_form.asp?name=comment35&form_path=e:/webforms/rep"
+    - visit: "http://www.senatordarwinbooher.com/contact/"
+    - find:
+        - selector: "input[name='your-name']"
     - fill_in:
-        - name: prefix
-          selector: "input[name='prefix']"
-          value: $NAME_PREFIX
-          required: false
-        - name: fname
-          selector: "input[name='first_name']"
-          value: $NAME_FIRST
-          required: true
-        - name: lname
-          selector: "input[name='last_name']"
-          value: $NAME_LAST
+        - name: name
+          selector: "input[name='your-name']"
+          value: $NAME_FULL
           required: true
         - name: address
-          selector: "input[name='street_address']" 
+          selector: "input[name='your-address']"
           value: $ADDRESS_STREET
           required: true
-        - name: city
-          selector: "input[name='city']" 
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip
-          selector: "input[name='zip_5']" 
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone
-          selector: "input[name='phone']"
-          value: $PHONE
+        - name: citystatezip
+          selector: "input[name='your-city']"
+          value: $ADDRESS_CITY_STATE_ZIP
           required: true
         - name: email
-          selector: "input[name='email']"
+          selector: "input[name='your-email']"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "input[name='subject']"
+          selector: "input[name='your-subject']"
           value: $SUBJECT
           required: false
         - name: message
-          selector: "textarea[name='message']"
+          selector: "textarea[name='your-message']"
           value: $MESSAGE
           required: true
+        - name: captcha
+          selector: "input[name='captcha-118']"
+          captcha_selector: ".wpcf7-captchac"
+          value: $CAPTCHA_SOLUTION
+          required: true
     - click_on:
-        - value: Submit
-          selector: "input[type='submit'][value='Submit Form']"
+        - selector: "input.wpcf7-submit"
+    - wait:
+        - value: 3
+    - find:
+        - selector: div.wpcf7-mail-sent-ok
   success:
     headers:
       status: 200
     body:
-      contains: Your request has been sent
+      contains: Your message was sent successfully

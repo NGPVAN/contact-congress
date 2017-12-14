@@ -1,51 +1,78 @@
 bioguide: MIL000031
 contact_form:
   method: post
-  action: ima_form_post.asp
+  action: ""
+  usePhantomJsLogging: true
   steps:
-    - visit: "http://www.senate.michigan.gov/ima_form.asp?name=COMMENT31&form_path=E:/webforms/rep"
+    - visit: "http://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_MID31&__fid=100001"
+    - wait:
+        - value: 3
+    - find:
+        - selector: "input[name='your-name']"
     - fill_in:
         - name: prefix
-          selector: "input[name='prefix']"
+          selector: "#q_1_prefix"
           value: $NAME_PREFIX
           required: false
-        - name: fname
-          selector: "input[name='first_name']"
+        - name: first
+          selector: "#q_1_first_name"
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "input[name='last_name']"
+        - name: last
+          selector: "#q_1_last_name"
           value: $NAME_LAST
           required: true
-        - name: address
-          selector: "input[name='street_address']" 
+        - name: street
+          selector: "#q_1_addr_1"
           value: $ADDRESS_STREET
           required: true
+        - name: street2
+          selector: "#q_1_addr_2"
+          value: $ADDRESS_STREET_2
+          required: false
         - name: city
-          selector: "input[name='city']" 
+          selector: "#q_1_city"
           value: $ADDRESS_CITY
           required: true
-        - name: zip
-          selector: "input[name='zip_5']" 
+        - name: zip5
+          selector: "#q_1_zip"
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone
-          selector: "input[name='phone']"
-          value: $PHONE
-          required: false
         - name: email
-          selector: "input[name='email']"
+          selector: "#q_1_email"
           value: $EMAIL
           required: true
+        - name: phone
+          selector: "#q_1_hphone"
+          value: $PHONE
+          required: false
+        - name: subject
+          selector: "input[name='your-subject']"
+          value: $SUBJECT
+          required: false
         - name: message
-          selector: "textarea[name='message']"
+          selector: "#q_3"
           value: $MESSAGE
           required: true
+    - select:
+        - name: state
+          selector: "#q_1_state"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Michigan: Michigan
+        - name: type
+          selector: "#q_2"
+          value: All Other Concerns
+          required: true
+          options:
+            All Other Concerns: All Other Concerns
     - click_on:
-        - value: Submit
-          selector: "input[type='submit'][value='Submit Form']"
+        - selector: "#btn_submit"
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: Your request has been sent
+      contains: Thank you. Your message has been sent to Senator Mike Green's office.

@@ -8,7 +8,7 @@ contact_form:
     - wait:
         - value: 3
     - find:
-        - selector: "input[name='your-name']"
+        - selector: "#q_1_first_name"
     - fill_in:
         - name: prefix
           selector: "#q_1_prefix"
@@ -47,7 +47,7 @@ contact_form:
           value: $PHONE
           required: true
         - name: subject
-          selector: "input[name='your-subject']"
+          selector: "#q_2"
           value: $SUBJECT
           required: false
         - name: message

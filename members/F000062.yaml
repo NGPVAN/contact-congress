@@ -4,6 +4,10 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.feinstein.senate.gov/public/index.cfm/e-mail-me"
+    - wait:
+        - value: 3
+    - find:
+        - selector: "#field_0C5A1392-6512-4FA5-A213-EB7E1CBAF1AD"
     - fill_in:
         - name: firstname
           selector: "#field_0C5A1392-6512-4FA5-A213-EB7E1CBAF1AD"

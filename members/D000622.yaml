@@ -2,83 +2,91 @@ bioguide: D000622
 contact_form:
   method: post
   action: ""
+  usePhantomLogging: true
   steps:
-    - visit: "https://www.duckworth.senate.gov/content/contact-senator"
+    - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
     - find:
-        - selector: form#webform-client-form-78 input#edit-submitted-constituent-information-first-name
-    - fill_in:
-        - name: firstname
-          selector: input#edit-submitted-constituent-information-first-name
-          value: $NAME_FIRST
-          required: true
-        - name: lastname
-          selector: input#edit-submitted-constituent-information-last-name
-          value: $NAME_LAST
-          required: true
-        - name: street
-          selector: input#edit-submitted-constituent-information-address-1
-          value: $ADDRESS_STREET
-          required: true
-        - name: street2
-          selector: input#edit-submitted-constituent-information-address-2
-          value: $ADDRESS_STREET_2
-          required: false
-        - name: city
-          selector: input#edit-submitted-constituent-information-city
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip5
-          selector: input#edit-submitted-constituent-information-zip
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone
-          selector: input#edit-submitted-constituent-information-phone
-          value: $PHONE
-          required: false
-        - name: email
-          selector: input#edit-submitted-constituent-information-email
-          value: $EMAIL
-          required: true
-        - name: subject
-          selector: input#edit-submitted-message-details-please-type-the-subject-of-your-message
-          value: $SUBJECT
-          required: true
-        - name: message
-          selector: textarea#edit-submitted-message-details-message
-          value: $MESSAGE
-          required: true
-          options:
-            blacklist: "/\\-\\-/"
+        - selector: div#main_column .feedback-block.opinion a
+    - click_on:
+      - selector: div#main_column .feedback-block.opinion a
+      - wait:
+        - value: 2
     - select:
         - name: prefix
-          selector: select#edit-submitted-constituent-information-prefix
+          selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
           value: $NAME_PREFIX
           required: true
           options:
             Mr.: Mr.
-            Mrs.: Mrs.
             Ms.: Ms.
-            Mr. and Mrs.: Mr. and Mrs.
+            Mrs.: Mrs.
+            Mx.: Mx.
+            Professor: Professor
             Dr.: Dr.
-            Dr. and Mrs.: Dr. and Mrs.
-            Reverend: Reverend
+            Father: Father
             Sister: Sister
-            Pastor: Pastor
-            The Honorable: The Honorable
-            Representative: Representative
-            Senator: Senator
+            Rabbi: Rabbi
+            Reverend: Reverend
+    - fill_in:
+        - name: firstname
+          selector: input#input-356E5F36-5056-A066-6074-9592CE92B2D2
+          value: $NAME_FIRST
+          required: true
+        - name: lastname
+          selector: input#input-356E5C24-5056-A066-600A-182A54465687
+          value: $NAME_LAST
+          required: true
+    - select:
+        - name: street
+          selector: input#input-356E5FDD-5056-A066-6081-FE972EE9E9DA
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#input-356E60B4-5056-A066-6053-80525DD9BEE9
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#input-356E6078-5056-A066-6034-4DED94E3369A
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: select#input-356E5B73-5056-A066-60BE-0B9B6F422B57
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+        - name: zip5
+          selector: input#input-356E5C4B-5056-A066-6054-8C59ADECA3EF
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input#input-356E5FC0-5056-A066-6013-9C5EB3043747
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#email
+          value: $EMAIL
+          required: true
+        - name: email
+          selector: input#input-356E5F19-5056-A066-6018-AC66D9FFA755
+          value: $EMAIL
+          required: true
         - name: topic
-          selector: select#edit-submitted-message-details-topic
+          selector: select#input-356E5B93-5056-A066-6052-9F850C8A291E
           value: $TOPIC
           required: true
-          options:
-            Other: Other
+        - name: subject
+          selector: input#input-356E5DA0-5056-A066-60C3-EF69B2E21E53
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888
+          value: $MESSAGE
+          required: true
     - click_on:
-        - selector: form#webform-client-form-78 input.form-submit
+        - selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "your message has been received"
+      contains: "Thank you for contacting my office."

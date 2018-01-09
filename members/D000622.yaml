@@ -5,8 +5,6 @@ contact_form:
   usePhantomLogging: true
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
-    - find:
-        - selector: div#main_column .feedback-block.opinion a
     - click_on:
       - selector: div#main_column .feedback-block.opinion a
       - wait:

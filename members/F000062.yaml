@@ -29,10 +29,6 @@ contact_form:
           selector: input#field_C44B713C-04AD-411A-9744-6E7F2FF71898
           value: $ADDRESS_CITY
           required: true
-        - name: state
-          selector: select#field_1C62DB7F-A03B-4BC1-AE3F-816C2EC96B89
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
         - name: zip5
           selector: input#field_64D2124B-A227-4F90-AD83-65DBC8175A69
           value: $ADDRESS_ZIP5
@@ -40,10 +36,6 @@ contact_form:
         - name: email
           selector: input#field_D065BDD9-7C1E-4D99-A50E-6A1ADAE8803B
           value: $EMAIL
-          required: true
-        - name: topic
-          selector: div#field_302E8A41-000D-419E-991E-40C7CB96F97C_container
-          value: $TOPIC
           required: true
         - name: message
           selector: textarea#field_130638F0-2EEC-4C6B-83BE-11E83BB5CED3

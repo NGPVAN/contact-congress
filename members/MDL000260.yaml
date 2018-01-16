@@ -9,10 +9,6 @@ contact_form:
           selector: "#ctlContactLegislator_txtName"
           value: $NAME_FULL
           required: true
-        - name: phone
-          selector: "#ctlContactLegislator_txtPhoneNumber"
-          value: "$PHONE"
-          required: true
         - name: Address
           selector: "#ctlContactLegislator_txtAddress"
           value: $ADDRESS_STREET
@@ -36,6 +32,12 @@ contact_form:
         - name: Message
           selector: "#ctlContactLegislator_txtMessage"
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: phone
+          selectors: [ "input#ctlContactLegislator_txtPhoneNumber"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].length > 10 ? values[0].substr(1) : values[0]" ]
           required: true
     - click_on:
         - selector: "#ctlContactLegislator_cmdSubmit"

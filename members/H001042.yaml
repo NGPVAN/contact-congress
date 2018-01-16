@@ -25,10 +25,6 @@ contact_form:
         selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
         value: $ADDRESS_CITY
         required: true
-      - name: state
-        selector: select#input-B03E0669-4040-F985-52CD-11B231195172
-        value: $ADDRESS_STATE_POSTAL_ABBREV
-        required: true
       - name: zip5
         selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
         value: $ADDRESS_ZIP5
@@ -37,10 +33,6 @@ contact_form:
         selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
         value: $PHONE_PARENTHESES
         required: true
-      - name: phone
-        selector: input#input-B03E060F-4040-F985-52CD-AAFEC51D6525
-        value: $PHONE_PARENTHESES
-        required: false
       - name: email
         selector: input#email
         value: $EMAIL
@@ -113,6 +105,8 @@ contact_form:
           - "Transportation"
     - click_on:
       - selector: input[type='submit'][value='Submit']
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200

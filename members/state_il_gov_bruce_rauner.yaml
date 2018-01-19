@@ -53,9 +53,9 @@ contact_form:
             - Support
             - Oppose
             - None
-        - name: subject
+        - name: topic
           selector: select#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Subject
-          value: $SUBJECT
+          value: $TOPIC
           required: true
           options:
             - "1": "Agriculture"

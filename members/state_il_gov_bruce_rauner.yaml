@@ -6,47 +6,47 @@ contact_form:
     - visit: "http://www.illinois.gov/gov/ContactUs/Pages/VoiceAnOpinion.aspx"
     - fill_in:
         - name: firstName
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_First_x0020_Name"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_First_x0020_Name
           value: $NAME_FIRST
           required: true
         - name: lastName
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Last_x0020_Name"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Last_x0020_Name
           value: $NAME_LAST
           required: true
         - name: phone
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Phone"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Phone
           value: $PHONE
           required: true
         - name: street1
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Address"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Address
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_City"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_City
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Zip"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Zip
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Email"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Email
           value: $EMAIL
           required: true
-        - name: message
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Comment"
+        - name: comment
+          selector: textarea#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Comment
           value: $MESSAGE
           required: true
     - select:
         - name: prefix
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Prefix_x0020_Name"
+          selector: select#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Prefix_x0020_Name
           value: $NAME_PREFIX
           options:
             "Mr.": "Mr."
             "Mrs.": "Mrs."
             "Ms.": "Ms."
         - name: position
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Position"
+          selector: select#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Position
           value: "None"
           required: true
           options:
@@ -54,67 +54,35 @@ contact_form:
             - Oppose
             - None
         - name: topic
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Subject"
+          selector: select#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_Subject
           value: $TOPIC
           required: true
           options:
-            - "1497": "After School Program Funding"
-            - "1498": "Agriculture Education Funding"
-            - "1500": "Animal Cruelty and Testing"
-            - "1502": "Bobcat Hunting"
-            - "1503": "Body Cameras for Law Enforcement"
-            - "1504": "Clean Energy Jobs"
-            - "1505": "Closure of Juvenile Correctional Facilities"
-            - "1506": "Closure of State Museums"
-            - "1510": "Concealed Carry"
-            - "1512": "Death Penalty"
-            - "1513": "Developmentally Disabled Programs Funding"
-            - "1514": "Early Intervention Programs"
-            - "1516": "Education Policy Reform"
-            - "1518": "Film Tax Credits"
-            - "1519": "Fracking"
-            - "1520": "Funding for Amtrak Train Services"
-            - "1521": "Funding for Domestic Violence Programs"
-            - "1523": "Funding for Energy Assistance Programs"
-            - "1524": "Funding for Nursing Homes"
-            - "1529": "Gambling Expansion"
-            - "1530": "Gas Prices"
-            - "1531": "Gun Control"
-            - "1539": "Healthcare Reform"
-            - "1540": "High Speed Rail"
-            - "1541": "Higher Education Funding"
-            - "1542": "Homeless Services"
-            - "1543": "IDOT South Suburban/Peotone Airport"
-            - "1545": "Immigration Reform"
-            - "1546": "Independent Maps"
-            - "1547": "Infrastructure Funding"
-            - "1551": "Medicaid Reductions"
-            - "1552": "Medical Marijuana"
-            - "1553": "Mental Health Funding"
-            - "1554": "Minimum Wage Increase"
-            - "1556": "Pension Reform"
-            - "1557": "Prison Reform"
-            - "1558": "Property Tax Freeze"
-            - "1560": "Public Education Funding "
-            - "1561": "Public Transit Funding"
-            - "1562": "Renewable Energy "
-            - "1563": "Right to Work"
-            - "1571": "Social Services Budget Cuts"
-            - "1572": "State Income Tax"
-            - "1573": "Supportive Housing"
-            - "1574": "Tax Reform"
-            - "1575": "Term Limits"
-            - "1578": "the Governor’s Proposed Budget Reductions"
-            - "1576": "The Governor's Job Performance"
-            - "1581": "Updating the Illinois Communications Law"
-            - "1582": "Vehicle Emissions Testing"
-            - "1583": "Welfare Reform"
-            - "1584": "Workers Compensation Reform"
-            - "1585": "Youth Program Funding"
-            - "36": "(Other - Subject not listed)"
+            - "1": "Agriculture"
+            - "2": "Animal Welfare"
+            - "3": "Arts & Humanities"
+            - "4": "Budget"
+            - "5": "Business & Economy"
+            - "6": "Children's Health & Welfare"
+            - "7": "Disability Services"
+            - "8": "Education"
+            - "9": "Energy & Environment"
+            - "10": "Government Reform & Oversight"
+            - "11": "Health & Healthcare"
+            - "12": "Human Rights"
+            - "13": "Immigration"
+            - "14": "Labor & Employment"
+            - "15": "Public Safety"
+            - "16": "Social Services"
+            - "17": "Senior Services"
+            - "18": "Taxes"
+            - "19": "Transportation & Infrastructure"
+            - "20": "Veterans & Military Affairs"
+            - "21": "Voting"
+            - "22": "Other Issues"
     - click_on:
         - value: Submit
-          selector: "#ctl00_m_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_SOIFeedbackSubmit"
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_SOIFeedbackSubmit
   success:
     headers:
       status: 200

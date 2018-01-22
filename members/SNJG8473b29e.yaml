@@ -1,7 +1,7 @@
-bioguide: XXXX
+bioguide: SNJG8473b29e
 contact_form:
   method: post
-  action: /cgi-bin/governor/govmail/govmail_1c_new.pl
+  action: ""
   steps:
     - visit: "http://www.state.nj.us/governor/contact/"
     - select:
@@ -47,8 +47,7 @@ contact_form:
             "Unclaimed Property": "Unclaimed Property"
             "Unemployment": "Unemployment"
     - click_on:
-        - value: Continue...
-          selector: form#govmail button[name='Submit']
+      - selector: form#govmail button[name='Submit']
     - fill_in:
         - name: firstName
           selector: input[name='first']
@@ -65,6 +64,7 @@ contact_form:
         - name: street2
           selector: input[name='address2']
           value: $ADDRESS_STREET_2
+          required: false
         - name: city
           selector: input[name='city']
           value: $ADDRESS_CITY
@@ -88,7 +88,7 @@ contact_form:
         - name: email
           selector: input[name='email']
           value: $EMAIL
-          required: true
+          required: false
         - name: subject
           selector: input[name='subject']
           value: $SUBJECT

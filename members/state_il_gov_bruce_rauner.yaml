@@ -82,7 +82,7 @@ contact_form:
             - "22": "Other Issues"
     - click_on:
         - value: Submit
-          selector: input[type='submit'][value='Submit']
+          selector: input#ctl00_ctl40_g_3a01d56e_b68a_485b_a7d3_43e25d8506d3_SOIFeedbackSubmit
   success:
     headers:
       status: 200

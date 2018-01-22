@@ -4,8 +4,6 @@ contact_form:
   action: ""
   steps:
     - visit: "http://www.mccain.senate.gov/public/index.cfm/contact-form"
-    - wait:
-      - value: 10
     - find:
       - selector: input#field_D5A73635-88FA-4B32-B8B5-274D2F97D77E
     - fill_in:
@@ -101,8 +99,6 @@ contact_form:
     - click_on:
       - value: Submit
         selector: div.buttonHolder input.btn-primary
-    - wait:
-      value: 3
   success:
     headers:
       status: 200

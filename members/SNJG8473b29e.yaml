@@ -47,7 +47,7 @@ contact_form:
             "Unclaimed Property": "Unclaimed Property"
             "Unemployment": "Unemployment"
     - click_on:
-      - selector: form#govmail button[name='Submit']
+        - selector: form#govmail button[name='Submit']
     - fill_in:
         - name: firstName
           selector: input[name='first']

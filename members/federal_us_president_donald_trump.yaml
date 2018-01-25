@@ -56,6 +56,8 @@ contact_form:
         selector: textarea[id='Contact.Case.Description']
         value: $MESSAGE
         required: True
+        options:
+          blacklist: "\n"
     - select:
       - name: state
         selector: select[id='Contact.MailingState']

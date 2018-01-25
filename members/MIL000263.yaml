@@ -1,55 +1,62 @@
 bioguide: MIL000263
 contact_form:
   method: post
-  action: ima_form_post.asp
+  action: ""
   steps:
-    - visit: "http://www.senate.michigan.gov/ima_form.asp?name=COMMENT20&form_path=e:/webforms/rep"
+    - visit: "http://www.senatormargaretobrien.com/contact/"
     - fill_in:
         - name: prefix
-          selector: "input[name='prefix']"
+          selector: input#q_1_prefix
           value: $NAME_PREFIX
           required: false
         - name: fname
-          selector: "input[name='first_name']"
+          selector: input#q_1_first_name
           value: $NAME_FIRST
           required: true
         - name: lname
-          selector: "input[name='last_name']"
+          selector: input#q_1_last_name
           value: $NAME_LAST
           required: true
         - name: address
-          selector: "input[name='street_address']" 
+          selector: input#q_1_addr_1
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "input[name='city']" 
+          selector: input#q_1_city
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "input[name='zip_5']" 
+          selector: input#q_1_zip
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "input[name='phone']"
+          selector: input#q_1_hphone
           value: $PHONE
           required: true
         - name: email
-          selector: "input[name='email']"
+          selector: input#q_1_email
           value: $EMAIL
           required: true
         - name: subject
-          selector: "input[name='subject']"
+          selector: input#q_2
           value: $SUBJECT
           required: false
         - name: message
-          selector: "textarea[name='message']"
+          selector: textarea#q_3
           value: $MESSAGE
           required: true
+    - select:
+      - name: state
+        selector: select#q_1_state
+        value: $ADDRESS_STATE_POSTAL_ABBREV
+        required: true
+        options:
+          MI: Michigan
     - click_on:
         - value: Submit
-          selector: "input[type='submit'][value='Submit Form']"
+          selector: input#btn_submit
   success:
     headers:
       status: 200
     body:
-      contains: Your request has been sent
+      contains: Thank you. Your message

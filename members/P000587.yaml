@@ -2,16 +2,18 @@ bioguide: P000587
 contact_form:
   method: post
   action: ""
-  usePhantomJsLogging: true
+  useChrome: true
   steps:
     - visit: "https://www.whitehouse.gov/contact/"
     - wait:
         - value: 5
     - select:
       - name: type
-        selector: select[id='Contact.Case.B.Who_are_you_trying_to_contact__c'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
+        selector: select[id='Contact.Case.Who_are_you_trying_to_contact__c'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
         value: Contact the President
         required: True
+        options:
+          Contact the President: Contact the President
       - name: prefix
         selector: select[id='Contact.Salutation']
         value: $NAME_PREFIX
@@ -51,12 +53,12 @@ contact_form:
         value: $ADDRESS_ZIP5
         required: True
       - name: message
-        selector: textarea[id='Contact.Case.B.Description']
+        selector: textarea[id='Contact.Case.Description']
         value: $MESSAGE
         required: True
     - select:
       - name: state
-        selector: select[id='Contact.Local_State__c']
+        selector: select[id='Contact.MailingState']
         value: $ADDRESS_STATE_FULL
         required: True
         options:

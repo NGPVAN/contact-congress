@@ -44,7 +44,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: "‘’“”"
+            blacklist: "‘’“”—"
     - click_on:
         - selector: form#Form1 input#Submit1
     - wait:

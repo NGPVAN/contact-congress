@@ -28,4 +28,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "processing your request"
+      contains: "Thank you for your contacting"

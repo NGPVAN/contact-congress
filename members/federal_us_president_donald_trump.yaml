@@ -2,52 +2,63 @@ bioguide: federal_us_president_donald_trump
 contact_form:
   method: post
   action: ""
+  useChrome: true
   steps:
-    - visit: "https://forms.whitehouse.gov/contact/questions-comments"
+    - visit: "https://www.whitehouse.gov/contact/"
+    - wait:
+        - value: 5
     - select:
-      - name: target
-        selector: "#edit-submitted-00nj0000000vdnx"
+      - name: type
+        selector: select[id='Contact.Case.Who_are_you_trying_to_contact__c'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
         value: Contact the President
         required: True
+        options:
+          Contact the President: Contact the President
+      - name: prefix
+        selector: select[id='Contact.Salutation']
+        value: $NAME_PREFIX
+        required: false
+        options:
+          Mr.: Mr.
+          Ms.: Ms.
+          Mrs.: Mrs.
+          Dr.: Dr.
     - fill_in:
       - name: first
-        selector: "#edit-submitted-00nj0000000vdne"
+        selector: input[id='Contact.FirstName']
         value: $NAME_FIRST
         required: True
       - name: last
-        selector: "#edit-submitted-00nj0000000vdnf"
+        selector: input[id='Contact.LastName']
         value: $NAME_LAST
         required: True
       - name: email
-        selector: "#edit-submitted-email"
+        selector: input[id='Contact.Email']
         value: $EMAIL
         required: True
       - name: phone
-        selector: "#edit-submitted-phone-us"
-        value: $PHONE_HYPHENS
+        selector: input[id='Contact.HomePhone']
+        value: $PHONE
         required: True
       - name: street
-        selector: "#edit-submitted-00nj0000000vdnq"
+        selector: textarea[id='Contact.MailingStreet']
         value: $ADDRESS_STREET
         required: True
       - name: city
-        selector: "#edit-submitted-00nj0000000vdmz"
+        selector: input[id='Contact.MailingCity']
         value: $ADDRESS_CITY
         required: True
       - name: zip5
-        selector: "#edit-submitted-postal-code-us"
+        selector: input[id='Contact.MailingPostalCode']
         value: $ADDRESS_ZIP5
         required: True
       - name: message
-        selector: "#edit-submitted-description"
+        selector: textarea[id='Contact.Case.Description']
         value: $MESSAGE
         required: True
-        options:
-          max_length: 2450
-          blacklist: "é’“”()<>-"
     - select:
       - name: state
-        selector: "#edit-submitted-us-states"
+        selector: select[id='Contact.MailingState']
         value: $ADDRESS_STATE_FULL
         required: True
         options:
@@ -114,13 +125,16 @@ contact_form:
           West Virginia: West Virginia
           Wisconsin: Wisconsin
           Wyoming: Wyoming
-    - check:
-      - selector: "#edit-submitted-interest-1"
     - click_on:
-      - value: Send
-        selector: input.webform-submit.button-primary.btn.form-submit
+      - selector: input[id='Contact.Contact_Us_Email_Opt_In__c']
+    - find:
+      - selector: "#btnsubmit"
+    - click_on:
+      - selector: "#btnsubmit"
+    - wait:
+      - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting the White House"
+      contains: "Thank you for your submission"

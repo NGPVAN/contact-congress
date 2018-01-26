@@ -7,7 +7,7 @@ contact_form:
     - fill_in:
         - name: firstname
           selector: input[name='your-name']
-          value: $NAME_FIRST
+          value: $NAME_FULL
           required: true
         - name: email
           selector: input[name='your-email']

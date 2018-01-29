@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.tngopsenate.com/contact"
     - fill_in:
-        - name: firstname
+        - name: fullname
           selector: input[name='your-name']
           value: $NAME_FULL
           required: true
@@ -33,6 +33,10 @@ contact_form:
           selector: input[name='zipcode']
           value: $ADDRESS_ZIP5
           required: true
+        - name: subject
+          selector: input[name='your-subject']
+          value: $SUBJECT
+          required: false          
         - name: message
           selector: textarea[name='your-message']
           value: $MESSAGE

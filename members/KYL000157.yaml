@@ -25,6 +25,10 @@ contact_form:
           selector: "#City"
           value: $ADDRESS_CITY
           required: true
+        - name: county
+          selector: "#County"
+          value: $ADDRESS_COUNTY
+          required: true
         - name: state
           selector: "#State"
           value: $ADDRESS_STATE_FULL

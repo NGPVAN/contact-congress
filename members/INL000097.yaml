@@ -40,7 +40,7 @@ contact_form:
     - click_on:
         - selector: form.wpcf7-form input[type='submit']
     - wait:
-        - value: 20
+        - value: 5
   success:
     headers:
       status: 200

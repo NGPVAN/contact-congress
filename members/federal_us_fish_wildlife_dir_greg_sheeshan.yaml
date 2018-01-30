@@ -1,0 +1,40 @@
+bioguide: federal_us_fish_wildlife_dir_greg_sheeshan
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.fws.gov/duspit/contactus.htm"
+    - fill_in:
+      - name: firstname
+        selector: input[name='FirstName']
+        value: $NAME_FIRST
+        required: false
+      - name: lastname
+        selector: input[name='LastName']
+        value: $NAME_LAST
+        required: false
+      - name: email
+        selector: input[name='Email']
+        value: $EMAIL
+        required: true
+      - name: message
+        selector: textarea[name='Message']
+        value: $MESSAGE
+        required: true
+    - select:
+      - name: state
+        selector: select[name='State']
+        value: $ADDRESS_STATE_FULL
+        required: true
+      - name: country
+        selector: select[name='Country']
+        value: "United States"
+        required: true
+    - click_on:
+      - value: Submit
+        selector: input[type='Submit'][value='Submit Form']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for your message"

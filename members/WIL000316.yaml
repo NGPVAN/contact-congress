@@ -30,7 +30,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: div#contour_form_Contact input[name='submitbtn']
+        - selector: input[type='Submit'][value='Submit']
   success:
     headers:
       status: 200

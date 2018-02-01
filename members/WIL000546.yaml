@@ -30,7 +30,7 @@ contact_form:
           value: $PHONE
           required: false
     - click_on:
-        - selector: div#contour_form_Contactform input[name='submitbtn']
+        - selector: input[type='Submit'][value='Submit']
   success:
     headers:
       status: 200

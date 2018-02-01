@@ -31,7 +31,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: "input[type='submit'][value='Submit']"
+          selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

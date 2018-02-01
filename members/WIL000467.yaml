@@ -3,37 +3,33 @@ contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/krug/Pages/Contact.aspx"
+    - visit: "http://legis.wisconsin.gov/assembly/72/krug/contact/"
     - fill_in:
         - name: message
-          selector: "#legis-cf-comments"
+          selector: textarea[id='d69e4ea5-4957-4b27-f572-cae872e2dc75']
           value: $MESSAGE
           required: true
         - name: email
-          selector: "#legis-cf-email"
+          selector: input[id='c9204231-7756-4e10-cb50-60870fb4bb73']
           value: $EMAIL
           required: true
         - name: name
-          selector: "#legis-cf-name"
+          selector: input[id='f6718dda-0e45-48f9-bf8f-ecfe8a500a9e']
           value: $NAME_FULL
           required: true
         - name: address
-          selector: "#legis-cf-address"
-          value: $ADDRESS_STREET
-          required: true
-        - name: citystatezip
-          selector: "#legis-cf-city-state"
-          value: $ADDRESS_CITY_STATE_ZIP
+          selector: textarea[id='8e26c161-7efd-4d93-af20-7225807d1e36']
+          value: $ADDRESS_FULL
           required: true
         - name: phone
-          selector: "#legis-cf-phone"
+          selector: input[id='8ebc7c5c-a69f-4291-e815-e8585102662b']
           value: $PHONE
           required: true
     - click_on:
         - value: Submit
-          selector: ".legis-email-submit-btn"
+          selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200
     body:
-      contains: Form submitted successfully
+      contains: Thank you

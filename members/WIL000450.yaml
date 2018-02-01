@@ -17,6 +17,10 @@ contact_form:
           selector: div.citystatezipcode input
           value: $ADDRESS_CITY_STATE_ZIP
           required: true
+        - name: phone
+          selector: div.phonecell input
+          value: $PHONE
+          required: false
         - name: email
           selector: div.email input
           value: $EMAIL
@@ -30,7 +34,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: div#contour_form_Contact input[name='submitbtn']
+        - selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

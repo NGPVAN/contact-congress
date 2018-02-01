@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ima_form_post.asp
   steps:
-    - visit: "http://www.senate.michigan.gov/ima_form.asp?name=comment28&form_path=e:/webforms/rep"
+    - visit: "http://www.senatorpetermacgregor.com/contact/"
     - fill_in:
         - name: prefix
           selector: "input[name='prefix']"
@@ -18,15 +18,15 @@ contact_form:
           value: $NAME_LAST
           required: true
         - name: address
-          selector: "input[name='street_address']" 
+          selector: "input[name='street_address']"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "input[name='city']" 
+          selector: "input[name='city']"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "input[name='zip_5']" 
+          selector: "input[name='zip_5']"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone

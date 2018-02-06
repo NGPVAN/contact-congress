@@ -1,0 +1,87 @@
+bioguide: TNL000017
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "http://www.tngopsenate.com/contact/#FSContact1"
+    - fill_in:
+        - name: fullname
+          selector: span.your-name input
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: span.your-email input
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: span.telephone input
+          value: $PHONE
+          required: true
+        - name: address
+          selector: span.streetaddress input
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: span.city input
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: span.state input
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip
+          selector: span.zipcode input
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: subject
+          selector: input[name='your-subject']
+          value: $SUBJECT
+          required: false
+        - name: message
+          selector: span.your-message textarea
+          value: $MESSAGE
+          required: true
+    - select:
+      - name: legislator
+        selector: span.SenatorYouWishtoContact select
+        value: "Sen. Brian Kelsey"
+        required: true
+        options:
+          - Lt. Gov. Ron Ramsey
+          - Sen. Becky Massey
+          - Sen. Bill Ketron
+          - Sen. Bo Watson
+          - Sen. Brian Kelsey
+          - Sen. Dolores Gresham
+          - Sen. Doug Overbey
+          - Sen. Ferrell Haile
+          - Sen. Frank Niceley
+          - Sen. Jack Johnson
+          - Sen. Janice Bowling
+          - Sen. Jim Summerville
+          - Sen. Jim Tracy
+          - Sen. Joey Hensley
+          - Sen. John Stevens
+          - Sen. Ken Yager
+          - Sen. Mae Beavers
+          - Sen. Mark Green
+          - Sen. Mark Norris
+          - Sen. Mike Bell
+          - Sen. Randy McNally
+          - Sen. Rusty Crowe
+          - Sen. Steve Southerland
+          - Sen. Steven Dickerson
+          - Sen. Todd Gardenhire
+    - click_on:
+        - selector: span.contactmethod input[value=Email]
+    - find:
+        - selector: div#content input[value=Send]
+    - click_on:
+        - selector: div#content input[value=Send]
+    - wait:
+        - value: 4
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for your message. It has been sent.

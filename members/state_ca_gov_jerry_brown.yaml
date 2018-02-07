@@ -4,7 +4,7 @@ contact_form:
   action: ""
   IgnoreWebSecurity: true
   steps:
-    - visit: "http://govnews.ca.gov/gov39mail/mail.php"
+    - visit: "https://govapps.gov.ca.gov/gov39mail/index.php"
     - fill_in:
         - name: fname
           selector: "#fname"

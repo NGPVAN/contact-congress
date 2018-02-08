@@ -110,12 +110,12 @@ contact_form:
         selector: input#field_250A9CB8-13DC-40F7-94FB-D301593DB4C9
         value: $SUBJECT
         required: true
-      - name: message
-        selector: textarea#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87
-        value: $MESSAGE
+    - javascript:
+      - name: Message
+        selectors: [ "#message" ]
+        values: [ "$MESSAGE" ]
+        commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
-        options:
-          blacklist: "•"
     - click_on:
       - selector: form.uniForm input[type=submit]
   success:

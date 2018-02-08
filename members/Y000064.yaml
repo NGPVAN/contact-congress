@@ -55,6 +55,12 @@ contact_form:
           required: true
           options:
             blacklist: "/\\-\\-/"
+    - javascript:
+        - name: Message
+          selectors: [ "textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          required: true
     - select:
         - name: prefix
           selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F

@@ -45,7 +45,7 @@ contact_form:
         - name: Message
           selectors: [ "textarea#input-4154995F-09DE-911F-DD8B-93796597BB52" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = values[0].replace(/[\\*]/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
         - name: prefix

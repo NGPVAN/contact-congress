@@ -41,12 +41,12 @@ contact_form:
         selector: input#edit-submitted-email-address
         value: $EMAIL
         required: true
+    - javascript:
       - name: Message
-        selector: textarea#edit-submitted-message
-        value: $MESSAGE
+        selectors: [ "textarea#edit-submitted-message" ]
+        values: [ "$MESSAGE" ]
+        commands: [ "elements[0].value = values[0].replace(/\\-\\-/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
-        options:
-          blacklist: "/\\-\\-/"
     - find:
       - selector: select#edit-submitted-issue
     - select:

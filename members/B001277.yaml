@@ -86,10 +86,12 @@ contact_form:
         selector: "#subject"
         value: "$SUBJECT"
         required: true
-      - name: comments
-        selector: "#comments"
-        value: "$MESSAGE"
-        required: true
+    - javascript:
+        - name: Message
+          selectors: [ "#comments" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          required: true
     - select:
       - name: salutation
         selector: "#salutation"

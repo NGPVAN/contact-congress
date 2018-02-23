@@ -49,12 +49,12 @@ contact_form:
           selector: "#input-8896A1BE-5056-A066-604F-3010D7864A7D"
           value: $SUBJECT
           required: true
-        - name: message
-          selector: "#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B"
-          value: $MESSAGE
+    - javascript:
+        - name: Message
+          selectors: [ "textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = values[0].replace(/[\\-]/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
-          options:
-            blacklist: "-"
     - select:
         - name: prefix
           selector: "#input-674234EB-FE2E-E1D2-DA0B-544DB1E29219"

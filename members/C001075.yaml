@@ -50,10 +50,12 @@ contact_form:
         selector: "#input-AB721CE8-4040-F985-52CD-9E550E8A76AA"
         value: $EMAIL
         required: true
-      - name: message
-        selector: "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51"
-        value: $MESSAGE
-        required: true
+    - javascript:
+        - name: Message
+          selectors: [ "textarea#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          required: true
     - select:
       - name: prefix
         selector: "#input-AB59F08A-4040-F985-52CD-7633AA11C65E"

@@ -47,7 +47,7 @@ contact_form:
         required: true
     - javascript:
         - name: Message
-          selectors: [ textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B ]
+          selectors: [ "textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B" ]
           values: [ "$MESSAGE" ]
           commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true

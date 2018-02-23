@@ -4,61 +4,59 @@ contact_form:
   action: /contact/email
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
-    - select:
-        - name: actions
-          selector: select#actions
-          value: Send an email to comment on legislation
-          required: true
-          options:
-            Send an email to comment on legislation: Send an email to comment on legislation
-    - wait:
-        - value: 3
+    - click_on:
+      - selector: div#morestuffbutton.btn
+      - wait:
+        - value: 2
     - find:
         - selector: input#fname
     - fill_in:
-        - name: fname
-          selector: "#fname"
+        - name: firstname
+          selector: input#input-075D915C-5056-A066-6016-31581A939FE3
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#lname"
+        - name: lastname
+          selector: input#input-075DA374-5056-A066-607C-9E15F05BFB27
           value: $NAME_LAST
           required: true
-        - name: mailing_streetAddress1
-          selector: "#mailing_streetAddress1"
+        - name: street
+          selector: input#input-0770C9EF-5056-A066-6053-358F74525EF6
           value: $ADDRESS_STREET
-          required: true
-        - name: mailing_city
-          selector: "#mailing_city"
+        - name: street2
+          selector: input#input-0770ECF2-5056-A066-6062-E6D4680C24E5
+          value: "$ADDRESS_STREET_2"
+          required: false
+        - name: city
+          selector: input#input-077194F7-5056-A066-60B0-6A8E22439BD3
           value: $ADDRESS_CITY
           required: true
-        - name: mailing_zipCode
-          selector: "#mailing_zipCode"
+        - name: zip5
+          selector: input#input-07723B03-5056-A066-603E-BE90CECEC5C6
           value: $ADDRESS_ZIP5
           required: true
-        - name: home_phone_number
-          selector: "#home_phone_number"
+        - name: phone
+          selector: input#input-07732C3A-5056-A066-6049-CE975D761F0D
           value: $PHONE
           required: true
-        - name: email_address
-          selector: "#email"
+        - name: email
+          selector: input#email
           value: $EMAIL
           required: true
         - name: verify_email
-          selector: "#verify_email"
+          selector: input#input-07742BA1-5056-A066-60F2-B34A7A496C32
           value: $EMAIL
           required: true
-        - name: subjecttext
-          selector: "#subjecttext"
+        - name: subject
+          selector: input#input-07B2E314-5056-A066-6033-904406BB247F
           value: $SUBJECT
-          required: true
+          required: false
         - name: message
-          selector: "#message"
+          selector: textarea#commentbox
           value: $MESSAGE
           required: true
     - select:
-        - name: salutation
-          selector: "#salutation"
+        - name: prefix
+          selector: select#prefixfocus
           value: $NAME_PREFIX
           required: true
           options:
@@ -125,8 +123,8 @@ contact_form:
             Army - Private: Army - Private
             Coast Guard - Admiral: Coast Guard - Admiral
             Coast Guard - Vice Admiral: Coast Guard - Vice Admiral
-            "Coast Guard - Rear Admiral, Upper Half": "Coast Guard - Rear Admiral, Upper Half"
-            "Coast Guard - Rear Admiral, Lower Half": "Coast Guard - Rear Admiral, Lower Half"
+            Coast Guard - Rear Admiral, Upper Half": Coast Guard - Rear Admiral, Upper Half
+            Coast Guard - Rear Admiral, Lower Half": Coast Guard - Rear Admiral, Lower Half
             Coast Guard - Captain: Coast Guard - Captain
             Coast Guard - Commander: Coast Guard - Commander
             Coast Guard - Lieutenant Commander: Coast Guard - Lieutenant Commander
@@ -196,13 +194,71 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
+        - name: topic
+          selector: select#input-07B1B29B-5056-A066-605E-4F6E6A832654
+          value: $TOPIC
+          required: false
+          options:
+            "Abortion": Abortion
+            "Foreign Affairs": Afghanistan
+            "Agriculture": Agriculture
+            "Other": Animal Welfare
+            "Budget": Appropriations
+            "Budget": Budget
+            "Commerce": Business
+            "Campaign-Finance": Campaign Finance Reform
+            "Children-Family-Adoption": Children
+            "Civil-Rights": Civil Rights
+            "Antitrust/Competition": Antitrust/Competition
+            "Appropriations": Appropriations
+            "Arts and Culture": Arts and Culture
+            "Banking": Banking
+            "Campaign Finance": Campaign Finance
+            "Child Care/Child Welfare": Child Care/Child Welfare
+            "Crime-and-Drugs": Crime
+            "Education": Education
+            "Elections": Election Reform
+            "Energy": Energy
+            "Environment": Environment
+            "Homeland-Security": FEMA
+            "Federal-Workers": Federal Employees
+            "Foreign Affairs": Foreign Affairs
+            "Economy": Gas and Oil Prices
+            "Guns": Guns
+            "Judiciary": Hate Crimes
+            "Health": Health
+            "Homeland-Security": Homeland Security
+            "Housing": Housing
+            "Other": Human Rights
+            "Immigration": Immigration
+            "Foreign Affairs": Iraq
+            "Judiciary": Judiciary
+            "Labor": Labor
+            "Health": Medicaid
+            "Other": Other
+            "Labor": Pensions
+            "Postal-Service": Postal Service
+            "Aging-and-Seniors": Aging
+            "Social Security": Social Security
+            "Science": Space
+            "Tax": Taxes
+            "Telecom": Telecommunications
+            "Trade": Trade
+            "Transportation": Transportation
+            "Veterans": Veterans
+        - name: state
+          selector: select#input-078B9084-5056-A066-60E8-D01B6583B863
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            NC: "NC"
     - click_on:
-        - selector: "#response"
-        - selector: "#side-search-btn"
-    - find:
-        - selector: ".headline"
+       - value: Submit
+         selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for contacting Senator Burr.
+      contains: Thank you for sending your message to Senator Burr.

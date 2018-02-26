@@ -5,11 +5,11 @@ contact_form:
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
     - click_on:
-      - selector: div#morestuffbutton.btn
+      - selector: div#morestuffbutton
       - wait:
         - value: 2
     - find:
-        - selector: input#fname
+        - selector: select#prefixfocus
     - fill_in:
         - name: firstname
           selector: input#input-075D915C-5056-A066-6016-31581A939FE3
@@ -50,10 +50,10 @@ contact_form:
         - name: subject
           selector: input#input-07B2E314-5056-A066-6033-904406BB247F
           value: $SUBJECT
-          required: true
+          required: false
     - javascript:
         - name: Message
-          selectors: [ "textarea#commentbox" ] 
+          selectors: [ "textarea#commentbox" ]
           values: [ "$MESSAGE" ]
           commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true

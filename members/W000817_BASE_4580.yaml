@@ -1,0 +1,136 @@
+bioguide: W000817
+contact_form:
+  method: POST
+  action: "https://www.warren.senate.gov/?p=email_senator&clear_cache=1"
+  steps:
+    - visit: "https://www.warren.senate.gov/?p=email_senator"
+    - find:
+      - selector: form#thisForm
+    - fill_in:
+      - name: firstName
+        selector: input#fname
+        value: "$NAME_FIRST"
+        required: true
+      - name: lastName
+        selector: input#lname
+        value: "$NAME_LAST"
+        required: true
+      - name: Address1
+        selector: input#address1
+        value: "$ADDRESS_STREET"
+        required: true
+      - name: Address2
+        selector: input#address2
+        value: "$ADDRESS_STREET_2"
+      - name: city
+        selector: input#city
+        value: "$ADDRESS_CITY"
+        required: true
+      - name: zip
+        selector: form#thisForm input#zip
+        value: "$ADDRESS_ZIP5"
+        required: true
+      - name: phone
+        selector: input#phone
+        value: "$PHONE"
+        required: true
+      - name: email
+        selector: form#thisForm input#email
+        value: "$EMAIL"
+        required: true
+      - name: vemail
+        selector: input#vemail
+        value: "$EMAIL"
+        required: true
+      - name: messageSubject
+        selector: input#subject
+        value: "$SUBJECT"
+        required: true
+      - name: messageBody
+        selector: textarea#msgbody
+        value: "$MESSAGE"
+        required: true
+    - select:
+      - name: Prefix
+        selector: select#prefix
+        value: "$NAME_PREFIX"
+        required: false
+        options:
+          Mr.: Mr.
+          Mrs.: Mrs.
+          Ms.: Ms.
+          Dr.: Dr.
+      - name: Subject
+        selector: select#issue_subject
+        value: $TOPIC
+        required: true
+        options:
+          "Abortion": Abortion
+          "Adoption/Foster Care": Adoption/Foster Care
+          "Aging": Aging
+          "Agriculture": Agriculture
+          "Animal Welfare": Animal Welfare
+          "Antitrust/Competition": Antitrust/Competition
+          "Appropriations": Appropriations
+          "Arts and Culture": Arts and Culture
+          "Banking": Banking
+          "Budget": Budget
+          "Campaign Finance": Campaign Finance
+          "Child Care/Child Welfare": Child Care/Child Welfare
+          "Civil Rights": Civil Rights
+          "Commerce": Commerce
+          "Consumer Protection": Consumer Protection
+          "Crime And Justice": Crime And Justice
+          "Defense and Military": Defense and Military
+          "Disability": Disability
+          "Domestic Violence": Domestic Violence
+          "Drugs (Illegal)": Drugs (Illegal)
+          "Economy": Economy
+          "Education - Early Childhood": Education - Early Childhood
+          "Education - Elementary and Secondary": Education - Elementary and Secondary
+          "Education - Post-Secondary": Education - Post-Secondary
+          "Energy": Energy
+          "Environment": Environment
+          "Flag Requests": Flag Requests
+          "Food Safety": Food Safety
+          "Foreign Affairs": Foreign Affairs
+          "Grants": Grants
+          "Guns": Guns
+          "Health": Health
+          "Historical Preservation": Historical Preservation
+          "Homeland Security": Homeland Security
+          "Housing": Housing
+          "Immigration": Immigration
+          "Intellectual Property": Intellectual Property
+          "Job Training": Job Training
+          "Judicial Nominations": Judicial Nominations
+          "Judiciary": Judiciary
+          "Labor and Unions": Labor and Unions
+          "Medicaid/Medicare": Medicaid/Medicare
+          "Meeting Request": Meeting Request
+          "Municipal and State Government": Municipal and State Government
+          "Native Americans": Native Americans
+          "Natural Disasters": Natural Disasters
+          "Pensions and Retirement": Pensions and Retirement
+          "Postal Issues": Postal Issues
+          "Science/Technology/Space": Science/Technology/Space
+          "Small Business": Small Business
+          "Social Security": Social Security
+          "Start-Ups and Entrepreneurs": Start-Ups and Entrepreneurs
+          "TANF and Low-Income Benefits": TANF and Low-Income Benefits
+          "Taxes": Taxes
+          "Telecommunications": Telecommunications
+          "Tour Request": Tour Request
+          "Trade": Trade
+          "Transportation and Infrastructure": Transportation and Infrastructure
+          "Unemployment Insurance": Unemployment Insurance
+          "Veterans": Veterans
+          "Women's Issues": "Women's Issues"
+    - click_on:
+      - value: Submit
+        selector: form#thisForm input[value='Submit']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your message has been sent"

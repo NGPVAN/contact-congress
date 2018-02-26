@@ -117,11 +117,9 @@ contact_form:
           selector: input#input-356E5DA0-5056-A066-60C3-EF69B2E21E53
           value: $SUBJECT
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: message
+          selector: textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888
+          value: $MESSAGE
           required: true
     - click_on:
         - selector: input[type='submit'][value='Submit']

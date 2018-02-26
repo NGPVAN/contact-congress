@@ -41,12 +41,12 @@ contact_form:
           selector: input#input-413A1B60-A672-8A13-9552-69CB2032BE16
           value: $PHONE
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#input-4154995F-09DE-911F-DD8B-93796597BB52" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/[\\*]/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: comments
+          selector: textarea#input-4154995F-09DE-911F-DD8B-93796597BB52
+          value: $MESSAGE
           required: true
+          options:
+            blacklist: "*"
     - select:
         - name: prefix
           selector: select#input-41379D3E-BA76-1EEF-C6C5-C18565BAA26C

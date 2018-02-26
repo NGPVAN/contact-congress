@@ -17,10 +17,6 @@ contact_form:
         selector: "input#edit-submitted-email"
         value: $EMAIL
         required: true
-      - name: address
-        selector: "textarea#edit-submitted-street-address"
-        value: $ADDRESS_STREET
-        required: true
       - name: zip5
         selector: "input#edit-submitted-zip"
         value: $ADDRESS_ZIP5
@@ -34,12 +30,12 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 2500
+          max_length: 2400
     - wait:
       - value: 3
     - click_on:
       - value: Submit
-        selector: button[value='Submit'][type='submit']
+        selector: form#webform-client-form-6601 button.form-submit
   success:
     headers:
       status: 200

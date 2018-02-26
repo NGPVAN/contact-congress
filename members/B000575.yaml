@@ -47,12 +47,6 @@ contact_form:
         required: true
         options:
           max_length: 1950
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#field_1FCD0A32-C2B6-40E7-9D3F-18DE98BF7997" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-        required: true
     - select:
       - name: topic
         selector: select#field_FF576494-50CE-42FC-AFF0-A14F510DC4D8

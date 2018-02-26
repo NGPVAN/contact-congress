@@ -47,11 +47,9 @@ contact_form:
           selector: input#field_06A8C75E-4922-470D-ACFF-44367138678C
           value: $SUBJECT
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#field_716E154B-9C67-4EDE-97AC-A867C5556908" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: message
+          selector: textarea#field_716E154B-9C67-4EDE-97AC-A867C5556908
+          value: $MESSAGE
           required: true
     - select:
         - name: topic

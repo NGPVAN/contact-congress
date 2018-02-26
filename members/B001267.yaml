@@ -49,11 +49,9 @@ contact_form:
           selector: "#gen-fieldid-25"
           value: $SUBJECT
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#gen-fieldid-27" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: msg
+          selector: "#gen-fieldid-27"
+          value: $MESSAGE
           required: true
     - select:
         - name: Prefix

@@ -90,11 +90,9 @@ contact_form:
           selector: "#verify_email"
           value: $EMAIL
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "#message" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: message
+          selector: "#message"
+          value: $MESSAGE
           required: true
     - select:
         - name: salutation

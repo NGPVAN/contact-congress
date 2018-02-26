@@ -41,11 +41,9 @@ contact_form:
           selector: "#messageSubject"
           value: $SUBJECT
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "#MessageBody" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: MessageBody
+          selector: "#MessageBody"
+          value: $MESSAGE
           required: true
     - select:
         - name: Prefix

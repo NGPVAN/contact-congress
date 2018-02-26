@@ -39,12 +39,6 @@ contact_form:
         required: true
         options:
           max_legth: 10000
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#field_5EF876CF-9476-427B-A01B-25AAFD0E013D" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-        required: true
     - select:
       - name: prefix
         selector: select#field_96A937C7-25E8-4B18-8EA7-63A138E06211

@@ -93,12 +93,12 @@ contact_form:
           selector: "#subjecttext"
           value: $SUBJECT
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "#message" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/[\\%]/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        - name: message
+          selector: "#message"
+          value: $MESSAGE
           required: true
+          options:
+            blacklist: "%"
     - select:
         - name: salutation
           selector: "#salutation"

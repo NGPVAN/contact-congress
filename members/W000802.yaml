@@ -47,12 +47,10 @@ contact_form:
         selector: input#input-BA954B7C-4040-F985-52CD-CB3A0A43C0DA
         value: $SUBJECT
         required: true
-    - javascript:
-        - name: message
-          selectors: [ "textarea#input-BA957EB0-4040-F985-52CD-CF349BA209E1" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-          required: true
+      - name: message
+        selector: textarea#input-BA957EB0-4040-F985-52CD-CF349BA209E1
+        value: $MESSAGE
+        required: true
     - select:
       - name: prefix
         selector: select#input-BA74A203-4040-F985-52CD-D9912DECAEFB

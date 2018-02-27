@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.wyden.senate.gov/contact/email-ron"
     - click_on:
-      - selector: div .opinion
+      - selector: div.opinion
       - wait:
         - value: 2
     - fill_in:

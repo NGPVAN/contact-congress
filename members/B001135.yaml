@@ -126,8 +126,8 @@ contact_form:
             Army - Private: Army - Private
             Coast Guard - Admiral: Coast Guard - Admiral
             Coast Guard - Vice Admiral: Coast Guard - Vice Admiral
-            Coast Guard - Rear Admiral, Upper Half": Coast Guard - Rear Admiral, Upper Half
-            Coast Guard - Rear Admiral, Lower Half": Coast Guard - Rear Admiral, Lower Half
+            Coast Guard - Rear Admiral, Upper Half: Coast Guard - Rear Admiral, Upper Half
+            Coast Guard - Rear Admiral, Lower Half: Coast Guard - Rear Admiral, Lower Half
             Coast Guard - Captain: Coast Guard - Captain
             Coast Guard - Commander: Coast Guard - Commander
             Coast Guard - Lieutenant Commander: Coast Guard - Lieutenant Commander
@@ -176,8 +176,8 @@ contact_form:
             Marine Corps - Private: Marine Corps - Private
             Navy - Admiral: Navy - Admiral
             Navy - Vice Admiral: Navy - Vice Admiral
-            "Navy - Rear Admiral, Upper Half": "Navy - Rear Admiral, Upper Half"
-            "Navy - Rear Admiral, Lower Half": "Navy - Rear Admiral, Lower Half"
+            Navy - Rear Admiral, Upper Half: "Navy - Rear Admiral, Upper Half"
+            Navy - Rear Admiral, Lower Half: "Navy - Rear Admiral, Lower Half"
             Navy - Captain: Navy - Captain
             Navy - Commander: Navy - Commander
             Navy - Lieutenant Commander: Navy - Lieutenant Commander

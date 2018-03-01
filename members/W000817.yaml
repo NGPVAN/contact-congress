@@ -1,69 +1,160 @@
 bioguide: W000817
 contact_form:
   method: POST
-  action: "https://www.warren.senate.gov/?p=email_senator&clear_cache=1"
+  action: ""
   steps:
-    - visit: "https://www.warren.senate.gov/?p=email_senator"
+    - visit: "https://www.warren.senate.gov/contact/shareyouropinion"
     - find:
-      - selector: form#thisForm
+      - selector: div#form-6AC10D77-F899-5659-3470-9DAFE25FCA0A
     - fill_in:
       - name: firstName
-        selector: input#fname
+        selector: input#input-6E6B5C1A-FBEE-82D9-79BA-918FB2300203
         value: "$NAME_FIRST"
         required: true
       - name: lastName
-        selector: input#lname
+        selector: input#input-6E6B5C4C-FF9C-19CB-5865-717F07460DDB
         value: "$NAME_LAST"
         required: true
       - name: Address1
-        selector: input#address1
+        selector: input#input-6E8749CA-AED0-06CE-B886-9542B0A4DE8C
         value: "$ADDRESS_STREET"
         required: true
       - name: Address2
-        selector: input#address2
+        selector: input#input-6E8749F1-AED7-3125-A72E-C31965247325
         value: "$ADDRESS_STREET_2"
+        required: false
       - name: city
-        selector: input#city
+        selector: input#input-6E874A0E-A5B2-5A49-619E-D86CD80578B6
         value: "$ADDRESS_CITY"
         required: true
       - name: zip
-        selector: form#thisForm input#zip
+        selector: input#input-6E874A59-9287-8C40-CDB8-36C88217C5A1
         value: "$ADDRESS_ZIP5"
         required: true
       - name: phone
-        selector: input#phone
+        selector: input#input-6E7ACCB4-CF49-4BEC-BEDF-147F54CDB37E
         value: "$PHONE"
         required: true
       - name: email
-        selector: form#thisForm input#email
+        selector: input#email
         value: "$EMAIL"
-        required: true
-      - name: vemail
-        selector: input#vemail
-        value: "$EMAIL"
-        required: true
-      - name: messageSubject
-        selector: input#subject
-        value: "$SUBJECT"
         required: true
     - javascript:
       - name: Message
-        selectors: [ "textarea#msgbody" ]
+        selectors: [ "textarea#input-6E903406-C8A3-34FA-F9C6-550E7249635C" ]
         values: [ "$MESSAGE" ]
         commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
     - select:
       - name: Prefix
-        selector: select#prefix
+        selector: select#input-6E6B5C00-D7DC-FF03-73F7-321CE333AA3A
         value: "$NAME_PREFIX"
-        required: false
+        required: true
         options:
-          Mr.: Mr.
-          Mrs.: Mrs.
-          Ms.: Ms.
-          Dr.: Dr.
-      - name: Subject
-        selector: select#issue_subject
+          "Mr.": "Mr."
+          "Ms.": "Ms."
+          "Mrs.": "Mrs."
+          "Dr.": "Dr."
+          "Professor": "Professor"
+          "Father": "Father"
+          "Sister": "Sister"
+          "Rabbi": "Rabbi"
+          "Reverend": "Reverend"
+          "General": "Air Force - General"
+          "Lieutenant General": "Air Force - Lieutenant General"
+          "Major General": "Air Force - Major General"
+          "Brigadier General": "Air Force - Brigadier General"
+          "Colonel": "Air Force - Colonel"
+          "Lieutenant Colonel": "Air Force - Lieutenant Colonel"
+          "Major": "Air Force - Major"
+          "Captain": "Air Force - Captain"
+          "First Lieutenant": "Air Force - First Lieutenant"
+          "Second Lieutenant": "Air Force - Second Lieutenant"
+          "Chief Master Sergeant of the Air Force": "Air Force - Chief Master Sergeant of the Air Force"
+          "Command  Chief Master Sergeant": "Air Force - Command  Chief Master Sergeant"
+          "First Sergeant (E-9)": "Air Force - First Sergeant (E-9)"
+          "Chief Master Sergeant": "Air Force - Chief Master Sergeant"
+          "First Sergeant (E-8)": "Air Force - First Sergeant (E-8)"
+          "Senior Master Sergeant": "Air Force - Senior Master Sergeant"
+          "First Sergeant (E-7)": "Air Force - First Sergeant (E-7)"
+          "Fleet Admiral": "Fleet Admiral"
+          "Master Sergeant": "Air Force - Master Sergeant"
+          "Technical Sergeant": "Air Force - Technical Sergeant"
+          "Staff Sergeant": "Air Force - Staff Sergeant"
+          "Senior Airman": "Air Force - Senior Airman"
+          "Airman First Class": "Air Force - Airman First Class"
+          "Airman": "Air Force - Airman"
+          "Airman Basic": "Air Force - Airman Basic"
+          "General": "Army - General"
+          "Lieutenant General": "Army - Lieutenant General"
+          "Major General": "Army - Major General"
+          "Brigadier General": "Army - Brigadier General"
+          "Colonel": "Army - Colonel"
+          "Lieutenant Colonel": "Army - Lieutenant Colonel"
+          "Major": "Army - Major"
+          "Captain": "Army - Captain"
+          "First Lieutenant": "Army - First Lieutenant"
+          "Second Lieutenant": "Army - Second Lieutenant"
+          "Chief Warrant Officer 5": "Army - Chief Warrant Officer"
+          "Chief Warrant Officer 4": "Army - Chief Warrant Officer"
+          "Chief Warrant Officer 3": "Army - Chief Warrant Officer"
+          "Chief Warrant Officer 2": "Army - Chief Warrant Officer"
+          "Warrant Officer": "Army - Warrant Officer"
+          "Sergeant Major of the Army": "Army - Sergeant Major"
+          "Command Sergeant Major": "Army - Command Sergeant Major"
+          "Sergeant Major": "Army - Sergeant Major"
+          "First Sergeant": "Army - First Sergeant"
+          "Master Sergeant": "Army - Master Sergeant"
+          "Sergeant First Class": "Army - Sergeant First Class"
+          "Staff Sergeant": "Army - Staff Sergeant"
+          "Sergeant": "Army - Sergeant"
+          "Corporal": "Army - Corporal"
+          "Specialist": "Army - Specialist"
+          "Private First Class": "Army - Private First Class"
+          "Private (E-2)": "Private (E-2)"
+          "Private Army - Private": "Private Army - Private"
+          "Admiral Coast Guard - Admiral": "Admiral Coast Guard - Admiral"
+          "Vice Admiral Coast Guard - Vice Admiral": "Vice Admiral Coast Guard - Vice Admiral"
+          "Rear Admiral, Upper Half Coast Guard - Rear Admiral, Upper Half": "Rear Admiral, Upper Half Coast Guard - Rear Admiral, Upper Half"
+          "Rear Admiral, Lower Half Coast Guard - Rear Admiral, Lower Half": "Rear Admiral, Lower Half Coast Guard - Rear Admiral, Lower Half"
+          "Captain Coast Guard - Captain": "Captain Coast Guard - Captain"
+          "Commander Coast Guard - Commander": "Commander Coast Guard - Commander"
+          "Lieutenant Commander Coast Guard - Lieutenant Commander": "Lieutenant Commander Coast Guard - Lieutenant Commander"
+          "Lieutenant Coast Guard - Lieutenant":  "Lieutenant Coast Guard - Lieutenant"
+          "Lieutenant Junior Grade Coast Guard - Lieutenant Junior Grade": "Lieutenant Junior Grade Coast Guard - Lieutenant Junior Grade"
+          "Chief Warrant Officer - 4 Coast Guard - Chief Warrant Officer - 4": "Chief Warrant Officer - 4 Coast Guard - Chief Warrant Officer - 4"
+          "Chief Warrant Officer - 3 Coast Guard - Chief Warrant Officer - 3": "Chief Warrant Officer - 3 Coast Guard - Chief Warrant Officer - 3"
+          "Chief Warrant Officer - 2 Coast Guard - Chief Warrant Officer - 2": "Chief Warrant Officer - 2 Coast Guard - Chief Warrant Officer - 2"
+          "Ensign Coast Guard - Ensign": "Ensign Coast Guard - Ensign"
+          "Master Chief Petty Officer of the Coast Guard Coast Guard - Master Chief Petty Officer of the Coast Guard": "Master Chief Petty Officer of the Coast Guard Coast Guard - Master Chief Petty Officer of the Coast Guard"
+          "Master Chief Petty Officer Coast Guard - Master Chief Petty Officer": "Master Chief Petty Officer Coast Guard - Master Chief Petty Officer"
+          "Senior Chief Petty Officer Coast Guard - Senior Chief Petty Officer": "Senior Chief Petty Officer Coast Guard - Senior Chief Petty Officer"
+          "Chief Petty Officer Coast Guard - Chief Petty Officer": "Chief Petty Officer Coast Guard - Chief Petty Officer"
+          "Petty Officer First Class Coast Guard - Petty Officer First Class":  "Petty Officer First Class Coast Guard - Petty Officer First Class"
+          "Petty Officer Second Class Coast Guard - Petty Officer Second Class": "Petty Officer Second Class Coast Guard - Petty Officer Second Class"
+          "Petty Officer Third Class Coast Guard - Petty Officer Third Clas": "Petty Officer Third Class Coast Guard - Petty Officer Third Clas"
+          "Seaman Coast Guard - Seaman": "Seaman Coast Guard - Seaman"
+          "Seaman Apprentice Coast Guard - Seaman Apprentice":  "Seaman Apprentice Coast Guard - Seaman Apprentice"
+          "Seaman Recruit Coast Guard - Seaman Recruit": "Seaman Recruit Coast Guard - Seaman Recruit"
+          "General Marine Corps - General": "General Marine Corps - General"
+          "Lieutenant General Marine Corps - Lieutenant General": "Lieutenant General Marine Corps - Lieutenant General"
+          "Major General Marine Corps - Major General": "Major General Marine Corps - Major General"
+          "Brigadier General Marine Corps - Brigadier General": "Brigadier General Marine Corps - Brigadier General"
+          "Colonel Marine Corps - Colonel": "Colonel Marine Corps - Colonel"
+          "Lieutenant Colonel Marine Corps - Lieutenant Colonel": "Lieutenant Colonel Marine Corps - Lieutenant Colonel"
+          "Major Marine Corps - Major": "Major Marine Corps - Major"
+          "Captain Marine Corps - Captain": "Captain Marine Corps - Captain"
+          "First Lieutenant Marine Corps - First Lieutenant": "First Lieutenant Marine Corps - First Lieutenant"
+          "Second Lieutenant Marine Corps - Second Lieutenant": "Second Lieutenant Marine Corps - Second Lieutenant"
+          "Chief Warrant Officer - 5 Marine Corps - Chief Warrant Officer - 5": "Chief Warrant Officer - 5 Marine Corps - Chief Warrant Officer - 5"
+          "Chief Warrant Officer - 4 Marine Corps - Chief Warrant Officer - 4": "Chief Warrant Officer - 4 Marine Corps - Chief Warrant Officer - 4"
+          "Chief Warrant Officer - 3 Marine Corps - Chief Warrant Officer - 3": "Chief Warrant Officer - 3 Marine Corps - Chief Warrant Officer - 3"
+          "Chief Warrant Officer - 2 Marine Corps - Chief Warrant Officer - 2": "Chief Warrant Officer - 2 Marine Corps - Chief Warrant Officer - 2"
+          "Warrant Officer Marine Corps - Warrant Officer": "Warrant Officer Marine Corps - Warrant Officer"
+          "Sergeant Major of the Marine Corps Marine Corps - Sergeant Major of the Marine Corps": "Sergeant Major of the Marine Corps Marine Corps - Sergeant Major of the Marine Corps"
+          "Sergeant Major Marine Corps - Sergeant Major": "Sergeant Major Marine Corps - Sergeant Major"
+      - name: topic
+        selector: select#input-6E8F252A-9A7A-9A14-E3C0-18D8421D0C08
         value: $TOPIC
         required: true
         options:
@@ -128,9 +219,17 @@ contact_form:
           "Unemployment Insurance": Unemployment Insurance
           "Veterans": Veterans
           "Women's Issues": "Women's Issues"
+      - name: state
+        selector: select#input-6E874A34-E91F-1431-85D6-D1A2A8C0445E
+        value: $ADDRESS_STATE_POSTAL_ABBREV
+        required: true
+        options:
+          MA: "MA"
     - click_on:
       - value: Submit
-        selector: form#thisForm input[value='Submit']
+        selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200

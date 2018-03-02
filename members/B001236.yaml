@@ -59,7 +59,7 @@ contact_form:
           "Pastor": "Pastor"
     - click_on:
       - value: Submit
-        selector: "#submit_ED3BC819-9B16-4EE9-B32C-0B529718DF3F"
+        selector: input[type='submit'][value='Submit']
     - wait:
       - value: 10
   success:

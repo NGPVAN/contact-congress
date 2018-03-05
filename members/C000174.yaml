@@ -5,10 +5,6 @@ contact_form:
   steps:
     - visit: "http://www.carper.senate.gov/public/index.cfm/email-senator-carper"
     - fill_in:
-      - name: prefix
-        selector: input#field_E9631D45-016E-495F-9FA4-8CD94DB04F33
-        value: $NAME_PREFIX
-        required: true
       - name: first
         selector: input#field_9B220BDF-2254-4FD5-AAAC-261352486679
         value: $NAME_FIRST
@@ -88,9 +84,27 @@ contact_form:
           "Telecommunications": "TV/Radio/Internet/Telecommunications"
           "Veterans": "Veteran's Issues"
           "Welfare": "Welfare"
+      - name: prefix
+        selector: select#field_E01DF0C9-9113-4B77-90AD-BAC1914775CB
+        value: $NAME_PREFIX
+        required: true
+        options:
+          Mr.: Mr.
+          Mr. and Mr.: Mr. and Mr.
+          Mrs.: Mrs.
+          Mrs. and Mrs.: Mrs. and Mrs.
+          Ms.: Ms.
+          Mr. and Mrs.: Mr. and Mrs.
+          Dr.: Dr.
+          Dr and Dr: Dr and Dr
+          Dr. and Mr.: Dr. and Mr.
+          Dr. and Mrs.: Dr. and Mrs.
+          Reverend: Reverend
+          Pastor: Pastor
+          Sister: Sister
     - click_on:
       - value: Submit
-        selector: form.uniForm div.buttonHolder input
+        selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

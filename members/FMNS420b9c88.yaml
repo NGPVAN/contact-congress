@@ -31,19 +31,19 @@ contact_form:
         required: true
       - name: phone
         selector: input#edit-submitted-constituent-information-phone
-        value: "$PHONE"
+        value: "$PHONE_HYPHENS" 
         required: false
       - name: email
         selector: input#edit-submitted-constituent-information-email
         value: "$EMAIL"
         required: true
-      - name: subject
-        selector: input#edit-submitted-message-details-please-type-the-subject-of-your-message
-        value: $SUBJECT
-        required: true
       - name: message
         selector: textarea#edit-submitted-message-details-message
         value: "$MESSAGE"
+        required: true
+      - name: subtopic
+        selector: input#edit-submitted-message-details-sub-topic
+        value: "$SUBTOPIC1"
         required: true
     - select:
       - name: prefix

@@ -29,13 +29,13 @@ contact_form:
     - click_on:
       - selector: div .GIY1LSJIRD input
     - wait:
-        - value: 2
+      - value: 2
     - find:
-        - selector: div .GIY1LSJERD .primary
+      - selector: div .GIY1LSJERD .primary
     - click_on:
-        - selector: div .GIY1LSJERD .primary
+      - selector: div .GIY1LSJERD .primary
     - wait:
-        - value: 3
+      - value: 3
   success:
     headers:
       status: 200

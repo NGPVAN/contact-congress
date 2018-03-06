@@ -28,6 +28,8 @@ contact_form:
       - selector: div .GIY1LSJIRD input
     - click_on:
       - selector: div .GIY1LSJIRD input
+    - wait:
+        - value: 2
     - find:
         - selector: div .GIY1LSJERD .primary
     - click_on:

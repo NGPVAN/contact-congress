@@ -25,13 +25,13 @@ contact_form:
       - value: Continue
         selector: span button.primary.button
     - find:
-      - selector: input#gwt-uid-250
+      - selector: div .GIY1LSJIRD input
     - click_on:
-      - selector: input#gwt-uid-250
+      - selector: div .GIY1LSJIRD input
     - find:
-        - selector: button#gwt-uid-373
+        - selector: div .GIY1LSJERD .primary
     - click_on:
-        - selector: button#gwt-uid-373
+        - selector: div .GIY1LSJERD .primary
     - wait:
         - value: 3
   success:

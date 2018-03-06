@@ -23,7 +23,7 @@ contact_form:
           max_length: 5000
     - click_on:
       - value: Continue
-        selector: span button.primary.button
+        selector: div .GIY1LSJISC button
     - find:
       - selector: div .GIY1LSJIRD input
     - click_on:

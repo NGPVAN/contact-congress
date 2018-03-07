@@ -64,6 +64,8 @@ contact_form:
             Transportation: Transportation
             Veterans: Veterans
             Welfare/Food Stamps: Welfare/Food Stamps
+    - wait:
+        - value: 1
     - find:
         - selector: "#fname"
     - fill_in:

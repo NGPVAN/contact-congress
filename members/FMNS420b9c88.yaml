@@ -31,7 +31,7 @@ contact_form:
         required: true
       - name: phone
         selector: input#edit-submitted-constituent-information-phone
-        value: "$PHONE_HYPHENS" 
+        value: "$PHONE_HYPHENS"
         required: false
       - name: email
         selector: input#edit-submitted-constituent-information-email
@@ -43,7 +43,7 @@ contact_form:
         required: true
       - name: subtopic
         selector: input#edit-submitted-message-details-sub-topic
-        value: "$SUBTOPIC1"
+        value: "$TOPIC"
         required: true
     - select:
       - name: prefix
@@ -65,7 +65,7 @@ contact_form:
           Senator: Senator
       - name: topic
         selector: select#edit-submitted-message-details-topic
-        value: $TOPIC
+        value: "$TOPIC"
         required: true
         options:
           General Topic Selection: General

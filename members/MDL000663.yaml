@@ -33,6 +33,10 @@ contact_form:
         selector: "#ctlContactLegislator_txtMessage"
         value: $MESSAGE
         required: true
+      - name: Phone Number
+        selector: "input#ctlContactLegislator_txtPhoneNumber"
+        value: $PHONE
+        required: true
     - javascript:
       - name: phone
         selectors: [ "input#ctlContactLegislator_txtPhoneNumber"]

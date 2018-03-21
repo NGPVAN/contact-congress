@@ -41,7 +41,7 @@ contact_form:
       - name: phone
         selectors: [ "input#ctlContactLegislator_txtPhoneNumber"]
         values: [ "$PHONE" ]
-        commands: [ "elements[0].value = values[0].length > 10 ? values[0].substr(1) : values[0]" ]
+        commands: [ "elements[0].value = values[0].replace(/\D/g,'').length > 10 ? values[0].replace(/\D/g,'').substr(1) : values[0].replace(/\D/g,'')" ]
         required: true
     - click_on:
       - selector: "#ctlContactLegislator_cmdSubmit"

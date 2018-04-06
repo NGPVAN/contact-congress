@@ -5,41 +5,41 @@ contact_form:
   steps:
     - visit: "http://www.carper.senate.gov/public/index.cfm/email-senator-carper"
     - fill_in:
-      - name: first
-        selector: input#field_9B220BDF-2254-4FD5-AAAC-261352486679
+      - name: First Name
+        selector: input#field_720EA1C4-9CA9-4A9F-8FE8-BE45DE350FAB
         value: $NAME_FIRST
         required: true
-      - name: last
-        selector: input#field_F8BB9FB5-9C4F-47DC-BF4E-EC83DBA5C7F1
+      - name: Last Name
+        selector: input#field_DDDC1A32-888A-4713-B1A6-AC8661C856A6
         value: $NAME_LAST
         required: true
-      - name: street
-        selector: input#field_E4AB5648-7530-4794-A6F0-B642D8D8E7E8
+      - name: Street
+        selector: input#field_E5BBA595-CD12-4F4B-AEE5-93B1B7A4BC80
         value: $ADDRESS_STREET
         required: true
-      - name: city
-        selector: input#field_D0E99421-C120-444E-9308-5539DAB567FB
+      - name: City
+        selector: input#field_C72971E3-4513-4297-9371-32547398C5A2
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: input#field_BDA8A7F1-6E6B-4E3F-BF31-52ED9B04AD72
+        selector: input#field_57CB6741-6128-4F6B-9116-2F777AA90830
         value: $ADDRESS_ZIP5
         required: true
-      - name: phone
-        selector: input#field_DCCD8945-E5C8-4A06-A0C6-EDE1B92A97F5
+      - name: Phone Number
+        selector: input#field_9AC5FC63-772F-4C8A-BCBD-757841372138
         value: $PHONE
         required: false
-      - name: email
-        selector: input#field_DE485565-DEDE-4143-8002-D6809187E021
+      - name: Email
+        selector: input#field_ACFFD452-B139-413D-8E0F-72046D4635D9
         value: $EMAIL
         required: true
       - name: message
-        selector: textarea#field_0AEE09A6-7F4C-4AFB-90A1-9BA03526FCA0
+        selector: textarea#field_52700AB6-009C-4E83-9962-6015E086D1AC
         value: $MESSAGE
         required: true
     - select:
-      - name: topic
-        selector: select#field_576A1858-5B78-4883-B30A-9E699D99BAE0
+      - name: Topic
+        selector: select#field_9FA2D12A-DC4D-4725-99CA-DFD388CA0806
         value: $TOPIC
         required: true
         options:
@@ -84,8 +84,8 @@ contact_form:
           "Telecommunications": "TV/Radio/Internet/Telecommunications"
           "Veterans": "Veteran's Issues"
           "Welfare": "Welfare"
-      - name: prefix
-        selector: select#field_E01DF0C9-9113-4B77-90AD-BAC1914775CB
+      - name: Prefix
+        selector: select#field_7984AAE2-A365-4C2A-9E03-C53E3718970E
         value: $NAME_PREFIX
         required: true
         options:

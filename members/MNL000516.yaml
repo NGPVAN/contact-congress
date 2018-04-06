@@ -4,7 +4,7 @@ contact_form:
   action: ""
   usePhantomJsLogging: true
   steps:
-    - visit: "http://www.senate.mn/members/member_emailform.php?mem_id=1205&ls=89"
+    - visit: "http://www.senate.mn/members/member_emailform.php?mem_id=1205&ls=90"
     - fill_in:
         - name: fname
           selector: "#form_firstname"

@@ -2,7 +2,7 @@ bioguide: state_tn_gov_bill_haslam
 contact_form:
   method: post
   action: ""
-  usePhantomJsLogging: true
+  usePhantomJsLogging: false
   steps:
     - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_TN_DFA&__fid=100000"
     - find:
@@ -12,19 +12,19 @@ contact_form:
           selector: input#q_1_prefix
           value: $NAME_PREFIX
           required: false
-        - name: first
+        - name: First Name
           selector: input#q_1_first_name
           value: $NAME_FIRST
           required: true
-        - name: last
+        - name: Last Name
           selector: input#q_1_last_name
           value: $NAME_LAST
           required: true
-        - name: street
+        - name: Street
           selector: input#q_1_addr_1
           value: $ADDRESS_STREET
           required: false
-        - name: city
+        - name: City
           selector: input#q_1_city
           value: $ADDRESS_CITY
           required: false
@@ -32,24 +32,28 @@ contact_form:
           selector: input#q_1_zip
           value: $ADDRESS_ZIP5
           required: false
-        - name: email
+        - name: Email
           selector: input#q_1_email
           value: $EMAIL
           required: true
-        - name: phone
+        - name: Phone Number
           selector: input#q_1_hphone
           value: $PHONE
           required: false
-        - name: subject
+        - name: Subject
           selector: input#q_3
           value: $SUBJECT
-          required: false
-        - name: message
+          required: true
+        - name: Message
           selector: textarea#q_4
           value: $MESSAGE
-          required: false
+          required: true
+        - name: date validation
+          selector: input#q_7
+          value: 1
+          required: true
     - select:
-        - name: state
+        - name: State
           selector: select#q_1_state
           value: Tennessee
           required: false
@@ -60,4 +64,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Your message has been submitted. Thank you."
+      contains: "Governor Bill Haslam"

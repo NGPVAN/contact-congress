@@ -2,7 +2,6 @@ bioguide: state_tn_gov_bill_haslam
 contact_form:
   method: post
   action: ""
-  usePhantomJsLogging: false
   steps:
     - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_TN_DFA&__fid=100000"
     - find:

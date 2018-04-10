@@ -69,6 +69,8 @@ contact_form:
     - click_on:
       - value: Click
         selector: "#contact-sam-main"
+    - wait:
+      - value: 1
     - find:
       - selector: "#continue-form"
     - fill_in:

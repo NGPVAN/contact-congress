@@ -113,6 +113,8 @@ contact_form:
         - selector: input[type='submit'][value='Submit']
     - click_on:
       - selector: ul#listblocks .opinion a
+      - wait:
+        - value: 2
   success:
     headers:
       status: 200

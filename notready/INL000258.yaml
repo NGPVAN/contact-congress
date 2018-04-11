@@ -1,9 +1,9 @@
-bioguide: INL000262
+bioguide: INL000258
 contact_form:
   method: post
   action: index.php
   steps:
-    - visit: "http://www.indianasenaterepublicans.com/forms/contact-a-senator/?formField_senator=s47"
+    - visit: "https://www.indianasenaterepublicans.com/brown"
     - fill_in:
         - name: firstname
           selector: "#IDFormField_First_Name_0"

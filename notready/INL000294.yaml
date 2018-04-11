@@ -1,9 +1,9 @@
-bioguide: INL000154
+bioguide: INL000294
 contact_form:
   method: post
   action: index.php
   steps:
-    - visit: "http://www.indianasenaterepublicans.com/forms/contact-a-senator/?formField_senator=s28"
+    - visit: "https://www.indianasenaterepublicans.com/crane"
     - fill_in:
         - name: firstname
           selector: "#IDFormField_First_Name_0"
@@ -51,10 +51,10 @@ contact_form:
         value: "$NAME_PREFIX"
         required: false
         options:
-         Dr: Dr
-         Mr: Mr
-         Mrs: Mrs
-         Ms: Ms
+           Dr: Dr
+           Mr: Mr
+           Mrs: Mrs
+           Ms: Ms
     - fill_in:
         - name: captcha
           selector: "#recaptcha_response_field"

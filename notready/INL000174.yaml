@@ -1,9 +1,9 @@
-bioguide: INL000258
+bioguide: INL000174
 contact_form:
   method: post
   action: index.php
   steps:
-    - visit: "http://www.indianasenaterepublicans.com/forms/contact-a-senator/?formField_senator=s15"
+    - visit: "https://www.indianasenaterepublicans.com/niemeyer"
     - fill_in:
         - name: firstname
           selector: "#IDFormField_First_Name_0"

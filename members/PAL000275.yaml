@@ -37,11 +37,6 @@ contact_form:
           selector: "#ctl00_cphContent_txtActionRequest"
           value: $MESSAGE
           required: true
-        - name: recaptcha_response_field
-          selector: "#ctl00_cphContent_RadCaptcha1_CaptchaTextBox"
-          captcha_selector: "#ctl00_cphContent_RadCaptcha1_CaptchaImageUP"
-          value: $CAPTCHA_SOLUTION
-          required: true
     - select:
         - name: required-issue
           selector: "#ctl00_cphContent_ddlStates"

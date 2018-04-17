@@ -1,9 +1,9 @@
-bioguide: OHL000006
+bioguide: OHL000022
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=6"
+  action: "../members/member-contact-submission?id=22"
   steps:
-    - visit: "http://www.ohiosenate.gov/lehner/contact"
+    - visit: "http://www.ohiosenate.gov/senators/obhof/contact?89"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"

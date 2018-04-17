@@ -1,9 +1,9 @@
-bioguide: OHL000147
+bioguide: OHL000040
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=18"
+  action: "../members/member-contact-submission?id=25"
   steps:
-    - visit: "http://www.ohiosenate.gov/eklund/contact"
+    - visit: "http://www.ohiosenate.gov/senators/yuko/contact?98"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"

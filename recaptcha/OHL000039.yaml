@@ -1,9 +1,9 @@
-bioguide: OHL000029
+bioguide: OHL000039
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=29"
+  action: "../members/member-contact-submission?id=2"
   steps:
-    - visit: "http://www.ohiosenate.gov/oelslager/contact"
+    - visit: "http://www.ohiosenate.gov/senators/gardner/contact?95"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"
@@ -21,6 +21,8 @@ contact_form:
           selector: "#tbxAddress"
           value: $ADDRESS_STREET
           required: true
+          options:
+            blacklist: "/"
         - name: tbxCity
           selector: "#tbxCity"
           value: $ADDRESS_CITY

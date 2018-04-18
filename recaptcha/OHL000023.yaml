@@ -1,9 +1,9 @@
-bioguide: OHL000003
+bioguide: OHL000023
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=3"
+  action: "../members/member-contact-submission?id=23"
   steps:
-    - visit: "http://www.ohiosenate.gov/bacon/contact"
+    - visit: "http://www.ohiosenate.gov/senators/skindell/contact?90"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"

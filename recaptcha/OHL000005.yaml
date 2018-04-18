@@ -1,9 +1,9 @@
-bioguide: OHL000022
+bioguide: OHL000005
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=22"
+  action: "../members/member-contact-submission?id=5"
   steps:
-    - visit: "http://www.ohiosenate.gov/obhof/contact"
+    - visit: "http://www.ohiosenate.gov/senators/beagle/contact?79"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"

@@ -1,16 +1,14 @@
-bioguide: OHL000295
+bioguide: OHL000015
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=9"
+  action: "../members/member-contact-submission?id=15"
   steps:
-    - visit: "http://www.ohiosenate.gov/thomas/contact"
+    - visit: "http://www.ohiosenate.gov/senators/tavares/contact?85"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"
           value: $NAME_FIRST
           required: true
-          options:
-            blacklist: "&"
         - name: tbxLastName
           selector: "#tbxLastName"
           value: $NAME_LAST
@@ -23,6 +21,8 @@ contact_form:
           selector: "#tbxAddress"
           value: $ADDRESS_STREET
           required: true
+          options:
+            blacklist: "/"
         - name: tbxCity
           selector: "#tbxCity"
           value: $ADDRESS_CITY

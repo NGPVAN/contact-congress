@@ -1,9 +1,9 @@
-bioguide: OHL000039
+bioguide: OHL000118
 contact_form:
   method: post
-  action: "../members/member-contact-submission?id=2"
+  action: "../members/member-contact-submission?id=17"
   steps:
-    - visit: "http://www.ohiosenate.gov/gardner/contact"
+    - visit: "http://www.ohiosenate.gov/senators/peterson/contact?106"
     - fill_in:
         - name: tbxFirstName
           selector: "#tbxFirstName"
@@ -21,8 +21,6 @@ contact_form:
           selector: "#tbxAddress"
           value: $ADDRESS_STREET
           required: true
-          options:
-            blacklist: "/"
         - name: tbxCity
           selector: "#tbxCity"
           value: $ADDRESS_CITY

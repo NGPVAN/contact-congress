@@ -59,6 +59,8 @@ contact_form:
           selector: "#input-6A735A98-CBA2-6A63-E393-69E16553D654"
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - select:
         - name: prefix
           selector: "#input-6A3EC3AE-A5E3-1F99-B0C5-03BAEEF80307"

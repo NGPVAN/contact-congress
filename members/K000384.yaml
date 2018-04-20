@@ -113,7 +113,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          blacklist: "*()"
+          blacklist: "*():"
     - select:
       - name: salutation
         selector: "#salutation"

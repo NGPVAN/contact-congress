@@ -41,11 +41,13 @@ contact_form:
           selector: textarea#field_E954A14B-8B14-444B-914E-C1FD3D638258
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - javascript:
         - name: message
           selectors: [ "textarea#field_E954A14B-8B14-444B-914E-C1FD3D638258" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
         - name: prefix

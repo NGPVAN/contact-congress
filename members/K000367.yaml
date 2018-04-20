@@ -48,7 +48,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: "()"
+            blacklist: "():"
     - select:
         - name: Prefix
           selector: select#field_E0FEB2BD-6735-4E39-BD94-63CD417A73EF

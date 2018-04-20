@@ -48,9 +48,11 @@ contact_form:
           value: $EMAIL
           required: true
         - name: comments
-          selector: "#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"
+          selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - javascript:
       - name: comments
         selectors: [ "textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2" ]

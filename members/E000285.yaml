@@ -49,6 +49,8 @@ contact_form:
         selector: textarea#field_E8E82E9B-F02E-44A6-84CB-BB70F34C9310
         value: $MESSAGE
         required: true
+        options:
+          blacklist: ":"
     - click_on:
       - value: Submit
         selector: form#form_D66636DE-02AE-487D-96D4-FDD63541125A div.buttonHolder input

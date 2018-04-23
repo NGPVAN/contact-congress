@@ -49,11 +49,17 @@ contact_form:
         selector: "#input-F81BE935-4040-F985-52CD-D2815240A234"
         value: $SUBJECT
         required: true
+      - name: message
+        selector: textarea#input-F80AC5B6-4040-F985-52CD-834C1DD62DF3
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: ":"
     - javascript:
       - name: Message
         selectors: [ "textarea#input-F80AC5B6-4040-F985-52CD-834C1DD62DF3" ]
         values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
     - click_on:
       - value: Submit

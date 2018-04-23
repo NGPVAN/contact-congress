@@ -42,11 +42,17 @@ contact_form:
         selector: "#verify_email"
         value: "$EMAIL"
         required: true
+      - name: message
+        selector: textarea#comments
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: ":"
     - javascript:
       - name: Message
         selectors: [ "#comments" ]
         values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
     - select:
       - name: salutation

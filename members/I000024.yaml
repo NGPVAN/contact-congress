@@ -68,6 +68,8 @@ contact_form:
         selector: "#message"
         value: $MESSAGE
         required: true
+        options:
+          blacklist: ":"
     - check:
       - name: response
         selector: "#response_y"

@@ -49,6 +49,8 @@ contact_form:
         selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
         value: $MESSAGE
         required: true
+        options:
+          blacklist: ":"
     - select:
       - name: prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
@@ -75,28 +77,28 @@ contact_form:
         value: $TOPIC
         required: true
         options:
-          "Agriculture": "mailtopicag"
-          "Animal Rights": "mailtopican"
-          "Banking and Finance": "mailtopbank"
-          "Budget and Economy": "mailtopicbud"
-          "Business": "mailtopicbs"
-          "Civil Rights": "mailtopiccr"
-          "Crime and the Judiciary": "mailtopicjud"
-          "Defense and Military": "mailtopicdef"
-          "Education": "mailtopiced"
-          "Energy": "mailtopicen"
-          "Environmental Issues": "mailtopicenviro"
-          "Foreign Affairs": "mailtopicforeign"
-          "Gun Control": "mailtopicgun"
-          "Health Care": "mailtopichealth"
-          "Housing": "mailtopichouse"
-          "Pensions and Retirement": "mailtopicpension"
-          "Science and Technology": "mailtopicsci"
-          "Telecommunications": "mailtotelecom"
-          "Transportation": "mailtopictran"
-          "Veterans Issues": "mailtopicvet"
-          "Welfare": "mailtopicwelfare"
-          "Other": "mailtopicother"
+          "Agriculture": option[value="mailtopicag"]
+          "Animal Rights": option[value="mailtopican"]
+          "Banking and Finance": option[value="mailtopbank"]
+          "Budget and Economy": option[value="mailtopicbud"]
+          "Business": option[value="mailtopicbs"]
+          "Civil Rights": option[value="mailtopiccr"]
+          "Crime and the Judiciary": option[value="mailtopicjud"]
+          "Defense and Military": option[value="mailtopicdef"]
+          "Education": option[value="mailtopiced"]
+          "Energy": option[value="mailtopicen"]
+          "Environmental Issues": option[value="mailtopicenviro"]
+          "Foreign Affairs": option[value="mailtopicforeign"]
+          "Gun Control": option[value="mailtopicgun"]
+          "Health Care": option[value="mailtopichealth"]
+          "Housing": option[value="mailtopichouse"]
+          "Pensions and Retirement": option[value="mailtopicpension"]
+          "Science and Technology": option[value="mailtopicsci"]
+          "Telecommunications": option[value="mailtotelecom"]
+          "Transportation": option[value="mailtopictran"]
+          "Veterans Issues": option[value="mailtopicvet"]
+          "Welfare": option[value="mailtopicwelfare"]
+          "Other": option[value="mailtopicother"]
     - click_on:
       - selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C div.controls input.btn
     - wait:

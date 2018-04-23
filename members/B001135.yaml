@@ -42,7 +42,7 @@ contact_form:
         - name: email
           selector: input#email
           value: $EMAIL
-          required: trues
+          required: true
         - name: verify_email
           selector: input#input-07742BA1-5056-A066-60F2-B34A7A496C32
           value: $EMAIL

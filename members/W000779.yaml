@@ -45,11 +45,17 @@ contact_form:
         selector: input#input-674B2464-04AE-529C-EF20-DA82FEC8CAFC
         value: $EMAIL
         required: true
+      - name: message
+        selector: textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: ":"
     - javascript:
         - name: Message
           selectors: [ "textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].values.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
       - name: prefix

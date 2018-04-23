@@ -45,11 +45,17 @@ contact_form:
           selector: "#messageSubject"
           value: $SUBJECT
           required: true
+        - name: message
+          selector: textarea#MessageBody
+          value: $MESSAGE
+          required: true
+          options:
+            blacklist: ":"
     - javascript:
         - name: Message
           selectors: [ "#MessageBody" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
         - name: prefix

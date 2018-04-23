@@ -7,40 +7,42 @@ contact_form:
     - find:
       - selector: form#form_681E5539-EF3E-41C6-A4D7-9DD228D90AA6 input#field_BC705BBD-A0D1-4D9B-A1FD-0A9E63162CE8
     - fill_in:
-      - name: "field_BC705BBD-A0D1-4D9B-A1FD-0A9E63162CE8"
+      - name: First Name
         selector: "#field_BC705BBD-A0D1-4D9B-A1FD-0A9E63162CE8"
         value: $NAME_FIRST
         required: true
-      - name: "field_CC0ACC74-BDFF-4ED2-B686-08610FF1C415"
+      - name: Last Name
         selector: "#field_CC0ACC74-BDFF-4ED2-B686-08610FF1C415"
         value: $NAME_LAST
         required: true
-      - name: "field_BC818F8E-666B-4BBE-9DD1-6C5929B10995"
+      - name: Street
         selector: "#field_BC818F8E-666B-4BBE-9DD1-6C5929B10995"
         value: $ADDRESS_STREET
         required: true
-      - name: "field_1AB90849-DC9A-4868-AB51-4BAD63BA1644"
+      - name: City
         selector: "#field_1AB90849-DC9A-4868-AB51-4BAD63BA1644"
         value: $ADDRESS_CITY
         required: true
-      - name: "field_1891FB67-76B5-4874-971A-1464BF40D4AD"
+      - name: Zip5
         selector: "#field_1891FB67-76B5-4874-971A-1464BF40D4AD"
         value: $ADDRESS_ZIP5
         required: true
-      - name: phone
+      - name: Phone
         selector: input#field_ABF591AC-4D97-4E60-877F-3FFA6422DBA0
         value: $PHONE
         required: true
-      - name: "field_3A4385B4-BCDB-41EC-896F-5E07E51142DD"
+      - name: Email
         selector: "#field_3A4385B4-BCDB-41EC-896F-5E07E51142DD"
         value: $EMAIL
         required: true
-      - name: "field_F1684590-B63E-4986-8A57-1216FEFE8B9F"
+      - name: Message
         selector: "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F"
         value: $MESSAGE
         required: true
+        options:
+          blacklist: ":"
     - select:
-      - name: "field_694A4E8E-E869-4156-8A02-1D58DE8111EE"
+      - name: Prefix
         selector: "#field_694A4E8E-E869-4156-8A02-1D58DE8111EE"
         value: $NAME_PREFIX
         required: true
@@ -50,7 +52,7 @@ contact_form:
           Ms.: Ms.
           Mr. and Mrs.: Mr. and Mrs.
           Miss: Miss
-      - name: "field_4C82AB6E-E5FA-4362-A194-6DE9AADA20A7"
+      - name: Topic
         selector: "#field_4C82AB6E-E5FA-4362-A194-6DE9AADA20A7"
         value: $TOPIC
         required: true

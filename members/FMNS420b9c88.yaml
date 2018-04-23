@@ -41,6 +41,8 @@ contact_form:
         selector: textarea#edit-submitted-message-details-message
         value: "$MESSAGE"
         required: true
+        options:
+          blacklist: ":"
       - name: Subtopic
         selector: input#edit-submitted-message-details-sub-topic
         value: "$SUBJECT"

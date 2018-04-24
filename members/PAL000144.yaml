@@ -1,59 +1,57 @@
 bioguide: PAL000144
 contact_form:
   method: post
-  action: /contact.aspx
+  action: ""
+  usePhantomLogging: true
   steps:
-    - visit: "http://www.legis.state.pa.us/cfdocs/legis/home/member_information/ContactMember.cfm?district=168"
+    - visit: "http://wpcontact.pasenategop.com/contact.aspx?websiteid=9"
     - fill_in:
-        - name: fname
-          selector: "#ctl00_cphContent_txtFirstName"
+        - name: First Name
+          selector: input#txtFirstname
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#ctl00_cphContent_txtLastName"
+        - name: Last Name
+          selector: input#txtLastname
           value: $NAME_LAST
           required: true
-        - name: phone
-          selector: "#ctl00_cphContent_txtHomePhone"
-          value: $PHONE
-          required: true
-        - name: email
-          selector: "#ctl00_cphContent_txtEmail"
+        - name: Email
+          selector: input#txtEmail
           value: $EMAIL
           required: true
-        - name: address
-          selector: "#ctl00_cphContent_txtAddress"
+        - name: Phone Number
+          selector: input#txtPhone
+          value: $PHONE_PARENTHESES
+          required: false
+        - name: Address
+          selector: input#txtAddress1
           value: $ADDRESS_STREET
           required: true
-        - name: city
-          selector: "#ctl00_cphContent_txtCity"
+        - name: City
+          selector: input#txtCity
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#ctl00_cphContent_txtZip"
+          selector: input#txtZip
           value: $ADDRESS_ZIP5
           required: true
-        - name: message
-          selector: "#ctl00_cphContent_txtActionRequest"
+        - name: Message
+          selector: textarea#txtComments
           value: $MESSAGE
           required: true
-        - name: recaptcha_response_field
-          selector: "#ctl00_cphContent_RadCaptcha1_CaptchaTextBox"
-          captcha_selector: "#ctl00_cphContent_RadCaptcha1_CaptchaImageUP"
-          value: $CAPTCHA_SOLUTION
-          required: true
     - select:
-        - name: required-issue
-          selector: "#ctl00_cphContent_ddlStates"
-          value: PA
+        - name: topic
+          selector: input#ddlIssue_Input
+          value: General
           required: true
-          options:
-           - PA
+    - check:
+        - selector: input[type='checkbox'][class='rlbCheck']
+    - wait:
+        - value: 3
     - click_on:
         - value: Submit
-          selector: "#ctl00_cphContent_btnSubmit"
+          selector: input#bSubmit_input.rbDecorated
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for reaching out to us
+      contains: Thank you for contacting us

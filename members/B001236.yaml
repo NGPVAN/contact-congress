@@ -37,11 +37,17 @@ contact_form:
         selector: "#field_1A65E495-5A0F-444D-B7D5-4BC56EB418BE"
         value: "$EMAIL"
         required: true
+      - name: message
+        selector: textarea#field_48423449-A5CB-4B5E-8AF8-6941AB24E7BC
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: ":"
     - javascript:
         - name: Message
           selectors: [ "textarea#field_48423449-A5CB-4B5E-8AF8-6941AB24E7BC" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
     - select:
       - name: prefix
         selector: "#field_A8C5319B-DAC0-4F7D-8752-783380F5D8FE"

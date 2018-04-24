@@ -54,7 +54,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: "()/<>"
+            blacklist: "()/<>:"
     - select:
         - name: prefix
           selector: "#input-B03E0527-4040-F985-52CD-C0DD6BEF325F"

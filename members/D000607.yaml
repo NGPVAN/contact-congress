@@ -69,6 +69,8 @@ contact_form:
     - click_on:
       - value: Click
         selector: "#contact-sam-main"
+    - wait:
+      - value: 1
     - find:
       - selector: "#continue-form"
     - fill_in:
@@ -112,11 +114,17 @@ contact_form:
         selector: "#messagesubject"
         value: "$SUBJECT"
         required: true
+      - name: message
+        selector: textarea#message
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: ":"
     - javascript:
         - name: Message
           selectors: [ "#message" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
       - name: salutation

@@ -1,0 +1,43 @@
+bioguide: CusZ4ad8ba081520286318
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.regulations.gov/comment?D=BLM-2018-0001-0001"
+    - find:
+      - selector: div form
+    - fill_in:
+      - name: firstname
+        selector: input#x-auto-1-input
+        value: $NAME_FIRST
+        required: false
+      - name: lastname
+        selector: input#x-auto-2-input
+        value: $NAME_LAST
+        required: false
+      - name: message
+        selector: textarea#x-auto-0-input
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 5000
+    - click_on:
+      - value: Continue
+        selector: div .GIY1LSJISC button
+    - find:
+      - selector: div .GIY1LSJIRD input
+    - click_on:
+      - selector: div .GIY1LSJIRD input
+    - wait:
+      - value: 2
+    - find:
+      - selector: div .GIY1LSJERD .primary
+    - click_on:
+      - selector: div .GIY1LSJERD .primary
+    - wait:
+      - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your comment was submitted"

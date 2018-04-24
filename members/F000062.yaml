@@ -42,7 +42,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: "\"‘’“”"
+            blacklist: "\"‘’“”:"
     - picker:
       - name: topic
         value: $TOPIC

@@ -41,6 +41,8 @@ contact_form:
           selector: "#field_40C203DD-A384-408D-84AB-26D1471756D8"
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
         - name: topic
           selector: "#field_41FAA356-B947-40CA-9264-BE321C5F5D94"
           value: $TOPIC

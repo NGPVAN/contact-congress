@@ -50,6 +50,8 @@ contact_form:
           selector: textarea#field_955D171C-85C6-4515-9D66-560E2EB6E15C
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - select:
         - name: topic
           selector: select#field_D8D2B924-8B4A-44C5-B78D-FEE0F81C8D7E

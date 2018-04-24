@@ -47,6 +47,8 @@ contact_form:
           selector: textarea#field_D57A0AD2-172C-477E-A580-86A6C8B69DD6
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - select:
         - name: prefix
           selector: select#field_8D7B0B71-2228-4184-8931-ECCBAEF74929

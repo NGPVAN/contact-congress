@@ -4,8 +4,10 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.regulations.gov/comment?D=BLM-2018-0001-0001"
+    - wait:
+      - value: 1
     - find:
-      - selector: div.GIY1LSJGSC form
+      - selector: div form
     - fill_in:
       - name: firstname
         selector: input#x-auto-1-input
@@ -23,17 +25,19 @@ contact_form:
           max_length: 5000
     - click_on:
       - value: Continue
-        selector: span button.primary.button
+        selector: div .GIY1LSJISC button
     - find:
-      - selector: input#gwt-uid-250
+      - selector: div .GIY1LSJIRD input
     - click_on:
-      - selector: input#gwt-uid-250
-    - find:
-        - selector: button#gwt-uid-373
-    - click_on:
-        - selector: button#gwt-uid-373
+      - selector: div .GIY1LSJIRD input
     - wait:
-        - value: 3
+      - value: 2
+    - find:
+      - selector: div .GIY1LSJERD .primary
+    - click_on:
+      - selector: div .GIY1LSJERD .primary
+    - wait:
+      - value: 4
   success:
     headers:
       status: 200

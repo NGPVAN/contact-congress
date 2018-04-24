@@ -10,95 +10,95 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Adoption: Adoption
-            Aging and Seniors: Aging and Seniors
-            Agriculture: Agriculture
-            Animal Rights: Animal Rights
-            Appropriations: Appropriations
-            Arts: Arts
-            Budget: Budget
-            Campaign Finance: Campaign Finance
-            Children/Family/Adoption: Children/Family/Adoption
-            Civil Rights: Civil Rights
-            Commerce: Commerce
-            Congressional Issues: Congressional Issues
-            Crime: Crime
-            Defense: Defense
-            Education Higher: Education Higher
-            Education K through 12: Education K through 12
-            Elections: Elections
-            Energy: Energy
-            Environment: Environment
-            Financial Services: Financial Services
-            Foreclosures: Foreclosures
-            Foreign Affairs: Foreign Affairs
-            Government Reform: Government Reform
-            Gun Control: Gun Control
-            Health: Health
-            Health Insurance: Health Insurance
-            Homeland Security: Homeland Security
-            Housing: Housing
-            Illegal Drugs: Illegal Drugs
-            Immigration: Immigration
-            Indian Affairs: Indian Affairs
-            Intellectual Property/Patents: Intellectual Property/Patents
-            Interior/Forestry: Interior/Forestry
-            Jobs: Jobs
-            Judiciary: Judiciary
-            Labor: Labor
-            LIHEAP: LIHEAP
-            Medicare/Medicaid: Medicare/Medicaid
-            Military: Military
-            Nutrition: Nutrition
-            Pensions: Pensions
-            Prescription Drugs: Prescription Drugs
-            Presidential Greetings: Presidential Greetings
-            Reproductive Rights: Reproductive Rights
-            Science and Space: Science and Space
-            Small Business: Small Business
-            Social Security: Social Security
-            Taxes: Taxes
-            Telecommunications: Telecommunications
-            Tobacco: Tobacco
-            Trade: Trade
-            Transportation: Transportation
-            Veterans: Veterans
-            Welfare/Food Stamps: Welfare/Food Stamps
+            "Adoption": "Adoption"
+            "Aging and Seniors": "Aging and Seniors"
+            "Agriculture": "Agriculture"
+            "Animal Rights": "Animal Rights"
+            "Appropriations": "Appropriations"
+            "Arts": "Arts"
+            "Budget": "Budget"
+            "Campaign Finance": "Campaign Finance"
+            "Children/Family/Adoption": "Children/Family/Adoption"
+            "Civil Rights": "Civil Rights"
+            "Commerce": "Commerce"
+            "Congressional Issues": "Congressional Issues"
+            "Crime": "Crime"
+            "Defense": "Defense"
+            "Education Higher": "Education Higher"
+            "Education K through 12": "Education K through 12"
+            "Elections": "Elections"
+            "Energy": "Energy"
+            "Environment": "Environment"
+            "Financial Services": "Financial Services"
+            "Foreclosures": "Foreclosures"
+            "Foreign Affairs": "Foreign Affairs"
+            "Government Reform": "Government Reform"
+            "Gun Control": "Gun Control"
+            "Health": "Health"
+            "Health Insurance": "Health Insurance"
+            "Homeland Security": "Homeland Security"
+            "Housing": "Housing"
+            "Illegal Drugs": "Illegal Drugs"
+            "Immigration": "Immigration"
+            "Indian Affairs": "Indian Affairs"
+            "Intellectual Property/Patents": "Intellectual Property/Patents"
+            "Interior/Forestry": "Interior/Forestry"
+            "Jobs": "Jobs"
+            "Judiciary": "Judiciary"
+            "Labor": "Labor"
+            "LIHEAP": "LIHEAP"
+            "Medicare/Medicaid": "Medicare/Medicaid"
+            "Military": "Military"
+            "Nutrition": "Nutrition"
+            "Pensions": "Pensions"
+            "Prescription Drugs": "Prescription Drugs"
+            "Presidential Greetings": "Presidential Greetings"
+            "Reproductive Rights": "Reproductive Rights"
+            "Science and Space": "Science and Space"
+            "Small Business": "Small Business"
+            "Social Security": "Social Security"
+            "Taxes": "Taxes"
+            "Telecommunications": "Telecommunications"
+            "Tobacco": "Tobacco"
+            "Trade": "Trade"
+            "Transportation": "Transportation"
+            "Veterans": "Veterans"
+            "Welfare/Food Stamps": "Welfare/Food Stamps"
     - wait:
-        - value: 1
+        - value: 3
     - find:
-        - selector: "#fname"
+        - selector: input#fname
     - fill_in:
-        - name: fname
-          selector: "#fname"
+        - name: First Name
+          selector: input#fname
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#lname"
+        - name: Last Name
+          selector: input#lname
           value: $NAME_LAST
           required: true
         - name: mailing_streetAddress1
-          selector: "#mailing_streetAddress1"
+          selector: input#mailing_streetAddress1
           value: $ADDRESS_STREET
           required: true
         - name: mailing_city
-          selector: "#mailing_city"
+          selector: input#mailing_city
           value: $ADDRESS_CITY
           required: true
         - name: mailing_zipCode
-          selector: "#mailing_zipCode"
+          selector: input#mailing_zipCode
           value: $ADDRESS_ZIP5
           required: true
         - name: email_address
-          selector: "#email"
+          selector: input#email
           value: $EMAIL
           required: true
         - name: verify_email
-          selector: "#verify_email"
+          selector: input#verify_email
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#subject"
+          selector: input#subject
           value: $SUBJECT
           required: true
         - name: message
@@ -109,13 +109,13 @@ contact_form:
             blacklist: ":"
     - javascript:
         - name: Message
-          selectors: [ "#message" ]
+          selectors: [ "textarea#message" ]
           values: [ "$MESSAGE" ]
           commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
         - name: salutation
-          selector: "#salutation"
+          selector: select#salutation
           value: $NAME_PREFIX
           required: true
           options:
@@ -129,7 +129,7 @@ contact_form:
         - value: 1
     - click_on:
         - value: Send
-          selector: "#side-search-btn"
+          selector: input#side-search-btn
     - find:
         - selector: "h2"
           value: "THANK YOU"

@@ -7,7 +7,7 @@ contact_form:
     - select:
         - name: Municipality
           selector: "#DistrictDD"
-          value: Hawthorne (District 38)
+          value: Hawthorne (District 38) 
           required: true
     - click_on:
         - value: Submit

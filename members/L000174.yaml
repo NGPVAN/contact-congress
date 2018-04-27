@@ -20,44 +20,46 @@ contact_form:
           selector: input#other
           value: $NAME_PREFIX
           required: true
-        - name: input_36F9116D-5056-A066-6055-B856B7975A8D
+        - name: First Name
           selector: "#input-36F9116D-5056-A066-6055-B856B7975A8D"
           value: $NAME_FIRST
           required: true
-        - name: input_36F9168F-5056-A066-6010-D50B3E4EA5CA
+        - name: Last Name
           selector: "#input-36F9168F-5056-A066-6010-D50B3E4EA5CA"
           value: $NAME_LAST
           required: true
-        - name: input_36D0D7B4-5056-A066-604B-C5784DE1329E
+        - name: Address
           selector: "#input-36D0D7B4-5056-A066-604B-C5784DE1329E"
           value: $ADDRESS_STREET
           required: true
-        - name: input_36D0D8E1-5056-A066-6088-B0E287342B26
+        - name: Address2
           selector: "#input-36D0D8E1-5056-A066-6088-B0E287342B26"
           value: $ADDRESS_CITY
           required: true
-        - name: input_36D0DA1C-5056-A066-605E-9CA59C0D0E35
+        - name: Zip5
           selector: "#input-36D0DA1C-5056-A066-605E-9CA59C0D0E35"
           value: $ADDRESS_ZIP5
           required: true
-        - name: input_36D667AA-5056-A066-6035-8576D66D00F9
+        - name: Email
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: input_36D6681A-5056-A066-60DC-988EFD5753D6
+        - name: Verify Email
           selector: "#input-36D6681A-5056-A066-60DC-988EFD5753D6"
           value: $EMAIL
           required: true
-        - name: input_36D95985-5056-A066-6035-E42D9CB11A0E
+        - name: Phone
           selector: "#input-36D95985-5056-A066-6035-E42D9CB11A0E"
           value: $PHONE
           required: true
-        - name: input_36E62F57-5056-A066-60BF-78ADF9F5676E
+        - name: Message
           selector: "#input-36E62F57-5056-A066-60BF-78ADF9F5676E"
           value: $MESSAGE
           required: true
+          options:
+            blacklist: ":"
     - select:
-        - name: input_36E22353-5056-A066-60EA-9A7BCE98E4DD
+        - name: Topic
           selector: "#issue"
           value: $TOPIC
           required: true

@@ -20,24 +20,26 @@ contact_form:
         - name: phoneAreaCode
           selector: "#area"
           value: $PHONE_AREA_CODE
+          required: true
         - name: phoneExchange
           selector: "#exchange"
           value: $PHONE_EXCHANGE_CODE
+          required: true
         - name: phoneNumber
           selector: "#phnum"
           value: $PHONE_SUBSCRIBER_NUMBER
+          required: true
         - name: zip5
           selector: "#zip"
           value: $ADDRESS_ZIP5
+          required: false
         - name: message
           selector: "#message"
           value: $MESSAGE
           required: true
         - name: recaptcha
-          captcha_selector: "#recaptcha_challenge_image"
-          value: $CAPTCHA_SOLUTION
           selector: "#recaptcha_response_field"
-          captcha_id_selector: "#recaptcha_challenge_field"
+          value: you shall pass
           required: true
     - click_on:
         - value: Submit

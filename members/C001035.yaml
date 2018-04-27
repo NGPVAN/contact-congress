@@ -46,6 +46,8 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
+          blacklist: ":"
+        options:
           max_length: 10000
           blacklist: ".,!@#$%^&*/\'\"?"
     - select:

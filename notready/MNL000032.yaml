@@ -3,7 +3,7 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "http://www.mnsenaterepublicans.com/our-senators/warren-limmer/"
+    - visit: "https://www.mnsenaterepublicans.com/warren-limmer/"
     - fill_in:
       - name: name
         selector: input#us_form_1_name

@@ -3,7 +3,7 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "http://www.mnsenaterepublicans.com/our-senators/michelle-fischbach/"
+    - visit: "https://www.mnsenaterepublicans.com/michelle-fischbach/"
     - fill_in:
       - name: name
         selector: input#us_form_1_name

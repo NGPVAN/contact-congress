@@ -3,7 +3,7 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "http://www.mnsenaterepublicans.com/our-senators/bill-ingebrigtsen/"
+    - visit: "https://www.mnsenaterepublicans.com/bill-ingebrigtsen/"
     - fill_in:
       - name: name
         selector: input#us_form_1_name

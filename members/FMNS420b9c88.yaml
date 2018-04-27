@@ -5,15 +5,15 @@ contact_form:
   steps:
     - visit: "https://www.smith.senate.gov/content/contact-senator"
     - fill_in:
-      - name: firstname
+      - name: First Name
         selector: input#edit-submitted-constituent-information-first-name
         value: "$NAME_FIRST"
         required: true
-      - name: lastname
+      - name: Last Name
         selector: input#edit-submitted-constituent-information-last-name
         value: "$NAME_LAST"
         required: true
-      - name: street
+      - name: Street
         selector: input#edit-submitted-constituent-information-address-1
         value: "$ADDRESS_STREET"
         required: true
@@ -21,7 +21,7 @@ contact_form:
         selector: input#edit-submitted-constituent-information-address-2
         value: "$ADDRESS_STREET_2"
         required: false
-      - name: city
+      - name: City
         selector: input#edit-submitted-constituent-information-city
         value: "$ADDRESS_CITY"
         required: true
@@ -29,24 +29,26 @@ contact_form:
         selector: input#edit-submitted-constituent-information-zip
         value: "$ADDRESS_ZIP5"
         required: true
-      - name: phone
+      - name: Phone Number
         selector: input#edit-submitted-constituent-information-phone
-        value: "$PHONE_HYPHENS" 
+        value: "$PHONE_HYPHENS"
         required: false
       - name: email
         selector: input#edit-submitted-constituent-information-email
         value: "$EMAIL"
         required: true
-      - name: message
+      - name: Message
         selector: textarea#edit-submitted-message-details-message
         value: "$MESSAGE"
         required: true
-      - name: subtopic
+        options:
+          blacklist: ":"
+      - name: Subtopic
         selector: input#edit-submitted-message-details-sub-topic
-        value: "$SUBTOPIC1"
+        value: "$SUBJECT"
         required: true
     - select:
-      - name: prefix
+      - name: Prefix
         selector: select#edit-submitted-constituent-information-prefix
         value: $NAME_PREFIX
         required: true
@@ -65,7 +67,7 @@ contact_form:
           Senator: Senator
       - name: topic
         selector: select#edit-submitted-message-details-topic
-        value: $TOPIC
+        value: "$TOPIC"
         required: true
         options:
           General Topic Selection: General

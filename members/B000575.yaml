@@ -47,6 +47,7 @@ contact_form:
         required: true
         options:
           max_length: 1950
+          blacklist: ":"
     - javascript:
       - name: Message
         selectors: [ "textarea#field_1FCD0A32-C2B6-40E7-9D3F-18DE98BF7997" ]

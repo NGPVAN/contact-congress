@@ -3,82 +3,120 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.vanhollen.senate.gov/content/contact-senator"
+    - visit: "https://www.vanhollen.senate.gov/contact/email"
     - find:
-        - selector: form#webform-client-form-78 input#edit-submitted-constituent-information-first-name
+        - selector: ul#listblocks .opinion a
+    - click_on:
+      - selector: ul#listblocks .opinion a
+      - wait:
+        - value: 2
+    - find:
+        - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
-        - name: firstname
-          selector: input#edit-submitted-constituent-information-first-name
+        - name: First Name
+          selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
           value: $NAME_FIRST
           required: true
-        - name: lastname
-          selector: input#edit-submitted-constituent-information-last-name
+        - name: Last Name
+          selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
           value: $NAME_LAST
           required: true
-        - name: street
-          selector: input#edit-submitted-constituent-information-address-1
+        - name: Street
+          selector: input#input-B03E05F1-4040-F985-52CD-A580E72A7D41
           value: $ADDRESS_STREET
           required: true
-        - name: street2
-          selector: input#edit-submitted-constituent-information-address-2
+        - name: Street2
+          selector: input#input-B03E0518-4040-F985-52CD-CF33EF97DA3A
           value: $ADDRESS_STREET_2
           required: false
-        - name: city
-          selector: input#edit-submitted-constituent-information-city
+        - name: City
+          selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
           value: $ADDRESS_CITY
           required: true
-        - name: zip5
-          selector: input#edit-submitted-constituent-information-zip
+        - name: Zip5
+          selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone
-          selector: input#edit-submitted-constituent-information-phone
-          value: $PHONE
-          required: false
-        - name: email
-          selector: input#edit-submitted-constituent-information-email
+        - name: Phone Number
+          selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
+          value: $PHONE_HYPHENS
+          required: true
+        - name: Email
+          selector: input#email
           value: $EMAIL
           required: true
-        - name: subject
-          selector: input#edit-submitted-message-details-please-type-the-subject-of-your-message
+        - name: Email
+          selector: input#input-B03E05A4-4040-F985-52CD-730C08912F4F
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: input#input-8C57876E-E76F-6C23-C6A8-79C0F827B47C
           value: $SUBJECT
           required: true
-        - name: message
-          selector: textarea#edit-submitted-message-details-message
+        - name: Message
+          selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
           value: $MESSAGE
           required: true
           options:
-            blacklist: "/\\-\\-/"
+            blacklist: "/\\-\\-/:"
     - select:
-        - name: prefix
-          selector: select#edit-submitted-constituent-information-prefix
+        - name: Prefix
+          selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
           value: $NAME_PREFIX
           required: true
           options:
             Mr.: Mr.
-            Mrs.: Mrs.
             Ms.: Ms.
-            Mr. and Mrs.: Mr. and Mrs.
+            Mrs.: Mrs.
+            Mx.: Mx.
+            Professor: Professor
             Dr.: Dr.
-            Dr. and Mrs.: Dr. and Mrs.
-            Reverend: Reverend
+            Father: Father
             Sister: Sister
-            Pastor: Pastor
-            The Honorable: The Honorable
-            Representative: Representative
-            Senator: Senator
-        - name: topic
-          selector: select#edit-submitted-message-details-topic
+            Rabbi: Rabbi
+            Reverend: Reverend
+            General: General
+        - name: State
+          selector: select#input-B03E0669-4040-F985-52CD-11B231195172
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            MD: "MD"
+        - name: Topic
+          selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
           value: $TOPIC
           required: true
           options:
+            Adoption: Adoption
+            Aging: Aging
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Appropriations: Appropriations
+            Banking: Banking
+            Campaign Finance: Campaign Finance
+            Children: Children
+            Communications: Communications
+            Congratulations: Congratulations
+            Congressional Issues: Congressional Issues
+            Crime: Crime
+            Defense: Defense
+            Drugs: Drugs
+            Economy: Economy
+            Education Higher: Education Higher
+            Education K through 12: Education K through 12
+            Elections: Elections
+            Energy: Energy
+            Environment: Enviroment
+            Family: Family
             Other: Other
     - click_on:
-        - selector: form#webform-client-form-78 input.form-submit
-    - wait:
-        - value: 3
+        - selector: input[type='submit'][value='Submit']
+    - click_on:
+      - selector: ul#listblocks .opinion a
+      - wait:
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: "your message has been received"
+      contains: "Thank you for submitting your Request to our office"

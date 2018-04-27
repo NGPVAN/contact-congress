@@ -46,7 +46,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: "\""
+            blacklist: "\":"
     - select:
         - name: Prefix
           selector: "#prefix"
@@ -123,6 +123,8 @@ contact_form:
             Veterans: input[value='Veterans']
             "Women's Issues": input[value='Women's Issues']
             Other: input[value='Other']
+    - click_on:
+        - selector: input[value='Other']
     - click_on:
         - value: Submit
           selector: "#submit"

@@ -54,6 +54,8 @@ a subset of [Capybara methods](http://rubydoc.info/github/jnicklas/capybara/mast
 - [`picker`](#picker) Uses provided key-selector mapping to select element based on provided value
 - [`recaptcha`](#recaptcha) Handles reCAPTCHA V2
 - [`javascript`](#javascript) Allows running javascript commands
+- [`question`](#question) Answers pre-defined questions
+- [`math`](#math) Solves simple math expressions
 
 **success**
 
@@ -209,14 +211,48 @@ A click_on step terminates the preceding list of input-related steps, by submitt
 
 ### javascript
 
-A javascript step allows running arbitrary client-side javascript on the page that yamltron is on. The `selectors` property is used to inject an array of elements. The `values` property is used to inject an array of values, which is useful for injecting our $ variables, such as `$PHONE`, etc.
+A javascript step allows running arbitrary client-side javascript on the page. The `selectors` property is used to inject an array of elements. The `values` property is used to inject an array of values, which is useful for injecting our $ variables, such as `$PHONE`, etc.
 
 Example:
 ```yaml
 - javascript:
-  - name: topic
-    selectors: [ "#request_custom_fields_27999287" ]
-    commands: [ "elements[0].value = 'other_not_listed'"]
+  - name: Name
+    values: [ "$NAME_FIRST", "$NAME_LAST"]
+    selectors: [ "#name" ]
+    commands: [ "elements[0].value = values[1] + ', ' + values[0]"]
+```
+
+### question
+
+Given pairs of question-answer values, fills in an answer based on the question that is present. Uses a selector for the answer text input and a selector for the question element.
+
+Example:
+```yaml
+- question:
+    - name: qna
+      question_selector: "#Label"
+      answer_selector: "#TextBox"
+      pairs:
+        - q: "Is ice hot or cold?"
+          a: "cold"
+        - q: "Is fire hot or cold?"
+          a: "hot"
+        - q: "Is water wet or dry?"
+```
+
+### math
+
+Parses an element for a mathematical expression, in the form: `<operand> <operator> <operand>`, then fills in the answer (as digits) into a text input.
+- The `operand` values can be any integer value or English word for a number.
+- The `operator` can be `+`, `-`, `plus` or `minus`
+
+Example:
+```yaml
+- math:
+    - name: math_qna
+      question_selector: label.cptch_label
+      answer_selector: input.cptch_input
+      required: true
 ```
 
 ---

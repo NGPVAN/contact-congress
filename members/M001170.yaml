@@ -13,6 +13,8 @@ contact_form:
           selector: "#fname"
           value: $NAME_FIRST
           required: true
+          options:
+            blacklist: "."
         - name: lname
           selector: "#lname"
           value: $NAME_LAST

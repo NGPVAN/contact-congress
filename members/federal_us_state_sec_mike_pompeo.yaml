@@ -1,0 +1,46 @@
+bioguide: federal_us_state_sec_mike_pompeo
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://register.state.gov/contactus/contactusform"
+    - find:
+      - selector: "#first"
+    - fill_in:
+      - name: fname
+        selector: "#first"
+        value: $NAME_FIRST
+        required: true
+      - name: lastname
+        selector: "input#last"
+        value: $NAME_LAST
+        required: true
+      - name: email
+        selector: "#emailaddress"
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: "#subject"
+        value: $SUBJECT
+        required: true
+      - name: message
+        selector: "#message"
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 4800
+      - name: captcha
+        captcha_selector: "#RadCaptcha1_CaptchaImage"
+        selector: "#rcTextBox1"
+        value: $CAPTCHA_SOLUTION
+        required: true
+    - click_on:
+      - value: Submit
+        selector: "#submit1"
+    - wait:
+      - value: 4
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your message has been received."

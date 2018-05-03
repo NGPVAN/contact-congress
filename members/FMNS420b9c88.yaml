@@ -37,16 +37,16 @@ contact_form:
         selector: input#edit-submitted-constituent-information-email
         value: "$EMAIL"
         required: true
+      - name: Subtopic
+        selector: input#edit-submitted-message-details-sub-topic
+        value: "$SUBJECT"
+        required: true
       - name: Message
         selector: textarea#edit-submitted-message-details-message
         value: "$MESSAGE"
         required: true
         options:
-          blacklist: ":"
-      - name: Subtopic
-        selector: input#edit-submitted-message-details-sub-topic
-        value: "$SUBJECT"
-        required: true
+          blacklist: ":----"
     - select:
       - name: Prefix
         selector: select#edit-submitted-constituent-information-prefix
@@ -80,6 +80,8 @@ contact_form:
           Child Welfare: Child Welfare
           Climate Change: Climate Change
           Crime: Crime
+    - wait:
+      - value: 4
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']

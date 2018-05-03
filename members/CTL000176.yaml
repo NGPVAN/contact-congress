@@ -8,6 +8,10 @@ contact_form:
         - value: 1
     - find:
         - selector: input#edit-submitted-name
+    - wait:
+        - value: 2
+    - find:
+        - selector: input#edit-submitted-name
     - fill_in:
         - name: name
           selector: input#edit-submitted-name
@@ -45,8 +49,10 @@ contact_form:
         - selector: div#block-system-main div.form-actions input.webform-submit
     - wait:
         - value: 1
+    - wait:
+        - value: 7
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for your message.
+      contains: Go back to the form

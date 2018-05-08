@@ -77,7 +77,7 @@ contact_form:
             Rabbi: Rabbi
             Reverend: Reverend
         - name: issue
-          selector: "#edit-issue"
+          selector: select#input-6A5CD05B-A346-9664-3507-6301CE991304
           value: $TOPIC
           required: true
           options:

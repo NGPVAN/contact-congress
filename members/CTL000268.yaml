@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://www.housedems.ct.gov/Luxenberg/Contact"
+    - visit: "http://www.housedems.ct.gov/Juleson-Scopino/Contact"
     - wait:
         - value: 2
     - find:

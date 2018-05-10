@@ -1,0 +1,113 @@
+bioguide: FMSS15573cb2
+contact_form:
+  method: POST
+  action: ""
+  steps:
+    - visit: "https://www.hydesmith.senate.gov/content/contact-senator"
+    - fill_in:
+      - name: First Name
+        selector: input#edit-submitted-constituent-information-first-name
+        value: "$NAME_FIRST"
+        required: true
+      - name: Last Name
+        selector: input#edit-submitted-constituent-information-last-name
+        value: "$NAME_LAST"
+        required: true
+      - name: Street
+        selector: input#edit-submitted-constituent-information-address-1
+        value: "$ADDRESS_STREET"
+        required: true
+      - name: street2
+        selector: input#edit-submitted-constituent-information-address-2
+        value: "$ADDRESS_STREET_2"
+        required: false
+      - name: City
+        selector: input#edit-submitted-constituent-information-city
+        value: "$ADDRESS_CITY"
+        required: true
+      - name: zip5
+        selector: input#edit-submitted-constituent-information-zip
+        value: "$ADDRESS_ZIP5"
+        required: true
+      - name: Phone Number
+        selector: input#edit-submitted-constituent-information-phone
+        value: "$PHONE_HYPHENS"
+        required: false
+      - name: Email
+        selector: input#edit-submitted-constituent-information-email
+        value: "$EMAIL"
+        required: true
+      - name: Message
+        selector: textarea#edit-submitted-message-details-message
+        value: "$MESSAGE"
+        required: true
+    - select:
+      - name: Prefix
+        selector: select#edit-submitted-constituent-information-prefix
+        value: $NAME_PREFIX
+        required: true
+        options:
+          Mr.: Mr.
+          Mrs.: Mrs.
+          Ms.: Ms.
+          Mr. and Mrs.: Mr. and Mrs.
+          Dr.: Dr.
+          Dr. and Mrs.: Dr. and Mrs.
+          Reverend: Reverend
+          Sister: Sister
+          Pastor: Pastor
+          The Honorable: The Honorable
+          Representative: Representative
+          Senator: Senator
+      - name: Topic
+        selector: select#edit-submitted-message-details-topic
+        value: "$TOPIC"
+        required: true
+        options:
+          AG: Agriculture
+          AP: Appropriations
+          ARHUM: Arts
+          BANK: Banking
+          BUDG: Budget
+          Casework: Casework
+          OTHER: Child Welfare
+          AD: Congratulatory Letters
+          ECON: Economy and Jobs
+          EDU: Education
+          ENERGY: Energy
+          ENV: Environment
+          FEMA: FEMA
+          FORPO: Foreign Relations
+          HEALTH: HEALTH
+          HOMESEC: Homeland Security
+          HOUSE: Housing
+          IMMIG: Immigration
+          IND: Indian Affairs
+          JUD: Judiciary
+          LABOR: Labor
+          COPS: Law Enforcement
+          HERES: Medical Research
+          CMS: Medicare/Medicaid
+          DEF: National Security
+          NASA: NASA
+          NOM: Nominations
+          POST: Postal
+          ABORT: Pro-Life Issues
+          GUNS: Second Amendment
+          RULES: Senate Rules 
+          SOSSEC: Social Security/Aging
+          TAX: Taxes
+          TELE: Telecommunications
+          TRADE: Trade
+          TRANS: Transportation
+          VA: Veterans
+    - wait:
+      - value: 2
+    - click_on:
+      - value: Submit
+        selector: input[type='submit'][value='Submit']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you, your message has been received."

@@ -1,0 +1,130 @@
+bioguide: CusB0abdc0e61526058673
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.regulations.gov/comment?D=ATF-2018-0002-0001"
+    - wait:
+      - value: 6
+    - find:
+      - selector: div.GIY1LSJGSC form
+    - fill_in:
+        - name: message
+          selector: textarea#x-auto-0-input
+          value: $MESSAGE
+          required: true
+        - name: first
+          selector: input#x-auto-1-input
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: input#x-auto-2-input
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#x-auto-3-input
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#x-auto-4-input
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#x-auto-5-input
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#x-auto-8-input
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: email
+          selector: input#x-auto-10-input
+          value: $EMAIL
+          required: false
+        - name: phone
+          selector: input#x-auto-11-input
+          value: $PHONE
+          required: false
+    - select:
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            GIY1LSJBCB: Alabama
+            GIY1LSJBCB: Alaska
+            GIY1LSJBCB: American Samoa
+            GIY1LSJBCB: Arizona
+            GIY1LSJBCB: Arkansas
+            GIY1LSJBCB: California
+            GIY1LSJBCB: Colorado
+            GIY1LSJBCB: Connecticut
+            GIY1LSJBCB: Delaware
+            GIY1LSJBCB: District of Columbia
+            GIY1LSJBCB: Florida
+            GIY1LSJBCB: Georgia
+            GIY1LSJBCB: Guam
+            GIY1LSJBCB: Hawaii
+            GIY1LSJBCB: Idaho
+            GIY1LSJBCB: Illinois
+            GIY1LSJBCB: Indiana
+            GIY1LSJBCB: Iowa
+            GIY1LSJBCB: Kansas
+            GIY1LSJBCB: Kentucky
+            GIY1LSJBCB: Louisiana
+            GIY1LSJBCB: Maine
+            GIY1LSJBCB: Maryland
+            GIY1LSJBCB: Massachusetts
+            GIY1LSJBCB: Michigan
+            GIY1LSJBCB: Minnesota
+            GIY1LSJBCB: Mississippi
+            GIY1LSJBCB: Missouri
+            GIY1LSJBCB: Montana
+            GIY1LSJBCB: Nebraska
+            GIY1LSJBCB: Nevada
+            GIY1LSJBCB: New Hampshire
+            GIY1LSJBCB: New Jersey
+            GIY1LSJBCB: New Mexico
+            GIY1LSJBCB: New York
+            GIY1LSJBCB: North Carolina
+            GIY1LSJBCB: North Dakota
+            GIY1LSJBCB: Northern Mariana Islands
+            GIY1LSJBCB: Ohio
+            GIY1LSJBCB: Oklahoma
+            GIY1LSJBCB: Oregon
+            GIY1LSJBCB: Pennsylvania
+            GIY1LSJBCB: Puerto Rico
+            GIY1LSJBCB: Rhode Island
+            GIY1LSJBCB: South Carolina
+            GIY1LSJBCB: South Dakota
+            GIY1LSJBCB: Tennessee
+            GIY1LSJBCB: Texas
+            GIY1LSJBCB: US Virgin Islands
+            GIY1LSJBCB: Utah
+            GIY1LSJBCB: Vermont
+            GIY1LSJBCB: Virginia
+            GIY1LSJBCB: Washington
+            GIY1LSJBCB: West Virginia
+            GIY1LSJBCB: Wisconsin
+            GIY1LSJBCB: Wyoming
+    - click_on:
+        - selector: div.GIY1LSJISC button.primary
+    - wait:
+        - value: 5
+    - find:
+        - selector: input#gwt-uid-250
+    - click_on:
+        - selector: input#gwt-uid-250
+    - wait:
+        - value: 5
+    - find:
+        - selector: div.GIY1LSJERD button.primary
+    - click_on:
+        - selector: div.GIY1LSJERD button.primary
+    - wait:
+        - value: 6
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your Comment Tracking Number"

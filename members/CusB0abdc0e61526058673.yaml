@@ -33,6 +33,10 @@ contact_form:
           selector: input#x-auto-5-input
           value: $ADDRESS_CITY
           required: true
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
+          required: true
         - name: zip5
           selector: input#x-auto-8-input
           value: $ADDRESS_ZIP5
@@ -45,68 +49,6 @@ contact_form:
           selector: input#x-auto-11-input
           value: $PHONE
           required: false
-    - select:
-        - name: state
-          selector: input#x-auto-6-input
-          value: $ADDRESS_STATE_FULL
-          required: true
-          options:
-            GIY1LSJBCB: Alabama
-            GIY1LSJBCB: Alaska
-            GIY1LSJBCB: American Samoa
-            GIY1LSJBCB: Arizona
-            GIY1LSJBCB: Arkansas
-            GIY1LSJBCB: California
-            GIY1LSJBCB: Colorado
-            GIY1LSJBCB: Connecticut
-            GIY1LSJBCB: Delaware
-            GIY1LSJBCB: District of Columbia
-            GIY1LSJBCB: Florida
-            GIY1LSJBCB: Georgia
-            GIY1LSJBCB: Guam
-            GIY1LSJBCB: Hawaii
-            GIY1LSJBCB: Idaho
-            GIY1LSJBCB: Illinois
-            GIY1LSJBCB: Indiana
-            GIY1LSJBCB: Iowa
-            GIY1LSJBCB: Kansas
-            GIY1LSJBCB: Kentucky
-            GIY1LSJBCB: Louisiana
-            GIY1LSJBCB: Maine
-            GIY1LSJBCB: Maryland
-            GIY1LSJBCB: Massachusetts
-            GIY1LSJBCB: Michigan
-            GIY1LSJBCB: Minnesota
-            GIY1LSJBCB: Mississippi
-            GIY1LSJBCB: Missouri
-            GIY1LSJBCB: Montana
-            GIY1LSJBCB: Nebraska
-            GIY1LSJBCB: Nevada
-            GIY1LSJBCB: New Hampshire
-            GIY1LSJBCB: New Jersey
-            GIY1LSJBCB: New Mexico
-            GIY1LSJBCB: New York
-            GIY1LSJBCB: North Carolina
-            GIY1LSJBCB: North Dakota
-            GIY1LSJBCB: Northern Mariana Islands
-            GIY1LSJBCB: Ohio
-            GIY1LSJBCB: Oklahoma
-            GIY1LSJBCB: Oregon
-            GIY1LSJBCB: Pennsylvania
-            GIY1LSJBCB: Puerto Rico
-            GIY1LSJBCB: Rhode Island
-            GIY1LSJBCB: South Carolina
-            GIY1LSJBCB: South Dakota
-            GIY1LSJBCB: Tennessee
-            GIY1LSJBCB: Texas
-            GIY1LSJBCB: US Virgin Islands
-            GIY1LSJBCB: Utah
-            GIY1LSJBCB: Vermont
-            GIY1LSJBCB: Virginia
-            GIY1LSJBCB: Washington
-            GIY1LSJBCB: West Virginia
-            GIY1LSJBCB: Wisconsin
-            GIY1LSJBCB: Wyoming
     - click_on:
         - selector: div.GIY1LSJISC button.primary
     - wait:

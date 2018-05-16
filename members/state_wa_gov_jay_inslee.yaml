@@ -4,97 +4,97 @@ contact_form:
   action: ""
   steps:
     - visit: "http://www.governor.wa.gov/contact/contact/send-gov-inslee-e-message"
+    - find:
+      - selector: div#prefix-overlay-outer
+    - find:
+      - selector: button#prefix-dismissButton
+    - click_on:
+      - selector: button#prefix-dismissButton
     - iframe:
       - selector: div#article-48319 iframe
     - wait:
       - value: 2
     - find:
-      - selector: form#form1 input#q_2_first_name
+      - selector: input#qi_2_first_name
     - fill_in:
-      - name: firstName
-        selector: form#form1 input#q_2_first_name
+      - name: First Name
+        selector: input#qi_2_first_name
         value: $NAME_FIRST
         required: true
-      - name: lastName
-        selector: input#q_2_last_name
+      - name: Last Name
+        selector: input#qi_2_last_name
         value: $NAME_LAST
         required: true
-      - name: email
-        selector: input#q_2_email
+      - name: Email
+        selector: input#qi_2_email
         value: $EMAIL
         required: true
-      - name: phone
-        selector: input#q_2_hphone
+      - name: Phone Number
+        selector: input#qi_2_hphone
         value: $PHONE
         required: false
-      - name: street1
-        selector: input#q_2_addr_1
+      - name: Street Address
+        selector: input#qi_2_addr_1
         value: $ADDRESS_STREET
         required: true
-      - name: street2
-        selector: input#q_2_addr_2
+      - name: Street2
+        selector: input#qi_2_addr_2
         value: $ADDRESS_STREET_2
         required: false
-      - name: city
-        selector: input#q_2_city
+      - name: City
+        selector: input#qi_2_city
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: input#q_2_zip
+        selector: input#qi_2_zip
         value: $ADDRESS_ZIP5
         required: true
-      - name: message
-        selector: textarea#q_6
+      - name: Message
+        selector: textarea#qi_6
         value: $MESSAGE
         required: true
     - select:
-      - name: state
-        selector: select#q_2_state
+      - name: State
+        selector: select#qi_2_state
         value: $ADDRESS_STATE_FULL
         required: true
         options:
           Washington: Washington
       - name: topic
-        selector: select#q_5
+        selector: select#qi_5
         value: $TOPIC
         required: true
         options:
-          - "1b440443-d263-e411-8d8b-005056ba7b6d": "Agriculture"
-          - "1373e4b0-8eb7-e411-87cd-005056ba1e27": "Animals"
-          - "2b73e4b0-8eb7-e411-87cd-005056ba1e27": "Budget"
-          - "3973e4b0-8eb7-e411-87cd-005056ba1e27": "Commerce/Business/Economic Development"
-          - "4973e4b0-8eb7-e411-87cd-005056ba1e27": "DEL"
-          - "7373e4b0-8eb7-e411-87cd-005056ba1e27": "Education/Schools"
-          - "7973e4b0-8eb7-e411-87cd-005056ba1e27": "Emergency Preparedness"
-          - "27440443-d263-e411-8d8b-005056ba7b6d": "Energy"
-          - "29440443-d263-e411-8d8b-005056ba7b6d": "Environment"
-          - "b373e4b0-8eb7-e411-87cd-005056ba1e27": "FEDSTATE"
-          - "4d440443-d263-e411-8d8b-005056ba7b6d": "Gun Control"
-          - "2b440443-d263-e411-8d8b-005056ba7b6d": "Health Care"
-          - "2d440443-d263-e411-8d8b-005056ba7b6d": "Housing"
-          - "e773e4b0-8eb7-e411-87cd-005056ba1e27": "Immigration"
-          - "e973e4b0-8eb7-e411-87cd-005056ba1e27": "Initiative"
-          - "cb440443-d263-e411-8d8b-005056ba7b6d": "Labor and Industries"
-          - "fb73e4b0-8eb7-e411-87cd-005056ba1e27": "Legal/Crime/Law Enforcement"
-          - "fd73e4b0-8eb7-e411-87cd-005056ba1e27": "Legislative Bills and Comments"
-          - "ff73e4b0-8eb7-e411-87cd-005056ba1e27": "Licensing"
-          - "5d440443-d263-e411-8d8b-005056ba7b6d": "Marijuana"
-          - "39440443-d263-e411-8d8b-005056ba7b6d": "Mortgage/Loans/Banking/Foreclosure"
-          - "3b440443-d263-e411-8d8b-005056ba7b6d": "Natural Resources"
-          - "4f440443-d263-e411-8d8b-005056ba7b6d": "Other"
-          - "3d440443-d263-e411-8d8b-005056ba7b6d": "Parks and Recreation"
-          - "203ff019-aebb-e411-87cd-005056ba1e27": "Public Health"
-          - "61440443-d263-e411-8d8b-005056ba7b6d": "Scheduling Request"
-          - "3f440443-d263-e411-8d8b-005056ba7b6d": "Social Services"
-          - "41440443-d263-e411-8d8b-005056ba7b6d": "Taxes"
-          - "43440443-d263-e411-8d8b-005056ba7b6d": "Transportation"
-          - "45440443-d263-e411-8d8b-005056ba7b6d": "Tribal"
-          - "47440443-d263-e411-8d8b-005056ba7b6d": "Unemployment Assistance"
-          - "49440443-d263-e411-8d8b-005056ba7b6d": "Utilities"
-          - "67440443-d263-e411-8d8b-005056ba7b6d": "Veterans"
-          - "31440443-d263-e411-8d8b-005056ba7b6d": "Workers' Compensation"
+          Agriculture: Agriculture
+          Animal: Animal
+          Budget: Budget
+          Commerce/Business/Economic Development: Commerce/Business/Economic Development
+          Education/Schools: Education/Schools
+          Emergency Preparedness: Emergency Preparedness
+          Energy: Energy
+          Environment: Environment
+          Gun Control: Gun Control
+          Health Care: Health Care
+          Housing: Housing
+          Immigration: Immigration
+          Labor and Industries: Labor and Industries
+          Legal/Crime/Law Enforcement: Legal/Crime/Law Enforcement
+          Legislative Bills and Comments: Legislative Bills and Comments
+          Licensing: Licensing
+          Mortgage/Loans/Banking/Foreclosure: Mortgage/Loans/Banking/Foreclosure
+          Natural Resources: Natural Resources
+          Other: Other
+          Parks and Recreation: Parks and Recreation
+          Social Services: Social Services
+          Taxes: Taxes
+          Transportation: Transportation
+          Tribal: Tribal
+          Unemployment Assistance: Unemployment Assistance
+          Utilities: Utilities
+          Veterans: Veterans
+          Workers' Compensation: Workers' Compensation
     - click_on:
-      - selector: form#form1 input#btn_submit
+      - selector: input#btn_submit
     - wait:
       - value: 2
   success:

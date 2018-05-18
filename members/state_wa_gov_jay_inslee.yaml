@@ -10,10 +10,10 @@ contact_form:
       - selector: button#prefix-dismissButton
     - click_on:
       - selector: button#prefix-dismissButton
+    - wait:
+      - value: 3
     - iframe:
       - selector: div#article-48319 iframe
-    - wait:
-      - value: 2
     - find:
       - selector: input#qi_2_first_name
     - fill_in:

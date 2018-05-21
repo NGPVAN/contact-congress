@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://www.senatorleach.com/contact-daylin"
+    - visit: "http://www.senatorleach.com/contact/"
     - fill_in:
         - name: fname
           selector: input#cf10_field_2

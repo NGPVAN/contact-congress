@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.commerce.gov/form/commercegov-feedback"
+    - visit: "https://www.commerce.gov/form/provide-feedback-about-commercegov"
     - fill_in:
       - name: email
         selector: "input#edit-submitted-provide-your-e-mail-if-you-would-like-a-response-"

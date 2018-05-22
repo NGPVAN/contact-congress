@@ -26,6 +26,67 @@ contact_form:
         selector: select[name='State']
         value: $ADDRESS_STATE_FULL
         required: true
+        options:
+          AL: Alabama
+          AK: Alaska
+          AS: American Samoa
+          AR: Arkansas
+          AZ: Arizona
+          CA: California
+          CO: Colorado
+          CT: Connecticut
+          DE: Delaware
+          DC: District of Columbia
+          FL: Florida
+          GA: Georgia
+          GU: Guam
+          HI: Hawaii
+          IA: Iowa
+          ID: Idaho
+          IL: Illinois
+          IN: Indiana
+          KS: Kansas
+          KY: Kentucky
+          LA: Louisiana
+          MA: Massachusetts
+          MD: Maryland
+          ME: Maine
+          MH: Marshall Islands
+          MI: Michigan
+          MN: Minnesota
+          MO: Missouri
+          MP: Northern Mariana Islands
+          MS: Mississippi
+          MT: Montana
+          NC: North Carolina
+          ND: North Dakota
+          NE: Nebraska
+          NH: New Hampshire
+          NJ: New Jersey
+          NM: New Mexico
+          NV: Nevada
+          NY: New York
+          OH: Ohio
+          OK: Oklahoma
+          OR: Oregon
+          PA: Pennsylvania
+          PR: Puerto Rico
+          RI: Rhode Island
+          SC: South Carolina
+          SD: South Dakota
+          TN: Tennessee
+          TX: Texas
+          UT: Utah
+          VT: Vermont
+          VA: Virginia
+          VI: Virgin Islands, U.S
+          WA: Washington
+          WI: Wisconsin
+          WV: West Virginia
+          WY: Wyoming
+          AA: Armed Forces the Americas
+          AE: Armed Forces Europe
+          AP: Armed Forces Pacific
       - name: country
         selector: select[name='Country']
         value: "United States"

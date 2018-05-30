@@ -3,47 +3,47 @@ contact_form:
   method: post
   action: ContactPopupSubmit.php
   steps:
-    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD17"
+    - visit: 'https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD17'
     - fill_in:
         - name: txtFirstName
-          selector: "#txtFirstName"
+          selector: '#txtFirstName'
           value: $NAME_FIRST
           required: true
           options:
-            blacklist: ".é?"
+            blacklist: '.é?'
         - name: txtLastName
-          selector: "#txtLastName"
+          selector: '#txtLastName'
           value: $NAME_LAST
           required: true
           options:
-            blacklist: ",é"
+            blacklist: '.,é?'
         - name: txtAddress
-          selector: "#txtAddress"
+          selector: '#txtAddress'
           value: $ADDRESS_STREET
           required: true
         - name: txtCity
-          selector: "#txtCity"
+          selector: '#txtCity'
           value: $ADDRESS_CITY
           required: true
         - name: txtZip
-          selector: "#txtZip"
+          selector: '#txtZip'
           value: $ADDRESS_ZIP5
           required: true
         - name: txtEmail
-          selector: "#txtEmail"
+          selector: '#txtEmail'
           value: $EMAIL
           required: true
         - name: jv_text
-          selector: "#ContactForm textarea[name='jv_text']"
+          selector: '#ContactForm textarea[name=''jv_text'']'
           value: $MESSAGE
           options:
             max_length: 2000
           required: true
     - click_on:
         - value: Submit
-          selector: "#submitButton"
+          selector: '#submitButton'
   success:
     headers:
       status: 200
     body:
-      excludes: "Select an Issue"
+      excludes: 'Select an Issue'

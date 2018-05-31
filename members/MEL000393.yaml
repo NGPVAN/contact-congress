@@ -1,7 +1,7 @@
 bioguide: MEL000393
 contact_form:
   method: post
-  action: "http://www.mainesenate.org/senator-contact/?senator_name=Bill+Diamond#gf_2"
+  action: ""
   steps:
     - visit: "http://www.mainesenate.org/senator-contact/?senator_name=Bill%20Diamond"
     - fill_in:
@@ -17,6 +17,10 @@ contact_form:
           selector: input#input_2_7
           value: $ADDRESS_CITY
           required: true
+        - name: phone
+          selector: input#input_2_4
+          value: $PHONE
+          required: false
         - name: message
           selector: "#input_2_5"
           value: $MESSAGE

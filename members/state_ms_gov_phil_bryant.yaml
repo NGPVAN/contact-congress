@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://uat.msi.ms.gov/gov/governor_forms/contact"
+    - visit: "https://www.ms.gov/gov/governor_forms/contact"
     - fill_in:
         - name: fullName
           selector: input#YourName

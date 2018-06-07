@@ -50,7 +50,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          blacklist: ":"
+          blacklist: ":_%&=-"
     - select:
       - name: prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
@@ -107,4 +107,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Your message has been received by my office"
+      contains: "Email Ben"

@@ -3,11 +3,11 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.tfaforms.com/406958?faIframeUniqueId=mxk20dzl93&hostURL=https%3A%2F%2Fwww.colorado.gov%2Fgovernor%2Fshare-your-comments"
+    - visit: "https://www.tfaforms.com/4679739"
     - find:
-        - selector: form#tfa_0 div.inputWrapper input#tfa_2745
+        - selector: input#tfa_2745
     - click_on:
-        - selector: form#tfa_0 div.inputWrapper input#tfa_2745
+        - selector: input#tfa_2745
     - find:
         - selector: form#tfa_0 input#tfa_2748
     - fill_in:
@@ -113,4 +113,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Thank you for submitting your comments."
+      contains: "Thank you. Your response has been processed successfully"

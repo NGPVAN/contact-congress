@@ -46,7 +46,7 @@ contact_form:
         value: "$MESSAGE"
         required: true
         options:
-          blacklist: ":----"
+          blacklist: ":----—"
     - select:
       - name: Prefix
         selector: select#edit-submitted-constituent-information-prefix

@@ -3,209 +3,165 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "http://www.kaine.senate.gov/contact"
+    - visit: "https://www.kaine.senate.gov/contact/share-your-opinion"
     - find:
-      - selector: select#subject
-    - select:
-      - name: subject
-        selector: select#subject
-        value: $TOPIC
-        required: true
-        options:
-          Academy Nominations: Academy Nominations
-          Agriculture: Agriculture
-          Animal Welfare: Animal Welfare
-          "Banking & Financial Reform": "Banking & Financial Reform"
-          "Arts & Humanities": "Arts & Humanities"
-          Budget: Budget
-          Child Welfare: Child Welfare
-          Civil Rights: Civil Rights
-          Condolence Letters: Condolence Letters
-          Congratulatory Letters: Congratulatory Letters
-          "Congress & Executive Office Reform": "Congress & Executive Office Reform"
-          "Crime & Law Enforcement": "Crime & Law Enforcement"
-          Disaster Relief: Disaster Relief
-          Eagle Scouts: Eagle Scouts
-          Economy: Economy
-          Education: Education
-          Election Issues: Election Issues
-          Energy: Energy
-          "Environment & Wildlife Protection": "Environment & Wildlife Protection"
-          Federal Employees: Federal Employees
-          Flag Requests: Flag Requests
-          Foreign Aid: Foreign Aid
-          Foreign Relations: Foreign Relations
-          Foreign Trade: Foreign Trade
-          Girl Scouts: Girl Scouts
-          Grant Information: Grant Information
-          Gun Violence: Gun Violence
-          "Health Care & Affordable Care Act": "Health Care & Affordable Care Act"
-          Help with a Federal Agency: Help with a Federal Agency
-          Homeland Security: Homeland Security
-          Housing: Housing
-          Immigration: Immigration
-          Internships and Senate Page Program: Internships and Senate Page Program
-          Judicial Issues & Nominations: Judicial Issues & Nominations
-          Medicare: Medicare
-          Mental Health: Mental Health
-          "Military/Armed Services/Defense": "Military/Armed Services/Defense"
-          Postal Issues: Postal Issues
-          Public Welfare: Public Welfare
-          Scheduling Request: Scheduling Request
-          "Science & Technology": "Science & Technology"
-          Second Amendment Rights: Second Amendment Rights
-          Small Business: Small Business
-          Social Security: Social Security
-          Special Recognitions and Greetings: Special Recognitions and Greetings
-          Taxes: Taxes
-          "Telecommunications & Internet": "Telecommunications & Internet"
-          Tour Requests: Tour Requests
-          Veterans: Veterans
-          "Transportation & Infrastructure": "Transportation & Infrastructure"
-          Womens Issues: Womens Issues
-          "Workforce & Labor": "Workforce & Labor"
-    - wait:
-      - value: 8
-    - find:
-      - selector: div#continue-form input#fname
+      - selector: input#input-B388AE6D-5056-A066-6018-629F799184D7
     - fill_in:
-      - name: fname
-        selector: "#fname"
+      - name: First Name
+        selector: input#input-B388AE6D-5056-A066-6018-629F799184D7
         value: $NAME_FIRST
         required: true
-      - name: lname
-        selector: "#lname"
+      - name: Last Name
+        selector: input#input-B388B2AD-5056-A066-6058-0338F62B5B7D
         value: $NAME_LAST
         required: true
-      - name: mailing_streetAddress1
-        selector: "#mailing_streetAddress1"
+      - name: Address
+        selector: input#input-B388AC96-5056-A066-60C0-339424510C66
         value: $ADDRESS_STREET
         required: true
-      - name: mailing_streetAddress2
-        selector: "#mailing_streetAddress2"
+      - name: Address 2
+        selector: input#input-B388AB5E-5056-A066-603A-A9C61380AB3D
         value: $ADDRESS_STREET_2
-      - name: mailing_city
-        selector: "#mailing_city"
+        required: false
+      - name: City
+        selector: input#input-B388AFFC-5056-A066-60C0-4C8084FE94C6
         value: $ADDRESS_CITY
         required: true
-      - name: mailing_zipCode
-        selector: "#mailing_zipCode"
+      - name: Zip Code
+        selector: input#input-B388B27E-5056-A066-6051-28AF70687AB9
         value: $ADDRESS_ZIP5
         required: true
-      - name: phone_number
-        selector: "#phone_number"
+      - name: Phone Number
+        selector: input#input-B388ADC5-5056-A066-60D0-9122B0D07413
         value: $PHONE
         required: true
-      - name: email
-        selector: "#email"
+      - name: Email
+        selector: input#email
         value: $EMAIL
         required: true
-      - name: verify_email
-        selector: "#verify_email"
-        value: $EMAIL
-        required: true
-      - name: subject
-        selector: "[name='subject']"
+      - name: Subject
+        selector: input#input-B388AA60-5056-A066-602C-2DADE3D8A6F7
         value: $SUBJECT
         required: true
-      - name: message
-        selector: "#message"
+      - name: Message
+        selector: textarea#input-B388B084-5056-A066-6090-BF0C2E9BE07B
         value: $MESSAGE
         required: true
         options:
           blacklist: "*():"
     - select:
-      - name: salutation
-        selector: "#salutation"
+      - name: Prefix
+        selector: select#input-B388AD1E-5056-A066-6041-2A83C6ADF5C8
         value: $NAME_PREFIX
         required: true
         options:
-          "Mr.": "Mr."
-          "Ms.": "Ms."
-          "Mrs.": "Mrs."
-          "Miss": "Miss"
-          "Mr. and Mrs.": "Mr. and Mrs."
-          "Dr.": "Dr."
-          "Prof.": "Prof."
-          "Senator": "Senator"
-          "Gov.": "Gov."
-          "Congressman": "Congressman"
-          "Hon.": "Hon."
-          "Fr.": "Fr."
-          "Sister": "Sister"
-          "Rabbi": "Rabbi"
-          "Reverend": "Reverend"
-          "Fleet Admiral": "Fleet Admiral"
-          "Admiral": "Admiral"
-          "Vice Admiral": "Vice Admiral"
-          "Rear Admiral (upper half)": "Rear Admiral (upper half)"
-          "Rear Admiral (lower half)": "Rear Admiral (lower half)"
-          "Captain": "Captain"
-          "Commander": "Commander"
-          "Lieutenant Commander": "Lieutenant Commander"
-          "Lieutenant": "Lieutenant"
-          "Lieutenant, Junior Grade": "Lieutenant, Junior Grade"
-          "Ensign": "Ensign"
-          "Master Chief Petty Officer of the Navy": "Master Chief Petty Officer of the Navy"
-          "Master Chief Petty Officer": "Master Chief Petty Officer"
-          "Senior Chief Petty Officer": "Senior Chief Petty Officer"
-          "Chief Petty Officer": "Chief Petty Officer"
-          "Petty Officer First Class": "Petty Officer First Class"
-          "Petty Officer Second Class": "Petty Officer Second Class"
-          "Petty Officer Third Class": "Petty Officer Third Class"
-          "Seaman": "Seaman"
-          "Seaman Apprentice": "Seaman Apprentice"
-          "Seaman Recruit": "Seaman Recruit"
-          "Chief Warrant Officer": "Chief Warrant Officer"
-          "Warrant Officer": "Warrant Officer"
-          "Sgt Major Of The Corps": "Sgt Major Of The Corps"
-          "Sergeant Major": "Sergeant Major"
-          "Master Gunnery Sgt": "Master Gunnery Sgt"
-          "First Sergeant": "First Sergeant"
-          "Master Sergeant": "Master Sergeant"
-          "Gunnery Sergeant": "Gunnery Sergeant"
-          "Staff Sergeant": "Staff Sergeant"
-          "Sergeant": "Sergeant"
-          "Corporal": "Corporal"
-          "Lance Corporal": "Lance Corporal"
-          "Private First Class": "Private First Class"
-          "Private": "Private"
-          "General of the Air Force": "General of the Air Force"
-          "General": "General"
-          "Lieutenant General": "Lieutenant General"
-          "Major General": "Major General"
-          "Brigadier General": "Brigadier General"
-          "Colonel": "Colonel"
-          "Lieutenant Colonel": "Lieutenant Colonel"
-          "Major": "Major"
-          "First Lieutenant": "First Lieutenant"
-          "Second Lieutenant": "Second Lieutenant"
-          "Chief Master Sergeant of the Air Force": "Chief Master Sergeant of the Air Force"
-          "Command Chief Master Sergeant": "Command Chief Master Sergeant"
-          "Chief Master Sergeant": "Chief Master Sergeant"
-          "Senior Master Sergeant": "Senior Master Sergeant"
-          "Technical Sergeant": "Technical Sergeant"
-          "Senior Airman": "Senior Airman"
-          "Airman First Class": "Airman First Class"
-          "Airman": "Airman"
+          Mr.: Mr.
+          Ms.: Ms.
+          Mrs.: Mrs.
+          Miss: Miss
+          Mr. and Mrs.: Mr. and Mrs.
+          Dr.: Dr.
+          Professor: Professor
+          Senator: Senator
+          Governor: Governor
+          Congressman: Congressman
+          Congresswoman: Congresswoman
+          Delegate: Delegate
+          Father: Father
+          Sister: Sister
+          Rabbi: Rabbi
+          Reverend: Reverend
+          Admiral: Admiral
+          Airman: Airman
+          Brigadier General: Brigadier General
+          Captain: Captain
+          Chief Petty Officer: Chief Petty Officer
+          Chief Warrant Officer: Chief Warrant Officer
+          Commander: Commander
+          Colonel: Colonel
+          Corporal: Corporal
+          Ensign: Ensign
+          Fleet Admiral: Lieutenant Commander
+          General: General
+          Lieutenant: Lieutenant
+          Lieutenant Colonel: Lieutenant Colonel
+          Lieutenant Commander: Lieutenant Commander
+          Lieutenant General: Lieutenant General
+          Major: Major
+          Major General: Major General
+          Lieutenant, Junior Grade: Lieutenant, Junior Grade
+          Petty Officer: Petty Officer
+          Private: Private
+          Rear Admiral: Rear Admiral
+          Master Chief Petty Officer of the Navy: Master Chief Petty Officer of the Navy
+          Master Chief Petty Officer: Master Chief Petty Officer
+          Seaman: Seaman
+          Sergeant: Sergeant
+          Vice Admiral: Vice Admiral
+          Warrat Officer: Warrant Officer
+          Other: Other
+      - name: Topic
+        selector: select#input-B388ADF0-5056-A066-6033-31CCE02BC3DA
+        value: $TOPIC
+        required: true
+        options:
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Arts & Humanities: Arts & Humanities
+          Banking & Financial Reform: Banking & Financial Reform
+          Budget: Budget
+          Child Welfare: Child Welfare
+          Civil Rights: Civil Rights
+          Congress & Executive Office Reform: Congress & Executive Office Reform
+          Crime & Law Enforcement: Crime & Law Enforcement
+          Disaster Relief: Disaster Relief
+          Economy: Economy
+          Education: Education
+          Election Issues: Election Issues
+          Energy: Energy
+          Environment & Wildlife Protection: Environment & Wildlife Protection
+          Federal Employees: Federal Employees
+          Foreign Aid: Foreign Aid
+          Foreign Trade: Foreign Trade
+          Gun Violence: Gun Violence
+          Health Care & Affordable Care Act: Health Care & Affordable Care Act
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Judicial Issues & Nominations: Judicial Issues & Nominations
+          Medicare: Medicare
+          Mental Health: Mental Health
+          Military/Armed Services/Defense: Military/Armed Services/Defense
+          Postal Issues: Postal Issues
+          Press Inquiry: Press Inquiry
+          Public Welfare: Public Welfare
+          Science & Technology: Science & Technology
+          Second Amendment Rights: Second Amendment Rights
+          Small Business: Small Business
+          Social Security: Social Security
+          Taxes: Taxes
+          Telecommunications & Internet: Telecommunications & Internet
+          Transportation & Infrastructure: Transportation & Infrastructure
+          Womens Issues: Womens Issues
+          Workforce & Labor: Workforce & Labor
       - name: response
-        selector: "#response"
+        selector: select#input-B388B02A-5056-A066-602B-852F0E0961D4
         value: Yes
         required: true
       - name: newsletter
-        selector: "#newsletter"
+        selector: select#newslettertoggle
         value: No
         required: true
     - wait:
       - value: 1
     - click_on:
       - value: Submit
-        selector: "#contactForm input[type='submit']"
+        selector: input[type='submit'][value='Submit']
     - wait:
       - value: 1
     - find:
       - selector: "h1"
-        value: "THANK YOU"
+        value: "Thank You"
   success:
     headers:
       status: 200

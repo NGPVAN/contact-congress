@@ -137,6 +137,8 @@ contact_form:
     - click_on:
         - value: Send Your Message
           selector: input[name='submit']
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200

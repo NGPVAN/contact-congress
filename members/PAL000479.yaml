@@ -59,4 +59,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: Thank you for taking the time to contact me and to share your thoughts.
+      contains: Thank you for taking the time to contact our office and share your thoughts.

@@ -2,7 +2,6 @@ bioguide: S001194
 contact_form:
   method: post
   action: /contact
-  usePhantomJsLogging: true
   steps:
     - visit: "http://www.schatz.senate.gov/contact"
     - wait:

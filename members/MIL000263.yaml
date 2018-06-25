@@ -2,52 +2,57 @@ bioguide: MIL000263
 contact_form:
   method: post
   action: ""
+  usePhantomJsLogging: true
   steps:
-    - visit: "http://www.senatormargaretobrien.com/contact/"
+    - visit: "http://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_MID20&__fid=100001&iframe=Y"
     - fill_in:
-        - name: prefix
-          selector: input#q_1_prefix
+        - name: Prefix
+          selector: input#qii_1_prefix
           value: $NAME_PREFIX
           required: false
-        - name: fname
-          selector: input#q_1_first_name
+        - name: First Name
+          selector: input#qi_1_first_name
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: input#q_1_last_name
+        - name: Last Name
+          selector: input#qi_1_last_name
           value: $NAME_LAST
           required: true
-        - name: address
-          selector: input#q_1_addr_1
+        - name: Street
+          selector: "#qi_1_addr_1"
           value: $ADDRESS_STREET
           required: true
+        - name: Street2
+          selector: "#qi_1_addr_2"
+          value: $ADDRESS_STREET_2
+          required: false
         - name: city
-          selector: input#q_1_city
+          selector: input#qi_1_city
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: input#q_1_zip
+          selector: input#qi_1_zip
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: input#q_1_hphone
+          selector: input#qi_1_hphone
           value: $PHONE
           required: true
         - name: email
-          selector: input#q_1_email
+          selector: input#qi_1_email
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#q_2
+          selector: input#qi_2
           value: $SUBJECT
           required: false
         - name: message
-          selector: textarea#q_3
+          selector: textarea#qi_3
           value: $MESSAGE
           required: true
     - select:
       - name: state
-        selector: select#q_1_state
+        selector: select#qi_1_state
         value: $ADDRESS_STATE_POSTAL_ABBREV
         required: true
         options:
@@ -55,8 +60,14 @@ contact_form:
     - click_on:
         - value: Submit
           selector: input#btn_submit
+    - find:
+        - selector: button.pum-close.popmake-close
+    - click_on:
+        - selector: button.pum-close.popmake-close
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: Thank you. Your message
+      contains: Thank you. Your message has been sent

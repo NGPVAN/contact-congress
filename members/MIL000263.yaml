@@ -4,7 +4,7 @@ contact_form:
   action: ""
   usePhantomJsLogging: true
   steps:
-    - visit: "http://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_MID20&__fid=100001&iframe=Y"
+    - visit: "http://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_MID20&__fid=100001"
     - fill_in:
         - name: Prefix
           selector: input#qii_1_prefix

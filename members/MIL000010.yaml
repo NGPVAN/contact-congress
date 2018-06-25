@@ -8,7 +8,7 @@ contact_form:
     - wait:
         - value: 3
     - find:
-        - selector: "#qi`_1_first_name"
+        - selector: "#qi_1_first_name"
     - fill_in:
         - name: prefix
           selector: "#qi_1_prefix"

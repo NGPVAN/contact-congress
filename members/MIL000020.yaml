@@ -8,55 +8,55 @@ contact_form:
     - wait:
         - value: 3
     - find:
-        - selector: "#q_1_first_name"
+        - selector: "#qi_1_first_name"
     - fill_in:
-        - name: prefix
-          selector: "#q_1_prefix"
+        - name: Prefix
+          selector: "#qi_1_prefix"
           value: $NAME_PREFIX
           required: false
-        - name: first
-          selector: "#q_1_first_name"
+        - name: First Name
+          selector: "#qi_1_first_name"
           value: $NAME_FIRST
           required: true
-        - name: last
-          selector: "#q_1_last_name"
+        - name: Last Name
+          selector: "#qi_1_last_name"
           value: $NAME_LAST
           required: true
-        - name: street
-          selector: "#q_1_addr_1"
+        - name: Street
+          selector: "#qi_1_addr_1"
           value: $ADDRESS_STREET
           required: true
-        - name: street2
-          selector: "#q_1_addr_2"
+        - name: Street2
+          selector: "#qi_1_addr_2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#q_1_city"
+          selector: "#qi_1_city"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#q_1_zip"
+          selector: "#qi_1_zip"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: "#q_1_email"
+          selector: "#qi_1_email"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#q_1_hphone"
+          selector: "#qi_1_hphone"
           value: $PHONE
           required: true
         - name: subject
-          selector: "#q_2"
+          selector: "#qi_2"
           value: $SUBJECT
           required: false
         - name: message
-          selector: "#q_3"
+          selector: "#qi_3"
           value: $MESSAGE
           required: true
     - select:
         - name: state
-          selector: "#q_1_state"
+          selector: "#qi_1_state"
           value: $ADDRESS_STATE_FULL
           required: true
           options:

@@ -5,9 +5,7 @@ contact_form:
   steps:
     - visit: "https://governor.iowa.gov/constituent-services/register-opinion"
     - find:
-      - selector: div#prefix-overlay-header button
-    - click_on:
-      - selector: div#prefix-overlay-header button
+      - selector: "#edit-submitted-contact-information-first-name"
     - fill_in:
       - name: first_name
         selector: "#edit-submitted-contact-information-first-name"
@@ -33,12 +31,6 @@ contact_form:
         selector: "#edit-submitted-contact-information-city"
         value: $ADDRESS_CITY
         required: true
-    - select:
-      - name: state
-        selector: "#edit-submitted-contact-information-state"
-        value: $ADDRESS_STATE_POSTAL_ABBREV
-        required: true
-    - fill_in:
       - name: zip
         selector: "#edit-submitted-contact-information-zip"
         value: $ADDRESS_ZIP5
@@ -47,8 +39,10 @@ contact_form:
         selector: "#edit-submitted-contact-information-phone"
         value: $PHONE
         required: true
-    - wait:
-      - value: 5
+      - name: message
+        selector: "#edit-submitted-message-message"
+        value: $MESSAGE
+        required: true
     - select:
       - name: Topic
         selector: "#edit-submitted-message-message-subject"
@@ -126,11 +120,6 @@ contact_form:
           - Wedding Anniversary (50+ Years)
           - Welfare/Food Stamps
           - Worker's Compensation
-    - fill_in:
-      - name: message
-        selector: "#edit-submitted-message-message"
-        value: $MESSAGE
-        required: true
     - wait:
       - value: 5
     - click_on:

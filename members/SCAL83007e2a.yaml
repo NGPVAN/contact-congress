@@ -1,0 +1,64 @@
+bioguide: SCAL83007e2a
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD45"
+    - fill_in:
+        - name: Firs tName
+          selector: "#txtFirstName"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#txtLastName"
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: "#txtAddress"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#txtCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: "#txtZip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Phone Area Code
+          selector: input#txtAreaCode
+          value: $PHONE_AREA_CODE
+          required: false
+        - name: Phone Exchange Code
+          selector: input#txtPhone1
+          value: $PHONE_EXCHANGE_CODE
+          required: false
+        - name: Phone Subscriber Code
+          selector: input#txtPhone2
+          value: $PHONE_SUBSCRIBER_NUMBER
+          required: false
+        - name: Email
+          selector: "#txtEmail"
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: "#ContactForm textarea[name='jv_text']"
+          value: $MESSAGE
+          options:
+            max_length: 2000
+          required: true
+    - select:
+        - name: Topic
+          selector: select#IssueListBox
+          value: $TOPIC
+          options:
+            Comment on Legislation/Issue: Comment on Legislation/Issue
+          required: false
+    - click_on:
+        - value: Submit
+          selector: "#submitButton"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your message has been received"

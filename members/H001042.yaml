@@ -3,7 +3,7 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "https://www.hirono.senate.gov/help/email"
+    - visit: "https://www.hirono.senate.gov/contact"
     - fill_in:
       - name: firstname
         selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
@@ -31,7 +31,7 @@ contact_form:
         required: true
       - name: phone
         selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
-        value: $PHONE_PARENTHESES
+        value: $PHONE_HYPHENS
         required: true
       - name: email
         selector: input#email

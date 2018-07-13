@@ -1,0 +1,119 @@
+bioguide: R000595
+contact_form:
+  method: POST
+  action: ""
+  steps:
+    - visit: "https://www.rubio.senate.gov/public/index.cfm/contact"
+    - wait:
+      - value: 3
+    - fill_in:
+      - name: first
+        selector: input#field_F14022B2-CE41-4B48-BAAA-3EA936D0DC49
+        value: $NAME_FIRST
+        required: true
+      - name: last
+        selector: input#field_B1CBECAF-FA94-47CE-8E08-413AF45C40A3
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#field_D9FC9586-2976-4549-AF04-9CB756A4CCF6
+        value: $ADDRESS_STREET
+        required: true
+      - name: street2
+        selector: input#field_E593F76A-3BE3-4E05-8B68-FD4C067EEA76
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input#field_40D5D76F-F7F7-4D8B-BB9D-57BC5161E745
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input#field_D612F7D3-C97E-40B4-9525-A3FB97965C23
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: input#field_34077B89-D0F0-42CF-A62E-26A3CDEFEAB8
+        value: $PHONE
+        required: false
+      - name: email
+        selector: input#field_AB8AE0E8-B62D-4418-9580-DF08D60934CD
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: input#field_7694661F-5DE4-433E-8682-3972EBCF2E27
+        value: $SUBJECT
+        required: true
+      - name: MESSAGE
+        selector: textarea#field_5D0DF2C0-8A69-4230-AAB8-B0F872CEB818
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 450
+          blacklist: "-:"
+    - select:
+      - name: prefix
+        selector: select#field_8CE97650-0FB4-4175-AE29-CA0848365A3E
+        value: $NAME_PREFIX
+        required: true
+        options:
+          Mr.: Mr.
+          Ms.: Ms.
+          Mrs.: Mrs.
+          Mr. and Mrs.: Mr. and Mrs.
+          Dr.: Dr.
+          Dr. and Mrs.: Dr. and Mrs.
+          Mr. and Dr.: Mr. and Dr.
+          Reverend: Reverend
+          Sister: Sister
+          Pastor: Pastor
+          The Honorable: The Honorable
+          Representative: Representative
+          Senator: Senator
+      - name: topic
+        selector: select#field_502CC83D-39F8-415E-8205-061F1B2F23FA
+        value: $TOPIC
+        required: true
+        options:
+          Agriculture: AGR
+          Banking: BANK
+          Budget: BUD
+          Business: BUS
+          Condolences: COND
+          Congratulations - Military, Retirement, etc.: CONGRATS
+          Casework: CW
+          Defense: DEF
+          Economy: ECON
+          Education: EDU
+          Energy: ENE
+          Environmental: ENV
+          General State Office Correspondence: GENERAL
+          Governmental Reform: GOV
+          Health: HEA
+          Homeland Security: HOM
+          Individual Assistance: IA
+          Immigration: IMM
+          International Relations: INT
+          Judiciary: JUD
+          Labor: LAB
+          Legal: LEG
+          Medicare/Medicaid: MED
+          Military Personnel: MILP
+          Other: OTH
+          Social Issues: SOC
+          Social Security: SSEC
+          Taxes: TAXES
+          Telecommunications: TEL
+          Transportation: TRA
+          Trade: TRADE
+          Veterans: VET
+          Welfare: WEL
+    - click_on:
+      - value: Submit
+        selector: form#form_A52D2670-5183-4901-9285-7CEDA8BB2953 div.buttonHolder input.btn-primary
+    - wait:
+      - value: 4
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for your message"

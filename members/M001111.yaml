@@ -111,14 +111,14 @@ contact_form:
         value: $SUBJECT
         required: true
       - name: message
-        selector: textarea#message
+        selector: textarea#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87
         value: $MESSAGE
         required: true
         options:
           blacklist: ":"
     - javascript:
       - name: Message
-        selectors: [ "#message" ]
+        selectors: [ "#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87" ]
         values: [ "$MESSAGE" ]
         commands: [ "elements[0].value = elements[0].value.replace(/[\\•]/gi, ' ').replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true

@@ -3,10 +3,10 @@ contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/senate/12/tiffany/constituent-services-page/"
+    - visit: "http://legis.wisconsin.gov/senate/12/tiffany/constituent-services/"
     - click_on:
         - value: Request Assistance
-          selector: "a[rel='Services02']"
+          selector: li a#ui-id-2
     - fill_in:
         - name: email
           selector: "input[id='01498d34-cf67-45fc-db34-f3caf1d06e15']"
@@ -35,8 +35,13 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "input[type='submit'][value='Submit']"
+    - wait:
+      - value: 2
+    - click_on:
+        - value: Request Assistance
+          selector: li a#ui-id-2
   success:
     headers:
       status: 200
     body:
-      contains: Thank you
+      contains: "I am happy to help"

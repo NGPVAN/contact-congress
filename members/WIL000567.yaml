@@ -29,6 +29,10 @@ contact_form:
           selector: "input[id='fa63d8f3-0cf6-4504-b40e-3deab0ec61b1']"
           value: $EMAIL
           required: true
+        - name: phone
+          selector: "input[id='c56d601e-bed8-411e-8101-eaba0ed5cbc7']"
+          value: $PHONE
+          required: true
         - name: message
           selector: "textarea[id='5a31c909-314f-4146-bda0-3e38f3fee5b0']"
           value: $MESSAGE

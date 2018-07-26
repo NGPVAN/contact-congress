@@ -21,16 +21,26 @@ contact_form:
           selector: div.citystatezipcode input
           value: $ADDRESS_CITY_STATE_ZIP
           required: true
+        - name: Phone
+          selector: div .phone input
+          value: $PHONE
+          required: false
+        - name: Subject
+          selector: div .messagesubject input
+          value: $SUBJECT
+          required: false
         - name: message
           selector: div.dearsenatorvinehout textarea
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: div#contour_form_Contact input[name='submitbtn']
+        - selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 3
     - find:
-        - selector: p.contourMessageOnSubmit
+        - selector: div .panel-heading
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you"
+      contains: "Feature News"

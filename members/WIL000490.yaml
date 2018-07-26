@@ -3,37 +3,45 @@ contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/senate/shilling/Pages/Contact.aspx"
+    - visit: "http://legis.wisconsin.gov/senate/32/shilling/contact-page/"
     - fill_in:
-        - name: email
-          selector: "#legis-cf-email"
-          value: $EMAIL
-          required: true
         - name: name
-          selector: "#legis-cf-name"
+          selector: input#bb18d8f1-0b16-4400-a11f-b17b03269cdb
           value: $NAME_FULL
           required: true
         - name: address
-          selector: "#legis-cf-address"
+          selector: input[id='342e25ac-a482-4a38-8eb4-8b5e7cd5b308']
           value: $ADDRESS_STREET
           required: true
-        - name: citystatezip
-          selector: "#legis-cf-city-state"
-          value: $ADDRESS_CITY_STATE_ZIP
+        - name: city
+          selector: input[id='626b8e27-bf5a-4015-8f9f-a851d3ef9cb6']
+          value: $ADDRESS_CITY
           required: true
-        - name: phone
-          selector: "#legis-cf-phone"
-          value: $PHONE
+        - name: state
+          selector: input[id='4e4fce15-450b-4002-8ce7-cd45a5986acd']
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip code
+          selector: input[id='9e372cb6-fa27-4c9a-e450-df2fc80c58b5']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: input#fa63d8f3-0cf6-4504-b40e-3deab0ec61b1
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input[id='815f70fc-d463-4376-f1a5-cbb5dd46a741']
+          value: $SUBJECT
           required: true
         - name: message
-          selector: "textarea[name='Legis-Message']"
+          selector: textarea[name='5a31c909-314f-4146-bda0-3e38f3fee5b0']
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
-          selector: ".legis-email-submit-btn"
+          selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200
     body:
-      contains: Hello and welcome
+      contains: Thank you

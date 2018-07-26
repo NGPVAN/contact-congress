@@ -31,9 +31,9 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: ".legis-email-submit-btn"
+          selector: input[type='submit'][value='Send']
   success:
     headers:
       status: 200
     body:
-      contains: Thank you
+      contains: Dear Friend

@@ -21,7 +21,7 @@ contact_form:
           selector: div.citystatezipcode input
           value: $ADDRESS_CITY_STATE_ZIP
           required: true
-        - name: subject
+        - name: phone
           selector: div.phone input
           value: $PHONE
           required: true
@@ -37,7 +37,7 @@ contact_form:
         - value: Submit
           selector: div.col-md-12 input.btn
     - find:
-        - selector: p.contourMessageOnSubmit
+        - selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

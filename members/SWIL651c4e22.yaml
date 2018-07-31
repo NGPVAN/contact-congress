@@ -1,0 +1,41 @@
+bioguide: SWIL651c4e22
+contact_form:
+  method: post
+  action: Contact.aspx
+  steps:
+    - visit: "http://legis.wisconsin.gov/assembly/42/plumer/contact/"
+    - fill_in:
+        - name: name
+          selector: input#f6718dda-0e45-48f9-bf8f-ecfe8a500a9e
+          value: $NAME_FULL
+          required: true
+        - name: address
+          selector: input#b8e19108-c294-4aab-bb83-feee4e49e04d
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: input#a9d6105b-6df5-436f-ebea-d7ad3944b18a
+          value: $ADDRESS_CITY
+          required: true
+        - name: email
+          selector: input#c9204231-7756-4e10-cb50-60870fb4bb73
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input[id='8171b7b7-4270-44fb-cc28-62fe5bb95e78']
+          value: $PHONE
+          required: true
+        - name: message
+          selector: textarea#d69e4ea5-4957-4b27-f572-cae872e2dc75
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: No
+          selector: input[id='9ec301af-f1a5-466c-fc3e-0a9fde90be2e_1']
+        - value: Submit
+          selector: input[type='submit'][value='Submit']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for contacting my office

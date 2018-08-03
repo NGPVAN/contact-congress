@@ -6,74 +6,55 @@ contact_form:
   steps:
     - visit: "http://www.king.senate.gov/contact"
     - fill_in:
-        - name: fname
-          selector: "#fname"
+        - name: First Name
+          selector: input#input-EFEFBB82-E5AD-43BF-317C-6365EAD5F540
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#lname"
+        - name: Last Name
+          selector: input#input-EFEFBC04-A1C6-A99B-E17A-465BF19BB596
           value: $NAME_LAST
           required: true
-        - name: mailing_streetAddress1
-          selector: "#mailing_streetAddress1"
+        - name: Street
+          selector: input#input-EFF6FADA-AC70-B16D-6B17-9B9B5EB61A8B
           value: $ADDRESS_STREET
           required: true
-        - name: mailing_streetAddress2
-          selector: "#mailing_streetAddress2"
+        - name: Street2
+          selector: input#input-EFF6FB47-E02D-9697-9371-0740F1AA154C
           value: $ADDRESS_STREET_2
           required: false
-        - name: mailing_city
-          selector: "#mailing_city"
+        - name: City
+          selector: input#input-EFF6FC50-9F27-52E9-FC8A-9E973337F5A7
           value: $ADDRESS_CITY
           required: true
-        - name: mailing_zipCode
-          selector: "#mailing_zipCode"
+        - name: zip
+          selector: input#input-EFF6FE05-FD47-9CAE-592B-DD721DE754D5
           value: $ADDRESS_ZIP5
           required: true
-        - name: home_phone_number
-          selector: "#home_phone_number"
+        - name: Phone
+          selector: input#input-EFF948B7-026A-A6A4-00B1-846C8E5E9C5B
           value: $PHONE
           required: true
-        - name: email_address
-          selector: "#email"
+        - name: email
+          selector: input#email
           value: $EMAIL
           required: true
-        - name: verify_email
-          selector: "#verify_email"
+        - name: verify email
+          selector: input#input-C7C6BFDA-A10F-8024-D3ED-889AC2304F7D
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#subject"
+          selector: input#input-3E2E3A97-EC40-4905-D23E-5027DF4B2878
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#message"
+          selector: textarea#input-F6C4EB2B-E12A-A1F7-6979-6D62DF9DA6AE
           value: $MESSAGE
           required: true
           options:
             blacklist: ":"
     - select:
-        - name: salutation
-          selector: "#salutation"
-          value: $NAME_PREFIX
-          required: true
-          options:
-            Mr.: Mr.
-            Ms.: Ms.
-            Mrs.: Mrs.
-            Miss: Miss
-            Mr. and Mrs.: Mr. and Mrs.
-            Dr.: Dr.
-            Prof.: Prof.
-            Senator: Senator
-            Gov.: Gov.
-            Congressman: Congressman
-            Hon.: Hon.
-            Sister: Sister
-            Rabbi: Rabbi
-            Reverend: Reverend
         - name: topic
-          selector: "#topic"
+          selector: select#input-EFFE74ED-C7CC-D044-49D2-3B1B3C8DC9F8
           value: $TOPIC
           required: true
           options:
@@ -118,9 +99,11 @@ contact_form:
             Welfare: WEL
     - click_on:
         - value: Send
-          selector: "#side-search-btn"
+          selector: input[type='submit'][value='Send']
+    - find:
+        - selector: div#magicdomid16
   success:
     headers:
       status: 200
     body:
-      contains: Thank You
+      contains: You will receive an automated E-mail confirming my receipt of

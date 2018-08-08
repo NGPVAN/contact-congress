@@ -3,105 +3,79 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://www.state.nj.us/governor/contact/"
+    - visit: "https://www16.state.nj.us/GOV_TRANS_APPLICANTS/BTCustomServlet"
     - select:
         - name: topic
-          selector: form#govmail select.textfield
+          selector: select#ISSUE
           value: $TOPIC
           required: true
           options:
             "Addiction Services": "Addiction Services"
-            "Agriculture": "Agriculture"
             "Arts and History": "Arts and History"
             "Banking": "Banking"
             "Birth/Death Certificates": "Birth/Death Certificates"
             "Business": "Business"
-            "Children and Families": "Children and Families"
             "Child Support": "Child Support"
             "Civil Service Commission": "Civil Service Commission"
             "Consumer Affairs": "Consumer Affairs"
-            "Corrections": "Corrections"
             "Developmental Disabilities": "Developmental Disabilities"
             "Division on Elections": "Division on Elections"
-            "Education": "Education"
-            "Environment": "Environment"
             "Family Care/Medicaid": "Family Care/Medicaid"
-            "Health": "Health"
-            "Housing": "Housing"
-            "Human Services": "Human Services"
-            "Insurance": "Insurance"
-            "Invitations/Scheduling": "Invitations/Scheduling"
             "Labor": "Labor"
-            "Law and Public Safety": "Law and Public Safety"
             "Licensing Boards": "Licensing Boards"
             "Lottery": "Lottery"
             "Mental Health Services": "Mental Health Services"
-            "Military and Veterans Affairs": "Military and Veterans Affairs"
             "Pensions and Retirements": "Pensions and Retirements"
-            "Public Utilities": "Public Utilities"
             "Requesting Proclamations / Special Letter": "Requesting Proclamations / Special Letter"
-            "Superstorm Sandy/CDBG": "Superstorm Sandy/CDBG"
-            "Taxation": "Taxation"
             "Temporary Disability": "Temporary Disability"
-            "Transportation / Motor Vehicles": "Transportation / Motor Vehicles"
             "Unclaimed Property": "Unclaimed Property"
             "Unemployment": "Unemployment"
-    - click_on:
-        - selector: form#govmail button[name='Submit']
     - fill_in:
-        - name: firstName
-          selector: input[name='first']
+        - name: First Name
+          selector: input#FIRSTNAME
           value: $NAME_FIRST
           required: true
-        - name: lastName
-          selector: input[name='last']
+        - name: Last Name
+          selector: input#LASTNAME
           value: $NAME_LAST
           required: true
-        - name: street
-          selector: input[name='address1']
+        - name: Street
+          selector: input#ADDR1
           value: $ADDRESS_STREET
           required: true
-        - name: street2
-          selector: input[name='address2']
+        - name: Street2
+          selector: input#ADDR2
           value: $ADDRESS_STREET_2
           required: false
-        - name: city
-          selector: input[name='city']
+        - name: City
+          selector: input#CITY
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input[name='zip']
+          selector: input#ZIP
           value: $ADDRESS_ZIP5
           required: true
-        - name: phoneAreaCode
-          selector: input[name='areacode']
-          value: $PHONE_AREA_CODE
-          required: true
-        - name: phoneExchange
-          selector: input[name='exch']
-          value: $PHONE_EXCHANGE_CODE
-          required: true
-        - name: phoneNumber
-          selector: input[name='phone']
-          value: $PHONE_SUBSCRIBER_NUMBER
-          required: true
         - name: email
-          selector: input[name='email']
+          selector: input[name='EMAIL']
           value: $EMAIL
-          required: false
+          required: true
+        - name: Phone
+          selector: input[name='Phone_H']
+          value: $PHONE
+          required: true
         - name: subject
-          selector: input[name='subject']
+          selector: input[name='WFUD_Subject']
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea[name='message']
+          selector: textarea#WFNOTE
           value: $MESSAGE
           required: true
     - select:
         - name: prefix
           selector: select[name='prefix']
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
             "Captain": "Captain"
             "Chief": "Chief"
@@ -128,15 +102,9 @@ contact_form:
             "Sir": "Sir"
             "Sister": "Sister"
             "The Honorable": "The Honorable"
-        - name: stateFull
-          selector: select[name='state']
-          value: $ADDRESS_STATE_FULL
-          required: true
-          options:
-            "NJ": "New Jersey"
     - click_on:
         - value: Send Your Message
-          selector: input[name='submit']
+          selector: input[value='Submit'][type='submit']
     - wait:
         - value: 2
   success:

@@ -41,6 +41,8 @@ contact_form:
           selector: "#phone"
           value: $PHONE
           required: false
+          options:
+            blacklist: "."
         - name: subject
           selector: "#subject"
           value: $SUBJECT

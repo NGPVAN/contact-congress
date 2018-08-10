@@ -12,59 +12,6 @@ contact_form:
         - value: 3
     - find:
         - selector: select#prefixfocus
-    - fill_in:
-        - name: firstname
-          selector: input#input-075D915C-5056-A066-6016-31581A939FE3
-          value: $NAME_FIRST
-          required: true
-        - name: lastname
-          selector: input#input-075DA374-5056-A066-607C-9E15F05BFB27
-          value: $NAME_LAST
-          required: true
-        - name: street
-          selector: input#input-0770C9EF-5056-A066-6053-358F74525EF6
-          value: $ADDRESS_STREET
-          required: true
-        - name: street2
-          selector: input#input-0770ECF2-5056-A066-6062-E6D4680C24E5
-          value: "$ADDRESS_STREET_2"
-          required: false
-        - name: city
-          selector: input#input-077194F7-5056-A066-60B0-6A8E22439BD3
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip5
-          selector: input#input-07723B03-5056-A066-603E-BE90CECEC5C6
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone
-          selector: input#input-07732C3A-5056-A066-6049-CE975D761F0D
-          value: $PHONE
-          required: true
-        - name: email
-          selector: input#email
-          value: $EMAIL
-          required: true
-        - name: verify_email
-          selector: input#input-07742BA1-5056-A066-60F2-B34A7A496C32
-          value: $EMAIL
-          required: true
-        - name: subject
-          selector: input#input-07B2E314-5056-A066-6033-904406BB247F
-          value: $SUBJECT
-          required: false
-        - name: message
-          selector: textarea#commentbox
-          value: $MESSAGE
-          required: true
-          options:
-            blacklist: ":"
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#commentbox" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-          required: true
     - select:
         - name: prefix
           selector: select#prefixfocus
@@ -205,6 +152,60 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
+    - fill_in:
+        - name: firstname
+          selector: input#input-075D915C-5056-A066-6016-31581A939FE3
+          value: $NAME_FIRST
+          required: true
+        - name: lastname
+          selector: input#input-075DA374-5056-A066-607C-9E15F05BFB27
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#input-0770C9EF-5056-A066-6053-358F74525EF6
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#input-0770ECF2-5056-A066-6062-E6D4680C24E5
+          value: "$ADDRESS_STREET_2"
+          required: false
+        - name: city
+          selector: input#input-077194F7-5056-A066-60B0-6A8E22439BD3
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#input-07723B03-5056-A066-603E-BE90CECEC5C6
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input#input-07732C3A-5056-A066-6049-CE975D761F0D
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#email
+          value: $EMAIL
+          required: true
+        - name: verify_email
+          selector: input#input-07742BA1-5056-A066-60F2-B34A7A496C32
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input#input-07B2E314-5056-A066-6033-904406BB247F
+          value: $SUBJECT
+          required: false
+        - name: message
+          selector: textarea#commentbox
+          value: $MESSAGE
+          required: true
+          options:
+            blacklist: ":"
+    - javascript:
+        - name: Message
+          selectors: [ "textarea#commentbox" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          required: true
+    - select:
         - name: topic
           selector: select#input-07B1B29B-5056-A066-605E-4F6E6A832654
           value: $TOPIC

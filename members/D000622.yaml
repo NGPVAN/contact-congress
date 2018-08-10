@@ -2,13 +2,19 @@ bioguide: D000622
 contact_form:
   method: post
   action: ""
-  usePhantomLogging: true
+  usePhantomJsLogging: true
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
+    - wait:
+      - value: 1
+    - find:
+      - selector: div#main_column .feedback-block.opinion a
     - click_on:
       - selector: div#main_column .feedback-block.opinion a
       - wait:
-        - value: 2
+        - value: 3
+    - find:
+      - selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
     - select:
         - name: prefix
           selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
@@ -105,6 +111,8 @@ contact_form:
           selector: input#input-356E5FC0-5056-A066-6013-9C5EB3043747
           value: $PHONE
           required: true
+          options:
+            blacklist: "-.x"
         - name: email
           selector: input#email
           value: $EMAIL
@@ -137,4 +145,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting my office."
+      contains: "Thank you for contacting my office"

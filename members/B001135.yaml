@@ -4,10 +4,12 @@ contact_form:
   action: /contact/email
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
+    - find:
+      - selector: div#morestuffbutton
     - click_on:
       - selector: div#morestuffbutton
       - wait:
-        - value: 2
+        - value: 3
     - find:
         - selector: select#prefixfocus
     - fill_in:

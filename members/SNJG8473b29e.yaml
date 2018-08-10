@@ -71,6 +71,11 @@ contact_form:
           selector: textarea#WFNOTE
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: hello
+          values: ["$PHONE"]
+          selectors: ["input[name='Phone_H']"]
+          commands: ["elements[0].value= elements[0].value.replace(/[\\-\\s]+/g, '')"]
     - select:
         - name: prefix
           selector: select[name='prefix']

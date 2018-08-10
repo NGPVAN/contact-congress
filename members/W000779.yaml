@@ -4,10 +4,14 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.wyden.senate.gov/contact/email-ron"
+    - find:
+      - selector: div.opinion a
     - click_on:
-      - selector: div.opinion
+      - selector: div.opinion a
       - wait:
         - value: 2
+    - find:
+      - selector: input#input-67423504-9AAC-EB15-51B1-3DF559E135D4
     - fill_in:
       - name: firstname
         selector: input#input-67423504-9AAC-EB15-51B1-3DF559E135D4

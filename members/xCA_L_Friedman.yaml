@@ -4,6 +4,8 @@ contact_form:
   action: ContactPopupSubmit.php
   steps:
     - visit: "http://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD43"
+    - wait:
+        - value: 2
     - fill_in:
         - name: txtFirstName
           selector: "#txtFirstName"

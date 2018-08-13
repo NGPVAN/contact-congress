@@ -75,7 +75,7 @@ contact_form:
         - name: phone-dash-replace
           values: ["$PHONE"]
           selectors: ["input[name='Phone_H']"]
-          commands: ["elements[0].value= elements[0].value.replace(/[\\-\\s]+/g, '')"]
+          commands: ["elements[0].value= elements[0].value.replace(/[\\-()\\s]+/g, '')"]
     - select:
         - name: prefix
           selector: select[name='prefix']

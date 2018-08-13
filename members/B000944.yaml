@@ -11,10 +11,14 @@ contact_form:
         selector: "#fname"
         value: "$NAME_FIRST"
         required: true
+        options:
+          blacklist: "'"
       - name: lname
         selector: "#lname"
         value: "$NAME_LAST"
         required: true
+        options:
+          blacklist: "'"
       - name: mailing_streetAddress1
         selector: "#mailing_streetAddress1"
         value: "$ADDRESS_STREET"

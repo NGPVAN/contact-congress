@@ -10,6 +10,8 @@ contact_form:
       - selector: input#gwt-uid-164
     - click_on:
         - selector: input#gwt-uid-164
+    - click_on:
+        - selector: input#gwt-uid-85
     - wait:
       - value: 1
     - find:
@@ -27,8 +29,6 @@ contact_form:
           selector: input#x-auto-2-input
           value: $NAME_LAST
           required: true
-    - click_on:
-        - selector: input#gwt-uid-85
     - fill_in:
         - name: City
           selector: input#x-auto-5-input

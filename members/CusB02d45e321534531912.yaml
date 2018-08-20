@@ -60,7 +60,7 @@ contact_form:
     - select:
         - name: Prefix
           selector: select[id*='.title']
-          value: $NAME_PREFIIX
+          value: $NAME_PREFIX
           required: false
           options:
             Mr.: Mr.

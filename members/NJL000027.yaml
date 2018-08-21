@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: SelectMun.asp
   steps:
-    - visit: "http://www.njleg.state.nj.us/Selectmun.asp"
+    - visit: "https://www.njleg.state.nj.us/Selectmun.asp"
     - select:
         - name: Municipality
           selector: "#DistrictDD"

@@ -72,13 +72,13 @@ contact_form:
           value: $MESSAGE
           required: true
     - javascript:
-        - name: phone-dash-replace
+        - name: phone-char-replace
           values: ["$PHONE"]
           selectors: ["input[name='Phone_H']"]
-          commands: ["elements[0].value= elements[0].value.replace(/[\\-()\\s]+/g, '')"]
+          commands: ["elements[0].value = values[0].replace(/\D+/g,'').length > 10 ? values[0].replace(/\D+/g,'').substr(1) : values[0].replace(/\D+/g,'')" ]
     - select:
         - name: prefix
-          selector: select[name='prefix']
+          selector: select#PREFIX
           value: $NAME_PREFIX
           required: false
           options:

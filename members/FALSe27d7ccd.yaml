@@ -3,54 +3,19 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "https://www.jones.senate.gov/content/contact-senator"
-    - fill_in:
-      - name: firstname
-        selector: input#edit-submitted-constituent-information-first-name
-        value: "$NAME_FIRST"
-        required: true
-      - name: lastname
-        selector: input#edit-submitted-constituent-information-last-name
-        value: "$NAME_LAST"
-        required: true
-      - name: street
-        selector: input#edit-submitted-constituent-information-address-1
-        value: "$ADDRESS_STREET"
-        required: true
-      - name: street2
-        selector: input#edit-submitted-constituent-information-address-2
-        value: "$ADDRESS_STREET_2"
-        required: false
-      - name: city
-        selector: input#edit-submitted-constituent-information-city
-        value: "$ADDRESS_CITY"
-        required: true
-      - name: zip5
-        selector: input#edit-submitted-constituent-information-zip
-        value: "$ADDRESS_ZIP5"
-        required: true
-      - name: phone
-        selector: input#edit-submitted-constituent-information-phone
-        value: "$PHONE"
-        required: false
-      - name: email
-        selector: input#edit-submitted-constituent-information-email
-        value: "$EMAIL"
-        required: true
-      - name: subject
-        selector: input#edit-submitted-message-details-please-type-the-subject-of-your-message
-        value: $SUBJECT
-        required: true
-      - name: message
-        selector: textarea#edit-submitted-message-details-message
-        value: "$MESSAGE"
-        required: true
-        options:
-          blacklist: ":----—"
+    - visit: "https://www.jones.senate.gov/contact/email-doug"
+    - find:
+      - selector: div.js-form-toggle a.btn
+    - click_on:
+      - selector: div.js-form-toggle a.btn
+      - wait:
+        - value: 1
+    - find:
+      - selector: select#input-43D2DA7E-E6AF-BC8A-9CB4-810EC45E0072
     - select:
       - name: prefix
-        selector: select#edit-submitted-constituent-information-prefix
-        value: $NAME_PREFIX
+        selector: select#input-43D2DA7E-E6AF-BC8A-9CB4-810EC45E0072
+        value: "$NAME_PREFIX"
         required: true
         options:
           Mr.: Mr.
@@ -66,8 +31,8 @@ contact_form:
           Representative: Representative
           Senator: Senator
       - name: topic
-        selector: select#edit-submitted-message-details-topic
-        value: $TOPIC
+        selector: select#input-444A1682-C90F-902F-3BFF-92A9C06742EA
+        value: "$TOPIC"
         required: true
         options:
           Abortion: Abortion
@@ -84,11 +49,60 @@ contact_form:
           Communications: Communications
           Congratulations: Congratulations
           Congressional Issues: Congressional Issues
+    - fill_in:
+      - name: First Name
+        selector: input#input-43DBC091-988F-DB42-A4E6-81CFBF4E6CA2
+        value: "$NAME_FIRST"
+        required: true
+      - name: Last Name
+        selector: input#input-43E39A35-942A-B585-AB0D-DFE8520D40EE
+        value: "$NAME_LAST"
+        required: true
+      - name: street
+        selector: input#input-43F41A39-D998-0BCE-5BEF-8D05F75E8D88
+        value: "$ADDRESS_STREET"
+        required: true
+      - name: street2
+        selector: input#input-43F8D5D9-C919-277A-25FA-78363EE7F9C7
+        value: "$ADDRESS_STREET_2"
+        required: false
+      - name: city
+        selector: input#input-4407349B-0CA5-329A-4ADF-50A6EFAAC762
+        value: "$ADDRESS_CITY"
+        required: true
+      - name: zip5
+        selector: input#input-441D2D9E-D255-729E-DD3F-38C12E19DF01
+        value: "$ADDRESS_ZIP5"
+        required: true
+      - name: phone
+        selector: input#input-4427C443-B2D9-AA4F-497D-ADA8191109F5
+        value: "$PHONE"
+        required: true
+      - name: email
+        selector: input#email
+        value: "$EMAIL"
+        required: true
+      - name: verify email
+        selector: input#input-4437FB36-ECF4-308E-8294-A788783F0B58
+        value: "$EMAIL"
+        required: true
+      - name: subject
+        selector: input#input-445383EA-96E3-01B7-49BB-FF9A82A25F25
+        value: "$SUBJECT"
+        required: true
+      - name: message
+        selector: textarea#input-445EBBE3-C79E-6B38-B311-62FA2F325B81
+        value: "$MESSAGE"
+        required: true
+        options:
+          blacklist: "-—"
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']
+    - wait:
+      - value: 6
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you, your message has been received."
+      contains: "Thank you for taking the time to share"

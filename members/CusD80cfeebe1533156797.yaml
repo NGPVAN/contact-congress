@@ -105,13 +105,13 @@ contact_form:
     - click_on:
         - selector: div.GIY1LSJISC button.primary
     - wait:
-        - value: 3
+        - value: 6
     - find:
         - selector: input#gwt-uid-250
     - click_on:
         - selector: input#gwt-uid-250
     - wait:
-        - value: 3
+        - value: 5
     - find:
         - selector: div.GIY1LSJERD button.primary
     - click_on:

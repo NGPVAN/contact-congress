@@ -4,7 +4,7 @@ contact_form:
   action: ""
   useChrome: true
   steps:
-    - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=70305"
+    - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=70905"
     - wait:
       - value: 2
     - find:
@@ -134,12 +134,12 @@ contact_form:
     - wait:
         - value: 2
     - find:
-        - selector: input[name='agreement_53840'][value='Y']
+        - selector: input[name='agreement_54342'][value='Y']
     - click_on:
-        - selector: input[name='agreement_53840'][value='Y']
+        - selector: input[name='agreement_54342'][value='Y']
     - javascript:
         - name: No
-          selectors: ["input[name='agreement_53841'][value='N']"]
+          selectors: ["input[name='agreement_54343'][value='N']"]
           commands: ["elements[0].click()"]
     - click_on:
         - selector: input[type='submit'][value='Submit']

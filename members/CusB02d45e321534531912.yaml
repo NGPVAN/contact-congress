@@ -127,12 +127,16 @@ contact_form:
         - name: represent org
           selectors: ["input[id='commentSubNameAddress.representsOrg2'][value='N']"]
           commands: ["elements[0].click()"]
+        - name: phone-char-replace
+          values: ["$PHONE"]
+          selectors: ["input[id*='.dayPhone']"]
+          commands: ["elements[0].value = values[0].replace(/\D+/g,'').length > 10 ? values[0].replace(/\D+/g,'').substr(1) : values[0].replace(/\D+/g,'')" ]
     - find:
         - selector: input[type='submit'][value='Next']
     - click_on:
         - selector: input[type='submit'][value='Next']
     - wait:
-        - value: 2
+        - value: 3
     - find:
         - selector: input[name='agreement_54342'][value='Y']
     - click_on:

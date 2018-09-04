@@ -39,6 +39,11 @@ contact_form:
           options:
             max_length: 2000
           required: true
+    - javascript:
+        - name: ampersand-replace
+          values: ["$NAME_FIRST"]
+          selectors: ["#txtFirstName"]
+          commands: ["elements[0].value = values[0].replace(/\&/g,'and')"]
     - click_on:
         - value: Submit
           selector: "#submitButton"

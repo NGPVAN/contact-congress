@@ -46,7 +46,7 @@ contact_form:
         value: "$MESSAGE"
         required: true
         options:
-          blacklist: ":----—"
+          blacklist: "-—"
     - select:
       - name: Prefix
         selector: select#edit-submitted-constituent-information-prefix
@@ -81,7 +81,7 @@ contact_form:
           Climate Change: Climate Change
           Crime: Crime
     - wait:
-      - value: 4
+      - value: 5
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']

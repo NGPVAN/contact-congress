@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.gardner.senate.gov/contact-cory/email-cory"
     - wait:
-        - value: 4
+        - value: 5
     - find:
         - selector: select#actions
     - select:
@@ -274,7 +274,7 @@ contact_form:
         - value: Submit
           selector: "input[type='submit'][value='Submit']"
     - wait:
-        - value: 3
+        - value: 4
   success:
     headers:
       status: 200

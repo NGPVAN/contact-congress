@@ -2,7 +2,7 @@ bioguide: CusB02d45e321534531912
 contact_form:
   method: post
   action: ""
-  useChrome: true
+  usePhantomJsLogging: true
   steps:
     - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=70905"
     - wait:
@@ -24,6 +24,7 @@ contact_form:
           selector: body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']
           value: $MESSAGE
           required: true
+          wysiwyg: true
     - iframe:
         - back: true
     - click_on:

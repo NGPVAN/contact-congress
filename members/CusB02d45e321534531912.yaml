@@ -25,6 +25,8 @@ contact_form:
           value: $MESSAGE
           required: true
           wysiwyg: true
+          options:
+            blacklist: "\n"
     - iframe:
         - back: true
     - click_on:

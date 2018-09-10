@@ -117,6 +117,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: form#form_E13EAF9D-7466-4377-96AD-7D97BCA16A2D div.buttonHolder input.btn-primary
+    - wait:
+        - value: 2
   success:
     headers:
       status: 200

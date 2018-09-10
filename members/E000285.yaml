@@ -55,7 +55,7 @@ contact_form:
       - value: Submit
         selector: form#form_D66636DE-02AE-487D-96D4-FDD63541125A div.buttonHolder input
     - wait:
-      - value: 2
+      - value: 3
   success:
     headers:
       status: 200

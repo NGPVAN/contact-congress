@@ -6,7 +6,7 @@ contact_form:
   steps:
     - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=70905"
     - wait:
-      - value: 2
+        - value: 2
     - find:
         - selector: input[id='commentSubComment.commentTitle']
     - fill_in:
@@ -19,14 +19,11 @@ contact_form:
           selector: iframe[class='cke_wysiwyg_frame cke_reset']
     - find:
         - selector: body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']
-    - fill_in:
-        - name: message
-          selector: body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']
-          value: $MESSAGE
-          required: true
-          wysiwyg: true
-          options:
-            blacklist: "\n"
+    - javascript:
+        - name: ckeditor
+          selectors: [ "body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']"]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].innerHTML=values[0].replace(/\\n/g, '<br/>').replace(/\\r/g,'')" ]
     - iframe:
         - back: true
     - click_on:

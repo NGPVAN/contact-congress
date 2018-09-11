@@ -6,7 +6,7 @@ contact_form:
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
     - wait:
-      - value: 1
+      - value: 2
     - find:
       - selector: div#main_column .feedback-block.opinion a
     - click_on:

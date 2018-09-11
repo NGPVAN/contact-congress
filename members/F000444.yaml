@@ -105,6 +105,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: div.buttonHolder input.btn-primary
+    - wait:
+        - value: 1
   success:
     headers:
       status: 200

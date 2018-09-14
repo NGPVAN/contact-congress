@@ -39,6 +39,14 @@ contact_form:
           options:
             max_length: 2000
           required: true
+    - javascript:
+        - name: accent-replace
+          values: ["$NAME_FIRST"]
+          selectors: ["#txtFirstName"]
+          commands: ["elements[0].value = values[0].replace(/\ý/g,'y')"]
+    - click_on:
+        - value: Submit
+          selector: "#submitButton"
     - click_on:
         - value: Submit
           selector: "#submitButton"

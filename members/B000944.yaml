@@ -252,6 +252,9 @@ contact_form:
           Williams: Williams
           Wood: Wood
           Wyandot: Wyandot
+    - wait:
+      - value: 1
+    - select:
       - name: topic
         selector: "#topic"
         value: "$TOPIC"

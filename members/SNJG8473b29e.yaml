@@ -76,6 +76,14 @@ contact_form:
           values: ["$PHONE"]
           selectors: ["input[name='Phone_H']"]
           commands: ["elements[0].value = values[0].replace(/\D+/g,'').length > 10 ? values[0].replace(/\D+/g,'').substr(1) : values[0].replace(/\D+/g,'')" ]
+        - name: add-period-to-firstName
+          values: ["$NAME_FIRST"]
+          selectors: ["#FIRSTNAME"]
+          commands: ["elements[0].value = !elements[0].value || elements[0].value.length > 1 ? elements[0].value : elements[0].value + '.'" ]
+        - name: add-period-to-lastName
+          values: ["$NAME_LAST"]
+          selectors: ["#LASTNAME"]
+          commands: ["elements[0].value = !elements[0].value || elements[0].value.length > 1 ? elements[0].value : elements[0].value + '.'" ]        
     - select:
         - name: prefix
           selector: select#PREFIX

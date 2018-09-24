@@ -118,6 +118,8 @@ contact_form:
     - click_on:
         - value: Send Message
           selector: "form.fullform.validate input[type='submit'][value='Send Message']"
+    - wait:
+        - value: 1
     - find:
         - selector: "#page-title"
           value: Thank You

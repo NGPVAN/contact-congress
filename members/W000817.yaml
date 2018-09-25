@@ -4,6 +4,8 @@ contact_form:
   action: ""
   steps:
     - visit: "https://www.warren.senate.gov/contact/shareyouropinion"
+    - wait:
+        - value: 1
     - find:
       - selector: div#form-6AC10D77-F899-5659-3470-9DAFE25FCA0A
     - fill_in:

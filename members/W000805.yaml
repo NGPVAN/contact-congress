@@ -49,6 +49,7 @@ contact_form:
           required: true
           options:
             blacklist: "*():"
+            max_length: 4000
     - select:
         - name: prefix
           selector: select#field_EEC119B6-F19D-4F37-8035-F4A46C2D7C2F
@@ -184,6 +185,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: form#form_F9DB6196-2DC7-4CDA-8ADD-F8435A71318A div.buttonHolder input
+    - wait:
+        - value: 1
   success:
     headers:
       status: 200

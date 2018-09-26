@@ -10,13 +10,13 @@ contact_form:
         value: $NAME_FIRST
         required: true
         options:
-          blacklist: ".,!@#$%^&*/\'\""
+          blacklist: ".,!@#$%^&*/\\'\\"
       - name: lastname
         selector: "#edit-submitted-last-name"
         value: $NAME_LAST
         required: true
         options:
-          blacklist: ".,!@#$%^&*/\'\""
+          blacklist: ".,!@#$%^&*/\\'\\"
       - name: street
         selector: "#edit-submitted-address-1"
         value: $ADDRESS_STREET
@@ -46,10 +46,8 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          blacklist: ":"
-        options:
           max_length: 10000
-          blacklist: ".,!@#$%^&*/\'\"?"
+          blacklist: ".,!@#$%^&*/\\'\\?:"
     - select:
       - name: prefix
         selector: "#edit-submitted-prefix"

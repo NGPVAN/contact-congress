@@ -6,7 +6,7 @@ contact_form:
     - visit: "http://www.governor.state.nm.us/Contact_the_Governor.aspx"
     - iframe:
         - name: iframe
-          selector: "#_5b249c36ae124c3ba8cbee7531c9b9b4_iFrame_5b249c36ae124c3ba8cbee7531c9b9b4FreeForm"
+          selector: "#_575500fe4d7a4fad9e2a8972d0415b73_iFrame_575500fe4d7a4fad9e2a8972d0415b73FreeForm"
     - fill_in:
         - name: firstName
           selector: "#txtFName"
@@ -19,28 +19,35 @@ contact_form:
         - name: street
           selector: "#txtAddress"
           value: $ADDRESS_STREET
+          required: false
         - name: street2
           selector: "#txtSAddress"
           value: $ADDRESS_STREET_2
+          required: false
         - name: city
           selector: "#txtCity"
           value: $ADDRESS_CITY
+          required: false
         - name: zip5
           selector: "#txtZip"
           value: $ADDRESS_ZIP5
+          required: false
         - name: email
           selector: "#txtEmail"
           value: $EMAIL
-          required: true
+          required: false
         - name: phone
           selector: "#txtHPhone"
           value: $PHONE
+          required: false
         - name: subject
           selector: "#txtSubject"
           value: $SUBJECT
+          required: false
         - name: message
           selector: "#txtMessage"
           value: $MESSAGE
+          required: false
     - select:
         - name: prefix
           selector: "#ddlPrefix"
@@ -51,62 +58,6 @@ contact_form:
             "MRS": "MRS"
             "MR": "MR"
             "DR": "DR"
-        - name: stateFull
-          selector: "#txtState"
-          value: $ADDRESS_STATE_FULL
-          required: true
-          options:
-            - "AL": "Alabama"
-            - "AK": "Alaska"
-            - "AZ": "Arizona"
-            - "AR": "Arkansas"
-            - "CA": "California"
-            - "CO": "Colorado"
-            - "CT": "Connecticut"
-            - "DC": "District of Columbia"
-            - "DE": "Delaware"
-            - "FL": "Florida"
-            - "GA": "Georgia"
-            - "HI": "Hawaii"
-            - "ID": "Idaho"
-            - "IL": "Illinois"
-            - "IN": "Indiana"
-            - "IA": "Iowa"
-            - "KS": "Kansas"
-            - "KY": "Kentucky"
-            - "LA": "Louisiana"
-            - "ME": "Maine"
-            - "MD": "Maryland"
-            - "MA": "Massachusetts"
-            - "MI": "Michigan"
-            - "MN": "Minnesota"
-            - "MS": "Mississippi"
-            - "MO": "Missouri"
-            - "MT": "Montana"
-            - "NE": "Nebraska"
-            - "NV": "Nevada"
-            - "NH": "New Hampshire"
-            - "NJ": "New Jersey"
-            - "NM": "New Mexico"
-            - "NY": "New York"
-            - "NC": "North Carolina"
-            - "ND": "North Dakota"
-            - "OH": "Ohio"
-            - "OK": "Oklahoma"
-            - "OR": "Oregon"
-            - "PA": "Pennsylvania"
-            - "RI": "Rhode Island"
-            - "SC": "South Carolina"
-            - "SD": "South Dakota"
-            - "TN": "Tennessee"
-            - "TX": "Texas"
-            - "UT": "Utah"
-            - "VT": "Vermont"
-            - "VA": "Virginia"
-            - "WA": "Washington"
-            - "WV": "West Virginia"
-            - "WI": "Wisconsin"
-            - "WY": "Wyoming"
     - click_on:
         - value: Submit
           selector: "#btnSubmit"

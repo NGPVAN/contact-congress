@@ -162,6 +162,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: div.form-actions input.webform-submit
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200

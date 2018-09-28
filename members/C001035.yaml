@@ -74,6 +74,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: "input.webform-submit.button-primary.form-submit"
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200

@@ -11,7 +11,13 @@ contact_form:
     - wait:
         - value: 1
     - find:
-        - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E 
+        - selector: button[class='close'][aria-label='Close']
+    - click_on:
+        - selector: button[class='close'][aria-label='Close']
+    - wait:
+        - value: 2
+    - find:
+        - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
         - name: firstname
           selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E

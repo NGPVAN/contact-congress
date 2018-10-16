@@ -3,54 +3,319 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://business.nh.gov/NHGovernor/comments.asp"
+    - visit: "https://new-hampshire.secure.force.com/support/GOV_Opinion"
     - find:
-        - selector: form#Form1 input#firstname
+      - selector: input[id*='firstName']
     - fill_in:
-        - name: first
-          selector: input#firstname
-          value: $NAME_FIRST
-          required: true
-        - name: last
-          selector: input#lastname
-          value: $NAME_LAST
-          required: true
-        - name: street
-          selector: input#address
-          value: $ADDRESS_STREET
-          required: true
-        - name: street2
-          selector: input#address2
-          value: $ADDRESS_STREET_2
-          required: false
-        - name: city
-          selector: input#city
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip5
-          selector: input#zip
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone
-          selector: input#phone
-          value: $PHONE
-          required: true
-        - name: email
-          selector: input#email
-          value: $EMAIL
-          required: true
-        - name: message
-          selector: textarea#comments
-          value: $MESSAGE
-          required: true
-          options:
-            blacklist: "‘’“”—"
+      - name: First Name
+        selector: input[id*='firstName']
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input[id*='LastName']
+        value: $NAME_LAST
+        required: true
+      - name: Address
+        selector: textarea[id*='organizerStreetAddress']
+        value: $ADDRESS_STREET
+        required: true
+      - name: ZipCode
+        selector: input[id*='postalCode']
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Phone
+        selector: input[id*='organizerPhone']
+        value: $PHONE
+        required: true
+      - name: Email
+        selector: input[id*='organizerEmail']
+        value: $EMAIL
+        required: true
+      - name: Message
+        selector: textarea[id*='comment']
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: "‘’“”—"
+    - select:
+      - name: City
+        selector: select[id*='city']
+        value: $ADDRESS_CITY
+        required: true
+        options:
+          Acworth: Acworth
+          Albany: Albany
+          Alexandria: Alexandria
+          Allenstown: Allenstown
+          Alstead: Alstead
+          Alton: Alton
+          Amherst: Amherst
+          Andover: Andover
+          Antrim: Antrim
+          Ashland: Ashland
+          Atkinson: Atkinson
+          Auburn: Auburn
+          Barnstead: Barnstead
+          Barrington: Barrington
+          Bartlett: Bartlett
+          Bath: Bath
+          Bedford: Bedford
+          Belmont: Belmont
+          Bennington: Bennington
+          Benton: Benton
+          Berlin: Berlin
+          Bethlehem: Bethlehem
+          Boscawen: Boscawen
+          Bow: Bow
+          Bradford: Bradford
+          Brentwood: Brentwood
+          Bridgewater: Bridgewater
+          Bristol: Bristol
+          Brookfield: Brookfield
+          Brookline: Brookline
+          Campton: Campton
+          Canaan: Canaan
+          Candia: Candia
+          Canterbury: Canterbury
+          Carroll: Carroll
+          Center Harbor: Center Harbor
+          Charlestown: Charlestown
+          Chatham: Chatham
+          Chester: Chester
+          Chesterfield: Chesterfield
+          Chichester: Chichester
+          Claremont: Claremont
+          Clarksville: Clarksville
+          Colebrook: Colebrook
+          Columbia: Columbia
+          Concord: Concord
+          Conway: Conway
+          Cornish: Cornish
+          Croydon: Croydon
+          Dalton: Dalton
+          Danbury: Danbury
+          Danville: Danville
+          Deerfield: Deerfield
+          Deering: Deering
+          Derry: Derry
+          Dorchester: Dorchester
+          Dover: Dover
+          Dublin: Dublin
+          Dummer: Dummer
+          Dunbarton: Dunbarton
+          Durham: Durham
+          East Kingston: East Kingston
+          Easton: Easton
+          Eaton: Eaton
+          Effingham: Effingham
+          Ellsworth: Ellsworth
+          Enfield: Enfield
+          Epping: Epping
+          Epsom: Epsom
+          Errol: Errol
+          Exeter: Exeter
+          Farmington: Farmington
+          Fitzwilliam: Fitzwilliam
+          Francestown: Francestown
+          Franconia: Franconia
+          Franklin: Franklin
+          Freedom: Freedom
+          Fremont: Fremont
+          Gilford: Gilford
+          Gilmanton: Gilmanton
+          Gilsum: Gilsum
+          Goffstown: Goffstown
+          Gorham: Gorham
+          Goshen: Grafton
+          Grantham: Grantham
+          Greenfield: Greenfield
+          Greenland: Greenland
+          Greenville: Greenville
+          Groton: Groton
+          Hampstead: Hampstead
+          Hampton: Hampton
+          Hampton Falls: Hampton Falls
+          Hancock: Hancock
+          Hanover: Hanover
+          Harrisville: Harrisville
+          Hart's Location: Hart's Location
+          Haverhill: Haverhill
+          Hebron: Hebron
+          Henniker: Henniker
+          Hill: Hill
+          Hillsborough: Hillsborough
+          Hinsdale: Hinsdale
+          Holderness: Holderness
+          Hollis: Hollis
+          Hooksett: Hooksett
+          Hopkinton: Hopkinton
+          Hudson: Hudson
+          Jackson: Jackson
+          Jaffrey: Jaffrey
+          Jefferson: Jefferson
+          Keene: Keene
+          Kensington: Kensington
+          Kingston: Kingston
+          Laconia: Laconia
+          Lancaster: Lancaster
+          Landaff: Landaff
+          Langdon: Langdon
+          Lebanon: Lebanon
+          Lee: Lee
+          Lempster: Lempster
+          Lincoln: Lincoln
+          Lisbon: Lisbon
+          Litchfield: Litchfield
+          Littleton: Littleton
+          Londonderry: Londonderry
+          Loudon: Loudon
+          Lyman: Lyman
+          Lyme: Lyme
+          Lyndeborough: Lyndeborough
+          Madbury: Madbury
+          Madison: Madison
+          Manchester: Manchester
+          Marlborough: Marlborough
+          Marlow: Marlow
+          Mason: Mason
+          Meredith: Meredith
+          Merrimack: Merrimack
+          Middleton: Middleton
+          Milan: Milan
+          Milford: Milford
+          Milton: Milton
+          Monroe: Monroe
+          Mont Vernon: Mont Vernon
+          Moultonborough: Moultonborough
+          Nashua: Nashua
+          Nelson: Nelson
+          New Boston: New Boston
+          New Castle: New Castle
+          New Durham: New Durham
+          New Hampton: New Hampton
+          New Ipswich: New Ipswich
+          New London: New London
+          Newbury: Newbury
+          Newfields: Newfields
+          Newington: Newington
+          Newmarket: Newmarket
+          Newport: Newport
+          Newton: Newton
+          North Hampton: North Hampton
+          Northfield: Northfield
+          Northumberland: Northumberland
+          Northwood: Northwood
+          Nottingham: Nottingham
+          Orange: Orange
+          Orford: Orford
+          Ossipee: Ossipee
+          Pelham: Pelham
+          Pembroke: Pembroke
+          Peterborough: Peterborough
+          Piermont: Piermont
+          Pittsburg: Pittsburg
+          Pittsfield: Pittsfield
+          Plainfield: Plainfield
+          Plaistow: Plaistow
+          Plymouth: Plymouth
+          Portsmouth: Portsmouth
+          Randolph: Randolph
+          Raymond: Raymond
+          Richmond: Richmond
+          Rindge: Rindge
+          Rochester: Rochester
+          Rollinsford: Rollinsford
+          Roxbury: Roxbury
+          Rumney: Rumney
+          Rye: Rye
+          Salem: Salem
+          Salisbury: Salisbury
+          Sanbornton: Sanbornton
+          Sandown: Sandown
+          Sandwich: Sandwich
+          Seabrook: Seabrook
+          Sharon: Sharon
+          Shelburne: Shelburne
+          Somersworth: Somersworth
+          South Hampton: South Hampton
+          Springfield: Springfield
+          Stark: Stark
+          Stewartstown: Stewartstown
+          Stoddard: Stoddard
+          Strafford: Strafford
+          Stratham: Stratham
+          Sugar Hill: Sugar Hill
+          Sullivan: Sullivan
+          Sunapee: Sunapee
+          Surry: Surry
+          Sutton: Sutton
+          Swanzey: Swanzey
+          Tamworth: Tamworth
+          Temple: Temple
+          Thornton: Thornton
+          Tilton: Tilton
+          Troy: Troy
+          Tuftonboro: Tuftonboro
+          Unity: Unity
+          Wakefield: Wakefield
+          Walpole: Walpole
+          Warner: Warner
+          Warren: Warren
+          Washington: Washington
+          Waterville Valley: Waterville Valley
+          Weare: Weare
+          Webster: Webster
+          Wentworth: Wentworth
+          Westmoreland: Westmoreland
+          Whitefield: Whitefield
+          Wilmot: Wilmot
+          Wilton: Wilton
+          Winchester: Winchester
+          Windham: Windham
+          Windsor: Windsor
+          Wolfeboro: Wolfeboro
+          Woodstock: Woodstock
+      - name: County
+        selector: select[name='j_id0:j_id2:j_id10:j_id29'][class='oCounty']
+        value: $ADDRESS_COUNTY
+        required: true
+        options:
+          Belknap: Belknap
+          Carrol: Carrol
+          Cheschire: Cheschire
+          Coss: Coos
+          Grafton: Grafton
+          Hillsborough: Hillsborough
+          Merrimack: Merrimack
+          Rockingham: Rockingham
+          Strafford: Strafford
+          Sullivan: Sullivan
+      - name: Response
+        selector: select[id*='correspondenceReq']
+        value: Yes
+        required: true
+      - name: Opinion
+        selector: select[id*='opinion']
+        value: Yes
+        required: true
+      - name: Topic
+        selector: select[id*='category']
+        value: $TOPIC
+        required: true
+        options:
+          Administrative Services/Personnel: Administrative Services/Personnel
+          Agriculture: Agriculture
+          Alcohol/Drug Abuse: Alcohol/Drug Abuse
+          Animal Rights: Animal Rights
+          Arts: Arts
+          Banking: Banking
+          Child Custody: Child Custody
     - click_on:
-        - selector: form#Form1 input#Submit1
+      - selector: input[type='submit'][value='Submit Request']
     - wait:
-       - value: 1
+      - value: 1
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting"
+      contains: "Thank you. Your request has been submitted!"

@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://iris.custhelp.com/app/ask/"
+    - visit: "https://iris.custhelp.va.gov/app/ask/"
     - fill_in:
       - name: firstname
         selector: "input#rn_TextLogicInput_12_first_name"

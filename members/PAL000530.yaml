@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: http://wpcontact.pasenategop.com/contact.aspx?websiteid=37
+    - visit: "http://wpcontact.pasenategop.com/contact.aspx?websiteid=37"
     - find:
         - selector: "#txtFirstname"
     - fill_in:
@@ -43,6 +43,11 @@ contact_form:
           selector: "#txtComments"
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: phone
+          selectors: [ "#txtPhone"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].length < 10 ? values[0] + '0' : values[0]" ]
     - select:
         - name: topic
           selector: "#ddlIssue_Input"

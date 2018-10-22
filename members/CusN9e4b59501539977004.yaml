@@ -110,10 +110,6 @@ contact_form:
             West Virginia: West Virginia
             Wisconsin: Wisconsin
             Wyoming: Wyoming
-        - name: Category
-          selector: input#x-auto-20-input
-          value: Individual
-          required: true
     - click_on:
         - selector: div.GIY1LSJISC button.primary
     - wait:
@@ -125,11 +121,11 @@ contact_form:
     - wait:
         - value: 5
     - find:
-        - selector: button#gwt-uid-376
+        - selector: button[id*='gwt-uid']
     - click_on:
-        - selector: button#gwt-uid-376
+        - selector: button[id*='gwt-uid']
     - wait:
-        - value: 6
+        - value: 8
   success:
     headers:
       status: 200

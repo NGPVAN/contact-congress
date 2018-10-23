@@ -6,7 +6,7 @@ contact_form:
     - visit: "http://www.governor.state.nm.us/Contact_the_Governor.aspx"
     - iframe:
         - name: iframe
-          selector: '#_1cd423a5a4f54b4f8265c3cc89b5ead5_iFrame_1cd423a5a4f54b4f8265c3cc89b5ead5FreeForm'
+          selector: "div iframe"
     - fill_in:
         - name: firstName
           selector: "#txtFName"
@@ -61,8 +61,10 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#btnSubmit"
+    - iframe:
+        - back: true
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for taking the time to share your comments
+      contains: I am committed to listening to your concerns and working

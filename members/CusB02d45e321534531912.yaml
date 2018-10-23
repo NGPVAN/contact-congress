@@ -7,9 +7,6 @@ contact_form:
     - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=70905"
     - wait:
         - value: 2
-    - javascript:
-        - name: Reload
-          commands: [ "if (document.body.innerText.toString().indexOf('URL cannot be found') > -1) { location.reload(); }"]
     - find:
         - selector: input[id='commentSubComment.commentTitle']
     - fill_in:

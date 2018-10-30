@@ -230,6 +230,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: "input[type='submit'][value='Submit']"
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200

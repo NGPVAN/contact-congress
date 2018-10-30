@@ -104,7 +104,7 @@ contact_form:
         - value: Submit
           selector: .buttonHolder input
     - wait:
-        - value: 3
+        - value: 4
   success:
     headers:
       status: 200

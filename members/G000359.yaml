@@ -99,7 +99,7 @@ contact_form:
       - value: Submit
         selector: ".btn"
     - wait:
-      - value: 1
+      - value: 2
   success:
     headers:
       status: 200

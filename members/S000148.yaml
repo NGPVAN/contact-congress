@@ -4,6 +4,16 @@ contact_form:
   action: /contact/email-chuck
   steps:
     - visit: "https://www.schumer.senate.gov/contact/email-chuck"
+    - wait:
+        - value: 1
+    - find:
+        - selector: a[type='button'][class='close']
+    - click_on:
+        - selector: a[type='button'][class='close']
+    - wait:
+        - value: 1
+    - find:
+        - selector: select#actions
     - select:
         - name: actions
           selector: select#actions

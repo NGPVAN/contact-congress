@@ -264,4 +264,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "We will contact you"
+      contains: "We will contact you if we need any additional information."

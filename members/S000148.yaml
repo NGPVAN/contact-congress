@@ -5,13 +5,13 @@ contact_form:
   steps:
     - visit: "https://www.schumer.senate.gov/contact/email-chuck"
     - wait:
-        - value: 1
+        - value: 2
     - find:
         - selector: a[type='button'][class='close']
     - click_on:
         - selector: a[type='button'][class='close']
     - wait:
-        - value: 1
+        - value: 2
     - find:
         - selector: select#actions
     - select:
@@ -22,7 +22,7 @@ contact_form:
           options:
             Share your opinion or comments on bills or other issues: Share your opinion or comments on bills or other issues
     - wait:
-        - value: 3
+        - value: 2
     - find:
         - selector: "#fname"
     - fill_in:
@@ -121,6 +121,8 @@ contact_form:
             Transportation: Transportation
             Veterans: Veterans
             Other: Other
+    - wait:
+        - value: 1
     - click_on:
         - value: Send
           selector: div#content input#side-search-btn

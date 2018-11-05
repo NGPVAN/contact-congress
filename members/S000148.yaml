@@ -42,6 +42,9 @@ contact_form:
           selector: input#mailing_streetAddress2
           value: $ADDRESS_STREET_2
           required: false
+    - click_on:
+        - selector: a[type='button'][class='close']
+    - fill_in:
         - name: city
           selector: "#mailing_city"
           value: $ADDRESS_CITY
@@ -50,6 +53,9 @@ contact_form:
           selector: "#mailing_zipCode"
           value: $ADDRESS_ZIP5
           required: true
+    - click_on:
+        - selector: a[type='button'][class='close']
+    - fill_in:
         - name: phone
           selector: "#home_phone_number"
           value: $PHONE

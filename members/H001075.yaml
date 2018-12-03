@@ -85,7 +85,7 @@ contact_form:
     - click_on:
         - selector: div#content input.btn
     - wait:
-        - value: 3
+        - value: 5
   success:
     headers:
       status: 200

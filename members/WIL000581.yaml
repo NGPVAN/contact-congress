@@ -18,7 +18,7 @@ contact_form:
           value: $ADDRESS_FULL
           required: true
         - name: phone
-          selector: "input[id='61edcd64-cb2f-4962-931a-2df73e30717f']"
+          selector: "input[id='04c56547-1cc8-4c43-fc4d-744500398671']"
           value: $PHONE
           required: true
         - name: message
@@ -32,4 +32,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: Thank you
+      contains: Thank you for your thoughts

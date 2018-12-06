@@ -3,37 +3,36 @@ contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/genrich/Pages/Contact.aspx"
+    - visit: "http://legis.wisconsin.gov/assembly/90/genrich/contact/"
     - fill_in:
-        - name: message
-          selector: "#legis-cf-comments"
-          value: $MESSAGE
-          required: true
-        - name: email
-          selector: "#legis-cf-email"
-          value: $EMAIL
-          required: true
-        - name: name
-          selector: "#legis-cf-name"
+        - name: Name
+          selector: div.name input
           value: $NAME_FULL
           required: true
-        - name: address
-          selector: "#legis-cf-address"
+        - name: Email
+          selector: div.email input
+          value: $EMAIL
+          required: true
+        - name: Address
+          selector: div.address input
           value: $ADDRESS_STREET
           required: true
-        - name: citystatezip
-          selector: "#legis-cf-city-state"
+        - name: City State Zip
+          selector: div.citystatezipcode input
           value: $ADDRESS_CITY_STATE_ZIP
           required: true
-        - name: phone
-          selector: "#legis-cf-phone"
+        - name: Phone
+          selector: div.phone input
           value: $PHONE
+          required: false
+        - name: Message
+          selector: div textarea
+          value: $MESSAGE
           required: true
     - click_on:
-        - value: Submit
-          selector: ".legis-email-submit-btn"
+        - selector: input[type='Submit'][value='Submit']
   success:
     headers:
       status: 200
     body:
-      contains: Form submitted successfully
+      contains: "Thank you"

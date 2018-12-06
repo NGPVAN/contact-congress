@@ -1,0 +1,63 @@
+bioguide: SCALb1371317
+contact_form:
+  method: post
+  action: ContactPopupSubmit.php
+  steps:
+    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD30&inframe=Y"
+    - fill_in:
+        - name: First Name
+          selector: "#txtFirstName"
+          value: $NAME_FIRST
+          required: true
+          options:
+            blacklist: ".,"
+        - name: Last Name
+          selector: "#txtLastName"
+          value: $NAME_LAST
+          required: true
+          options:
+            blacklist: ".,"
+        - name: Address
+          selector: "#txtAddress"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#txtCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Phone Area Code
+          selector: "#txtAreaCode"
+          value: $PHONE_AREA_CODE
+          required: false
+        - name: Phone Exchange Code
+          selector: "#txtPhone1"
+          value: $PHONE_EXCHANGE_CODE
+          required: false
+        - name: Phone Subscriber Number
+          selector: "#txtPhone2"
+          value: $PHONE_SUBSCRIBER_NUMBER
+          required: false
+        - name: Zip
+          selector: "#txtZip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Email
+          selector: "#txtEmail"
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: "#ContactForm textarea[name='jv_text']"
+          value: $MESSAGE
+          options:
+            max_length: 2000
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#submitButton"
+    - wait:
+        - value: 1
+  success:
+    headers:
+      status: 200
+    body:
+      excludes: "Thank you for contacting my office"

@@ -3,43 +3,50 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.regulations.gov/comment?D=CMS-2018-0135-0001"
+    - visit: "https://www.federalregister.gov/documents/2018/11/09/2018-24504/patient-protection-and-affordable-care-act-exchange-program-integrity#open-comment"
     - wait:
         - value: 5
-    - click_on:
-        - selector: input#gwt-uid-164
-    - wait:
-        - value: 1
     - find:
-        - selector: div.GIY1LSJGSC form
+        - selector: select#comment_country
+    - select:
+        - name: Country
+          selector: select#comment_country
+          value: United States
+          required: true
     - fill_in:
         - name: message
-          selector: textarea#x-auto-0-input
+          selector: textarea#comment_general_comment
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input#x-auto-1-input
+          selector: input#comment_first_name
           value: $NAME_FIRST
           required: false
         - name: Last Name
-          selector: input#x-auto-2-input
+          selector: input#comment_last_name
           value: $NAME_LAST
           required: false
         - name: City
-          selector: input#x-auto-5-input
+          selector: input#comment_city
           value: $ADDRESS_CITY
           required: false
         - name: zip5
-          selector: input#x-auto-8-input
+          selector: input#comment_zip
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: input#x-auto-10-input
+          selector: input#comment_email
           value: $EMAIL
           required: false
+        - name: Organization
+          selector: input#comment_organization
+          value: NA
+          required: true
+    - wait:
+        - value: 1
     - select:
-        - name: state
-          selector: input#x-auto-6-input
+        - name: State
+          selector: select[name='comment[us_state]']
           value: $ADDRESS_STATE_FULL
           required: true
           options:
@@ -99,24 +106,18 @@ contact_form:
             West Virginia: West Virginia
             Wisconsin: Wisconsin
             Wyoming: Wyoming
-    - click_on:
-        - selector: div.GIY1LSJISC button.primary
-    - wait:
-        - value: 5
     - find:
-        - selector: input#gwt-uid-250
+        - selector: input#comment_confirm_submission
     - click_on:
-        - selector: input#gwt-uid-250
+        - selector: input#comment_confirm_submission
     - wait:
-        - value: 4
-    - find:
-        - selector: button[id*='gwt-uid']
+        - value: 1
     - click_on:
-        - selector: button[id*='gwt-uid']
+        - selector: input[type='submit'][value='Submit Comment']
     - wait:
-        - value: 6
+        - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "Your Comment Tracking Number"
+      contains: "Thank you! Your comment has been submitted"

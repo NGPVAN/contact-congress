@@ -10,15 +10,15 @@ contact_form:
           value: $NAME_FULL
           required: true
         - name: address
-          selector: "input[id='32144-street-address']" 
+          selector: "input[id='32144-street-address']"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "input[id='32144-city']" 
+          selector: "input[id='32144-city']"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "input[id='32144-zip']" 
+          selector: "input[id='32144-zip']"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
@@ -37,7 +37,7 @@ contact_form:
         - value: Submit
           selector: "input[type='submit'][value='Send']"
     - wait:
-        - value: 3
+        - value: 2
   success:
     headers:
       status: 200

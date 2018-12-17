@@ -3,121 +3,50 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.federalregister.gov/documents/2018/11/09/2018-24504/patient-protection-and-affordable-care-act-exchange-program-integrity#open-comment"
-    - wait:
-        - value: 5
+    - visit: "https://ngpvan-freedom-tools.herokuapp.com/federalRegister"
     - find:
-        - selector: select#comment_country
-    - select:
-        - name: Country
-          selector: select#comment_country
-          value: United States
-          required: true
+        - selector: input#document_id
     - fill_in:
-        - name: message
-          selector: textarea#comment_general_comment
+        - name: Document Id
+          selector: input#document_id
+          value: '2018-24504'
+          required: true
+        - name: Comment
+          selector: textarea#comment
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input#comment_first_name
+          selector: input#firstname
           value: $NAME_FIRST
           required: false
         - name: Last Name
-          selector: input#comment_last_name
+          selector: input#lastname
           value: $NAME_LAST
           required: false
         - name: City
-          selector: input#comment_city
+          selector: input#city
           value: $ADDRESS_CITY
           required: false
+        - name: State
+          selector: input#stateprovince
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
         - name: zip5
-          selector: input#comment_zip
+          selector: input#zip
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: input#comment_email
+          selector: input#email
           value: $EMAIL
           required: false
         - name: Organization
-          selector: input#comment_organization
+          selector: input#org
           value: NA
           required: true
-    - wait:
-        - value: 1
-    - select:
-        - name: State
-          selector: select[name='comment[us_state]']
-          value: $ADDRESS_STATE_FULL
-          required: true
-          options:
-            Alabama: Alabama
-            Alaska: Alaska
-            American Samoa: American Samoa
-            Arizona: Arizona
-            Arkansas: Arkansas
-            California: California
-            Colorado: Colorado
-            Connecticut: Connecticut
-            Delaware: Delaware
-            District of Columbia: District of Columbia
-            Florida: Florida
-            Georgia: Georgia
-            Guam: Guam
-            Hawaii: Hawaii
-            Idaho: Idaho
-            Illinois: Illinois
-            Indiana: Indiana
-            Iowa: Iowa
-            Kansas: Kansas
-            Kentucky: Kentucky
-            Louisiana: Louisiana
-            Maine: Maine
-            Maryland: Maryland
-            Massachusetts: Massachusetts
-            Michigan: Michigan
-            Minnesota: Minnesota
-            Mississippi: Mississippi
-            Missouri: Missouri
-            Montana: Montana
-            Nebraska: Nebraska
-            Nevada: Nevada
-            New Hampshire: New Hampshire
-            New Jersey: New Jersey
-            New Mexico: New Mexico
-            New York: New York
-            North Carolina: North Carolina
-            North Dakota: North Dakota
-            Northern Mariana Islands: Northern Mariana Islands
-            Ohio: Ohio
-            Oklahoma: Oklahoma
-            Oregon: Oregon
-            Pennsylvania: Pennsylvania
-            Puerto Rico: Puerto Rico
-            Rhode Island: Rhode Island
-            South Carolina: South Carolina
-            South Dakota: South Dakota
-            Tennessee: Tennessee
-            Texas: Texas
-            US Virgin Islands: US Virgin Islands
-            Utah: Utah
-            Vermont: Vermont
-            Virginia: Virginia
-            Washington: Washington
-            West Virginia: West Virginia
-            Wisconsin: Wisconsin
-            Wyoming: Wyoming
-    - find:
-        - selector: input#comment_confirm_submission
     - click_on:
-        - selector: input#comment_confirm_submission
-    - wait:
-        - value: 1
-    - click_on:
-        - selector: input[type='submit'][value='Submit Comment']
-    - wait:
-        - value: 3
+        - selector: input#submit_btn
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you! Your comment has been submitted"
+      contains: "Success!"

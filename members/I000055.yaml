@@ -90,6 +90,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: form#form_AD079185-D77D-42DF-8CAD-8191DB7442A5 div.buttonHolder input
+    - wait:
+      - value: 1
   success:
     headers:
       status: 200

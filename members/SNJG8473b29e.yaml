@@ -67,6 +67,8 @@ contact_form:
           selector: input[name='WFUD_Subject']
           value: $SUBJECT
           required: true
+          options:
+            max_length: 100
         - name: message
           selector: textarea#WFNOTE
           value: $MESSAGE
@@ -83,7 +85,7 @@ contact_form:
         - name: add-period-to-lastName
           values: ["$NAME_LAST"]
           selectors: ["#LASTNAME"]
-          commands: ["elements[0].value = !elements[0].value || elements[0].value.length > 1 ? elements[0].value : elements[0].value + '.'" ]        
+          commands: ["elements[0].value = !elements[0].value || elements[0].value.length > 1 ? elements[0].value : elements[0].value + '.'" ]
     - select:
         - name: prefix
           selector: select#PREFIX

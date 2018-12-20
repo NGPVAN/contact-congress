@@ -13,6 +13,8 @@ contact_form:
           selector: "#tbxLastName"
           value: $NAME_LAST
           required: true
+          options:
+            blacklist: "'"
         - name: tbxEmail
           selector: "#tbxEmail"
           value: $EMAIL

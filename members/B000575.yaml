@@ -40,7 +40,7 @@ contact_form:
       - name: Phone
         selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
         value: $PHONE
-        required: false
+        required: true
       - name: Email
         selector: input#email
         value: $EMAIL
@@ -66,7 +66,7 @@ contact_form:
       - name: prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
         value: $NAME_PREFIX
-        required: false
+        required: true
         options:
             Mr.: Mr.
             Ms.: Ms.

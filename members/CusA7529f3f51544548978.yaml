@@ -3,50 +3,120 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://ngpvan-freedom-tools.herokuapp.com/federalRegister"
+    - visit: "https://www.regulations.gov/comment?D=CMS-2018-0135-0001"
+    - wait:
+        - value: 5
+    - click_on:
+        - selector: input#gwt-uid-164
+    - wait:
+        - value: 1
     - find:
-        - selector: input#document_id
+        - selector: div.GIY1LSJGSC form
     - fill_in:
-        - name: Document Id
-          selector: input#document_id
-          value: '2018-24504'
-          required: true
-        - name: Comment
-          selector: textarea#comment
+        - name: message
+          selector: textarea#x-auto-0-input
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input#firstname
+          selector: input#x-auto-1-input
           value: $NAME_FIRST
           required: false
         - name: Last Name
-          selector: input#lastname
+          selector: input#x-auto-2-input
           value: $NAME_LAST
           required: false
         - name: City
-          selector: input#city
+          selector: input#x-auto-5-input
           value: $ADDRESS_CITY
           required: false
-        - name: State
-          selector: input#stateprovince
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
         - name: zip5
-          selector: input#zip
+          selector: input#x-auto-8-input
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: input#email
+          selector: input#x-auto-10-input
           value: $EMAIL
           required: false
-        - name: Organization
-          selector: input#org
-          value: NA
+    - select:
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
           required: true
+          options:
+            Alabama: Alabama
+            Alaska: Alaska
+            American Samoa: American Samoa
+            Arizona: Arizona
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            District of Columbia: District of Columbia
+            Florida: Florida
+            Georgia: Georgia
+            Guam: Guam
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Kentucky: Kentucky
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Northern Mariana Islands: Northern Mariana Islands
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Puerto Rico: Puerto Rico
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Tennessee: Tennessee
+            Texas: Texas
+            US Virgin Islands: US Virgin Islands
+            Utah: Utah
+            Vermont: Vermont
+            Virginia: Virginia
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
     - click_on:
-        - selector: input#submit_btn
+        - selector: div.GIY1LSJISC button.primary
+    - wait:
+        - value: 5
+    - find:
+        - selector: input#gwt-uid-250
+    - click_on:
+        - selector: input#gwt-uid-250
+    - wait:
+        - value: 4
+    - find:
+        - selector: button[id*='gwt-uid']
+    - click_on:
+        - selector: button[id*='gwt-uid']
+    - wait:
+        - value: 6
   success:
     headers:
       status: 200
     body:
-      contains: "Success!"
+      contains: "Your Comment Tracking Number"

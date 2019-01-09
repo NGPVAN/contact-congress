@@ -1,0 +1,60 @@
+bioguide: SCAG3f267647
+contact_form:
+  method: post
+  action: ""
+  IgnoreWebSecurity: true
+  steps:
+    - visit: "https://govapps.gov.ca.gov/gov40mail/index.php"
+    - fill_in:
+        - name: fname
+          selector: "#fname"
+          value: $NAME_FIRST
+          required: true
+        - name: lname
+          selector: "#lname"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+    - select:
+        - name: topic
+          selector: "#subject"
+          value: OTHER
+          required: true
+          options:
+            OTHER: OTHER
+    - check:
+        - name: comment
+          selector: "input[type='radio'][name='comment'][value='opinion']"
+          value: opinion
+        - name: reply
+          selector: "#reply"
+          value: "2"
+    - click_on:
+        - value: Continue
+          selector: "form.content input[name='Submit']"
+    - find:
+        - selector: "textarea[name='message']"
+    - fill_in:
+        - name: message
+          selector: "form.content textarea[name='message']"
+          value: $MESSAGE
+          required: true
+        - name: subject
+          selector: "input[name='newsubject']"
+          value: $SUBJECT
+          required: true
+    - check:
+        - name: position
+          selector: "input[type='radio'][name='position'][value='2']"
+          value: "2"
+    - click_on:
+        - value: Send Email
+          selector: "form.content input[name='submit']"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: You have successfully sent your message

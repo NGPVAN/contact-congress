@@ -1,0 +1,139 @@
+bioguide: CusP88b1d4c21547152496
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.cognitoforms.com/ArkansasAgriculture1/_2019ProposedDicambaRule"
+    - find:
+      - selector: select#c-6-18
+    - select:
+      - name: State
+        selector: select#c-6-18
+        value: Arkansas
+        required: true
+      - name: County
+        selector: select#c-8-15
+        value: $ADDRESS_COUNTY
+        required: false
+        options:
+          Arkansas: Arkansas
+          Ashley: Ashley
+          Baxter: Baxter
+          Benton: Benton
+          Boone: Boone
+          Bradley: Bradley
+          Calhoun: Calhoun
+          Carroll: Carroll
+          Chicot: Chicot
+          Clark: Clark
+          Clay: Clay
+          Cleburne: Cleburne
+          Cleveland: Cleveland
+          Columbia: Columbia
+          Conway: Conway
+          Craighead: Craighead
+          Crawford: Crawford
+          Crittenden: Crittenden
+          Cross: Cross
+          Dallas: Dallas
+          Desha: Desha
+          Drew: Drew
+          Faulkner: Faulkner
+          Franklin: Franklin
+          Fulton: Fulton
+          Garland: Garland
+          Grant: Grant
+          Greene: Greene
+          Hempstead: Hempstead
+          Hot Spring: Hot Spring
+          Howard: Howard
+          Independence: Independence
+          Izard: Izard
+          Jackson: Jackson
+          Jefferson: Jefferson
+          Johnson: Johnson
+          Lafayette: Lafayette
+          Lawrence: Lawrence
+          Lee: Lee
+          Lincoln: Lincoln
+          Little: iver 	Little River
+          Logan: Logan
+          Lonoke: Lonoke
+          Madison: Madison
+          Marion: Marion
+          Miller: Miller
+          Mississippi: Mississippi
+          Monroe: Monroe
+          Montgomery: Montgomery
+          Nevada: Nevada
+          Newton: Newton
+          Ouachita: Ouachita
+          Perry: Perry
+          Phillips: Phillips
+          Pike: Pike
+          Poinsett: Poinsett
+          Polk: Polk
+          Pope: Pope
+          Prairie: Prairie
+          Pulaski: Pulaski
+          Randolph: Randolph
+          St. Francis: St. Francis
+          Saline: Saline
+          Scott: Scott
+          Searcy: Searcy
+          Sebastian: Sebastian
+          Sevier: Sevier
+          Sharp: Sharp
+          Stone: Stone
+          Union: Union
+          Van Buren: Van Buren
+          Washington: Washington
+          White: White
+          Woodruff: Woodruff
+          Yell: Yell
+    - find:
+      - selector: input#c-11-11
+    - check:
+      - name: Against
+        selector: input#c-11-11
+        required: true
+    - wait:
+      - value: 1
+    - check:
+      - name: Against
+        selector: input#c-13-5
+        required: true
+    - fill_in:
+      - name: Fist Name
+        selector: input#c-0-21
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input#c-1-21
+        value: $NAME_LAST
+        required: true
+      - name: email
+        selector: input#c-3-20
+        value: $EMAIL
+        required: false
+      - name: City
+        selector: input#c-5-18
+        value: $ADDRESS_CITY
+        required: true
+      - name: Zip
+        selector: input#c-9-14
+        value: $ADDRESS_ZIP5
+        required: false
+      - name: Message
+        selector: textarea#c-14-2
+        value: $MESSAGE
+        required: true
+    - click_on:
+        - selector: button#c-submit-button
+    - wait:
+        - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Your response has been recorded.

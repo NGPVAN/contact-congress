@@ -9,8 +9,70 @@ contact_form:
     - select:
       - name: State
         selector: select#c-6-18
-        value: Arkansas
+        value: $ADDRESS_STATE_FULL
         required: true
+        options:
+          State: State
+          Armed Forces America: Armed Forces America
+          Armed Forces: Armed Forces
+          Armed Forces Pacific: Armed Forces Pacific
+          Alabama: Alabama
+          Alaska: Alaska
+          Arizona: Arizona
+          Arkansas: Arkansas
+          California: California
+          Colorado: Colorado
+          Connecticut: Connecticut
+          Delaware: Delaware
+          District of Columbia: District of Columbia
+          Florida: Florida
+          Georgia: Georgia
+          Guam: Guam
+          Hawaii: Hawaii
+          Idaho: Idaho
+          Illinois: Illinois
+          Indiana: Indiana
+          Iowa: Iowa
+          Kansas: Kansas
+          Kentucky: Kentucky
+          Louisiana: Louisiana
+          Maine: Maine
+          Maryland: Maryland
+          Massachusetts: Massachusetts
+          Michigan: Michigan
+          Minnesota: Minnesota
+          Mississippi: Mississippi
+          Missouri: Missouri
+          Montana: Montana
+          Nebraska: Nebraska
+          Nevada: Nevada
+          New Hampshire: New Hampshire
+          New Jersey: New Jersey
+          New Mexico: New Mexico
+          New York: New York
+          North Carolina: North Carolina
+          North Dakota: North Dakota
+          Ohio: Ohio
+          Oklahoma: Oklahoma
+          Oregon: Oregon
+          Pennsylvania: Pennsylvania
+          Puerto Rico: Puerto Rico
+          Rhode Island: Rhode Island
+          South Carolina: South Carolina
+          South Dakota: South Dakota
+          Tennessee: Tennessee
+          Texas: Texas
+          Utah: Utah
+          Vermont: Vermont
+          Virginia: Virginia
+          Virgin Islands: Virgin Islands
+          Washington: Washington
+          West Virginia: West Virginia
+          Wisconsin: Wisconsin
+          Wyoming: Wyoming
+    - wait:
+      - value: 1
+    - select:
       - name: County
         selector: select#c-8-15
         value: $ADDRESS_COUNTY
@@ -91,15 +153,24 @@ contact_form:
           White: White
           Woodruff: Woodruff
           Yell: Yell
+    - wait:
+      - value: 1
+    - fill_in:
+      - name: Zip
+        selector: input#c-9-14
+        value: $ADDRESS_ZIP5
+        required: false
+    - wait:
+      - value: 1
     - find:
       - selector: input#c-11-11
-    - check:
+    - click_on:
       - name: Against
         selector: input#c-11-11
         required: true
     - wait:
       - value: 1
-    - check:
+    - click_on:
       - name: Against
         selector: input#c-13-5
         required: true
@@ -120,10 +191,6 @@ contact_form:
         selector: input#c-5-18
         value: $ADDRESS_CITY
         required: true
-      - name: Zip
-        selector: input#c-9-14
-        value: $ADDRESS_ZIP5
-        required: false
       - name: Message
         selector: textarea#c-14-2
         value: $MESSAGE

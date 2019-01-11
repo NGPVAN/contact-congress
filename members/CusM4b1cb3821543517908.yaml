@@ -104,6 +104,8 @@ contact_form:
           selector: input#x-auto-20-input
           value: Individual
           required: true
+    - wait:
+        - value: 1
     - click_on:
         - selector: div.GIY1LSJISC button.primary
     - wait:

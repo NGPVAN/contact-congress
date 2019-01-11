@@ -169,7 +169,9 @@ contact_form:
         selector: input#c-11-11
         required: true
     - wait:
-      - value: 1
+      - value: 2
+    - find:
+      - selector: input#c-13-5
     - click_on:
       - name: Against
         selector: input#c-13-5
@@ -198,7 +200,7 @@ contact_form:
     - click_on:
         - selector: button#c-submit-button
     - wait:
-        - value: 2
+        - value: 3
   success:
     headers:
       status: 200

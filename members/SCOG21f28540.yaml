@@ -1,0 +1,116 @@
+bioguide: SCOG21f28540
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.tfaforms.com/4679739"
+    - find:
+        - selector: input#tfa_2745
+    - click_on:
+        - selector: input#tfa_2745
+    - find:
+        - selector: form#tfa_0 input#tfa_2748
+    - fill_in:
+        - name: subject
+          selector: form#tfa_0 input#tfa_2748
+          value: $SUBJECT
+          required: true
+          options:
+            max_length: 225
+        - name: message
+          selector: textarea#tfa_2725
+          value: $MESSAGE
+          required: true
+        - name: first
+          selector: input#tfa_62
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: input#tfa_63
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: input#tfa_64
+          value: $EMAIL
+          required: true
+    - select:
+        - name: county
+          selector: select#tfa_71
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Out of State: Out of State
+            Adams: Adams
+            Alamosa: Alamosa
+            Arapahoe: Arapahoe
+            Archuleta: Archuleta
+            Baca: Baca
+            Bent: Bent
+            Boulder: Boulder
+            Broomfield: Broomfield
+            Chaffee: Chaffee
+            Cheyenne: Cheyenne
+            Clear Creek: Clear Creek
+            Conejos: Conejos
+            Costilla: Costilla
+            Crowley: Crowley
+            Custer: Custer
+            Delta: Delta
+            Denver: Denver
+            Dolores: Dolores
+            Douglas: Douglas
+            Eagle: Eagle
+            Elbert: Elbert
+            El Paso: El Paso
+            Fremont: Fremont
+            Garfield: Garfield
+            Gilpin: Gilpin
+            Grand: Grand
+            Gunnison: Gunnison
+            Hinsdale: Hinsdale
+            Huerfano: Huerfano
+            Jackson: Jackson
+            Jefferson: Jefferson
+            Kiowa: Kiowa
+            Kit Carson: Kit Carson
+            Lake: Lake
+            La Plata: La Plata
+            Larimer: Larimer
+            Las Animas: Las Animas
+            Lincoln: Lincoln
+            Logan: Logan
+            Mesa: Mesa
+            Mineral: Mineral
+            Moffat: Moffat
+            Montezuma: Montezuma
+            Montrose: Montrose
+            Morgan: Morgan
+            Otero: Otero
+            Ouray: Ouray
+            Park: Park
+            Phillips: Phillips
+            Pitkin: Pitkin
+            Prowers: Prowers
+            Pueblo: Pueblo
+            Rio Blanco: Rio Blanco
+            Rio Grande: Rio Grande
+            Routt: Routt
+            Saguache: Saguache
+            San Juan: San Juan
+            San Miguel: San Miguel
+            Sedgwick: Sedgwick
+            Summit: Summit
+            Teller: Teller
+            Washington: Washington
+            Weld: Weld
+            Yuma: Yuma
+    - click_on:
+        - value: Submit
+          selector: form#tfa_0 div#tfa_0-A input.primaryAction
+    - wait:
+        - value: 4
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for submitting your comments"

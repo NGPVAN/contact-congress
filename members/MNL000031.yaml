@@ -2,51 +2,58 @@ bioguide: MNL000031
 contact_form:
   method: post
   action: ""
-  usePhantomJsLogging: true
+  useChrome: true
   steps:
-    - visit: "http://www.senate.mn/members/member_emailform.php?mem_id=1102&ls=90"
+    - visit: "https://www.senate.mn/members/member_email_form.php?member_id=1102"
     - fill_in:
-        - name: fname
-          selector: "#form_firstname"
+        - name: First Name
+          selector: input#first_name
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#form_lastname"
+        - name: Last Name
+          selector: input#last_name
           value: $NAME_LAST
           required: true
-        - name: street
-          selector: "#form_Street1"
-          value: $ADDRESS_STREET
-          required: true
-        - name: city
-          selector: "#form_City"
-          value: $ADDRESS_CITY
-          required: true
-        - name: state
-          selector: "#form_State"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
-        - name: zip
-          selector: "#form_Zip"
-          value: $ADDRESS_ZIP5
-          required: true
         - name: email
-          selector: "#form_Email"
+          selector: input#email
           value: $EMAIL
           required: true
-        - name: subject
-          selector: "#form_Subject"
+        - name: Street
+          selector: input#street_address_1
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#city
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: input#zip
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Subject
+          selector: input#subject
           value: $SUBJECT
           required: true
-        - name: message
-          selector: "#form_Message"
+        - name: Message
+          selector: textarea#form_message
           value: $MESSAGE
           required: true
+    - select:
+        - name: State
+          selector: select#state
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            MN: MN
     - click_on:
         - value: Submit
-          selector: "input[type='submit'][value='Submit Information']"
+          selector: input#submit
+    - wait:
+        - value: 4
+    - find:
+        - value: div#swal2-content
   success:
     headers:
       status: 200
     body:
-      contains: Your message has been successfully sent
+      contains: Message has been sent successfully

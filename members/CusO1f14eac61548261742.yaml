@@ -13,7 +13,7 @@ contact_form:
         - name: Subject
           selector: input[id='commentSubComment.commentTitle']
           value: $SUBJECT
-          required: false
+          required: true
     - iframe:
         - name: message
           selector: "iframe.cke_wysiwyg_frame.cke_reset"

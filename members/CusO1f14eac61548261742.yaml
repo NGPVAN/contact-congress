@@ -50,24 +50,7 @@ contact_form:
           selector: input[id*='.zip']
           value: $ADDRESS_ZIP5
           required: true
-        - name: email
-          selector: input[id*='.emailAddress']
-          value: $EMAIL
-          required: false
-        - name: phone
-          selector: input[id*='.dayPhone']
-          value: $PHONE
-          required: false
     - select:
-        - name: Prefix
-          selector: select[id*='.title']
-          value: $NAME_PREFIX
-          required: false
-          options:
-            Mr.: Mr.
-            Mrs.: Mrs.
-            Ms.: Ms.
-            Dr.: Dr.
         - name: state
           selector: select[id*='.selectedState']
           value: $ADDRESS_STATE_FULL
@@ -128,10 +111,6 @@ contact_form:
         - name: represent org
           selectors: ["[id='commentSubNameAddress.representsOrg2']"]
           commands: ["elements[0].click()"]
-        - name: phone-char-replace
-          values: ["$PHONE"]
-          selectors: ["input[id*='.dayPhone']"]
-          commands: ["elements[0].value = values[0].replace(/\D+/g,'').length > 10 ? values[0].replace(/\D+/g,'').substr(1) : values[0].replace(/\D+/g,'')" ]
     - find:
         - selector: input[type='submit'][value='Next']
     - click_on:

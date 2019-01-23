@@ -8,10 +8,10 @@ contact_form:
     - wait:
         - value: 2
     - find:
-        - selector: "#commentSubComment.commentTitle"
+        - selector: input[id='commentSubComment.commentTitle']
     - fill_in:
         - name: Subject
-          selector: "#commentSubComment.commentTitle"
+          selector: input[id='commentSubComment.commentTitle']
           value: $SUBJECT
           required: false
     - iframe:
@@ -126,7 +126,7 @@ contact_form:
             Wyoming: Wyoming
     - javascript:
         - name: represent org
-          selectors: ["#commentSubNameAddress.representsOrg2"]
+          selectors: ["[id='commentSubNameAddress.representsOrg2']"]
           commands: ["elements[0].click()"]
         - name: phone-char-replace
           values: ["$PHONE"]

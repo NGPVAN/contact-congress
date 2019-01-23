@@ -24,6 +24,7 @@ contact_form:
           selectors: [ "body"]
           values: [ "$MESSAGE" ]
           commands: [ "elements[0].innerHTML=values[0].replace(/\\n/g, '<br/>').replace(/\\r/g,'')" ]
+          required: true
     - iframe:
         - back: true
     - click_on:

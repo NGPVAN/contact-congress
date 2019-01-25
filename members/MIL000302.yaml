@@ -44,7 +44,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: button.button
+          selector: button.button.is-form-button
     - wait:
         - value: 2
     - find:

@@ -8,43 +8,43 @@ contact_form:
         - selector: input#document_id
     - fill_in:
         - name: Document Id
-          selector: input#document_id
+          selector: "#document_id"
           value: '2018-25314'
           required: true
         - name: Comment
-          selector: textarea#comment
+          selector: "#comment"
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input#firstname
+          selector: "#firstname"
           value: $NAME_FIRST
           required: false
         - name: Last Name
-          selector: input#lastname
+          selector: "#lastname"
           value: $NAME_LAST
           required: false
         - name: City
-          selector: input#city
+          selector: "#city"
           value: $ADDRESS_CITY
           required: false
         - name: State
-          selector: input#stateprovince
+          selector: "#stateprovince"
           value: $ADDRESS_STATE_POSTAL_ABBREV
           required: false
         - name: zip5
-          selector: input#zip
+          selector: "#zip"
           value: $ADDRESS_ZIP5
           required: false
         - name: email
-          selector: input#email
+          selector: "#email"
           value: $EMAIL
           required: false
         - name: Category
-          selector: input#category
+          selector: "#category"
           value: Individual
           required: true
     - click_on:
-        - selector: input#submit_btn
+        - selector: "#submit_btn"
   success:
     headers:
       status: 200

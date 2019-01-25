@@ -1,0 +1,94 @@
+bioguide: SCTGb552cb3a
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "https://portaldir.ct.gov/governor/ShareOpinion.aspx"
+    - fill_in:
+      - name: First Name
+        selector: "#ctl00_DataContentPlaceHolder_txtRequestorFirstName"
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: "#ctl00_DataContentPlaceHolder_txtRequestorLastName"
+        value: $NAME_LAST
+        required: true
+      - name: Street
+        selector: "#ctl00_DataContentPlaceHolder_txtStreetAddr"
+        value: $ADDRESS_STREET
+        required: false
+      - name: City
+        selector: "#ctl00_DataContentPlaceHolder_txtCity"
+        value: $ADDRESS_CITY
+        required: false
+      - name: zip
+        selector: "#ctl00_DataContentPlaceHolder_ZipCode"
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Phone
+        selector: "#ctl00_DataContentPlaceHolder_PhoneNumber"
+        value: $PHONE_HYPHENS
+        required: false
+      - name: email
+        selector: "#ctl00_DataContentPlaceHolder_EmailAddress"
+        value: $EMAIL
+        required: true
+      - name: Message
+        selector: "#ctl00_DataContentPlaceHolder_txtComments"
+        value: $MESSAGE
+        required: true
+    - select:
+      - name: Prefix
+        selector: "#ctl00_DataContentPlaceHolder_ddNameTitle"
+        value: $NAME_PREFIX
+        required: false
+        options:
+          - "Mr.": "Mr."
+          - "Mrs.": "Mrs."
+          - "Mr. and Mrs.": "Mr. and Mrs."
+          - "Ms.": "Ms."
+          - "Miss": "Miss"
+          - "Dr.": "Dr."
+          - "The Honorable": "The Honorable"
+          - "Congressman": "Congressman"
+          - "Congresswoman": "Congresswoman"
+          - "Representative": "Representative"
+          - "The Reverend": "The Reverend"
+          - "Father": "Father"
+          - "Rabbi": "Rabbi"
+          - "Chaplin": "Chaplin"
+      - name: Topic
+        selector: "#ctl00_DataContentPlaceHolder_ddInterestArea"
+        value: $TOPIC
+        required: true
+        options:
+          - "HEALTHAHA": "Affordable Healthcare Act"
+          - "BANKINGGEN": "Banking"
+          - "BUDGETGEN": "Budget"
+          - "CONSUMGEN": "Consumer Protection"
+          - "CORRECTGEN": "Corrections"
+          - "DDSGEN": "Developmental Services"
+          - "JUDICIALGEN": "Judicial / Legal"
+          - "ECONDEVGEN": "Economic Development"
+          - "EDUCGEN": "Education"
+          - "ENERGYGEN": "Energy"
+          - "ENVIROGEN": "Environment"
+          - "COMMENTSGEN": "General Comments"
+          - "COMPLAINTSGEN": "General Complaints"
+          - "HEALTHGEN": "Healthcare Issues"
+          - "HIGHERED": "Higher Education"
+          - "INSURANCEGEN": "Insurance"
+          - "LEGISLATIVEISSUE": "Legislative"
+          - "HOUSINGMORTGEN": "Mortgage Issues"
+          - "PUBSAFEGEN": "Public Safety"
+          - "REVSVCGENERAL": "Revenue Services"
+          - "DOTGEN": "Transportation"
+          - "VETGENERAL": "Veterans"
+    - click_on:
+      - value: Submit
+        selector: "#ctl00_SubmitContentPlaceHolder_btnSub"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your email has been received"

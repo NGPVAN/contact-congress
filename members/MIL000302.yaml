@@ -2,54 +2,55 @@ bioguide: MIL000302
 contact_form:
   method: post
   action:
+  useChrome: true
   steps:
     - visit: "http://senatedems.com/hertel/contact/"
     - fill_in:
-        - name: fname
-          selector: "#fname"
+        - name: First Name
+          selector: input[name='contact.fname']
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#lname"
+        - name: Last Name
+          selector: input[name='contact.lname']
           value: $NAME_LAST
           required: true
         - name: email
-          selector: "#email"
+          selector: input[name='contact.email']
           value: $EMAIL
           required: true
-        - name: address
-          selector: "#address"
+        - name: Address
+          selector: input[name='contact.addr']
           value: $ADDRESS_STREET
           required: true
-        - name: city
-          selector: "#city"
+        - name: City
+          selector: input[name='contact.city']
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#zip"
+          selector: input[name='contact.zip']
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone
-          selector: "#phone"
+        - name: Phone
+          selector: input[name='contact.phone']
           value: $PHONE
           required: true
-        - name: subject
-          selector: "#subject"
+        - name: Subject
+          selector: input[name='contact.subject']
           value: $SUBJECT
           required: true
-        - name: message
-          selector: "#message"
+        - name: Message
+          selector: textarea[name='contact.message']
           value: $MESSAGE
           required: true
     - click_on:
-        - value: DoNotSubscribe
-          selector: "#subscribe"
         - value: Submit
-          selector: "input[type='submit'][value='Send']"
+          selector: button.button
+    - wait:
+        - value: 2
     - find:
-        - selector: ".alert-info"
+        - selector: div span.highlighted
   success:
     headers:
       status: 200
     body:
-      contains: Message sent
+      contains: Thank you!

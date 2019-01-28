@@ -55,7 +55,7 @@ contact_form:
         - name: Message
           selectors: [ "textarea#gen-fieldid-27" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: ["elements[0].value = values[0].replace(/\bset\b/ig,'determine')"]
           required: true
     - select:
         - name: Prefix

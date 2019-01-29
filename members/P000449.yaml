@@ -52,7 +52,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: ":"
+            blacklist: ":’"
     - javascript:
         - name: Message
           selectors: [ "textarea#field_716E154B-9C67-4EDE-97AC-A867C5556908" ]

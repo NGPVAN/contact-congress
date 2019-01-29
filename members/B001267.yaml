@@ -50,7 +50,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            blacklist: ":"
+            blacklist: ":’"
     - javascript:
         - name: Message
           selectors: [ "textarea#gen-fieldid-27" ]

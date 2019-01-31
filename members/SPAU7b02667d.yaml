@@ -1,0 +1,65 @@
+bioguide: SPAU7b02667d
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "https://wpcontact.pasenategop.com/contact.aspx?websiteid=30"
+    - wait:
+        - value: 2
+    - fill_in:
+        - name: First Name
+          selector: input#txtFirstname
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#txtLastname"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#txtEmail"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#txtPhone"
+          value: $PHONE_PARENTHESES
+          required: true
+        - name: Address
+          selector: "#txtAddress1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: address2
+          selector: "#txtAddress2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#txtCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#txtZip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Message
+          selector: "#txtComments"
+          value: $MESSAGE
+          required: true
+    - find:
+        - selector: div#ddlIssue a#ddlIssue_Arrow
+    - click_on:
+        - selector: div#ddlIssue a#ddlIssue_Arrow
+    - wait:
+        - value: 1
+    - find:
+        - selector: div#ddlIssue_DropDown li:nth-child(2)
+    - click_on:
+        - selector: div#ddlIssue_DropDown li:nth-child(2)
+    - click_on:
+        - value: Submit
+          selector: "#bSubmit_input"
+    - wait:
+        - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for contacting me

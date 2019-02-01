@@ -19,15 +19,14 @@ contact_form:
           selector: textarea#x-auto-0-input
           value: $MESSAGE
           required: true
-        - name: first
+        - name: First Name
           selector: input#x-auto-1-input
           value: $NAME_FIRST
           required: true
-        - name: last
+        - name: Last Name
           selector: input#x-auto-2-input
           value: $NAME_LAST
           required: true
-    - fill_in:
         - name: Address
           selector: input#x-auto-3-input
           value: $ADDRESS_STREET

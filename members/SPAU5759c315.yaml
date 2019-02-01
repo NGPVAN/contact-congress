@@ -1,0 +1,59 @@
+bioguide: SPAU5759c315
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "http://www.senatormuth.com/contact/"
+    - wait:
+        - value: 2
+    - fill_in:
+        - name: First Name
+          selector: "#field_qh4icy22"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#field_ocfup122"
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: "#field_ge1gd1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address2
+          selector: "#field_y6hyzk"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#field_i8x71e"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#field_iixr7v"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: "#field_29yf4d22"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "#field_ldro11"
+          value: $PHONE
+          required: false
+        - name: Message
+          selector: "#field_9jv0r122"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: input.frm_final_submit
+    - wait:
+        - value: 2
+    - find:
+        - selector: div.frm_message p
+    - wait:
+        - value: 1
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Your form was successfully submitted

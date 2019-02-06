@@ -5,11 +5,11 @@ contact_form:
   steps:
     - visit: "http://www.cthousegop.com/dubitsky/contact-me/"
     - fill_in:
-        - name: first
+        - name: First Name
           selector: input#input_1_1_3
           value: $NAME_FIRST
           required: true
-        - name: last
+        - name: Last Name
           selector: input#input_1_1_6
           value: $NAME_LAST
           required: true
@@ -17,15 +17,19 @@ contact_form:
           selector: input#input_1_3
           value: $EMAIL
           required: true
-        - name: street
+        - name: Phone
+          selector: input#input_1_6
+          value: $PHONE_PARENTHESES
+          required: true
+        - name: Street
           selector: input#input_1_2_1
           value: $ADDRESS_STREET
           required: true
-        - name: street2
+        - name: Street2
           selector: input#input_1_2_2
           value: $ADDRESS_STREET_2
           required: false
-        - name: city
+        - name: City
           selector: input#input_1_2_3
           value: $ADDRESS_CITY
           required: true

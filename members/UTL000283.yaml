@@ -13,6 +13,8 @@ contact_form:
           selector: input[name='your-phone']
           value: $PHONE
           required: true
+          options:
+            blacklist: "."
         - name: email
           selector: input[name='your-email']
           value: $EMAIL

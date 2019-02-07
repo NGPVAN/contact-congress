@@ -35,7 +35,7 @@ contact_form:
         - value: unsub2
           selector: "#feedback_mobile_opt_in"
         - value: Submit
-          selector: input[type='submit'][value='Send Email']
+          selector: input[type='submit'][value='Submit']
     - wait:
       - value: 10
   success:

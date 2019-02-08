@@ -47,6 +47,10 @@ contact_form:
         selector: input#input-BA954B7C-4040-F985-52CD-CB3A0A43C0DA
         value: $SUBJECT
         required: true
+      - name: message
+        selector: textarea#input-BA957EB0-4040-F985-52CD-CF349BA209E1
+        value: $MESSAGE
+        required: true
     - javascript:
         - name: message
           selectors: [ "textarea#input-BA957EB0-4040-F985-52CD-CF349BA209E1" ]

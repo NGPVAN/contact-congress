@@ -63,4 +63,4 @@ contact_form:
     headers:
       status: 200
     body:
-      includes: "Thank you, your message has been sent"
+      contains: "Thank you, your message has been sent"

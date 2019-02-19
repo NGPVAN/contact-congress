@@ -13,7 +13,16 @@ contact_form:
     - wait:
         - value: 1
     - find:
-      - selector: div.GIY1LSJAQC form
+        - selector: input#x-auto-9-input
+    - fill_in:
+        - name: country
+          selector: input#x-auto-9-input
+          value: "United States"
+          required: true
+    - wait:
+        - value: 2
+    - find:
+        - selector: div.GIY1LSJAQC form
     - fill_in:
         - name: message
           selector: textarea#x-auto-0-input

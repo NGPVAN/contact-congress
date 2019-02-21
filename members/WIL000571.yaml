@@ -4,13 +4,20 @@ contact_form:
   action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/87/edming/contact-me/"
+    - select:
+        - name: State
+          selector: div.state select
+          value: $ADDRESS_STATE_FULL
+          required: false
+          options:
+            Wisconsin: Wisconsin
     - fill_in:
         - name: name
           selector: div.name input
           value: $NAME_FULL
           required: true
         - name: address
-          selector: div.address input
+          selector: div.streetaddress input
           value: $ADDRESS_STREET
           required: true
         - name: city

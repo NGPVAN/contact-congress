@@ -3,7 +3,7 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "http://www.desenatedems.com/nicole-poore-majority-whip.html"
+    - visit: "http://www.desenatedems.com/nicole-poore-majority-leader.html"
     - fill_in:
       - name: firstname
         selector: "#input-791799289757655834"
@@ -35,7 +35,7 @@ contact_form:
           - "I prefer not to receive email from the Senate Democrats at this time"
     - click_on:
       - value: Submit
-        selector: ".wsite-button-inner"
+        selector: a .wsite-button-inner
   success:
     headers:
       status: 200

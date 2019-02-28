@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://mgaleg.maryland.gov/webmga/frmMain.aspx?pid=sponpage&tab=subject6&id=waldstreicher1&stab=01&ys=2019RS&poptype=contact&popid=waldstreicher1"
+    - visit: "http://mgaleg.maryland.gov/webmga/frmMain.aspx?pid=sponpage&tab=subject6&id=waldstreicher1&stab=01&poptype=contact&popid=waldstreicher1"
     - fill_in:
       - name: FirstName
         selector: "#ctlContactLegislator_txtName"

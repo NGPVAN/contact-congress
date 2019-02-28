@@ -74,4 +74,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Thank you, your message has been sent"
+      excludes: "Message Details"

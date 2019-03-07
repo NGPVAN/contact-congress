@@ -1,0 +1,33 @@
+bioguide: COL000165
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "http://www.jacktate.org/contact.html"
+    - fill_in:
+        - name: Name Full
+          selector: input[name='name']
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: input[name='email']
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: input[name='subject']
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: textarea[name='message']
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for contacting us"

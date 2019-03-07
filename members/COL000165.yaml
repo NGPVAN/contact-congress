@@ -15,7 +15,7 @@ contact_form:
           required: true
         - name: Subject
           selector: input[name='subject']
-          value: $EMAIL
+          value: $SUBJECT
           required: true
         - name: Message
           selector: textarea[name='message']

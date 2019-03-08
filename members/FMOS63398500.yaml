@@ -26,7 +26,47 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Abortion: Abortion
+          Adoption: Adoption
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Banking: Banking
+          Budget/Spending: Budget/Spending
           Civil Rights: Civil Rights
+          Crime/Drugs: Crime/Drugs
+          Defense: Defense
+          Economy: Economy
+          Education (Higher): Education (Higher)
+          Education (K-12): Education (K-12)
+          Elections: Elections
+          Energy: Energy
+          Environment: Environment
+          Family Values: Family Values
+          Foreign Relations: Foreign Relations
+          Health: Health
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Intelligence: Intelligence
+          Judiciary: Judiciary
+          Labor: Labor
+          Medicare: Medicare
+          Parks & Public Lands: Parks and Public Lands
+          Pensions/Retirement: Pensions/Retirement
+          Postal: Postal
+          Regulatory Reform: Regulatory Reform
+          Religion: Religion
+          Science/Technology: Science/Technology
+          Second Ammendment: Second Ammendment
+          Social Security: Social Security
+          Supreme Court: Supreme Court
+          Taxes: Taxes
+          Telecom: Telecom
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Water/Rivers: Water/Rivers
+          Welfare: Welfare
     - fill_in:
       - name: First name
         selector: "#edit-first-name"
@@ -43,7 +83,7 @@ contact_form:
       - name: Street2
         selector: "#edit-address-2"
         value: $ADDRESS_STREET_2
-        required: true
+        required: false
       - name: City
         selector: "#edit-city"
         value: $ADDRESS_CITY

@@ -1,0 +1,57 @@
+bioguide: GAL000001
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "http://senatoralbers.com/contacts/"
+    - find:
+        - selector: span.menu-437 select
+    - select:
+        - name: State
+          selector: span.menu-437 select
+          value: Georgia
+    - fill_in:
+        - name: First Name
+          selector: span.text-410 input
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: span.text-179 input
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: span.text-237 input
+          value: $EMAIL
+          required: true
+        - name: address
+          selector: span.text-254 input
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: span.text-994 input
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: span.text-48 input
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: span.text-987 input
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: message
+          selector: span.textarea-33 textarea
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Share my opinion
+          selector: input[type='checkbox'][value='I want to share my opinon']
+        - value: Submit
+          selector: input[type='submit'][value='Send']
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Your message was sent successfully.

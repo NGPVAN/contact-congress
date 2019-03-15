@@ -58,6 +58,11 @@ contact_form:
         values: [ "$MESSAGE" ]
         commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
         required: true
+      - name: Last Name
+        selectors: [ "#lname" ]
+        values: [ "$NAME_LAST" ]
+        commands: [ "elements[0].value = elements[0].value.replace('é', 'e')" ]
+        required: true
     - select:
       - name: salutation
         selector: "#salutation"

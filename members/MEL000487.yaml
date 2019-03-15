@@ -28,8 +28,8 @@ contact_form:
         required: true
       - name: Address2
         selector: input#address2
-        value: $ADDRESS_STREET
-        required: true
+        value: $ADDRESS_STREET_2
+        required: false
       - name: City
         selector: input#city
         value: $ADDRESS_CITY

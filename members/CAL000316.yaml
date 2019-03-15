@@ -40,11 +40,11 @@ contact_form:
             max_length: 2000
           required: true
     - javascript:
-        - name: accent-replace
+        - name: ampersand-replace
           values: ["$NAME_LAST"]
           selectors: ["#txtLastName"]
           commands: ["elements[0].value = values[0].replace(/\&/g,'and')"]
-        - name: ampersand-replace
+        - name: accent-replace
           values: ["$NAME_LAST"]
           selectors: ["#txtLastName"]
           commands: [ "elements[0].value = elements[0].value.replace('í', 'i')" ]

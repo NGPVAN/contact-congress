@@ -75,11 +75,39 @@ contact_form:
           Animal Welfare: Animal Welfare
           Arts: Arts
           Banking: Banking
-          Budget: Budget
+          Budget / Appropriations : Budget / Appropriations
           Casework: Casework
           Child Welfare: Child Welfare
           Climate Change: Climate Change
           Crime: Crime
+          Banking: Banking
+          Eagle Scout Letter: Eagle Scout Letter
+          Economy and Business: Economy and Business
+          Education: Education
+          Energy: Energy
+          Environment: Environment
+          Flag Requests: Flag Requests
+          Foreign Relations: Foreign Relations
+          Girl Scout Letter: Girl Scout Letter
+          Government / Ethics: Government / Ethics
+          Health: Health
+          Housing: Housing
+          Immigration: Immigration
+          Indian Affairs: Indian Affairs
+          Judiciary / Civil Rights: Judiciary / Civil Rights
+          Judicial Nominations / Executive Nominations: Judicial Nominations / Executive Nominations
+          Labor: Labor
+          Medicare: Medicare
+          National Security: National Security
+          Postal: Postal
+          Reproductive Rights: Reproductive Rights
+          Social Security: Social Security
+          Space / NASA: Space / NASA
+          Taxes: Taxes
+          Telecommunications, Technology, and Media: Telecommunications, Technology, and Media
+          Tours: Tours
+          Transportation / Infrastructure: Transportation / Infrastructure
+          Veterans: Veterans
     - wait:
       - value: 5
     - click_on:

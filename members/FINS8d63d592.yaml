@@ -23,7 +23,33 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Abortion: Abortion
+          Agriculture: Agriculture
+          Aid: Aid
+          Appointments: Appointments
+          Defense: Defense
+          Drugs: Drugs
+          Education: Education
+          Environment: Environment
+          Foreign Affairs: Foreign Affairs
+          Gun Control: Gun Control
+          Healthcare: Healthcare
+          Housing: Housing
+          Immigration: Immigration
+          Infrastructure: Infrastructure
+          Marijuana: Marijuana
           Other: Other
+          President: President
+          Shutdown: Shutdown
+          Social Security: Social Security
+          Space/Science: Space/Science
+          Taxation: Taxation
+          Term Limits: Term Limits
+          Thank you / Congratulations: Thank you / Congratulations
+          Transportation: Transportation
+          Veterans: Veterans
+          Welfare: Welfare
+          Wages: Wages
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

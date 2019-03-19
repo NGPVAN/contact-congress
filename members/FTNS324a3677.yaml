@@ -20,12 +20,6 @@ contact_form:
           Dr. and Mrs.: Dr. and Mrs.
           Dr. and Mr.: Dr. and Mr.
           Dr. and Dr.: Dr. and Dr.
-      - name: Topic
-        selector: "#edit-topic"
-        value: $TOPIC
-        required: true
-        options:
-          Other: Other
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

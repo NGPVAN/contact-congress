@@ -23,6 +23,28 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Abortion: Abortion
+          Aging: Aging
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Banking: Banking
+          Casework: Casework
+          Civil Rights: Civil Rights
+          Defense: Defense
+          Drugs: Drugs
+          Education: Education
+          Environment: Environment
+          Healthcare: Healthcare
+          Housing: Housing
+          Immigration: Immigration
+          Social Security: Social Security
+          Medicare/Medicaid: Medicare/Medicaid
+          Taxes: Taxes
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Welfare: Welfare
+          2nd Amendment: 2nd Amendment
           Other: Other
     - fill_in:
       - name: First name

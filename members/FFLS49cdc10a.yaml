@@ -27,7 +27,45 @@ contact_form:
         value: $TOPIC
         required: true
         options:
-          Other: Other
+          Adoption: Adoption
+          Aging: Aging
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Appropriations: Appropriations
+          Banking: Banking
+          Campaign Finance: Campaign Finance
+          Commerce: Commerce
+          Congressional Issues: Congressional Issues
+          Public Safety: Public Safety
+          Defense: Defense
+          Disaster Relief: Disaster Relief
+          Economy: Economy
+          Education Higher: Education Higher
+          Education K through 12: Education K through 12
+          Elections: Elections
+          Energy: Energy
+          Environment: Environment
+          Foreign Affairs: Foreign Affairs
+          Health: Health
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Intelligence: Intelligence
+          Judiciary: Judiciary
+          Labor: Labor
+          Medicaid: Medicaid
+          Medicare: Medicare
+          Military: Military
+          NASA: NASA
+          Patents: Patents
+          Retirement: Retirement
+          Social Security: Social Security
+          Taxes: Taxes
+          Telecommunications: Telecommunications
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Welfare: Welfare
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

@@ -27,6 +27,8 @@ contact_form:
         selector: input[id*='organizerPhone']
         value: $PHONE
         required: true
+        options:
+          blacklist: "-"
       - name: Email
         selector: input[id*='organizerEmail']
         value: $EMAIL

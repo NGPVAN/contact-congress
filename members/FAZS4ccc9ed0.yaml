@@ -23,7 +23,48 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Aging: Aging
+          Agriculture: Agriculture
+          Animal Rights: Animal Rights
+          Appropriations: Appropriations
+          Arts and Humanities: Arts and Humanities
+          Banking and Finance: Banking and Finance
+          Budget: Budget
+          Census: Census
+          Children and Families: Children and Families
           Civil Rights: Civil Rights
+          Crime: Crime
+          Defense/Military: Defense/Military
+          Economic Development: Economic Development
+          Education: Education
+          Election and Campaign Reform: Election and Campaign Reform
+          Energy: Energy
+          Environment: Environment
+          Foreign Policy: Foreign Policy
+          Government Reform: Government Reform
+          Healthcare: Healthcare
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Jobs: Jobs
+          Judiciary: Judiciary
+          Labor and Employment: Labor and Employment
+          LGBT Issues: LGBT Issues
+          Medicaid: Medicaid
+          Medicare: Medicare
+          Native Americans: Native Americans
+          Pensions: Pensions
+          Postal Service: Postal Service
+          Regulatory Reform: Regulatory Reform
+          Science and Technology: Science and Technology
+          Second Amendment: Second Amendment
+          Small Business: Small Business
+          Social Security: Social Security
+          Taxes: Taxes
+          Telecom: Telecom
+          Trade: Trade
+          Transportation & Infrastructure: Transportation & Infrastructure
+          Veterans: Veterans
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

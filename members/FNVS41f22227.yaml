@@ -12,7 +12,58 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Appropriations and Budget: Appropriations and Budget
+          Armed Services: Armed Services
+          Arts and Humanities: Arts and Humanities
+          Banking: Banking
+          Campaign Finance Reform: Campaign Finance Reform
+          Children and Families: Children and Families
+          Civil Rights and Civil Liberties: Civil Rights and Civil Liberties
+          Congratulations:  Congratulations
+          Consumer Protection: Consumer Protection
+          Criminal Justice: Criminal Justice
+          Education: Education
+          Elections: Elections
+          Energy and Natural Resources: Energy and Natural Resources
+          Environment: Environment
+          FDA: FDA
+          Foreign Affairs: Foreign Affairs
+          Gaming: Gaming
+          Guns: Guns
+          Healthcare: Healthcare
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Insurance: Insurance
+          Interior: Interior
+          Judiciary: Judiciary
+          Labor: Labor
+          LGBTQ: LGBTQ
+          Medicaid: Medicaid
+          Medicare: Medicare
+          Native American Affairs: Native American Affairs
           Nutrition: Nutrition
+          Pensions: Pensions
+          Postal Issues: Postal Issues
+          Public Lands: Public Lands
+          Reproductive Rights: Reproductive Rights
+          Rural: Rural
+          Science and Technology: Science and Technology
+          Small Business: Small Business
+          Social Security: Social Security
+          Space: Space
+          Taxes: Taxes
+          Telecommunications: Telecommunications
+          Tourism: Tourism
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Water: Water
+          Welfare: Welfare
+          Women's Empowerment: Women's Empowerment
+          Yucca Mountain: Yucca Mountain
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

@@ -23,7 +23,38 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Abortion: Abortion
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Appropriations: Appropriations
+          Banking: Banking
+          Casework: Casework
+          Budget: Budget
+          Civil Rights: Civil Rights
+          Defense: Defense
+          Drugs: Drugs
+          Economy: Economy
+          Energy: Energy
+          Environment: Environment
+          Finance: Finance
+          Foreign Affairs: Foreign Affairs
+          Health: Health
+          Homeland Security: Homeland Security
+          Housing: Housing
+          Immigration: Immigration
+          Judiciary: Judiciary
+          Interior: Interior
+          Labor: Labor
+          Medicaid: Medicaid
+          Medicare: Medicare
           Other: Other
+          Pensions: Pensions
+          Small Business: Small Business
+          Social Security: Social Security
+          Taxes: Taxes
+          Trade: Trade
+          Veterans: Veterans
+          Welfare: Welfare
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

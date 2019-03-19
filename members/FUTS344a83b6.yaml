@@ -25,7 +25,35 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          Agriculture: Agriculture
+          Appropriations: Appropriations
+          Arts and Humanities: Arts and Humanities
+          Banking and Finance: Banking and Finance
+          Budget & Debt: Budget & Debt
+          Commerce: Commerce
+          Crime: Crime
+          Defense: Defense
+          Drugs: Drugs
+          Economy: Economy
+          Education: Education
+          Energy: Energy
+          Second Amendment: Second Amendment
+          Environment: Environment
+          Small Business: Small Business
+          Family: Family
+          Foreign Policy: Foreign Policy
+          Healthcare: Healthcare
+          Housing: Housing
+          Immigration: Immigration
+          Labor: Labor
+          National Security: National Security
           Other: Other
+          Public Land: Public Land
+          Religious Liberty: Religious Liberty
+          Taxes: Taxes
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
     - fill_in:
       - name: First name
         selector: "#edit-first-name"

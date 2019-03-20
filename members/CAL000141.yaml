@@ -44,6 +44,10 @@ contact_form:
           values: ["$NAME_FIRST"]
           selectors: ["#txtFirstName"]
           commands: ["elements[0].value = values[0].replace(/\ý/g,'y')"]
+        - name: second-accent-replace
+          values: ["$NAME_FIRST"]
+          selectors: ["#txtFirstName"]
+          commands: [ "elements[0].value = elements[0].value.replace('í', 'i')" ]
     - click_on:
         - value: Submit
           selector: "#submitButton"

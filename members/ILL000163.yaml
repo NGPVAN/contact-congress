@@ -37,7 +37,14 @@ contact_form:
         - value: Submit
           selector: input[type='submit'][value='Send E-mail']
     - wait:
-      - value: 10
+      - value: 6
+    - find:
+      - selector: a.maia-button-primary
+    - click_on:
+      - value: Yes
+        selector: a.maia-button-primary
+    - wait:
+      - value: 5
   success:
     headers:
       status: 200

@@ -40,15 +40,42 @@ contact_form:
           Aging: Aging
           Agriculture: Agriculture
           Animal Welfare: Animal Welfare
-          Appropriations: Appropriations
-          Banking: Banking
-          Campaign Finance: Campaign Finance
-          Children: Children
-          Civil Rights: Civil Rights
-          Commerce: Commerce
-          Communications: Communications
-          Congratulations: Congratulations
-          Congressional Issues: Congressional Issues
+          Broadband Access: Broadband Access
+          Budget: Budget
+          Civil Rights and Voting Rights: Civil Rights and Voting Rights
+          Cybersecurity: Cybersecurity
+          Defense: Defense
+          Eagle Scouts: Eagle Scouts
+          Economy: Economy
+          Education - Elementary, K-12: Education - Elementary, K-12
+          Elections: Elections
+          Energy: Energy
+          Environment: Environment
+          Family: Family
+          Federal Employees: Federal Employees
+          Foreign Affairs: Foreign Affairs
+          General Government/Regulation: General Government/Regulation
+          Gun Control: Gun Control
+          Health Care: Health Care
+          Housing: Housing
+          Immigration: Immigration
+          Internet: Internet
+          Jobs and the Economy: Jobs and the Economy
+          Judiciary: Judiciary
+          Native Americans: Native Americans
+          Pensions: Pensions
+          Photo Requests: Photo Requests
+          Science and Technology: Science and Technology
+          Seniors: Seniors
+          Small Business: Small Business
+          Social Security: Social Security
+          Taxes: Taxes
+          Trade: Trade
+          Transportation: Transportation
+          Veterans and Military Families: Veterans and Military Families
+          Welfare: Welfare
+          Women's Issues: Women's Issues
+          Other: Other
     - fill_in:
       - name: First Name
         selector: input#input-43DBC091-988F-DB42-A4E6-81CFBF4E6CA2

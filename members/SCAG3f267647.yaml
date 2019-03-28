@@ -24,6 +24,49 @@ contact_form:
           value: OTHER
           required: true
           options:
+            Animal Issues/Concerns: Animal Issues/Concerns
+            Attorney General: Attorney General
+            Budget Proposal 2019-20: Budget Proposal 2019-20
+            Child Protective Services: Child Protective Services
+            Clemency - Commutation of Sentence: Clemency - Commutation of Sentence
+            Clemency - Pardon: Clemency - Pardon
+            Consumer Affairs Issues/Concerns: Consumer Affairs Issues/Concerns
+            Death Penalty: Death Penalty
+            DIR - Workers Compensation: DIR - Workers Compensation
+            DMV Issues/Concerns: DMV Issues/Concerns
+            Education Issues/Concerns: Education Issues/Concerns
+            Employment Development Department: Employment Development Department
+            Energy Issues/Concerns: Energy Issues/Concerns
+            Environment Issues/Concerns: Environment Issues/Concerns
+            Fair Employment and Housing: Fair Employment and Housing
+            Food & Ag Issues/Concerns: Food & Ag Issues/Concerns
+            Franchise Tax Board Issues/Concerns: Franchise Tax Board Issues/Concerns
+            Gun Control: Gun Control
+            Health & Human Services Agency: Health & Human Services Agency
+            Immigration Issues/Concerns: Immigration Issues/Concerns
+            Inspector General: Inspector General
+            Insurance Issues/Concerns: Insurance Issues/Concerns
+            Labor and Workforce Development Agency: Labor and Workforce Development Agency
+            Legislation Issues/Concerns: Legislation Issues/Concerns
+            Medi-Cal Issues/Concerns: Medi-Cal Issues/Concerns
+            Parole - Governors Review: Parole - Governors Review
+            Parole Issues/Concerns: Parole Issues/Concerns
+            Press Office: Press Office
+            Prison Issues/Concerns: Prison Issues/Concerns
+            Public Records Request: Public Records Request
+            Public Utilities Commission: Public Utilities Commission
+            Request - Commemorative Message from the Governor: Request - Commemorative Message from the Governor
+            Request - Contribution/Donation: Request - Contribution/Donation
+            Request - General: Request - General
+            Scheduling - Request: Scheduling - Request
+            Student Correspondence: Student Correspondence
+            Teacher Credentialing Issues/Concerns: Teacher Credentialing Issues/Concerns
+            Transportation - Caltrans: Transportation - Caltrans
+            Transportation - High Speed Rail: Transportation - High Speed Rail
+            UC/CSU Issues/Concerns: UC/CSU Issues/Concerns
+            Veteran Issues/Concerns: Veteran Issues/Concerns
+            Water Issues/Concerns: Water Issues/Concerns
+            ACR00032\Colorectal Cancer Awareness Month.: ACR00032\Colorectal Cancer Awareness Month.
             OTHER: OTHER
     - check:
         - name: comment

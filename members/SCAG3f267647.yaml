@@ -21,7 +21,7 @@ contact_form:
     - select:
         - name: topic
           selector: "#subject"
-          value: OTHER
+          value: $TOPIC
           required: true
           options:
             Animal Issues/Concerns: Animal Issues/Concerns

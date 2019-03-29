@@ -85,6 +85,8 @@ contact_form:
           selector: "form.content textarea[name='message']"
           value: $MESSAGE
           required: true
+          options:
+            blacklist: "’—“"
         - name: subject
           selector: "input[name='newsubject']"
           value: $SUBJECT

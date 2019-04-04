@@ -53,6 +53,20 @@ contact_form:
           selector: "#Comment"
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: phone
+          selectors: [ "#PhoneNumber"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].replace(/\D/g,'').length > 10 ? values[0].replace(/\D/g,'').substr(1) : values[0].replace(/\D/g,'')" ]
+          required: false
+    - javascript:
+        - name: phone
+          selectors: [ "#PhoneNumber"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].replace(/\D/g,'').length > 10 ? values[0].replace(/\D/g,'').substr(1) : values[0].replace(/\D/g,'')" ]
+          required: false
+    - wait:
+        - value: 2
     - find:
         - selector: input#ResponseRequested_True
     - click_on:

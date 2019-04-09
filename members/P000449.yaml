@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.portman.senate.gov/public/index.cfm/contact-form"
+    - visit: "https://www.portman.senate.gov/meet/contact"
     - find:
         - selector: input#field_ABC03F4E-8760-440F-BA41-22107A2F7BCF
     - fill_in:

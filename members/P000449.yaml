@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.portman.senate.gov/meet/contact"
     - find:
-        - selector: input#field_ABC03F4E-8760-440F-BA41-22107A2F7BCF
+        - selector: div input[name='name[title]']
     - fill_in:
         - name: prefix
           selector: div input[name='name[title]']

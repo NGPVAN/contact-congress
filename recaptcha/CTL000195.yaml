@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://www.housedems.ct.gov/Vargas/Contact"
+    - visit: "http://www2.housedems.ct.gov/InYourOpinion.asp"
     - wait:
         - value: 2
     - find:

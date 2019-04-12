@@ -1,0 +1,59 @@
+bioguide: MNL000767
+contact_form:
+  method: post
+  action: ""
+  useChrome: true
+  steps:
+    - visit: "https://www.senate.mn/members/member_email_form.php?member_id=1217"
+    - fill_in:
+        - name: First Name
+          selector: input#first_name
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#last_name
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: input#email
+          value: $EMAIL
+          required: true
+        - name: Street
+          selector: input#street_address_1
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#city
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: input#zip
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Subject
+          selector: input#subject
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: textarea#form_message
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: State
+          selector: select#state
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            MN: MN
+    - click_on:
+        - value: Submit
+          selector: input#submit
+    - wait:
+        - value: 4
+    - find:
+        - value: div#swal2-content
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Message has been sent successfully

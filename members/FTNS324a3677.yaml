@@ -36,7 +36,7 @@ contact_form:
       - name: Street2
         selector: "#edit-address-2"
         value: $ADDRESS_STREET_2
-        required: true
+        required: false
       - name: City
         selector: "#edit-city"
         value: $ADDRESS_CITY

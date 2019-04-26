@@ -3,7 +3,7 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "http://www.tillis.senate.gov/public/index.cfm/email-me"
+    - visit: "https://www.tillis.senate.gov/email-me"
     - fill_in:
       - name: "first_name"
         selector: "#field_554EB441-1332-47D8-B817-87A030531FCC"
@@ -197,37 +197,40 @@ contact_form:
         value: $TOPIC
         required: true
         options:
-          - "SEN": Aging
-          - "ANI": Animal Welfare
-          - "BNK": Banking
-          - "EDU": Education
-          - "ENE": Energy
-          - "ENV": Environment
-          - "FOF": Foreign Affairs
-          - "GAF": Government Affairs
-          - "HEA": Health
-          - "HOM": Homeland Security
-          - "HOU": Housing
-          - "IMM": Immigration
-          - "INR": Interior
-          - "JUD": Judiciary
-          - "JUS": Justice/Crime
-          - "LAB": Labor
-          - "MIL": Military
-          - "NTR": Nutrition
-          - "PEN": Pensions
-          - "SCI": Science and Space
-          - "SEC": Second Amendment
-          - "Social Issues": Social Issues
-          - "BUS": Small Business
-          - "SOC": Social Issues
-          - "SSEC": Social Security
-          - "TAX": Taxes
-          - "TRD": Trade
-          - "TRA": Transportation
-          - "VET": Veterans
-          - "WEL": Welfare
+          - Aging: Aging
+          - Agriculture: Agriculture
+          - Animal Welfare: Animal Welfare
+          - Banking: Banking
+          - Education: Education
+          - Energy: Energy
+          - Environment: Environment
+          - Foreign Affairs: Foreign Affairs
+          - Government Affairs: Government Affairs
+          - Health: Health
+          - Homeland Security: Homeland Security
+          - Housing: Housing
+          - Immigration: Immigration
+          - Interior: Interior
+          - Judiciary: Judiciary
+          - Justice/Crime: Justice/Crime
+          - Labor: Labor
+          - Military: Military
+          - Nutrition: Nutrition
+          - Pensions: Pensions
+          - Science and Space: Science and Space
+          - Second Amendment: Second Amendment
+          - Social Issues: Social Issues
+          - Small Business: Small Business
+          - Social Issues: Social Issues
+          - Social Security: Social Security
+          - Taxes: Taxes
+          - Trade: Trade
+          - Transportation: Transportation
+          - Veterans: Veterans
+          - Welfare: Welfare
     - click_on:
+      - value: Unsubscribe
+        selector: input#field_D44885AF-4F13-49FB-A1A7-1F19DDC104FA_1
       - value: Submit
         selector: "input[type='submit'][value='Submit']"
     - wait:

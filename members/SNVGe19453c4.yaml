@@ -18,7 +18,7 @@ contact_form:
           value: $EMAIL
           required: true
         - name: Phone
-          selector: input#Field1
+          selector: input#Phone
           value: $PHONE
           required: false
         - name: Address
@@ -26,7 +26,7 @@ contact_form:
           value: $ADDRESS_STREET
           required: false
         - name: Zip
-          selector: input#Field2
+          selector: input#zipcode
           value: $ADDRESS_ZIP5
           required: true
         - name: City
@@ -60,7 +60,7 @@ contact_form:
             Coach: Coach
             Ofc: Ofc
         - name: State
-          selector: select#Field3
+          selector: select#state
           value: Nevada
           required: false
         - name: Topic

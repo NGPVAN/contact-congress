@@ -38,7 +38,7 @@ contact_form:
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input[id*='lastName']
+          selector: input[id*='.lastName']
           value: $NAME_LAST
           required: true
         - name: Address

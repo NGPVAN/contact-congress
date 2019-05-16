@@ -1,0 +1,251 @@
+bioguide: SINL386_240699
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.in.gov/lg/2333.htm"
+    - fill_in:
+        - name: First Name
+          selector: input#field47542374-first
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#field47542374-last
+          value: $NAME_LAST
+          required: true
+        - name: Middle Name Initial
+          selector: input#field47542374-initial
+          value: '.'
+          required: true
+        - name: Street
+          selector: input#field47542910-address
+          value: $ADDRESS_STREET
+          required: false
+        - name: City
+          selector: input#field47542910-city
+          value: $ADDRESS_CITY
+          required: false
+        - name: Zip
+          selector: input#field47542910-zip
+          value: $ADDDRESS_ZIP5
+          required: false
+        - name: Phone
+          selector: input#field47542986
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#field47542999
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: textarea#field47543171
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: Topic
+          selector: select#field47538935
+          value: $TOPIC
+          options:
+            Administration, Department of: Administration, Department of
+            Agriculture, Indiana State Department of: Agriculture, Indiana State Department of
+            Alcohol & Tobacco Commission: Alcohol & Tobacco Commission
+            Appeals, Court of: Appeals, Court of
+            Attorney General: Attorney General
+            Auditor of State: Auditor of State
+            Budget Agency, State: Budget Agency, State
+            Business Development, Indiana: Business Development, Indiana
+            Child Services, Department of: Child Services, Department of
+            Child Services, Department of (Child Support): Child Services, Department of (Child Support)
+            Civil Rights Commission, Indiana: Civil Rights Commission, Indiana
+            Correction, Department of: Correction, Department of
+            Counter Terrorism and Security Council, Indiana: Counter Terrorism and Security Council, Indiana
+            Criminal Justice Institute: Criminal Justice Institute
+            Development Finance Authority, Indiana: Development Finance Authority, Indiana
+            Education, Department of: Education, Department of
+            Election Division: Election Division
+            Emergency Medical Services: Emergency Medical Services
+            Environmental Management, Department of: Environmental Management, Department of
+            Ethics Commission, Indiana State: Ethics Commission, Indiana State
+            Excise Police, Indiana State: Excise Police, Indiana State
+            Fair, Indiana State: Fair, Indiana State
+            Faith-based and Community Initiatives, Office of: Faith-based and Community Initiatives, Office of
+            Family and Social Services Administration: Family and Social Services Administration
+            Gaming Commission: Gaming Commission
+            Governor, Office of the: Governor, Office of the
+            Governor’s Planning Council for People with Disabilities, Indiana: Governor’s Planning Council for People with Disabilities, Indiana
+            Grain Buyers and Warehouse Licensing Agency, Indiana: Grain Buyers and Warehouse Licensing Agency, Indiana
+            Higher Education, Commission for: Higher Education, Commission for
+            Higher Education Telecommunication System, Indiana: Higher Education Telecommunication System, Indiana
+            Hispanic/Latino Affairs, Indiana Commission on: Hispanic/Latino Affairs, Indiana Commission on
+            Historical Bureau, Indiana: Historical Bureau, Indiana
+            Homeland Security, Department of: Homeland Security, Department of
+            House of Representatives: House of Representatives
+            Housing and Community Development Authority, Indiana: Housing and Community Development Authority, Indiana
+            Inspector General: Inspector General
+            Integrated Public Safety Commission: Integrated Public Safety Commission
+            Labor, Department of: Labor, Department of
+            Local Government Finance, Department of: Local Government Finance, Department of
+            Lottery, Hoosier: Lottery, Hoosier
+            Motor Vehicles, Bureau of: Motor Vehicles, Bureau of
+            Natural Resources, Department of: Natural Resources, Department of
+            Protection and Advocacy Services: Protection and Advocacy Services
+            Public Employees Retirement Fund: Public Employees Retirement Fund
+            Public Records, Indiana Commission: Public Records, Indiana Commission
+            Revenue, Department of: Revenue, Department of
+            Rural Affairs, Office of: Rural Affairs, Office of
+            Rural Development Council, Indiana: Rural Development Council, Indiana
+            Secretary of State: Secretary of State
+            Senate: Senate
+            Social Status of Black Males, Indiana Commission: Social Status of Black Males, Indiana Commission
+            State Budget Agency; Revenue, Department of: State Budget Agency; Revenue, Department of
+            State Police: State Police
+            Teacher Retirement Fund, Indiana State: Teacher Retirement Fund, Indiana State
+            Technology, Office of: Technology, Office of
+            Tobacco Prevention and Cessation, Indiana: Tobacco Prevention and Cessation, Indiana
+            Treasurer, Indiana State: Treasurer, Indiana State
+            Transportation, Department of: Transportation, Department of
+            Utility Consumer Counselor, Office of: Utility Consumer Counselor, Office of
+            Utility Regulatory Commission: Utility Regulatory Commission
+            Veteran Affairs, Department of: Veteran Affairs, Department of
+            Workforce Development, Department of: Workforce Development, Department of
+            Other: Other
+          required: true
+        - name: State
+          selector: select#field47542910-state
+          value: Indiana
+          required: false
+        - name: Prefix
+          selector: select#field47540856
+          value: $NAME_PREFIX
+          options:
+            Captain: Captain
+            Councilman: Councilman
+            Councilwoman: Councilwoman
+            Dame: Dame
+            Doctor: Doctor
+            Dr.: Dr.
+            Dr. and Mr.: Dr. and Mr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Father: Father
+            Friend: Friend
+            Friends: Friends
+            Miss: Miss
+            Monsignor: Monsignor
+            Mr.: Mr.
+            Mr. and Mrs.: Mr. and Mrs.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Pastor: Pastor
+            Rabbi: Rabbi
+            Rev.: Rev.
+            Reverend: Reverend
+            Sir: Sir
+            Sister: Sister
+            The Honorable: The Honorable
+            required: false
+        - name: County
+          selector: select#field47542958
+          value: $ADDRESS_COUNTY
+          options:
+            Out of State: Out of State
+            Adams: Adams
+            Allen: Allen
+            Bartholomew: Bartholomew
+            Benton: Benton
+            Blackford: Blackford
+            Boone: Boone
+            Brown: Brown
+            Carroll: Carroll
+            Cass: Cass
+            Clark: Clark
+            Clay: Clay
+            Clinton: Clinton
+            Crawford: Crawford
+            Daviess: Daviess
+            De Kalb: De Kalb
+            Dearborn: Dearborn
+            Decatur: Decatur
+            Delaware: Delaware
+            Dubois: Dubois
+            Elkhart: Elkhart
+            Fayette: Fayette
+            Floyd: Floyd
+            Fountain: Fountain
+            Franklin: Franklin
+            Fulton: Fulton
+            Gibson: Gibson
+            Grant: Grant
+            Greene: Greene
+            Hamilton: Hamilton
+            Hancock: Hancock
+            Harrison: Harrison
+            Hendricks: Hendricks
+            Henry: Henry
+            Howard: Howard
+            Huntington: Huntington
+            Jackson: Jackson
+            Jasper: Jasper
+            Jay: Jay
+            Jefferson: Jefferson
+            Jennings: Jennings
+            Johnson: Johnson
+            Knox: Knox
+            Kosciusko: Kosciusko
+            La Porte: La Porte
+            Lagrange: Lagrange
+            Lake: Lake
+            Lawrence: Lawrence
+            Madison: Madison
+            Marion: Marion
+            Marshall: Marshall
+            Martin: Martin
+            Miami: Miami
+            Monroe: Monroe
+            Montgomery: Montgomery
+            Morgan: Morgan
+            Newton: Newton
+            Noble: Noble
+            Ohio: Ohio
+            Orange: Orange
+            Owen: Owen
+            Parke: Parke
+            Perry: Perry
+            Pike: Pike
+            Porter: Porter
+            Posey: Posey
+            Pulaski: Pulaski
+            Putnam: Putnam
+            Randolph: Randolph
+            Ripley: Ripley
+            Rush: Rush
+            Scott: Scott
+            Shelby: Shelby
+            Spencer: Spencer
+            St Joseph: St Joseph
+            Starke: Starke
+            Steuben: Steuben
+            Sullivan: Sullivan
+            Switzerland: Switzerland
+            Tippecanoe: Tippecanoe
+            Tipton: Tipton
+            Union: Union
+            Vanderburgh: Vanderburgh
+            Vermillion: Vermillion
+            Vigo: Vigo
+            Wabash: Wabash
+            Warren: Warren
+            Warrick: Warrick
+            Washington: Washington
+            Wayne: Wayne
+            Wells: Wells
+            required: false
+    - click_on:
+        - value: Send Email
+          selector: input#fsSubmitButton2534168
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for your email

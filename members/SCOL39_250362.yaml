@@ -106,9 +106,9 @@ contact_form:
             Yuma: Yuma
     - click_on:
         - value: Submit
-          selector: form#tfa_0 div#tfa_0-A input.primaryAction
-    - wait:
-        - value: 4
+          selector: "#submit_button"
+    - find:
+        - selector: div.wFormThankYou
   success:
     headers:
       status: 200

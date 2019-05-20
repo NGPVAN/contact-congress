@@ -1,0 +1,47 @@
+bioguide: SMEA392_399491
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.maine.gov/ag/contact.html"
+    - fill_in:
+        - name: First Name
+          selector: input#nameyour
+          value: $NAME_FULL
+          required: true
+        - name: Street
+          selector: input#addyour
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#cityyour
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input#zipyour
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: input[id*='txtContactHomePhone']
+          value: $PHONE_HYPHENS
+          required: true
+        - name: email
+          selector: input#emailyour
+          value: $EMAIL
+          required: false
+        - name: Message
+          selector: textarea#summary
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: input[id*='btnSubmit']
+    - wait:
+        - value: 1
+    - find:
+        - value: span[id*='InquiryForm_lblStatus']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Success. Thank you

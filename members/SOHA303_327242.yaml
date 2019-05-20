@@ -1,0 +1,51 @@
+bioguide: SOHA303_327242
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.ohioattorneygeneral.gov/About-AG/Contact"
+    - fill_in:
+        - name: First Name
+          selector: input[id*='txtContactFirstName']
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input[id*='txtContactLastName']
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: input[id*='txtContactAddress']
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input[id*='txtContactCity']
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input[id*='txtContactZip']
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: email
+          selector: input[id*='txtContactEmail']
+          value: $EMAIL
+          required: false
+        - name: Phone
+          selector: input[id*='txtContactHomePhone']
+          value: $PHONE_HYPHENS
+          required: true
+        - name: Message
+          selector: textarea[id*='txtInquiry']
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: input[id*='btnSubmit']
+    - wait:
+        - value: 1
+    - find:
+        - value: span[id*='InquiryForm_lblStatus']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Success. Thank you

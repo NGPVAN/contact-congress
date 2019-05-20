@@ -1,0 +1,58 @@
+bioguide: SINA164_589956
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.in.gov/attorneygeneral/3063.htm"
+    - fill_in:
+        - name: email
+          selector: input#field75702271
+          value: $EMAIL
+          required: true
+        - name: First Name
+          selector: input#field75702272-first
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#field75702272-last
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: input#field75702273-address
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#field75702273-city
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input#field75702273-zip
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: input#field75702274
+          value: $PHONE
+          required: true
+        - name: Message
+          selector: textarea#field75702277
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: Topic
+          selector: select#field75702275
+          value: Other
+          required: true
+        - name: State
+          selector: select#field75702273-state
+          value: Indiana
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: input#fsSubmitButton3396309
+    - find:
+        - selector: div.fsSectionText
+  success:
+    headers:
+      status: 200
+    body:
+      contains: The form was submitted successfully

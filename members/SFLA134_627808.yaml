@@ -1,0 +1,133 @@
+bioguide: SFLA134_627808
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "http://www.myfloridalegal.com/contact.nsf/contact!OpenForm&Seq=1&Section=Citizen_Services"
+    - fill_in:
+        - name: First Name
+          selector: input[name='FirstName']
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input[name='LastName']
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: input[name='Address']
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input[name='City']
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: input[name='ZipCode']
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: email
+          selector: input[name='EmailAddress']
+          value: $EMAIL
+          required: true
+        - name: confirm email
+          selector: input[name='EmailAddressConfirm']
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input[name='Phone']
+          value: $PHONE
+          required: false
+        - name: Subject
+          selector: input[name='OtherSubject']
+          value: $SUBJECT
+          required: true
+        - name: Name
+          selector: input[name='ReferencedEntity']
+          value: $NAME_FULL
+          required: true
+        - name: message
+          selector: textarea[name='Concerns']
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: County
+          selector:
+          value: $ADDRESS_COUNTY
+          options:
+            Alachua: Alachua
+            Baker: Baker
+            Bradford: Bradford
+            Brevard: Brevard
+            Broward: Broward
+            Calhoun: Calhoun
+            Charlotte: Charlotte
+            Citrus: Citrus
+            Clay: Clay
+            Collier: Collier
+            Columbia: Columbia
+            DeSoto: DeSoto
+            Dixie: Dixie
+            Duval: Duval
+            Escambia: Escambia
+            Flagler: Flagler
+            Franklin: Franklin
+            Gadsden: Gadsden
+            Gilchrist: Gilchrist
+            Glades: Glades
+            Gulf: Gulf
+            Hamilton: Hamilton
+            Hardee: Hardee
+            Hendry: Hendry
+            Hernando: Hernando
+            Highlands: Highlands
+            Hillsborough: Hillsborough
+            Holmes: Holmes
+            Indian River: Indian River
+            Jackson: Jackson
+            Jefferson: Jefferson
+            Lafayette: Lafayette
+            Lake: Lake
+            Lee: Lee
+            Leon: Leon
+            Levy: Levy
+            Liberty: Liberty
+            Madison: Madison
+            Manatee: Manatee
+            Marion: Marion
+            Martin: Martin
+            Miami-Dade: Miami-Dade
+            Monroe: Monroe
+            Nassau: Nassau
+            Okaloosa: Okaloosa
+            Okeechobee: Okeechobee
+            Orange: Orange
+            Osceola: Osceola
+            Palm Beach: Palm Beach
+            Pasco: Pasco
+            Pinellas: Pinellas
+            Polk: Polk
+            Putnam: Putnam
+            Saint Johns: Saint Johns
+            Saint Lucie: Saint Lucie
+            Santa Rosa: Santa Rosa
+            Sarasota: Sarasota
+            Seminole: Seminole
+            Sumter: Sumter
+            Suwannee: Suwannee
+            Taylor: Taylor
+            Union: Union
+            Volusia: Volusia
+            Wakulla: Wakulla
+            Walton: Walton
+            Washington: Washington
+          required: true
+    - click_on:
+        - value: Submit
+          selector: input[type='button'][value='Submit']
+    - wait:
+       - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for contacting

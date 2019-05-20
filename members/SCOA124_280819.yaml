@@ -1,0 +1,58 @@
+bioguide: SCOA124_280819
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://coag.gov/about-us/contact-colorado-office-attorney-general"
+    - fill_in:
+        - name: First Name
+          selector: input#edit-submitted-your-contact-information-first-name
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#edit-submitted-your-contact-information-last-name
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: input#edit-submitted-your-contact-information-street-address
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#edit-submitted-your-contact-information-city
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input#edit-submitted-your-contact-information-zip
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: input#edit-submitted-your-contact-information-primary-telephone-number
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#edit-submitted-your-contact-information-email
+          value: $EMAIL
+          required: true
+        - name: verify email
+          selector: input#edit-submitted-your-contact-information-verify-email
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: textarea#edit-submitted-your-inquiry-information-please-provide-a-brief-summary-of-your-inquiry
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: State
+          selector: select#edit-submitted-your-contact-information-state
+          value: Indiana
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: button[type='submit'][value='Submit']
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for taking the time

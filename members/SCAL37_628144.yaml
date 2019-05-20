@@ -1,0 +1,60 @@
+bioguide: SCAL37_628144
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://ltg.ca.gov/contact/"
+    - find:
+        - selector: input#wpforms-240-field_1_1
+    - click_on:
+        - selector: input#wpforms-240-field_1_1
+    - fill_in:
+        - name: First Name
+          selector: input#wpforms-240-field_2
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#wpforms-240-field_3
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: input#wpforms-240-field_4
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: input#wpforms-240-field_6
+          value: $SUBJECT
+          required: true
+        - name: Street
+          selector: input#wpforms-240-field_9
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#wpforms-240-field_9-city
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input#wpforms-240-field_9-postal
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: input#wpforms-240-field_11
+          value: $PHONE
+          required: true
+        - name: Message
+          selector: textarea#wpforms-240-field_10
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: State
+          selector: select#wpforms-240-field_9-state
+          value: California
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: button#wpforms-submit-240
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for your interest to connect

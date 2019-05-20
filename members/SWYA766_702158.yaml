@@ -29,8 +29,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 3
+    - find:
+        - selector: div.ss-resp-message
   success:
     headers:
       status: 200

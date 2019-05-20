@@ -49,8 +49,8 @@ contact_form:
     - click_on:
         - value: Send Email
           selector: button[type='submit'][value='Submit']
-    - wait:
-        - value: 3
+    - find:
+        - selector: div.webform-confirmation
   success:
     headers:
       status: 200

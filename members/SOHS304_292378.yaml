@@ -1,0 +1,37 @@
+bioguide: SOHS304_292378
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.sos.state.oh.us/secretary-office/contact-our-office/contact-us-agency/"
+    - fill_in:
+        - name: First Name
+          selector: input[title='Name']
+          value: $NAME_FULL
+          required: true
+        - name: Phone
+          selector: input[title='Phone Number']
+          value: $PHONE
+          required: false
+        - name: Address
+          selector: input[title='Address']
+          value: $ADDRESS_FULL
+          required: false
+        - name: County
+          selector: input[title='Enter your county (if in Ohio)']
+          value: $ADDRESS_COUNTY
+          required: false
+        - name: Email
+          selector: input[title='Email']
+          value: $EMAIL
+          required: false
+        - name: Message
+          selector: textarea[title='Question / Comment']
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: button[type='submit'][title='Submit']
+  success:
+    body:
+      contains: Thank you for your e-mail

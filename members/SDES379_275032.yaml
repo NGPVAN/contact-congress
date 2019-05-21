@@ -1,0 +1,48 @@
+bioguide: SDES379_275032
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://sos.delaware.gov/department-state-contact-form/"
+    - fill_in:
+        - name: First Name
+          selector: "#formName"
+          value: $NAME_FULL
+          required: true
+        - name: Street
+          selector: "#formAddress"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#formCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: "formZip"
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: "#formPhone"
+          value: $PHONE
+          required: true
+        - name: Message
+          selector: "#formQuestion"
+          value: $MESSAGE
+          required: true
+        - name: Email
+          selector: "#formEmail"
+          value: $EMAIL
+          required: true
+    - select:
+        - name: Form Division
+          selector: "#formDivision"
+          value: Secretary of State
+          required: true
+    - click_on:
+        - value: Send Email
+          selector: button[type='submit']
+    - find:
+        - selector: div.fsSectionText
+  success:
+    body:
+      contains: Thank you for contacting us

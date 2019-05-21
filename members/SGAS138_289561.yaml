@@ -1,0 +1,45 @@
+bioguide: SGAS138_289561
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "http://sos.ga.gov/cgi-bin/email.asp"
+    - fill_in:
+        - name: First Name
+          selector: "#textContactName"
+          value: $NAME_FULL
+          required: true
+        - name: Phone
+          selector: "#textPhoneNumber"
+          value: $PHONE
+          required: true
+        - name: Street
+          selector: "#textMailingAddress"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#textCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: State
+          selector: "#textState"
+          value: GA
+          required: true
+        - name: Zip
+          selector: "#textZipCode"
+          value: $ADDDRESS_ZIP5
+          required: true
+        - name: Email
+          selector: "#textEmailAddress"
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: textarea[name='textNameofEvent']
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#cmdSubmit1"
+  success:
+    body:
+      contains: Thank you for submitting

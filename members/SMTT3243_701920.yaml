@@ -1,0 +1,35 @@
+bioguide: SMTT3243_701920
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://mtrevenue.gov/contact/"
+    - fill_in:
+        - name: First Name
+          selector: "#nf-field-10"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#nf-field-14"
+          value: $NAME_LAST
+          required: false
+        - name: Email
+          selector: "#nf-field-11"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#nf-field-16"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#nf-field-12"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#nf-field-13"
+    - find:
+        - selector: div.nf-response-msg p:first-child
+  success:
+    body:
+      contains: Form submitted successfully

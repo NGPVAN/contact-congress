@@ -1,0 +1,31 @@
+bioguide: SNET271_353738
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://treasurer.nebraska.gov/email.aspx?treasurer"
+    - fill_in:
+        - name: Name Full
+          selector: "#MainContent_name"
+          value: $NAME_FULL
+          required: true
+        - name: Email
+          selector: "#MainContent_emailadd"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "#MainContent_phone"
+          value: $PHONE_HYPHENS
+          required: false
+        - name: Message
+          selector: "#MainContent_comments"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#MainContent_contactSubmitButton"
+    - find:
+        - value: div#MainContent_pnl2 p:first-child
+  success:
+    body:
+      contains: Your question has been submitted

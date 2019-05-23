@@ -1,0 +1,40 @@
+bioguide: SLAT179_260717
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.treasury.state.la.us/contact-form/"
+    - fill_in:
+        - name: Name Full
+          selector: input[name='your-name']
+          value: $NAME_FULL
+          required: true
+        - name: Email
+          selector: input[name='your-email']
+          value: $EMAIL
+          required: true
+        - name: Confirm Email
+          selector: input[name='confirm-your-email']
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: input[name='phone-number']
+          value: $PHONE
+          required: true
+        - name: Message
+          selector: textarea[name='your-message']
+          value: $MESSAGE
+          required: false
+    - select:
+        - name: Subject
+          selector: select[name='your-subject']
+          value: State Treasurer
+          required: false
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Submit']
+    - find:
+        - selector: div.wpcf7-response-output
+  success:
+    body:
+      contains: Thank you for your comment

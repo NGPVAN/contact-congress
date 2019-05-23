@@ -1,0 +1,54 @@
+bioguide: SMOT201_403052
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://treasurer.mo.gov/emailus/emailus.aspx"
+    - fill_in:
+        - name: First Name
+          selector: "#ctl00_MainContent_txtFirstName"
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name
+          selector: "#ctl00_MainContent_txtLastName"
+          value: $NAME_LAST
+          required: false
+        - name: Street
+          selector: "#ctl00_MainContent_txtAddressLine1"
+          value: $ADDRESS_STREET
+          required: false
+        - name: City
+          selector: "#ctl00_MainContent_txtCity"
+          value: $ADDRESS_CITY
+          required: false
+        - name: Zip
+          selector: "#ctl00_MainContent_txtZip"
+          value: $ADDDRESS_ZIP5
+          required: false
+        - name: Phone
+          selector: "#ctl00_MainContent_txtPhone"
+          value: $PHONE
+          required: false
+        - name: Email
+          selector: "#ctl00_MainContent_txtEmail"
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: "#ctl00_MainContent_txtComments"
+          value: $MESSAGE
+          required: false
+    - select:
+        - name: State
+          selector: "#ctl00_MainContent_ddlState"
+          value: Missouri
+          required: false
+        - name: Contact
+          selector: "#ctl00_MainContent_ddlContact"
+          value: General Info
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#ctl00_MainContent_SubmitEmail"
+  success:
+    body:
+      contains: Your email has been sent successfully

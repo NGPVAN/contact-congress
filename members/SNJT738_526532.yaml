@@ -1,0 +1,113 @@
+bioguide: SNJT738_526532
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.state.nj.us/treasury/assets/contact/contact-treas.shtml"
+    - fill_in:
+        - name: First Name
+          selector: "#first"
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name
+          selector: "#last"
+          value: $NAME_LAST
+          required: false
+        - name: Street
+          selector: "#address1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#address2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: "#zip"
+          value: $ADDDRESS_ZIP5
+          required: false
+        - name: Phone
+          selector: "#phonenumber"
+          value: $PHONE
+          required: false
+        - name: Email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#subject"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#message"
+          value: $MESSAGE
+          required: false
+    - select:
+        - name: Division
+          selector: select[name='selected']
+          value: Department of the Treasury (General Questions)
+          required: false
+        - name: Prefix
+          selector: select[name='nameprefix']
+          value: $NAME_PREFIX
+          required: false
+          options:
+            Captain: Captain
+            Chief: Chief
+            Councilman: Councilman
+            Dame: Dame
+            Doctor: Doctor
+            Dr.: Dr.
+            Dr. and Mr.: Dr. and Mr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Father: Father
+            Friend: Friend
+            Friends: Friends
+            Miss: Miss
+            Monsignor: Monsignor
+            Mr.: Mr.
+            Mr. and Mrs.: Mr. and Mrs.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Pastor: Pastor
+            Rabbi: Rabbi
+            Rev.: Rev.
+        - name: State
+          selector: select[name='state']
+          value: New Jersey
+          required: false
+        - name: County
+          selector: select[name='county']
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Atlantic: Atlantic
+            Bergen: Bergen
+            Burlington: Burlington
+            Camden: Camden
+            Cape May: Cape May
+            Cumberland: Cumberland
+            Essex: Essex
+            Gloucester: Gloucester
+            Hudson: Hudson
+            Hunterdon: Hunterdon
+            Mercer: Mercer
+            Middlesex: Middlesex
+            Monmouth: Monmouth
+            Morris: Morris
+            Ocean: Ocean
+            Passaic: Passaic
+            Salem: Salem
+            Somerset: Somerset
+            Sussex: Sussex
+            Union: Union
+            Warren: Warren
+    - click_on:
+        - value: Submit
+          selector: input[name='submit'][type='submit']
+  success:
+    body:
+      contains:  Thank you for contacting the Department of the Treasury

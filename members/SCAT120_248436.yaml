@@ -1,0 +1,49 @@
+bioguide: SCAT120_248436
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.treasurer.ca.gov/comments.asp"
+    - fill_in:
+        - name: Topic
+          selector: "#topic"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#description"
+          value: $MESSAGE
+          required: false
+        - name: Name Full
+          selector: "#name"
+          value: $NAME_FULL
+          required: true
+        - name: Street
+          selector: "#address"
+          value: $ADDRESS_STREET
+          required: false
+        - name: City
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: false
+        - name: State
+          selector: "#state"
+          value: CA
+          required: false
+        - name: Zip
+          selector: "#zip"
+          value: $ADDDRESS_ZIP5
+          required: false
+        - name: Phone
+          selector: "#phone"
+          value: $PHONE
+          required: false
+        - name: Email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Submit']
+  success:
+    body:
+      contains: Thank you for submitting

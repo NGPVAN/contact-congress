@@ -65,9 +65,9 @@ contact_form:
       - value: Submit
         selector: button#edit-actions-submit
     - wait:
-      - value: 5
+      - value: 10
   success:
     headers:
       status: 200
     body:
-      excludes: Constituent Information
+      contains: Thank you, your message has been sent.

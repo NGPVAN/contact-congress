@@ -12,12 +12,27 @@ contact_form:
         value: $NAME_PREFIX
         required: true
         options:
+          Ms.: Ms.
           Mr.: Mr.
           Mrs.: Mrs.
           Ms.: Ms.
-          Mr. and Mrs.: Mr. and Mrs.
           Dr.: Dr.
-          Dr. and Mrs.: Dr. and Mrs.
+          Miss: Miss
+          Admiral: Admiral
+          Captain: Captain
+          Chief Master Sergeant: Chief Master Sergeant
+          Colonel: Colonel
+          Commander: Commander
+          Corporal: Corporal
+          General: General
+          Lieutenant: Lieutenant
+          Lieutenant Colonel: Lieutenant Colonel
+          Major: Major
+          Master Sergeant: Master Sergeant
+          Sergeant: Sergeant
+          Second Lieutenant: Second Lieutenant
+          Sergeant Major: Sergeant Major
+          Technical Sergeant: Technical Sergeant
       - name: Topic
         selector: "#edit-issue"
         value: $TOPIC

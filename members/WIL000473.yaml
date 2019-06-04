@@ -16,7 +16,7 @@ contact_form:
         - name: phone
           selector: div .phonenumber input
           value: $PHONE
-          required: false
+          required: true
         - name: email
           selector: div .email input
           value: $EMAIL

@@ -63,7 +63,7 @@ contact_form:
           commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
           required: true
     - select:
-      - name: prefix
+      - name: Your Prefix
         selector: "#input-AB59F08A-4040-F985-52CD-7633AA11C65E"
         value: $NAME_PREFIX
         required: true

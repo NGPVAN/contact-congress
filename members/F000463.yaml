@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.fischer.senate.gov/public/?p=email-deb"
     - fill_in:
-      - name: prefix
+      - name: Your Prefix
         selector: input#field_54F8542E-F6DB-417C-9677-E57F2F190899
         value: $NAME_PREFIX
         required: false

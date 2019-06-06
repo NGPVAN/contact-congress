@@ -56,7 +56,7 @@ contact_form:
           options:
             blacklist: ":"
     - select:
-        - name: prefix
+        - name: Your Prefix
           selector: "#input-34F91F24-4040-F985-52CD-C65030493AD6"
           value: $NAME_PREFIX
           required: true

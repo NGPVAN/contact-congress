@@ -42,7 +42,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - select:
-        - name: prefix
+        - name: Your Prefix
           selector: "#edit-submitted-salutation"
           value: $NAME_PREFIX
           required: true

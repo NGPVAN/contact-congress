@@ -50,7 +50,7 @@ contact_form:
           selector: select[name='selected']
           value: Department of the Treasury (General Questions)
           required: false
-        - name: Prefix
+        - name: Your Prefix
           selector: select[name='nameprefix']
           value: $NAME_PREFIX
           required: false

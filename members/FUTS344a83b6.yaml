@@ -7,7 +7,7 @@ contact_form:
     - wait:
       - value: 1
     - select:
-      - name: Prefix
+      - name: Your Prefix
         selector: "#edit-prefix"
         value: $NAME_PREFIX
         required: true

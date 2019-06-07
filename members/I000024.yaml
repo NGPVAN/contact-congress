@@ -75,7 +75,7 @@ contact_form:
         selector: "#response_y"
         value: "Y"
     - select:
-      - name: salutation
+      - name: Your Prefix
         selector: "#salutation"
         value: "$NAME_PREFIX"
         required: true

@@ -13,7 +13,7 @@ contact_form:
           selector: form#memberForm input#sender
           value: $EMAIL
           required: true
-        - name: prefix
+        - name: Your Prefix
           selector: input#prefix
           value: $NAME_PREFIX
           required: true

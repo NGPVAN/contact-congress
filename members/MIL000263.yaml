@@ -6,7 +6,7 @@ contact_form:
   steps:
     - visit: "http://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_MID20&__fid=100001"
     - fill_in:
-        - name: Prefix
+        - name: Your Prefix
           selector: input#qii_1_prefix
           value: $NAME_PREFIX
           required: false

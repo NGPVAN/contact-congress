@@ -9,7 +9,7 @@ contact_form:
     - find:
       - value: "#edit-prefix"
     - select:
-      - name: Prefix
+      - name: Your Prefix
         selector: "#edit-prefix"
         value: $NAME_PREFIX
         required: true

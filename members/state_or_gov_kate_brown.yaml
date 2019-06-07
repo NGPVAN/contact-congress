@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.oregon.gov/gov/Pages/share-your-opinion.aspx"
     - fill_in:
-        - name: Prefix
+        - name: Your Prefix
           selector: form#aspnetForm input[name='Prefix']
           value: $NAME_PREFIX
           required: true

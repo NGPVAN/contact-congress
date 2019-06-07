@@ -18,7 +18,7 @@ contact_form:
     - wait:
         - value: 3
     - fill_in:
-        - name: prefix
+        - name: Your Prefix
           selector: input#input-260E577D-5056-A066-6070-226296904340
           value: $NAME_PREFIX
           required: true

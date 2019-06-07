@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.cornyn.senate.gov/contact"
     - fill_in:
-      - name: Prefix
+      - name: Your Prefix
         selector: input#edit-submitted-prefix-optional
         value: $NAME_PREFIX
         required: false

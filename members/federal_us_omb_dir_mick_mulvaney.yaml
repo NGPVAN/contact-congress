@@ -14,7 +14,7 @@ contact_form:
         required: True
         options:
           Contact the President: Contact the President
-      - name: prefix
+      - name: Your Prefix
         selector: select[id='Contact.Salutation']
         value: $NAME_PREFIX
         required: true

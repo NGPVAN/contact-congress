@@ -102,7 +102,7 @@ contact_form:
         options:
           blacklist: ":"
     - select:
-      - name: salutation
+      - name: Your Prefix
         selector: "#salutation"
         value: "$NAME_PREFIX"
         required: true

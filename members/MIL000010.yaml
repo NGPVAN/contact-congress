@@ -10,7 +10,7 @@ contact_form:
     - find:
         - selector: "#qi_1_first_name"
     - fill_in:
-        - name: prefix
+        - name: Your Prefix
           selector: "#qi_1_prefix"
           value: $NAME_PREFIX
           required: false

@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.enzi.senate.gov/public/index.cfm/e-mail-senator-enzi"
     - fill_in:
-      - name: prefix
+      - name: Your Prefix
         selector: input#field_D050D408-36B0-47B7-9597-A53AA3ED3D46
         value: $NAME_PREFIX
         required: false

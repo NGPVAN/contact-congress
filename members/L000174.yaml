@@ -16,7 +16,7 @@ contact_form:
     - find:
         - selector: input#other
     - fill_in:
-        - name: Prefix
+        - name: Your Prefix
           selector: input#other
           value: $NAME_PREFIX
           required: true

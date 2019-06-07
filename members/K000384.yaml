@@ -50,7 +50,7 @@ contact_form:
         options:
           blacklist: "*():"
     - select:
-      - name: Prefix
+      - name: Your Prefix
         selector: select#prefixtoggle
         value: $NAME_PREFIX
         required: true

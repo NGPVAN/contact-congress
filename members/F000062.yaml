@@ -81,7 +81,7 @@ contact_form:
     - click_on:
         - selector: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_4
     - select:
-        - name: prefix
+        - name: Your Prefix
           selector: select#field_9444DBC2-BBE1-469D-9B8F-AB10EB838284
           value: $NAME_PREFIX
           required: false

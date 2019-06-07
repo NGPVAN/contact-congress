@@ -48,7 +48,7 @@ contact_form:
         options:
           blacklist: ":"
     - select:
-      - name: Prefix
+      - name: Your Prefix
         selector: "#thisForm select[name='Prefix']"
         value: "$NAME_PREFIX"
         required: true

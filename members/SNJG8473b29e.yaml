@@ -87,7 +87,7 @@ contact_form:
           selectors: ["#LASTNAME"]
           commands: ["elements[0].value = !elements[0].value || elements[0].value.length > 1 ? elements[0].value : elements[0].value + '.'" ]
     - select:
-        - name: prefix
+        - name: Your Prefix
           selector: select#PREFIX
           value: $NAME_PREFIX
           required: false

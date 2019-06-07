@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://www.isakson.senate.gov/public/index.cfm/email-me"
     - fill_in:
-      - name: prefix
+      - name: Your Prefix
         selector: input#field_AB86600E-030C-4DA2-8F14-396A3E48191C
         value: $NAME_PREFIX
         required: true

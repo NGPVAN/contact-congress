@@ -7,7 +7,7 @@ contact_form:
     - find:
         - selector: div input[name='name[title]']
     - fill_in:
-        - name: prefix
+        - name: Your Prefix
           selector: div input[name='name[title]']
           value: $NAME_PREFIX
           required: false

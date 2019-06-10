@@ -22,26 +22,22 @@ contact_form:
           value: $ADDDRESS_ZIP5
           required: true
         - name: Phone
-          selector: input[id*='txtContactHomePhone']
-          value: $PHONE_HYPHENS
+          selector: input[id*='phone']
+          value: $PHONE
           required: true
         - name: email
           selector: input#emailyour
           value: $EMAIL
-          required: false
+          required: true
         - name: Message
           selector: textarea#summary
           value: $MESSAGE
           required: true
     - click_on:
         - value: Send Email
-          selector: input[id*='btnSubmit']
+          selector: input[type='submit'][value='Submit']
     - wait:
-        - value: 1
-    - find:
-        - value: span[id*='InquiryForm_lblStatus']
+        - value: 2
   success:
-    headers:
-      status: 200
     body:
-      contains: Success. Thank you
+      contains: Thank you for contacting us

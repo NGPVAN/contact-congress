@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.regulations.gov/comment?D=FNS-2019-0001-0001"
+    - visit: "https://www.regulations.gov/comment?D=FNS-2019-0001-6698"
     - find:
         - selector: input#gwt-uid-85
     - click_on:

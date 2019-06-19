@@ -78,6 +78,60 @@ contact_form:
           "Sister": "Sister"
           "Rabbi": "Rabbi"
           "Reverend": "Reverend"
+          "Brother": "Brother"
+          Fleet Admiral: Fleet Admiral
+          Admiral: Admiral
+          Vice Admiral: Vice Admiral
+          Rear Admiral (upper half): Rear Admiral (upper half)
+          Rear Admiral (lower half): Rear Admiral (lower half)
+          Captain: Captain
+          Commander: Commander
+          Lieutenant Commander: Lieutenant Commander
+          Lieutenant: Lieutenant
+          Lieutenant, Junior Grade: Lieutenant, Junior Grade
+          Ensign: Ensign
+          Master Chief Petty Officer of the Navy: Master Chief Petty Officer of the Navy
+          Master Chief Petty Officer: Master Chief Petty Officer
+          Senior Chief Petty Officer: Senior Chief Petty Officer
+          Chief Petty Officer: Chief Petty Officer
+          Petty Officer First Class: Petty Officer First Class
+          Petty Officer Second Class: Petty Officer Second Class
+          Petty Officer Third Class: Petty Officer Third Class
+          Seaman: Seaman
+          Seaman Apprentice: Seaman Apprentice
+          Seaman Recruit: Seaman Recruit
+          Chief Warrant Officer: Chief Warrant Officer
+          Warrant Officer: Warrant Officer
+          Sgt Major Of The Corps: Sgt Major Of The Corps
+          Sergeant Major: Sergeant Major
+          Master Gunnery Sgt: Master Gunnery Sgt
+          First Sergeant: First Sergeant
+          Master Sergeant: Master Sergeant
+          Gunnery Sergeant: Gunnery Sergeant
+          Staff Sergeant: Staff Sergeant
+          Sergeant: Sergeant
+          Corporal: Corporal
+          Lance Corporal: Lance Corporal
+          Private First Class: Private First Class
+          Private: Private
+          General of the Air Force: General of the Air Force
+          General: General
+          Lieutenant General: Lieutenant General
+          Major General: Major General
+          Brigadier General: Brigadier General
+          Colonel: Colonel
+          Lieutenant Colonel: Lieutenant Colonel
+          Major: Major
+          First Lieutenant: First Lieutenant
+          Second Lieutenant: Second Lieutenant
+          Chief Master Sergeant of the Air Force: Chief Master Sergeant of the Air Force
+          Command Chief Master Sergeant: Command sChief Master Sergeant
+          Chief Master Sergeant: Chief Master Sergeant
+          Senior Master Sergeant: Senior Master Sergeant
+          Technical Sergeant: Technical Sergeant
+          Senior Airman: Senior Airman
+          Airman First Class: Airman First Class
+          Airman: Airman
       - name: state
         selector: select#input-BA91826A-4040-F985-52CD-419255C3C6C3
         value: RI

@@ -5,10 +5,6 @@ contact_form:
   steps:
     - visit: "http://www.cornyn.senate.gov/contact"
     - fill_in:
-      - name: Your Prefix
-        selector: input#edit-submitted-prefix-optional
-        value: $NAME_PREFIX
-        required: false
       - name: FirstName
         selector: input#edit-submitted-first-name
         value: $NAME_FIRST
@@ -56,6 +52,42 @@ contact_form:
     - find:
       - selector: select#edit-submitted-issue
     - select:
+      - name: Your Prefix
+        selector: select#edit-submitted-prefix-select
+        value: $NAME_PREFIX
+        required: true
+        options:
+          Chapln: Chaplain
+          Dr: Doctor
+          Mr: Mr.
+          Ms: Ms.
+          Prof: Professor
+          Rabbi: Rabbi
+          Rev: Reverend
+          Revs: Reverends
+          TheHon: The Honorable
+          ADM: Admiral
+          BrigGen: Brigadier General
+          Capt: Captain
+          CWO: Chief Warrant Officer
+          Col: Colonel
+          CDR: Commander
+          Cpl: Corporal
+          ENS: Ensign
+          1stLt: First Lieutenant
+          Gen: General
+          LT: Lieutenant
+          LtCol: Lieutenant Colonel
+          LCDR: Lieutenant Commander
+          LtGen: Lieutenant General
+          LTJG: Lieutenant (Junior Grade)
+          Maj: Major
+          MajGen: Major General
+          MSgt: Master Sergeant
+          RADM: Rear Admiral
+          2ndLt: Second Lieutenant
+          Sgt: Sergeant
+          VADM: Vice Admiral
       - name: Topic
         selector: select#edit-submitted-issue
         value: $TOPIC

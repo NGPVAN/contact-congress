@@ -12,6 +12,18 @@ contact_form:
           value: Other
           required: true
           options:
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Miss: Miss
+            Mr. and Mrs.: Mr. and Mrs.
+            Dr.: Dr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Dr. and Mr.: Dr. and Mr.
+            Mr. and Mr.: Mr. and Mr.
+            Mrs. and Mrs.: Mrs. and Mrs.
+            Ms. and Ms.: Ms. and Ms.
+            Other: Other
             Other: Other
     - find:
         - selector: input#other

@@ -57,6 +57,13 @@ contact_form:
             Mr.: Mr.
             Mrs.: Mrs.
             Mr. and Mrs.: Mr. and Mrs.
+            Mr. and Mr.: Mr. and Mr.
+            Mrs. and Mrs.: Mrs. and Mrs.
+            Mx.: Mx.
+            Mx. & Mr.: Mx. and Mr.
+            Mx. & Mrs.: Mx. & Mrs.
+            Mx. & Mx.: Mx. & Mx.
+            Pastor: Pastor
             Ms.: Ms.
             Miss: Miss
             Dr.: Dr.
@@ -66,6 +73,9 @@ contact_form:
             Sister: Sister
             Reverend: Reverend
             Rabbi: Rabbi
+            Imam: Imam
+            Ind.: Ind.
+            Misc.: Misc.
             Private: Private
             SR: SR
             Airman Basic: Airman Basic

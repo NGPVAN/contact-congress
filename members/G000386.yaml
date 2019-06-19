@@ -73,6 +73,7 @@ contact_form:
             Rev.: Rev.
             Mr. and Mrs.: Mr. and Mrs.
             Sister: Sister
+            Other: Other
         - name: issue
           selector: "#issue"
           value: $TOPIC

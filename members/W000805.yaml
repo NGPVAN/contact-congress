@@ -60,6 +60,12 @@ contact_form:
             "Mrs.": Mrs.
             "Ms.": Ms.
             "Mr. and Mrs.": Mr. and Mrs.
+            "Mx.": Mx
+            "Mx. & Mr.": Mx. and Mr.
+            "Mx. & Mrs.": Mx. and Mrs.
+            "Mx. & Mx.": Mx. and Mx.
+            "Misc.": Misc
+            "Ind.": Ind
             "Dr.": Dr.
             "Dr. and Mrs.": Dr. and Mrs.
             "Dr. and Mr.": Dr. and Mr.

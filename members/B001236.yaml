@@ -63,6 +63,7 @@ contact_form:
           "Reverend": "Reverend"
           "Sister": "Sister"
           "Pastor": "Pastor"
+          "Other": "Other"
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']

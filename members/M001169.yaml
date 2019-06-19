@@ -124,7 +124,12 @@ contact_form:
             Mrs.: Mrs.
             Miss: Miss
             Dr.: Dr.
+            Professor: Professor
+            Reverend: Reverend
+            Rabbi: Rabbi
             Sister: Sister
+            The Honorable: The Honorable
+            No Prefix: No Prefix
     - wait:
         - value: 1
     - click_on:

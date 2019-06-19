@@ -3,7 +3,7 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: https://www.stabenow.senate.gov/contact
+    - visit: "https://www.stabenow.senate.gov/contact"
     - wait:
       - value: 1
     - find:

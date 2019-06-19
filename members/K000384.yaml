@@ -99,6 +99,7 @@ contact_form:
           - Sergeant: Sergeant
           - Vice Admiral: Vice Admiral
           - Warrat Officer: Warrant Officer
+          - Other: Other
       - name: Topic
         selector: select#input-B388ADF0-5056-A066-6033-31CCE02BC3DA
         value: $TOPIC

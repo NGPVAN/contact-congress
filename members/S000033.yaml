@@ -112,6 +112,8 @@ contact_form:
           "Mrs.": "Mrs."
           "Miss": "Miss"
           "Mr. and Mrs.": "Mr. and Mrs."
+          "Mx.": "Mx."
+          "X": "X"
           "Dr.": "Dr."
           "Prof.": "Prof."
           "Senator": "Senator"

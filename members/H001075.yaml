@@ -71,10 +71,9 @@ contact_form:
             Ms.: Ms.
             Professor: Professor
             Dr.: Dr.
-            Father: Father
-            Reverend: Reverend
-            Sister: Sister
+            Dean: Dean
             Mx.: Mx.
+            The Honorable: The Honorable
             None: None
     - find:
         - selector: "#issue-3"

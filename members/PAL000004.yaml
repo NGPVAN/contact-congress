@@ -5,45 +5,54 @@ contact_form:
   steps:
     - visit: "http://www.senatorboscola.com/contact"
     - fill_in:
-        - name: fname
-          selector: "#cf_field_2"
+        - name: First Name
+          selector: "#field_qh4icy22"
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#cf_field_3"
+        - name: Last Name
+          selector: "#field_ocfup122"
           value: $NAME_LAST
           required: true
-        - name: address
-          selector: "#cf_field_4"
+        - name: Address
+          selector: "#field_6ptrr_line1"
           value: $ADDRESS_STREET
           required: true
-        - name: address2
-          selector: "#cf_field_5"
+        - name: Address2
+          selector: "#field_6ptrr_line2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#cf_field_6"
+          selector: "#field_6ptrr_city"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#cf_field_8"
+          selector: "#field_6ptrr_zip"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: "#cf_field_9"
+          selector: "#field_29yf4d22"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#cf_field_10"
+          selector: "#field_ic0co"
           value: $PHONE
-          required: true
+          required: false
         - name: message
-          selector: "#cf_field_11"
+          selector: "#field_9jv0r1221"
           value: $MESSAGE
           required: true
+    - select:
+        - name: Issue
+          selector: "#field_qbzw"
+          value: Other
+          required: false
+        - name: State
+          selector: "#field_6ptrr_state"
+          value: Pennsylvania
+          required: false
     - click_on:
         - value: Submit
-          selector: "#sendbutton"
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
   success:

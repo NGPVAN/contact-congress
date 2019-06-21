@@ -38,7 +38,7 @@ contact_form:
           value: $PHONE
           required: false
         - name: message
-          selector: "#field_9jv0r1221"
+          selector: "#field_9jv0r122"
           value: $MESSAGE
           required: true
     - select:

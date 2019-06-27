@@ -132,9 +132,9 @@ contact_form:
     - click_on:
         - selector: input#field_170B7597-532D-4D58-B551-32915A884AC1_1
     - find:
-        - selector: field_8BE704C6-EB27-4C1A-AC3D-F345B61214C3_2
+        - selector: input#field_8BE704C6-EB27-4C1A-AC3D-F345B61214C3_2
     - click_on:
-        - selector: field_8BE704C6-EB27-4C1A-AC3D-F345B61214C3_2
+        - selector: input#field_8BE704C6-EB27-4C1A-AC3D-F345B61214C3_2
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']

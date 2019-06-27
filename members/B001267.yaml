@@ -127,7 +127,6 @@ contact_form:
             VET.AFFRS: Veterans
             NAT.SEC: National Security
             WAS.REF: Washington Reform
-            OTHER: Other
     - find:
         - selector: input#field_170B7597-532D-4D58-B551-32915A884AC1_1
     - click_on:

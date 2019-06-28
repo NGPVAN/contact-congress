@@ -3,43 +3,47 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "https://portaldir.ct.gov/governor/ShareOpinion.aspx"
+    - visit: "https://portal.ct.gov/Office-of-the-Governor/Contact/Email-Governor-Lamont"
     - fill_in:
       - name: First Name
-        selector: "#ctl00_DataContentPlaceHolder_txtRequestorFirstName"
+        selector: "#FirstName"
         value: $NAME_FIRST
         required: true
       - name: Last Name
-        selector: "#ctl00_DataContentPlaceHolder_txtRequestorLastName"
+        selector: "#LastName"
         value: $NAME_LAST
         required: true
-      - name: Street
-        selector: "#ctl00_DataContentPlaceHolder_txtStreetAddr"
-        value: $ADDRESS_STREET
-        required: false
-      - name: City
-        selector: "#ctl00_DataContentPlaceHolder_txtCity"
-        value: $ADDRESS_CITY
-        required: false
-      - name: zip
-        selector: "#ctl00_DataContentPlaceHolder_ZipCode"
-        value: $ADDRESS_ZIP5
-        required: true
       - name: Phone
-        selector: "#ctl00_DataContentPlaceHolder_PhoneNumber"
+        selector: "#HomePhone"
         value: $PHONE_HYPHENS
-        required: false
+        required: true
       - name: email
-        selector: "#ctl00_DataContentPlaceHolder_EmailAddress"
+        selector: "#Email"
         value: $EMAIL
         required: true
+      - name: Street
+        selector: "#Street"
+        value: $ADDRESS_STREET
+        required: true
+      - name: City
+        selector: "#City"
+        value: $ADDRESS_CITY
+        required: true
+      - name: state
+        selector: "#State"
+        value: Connecticut
+        required: true
+      - name: zip
+        selector: "#ZipCode"
+        value: $ADDRESS_ZIP5
+        required: true
       - name: Message
-        selector: "#ctl00_DataContentPlaceHolder_txtComments"
+        selector: "#Comments"
         value: $MESSAGE
         required: true
     - select:
       - name: Your Prefix
-        selector: "#ctl00_DataContentPlaceHolder_ddNameTitle"
+        selector: "#NamePrefix"
         value: $NAME_PREFIX
         required: false
         options:
@@ -49,7 +53,7 @@ contact_form:
           - "Ms.": "Ms."
           - "Miss": "Miss"
           - "Dr.": "Dr."
-          - "The Honorable": "The Honorable"
+          - "Honorable": "Honorable"
           - "Congressman": "Congressman"
           - "Congresswoman": "Congresswoman"
           - "Representative": "Representative"
@@ -58,7 +62,7 @@ contact_form:
           - "Rabbi": "Rabbi"
           - "Chaplin": "Chaplin"
       - name: Topic
-        selector: "#ctl00_DataContentPlaceHolder_ddInterestArea"
+        selector: "#InterestArea"
         value: $TOPIC
         required: true
         options:
@@ -82,11 +86,14 @@ contact_form:
           - "HOUSINGMORTGEN": "Mortgage Issues"
           - "PUBSAFEGEN": "Public Safety"
           - "REVSVCGENERAL": "Revenue Services"
+          - "Social Services": "Social Services"
+          - "Taxes": "Taxes"
           - "DOTGEN": "Transportation"
+          - "Transportation Infrastructure": "Transportation Infrastructure"
           - "VETGENERAL": "Veterans"
     - click_on:
       - value: Submit
-        selector: "#ctl00_SubmitContentPlaceHolder_btnSub"
+        selector: input[value='Submit Form'][type='submit']
   success:
     headers:
       status: 200

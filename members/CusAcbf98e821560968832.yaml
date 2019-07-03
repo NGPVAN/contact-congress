@@ -3,54 +3,50 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.regulations.gov/comment?D=HHS-OCR-2019-0007-0001"
+    - visit: "https://ngpvan-freedom-tools.herokuapp.com/federalRegister"
     - find:
-        - selector: input#gwt-uid-85
-    - click_on:
-        - selector: input#gwt-uid-85
-    - wait:
-        - value: 1
-    - find:
-        - selector: div.GIY1LSJGSC form
+        - selector: input#document_id
     - fill_in:
-        - name: message
-          selector: textarea#x-auto-0-input
+        - name: Document Id
+          selector: "#document_id"
+          value: '2019-11512'
+          required: true
+        - name: Comment
+          selector: "#comment"
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input#x-auto-1-input
+          selector: "#firstname"
           value: $NAME_FIRST
           required: false
         - name: Last Name
-          selector: input#x-auto-2-input
+          selector: "#lastname"
           value: $NAME_LAST
           required: false
+        - name: City
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: false
+        - name: State
+          selector: "#stateprovince"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: false
         - name: zip5
-          selector: input#x-auto-8-input
+          selector: "#zip"
           value: $ADDRESS_ZIP5
           required: false
         - name: email
-          selector: input#x-auto-10-input
+          selector: "#email"
           value: $EMAIL
           required: false
+        - name: Category
+          selector: "#category"
+          value: Individual
+          required: true
     - click_on:
-        - selector: div.GIY1LSJISC button.primary
-    - wait:
-        - value: 5
-    - find:
-        - selector: input#gwt-uid-250
-    - click_on:
-        - selector: input#gwt-uid-250
-    - wait:
-        - value: 4
-    - find:
-        - selector: button[id*='gwt-uid']
-    - click_on:
-        - selector: button[id*='gwt-uid']
-    - wait:
-        - value: 6
+        - selector: "#submit_btn"
   success:
     headers:
       status: 200
     body:
-      contains: "Your Comment Tracking Number"
+      contains: "Success!"

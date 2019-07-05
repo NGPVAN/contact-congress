@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www16.state.nj.us/GOV_TRANS_APPLICANTS/BTCustomServlet"
+    - visit: "https://www-njlib.state.nj.us/GOV_TRANS_APPLICANTS/BTCustomServlet"
     - select:
         - name: topic
           selector: select#ISSUE

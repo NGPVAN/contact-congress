@@ -129,13 +129,11 @@ contact_form:
           selector: textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888
           value: $MESSAGE
           required: true
-          options:
-            blacklist: ":"
     - javascript:
         - name: Message
           selectors: [ "textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
           required: true
     - click_on:
         - selector: input[type='submit'][value='Submit']

@@ -39,13 +39,11 @@ contact_form:
         selector: "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F"
         value: $MESSAGE
         required: true
-        options:
-          blacklist: ":’"
     - javascript:
       - name: Message
-        selectors: [ "#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87" ]
+        selectors: [ "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F" ]
         values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\bset\b/ig,'determine')"]
+        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
         required: true
     - select:
       - name: Your Prefix

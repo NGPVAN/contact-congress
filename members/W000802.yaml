@@ -55,7 +55,7 @@ contact_form:
         - name: message
           selectors: [ "textarea#input-BA957EB0-4040-F985-52CD-CF349BA209E1" ]
           values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
           required: true
     - select:
       - name: Your Prefix

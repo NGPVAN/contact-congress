@@ -53,12 +53,11 @@ contact_form:
         required: true
         options:
           max_length: 10000
-          blacklist: ":"
     - javascript:
       - name: Message
         selectors: [ "textarea#field_4BBB4940-5FA9-43E1-9F05-0A9EB169C378" ]
         values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
+        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
         required: true
     - select:
       - name: topic

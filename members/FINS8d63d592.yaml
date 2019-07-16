@@ -90,6 +90,12 @@ contact_form:
         selector: "#edit-message"
         value: $MESSAGE
         required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#edit-message" ]
+        values: [ "$MESSAGE" ]
+        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
+        required: true
     - click_on:
       - value: Submit
         selector: button#edit-actions-submit

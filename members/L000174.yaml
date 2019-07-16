@@ -68,8 +68,12 @@ contact_form:
           selector: "#input-36E62F57-5056-A066-60BF-78ADF9F5676E"
           value: $MESSAGE
           required: true
-          options:
-            blacklist: ":"
+    - javascript:
+        - name: Message
+          selectors: [ "#input-36E62F57-5056-A066-60BF-78ADF9F5676E" ]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
+          required: true
     - select:
         - name: Topic
           selector: "#issue"

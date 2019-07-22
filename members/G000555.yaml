@@ -7,30 +7,30 @@ contact_form:
     - wait:
         - value: 8
     - find:
-        - selector: input#input-41379D65-C84B-E83D-BC59-3E535C89FC46
+        - selector: "#input-A5AD3024-5056-A066-60BD-27089EC367B6"
     - fill_in:
-        - name: first
-          selector: input#input-41379D65-C84B-E83D-BC59-3E535C89FC46
+        - name: First Name
+          selector: "#input-A5AD3024-5056-A066-60BD-27089EC367B6"
           value: $NAME_FIRST
           required: true
-        - name: last
-          selector: input#input-41379D83-ED36-8807-928B-0B9C1C489FD0
+        - name: Last Name
+          selector: "#input-A5AD2D97-5056-A066-609C-2BE7421DED54"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#input-4138C965-EE4E-0812-9F75-F568FAF4DA8B
+          selector: "#input-A5AD3726-5056-A066-6040-8733FE9F1C74"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#input-4138C97D-C3EC-6F1D-D677-EA4077BA2615
+          selector: "#input-A5AD3697-5056-A066-609E-516677574915"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#input-4138CB19-FAD0-8E40-D374-E2FFA273B036
+          selector: "#input-A5AD3598-5056-A066-602E-1929FB800695"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#input-4138CB54-D64F-32E6-5942-BCECB2422B9C
+          selector: "#input-A5AD3404-5056-A066-6010-890AB748A186"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
@@ -38,22 +38,22 @@ contact_form:
           value: $EMAIL
           required: true
         - name: phone
-          selector: input#input-413A1B60-A672-8A13-9552-69CB2032BE16
+          selector: "#input-A5AD3157-5056-A066-6044-877D1CC4A989"
           value: $PHONE
           required: true
         - name: message
-          selector: textarea#input-4154995F-09DE-911F-DD8B-93796597BB52
+          selector: "#input-A5AD3307-5056-A066-6029-D7EBFF775924"
           value: $MESSAGE
           required: true
     - javascript:
         - name: Message
-          selectors: ["textarea#input-4154995F-09DE-911F-DD8B-93796597BB52"]
+          selectors: ["#input-A5AD3307-5056-A066-6029-D7EBFF775924"]
           values: ["$MESSAGE"]
           commands: ["elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
           required: true
     - select:
         - name: Your Prefix
-          selector: select#input-41379D3E-BA76-1EEF-C6C5-C18565BAA26C
+          selector: "#input-A5AD3428-5056-A066-6005-7CBE3BA4A089"
           value: $NAME_PREFIX
           required: true
           options:
@@ -67,15 +67,15 @@ contact_form:
             Other: Other
     - click_on:
         - name: subject
-          selector: input#issue-30
+          selector: "#issue-30"
           value: Other
           required: true
           options:
             Other: Other
     - find:
-        - selector: div#form-41148127-C769-5460-FAAA-D06B26A0E47E input[type=submit]
+        - selector: input[type='submit'][value='Submit']
     - click_on:
-        - selector: div#form-41148127-C769-5460-FAAA-D06B26A0E47E input[type=submit]
+        - selector: input[type='submit'][value='Submit']
     - wait:
         - value: 4
   success:

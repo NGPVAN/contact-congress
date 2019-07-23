@@ -4,90 +4,50 @@ contact_form:
   action: ""
   steps:
     - visit: "http://www.cornyn.senate.gov/contact"
+    - find:
+      - selector: "#edit-submitted-lets-get-started-1"
+    - click_on:
+      - selector: "#edit-submitted-lets-get-started-1"
     - fill_in:
-      - name: FirstName
+      - name: First Name
         selector: input#edit-submitted-first-name
         value: $NAME_FIRST
         required: true
-      - name: LastName
+      - name: Last Name
         selector: input#edit-submitted-last-name
         value: $NAME_LAST
         required: true
-      - name: Street
-        selector: input#edit-submitted-address-1
-        value: $ADDRESS_STREET
-        required: true
-      - name: Street2
-        selector: input#edit-submitted-address-2-optional
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: City
-        selector: input#edit-submitted-city
-        value: $ADDRESS_CITY
-        required: true
-      - name: ZipCode
-        selector: input#edit-submitted-zip-code
-        value: $ADDRESS_ZIP5
-        required: true
-      - name: PhoneNumber
-        selector: input#edit-submitted-phone-number-optional
-        value: $PHONE
-        required: false
-      - name: EmailAddress
-        selector: input#edit-submitted-email-address
+      - name: Email
+        selector: input#edit-submitted-email
         value: $EMAIL
         required: true
+    - click_on:
+      - selector: "#edit-submitted-e-newsletter-opt-in-1"
+      - selector: input[type='submit'][value='Next Page >']
+    - wait:
+      - value: 2
+    - find:
+      - selector: "#edit-submitted-please-write-us-a-brief-message"
+    - fill_in:
       - name: message
-        selector: textarea#edit-submitted-message
+        selector: "#edit-submitted-please-write-us-a-brief-message"
         value: $MESSAGE
         required: true
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#edit-submitted-message" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-        required: true
-    - find:
-      - selector: select#edit-submitted-issue
+      - name: Street
+        selector: "#edit-submitted-address-thoroughfare"
+        value: $ADDRESS_STREET
+        required: false
+      - name: City
+        selector: "#edit-submitted-address-locality"
+        value: $ADDRESS_CITY
+        required: false
+      - name: ZipCode
+        selector: "#edit-submitted-address-postal-code"
+        value: $ADDRESS_ZIP5
+        required: false
     - select:
-      - name: Your Prefix
-        selector: select#edit-submitted-prefix-select
-        value: $NAME_PREFIX
-        required: true
-        options:
-          Chapln: Chaplain
-          Dr: Doctor
-          Mr: Mr.
-          Ms: Ms.
-          Prof: Professor
-          Rabbi: Rabbi
-          Rev: Reverend
-          Revs: Reverends
-          TheHon: The Honorable
-          ADM: Admiral
-          BrigGen: Brigadier General
-          Capt: Captain
-          CWO: Chief Warrant Officer
-          Col: Colonel
-          CDR: Commander
-          Cpl: Corporal
-          ENS: Ensign
-          1stLt: First Lieutenant
-          Gen: General
-          LT: Lieutenant
-          LtCol: Lieutenant Colonel
-          LCDR: Lieutenant Commander
-          LtGen: Lieutenant General
-          LTJG: Lieutenant (Junior Grade)
-          Maj: Major
-          MajGen: Major General
-          MSgt: Master Sergeant
-          RADM: Rear Admiral
-          2ndLt: Second Lieutenant
-          Sgt: Sergeant
-          VADM: Vice Admiral
       - name: Topic
-        selector: select#edit-submitted-issue
+        selector: "#edit-submitted-please-select-and-issue-youd-like-to-discuss"
         value: $TOPIC
         required: true
         options:
@@ -127,75 +87,20 @@ contact_form:
           Veterans: Veterans
           Welfare: Welfare
       - name: State
-        selector: select#edit-submitted-state
-        value: $ADDRESS_STATE_FULL
-        required: true
-        options:
-          Alabama: Alabama
-          Alaska: Alaska
-          American Samoa: American Samoa
-          Arizona: Arizona
-          Arkansas: Arkansas
-          California: California
-          Colorado: Colorado
-          Connecticut: Connecticut
-          Delaware: Delaware
-          District of Columbia: District of Columbia
-          Florida: Florida
-          Georgia: Georgia
-          Guam: Guam
-          Hawaii: Hawaii
-          Idaho: Idaho
-          Illinois: Illinois
-          Indiana: Indiana
-          Iowa: Iowa
-          Kansas: Kansas
-          Kentucky: Kentucky
-          Louisiana: Louisiana
-          Maine: Maine
-          Marshall Islands: Marshall Islands
-          Maryland: Maryland
-          Massachusetts: Massachusetts
-          Michigan: Michigan
-          Minnesota: Minnesota
-          Mississippi: Mississippi
-          Missouri: Missouri
-          Montana: Montana
-          Nebraska: Nebraska
-          Nevada: Nevada
-          New Hampshire: New Hampshire
-          New Jersey: New Jersey
-          New Mexico: New Mexico
-          New York: New York
-          North Carolina: North Carolina
-          North Dakota: North Dakota
-          Northern Marianas Islands: Northern Marianas Islands
-          Ohio: Ohio
-          Oklahoma: Oklahoma
-          Oregon: Oregon
-          Palau: Palau
-          Pennsylvania: Pennsylvania
-          Puerto Rico: Puerto Rico
-          Rhode Island: Rhode Island
-          South Carolina: South Carolina
-          South Dakota: South Dakota
-          Tennessee: Tennessee
-          Texas: Texas
-          Utah: Utah
-          Vermont: Vermont
-          Virgin Islands: Virgin Islands
-          Virginia: Virginia
-          Washington: Washington
-          West Virginia: West Virginia
-          Wisconsin: Wisconsin
-          Wyoming: Wyoming
+        selector: "#edit-submitted-address-administrative-area"
+        value: Texas
+        required: false
+    - click_on:
+      - selector: input[type='submit'][value='Preview']
+    - wait:
+      - value: 3
+    - find:
+      - value: input[type='submit'][value='Submit']
     - click_on:
       - value: Submit
-        selector: div.form-actions input.webform-submit
+        selector: input[type='submit'][value='Submit']
     - wait:
-      - value: 2
+      - value: 6
   success:
-    headers:
-      status: 200
     body:
-      contains: Thank you, your submission has been received.
+      contains: Your message to Senator Cornyn's office has been submitted

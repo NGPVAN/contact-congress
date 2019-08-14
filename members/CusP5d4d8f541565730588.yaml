@@ -1,4 +1,4 @@
-bioguide: CusP5812f4ef1559670388
+bioguide: CusP5d4d8f541565730588
 contact_form:
   method: post
   action: ""
@@ -9,7 +9,7 @@ contact_form:
     - fill_in:
         - name: Document Id
           selector: "#document_id"
-          value: '2019-12806'
+          value: '2019-15670'
           required: true
         - name: Comment
           selector: "#comment"
@@ -18,16 +18,16 @@ contact_form:
         - name: First Name
           selector: "#firstname"
           value: $NAME_FIRST
-          required: false
+          required: true
         - name: Last Name
           selector: "#lastname"
           value: $NAME_LAST
-          required: false
+          required: true
         - name: City
           selector: "#city"
           value: $ADDRESS_CITY
           required: false
-        - name:  State
+        - name: State
           selector: "#stateprovince"
           value: $ADDRESS_STATE_POSTAL_ABBREV
           required: false

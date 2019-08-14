@@ -27,7 +27,7 @@ contact_form:
           selector: "#city"
           value: $ADDRESS_CITY
           required: false
-        - name: State
+        - name:  State
           selector: "#stateprovince"
           value: $ADDRESS_STATE_POSTAL_ABBREV
           required: false

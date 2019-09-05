@@ -202,55 +202,34 @@ contact_form:
             Seaman: Navy - Seaman
             Seaman Recruit: Navy - Seaman Recruit
       - name: topic
-        selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
+        selector: select#topictoggle
         value: $TOPIC
         required: true
         options:
           Abortion: Abortion
           Agriculture: Agriculture
-          Animal Rights: Animal Rights
           "Budget/Spending": "Budget/Spending"
-          Business: Business
           Civil Rights: Civil Rights
-          Commerce: Commerce
           "Congratulations/Birthdays": "Congratulations/Birthdays"
-          "Crime/Drugs": "Crime/Drugs"
-          Debt Ceiling: Debt Ceiling
-          Defense: Defense
+          Defense/Foreign Relations: Defense/Foreign Relations
           Education: Education
           Elections: Elections
           Energy: Energy
-          Environment: Environment
-          Family Values: Family Values
-          Foreign Relations: Foreign Relations
-          Health: Health
-          Homeland Security: Homeland Security
+          Environment/Conservation/Wildlife: Environment/Conservation/Wildlife
           Housing: Housing
           Immigration: Immigration
-          Intelligence: Intelligence
-          Jobs: Jobs
-          Judiciary: Judiciary
-          Labor: Labor
-          Medicare: Medicare
-          Parks and Public Lands: Parks and Public Lands
-          "Pension/Retirement": P"ension/Retirement"
-          Postal: Postal
-          Regulatory Reform: Regulatory Reform
-          Religion: Religion
-          "Science/Technology": "Science/Technology"
+          Judiciary/Courts: Judiciary/Courts
+          Labor/Pension/Retirement: Labor/Pension/Retirement
+          Health Care/Medicare: Health Care/Medicare
           Second Amendment: Second Amendment
           Senate Procedure: Senate Procedure
           Small Business: Small Business
           Social Security: Social Security
           Taxes: Taxes
-          Telecommunications: Telecommunications
-          Tobacco: Tobacco
           Trade: Trade
-          Transportation: Transportation
-          Unemployment: Unemployment
-          Veterans: Veterans
-          "Water/Rivers": "Water/Rivers"
-          Welfare: Welfare
+          Transportation/Highways: Transportation/Highways
+          Flooding/Rivers: Flooding/Rivers
+          Social Security: Social Security
           Other: Other
     - click_on:
       - value: Submit

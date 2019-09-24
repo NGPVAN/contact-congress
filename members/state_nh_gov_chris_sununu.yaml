@@ -278,7 +278,7 @@ contact_form:
           Wolfeboro: Wolfeboro
           Woodstock: Woodstock
       - name: County
-        selector: select[name='j_id0:j_id2:j_id10:j_id29'][class='oCounty']
+        selector: select[name*='County'][class='oCounty']
         value: $ADDRESS_COUNTY
         required: true
         options:

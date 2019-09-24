@@ -33,6 +33,10 @@ contact_form:
         selector: "#edit-submitted-please-write-us-a-brief-message"
         value: $MESSAGE
         required: true
+      - name: phone
+        selector: "#edit-submitted-phone-number"
+        value: $PHONE
+        required: true
       - name: Street
         selector: "#edit-submitted-address-thoroughfare"
         value: $ADDRESS_STREET

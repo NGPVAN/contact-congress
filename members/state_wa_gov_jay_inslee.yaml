@@ -2,18 +2,9 @@ bioguide: state_wa_gov_jay_inslee
 contact_form:
   method: post
   action: ""
+  usePhantomJsLogging: true
   steps:
-    - visit: "http://www.governor.wa.gov/contact/contact/send-gov-inslee-e-message"
-    - find:
-      - selector: div#prefix-overlay-outer
-    - find:
-      - selector: button#prefix-dismissButton
-    - click_on:
-      - selector: button#prefix-dismissButton
-    - wait:
-      - value: 3
-    - iframe:
-      - selector: div#article-48319 iframe
+    - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_WA_GOV&__fid=100021"
     - find:
       - selector: input#qi_2_first_name
     - fill_in:
@@ -97,8 +88,12 @@ contact_form:
       - selector: input#btn_submit
     - wait:
       - value: 2
+    - click_on:
+      - selector: input#btn_rev_submit
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting the Governor's Office"
+      contains: "Thank you for contacting the Governor's Office."

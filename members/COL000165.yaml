@@ -3,31 +3,27 @@ contact_form:
   method: post
   action:
   steps:
-    - visit: "http://www.jacktate.org/contact.html"
+    - visit: "http://www.jacktate.com/contact/"
     - fill_in:
         - name: Name Full
-          selector: input[name='name']
+          selector: "#name"
           value: $NAME_FULL
           required: true
         - name: email
-          selector: input[name='email']
+          selector: "#email"
           value: $EMAIL
           required: true
-        - name: Subject
-          selector: input[name='subject']
-          value: $SUBJECT
-          required: true
         - name: Message
-          selector: textarea[name='message']
+          selector: "#message"
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
-          selector: input[type='submit'][value='Submit']
+          selector: button[type='submit']
     - wait:
-        - value: 2
+        - value: 1
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting us"
+      contains: "Your message was sent"

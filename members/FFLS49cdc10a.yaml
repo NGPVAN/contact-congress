@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.rickscott.senate.gov/contact_rick"
     - wait:
-      - value: 1
+      - value: 5
     - select:
       - name: Your Prefix
         selector: "#edit-prefix"

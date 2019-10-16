@@ -5,6 +5,10 @@ contact_form:
   steps:
     - visit: "https://www.hassan.senate.gov/contact/email"
     - find:
+        - selector: "#newsletterModal button.close"
+    - click_on:
+        - selector: "#newsletterModal button.close"
+    - find:
         - selector: "#input-81E37B3A-078B-7365-629D-98CF0670D194"
     - click_on:
         - selector: "#input-81E37B3A-078B-7365-629D-98CF0670D194"

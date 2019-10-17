@@ -67,11 +67,11 @@ contact_form:
             Other: Other
     - click_on:
         - name: subject
-          selector: "#issue-30"
-          value: Other
+          selector: "#issue-13"
+          value: Government Reform
           required: true
           options:
-            Other: Other
+            Government Reform: Government Reform
     - find:
         - selector: input[type='submit'][value='Submit']
     - click_on:

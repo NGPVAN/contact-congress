@@ -65,13 +65,41 @@ contact_form:
             Pastor: Pastor
             Rev.: Rev.
             Other: Other
-    - click_on:
-        - name: subject
-          selector: "#issue-13"
-          value: Government Reform
+    - picker:
+        - name: Topic
+          value: $TOPIC
           required: true
           options:
-            Government Reform: Government Reform
+            Agriculture/Nutrition: "#issue-0"
+            Animals Issues: "#issue-1"
+            Arts & Humanities: "#issue-2"
+            Banking/Finance: "#issue-3"
+            Campaign/Election Reform: "#issue-4"
+            Children: "#issue-5"
+            Civil/LGBT Rights: "#issue-6"
+            Defense/Military: "#issue-7"
+            Economy: "#issue-8"
+            Education: "#issue-9"
+            Energy: "#issue-10"
+            Environment: "#issue-11"
+            Foreign Relations/International Affairs: "#issue-12"
+            Government Reform: "#issue-13"
+            Gun Control: "#issue-14"
+            Health/Healthcare: "#issue-15"
+            Homeland Security: "#issue-16"
+            Housing: "#issue-17"
+            Immigration: "#issue-18"
+            Judiciary: "#issue-19"
+            Labor & Pensions: "#issue-20"
+            Medicare/Medicaid: "#issue-21"
+            Science/Technology/Telecommunications: "#issue-22"
+            Social Security: "#issue-23"
+            Taxes: "#issue-24"
+            Trade: "#issue-25"
+            Transportation: "#issue-26"
+            Veterans: "#issue-27"
+            Welfare: "#issue-28"
+            Women's Issues: "#issue-29"
     - find:
         - selector: input[type='submit'][value='Submit']
     - click_on:

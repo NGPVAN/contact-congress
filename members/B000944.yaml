@@ -308,7 +308,7 @@ contact_form:
           "Welfare & Poverty": "Welfare and Poverty"
     - click_on:
       - value: Submit
-        selector: form#contactForm input#side-search-btn
+        selector: "#side-search-btn"
   success:
     headers:
       status: 200

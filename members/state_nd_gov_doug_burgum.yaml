@@ -7,32 +7,37 @@ contact_form:
     - wait:
        - value: 3
     - fill_in:
-        - name: fullName
-          selector: "#edit-submitted-name"
-          value: $NAME_FULL
-        - name: subject
-          selector: "#edit-submitted-subject"
-          value: $SUBJECT
+        - name: First name
+          selector: "#edit-your-first-name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#edit-last-name"
+          value: $NAME_LAST
           required: true
         - name: email
-          selector: "#edit-submitted-email-address"
+          selector: "#edit-email-address"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#edit-submitted-phone-number"
+          selector: "#edit-phone-number"
           value: $PHONE
           required: false
+        - name: subject
+          selector: "#edit-subject"
+          value: $SUBJECT
+          required: true
         - name: message
-          selector: "#edit-submitted-comments"
+          selector: "#edit-comments"
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
-          selector: form#webform-client-form-67 button[name=op]
+          selector: button[type='submit'][value='Submit']
     - wait:
        - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for your message"
+      contains: "Your message has been sent"

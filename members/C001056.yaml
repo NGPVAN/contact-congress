@@ -92,7 +92,6 @@ contact_form:
         value: Texas
         required: false
     - click_on:
-      - selector: "#edit-submitted-flag-acknowledgement-1"
       - selector: input[type='submit'][value='Preview']
     - wait:
       - value: 3

@@ -1,64 +1,49 @@
 bioguide: state_ar_gov_asa_hutchinson
 contact_form:
   method: post
-  action: https://arkansasgov.wufoo.com/embed/z10gjhti00fynaz/def/embedKey=z10gjhti00fynaz760205&entsource=&referrer=http%3Awuslashwuslashgovernor.arkansas.govwuslash&header=hide#public
+  action: ""
   steps:
     - visit: "https://governor.arkansas.gov/online-services/contact-us/"
-    - iframe:
-      - name: parent1
-        selector: "iframe[class='wufoo-form-container']"
     - fill_in:
-        - name: fname
-          selector: "#Field9"
-          value: $NAME_FIRST
-          required: true
-        - name: lname
-          selector: "#Field11"
-          value: $NAME_LAST
-          required: true
+        - name: Full Name
+          selector: "#name"
+          value: $NAME_FULL
+          required: false
         - name: address
-          selector: "#Field13"
+          selector: input[id*='PXP']
           value: $ADDRESS_STREET
-          required: true
+          required: false
         - name: city
-          selector: "#Field14"
+          selector: input[id*='PWn']
           value: $ADDRESS_CITY
-          required: true
+          required: false
         - name: zipcode
-          selector: "#Field16"
+          selector: input[id*='PXU']
           value: $ADDRESS_ZIP5
-          required: true
+          required: false
         - name: email
-          selector: "#Field3"
+          selector: "#email"
           value: $EMAIL
-          required: true
-        - name: phone1
-          selector: "#Field17"
-          value: $PHONE_AREA_CODE
-          required: true
-        - name: phone2
-          selector: "#Field17-1"
-          value: $PHONE_EXCHANGE_CODE
-          required: true
-        - name: phone3
-          selector: "#Field17-2"
-          value: $PHONE_SUBSCRIBER_NUMBER
-          required: true
-        - name: comments
-          selector: "#Field4"
+          required: false
+        - name: phone
+          selector: "#phone"
+          value: $PHONE
+          required: false
+        - name: Comment
+          selector: textarea[id*='PWo']
           value: $MESSAGE
-          required: true
+          required: false
     - select:
         - name: category
-          selector: "#Field7"
+          selector: select[id*='PWl']
           value: $TOPIC
-          required: true
+          required: false
           options:
             Agriculture: "Agriculture"
             Arts/Museums/History: "Arts/Museums/History"
             Business and Commerce: "Business and Commerce"
+            Courts/Criminal Justice: "Courts/ Criminal Justice"
             Education: "Education"
-            Elections: "Elections"
             Environment: "Environment"
             FOI Request: "FOI Request"
             Governor's Special Projects: "Governor's Special Projects"
@@ -79,54 +64,25 @@ contact_form:
             Science and Technology: "Science and Technology"
             Tourism/Recreation: "Tourism/Recreation"
             Workforce: "Workforce"
-            General Comments, Concerns: "General Comments, Concerns"
+            General Comments/Concerns: "General Comments/Concerns"
         - name: Your Prefix
-          selector: "#Field8"
+          selector: select[id*='PXM']
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
-            Capt.: Capt.
-            Chancellor: Chancellor
-            Chief: Chief
-            Col.: Col.
-            Dr.: Dr.
-            Eagle Scout: Eagle Scout
-            General: General
-            Governor: Governor
-            Judge: Judge
-            Lt.: Lt.
-            Major: Major
-            Mayor: Mayor
-            Miss: Miss
             Mr.: Mr.
-            Mr. and Mrs.: Mr. and Mrs.
-            Mrs.: Mrs.
             Ms.: Ms.
-            Professor: Professor
-            Pvt.: Pvt.
-            Representative: Representative
-            Reverend: Reverend
-            Senator: Senator
-            Sheriff: Sheriff
-            Sgt.: Sgt.
-            Sr.: Sr.
-            The Honorable: The Honorable
-            The Reverend: The Reverend
+            Mrs.: Mrs.
+            Other: Other
         - name: state
-          selector: "#Field25"
+          selector: select[id*='PXO']
           value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
+          required: false
           options:
             - AR
     - click_on:
         - value: Submit
-          selector: "#saveForm"
-    - iframe:
-      - name: parent1
-        back: true
-    - iframe:
-      - name: parent1
-        selector: "iframe[class='wufoo-form-container']"
+          selector: input[type='submit'][name='submit']
   success:
     headers:
       status: 200

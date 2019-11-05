@@ -37,7 +37,7 @@ contact_form:
         - name: category
           selector: select[id*='PWl']
           value: $TOPIC
-          required: ffalse
+          required: false
           options:
             Agriculture: "Agriculture"
             Arts/Museums/History: "Arts/Museums/History"

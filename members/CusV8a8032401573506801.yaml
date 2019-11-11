@@ -1,0 +1,20 @@
+bioguide: CusV8a8032401573506801
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://public.medicaid.gov/connect.ti/public.comments/answerQuestionnaire?qid=1902723"
+    - find:
+        - selector: textarea#q1902755ft
+    - fill_in:
+        - name: Comment
+          selector: textarea#q1902755ft
+          value: $MESSAGE
+          required: false
+    - click_on:
+        - selector: input[type='submit'][value='Finish']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for responding

@@ -1,9 +1,13 @@
 bioguide: DEL000083
 contact_form:
   method: POST
-  action: "http://www.desenatedems.com/ajax/apps/formSubmitAjax.php"
+  action: ""
   steps:
-    - visit: http://www.desenatedems.com/bryan-townsend.html
+    - visit: "http://www.desenatedems.com/bryan-townsend-majority-whip.html"
+    - find:
+      - selector: button[class='ctct-popup-close js-popup-close']
+    - click_on:
+      - selector: button[class='ctct-popup-close js-popup-close']
     - fill_in:
       - name: firstname
         selector: "#input-156968349750442372"

@@ -1,9 +1,9 @@
-bioguide: xMO_U_Hummel
+bioguide: SMOUafd1cfa4
 contact_form:
   method: post
   action: Contact.aspx
   steps:
-    - visit: "http://www.senate.mo.gov/D04WebApps/Contact.aspx"
+    - visit: "https://www.senate.mo.gov/D16WebApps/Contact.aspx"
     - fill_in:
         - name: txtName
           selector: "#txtName"

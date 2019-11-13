@@ -1,4 +1,4 @@
-bioguide: NJL000001
+bioguide: NJL000203
 contact_form:
   method: post
   action: SelectMun.asp
@@ -13,7 +13,7 @@ contact_form:
         - value: Submit
           selector: "#senddata"
         - value: Submit
-          selector: "#checkbox1"
+          selector: "#checkbox2"
         - value: Submit
           selector: "#senddata"
     - fill_in:

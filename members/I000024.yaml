@@ -1,87 +1,13 @@
 bioguide: I000024
 contact_form:
   method: POST
-  action: http://www.inhofe.senate.gov/contact
+  action: ""
   steps:
-    - visit: "http://www.inhofe.senate.gov/contact"
+    - visit: "https://www.inhofe.senate.gov/contact/email-jim"
     - select:
-      - name: subject
-        selector: "#subject"
-        value: "$TOPIC"
-        required: true
-        options:
-          - "Adoption and Abortion"
-          - "Agriculture and Trade"
-          - "Education"
-          - "Energy and Environment"
-          - "Federal Spending"
-          - "Healthcare"
-          - "Immigration"
-          - "National Defense / Homeland Security"
-          - "Second Amendment"
-          - "Social Security"
-          - "Taxation"
-          - "Traditional Values"
-          - "Transportation"
-          - "Veterans"
-          - "Other"
-    - find:
-      - selector: "#continue-form"
-    - fill_in:
-      - name: fname
-        selector: "#fname"
-        value: $NAME_FIRST
-        required: true
-      - name: lname
-        selector: "#lname"
-        value: $NAME_LAST
-        required: true
-      - name: mailing_streetAddress1
-        selector: "#mailing_streetAddress1"
-        value: $ADDRESS_STREET
-        required: true
-      - name: mailing_streetAddress2
-        selector: "#mailing_streetAddress2"
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: mailing_city
-        selector: "#mailing_city"
-        value: $ADDRESS_CITY
-        required: true
-      - name: mailing_zipCode
-        selector: "#mailing_zipCode"
-        value: $ADDRESS_ZIP5
-        required: true
-      - name: home_phone_number
-        selector: "#home_phone_number"
-        value: $PHONE
-        required: false
-      - name: email_address
-        selector: "#email"
-        value: $EMAIL
-        required: true
-      - name: verify_email
-        selector: "#verify_email"
-        value: $EMAIL
-        required: true
-      - name: message
-        selector: "#message"
-        value: $MESSAGE
-        required: true
-    - javascript:
-      - name: Message
-        selectors: [ "#message" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-        required: true
-    - check:
-      - name: response
-        selector: "#response_y"
-        value: "Y"
-    - select:
-      - name: Your Prefix
-        selector: "#salutation"
-        value: "$NAME_PREFIX"
+      - name: Prefix
+        selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
+        value: $NAME_PREFIX
         required: true
         options:
           "Mr.": "Mr."
@@ -152,16 +78,76 @@ contact_form:
           "Senior Airman": "Senior Airman"
           "Airman First Class": "Airman First Class"
           "Airman": "Airman"
-    - wait:
-      - value: 1
-    - click_on:
-      - value: "Submit"
-        selector: "input.btn.right[value=Submit]"
-    - find:
-      - selector: "h1"
-        value: "Thank You"
+      - name: Topic
+        selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
+        value: $TOPIC
+        required: true
         options:
-          wait: 10
+          Adoption and Abortion: Adoption and Abortion
+          Agriculture and Trade: Agriculture and Trade
+          Education: Education
+          Energy and Environment: Energy and Environment
+          Federal Spending: Federal Spending
+          Healtchare: Healthcare
+          Immigration: Immigration
+          National Defense / Homeland Security: National Defense / Homeland Security
+          Second Ammendment: Second Amendment
+          Social Security: Social Security
+          Taxation: Taxation
+          Traditional Values: Traditional Values
+          Transportation: Transportation
+          Veterans: Veterans
+          Other: Other
+      - name: Response
+        selector: select#input-9B7D98D6-5056-A066-60B7-453C0210B386
+        value: Yes
+        required: false
+    - fill_in:
+      - name: First Name
+        selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
+        value: $NAME_LAST
+        required: true
+      - name: Address
+        selector: input#input-B03E05F1-4040-F985-52CD-A580E72A7D41
+        value: $ADDRESS_STREET
+        required: true
+      - name: Address2
+        selector: input#input-B03E0518-4040-F985-52CD-CF33EF97DA3A
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: City
+        selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
+        value: $ADDRESS_CITY
+        required: true
+      - name: zipcode
+        selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Phone
+        selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
+        value: $PHONE
+        required: true
+      - name: Email
+        selector: input#email
+        value: $EMAIL
+        required: true
+      - name: verify email
+        selector: input#input-B03E05A4-4040-F985-52CD-730C08912F4F
+        value: $EMAIL
+        required: true
+      - name: message
+        selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
+        value: $MESSAGE
+        required: true
+    - click_on:
+      - value: Submit
+        selector: input[type='submit'][value='Submit']
+    - wait:
+      - value: 2
   success:
     headers:
       status: 200

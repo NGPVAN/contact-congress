@@ -1,7 +1,7 @@
-bioguide: TXL000236
+bioguide: STXLc4e68274
 contact_form:
   method: post
-  action: /members/member-page/email/?district=8&session=84
+  action: ""
   steps:
     - visit: "http://www.house.state.tx.us/members/member-page/email/?district=8&session=84"
     - fill_in:

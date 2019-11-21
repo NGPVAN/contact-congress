@@ -1,7 +1,6 @@
 bioguide: CusAdcd576de1574289432
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://ngpvan-freedom-tools.herokuapp.com/federalRegister"
     - find:

@@ -22,6 +22,14 @@ contact_form:
           selector: "#lastname"
           value: $NAME_LAST
           required: false
+        - name: City
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: false
+        - name: State
+          selector: "#stateprovince"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: false
         - name: zip5
           selector: "#zip"
           value: $ADDRESS_ZIP5

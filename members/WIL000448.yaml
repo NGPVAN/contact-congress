@@ -1,49 +1,46 @@
 bioguide: WIL000448
 contact_form:
   method: post
-  action: Contact.aspx
   steps:
-    - visit: "http://legis.wisconsin.gov/senate/07/larson/constituent-services/"
+    - visit: "http://legis.wisconsin.gov/senate/07/larson/contact/"
     - find:
-        - selector: li a#ui-id-5
-    - click_on:
-        - selector: li a#ui-id-5
-    - find:
-        - selector: input#b4bcca0d-c84f-4791-c032-4d1d1bf6b356
+        - selector: div .email input
     - fill_in:
         - name: email
-          selector: input#b4bcca0d-c84f-4791-c032-4d1d1bf6b356
+          selector: div .email input
           value: $EMAIL
           required: true
-        - name: name
-          selector: input#fcfd7988-36af-4cf8-c1ac-aaac6d053798
+        - name: Full Name
+          selector: div .name input
           value: $NAME_FULL
           required: true
         - name: address
-          selector: input#fc32bd94-ff3e-423d-a242-260529b35f86
+          selector: div .address input
           value: $ADDRESS_STREET
-          required: true
+          required: false
         - name: citystatezip
-          selector: input[id='54a360be-50a1-4740-c624-a50112ffe9e4']
+          selector: div .citystatezipcode input
           value: $ADDRESS_CITY_STATE_ZIP
-          required: true
+          required: false
         - name: phone
-          selector: input[id='955374e7-ce5c-4d80-f99f-c561a56ee188']
+          selector: div .phonenumber input
           value: $PHONE
           required: false
-        - name: message
-          selector: textarea[id='174e5a66-2e85-4364-da49-fc8f722526de']
+        - name: subject
+          selector: div .messagesubject input
+          value: $SUBJECT
+          required: false
+        - name: Message
+          selector: div .dearsenatorlarson textarea
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
     - wait:
-        - value: 2
-    - click_on:
-        - selector: li a#ui-id-5
+        - value: 5
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for requesting my assistance.
+      contains: Thank you

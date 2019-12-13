@@ -1,54 +1,46 @@
 bioguide: PAL000275
 contact_form:
   method: post
-  action: /contact.aspx
   steps:
     - visit: "http://www.lyndaculver.com/Contact.aspx"
     - fill_in:
-        - name: fname
-          selector: "#ctl00_cphContent_txtFirstName"
+        - name: First Name
+          selector: input[id*='txtFirstName']
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#ctl00_cphContent_txtLastName"
+        - name: Last Name
+          selector: input[id*='txtLastName']
           value: $NAME_LAST
           required: true
         - name: phone
-          selector: "#ctl00_cphContent_txtHomePhone"
+          selector: input[id*='txtPhone']
           value: $PHONE
           required: true
         - name: email
-          selector: "#ctl00_cphContent_txtEmail"
+          selector: input[id*='txtEmail']
           value: $EMAIL
           required: true
         - name: address
-          selector: "#ctl00_cphContent_txtAddress"
+          selector: input[id*='txtFindYourRepAddress']
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#ctl00_cphContent_txtCity"
+          selector: input[id*='txtFindYourRepCity']
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#ctl00_cphContent_txtZip"
+          selector: input[id*='txtFindYourRepZip']
           value: $ADDRESS_ZIP5
           required: true
         - name: message
-          selector: "#ctl00_cphContent_txtActionRequest"
+          selector: input[id*='txtAction']
           value: $MESSAGE
           required: true
-    - select:
-        - name: required-issue
-          selector: "#ctl00_cphContent_ddlStates"
-          value: PA
-          required: true
-          options:
-           - PA
     - click_on:
         - value: Submit
-          selector: "#ctl00_cphContent_btnSubmit"
+          selector: button[id*='btnSubmitContact']
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for contacting my office
+      contains: Thank you

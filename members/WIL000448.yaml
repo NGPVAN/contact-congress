@@ -30,7 +30,7 @@ contact_form:
           selector: div .messagesubject input
           value: $SUBJECT
           required: false
-        - name: message
+        - name: Message
           selector: div .dearsenatorlarson textarea
           value: $MESSAGE
           required: true

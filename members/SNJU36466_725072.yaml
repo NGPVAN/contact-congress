@@ -1,7 +1,6 @@
-bioguide: SNJU923870df
+bioguide: SNJU36466_725072
 contact_form:
   method: post
-  action: SelectMun.asp
   steps:
     - visit: "https://www.njleg.state.nj.us/Selectmun.asp"
     - select:
@@ -17,11 +16,11 @@ contact_form:
         - value: Submit
           selector: "#senddata"
     - fill_in:
-        - name: fname
+        - name: First Name
           selector: "input[name='FirstName']"
           value: $NAME_FIRST
           required: true
-        - name: lname
+        - name: Last Name
           selector: "input[name='LastName']"
           value: $NAME_LAST
           required: true
@@ -37,15 +36,15 @@ contact_form:
           selector: "input[name='ZipCode']"
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone1
+        - name: phone area code
           selector: "input[name='Phone1']"
           value: $PHONE_AREA_CODE
           required: false
-        - name: phone2
+        - name: phone exchange code
           selector: "input[name='Phone2']"
           value: $PHONE_EXCHANGE_CODE
           required: false
-        - name: phone3
+        - name: phone subscriber number
           selector: "input[name='Phone3']"
           value: $PHONE_SUBSCRIBER_NUMBER
           required: false

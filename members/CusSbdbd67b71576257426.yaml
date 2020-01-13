@@ -28,7 +28,7 @@ contact_form:
           required: false
         - name: State
           selector: "#stateprovince"
-          value: $ADDRESS_STATE_FULL
+          value: $ADDRESS_STATE_POSTAL_ABBREV
           required: false
         - name: zip5
           selector: "#zip"

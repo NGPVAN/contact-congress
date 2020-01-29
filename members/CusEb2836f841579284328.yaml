@@ -5,9 +5,9 @@ contact_form:
   steps:
     - visit: "https://www.regulations.gov/comment?D=CEQ-2019-0003-0001"
     - find:
-        - selector: "#gwt-uid-343"
+        - selector: input[id*='gwt-uid-85']
     - click_on:
-        - selector: "#gwt-uid-343"
+        - selector: input[id*='gwt-uid-85']
     - wait:
         - selector: 4
     - fill_in:
@@ -104,9 +104,9 @@ contact_form:
     - click_on:
         - selector: div.GIY1LSJISC button.primary
     - find:
-        - selector: span.GIY1LSJIRD
+        - selector: input[id*='gwt-uid-250']
     - click_on:
-        - selector: span.GIY1LSJIRD
+        - selector: input[id*='gwt-uid-250']
         - selector: button[id*='gwt-uid']
     - wait:
         - value: 3

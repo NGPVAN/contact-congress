@@ -1,7 +1,6 @@
 bioguide: CusN6f8cfebf1579284328
 contact_form:
   method: post
-  useChrome: true
   steps:
     - visit: "https://www.regulations.gov/comment?D=CEQ-2019-0003-0001"
     - find:

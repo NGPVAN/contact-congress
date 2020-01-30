@@ -1,6 +1,7 @@
 bioguide: CusN6db51f921579881187
 contact_form:
   method: post
+  usePhantomJsLogging: true
   steps:
     - visit: "https://www.regulations.gov/comment?D=CEQ-2019-0003-0001"
     - find:

@@ -1,58 +1,60 @@
 bioguide: state_wa_gov_jay_inslee
 contact_form:
   method: post
-  action: ""
   usePhantomJsLogging: true
   steps:
     - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_WA_GOV&__fid=100021"
     - find:
-      - selector: input#qi_2_first_name
+      - selector: input[id*='first_name']
+    - javascript:
+      - name: ignore browser alert
+        commands: ["window.alert = function() { }"]
     - fill_in:
       - name: First Name
-        selector: input#qi_2_first_name
+        selector: input[id*='first_name']
         value: $NAME_FIRST
         required: true
       - name: Last Name
-        selector: input#qi_2_last_name
+        selector: input[id*='last_name']
         value: $NAME_LAST
         required: true
       - name: Email
-        selector: input#qi_2_email
+        selector: input[id*='email']
         value: $EMAIL
         required: true
       - name: Phone Number
-        selector: input#qi_2_hphone
+        selector: input[id*='phone']
         value: $PHONE
-        required: false
+        required: true
       - name: Street Address
-        selector: input#qi_2_addr_1
+        selector: input[id*='addr_1']
         value: $ADDRESS_STREET
         required: true
       - name: Street2
-        selector: input#qi_2_addr_2
+        selector: input[id*='addr_2']
         value: $ADDRESS_STREET_2
         required: false
       - name: City
-        selector: input#qi_2_city
+        selector: input[id*='city']
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: input#qi_2_zip
+        selector: input[id*='zip']
         value: $ADDRESS_ZIP5
         required: true
       - name: Message
-        selector: textarea#qi_6
+        selector: textarea[title*='Message']
         value: $MESSAGE
         required: true
     - select:
       - name: State
-        selector: select#qi_2_state
+        selector: select[id*='state']
         value: $ADDRESS_STATE_FULL
         required: true
         options:
           Washington: Washington
       - name: topic
-        selector: select#qi_5
+        selector: select[title*='What is the subject']
         value: $TOPIC
         required: true
         options:
@@ -88,12 +90,8 @@ contact_form:
       - selector: input#btn_submit
     - wait:
       - value: 2
-    - click_on:
-      - selector: input#btn_rev_submit
-    - wait:
-      - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for contacting the Governor's Office."
+      contains: "Thank you"

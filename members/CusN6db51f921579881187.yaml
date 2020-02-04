@@ -27,10 +27,6 @@ contact_form:
           selector: input[name=EmailAddress]
           value: $EMAIL
           required: true
-        - name: phone number
-          selector: input[name=HomePhone]
-          value: $PHONE
-          required: false
         - name: subject
           selector: input[name=Subject0]
           value: $SUBJECT

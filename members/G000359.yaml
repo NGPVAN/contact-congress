@@ -1,7 +1,6 @@
 bioguide: G000359
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "http://www.lgraham.senate.gov/public/index.cfm?p=contact-form"
     - find:
@@ -39,11 +38,13 @@ contact_form:
         selector: "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F"
         value: $MESSAGE
         required: true
+    - wait:
+      - value: 3
     - javascript:
       - name: Message
         selectors: [ "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F" ]
         values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
+        commands: ["elements[0].value = values[0].replace(/\\bset\\b/ig,'determine')"]
         required: true
     - select:
       - name: Your Prefix

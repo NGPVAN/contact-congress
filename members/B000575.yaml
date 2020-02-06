@@ -56,12 +56,6 @@ contact_form:
         options:
           max_length: 1950
           blacklist: ":"
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#field_1FCD0A32-C2B6-40E7-9D3F-18DE98BF7997" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-        required: true
     - select:
       - name: Your Prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
@@ -150,7 +144,8 @@ contact_form:
             Petty Officer Second Class: Coast Guard - Petty Officer Second Class
             Petty Officer Third Class: Coast Guard - Petty Officer Third Class
             Seaman: Coast Guard - Seaman
-            Seaman Apprentice: Coast Guard - SeSeaman Recruit: Coast Guard - Seaman Recruit
+            Seaman Apprentice: Coast Guard - Seaman Apprentice
+            Seaman Recruit: Coast Guard - Seaman Recruit
             General: Marine Corps - General
             Lieutenant General: Marine Corps - Lieutenant General
             Major General: Marine Corps - Major General

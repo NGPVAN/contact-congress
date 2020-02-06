@@ -53,12 +53,6 @@ contact_form:
         selector: textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B
         value: $MESSAGE
         required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#input-6772B6F9-DC60-985A-DA90-CE9C6D99704B" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-          required: true
     - select:
       - name: Your Prefix
         selector: select#input-674234EB-FE2E-E1D2-DA0B-544DB1E29219

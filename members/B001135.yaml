@@ -197,12 +197,6 @@ contact_form:
           selector: textarea#commentbox
           value: $MESSAGE
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#commentbox" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')" ]
-          required: true
     - select:
         - name: topic
           selector: select#input-07B1B29B-5056-A066-605E-4F6E6A832654

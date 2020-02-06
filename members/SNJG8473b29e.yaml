@@ -77,7 +77,7 @@ contact_form:
         - name: phone-char-replace
           values: ["$PHONE"]
           selectors: ["input[name='Phone_H']"]
-          commands: ["elements[0].value = values[0].replace(/\D+/g,'').length > 10 ? values[0].replace(/\D+/g,'').substr(1) : values[0].replace(/\D+/g,'')" ]
+          commands: ["elements[0].value = values[0].replace(/\\D+/g,'').length > 10 ? values[0].replace(/\\D+/g,'').substr(1) : values[0].replace(/\\D+/g,'')" ]
         - name: add-period-to-firstName
           values: ["$NAME_FIRST"]
           selectors: ["#FIRSTNAME"]

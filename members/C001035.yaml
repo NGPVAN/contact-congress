@@ -47,12 +47,6 @@ contact_form:
         required: true
         options:
           max_length: 10000
-    - javascript:
-      - name: Message
-        selectors: [ "#edit-submitted-please-write-your-message" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-        required: true
     - select:
       - name: Your Prefix
         selector: "#edit-submitted-prefix"

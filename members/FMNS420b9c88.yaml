@@ -45,11 +45,6 @@ contact_form:
         selector: div textarea[name='message']
         value: "$MESSAGE"
         required: true
-    - javascript:
-      - name: Message
-        selectors: [ "div textarea[name='message']" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
     - select:
       - name: Your Prefix
         selector: div select[name='prefix']

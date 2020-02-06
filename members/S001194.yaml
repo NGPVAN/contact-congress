@@ -59,18 +59,6 @@ contact_form:
           selector: "#message"
           value: $MESSAGE
           required: true
-    - javascript:
-        - name: Message
-          selectors: [ "#message" ]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-          required: true
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#message" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/www\\.youtube\\.com\\/watch?[^&]*(&)?v=/gi, 'youtu.be/')" ]
-        required: true
     - select:
         - name: Your Prefix
           selector: "#salutation"

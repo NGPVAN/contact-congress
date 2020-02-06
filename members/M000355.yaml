@@ -47,12 +47,6 @@ contact_form:
         required: true
         options:
           max_length: 2800
-    - javascript:
-      - name: Message
-        selectors: [ "textarea#field_1F71BC5E-19C7-4DEF-AF1D-C2DDCD1E374C" ]
-        values: [ "$MESSAGE" ]
-        commands: [ "elements[0].value = elements[0].value.replace(/https:\\/\\/www\\.usagainstalzheimers\\.org\\/sites\\/default\\/files\\/\S+\\.pdf/gi, 'usagainstalzheimers.org').replace(/https:\\/\\/www\\.alz\\.org\\/media\\/HomeOffice\\/\S+\\.pdf/gi, 'alz.org').replace(/[“]/g,'')"]
-        required: true
     - select:
       - name: Your Prefix
         selector: select#field_EB9DCE9E-EB6B-405C-92FE-E4C60CC85593

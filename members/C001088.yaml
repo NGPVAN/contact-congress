@@ -1,7 +1,6 @@
 bioguide: C001088
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.coons.senate.gov/contact/share-your-opinion"
     - find:
@@ -42,6 +41,10 @@ contact_form:
       - name: zip5
         selector: "#input-FF8824F9-5056-A066-6083-362FD35DCACE"
         value: $ADDRESS_ZIP5
+        required: true
+      - name: Subject
+        selector: "#input-17D0611B-5056-A066-608B-2951F7B97365"
+        value: $SUBJECT
         required: true
       - name: message
         selector: "#input-FF88260A-5056-A066-6070-B369711DCB30"

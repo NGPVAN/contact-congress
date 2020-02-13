@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "https://www.loeffler.senate.gov/"
     - find:
-      - value: "#edit-prefix"
+      - selector: "#edit-prefix"
     - select:
       - name: Your Prefix
         selector: "#edit-prefix"

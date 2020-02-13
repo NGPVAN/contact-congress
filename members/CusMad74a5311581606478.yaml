@@ -3,7 +3,8 @@ contact_form:
   method: post
   steps:
     - visit: "https://democrats.org/act/?permalink=what-questions-do-you-want-asked-at-the-debate/"
-    - find: span.international_link-wrap.js-international_link-wrap.mb10 a
+    - find:
+        - selector: span.international_link-wrap.js-international_link-wrap.mb10 a
     - click_on:
         - selector: span.international_link-wrap.js-international_link-wrap.mb10 a
     - wait:

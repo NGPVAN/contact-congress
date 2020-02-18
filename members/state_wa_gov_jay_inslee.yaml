@@ -71,22 +71,18 @@ contact_form:
           Health Care: Health Care
           Housing: Housing
           Immigration: Immigration
-          Labor and Industries: Labor and Industries
           Legal/Crime/Law Enforcement: Legal/Crime/Law Enforcement
           Legislative Bills and Comments: Legislative Bills and Comments
           Licensing: Licensing
           Mortgage/Loans/Banking/Foreclosure: Mortgage/Loans/Banking/Foreclosure
           Natural Resources: Natural Resources
-          Other: Other
           Parks and Recreation: Parks and Recreation
           Social Services: Social Services
           Taxes: Taxes
           Transportation: Transportation
           Tribal: Tribal
-          Unemployment Assistance: Unemployment Assistance
           Utilities: Utilities
           Veterans: Veterans
-          Workers' Compensation: Workers' Compensation
     - click_on:
       - selector: input#btn_submit
     - wait:

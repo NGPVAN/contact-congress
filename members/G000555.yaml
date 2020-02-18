@@ -1,7 +1,6 @@
 bioguide: G000555
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.gillibrand.senate.gov/contact/email-me"
     - wait:
@@ -44,6 +43,12 @@ contact_form:
         - name: message
           selector: "#input-A5AD3307-5056-A066-6029-D7EBFF775924"
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: [ "#input-A5AD3307-5056-A066-6029-D7EBFF775924" ]
+          values: [ "$MESSAGE" ]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
           required: true
     - select:
         - name: Your Prefix

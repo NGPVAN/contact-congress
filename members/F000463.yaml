@@ -1,7 +1,6 @@
 bioguide: F000463
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "http://www.fischer.senate.gov/public/?p=email-deb"
     - fill_in:
@@ -47,6 +46,12 @@ contact_form:
       - name: message
         selector: textarea#field_BFF13EA3-37AD-467A-BB61-750F5CCE59E8
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#field_BFF13EA3-37AD-467A-BB61-750F5CCE59E8" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
         required: true
     - select:
       - name: topic

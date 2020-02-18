@@ -1,7 +1,6 @@
 bioguide: FMOS63398500
 contact_form:
   method: post
-  action:
   steps:
     - visit: "https://www.hawley.senate.gov/contact-senator-hawley"
     - wait:
@@ -107,6 +106,12 @@ contact_form:
       - name: Message
         selector: "#edit-message"
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#edit-message" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
         required: true
     - click_on:
       - value: Submit

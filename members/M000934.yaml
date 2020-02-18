@@ -1,7 +1,6 @@
 bioguide: M000934
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.moran.senate.gov/public/index.cfm/e-mail-jerry"
     - find:
@@ -49,6 +48,12 @@ contact_form:
         - name: message
           selector: textarea#field_955D171C-85C6-4515-9D66-560E2EB6E15C
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: [ "#field_955D171C-85C6-4515-9D66-560E2EB6E15C" ]
+          values: [ "$MESSAGE" ]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
           required: true
     - select:
         - name: topic

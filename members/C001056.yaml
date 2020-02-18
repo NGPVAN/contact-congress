@@ -1,7 +1,6 @@
 bioguide: C001056
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "http://www.cornyn.senate.gov/contact"
     - find:
@@ -49,6 +48,12 @@ contact_form:
         selector: "#edit-submitted-address-postal-code"
         value: $ADDRESS_ZIP5
         required: false
+    - javascript:
+      - name: Message
+        selectors: [ "#edit-submitted-please-write-us-a-brief-message" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
+        required: true
     - select:
       - name: Topic
         selector: "#edit-submitted-please-select-and-issue-youd-like-to-discuss"

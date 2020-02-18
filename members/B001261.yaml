@@ -1,7 +1,6 @@
 bioguide: B001261
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://www.barrasso.senate.gov/public/index.cfm/contact-form"
     - fill_in:
@@ -41,13 +40,11 @@ contact_form:
           selector: "#field_40C203DD-A384-408D-84AB-26D1471756D8"
           value: $MESSAGE
           required: true
-          options:
-            blacklist: ":’"
     - javascript:
         - name: Message
-          selectors: [ "#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87" ]
+          selectors: [ "#field_40C203DD-A384-408D-84AB-26D1471756D8" ]
           values: [ "$MESSAGE" ]
-          commands: ["elements[0].value = values[0].replace(/\bset\b/ig,'determine')"]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
           required: true
         - name: topic
           selector: "#field_41FAA356-B947-40CA-9264-BE321C5F5D94"

@@ -1,7 +1,6 @@
 bioguide: E000285
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "http://www.enzi.senate.gov/public/index.cfm/e-mail-senator-enzi"
     - fill_in:
@@ -45,13 +44,11 @@ contact_form:
         selector: textarea#field_E8E82E9B-F02E-44A6-84CB-BB70F34C9310
         value: $MESSAGE
         required: true
-        options:
-          blacklist: ":’"
     - javascript:
       - name: Message
-        selectors: [ "#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87" ]
+        selectors: [ "#field_E8E82E9B-F02E-44A6-84CB-BB70F34C9310" ]
         values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\bset\b/ig,'determine')"]
+        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
         required: true
     - select:
       - name: Your Prefix

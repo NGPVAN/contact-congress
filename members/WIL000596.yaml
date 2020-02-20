@@ -1,7 +1,6 @@
 bioguide: WIL000596
 contact_form:
   method: post
-  action: /assembly/33/horlacher/contact-me/
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/33/horlacher/contact-me/"
     - fill_in:
@@ -17,6 +16,10 @@ contact_form:
           selector: "input[id='73368fe5-2894-4c31-a58d-638258f1c2af']"
           value: $ADDRESS_STREET
           required: true
+        - name: citystatezip
+          selector: div.citystatezip input
+          value: $ADDRESS_CITY_STATE_ZIP
+          required: true
         - name: phone
           selector: "input[id='61edcd64-cb2f-4962-931a-2df73e30717f']"
           value: $PHONE
@@ -27,7 +30,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: "input[type='submit'][value='Submit']"
+          selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

@@ -18,8 +18,6 @@ contact_form:
           Ms.: Ms.
           Mr. and Mrs.: Mr. and Mrs.
           Dr.: Dr.
-          Dr. and Mrs.: Dr. and Mrs.
-          Professor: Professor
       - name: Topic
         selector: "#edit-topic"
         value: $TOPIC

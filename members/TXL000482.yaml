@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://senate.texas.gov/memberform.php?auth=jsL%2BLq7RZxMMnLowTCgcKvib1NxSjJKLqdbVvWiMHVI6XzpfOjUlptgR5wozlBFC6aiiugz5M4UHFUH%2FYzXUa%2Fn%2FMSO3Ofk6fDp8OkMcaB%2FJyr%2B%2B4tNYK9zabz0%3D"
+    - visit: "https://senate.texas.gov/member.php?d=7&lang=en"
     - find:
         - selector: div#mem_rcol_top p.memmail a
     - click_on:

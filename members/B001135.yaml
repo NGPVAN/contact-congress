@@ -257,7 +257,7 @@ contact_form:
             NC: "NC"
         - name: county
           selector: select#input-E649CFAD-5056-A066-604A-057270612948
-          value: $ADDRES_COUNTY
+          value: $ADDRESS_COUNTY
           required: true
           options:
             Alamance: Alamance

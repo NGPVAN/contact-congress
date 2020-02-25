@@ -1,7 +1,6 @@
 bioguide: B001135
 contact_form:
   method: post
-  action: /contact/email
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
     - find:
@@ -153,11 +152,11 @@ contact_form:
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: input#input-075D915C-5056-A066-6016-31581A939FE3
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: input#input-075DA374-5056-A066-607C-9E15F05BFB27
           value: $NAME_LAST
           required: true
@@ -256,6 +255,111 @@ contact_form:
           required: true
           options:
             NC: "NC"
+        - name: county
+          selector: select#input-E649CFAD-5056-A066-604A-057270612948
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Alamance: Alamance
+            Alexander: Alexander
+            Alleghany: Alleghany
+            Anson: Anson
+            Ashe: Ashe
+            Avery: Avery
+            Beaufort: Beaufort
+            Bertie: Bertie
+            Bladen: Bladen
+            Brunswick: Brunswick
+            Buncombe: Buncombe
+            Burke: Burke
+            Cabarrus: Cabarrus
+            Caldwell: Caldwell
+            Camden: Camden
+            Carteret: Carteret
+            Caswell: Caswell
+            Catawba: Catawba
+            Chattam: Chattam
+            Cherokee: Cherokee
+            Chowan: Chowan
+            Clay: Clay
+            Cleveland: Cleveland
+            Columbus: Columbus
+            Craven: Craven
+            Cumberland: Cumberland
+            Currituck: Currituck
+            Dare: Dare
+            Davidson: Davidson
+            Davie: Davie
+            Duplin: Duplin
+            Durham: Durham
+            Edgecombe: Edgecombe
+            Forsyth: Forsyth
+            Franklin: Franklin
+            Gaston: Gaston
+            Gates: Gates
+            Graham: Graham
+            Granville: Granville
+            Greene: Greene
+            Guilford: Guilford
+            Halifax: Halifax
+            Harnett: Harnett
+            Haywood: Haywood
+            Henderson: Henderson
+            Hertford: Hertford
+            Hoke: Hoke
+            Hyde: Hyde
+            Iredell: Iredell
+            Jackson: Jackson
+            Johnston: Johnston
+            Jones: Jones
+            Lee: Lee
+            Lenoir: Lenoir
+            Lincoln: Lincoln
+            McDowell: McDowell
+            Macon: Macon
+            Madison: Madison
+            Martin: Martin
+            Mecklenburg: Mecklenburg
+            Mitchell: Mitchell
+            Montgomery: Montgomery
+            Moore: Moore
+            Nash: Nash
+            New Hanover: New Hanover
+            Northampton: Northampton
+            Onslow: Onslow
+            Orange: Orange
+            Pamlico: Pamlico
+            Pasquotank: Pasquotank
+            Pender: Pender
+            Perquimans: Perquimans
+            Person: Person
+            Pitt: Pitt
+            Polk: Polk
+            Randolph: Randolph
+            Richmond: Richmond
+            Robeson: Robeson
+            Rockingham: Rockingham
+            Rowan: Rowan
+            Rutherford: Rutherford
+            Sampson: Sampson
+            Scotland: Scotland
+            Stanly: Stanly
+            Stokes: Stokes
+            Surry: Surry
+            Swain: Swain
+            Transylvania: Transylvania
+            Tyrrell: Tyrrell
+            Union: Union
+            Vance: Vance
+            Wake: Wake
+            Warren: Warren
+            Washington: Washington
+            Watauga: Watauga
+            Wayne: Wayne
+            Wilkes: Wilkes
+            Wilson: Wilson
+            Yadkin: Yadkin
+            Yancey: Yancey
     - click_on:
        - value: Submit
          selector: input[type='submit'][value='Submit']

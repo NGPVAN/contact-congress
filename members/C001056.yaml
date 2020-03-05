@@ -96,6 +96,8 @@ contact_form:
         selector: "#edit-submitted-address-administrative-area"
         value: Texas
         required: false
+    - find:
+      - value: input[type='submit'][value='Preview']
     - click_on:
       - selector: input[type='submit'][value='Preview']
     - wait:

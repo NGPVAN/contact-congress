@@ -5,11 +5,11 @@ contact_form:
   steps:
     - visit: "http://ctsenaterepublicans.com/contact-berthel/"
     - fill_in:
-        - name: first
+        - name: First Name
           selector: input#input_118_1
           value: $NAME_FIRST
           required: true
-        - name: last
+        - name: Last Name
           selector: input#input_118_2
           value: $NAME_LAST
           required: true
@@ -21,11 +21,11 @@ contact_form:
           selector: input#input_118_4
           value: $PHONE
           required: true
-        - name: street
+        - name: Street
           selector: input#input_118_5
           value: $ADDRESS_STREET
           required: true
-        - name: street2
+        - name: Street 2
           selector: input#input_118_6
           value: $ADDRESS_STREET_2
           required: false

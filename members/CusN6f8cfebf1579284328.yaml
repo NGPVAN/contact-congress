@@ -3,40 +3,115 @@ contact_form:
   method: post
   usePhantomJsLogging: true
   steps:
-    - visit: "https://forms-dev20.azurewebsites.net/JoMSAYn_L0iQOsT0KsRAaw2"
+    - visit: "https://www.regulations.gov/comment?D=CEQ-2019-0003-0001"
     - find:
-        - selector: textarea[name=Message0]
+        - selector: input[id*='gwt-uid-85']
+    - click_on:
+        - selector: input[id*='gwt-uid-85']
+    - wait:
+        - selector: 4
     - fill_in:
         - name: message
-          selector: textarea[name=Message0]
+          selector: textarea#x-auto-0-input
           value: $MESSAGE
           required: true
         - name: First Name
-          selector: input[name=FirstName]
+          selector: input#x-auto-1-input
           value: $NAME_FIRST
-          required: true
+          required: false
         - name: Last Name
-          selector: input[name=LastName]
+          selector: "#x-auto-2-input"
           value: $NAME_LAST
-          required: true
+          required: false
+        - name: City
+          selector: input#x-auto-5-input
+          value: $ADDRESS_CITY
+          required: false
         - name: zip5
-          selector: input[name=PostalCode]
+          selector: input#x-auto-8-input
           value: $ADDRESS_ZIP5
-          required: true
+          required: false
         - name: email
-          selector: input[name=EmailAddress]
+          selector: input#x-auto-10-input
           value: $EMAIL
-          required: true
-        - name: subject
-          selector: input[name=Subject0]
-          value: $SUBJECT
-          required: true
+          required: false
+        - name: phone number
+          selector: input#x-auto-11-input
+          value: $PHONE
+          required: false
+    - select:
+        - name: state
+          selector: input#x-auto-6-input
+          value: $ADDRESS_STATE_FULL
+          required: false
+          options:
+            Alabama: Alabama
+            Alaska: Alaska
+            American Samoa: American Samoa
+            Arizona: Arizona
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            District of Columbia: District of Columbia
+            Florida: Florida
+            Georgia: Georgia
+            Guam: Guam
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Kentucky: Kentucky
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Northern Mariana Islands: Northern Mariana Islands
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Puerto Rico: Puerto Rico
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Tennessee: Tennessee
+            Texas: Texas
+            US Virgin Islands: US Virgin Islands
+            Utah: Utah
+            Vermont: Vermont
+            Virginia: Virginia
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
     - click_on:
-        - selector: input[type=submit]
+        - selector: div.GIY1LSJISC button.primary
     - find:
-        - selector: div .thankYou
+        - selector: input[id*='gwt-uid-250']
+    - click_on:
+        - selector: input[id*='gwt-uid-250']
+        - selector: button[id*='gwt-uid']
+    - wait:
+        - value: 3
   success:
     headers:
       status: 200
     body:
-      contains: "Thanks for taking"
+      contains: "Your Comment Tracking Number"

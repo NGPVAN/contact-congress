@@ -109,7 +109,7 @@ contact_form:
         - selector: input[id*='gwt-uid-250']
         - selector: button[id*='gwt-uid']
     - wait:
-        - value: 3
+        - value: 5
   success:
     headers:
       status: 200

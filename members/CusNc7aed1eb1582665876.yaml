@@ -31,10 +31,6 @@ contact_form:
           selector: input#x-auto-8-input
           value: $ADDRESS_ZIP5
           required: false
-        - name: email
-          selector: input#x-auto-10-input
-          value: $EMAIL
-          required: false
         - name: phone number
           selector: input#x-auto-11-input
           value: $PHONE

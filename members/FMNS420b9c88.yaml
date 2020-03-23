@@ -1,7 +1,6 @@
 bioguide: FMNS420b9c88
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.smith.senate.gov/share-your-opinion"
     - fill_in:
@@ -106,11 +105,13 @@ contact_form:
           Tours: Tours
           Transportation / Infrastructure: Transportation / Infrastructure
           Veterans: Veterans
-    - wait:
-      - value: 5
+    - find:
+      - selector: button[type='submit'][value='Send message']
     - click_on:
       - value: Submit
         selector: button[type='submit'][value='Send message']
+    - find:
+      - selector: div > div.webform-confirmation__message
   success:
     headers:
       status: 200

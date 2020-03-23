@@ -1,10 +1,11 @@
 bioguide: K000383
 contact_form:
   method: post
-  action: ""
   usePhantomJsLogging: true
   steps:
     - visit: "http://www.king.senate.gov/contact"
+    - find:
+        - selector: input#input-EFEFBB82-E5AD-43BF-317C-6365EAD5F540
     - fill_in:
         - name: First Name
           selector: input#input-EFEFBB82-E5AD-43BF-317C-6365EAD5F540

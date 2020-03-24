@@ -120,8 +120,6 @@ contact_form:
     - click_on:
       - value: Submit
         selector: button#edit-actions-submit
-    - wait:
-      - value: 5
     - find:
       - selector: div.wrap-messages div
   success:

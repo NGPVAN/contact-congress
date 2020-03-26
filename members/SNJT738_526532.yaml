@@ -27,7 +27,7 @@ contact_form:
           required: true
         - name: Zip
           selector: "#zip"
-          value: $ADDDRESS_ZIP5
+          value: $ADDRESS_ZIP5
           required: false
         - name: Phone
           selector: "#phonenumber"

@@ -4,8 +4,8 @@ contact_form:
   action:
   steps:
     - visit: "https://www.blackburn.senate.gov/contact_marsha"
-    - wait:
-      - value: 1
+    - find:
+      - selector: "#edit-prefix"
     - select:
       - name: Your Prefix
         selector: "#edit-prefix"
@@ -64,8 +64,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: button#edit-actions-submit
-    - wait:
-      - value: 10
+    - find:
+      - selector: 
   success:
     headers:
       status: 200

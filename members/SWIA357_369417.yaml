@@ -27,7 +27,7 @@ contact_form:
           required: true
         - name: Zip
           selector: input#edit-submitted-contact-zip-code
-          value: $ADDDRESS_ZIP5
+          value: $ADDRESS_ZIP5
           required: true
         - name: Phone
           selector: input#edit-submitted-contact-daytime-phone

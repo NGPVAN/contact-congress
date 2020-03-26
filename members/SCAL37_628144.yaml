@@ -35,7 +35,7 @@ contact_form:
           required: true
         - name: Zip
           selector: input#wpforms-240-field_9-postal
-          value: $ADDDRESS_ZIP5
+          value: $ADDRESS_ZIP5
           required: true
         - name: Phone
           selector: input#wpforms-240-field_11

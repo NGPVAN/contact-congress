@@ -23,8 +23,6 @@ contact_form:
     - click_on:
       - selector: "#edit-submitted-e-newsletter-opt-in-1"
       - selector: input[type='submit'][value='Next Page >']
-    - wait:
-      - value: 4
     - find:
       - selector: "#edit-submitted-please-write-us-a-brief-message"
     - fill_in:
@@ -100,15 +98,13 @@ contact_form:
       - value: input[type='submit'][value='Preview']
     - click_on:
       - selector: input[type='submit'][value='Preview']
-    - wait:
-      - value: 5
     - find:
       - value: input[type='submit'][value='Submit']
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']
     - wait:
-      - value: 8
+      - value: 6
   success:
     body:
       contains: Your message to Senator Cornyn's office has been submitted

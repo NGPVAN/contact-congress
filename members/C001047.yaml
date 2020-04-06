@@ -4,6 +4,10 @@ contact_form:
   steps:
     - visit: "https://www.capito.senate.gov/contact/share-your-opinion"
     - find:
+        - selector: "#covid-alert .row.justify-content-end > div > button"
+    - click_on:
+        - selector: "#covid-alert .row.justify-content-end > div > button"
+    - find:
         - selector: "#input-AB59F0AE-4040-F985-52CD-AA63153C7925"
     - fill_in:
         - name: First Name

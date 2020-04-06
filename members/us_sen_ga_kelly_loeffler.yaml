@@ -121,7 +121,7 @@ contact_form:
       - value: Submit
         selector: button#edit-actions-submit
     - find:
-      - selector: div.wrap-messages > div > h4
+      - selector: div.wrap-messages div h4
   success:
     headers:
       status: 200

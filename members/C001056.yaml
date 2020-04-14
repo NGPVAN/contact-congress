@@ -98,6 +98,7 @@ contact_form:
       - name: Preview button
         selectors: [ "input[type='submit'][value='Preview']" ]
         commands: ["elements[0].disabled = false"]
+        required: true
     - find:
       - selector: input[type='submit'][value='Preview']
     - click_on:

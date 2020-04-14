@@ -1,9 +1,10 @@
 bioguide: I000024
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.inhofe.senate.gov/contact/email-jim"
+    - find:
+      - selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
     - select:
       - name: Prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
@@ -78,6 +79,9 @@ contact_form:
           "Senior Airman": "Senior Airman"
           "Airman First Class": "Airman First Class"
           "Airman": "Airman"
+    - find:
+      - selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
+    - select:
       - name: Topic
         selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
         value: $TOPIC
@@ -147,7 +151,7 @@ contact_form:
       - value: Submit
         selector: input[type='submit'][value='Submit']
     - wait:
-      - value: 2
+      - value: 3
   success:
     headers:
       status: 200

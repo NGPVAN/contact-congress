@@ -45,7 +45,7 @@ contact_form:
       - name: ZipCode
         selector: "#edit-submitted-address-postal-code"
         value: $ADDRESS_ZIP5
-        required: false
+        required: true
     - javascript:
       - name: Message
         selectors: [ "#edit-submitted-please-write-us-a-brief-message" ]
@@ -94,12 +94,17 @@ contact_form:
         selector: "#edit-submitted-address-administrative-area"
         value: Texas
         required: false
+    - javascript:
+      - name: Preview button
+        selectors: [ "input[type='submit'][value='Preview']" ]
+        commands: ["elements[0].disabled = false"]
+        required: true
     - find:
-      - value: input[type='submit'][value='Preview']
+      - selector: input[type='submit'][value='Preview']
     - click_on:
       - selector: input[type='submit'][value='Preview']
     - find:
-      - value: input[type='submit'][value='Submit']
+      - selector: input[type='submit'][value='Submit']
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']

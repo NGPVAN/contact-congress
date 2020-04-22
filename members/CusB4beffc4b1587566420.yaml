@@ -1,9 +1,9 @@
-bioguide: CusF2ba1de691586465756
+bioguide: CusB4beffc4b1587566420
 contact_form:
   method: post
   usePhantomJsLogging: true
   steps:
-    - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=8001035"
+    - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=8001294"
     - find:
         - selector: input[id='commentSubComment.commentTitle']
     - fill_in:
@@ -133,12 +133,12 @@ contact_form:
     - click_on:
         - selector: input[type='submit'][value='Next']
     - find:
-        - selector: input[name='agreement_75001464'][value='Y']
+        - selector: input[name='agreement_75001860'][value='Y']
     - click_on:
-        - selector: input[name='agreement_75001464'][value='Y']
+        - selector: input[name='agreement_75001860'][value='Y']
     - javascript:
         - name: No
-          selectors: ["input[name='agreement_75001465'][value='N']"]
+          selectors: ["input[name='agreement_75001861'][value='N']"]
           commands: ["elements[0].click()"]
     - click_on:
         - selector: input[type='submit'][value='Submit']

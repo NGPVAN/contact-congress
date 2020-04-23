@@ -118,20 +118,32 @@ contact_form:
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
+    - find:
+        - selector: "#input-2B6283B8-001D-6B16-22E2-442F903E1942"
     - click_on:
         - value: Response Yes
           selector: "#input-2B6283B8-001D-6B16-22E2-442F903E1942"
+    - find:
+        - selector: "#newsletteraction-1"
+    - click_on:
         - value: Newsletter No
           selector: "#newsletteraction-1"
+    - find:
+        - selector: button[type='submit'][class='btn']
+    - click_on:
         - value: Submit
-          selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 6
+          selector: button[type='submit'][class='btn']
+    - find:
+        - value: div p
   success:
     headers:
       status: 200
     body:
+      excludes: Would you like a response to your comment
+    body:
       contains: Thank you for reaching out to Senator Booker with your comments
+
+
 
 
       

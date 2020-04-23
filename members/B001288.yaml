@@ -1,7 +1,7 @@
 bioguide: B001288
 contact_form:
   method: post
-  usePhanto
+  usePhantomJsLogging: true
   steps:
     - visit: "https://www.booker.senate.gov/contact/write-to-cory/form"
     - find:
@@ -140,9 +140,3 @@ contact_form:
     body:
       excludes: Message Subject
       contains: Contact Cory
-
-
-
-
-
-      

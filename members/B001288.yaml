@@ -1,6 +1,7 @@
 bioguide: B001288
 contact_form:
   method: post
+  usePhanto
   steps:
     - visit: "https://www.booker.senate.gov/contact/write-to-cory/form"
     - find:
@@ -136,12 +137,10 @@ contact_form:
     - find:
         - value: div p
   success:
-    headers:
-      status: 200
     body:
-      excludes: Would you like a response to your comment
-    body:
-      contains: Thank you for reaching out to Senator Booker with your comments
+      excludes: Message Subject
+      contains: Contact Cory
+
 
 
 

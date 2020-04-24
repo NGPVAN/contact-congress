@@ -1,8 +1,7 @@
 bioguide: D000622
 contact_form:
   method: post
-  action: ""
-  usePhantomJsLogging: true
+  usephantomjslogging: true
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
     - wait:
@@ -47,7 +46,7 @@ contact_form:
             Disability Rights: "Disability Rights"
             Economy and Jobs: "Economy and Jobs"
             Education: "Education"
-            Energy and Enviroment: "Energy and Environment"
+            Energy and Environment: "Energy and Environment"
             Federal and Postal Employees and Retirees: "Federal and Postal Employees and Retirees"
             Foreign Relations: "Foreign Relations"
             Gender Equality: "Gender Equality"

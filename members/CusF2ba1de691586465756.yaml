@@ -1,7 +1,7 @@
 bioguide: CusF2ba1de691586465756
 contact_form:
   method: post
-  usePhantomJsLogging: true
+  usephantomjslogging: true
   steps:
     - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=8001035"
     - find:

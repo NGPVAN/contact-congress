@@ -1,7 +1,7 @@
 bioguide: us_sen_ga_kelly_loeffler
 contact_form:
   method: post
-  usePhantomJsLogging: true
+  usephantomjslogging: true
   steps:
     - visit: "https://www.loeffler.senate.gov/connect/email-kelly"
     - find:

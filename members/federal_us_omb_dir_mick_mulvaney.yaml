@@ -1,8 +1,7 @@
 bioguide: federal_us_omb_dir_mick_mulvaney
 contact_form:
   method: post
-  action: ""
-  useChrome: true
+  usechrome: true
   steps:
     - visit: "https://www.whitehouse.gov/contact/"
     - wait:

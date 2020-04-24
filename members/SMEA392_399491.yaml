@@ -1,8 +1,7 @@
 bioguide: SMEA392_399491
 contact_form:
   method: post
-  action: ""
-  useChrome: true
+  usechrome: true
   steps:
     - visit: "https://www.maine.gov/ag/contact.html"
     - fill_in:

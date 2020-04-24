@@ -1,8 +1,7 @@
 bioguide: SCAG3f267647
 contact_form:
   method: post
-  action: ""
-  IgnoreWebSecurity: true
+  ignorewebsecurity: true
   steps:
     - visit: "https://govapps.gov.ca.gov/gov40mail/index.php"
     - fill_in:

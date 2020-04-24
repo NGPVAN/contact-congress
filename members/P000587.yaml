@@ -1,8 +1,7 @@
 bioguide: P000587
 contact_form:
   method: post
-  action: ""
-  useChrome: true
+  usechrome: true
   steps:
     - visit: "https://www.whitehouse.gov/contact/"
     - wait:

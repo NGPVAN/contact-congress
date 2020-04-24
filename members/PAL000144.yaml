@@ -1,8 +1,7 @@
 bioguide: PAL000144
 contact_form:
   method: post
-  action: ""
-  usePhantomLogging: true
+  usephantomjslogging: true
   steps:
     - visit: "http://wpcontact.pasenategop.com/contact.aspx?websiteid=9"
     - fill_in:

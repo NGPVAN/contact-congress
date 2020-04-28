@@ -4,12 +4,6 @@ contact_form:
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
     - find:
-      - selector: div#morestuffbutton
-    - click_on:
-      - selector: div#morestuffbutton
-      - wait:
-        - value: 3
-    - find:
         - selector: select#prefixfocus
     - select:
         - name: Your Prefix
@@ -130,8 +124,8 @@ contact_form:
             Marine Corps - Private: Marine Corps - Private
             Navy - Admiral: Navy - Admiral
             Navy - Vice Admiral: Navy - Vice Admiral
-            Navy - Rear Admiral, Upper Half: "Navy - Rear Admiral, Upper Half"
-            Navy - Rear Admiral, Lower Half: "Navy - Rear Admiral, Lower Half"
+            Navy - Rear Admiral, Upper Half: Navy - Rear Admiral, Upper Half
+            Navy - Rear Admiral, Lower Half: Navy - Rear Admiral, Lower Half
             Navy - Captain: Navy - Captain
             Navy - Commander: Navy - Commander
             Navy - Lieutenant Commander: Navy - Lieutenant Commander
@@ -160,13 +154,17 @@ contact_form:
           selector: input#input-075DA374-5056-A066-607C-9E15F05BFB27
           value: $NAME_LAST
           required: true
+        - name: phone
+          selector: input#phone-number-field
+          value: $PHONE
+          required: true
         - name: street
           selector: input#input-0770C9EF-5056-A066-6053-358F74525EF6
           value: $ADDRESS_STREET
           required: true
         - name: street2
           selector: input#input-0770ECF2-5056-A066-6062-E6D4680C24E5
-          value: "$ADDRESS_STREET_2"
+          value: $ADDRESS_STREET_2
           required: false
         - name: city
           selector: input#input-077194F7-5056-A066-60B0-6A8E22439BD3
@@ -176,7 +174,7 @@ contact_form:
           selector: input#input-07723B03-5056-A066-603E-BE90CECEC5C6
           value: $ADDRESS_ZIP5
           required: true
-        - name: phone
+        - name: Home phone
           selector: input#input-07732C3A-5056-A066-6049-CE975D761F0D
           value: $PHONE
           required: true
@@ -202,53 +200,53 @@ contact_form:
           value: $TOPIC
           required: false
           options:
-            "Abortion": Abortion
-            "Foreign Affairs": Afghanistan
-            "Agriculture": Agriculture
-            "Other": Animal Welfare
-            "Budget": Appropriations
-            "Budget": Budget
-            "Commerce": Business
-            "Campaign-Finance": Campaign Finance Reform
-            "Children-Family-Adoption": Children
-            "Civil-Rights": Civil Rights
-            "Antitrust/Competition": Antitrust/Competition
-            "Appropriations": Appropriations
-            "Arts and Culture": Arts and Culture
-            "Banking": Banking
-            "Campaign Finance": Campaign Finance
-            "Child Care/Child Welfare": Child Care/Child Welfare
-            "Crime-and-Drugs": Crime
-            "Education": Education
-            "Elections": Election Reform
-            "Energy": Energy
-            "Environment": Environment
-            "Homeland-Security": FEMA
-            "Federal-Workers": Federal Employees
-            "Foreign Affairs": Foreign Affairs
-            "Economy": Gas and Oil Prices
-            "Guns": Guns
-            "Judiciary": Hate Crimes
-            "Health": Health
-            "Homeland-Security": Homeland Security
-            "Housing": Housing
-            "Other": Human Rights
-            "Immigration": Immigration
-            "Foreign Affairs": Iraq
-            "Judiciary": Judiciary
-            "Labor": Labor
-            "Health": Medicaid
-            "Other": Other
-            "Labor": Pensions
-            "Postal-Service": Postal Service
-            "Aging-and-Seniors": Aging
-            "Social Security": Social Security
-            "Science": Space
-            "Tax": Taxes
-            "Telecom": Telecommunications
-            "Trade": Trade
-            "Transportation": Transportation
-            "Veterans": Veterans
+            Abortion: Abortion
+            Foreign Affairs: Afghanistan
+            Agriculture: Agriculture
+            Other: Animal Welfare
+            Budget: Appropriations
+            Budget: Budget
+            Commerce: Business
+            Campaign-Finance: Campaign Finance Reform
+            Children-Family-Adoption: Children
+            Civil-Rights: Civil Rights
+            Antitrust/Competition: Antitrust/Competition
+            Appropriations: Appropriations
+            Arts and Culture: Arts and Culture
+            Banking: Banking
+            Campaign Finance: Campaign Finance
+            Child Care/Child Welfare: Child Care/Child Welfare
+            Crime-and-Drugs: Crime
+            Education: Education
+            Elections: Election Reform
+            Energy: Energy
+            Environment: Environment
+            Homeland-Security: FEMA
+            Federal-Workers: Federal Employees
+            Foreign Affairs: Foreign Affairs
+            Economy: Gas and Oil Prices
+            Guns: Guns
+            Judiciary: Hate Crimes
+            Health: Health
+            Homeland-Security: Homeland Security
+            Housing: Housing
+            Other: Human Rights
+            Immigration: Immigration
+            Foreign Affairs: Iraq
+            Judiciary: Judiciary
+            Labor: Labor
+            Health: Medicaid
+            Other: Other
+            Labor: Pensions
+            Postal-Service: Postal Service
+            Aging-and-Seniors: Aging
+            Social Security: Social Security
+            Science: Space
+            Tax: Taxes
+            Telecom: Telecommunications
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
         - name: state
           selector: select#input-078B9084-5056-A066-60E8-D01B6583B863
           value: $ADDRESS_STATE_POSTAL_ABBREV
@@ -366,7 +364,5 @@ contact_form:
     - wait:
         - value: 2
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you for sending your message to Senator Burr.

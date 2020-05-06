@@ -54,7 +54,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 1950
+          max_length: 2000
           blacklist: ":"
     - select:
       - name: Your Prefix

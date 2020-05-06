@@ -1,7 +1,6 @@
 bioguide: R000595
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.rubio.senate.gov/public/index.cfm/contact"
     - wait:
@@ -48,7 +47,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 450
+          max_length: 3000
           blacklist: "-:"
     - select:
       - name: Your Prefix
@@ -113,7 +112,5 @@ contact_form:
     - wait:
       - value: 4
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for your message"

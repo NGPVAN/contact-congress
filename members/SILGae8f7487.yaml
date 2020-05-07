@@ -1,0 +1,89 @@
+bioguide: SILGae8f7487
+contact_form:
+  method: post
+  steps:
+    - visit: "https://www2.illinois.gov/sites/gov/contactus/Pages/VoiceAnOpinion.aspx"
+    - fill_in:
+      - name: First Name
+        selector: input[id*='First_x0020_Name']
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input[id*='Last_x0020_Name']
+        value: $NAME_LAST
+        required: true
+      - name: Street address
+        selector: "#ctl00_ctl38_g_fdf3309f_ded6_4491_9e00_80be8fa571ca_Address"
+        value: $ADDRESS_STREET
+        required: true
+      - name: Street address 2
+        selector: input[id*='ca_Address2']
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input[id*='ca_City']
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input[id*='ca_Zip']
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: input[id*='ca_Phone']
+        value: "$PHONE"
+        required: true
+      - name: email
+        selector: input[id*='ca_Email']
+        value: $EMAIL
+        required: true
+      - name: message
+        selector: textarea[id*='ca_Comment']
+        value: $MESSAGE
+        required: true
+    - select:
+      - name: Your Prefix
+        selector: select[id*='Prefix_x0020_Name']
+        value: $NAME_PREFIX
+        required: true
+        options:
+          Mr.: Mr.
+          Mrs.: Mrs.
+          Ms.: Ms.
+      - name: Topic
+        selector: select[id*='ca_Subject']
+        value: $TOPIC
+        required: true
+        options:
+          "1": Agriculture
+          "2": Animal Welfare
+          "3": Arts & Humanities
+          "4": Budget
+          "5": Business & Economy
+          "6": Children's Health & Welfare
+          "7": Disability Services
+          "8": Education
+          "9": Energy & Environment
+          "10": Government Reform & Oversight
+          "11": Health & Healthcare
+          "12": Human Rights
+          "13": Immigration
+          "14": Labor & Employment
+          "15": Public Safety
+          "16": Social Services
+          "17": Senior Services
+          "18": Taxes
+          "19": Transportation & Infrastructure
+          "20": Veterans & Military Affairs
+          "21": Voting
+          "22": Other Issues
+      - name: Position
+        selector: select[id*='ca_Position']
+        value: None
+        required: true
+    - click_on:
+        - value: Submit
+          selector: input[id*='ca_SOIFeedbackSubmit']
+  success:
+    body:
+      contains: Thank you. Your message has been received, and will be reviewed.
+

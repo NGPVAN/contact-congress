@@ -1,0 +1,183 @@
+bioguide: state_pa_gov_tom_wolf
+contact_form:
+  method: post
+  steps:
+    - visit: "https://www.governor.pa.gov/contact/#OnlineForm"
+    - find:
+      - selector: "#newsletterModal2 button"
+    - click_on:
+      - selector: "#newsletterModal2 button"
+    - find:
+      - selector: "#newsletterModal2 button"
+    - fill_in:
+        - name: First Name
+          selector: "#nf-field-3191"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#nf-field-3201"
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: "#nf-field-3221"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#nf-field-3231"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#nf-field-3261"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: "#nf-field-3271"
+          value: $EMAIL
+          required: true
+        - name: message
+          selector: "#nf-field-3321"
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 1000
+        - name: Phone
+          selector: "#nf-field-3281"
+          value: $PHONE
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: select#nf-field-3181
+          value: $NAME_PREFIX
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Miss: Miss
+            Ms.: Ms.
+            Dr.: Dr.
+            Prof.: Prof
+            Rabbi: Rabbi
+            Rev.: Rev.
+            Other: Other
+        - name: county
+          selector: "#nf-field-3241"
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Adams: Adams
+            Allegheny: Allegheny
+            Armstrong: Armstrong
+            Beaver: Beaver
+            Bedford: Bedford
+            Berks: Berks
+            Blair: Blair
+            Bradford: Bradford
+            Bucks: Bucks
+            Butler: Butler
+            Cambria: Cambria
+            Cameron: Cameron
+            Carbon: Carbon
+            Centre: Centre
+            Chester: Chester
+            Clarion: Clarion
+            Clearfield: Clearfield
+            Clinton: Clinton
+            Columbia: Columbia
+            Crawfor: Crawford
+            Cumberland: Cumberland
+            Dauphin: Dauphin
+            Delaware: Delaware
+            Elk: Elk
+            Erie: Erie
+            Fayette: Fayette
+            Forest: Forest
+            Franklin: Franklin
+            Fulto]: Fulton
+            Greene: Greene
+            Huntingdon: Huntingdon
+            Indiana: Indiana
+            Jefferson: Jefferson
+            Juniata: Juniata
+            Lackawanna: Lackawanna
+            Lancaster: Lancaster
+            Lawrence: Lawrence
+            Lebanon: Lebanon
+            Lehigh: Lehigh
+            Luzerne: Luzerne
+            Lycoming: Lycoming
+            McKean: McKean
+            Mercer: Mercer
+            Mifflin: Mifflin
+            Monroe: Monroe
+            Montgomery: Montgomery
+            Montour: Montour
+            Northampton: Northampton
+            Northumberland: Northumberland
+            Perry: Perry
+            Philadelphia: Philadelphia
+            Pike: Pike
+            Potter: Potter
+            Schuylkill: Schuylkill
+            Snyder: Snyder
+            Somerset: Somerset
+            Sullivan: Sullivan
+            Susquehanna: Susquehanna
+            Tioga: Tioga
+            Union: Union
+            Venango: Venango
+            Warren: Warren
+            Washington: Washington
+            Wayne: Wayne
+            Westmoreland: Westmoreland
+            Wyoming: Wyoming
+            Yor: Yor
+        - name: topic
+          selector: "#nf-field-3311"
+          value: $TOPIC
+          required: true
+          options:
+            Aging: Aging
+            Agriculture: Agriculture
+            Attorney: Attorney General
+            Auditor General: Auditor General
+            Banking and Securities: Banking and Securities
+            Board of Pardons: Board of Pardons
+            Community and Economic Development: Community and Economic Development
+            Conservation and Natural Resources: Conservation and Natural Resources
+            Corrections: Corrections
+            Education: Education
+            Emergency Management Agency: Emergency Management Agency
+            Environmental Protection: Environmental Protection
+            Fish and Boat Commission: Fish and Boat Commission
+            Game Commission: Game Commission
+            Governor’s Budget FY15-16: Governor’s Budget FY15-16
+            Greetings/Proclamations/Letters: Greetings/Proclamations/Letters
+            Health: Health
+            Human Services: Human Services
+            Inspector General: Inspector General
+            Insurance: Insurance
+            Invite the Governor: Invite the Governor
+            Labor & Industry: Labor & Industry
+            Legislation: Legislation
+            Military and Veteran Affairs: Military and Veteran Affairs
+            Office of General Counsel: Office of General Counsel
+            Office of the Budget: Office of the Budget
+            Policy: Policy
+            Probation and Parole: Probation and Parole
+            Public Utility Commission: Public Utility Commission
+            Revenue: Revenue
+            Right to Know Request: Right to Know Request
+            State: State
+            State Police: State Police
+            Transportation: Transportation
+            Treasury: Treasury
+            Turnpike: Turnpike
+            Web Other: Web Other
+            Youth Educational Resources: Youth Educational Resources
+    - click_on:
+        - value: Submit
+          selector: "#nf-field-3331"
+    - find:
+        - selector: div.nf-response-msg h3
+  success:
+    body:
+      contains: "Your form has been successfully submitted"

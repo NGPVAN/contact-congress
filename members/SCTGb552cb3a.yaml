@@ -41,6 +41,8 @@ contact_form:
         selector: "#Comments"
         value: $MESSAGE
         required: true
+          options:
+            max_length: 1000
     - select:
       - name: Your Prefix
         selector: "#NamePrefix"

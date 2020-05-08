@@ -42,7 +42,7 @@ contact_form:
         value: $MESSAGE
         required: true
           options:
-            max_lenght: 1000
+            max_length: 1000
     - select:
       - name: Your Prefix
         selector: "#NamePrefix"

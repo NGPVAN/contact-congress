@@ -1,0 +1,62 @@
+bioguide: state_mt_gov_steve_bullock
+contact_form:
+  method: post
+  steps:
+    - visit: "https://svc.mt.gov/gov/contact/shareopinion"
+    - fill_in:
+        - name: Your Prefix
+          selector: input#sockeye_prefix
+          value: $NAME_PREFIX
+          required: false
+        - name: First Name
+          selector: "#sockeye_firstname"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#sockeye_lastname"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#sockeye_email"
+          value: $EMAIL
+          required: true
+        - name: Street
+          selector: "#sockeye_mailingaddress"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#sockeye_city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: "#sockeye_zipcode"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#sockeye_phone"
+          value: $PHONE
+          required: true
+    - click_on:
+        - selector: "#select2-chosen-4"
+    - fill_in:
+        - name: topic
+          selector: "#s2id_autogen4_search"
+          value: General Comments
+          required: true
+    - find: 
+        - selector: div .inline-icon
+    - click_on:
+        - selector: div .inline-icon
+    - find: 
+        - selector: "#sockeye_comments"   
+    - fill_in:
+        - name: message
+          selector: "#sockeye_comments"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Send Now
+          selector: input[type='submit'][value='Submit']
+  success:
+    body:
+      contains: Thank you for your comments

@@ -41,58 +41,58 @@ contact_form:
         selector: "#Comments"
         value: $MESSAGE
         required: true
-          options:
-            max_length: 1000
+        options:
+          max_length: 1000
     - select:
       - name: Your Prefix
         selector: "#NamePrefix"
         value: $NAME_PREFIX
         required: false
         options:
-          - "Mr.": "Mr."
-          - "Mrs.": "Mrs."
-          - "Mr. and Mrs.": "Mr. and Mrs."
-          - "Ms.": "Ms."
-          - "Miss": "Miss"
-          - "Dr.": "Dr."
-          - "Honorable": "Honorable"
-          - "Congressman": "Congressman"
-          - "Congresswoman": "Congresswoman"
-          - "Representative": "Representative"
-          - "The Reverend": "The Reverend"
-          - "Father": "Father"
-          - "Rabbi": "Rabbi"
-          - "Chaplin": "Chaplin"
+          Mr.: Mr.
+          Mrs.: Mrs.
+          Mr. and Mrs.: Mr. and Mrs.
+          Ms.: Ms.
+          Miss: Miss
+          Dr.: Dr.
+          Honorable: Honorable
+          Congressman: Congressman
+          Congresswoman: Congresswoman
+          Representative: Representative
+          The Reverend: The Reverend
+          Father: Father
+          Rabbi: Rabbi
+          Chaplin: Chaplin
       - name: Topic
         selector: "#InterestArea"
         value: $TOPIC
         required: true
         options:
-          - "HEALTHAHA": "Affordable Healthcare Act"
-          - "BANKINGGEN": "Banking"
-          - "BUDGETGEN": "Budget"
-          - "CONSUMGEN": "Consumer Protection"
-          - "CORRECTGEN": "Corrections"
-          - "DDSGEN": "Developmental Services"
-          - "JUDICIALGEN": "Judicial / Legal"
-          - "ECONDEVGEN": "Economic Development"
-          - "EDUCGEN": "Education"
-          - "ENERGYGEN": "Energy"
-          - "ENVIROGEN": "Environment"
-          - "COMMENTSGEN": "General Comments"
-          - "COMPLAINTSGEN": "General Complaints"
-          - "HEALTHGEN": "Healthcare Issues"
-          - "HIGHERED": "Higher Education"
-          - "INSURANCEGEN": "Insurance"
-          - "LEGISLATIVEISSUE": "Legislative"
-          - "HOUSINGMORTGEN": "Mortgage Issues"
-          - "PUBSAFEGEN": "Public Safety"
-          - "REVSVCGENERAL": "Revenue Services"
-          - "Social Services": "Social Services"
-          - "Taxes": "Taxes"
-          - "DOTGEN": "Transportation"
-          - "Transportation Infrastructure": "Transportation Infrastructure"
-          - "VETGENERAL": "Veterans"
+          HEALTHAHA: Affordable Healthcare Act
+          BANKINGGEN: Banking
+          BUDGETGEN: Budget
+          CONSUMGEN: Consumer Protection
+          CORRECTGEN: Corrections
+          DDSGEN: Developmental Services
+          JUDICIALGEN": Judicial / Legal
+          ECONDEVGEN: Economic Development
+          EDUCGEN: Education
+          ENERGYGEN: Energy
+          ENVIROGEN: Environment
+          COMMENTSGEN: General Comments
+          COMPLAINTSGEN: General Complaints
+          HEALTHGEN: Healthcare Issues
+          HIGHERED: Higher Education
+          INSURANCEGEN: Insurance
+          LEGISLATIVEISSUE: Legislative
+          HOUSINGMORTGE": Mortgage Issues
+          PUBSAFEGEN: Public Safety
+          REVSVCGENERAL: Revenue Services
+          Social Services: Social Services
+          Taxes: Taxes
+          DOTGEN: Transportation
+          Transportation Infrastructure: Transportation Infrastructure
+          VETGENERAL: Veterans
     - click_on:
       - value: Submit
         selector: input[value='Submit Form'][type='submit']

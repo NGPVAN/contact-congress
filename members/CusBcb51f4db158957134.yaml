@@ -1,0 +1,151 @@
+bioguide: CusBcb51f4db158957134
+contact_form:
+  method: post
+  usephantomjslogging: true
+  steps:
+    - visit: "https://eplanning.blm.gov/epl-front-office/eplanning/comments/commentSubmission.do?commentPeriodId=8001159"
+    - find:
+        - selector: input[id='commentSubComment.commentTitle']
+    - fill_in:
+        - name: Subject
+          selector: input[id='commentSubComment.commentTitle']
+          value: $SUBJECT
+          required: false
+    - iframe:
+        - name: message
+          selector: iframe[class='cke_wysiwyg_frame cke_reset']
+          value: $MESSAGE
+          required: true
+    - find:
+        - selector: body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']
+    - javascript:
+        - name: ckeditor
+          selectors: [ "body[class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']"]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].innerHTML=values[0].replace(/\\n/g, '<br/>').replace(/\\r/g,'')" ]
+    - iframe:
+        - back: true
+    - click_on:
+        - selector: input[type='submit'][value='Next']
+    - find:
+        - selector: input[id*='.firstName']
+    - fill_in:
+        - name: First Name
+          selector: input[id*='.firstName']
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input[id*='lastName']
+          value: $NAME_LAST
+          required: true
+        - name: City
+          selector: input[id*='.city']
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input[id*='.zip']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: input[id*='.emailAddress']
+          value: $EMAIL
+          required: false
+        - name: phone
+          selector: input[id*='.dayPhone']
+          value: $PHONE
+          required: false
+    - select:
+        - name: Prefix
+          selector: select[id*='.title']
+          value: $NAME_PREFIX
+          required: false
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Dr.: Dr.
+        - name: state
+          selector: select[id*='.selectedState']
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Alabama: Alabama
+            Alaska: Alaska
+            Arizona: Arizona
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            District of Columbia: District of Columbia
+            Florida: Florida
+            Georgia: Georgia
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Kentucky: Kentucky
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Tennessee: Tennessee
+            Texas: Texas
+            Utah: Utah
+            Vermont: Vermont
+            Virginia: Virginia
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
+    - javascript:
+        - name: represent org
+          selectors: ["input[id='commentSubNameAddress.representsOrg2'][value='N']"]
+          commands: ["elements[0].click()"]
+        - name: phone-char-replace
+          values: ["$PHONE"]
+          selectors: ["input[id*='.dayPhone']"]
+          commands: ["elements[0].value = values[0].replace(/\\D+/g,'').length > 10 ? values[0].replace(/\\D+/g,'').substr(1) : values[0].replace(/\\D+/g,'')" ]
+    - find:
+        - selector: input[type='submit'][value='Next']
+    - click_on:
+        - selector: input[type='submit'][value='Next']
+    - find:
+        - selector: input[name='agreement_75001638'][value='Y']
+    - click_on:
+        - selector: input[name='agreement_75001638'][value='Y']
+    - javascript:
+        - name: No
+          selectors: ["input[name='agreement_75001639'][value='N']"]
+          commands: ["elements[0].click()"]
+    - click_on:
+        - selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Submission Successful"

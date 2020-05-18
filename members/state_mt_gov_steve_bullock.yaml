@@ -54,6 +54,8 @@ contact_form:
           selector: "#sockeye_comments"
           value: $MESSAGE
           required: true
+          options:
+            max_length: 2000
     - click_on:
         - value: Send Now
           selector: input[type='submit'][value='Submit']

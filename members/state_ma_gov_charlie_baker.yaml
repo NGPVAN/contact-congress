@@ -1,7 +1,6 @@
 bioguide: state_ma_gov_charlie_baker
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
     - fill_in:
@@ -49,11 +48,14 @@ contact_form:
           selector: textarea#field49752026
           value: $MESSAGE
           required: true
+    - select:
+      - name: Topic
+        selector: "#field90831245"
+        value: Other
+        required: true     
     - click_on:
         - value: Submit
           selector: input#fsSubmitButton1744869
   success:
-    headers:
-      status: 200
     body:
       contains: "The form was submitted successfully"

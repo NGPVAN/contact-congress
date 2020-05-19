@@ -1,6 +1,7 @@
 bioguide: state_mt_gov_steve_bullock
 contact_form:
   method: post
+  usechrome: true
   steps:
     - visit: "https://svc.mt.gov/gov/contact/shareopinion"
     - fill_in:
@@ -36,17 +37,20 @@ contact_form:
           selector: "#sockeye_phone"
           value: $PHONE
           required: true
+    - find:
+        - selector: "#s2id_sockeye_topicid"
     - click_on:
         - selector: "#select2-chosen-4"
+        - selector: "#s2id_autogen4_search"
     - fill_in:
         - name: topic
           selector: "#s2id_autogen4_search"
           value: General Comments
           required: true
     - find: 
-        - selector: div .inline-icon
+        - selector: li div span 
     - click_on:
-        - selector: div .inline-icon
+        - selector: li div span
     - find: 
         - selector: "#sockeye_comments"   
     - fill_in:

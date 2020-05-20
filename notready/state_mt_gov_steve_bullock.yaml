@@ -1,7 +1,7 @@
 bioguide: state_mt_gov_steve_bullock
 contact_form:
   method: post
-  usechrome: true
+  usephantomjslogging: true
   steps:
     - visit: "https://svc.mt.gov/gov/contact/shareopinion"
     - fill_in:
@@ -38,21 +38,32 @@ contact_form:
           value: $PHONE
           required: true
     - find:
-        - selector: "#s2id_sockeye_topicid"
+        - selector: .sockeye_topicid-ctrl .input-group-btn .btn
     - click_on:
-        - selector: "#select2-chosen-4"
-        - selector: "#s2id_autogen4_search"
+        - selector: .sockeye_topicid-ctrl .input-group-btn .btn
+    - find:
+        - selector: "#lookup-modal-sockeye_topicid input[type='search']"
+    - wait:
+        - value: 2
     - fill_in:
         - name: topic
-          selector: "#s2id_autogen4_search"
-          value: General Comments
+          selector: "#lookup-modal-sockeye_topicid input[type='search']"
+          value: "General Comments"
           required: true
-    - find: 
-        - selector: li div span 
+    - find:
+        - selector: "#lookup-modal-sockeye_topicid .btn-refresh a"
     - click_on:
-        - selector: li div span
-    - find: 
-        - selector: "#sockeye_comments"   
+        - selector: "#lookup-modal-sockeye_topicid .btn-refresh a"
+    - wait:
+        - value: 1
+    - find:
+        - selector: "#lookup-modal-sockeye_topicid .grid-canvas .slick-row"
+    - click_on:
+        - selector: "#lookup-modal-sockeye_topicid .grid-canvas .slick-row"
+    - find:
+        - selector: "#lookup-modal-sockeye_topicid .btn-primary.lookup-ok"
+    - click_on:
+        - selector: "#lookup-modal-sockeye_topicid .btn-primary.lookup-ok"
     - fill_in:
         - name: message
           selector: "#sockeye_comments"

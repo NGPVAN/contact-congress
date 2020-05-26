@@ -131,7 +131,7 @@ contact_form:
           Wisconsin: Wisconsin
           Wyoming: Wyoming
           Yukon: Yukon
-          "Other/Not in US": "Other/Not in US"
+          Other/Not in US: Other/Not in US
     - fill_in:
       - name: First Name
         selector: input[id*='.first_name']
@@ -183,15 +183,11 @@ contact_form:
         required: true
     - click_on:
       - selector: button[id*='FormSubmit']
-    - wait:
-      - value: 3
     - find:
-      - selector: button[id*='_93']
+      - selector: div.yui3-widget-ft button[class="yui3-button"]
     - click_on:
       - value: Finish Submitting Question
-        selector: button[id*='_93']
-    - wait:
-      - value: 5
+        selector: div.yui3-widget-ft button[class="yui3-button"]
     - find:
       - selector: div.rn_AskQuestion div.rn_Padding
     - wait:

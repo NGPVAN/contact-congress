@@ -135,7 +135,9 @@ contact_form:
       - value: Submit
         selector: button[type='submit'][class='btn']
     - find:
-      - value: div p
+      - selector: "#form-2A9B34FE-A96D-4B35-5C05-91EF928C204A div p"
+    - find:
+      - selector: "#form-2A9B34FE-A96D-4B35-5C05-91EF928C204A div p"
   success:
     body:
       excludes: Message Subject

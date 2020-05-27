@@ -185,9 +185,13 @@ contact_form:
       - selector: button[id*='FormSubmit']
     - find:
       - selector: div.yui3-widget-ft button[class="yui3-button"]
+    - find:
+      - selector: div.yui3-widget-ft button[class="yui3-button"]
     - click_on:
       - value: Finish Submitting Question
         selector: div.yui3-widget-ft button[class="yui3-button"]
+    - find:
+      - selector: div.rn_AskQuestion div.rn_Padding
     - find:
       - selector: div.rn_AskQuestion div.rn_Padding
     - wait:

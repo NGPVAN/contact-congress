@@ -183,11 +183,15 @@ contact_form:
         required: true
     - click_on:
       - selector: button[id*='FormSubmit']
+    - wait:
+      - value: 3
     - find:
       - selector: div.yui3-widget-ft button[class="yui3-button"]
     - click_on:
       - value: Finish Submitting Question
         selector: div.yui3-widget-ft button[class="yui3-button"]
+    - wait:
+      - value: 3
     - find:
       - selector: div.rn_AskQuestion div.rn_Padding
     - wait:

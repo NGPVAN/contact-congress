@@ -134,6 +134,8 @@ contact_form:
     - click_on:
       - value: Submit
         selector: button[type='submit'][class='btn']
+    - wait:
+      - value: 5
     - find:
       - value: div p
   success:

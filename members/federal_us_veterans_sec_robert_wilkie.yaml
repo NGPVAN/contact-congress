@@ -1,7 +1,6 @@
 bioguide: federal_us_veterans_sec_robert_wilkie
 contact_form:
   method: post
-  usephantomjslogging: true
   steps:
     - visit: "https://iris.custhelp.va.gov/app/ask/"
     - find:

@@ -1,6 +1,7 @@
 bioguide: federal_us_veterans_sec_robert_wilkie
 contact_form:
   method: post
+  usephantomjslogging: true
   steps:
     - visit: "https://iris.custhelp.va.gov/app/ask/"
     - find:
@@ -32,8 +33,8 @@ contact_form:
     - click_on:
       - value: Inquiry
         selector: button[id*='Category_Button']
-      - value: Question
-        selector: "#ygtvlabelel26"
+      - value: Suggestion
+        selector: "#ygtvlabelel29"
       - value: Ok
         selector: button[id*='Category_ConfirmButton']
     - select:
@@ -182,14 +183,18 @@ contact_form:
         value: $EMAIL
         required: true
     - click_on:
-      - selector: button[id*='FormSubmit']
+      - selector: button[id*='FormSubmit'] #future us:these steps are on purpose. We needed to open then close the modal for this to work.
     - find:
-      - selector: div.yui3-widget-ft button[class="yui3-button"]
+      - selector: button[id*='_137'][class='yui3-button yui3-button-close']
     - find:
-      - selector: div.yui3-widget-ft button[class="yui3-button"]
+      - selector: button[id*='_137'][class='yui3-button yui3-button-close']
     - click_on:
-      - value: Finish Submitting Question
-        selector: div.yui3-widget-ft button[class="yui3-button"]
+      - value: Close modal
+        selector: button[id*='_137'][class='yui3-button yui3-button-close']
+    - find:
+      - selector: button[id*='FormSubmit']
+    - click_on:
+      - selector: button[id*='FormSubmit']
     - find:
       - selector: div.rn_AskQuestion div.rn_Padding
     - find:

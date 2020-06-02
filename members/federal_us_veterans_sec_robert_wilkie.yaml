@@ -159,7 +159,7 @@ contact_form:
         required: false
       - name: message
         selector: textarea[id*='Threads']
-        value: $MESSAGE
+        value: "have a good day"
         required: true
     - javascript:
       - name: Verify email
@@ -190,6 +190,11 @@ contact_form:
     - click_on:
       - value: Close modal
         selector: button[id*='_137'][class='yui3-button yui3-button-close']
+    - fill_in:
+      - name: message
+        selector: textarea[id*='Threads']
+        value: $MESSAGE
+        required: true      
     - find:
       - selector: button[id*='FormSubmit']
     - click_on:

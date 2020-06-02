@@ -159,7 +159,7 @@ contact_form:
         required: false
       - name: message
         selector: textarea[id*='Threads']
-        value: "Attempting to workaround issues for contact form. If you see this message, please contact AdvocacySupport@everyaction.com"
+        value: "Attempting to workaround issues with contact form. If you see this message, please contact AdvocacySupport@everyaction.com"
         required: true
     - javascript:
       - name: Verify email

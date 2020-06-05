@@ -15,9 +15,6 @@ contact_form:
           Mr.: Mr.
           Mrs.: Mrs.
           Ms.: Ms.
-          Mr. and Mrs.: Mr. and Mrs.
-          Dr.: Dr.
-          Dr. and Mrs.: Dr. and Mrs.
       - name: State
         selector: "#edit-state"
         value: "FL"

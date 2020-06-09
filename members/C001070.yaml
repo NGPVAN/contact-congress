@@ -241,24 +241,31 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Abortion and Family Planning: Abortion
             Aging: Aging
-            Animals/Conservation/Farming/Forestry/Public Lands: Agriculture
+            Animals: Animals
             Arts and Humanities: Arts and Humanities
             Banking: Banking
-            Budget/Census: Budget
+            Budget: Budget
+            Census: Census
             Children and Youth: Children and Youth
             Cloning and Stem Cell Research: Abortion
+            Crime and Criminal Justice: Crime and Criminal Justice
+            Conservation: Conservation
             Defense and the Military: Armed Services
-            Disability: Disabilities
+            Diplomatic Relations: Diplomatic Relations
+            Disability: Disability
             Domestic Violence: Domestic Violence
             Education: Education
             Election and Campaign Finance Reform: Election and Campaign Finance Reform
             Energy: Energy
             Environment: Environment
             Ethics and Clean Government: Ethics and Clean Government
-            Crime and Criminal Justice/Firearms: Criminal Justice
-            Diplomatic Relations/Foreign Relations/Global Health and Poverty/Iraq/Middle East: Foreign Relations
+            Family Planning: Family Planning
+            Farming: Farming
+            Firearms: Firearms
+            Forestry: Forestryk
+            Foreign Relations: Foreign Relations
+            Global Health and Poverty: Global Health and Poverty
             Health Care: Healthcare
             Health Insurance: Health Insurance
             Health IT (Electronic Medical Records): Health IT
@@ -270,20 +277,24 @@ contact_form:
             Labor and Jobs: Jobs and Labor
             LGBT Issues: LGBT Issues
             Medicaid: Medicaid
-            Medical Providers/Practitioners and Hospitals: Healthcare Workforce
+            Medical Providers/Practitioners and Hospitals: Medical Providers/Practitioners and Hospitals
             Medicare: Medicare
+            Net Neutrality: Net Neutrality
             Nutrition: Nutrition
             Pensions: Pensions
+            Police Reform: Police Reform
+            Postal Service: Postal Service
             Poverty and TANF: TANF Welfare Reform
             Prescription Drugs: FDA/Drugs
             Science and Technology: Science and Technology
             Small Business: Small Business
             Social Security: Social Security
             Taxes: Taxes
-            "Telecommunications (Internet, Television, etc.)": Telecommunications
+            Telecommunications (Internet, Television, etc.): Telecommunications (Internet, Television, etc.)
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
+            Veterans Health: Veterans Health
     - click_on:
         - value: Send
           selector: "#side-search-btn"

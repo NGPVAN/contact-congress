@@ -100,6 +100,8 @@ contact_form:
         selector: "#edit-subject"
         value: $SUBJECT
         required: true
+        options:
+          max_length: 75
       - name: Message
         selector: "#edit-message"
         value: $MESSAGE

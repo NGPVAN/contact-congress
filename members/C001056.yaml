@@ -37,11 +37,11 @@ contact_form:
       - name: Street
         selector: "#edit-submitted-address-thoroughfare"
         value: $ADDRESS_STREET
-        required: false
+        required: true
       - name: City
         selector: "#edit-submitted-address-locality"
         value: $ADDRESS_CITY
-        required: false
+        required: true
       - name: ZipCode
         selector: "#edit-submitted-address-postal-code"
         value: $ADDRESS_ZIP5
@@ -93,7 +93,7 @@ contact_form:
       - name: State
         selector: "#edit-submitted-address-administrative-area"
         value: Texas
-        required: false
+        required: true
     - javascript:
       - name: Preview button
         selectors: [ "input[type='submit'][value='Preview']" ]

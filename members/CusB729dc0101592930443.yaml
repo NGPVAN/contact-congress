@@ -10,9 +10,6 @@ contact_form:
         selector: "#comment"
         value: $MESSAGE
         required: true 
-    - find: 
-      - selector: "#first-name"
-    - fill_in:
       - name: First Name
         selector: "#first-name"	
         value: $NAME_FIRST	

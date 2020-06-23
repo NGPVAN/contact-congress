@@ -1,7 +1,6 @@
 bioguide: M001183
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.manchin.senate.gov/contact-joe/email-joe"
     - find:
@@ -11,11 +10,11 @@ contact_form:
     - find:
       - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
-      - name: first
+      - name: First Name
         selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
         value: $NAME_FIRST
         required: true
-      - name: last
+      - name: Last Name
         selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
         value: $NAME_LAST
         required: true
@@ -61,20 +60,14 @@ contact_form:
         value: $NAME_PREFIX
         required: true
         options:
-          "Mr.": "Mr."
-          "Ms.": "Ms."
-          "Mrs.": "Mrs."
-          "Miss": "Miss"
-          "Mr. and Mrs.": "Mr. and Mrs."
-          "Dr.": "Dr."
-          "Dr. and Mrs.": "Dr. and Mrs."
-          "Mr. and Dr.": "Mr. and Dr."
-          "Reverend": "Reverend"
-          "Sister": "Sister"
-          "Pastor": "Pastor"
-          "The Honorable": "The Honorable"
-          "Representative": "Representative"
-          "Senator": "Senator"
+          Mr.: Mr.
+          Ms.: Ms.
+          Mrs.: Mrs.
+          Dr.: Dr.
+          Father: Father
+          Rabbi: Rabbi
+          Reverend: Reverend
+          Sister: Sister
           General: Air Force - General
           Lieutenant General: Air Force - Lieutenant General
           Major General: Air Force - Major General
@@ -82,12 +75,12 @@ contact_form:
           Colonel: Air Force - Colonel
           Lieutenant Colonel: Air Force - Lieutenant Colonel
           Major: Air Force - Major
-          Captain:   Air Force - Captain
+          Captain: Air Force - Captain
           First Lieutenant: Air Force - First Lieutenant
           Second Lieutenant: Air Force - Second Lieutenant
           Chief Master Sergeant of the Air Force: Air Force - Chief Master Sergeant of the Air Force
           Command Chief Master Sergeant: Air Force - Command Chief Master Sergeant
-          First Sergeant (E-9):   Air Force - First Sergeant (E-9)
+          First Sergeant (E-9):  Air Force - First Sergeant (E-9)
           Chief Master Sergeant: Air Force - Chief Master Sergeant
           First Sergeant (E-8): Air Force - First Sergeant (E-8)
           Senior Master Sergeant: Air Force - Senior Master Sergeant
@@ -129,8 +122,8 @@ contact_form:
           Private: Army - Private
           Admiral: Coast Guard - Admiral
           Vice Admiral: Coast Guard - Vice Admiral
-          "Rear Admiral, Upper Half": "Coast Guard - Rear Admiral, Upper Half"
-          "Rear Admiral, Lower Half": "Coast Guard - Rear Admiral, Lower Half"
+          Rear Admiral, Upper Half: Coast Guard - Rear Admiral, Upper Half
+          Rear Admiral, Lower Half: Coast Guard - Rear Admiral, Lower Half
           Captain: Coast Guard - Captain
           Commander: Coast Guard - Commander
           Lieutenant Commander: Coast Guard - Lieutenant Commander
@@ -179,8 +172,8 @@ contact_form:
           Private: Marine Corps - Private
           Admiral: Navy - Admiral
           Vice Admiral: Navy - Vice Admiral
-          "Rear Admiral, Upper Half": "Navy - Rear Admiral, Upper Half"
-          "Rear Admiral, Lower Half": "Navy - Rear Admiral, Lower Half"
+          Rear Admiral, Upper Half: Navy - Rear Admiral, Upper Half
+          Rear Admiral, Lower Half: Navy - Rear Admiral, Lower Half
           Captain: Navy - Captain
           Commander: Navy - Commander
           Lieutenant Commander: Navy - Lieutenant Commander

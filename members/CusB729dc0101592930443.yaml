@@ -112,5 +112,4 @@ contact_form:
       - selector: "#comment-receipt-page h4"
   success:	
     body:
-      excludes: "Processing, please wait"
       contains: "Your Submission ID"

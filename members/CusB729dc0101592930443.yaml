@@ -1,6 +1,7 @@
 bioguide: CusB729dc0101592930443
 contact_form:	
-  method: post	
+  method: post
+  usechrome: true	
   steps:	
     - visit: "https://eplanning.blm.gov/eplanning-ui/project/68107/595/8001159/comment"	
     - find: 
@@ -108,9 +109,8 @@ contact_form:
     - click_on:
       - selector: "#comment-view-page button.btn.btn-primary"
     - find:
-      - selector: "#comment-receipt-page div.mb-4 h4"
+      - selector: "#comment-receipt-page h4"
   success:	
-    headers:	
-      status: 200	
-    body:	
+    body:
+      excludes: "Processing, please wait"
       contains: "Your Submission ID"

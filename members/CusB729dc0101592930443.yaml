@@ -110,6 +110,8 @@ contact_form:
       - selector: "#comment-view-page button.btn.btn-primary"
     - find:
       - selector: "#comment-receipt-page h4"
+    - wait:
+      - value: 2
   success:	
     body:
       contains: "Your Submission ID"

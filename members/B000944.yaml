@@ -4,56 +4,57 @@ contact_form:
   steps:
     - visit: "http://www.brown.senate.gov/contact/email"
     - find:
-      - selector: form#contactForm
+      - selector: "#form-466BAE0A-C4F2-8C2C-A3E7-92224410B0FB"
     - fill_in:
       - name: First Name
-        selector: "#fname"
+        selector: "#input-466BAE61-E646-3957-206E-507B30B9CC9C"
         value: "$NAME_FIRST"
         required: true
       - name: Last Name
-        selector: "#lname"
+        selector: "#input-466BB01B-E6B3-9F1C-54B0-74E30CA82B2D"
         value: "$NAME_LAST"
         required: true
-      - name: mailing_streetAddress1
-        selector: "#mailing_streetAddress1"
+      - name: Street Address
+        selector: "#input-466BB093-0EAA-2677-1803-E60F9B546F10"
         value: "$ADDRESS_STREET"
         required: true
-      - name: mailing_streetAddress2
-        selector: "#mailing_streetAddress2"
+      - name: Street Address2
+        selector: "#input-466BB0C3-DB13-A493-0FB1-3E1D05B279FA"
         value: "$ADDRESS_STREET_2"
         required: false
-      - name: mailing_city
-        selector: "#mailing_city"
+      - name: City
+        selector: "#input-466BAF41-DCE2-090F-69A1-41453548801A"
         value: "$ADDRESS_CITY"
         required: true
-      - name: mailing_zipCode
-        selector: "#mailing_zipCode"
+      - name: zipCode
+        selector: "#input-466BAFD3-D303-F40F-7B90-EA775BDDE7E9"
         value: "$ADDRESS_ZIP5"
         required: true
       - name: phone_number
-        selector: "#phone_number"
+        selector: "#input-466BAEC8-071D-301C-5A55-C90E1AB5F66C"
         value: "$PHONE"
+        required: true
       - name: email
-        selector: "#email_address"
+        selector: "#email"
         value: "$EMAIL"
         required: true
       - name: verify_email
-        selector: "#verify_email"
+        selector: "#input-466BB064-CC30-C031-4ED8-761B6CA19A3B"
         value: "$EMAIL"
         required: true
       - name: message
-        selector: textarea#comments
+        selector: "#input-46FB1CCB-BE54-C379-D785-A4F0D5700E52"
         value: $MESSAGE
         required: true
     - javascript:
       - name: accent-replace
         values: ["$NAME_FIRST", "$NAME_LAST"]
-        selectors: ["#fname", "#lname"]
+        selectors: ["#input-466BAE61-E646-3957-206E-507B30B9CC9C", "#input-466BB01B-E6B3-9F1C-54B0-74E30CA82B2D"]
         commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/['á']/g, 'a').replace(/[èé]/g,'e').replace(/[ñ]/g, 'n').replace(/[']/g, ''); }"]
         required: true
     - select:
       - name: Your Prefix
-        selector: "#salutation"
+        selector: "#input-466BAFA0-D277-8380-464E-5B0ED2A514DE"
         value: "$NAME_PREFIX"
         required: true
         options:
@@ -61,6 +62,7 @@ contact_form:
           "Mrs.": "Mrs."
           "Ms.": "Ms."
           "Miss": "Miss"
+          "Mx.": "Mx."
           "Mr. and Mrs.": "Mr. and Mrs."
           "Mr. and Mr.": "Mr. and Mr."
           "Mrs. and Mrs.": "Mrs. and Mrs."
@@ -150,10 +152,10 @@ contact_form:
           "Constructionman": "Constructionman"
           "LCDR": "LCDR"
     - find:
-      - selector: select#county
+      - selector: "#input-466BAF59-AAC9-47F2-18BA-98950482489A"
     - select:
       - name: county
-        selector: select#county
+        selector: "#input-466BAF59-AAC9-47F2-18BA-98950482489A"
         value: $ADDRESS_COUNTY
         required: true
         options:
@@ -249,7 +251,7 @@ contact_form:
       - value: 1
     - select:
       - name: topic
-        selector: "#topic"
+        selector: "#input-46F6701D-DBF3-F1BC-4FBB-0AF957025DE8"
         value: "$TOPIC"
         required: true
         options:
@@ -258,7 +260,7 @@ contact_form:
           "Agriculture": "Agriculture"
           "Auto Industry": "Auto Industry"
           "Civil Rights": "Civil Rights"
-          "Consumer Protection": "Consumer Protection"
+          "Manufacturing and Consumer Protection": "Manufacturing and Consumer Protection"
           "Defense & Military": "Defense and Military"
           "Economic Recovery": "Economic Recovery"
           "Education": "Education"
@@ -273,9 +275,6 @@ contact_form:
           "Homeland Security": "Homeland Security"
           "Housing": "Housing"
           "Immigration": "Immigration"
-          "Internship Information": "Internship Information"
-          "Internship": "Internship"
-          "Jobs/Employment": "Jobs/Employment"
           "Judiciary & Government Oversight": "Judiciary and Government Oversight"
           "Labor": "Labor"
           "Law Enforcement": "Law Enforcement"
@@ -286,10 +285,7 @@ contact_form:
           "Request for Help with Federal Agency": "Request for Help with Federal Agency"
           "Request for Help": "Request for Help"
           "Science & NASA": "Science NASA"
-          "Service Academy Nominations (Military Academy)": "Service Academy Nominations (Military Academy)"
-          "Service Academies": "Service Academies"
           "Social Security": "Social Security"
-          "Social Services": "Social Services"
           "Taxes": "Taxes"
           "Telecommunications": "Telecommunications"
           "Trade": "Trade"
@@ -298,7 +294,9 @@ contact_form:
           "Welfare & Poverty": "Welfare and Poverty"
     - click_on:
       - value: Submit
-        selector: "#side-search-btn"
+        selector: button[type='submit'][class='btn']
+    - find:
+      - selector: p[class='mb-4']
   success:
     headers:
       status: 200

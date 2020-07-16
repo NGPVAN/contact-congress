@@ -1,7 +1,6 @@
 bioguide: K000367
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.klobuchar.senate.gov/public/email-amy"
     - find:
@@ -46,6 +45,12 @@ contact_form:
         - name: Message
           selector: textarea#field_1A032E33-7721-4CE2-AD9B-2ECAFE076D8C
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["textarea#field_1A032E33-7721-4CE2-AD9B-2ECAFE076D8C"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/['%20']/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
@@ -118,7 +123,5 @@ contact_form:
     - wait:
         - value: 2
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you"

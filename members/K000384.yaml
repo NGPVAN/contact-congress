@@ -1,7 +1,6 @@
 bioguide: K000384
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.kaine.senate.gov/contact/share-your-opinion"
     - find:
@@ -46,6 +45,12 @@ contact_form:
       - name: Message
         selector: textarea#input-B388B084-5056-A066-6090-BF0C2E9BE07B
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: char replace
+        values: ["$MESSAGE"]
+        selectors: ["textarea#input-B388B084-5056-A066-6090-BF0C2E9BE07B"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/['%20']/g, '');}"]
         required: true
     - select:
       - name: Your Prefix
@@ -160,7 +165,5 @@ contact_form:
       - selector: "h1"
         value: "Thank You"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thanks for taking the time to share your thoughts with me"

@@ -1,7 +1,6 @@
 bioguide: S000770
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.stabenow.senate.gov/contact"
     - wait:
@@ -9,11 +8,11 @@ contact_form:
     - find:
       - selector: "#input-F80AC606-4040-F985-52CD-88C5E17C2923"
     - fill_in:
-      - name: firstName
+      - name: First Name
         selector: "#input-F80AC606-4040-F985-52CD-88C5E17C2923"
         value: $NAME_FIRST
         required: true
-      - name: lastName
+      - name: Last Name
         selector: "#input-F80AC4BA-4040-F985-52CD-C1FBF3A239DA"
         value: $NAME_LAST
         required: true
@@ -53,6 +52,12 @@ contact_form:
         selector: textarea#input-F80AC5B6-4040-F985-52CD-834C1DD62DF3
         value: $MESSAGE
         required: true
+    - javascript:
+      - name: char replace
+        values: ["$MESSAGE"]
+        selectors: ["textarea#input-F80AC5B6-4040-F985-52CD-834C1DD62DF3"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/['%20']/g, '');}"]
+        required: true
     - click_on:
       - value: Submit
         selector: input[value='Submit']
@@ -60,7 +65,5 @@ contact_form:
       - selector: "p"
         value: "Thank you!"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for contacting my office!"

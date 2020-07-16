@@ -1,45 +1,50 @@
 bioguide: T000476
 contact_form:
   method: post
-  action:
   steps:
     - visit: "https://www.tillis.senate.gov/email-me"
     - fill_in:
-      - name: "first_name"
+      - name: First Name
         selector: "#field_554EB441-1332-47D8-B817-87A030531FCC"
         value: $NAME_FIRST
         required: true
-      - name: "last_name"
+      - name: Last Name
         selector: "#field_77689247-ECBE-4E25-97D6-62F8A979E226"
         value: $NAME_LAST
         required: true
-      - name: "address"
+      - name: Address
         selector: "#field_47F809FC-8DE7-4768-95BE-6B94DCC7C8C8"
         value: $ADDRESS_STREET
         required: true
-      - name: "city"
+      - name: City
         selector: "#field_965E8165-21F8-49A4-AAD0-E72A361EC2DB"
         value: $ADDRESS_CITY
         required: true
-      - name: "zip"
+      - name: Zip
         selector: "#field_F35EA2FD-C92A-4FFC-9CE0-637B8AEECB54"
         value: $ADDRESS_ZIP5
         required: true
-      - name: "phone"
+      - name: Phone
         selector: "#field_64322B9D-7F15-47DA-B656-9843D7D04866"
         value: $PHONE_HYPHENS
         required: true
-      - name: "email"
+      - name: Email
         selector: "#field_5C0C729A-D702-46F1-9821-7DD7E565E136"
         value: $EMAIL
         required: true
-      - name: "subject"
+      - name: Subject
         selector: "#field_E2D2548D-F3B7-48F7-9BD0-E29F4ED82A43"
         value: $SUBJECT
         required: true
       - name: message
         selector: textarea#field_279EFB03-F78D-4924-8599-F04AEB99A7A6
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: char replace
+        values: ["$MESSAGE"]
+        selectors: ["textarea#field_279EFB03-F78D-4924-8599-F04AEB99A7A6"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
         required: true
     - select:
       - name: Your Prefix
@@ -228,7 +233,5 @@ contact_form:
     - wait:
       - value: 10
   success:
-    headers:
-      status: 200
     body:
       contains: "Someone from my office will be in touch"

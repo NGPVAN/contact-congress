@@ -1,7 +1,6 @@
 bioguide: B001267
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.bennet.senate.gov/public/index.cfm/write-to-michael"
     - find:
@@ -53,7 +52,7 @@ contact_form:
         - name: Message
           selectors: [ "#field_0F40B55B-8631-4AA2-8223-08DE119CD370" ]
           values: [ "$MESSAGE" ]
-          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(is not)\\b/ig,'isn\\'t')"]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(is not)\\b/ig,'isn\\'t').replace(/(%2[0C])/g, '');"]
           required: true
     - select:
         - name: Your Prefix
@@ -139,7 +138,5 @@ contact_form:
     - wait:
         - value: 3
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you for contacting my office to express

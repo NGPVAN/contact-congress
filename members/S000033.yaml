@@ -1,7 +1,6 @@
 bioguide: S000033
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "http://www.sanders.senate.gov/contact/comment"
     - wait:
@@ -55,35 +54,35 @@ contact_form:
     - find:
       - selector: "#fname"
     - fill_in:
-      - name: fname
+      - name: First Name
         selector: "#fname"
         value: "$NAME_FIRST"
         required: true
-      - name: lname
+      - name: Last Name
         selector: "#lname"
         value: "$NAME_LAST"
         required: true
-      - name: mailing_streetAddress1
+      - name: Street Address
         selector: "#mailing_streetAddress1"
         value: "$ADDRESS_STREET"
         required: true
-      - name: mailing_streetAddress2
+      - name: Street Address2
         selector: "#mailing_streetAddress2"
         value: "$ADDRESS_STREET_2"
         required: false
-      - name: mailing_city
+      - name: City
         selector: "#mailing_city"
         value: "$ADDRESS_CITY"
         required: true
-      - name: mailing_zipCode
+      - name: zipCode
         selector: "#mailing_zipCode"
         value: "$ADDRESS_ZIP5"
         required: true
-      - name: home_phone_number
+      - name: phone number
         selector: "#home_phone_number"
         value: "$PHONE"
         required: false
-      - name: email_address
+      - name: email 
         selector: "#email"
         value: "$EMAIL"
         required: true
@@ -98,6 +97,12 @@ contact_form:
       - name: message
         selector: "#message"
         value: "$MESSAGE"
+        required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#message" ]
+        values: [ "$MESSAGE" ]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
         required: true
     - select:
       - name: Your Prefix
@@ -187,7 +192,5 @@ contact_form:
       - selector: "h2"
         value: "Thank You"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for contacting me."

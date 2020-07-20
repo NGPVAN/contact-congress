@@ -1,7 +1,6 @@
 bioguide: C001113
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.cortezmasto.senate.gov/contact/connect"
     - find:
@@ -11,11 +10,11 @@ contact_form:
     - find:
         - selector: input#input-78DF3A81-B287-CC2A-5900-56C22D85E462
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: input#input-78DF3A81-B287-CC2A-5900-56C22D85E462
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: input#input-78DF39C6-93C1-552A-DC26-5EE4EE82C938
           value: $NAME_LAST
           required: true
@@ -37,7 +36,7 @@ contact_form:
           required: true
         - name: phone
           selector: input#input-78DF3A8C-B76A-17D9-5156-9170FE970E05
-          value: 2223334444
+          value: $PHONE
           required: true
         - name: email
           selector: input#email
@@ -54,6 +53,12 @@ contact_form:
         - name: message
           selector: textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
@@ -74,7 +79,61 @@ contact_form:
           value: $TOPIC
           required: true
           options:
+            Abortion: Abortion
+            Adoption: Adoption
+            Aging: Aging
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
             Appropriations: Appropriations
+            Arts and Humanities: Arts and Humanities
+            Banking: Banking
+            Campaign Finance: Campaign Finance
+            Civil Rights: Civil Rights
+            Commerce: Commerce
+            Communications: Communications
+            Congratulations: Congratulations
+            Crime: Crime
+            Defense: Defense
+            Drugs: Drugs
+            Economy: Economy
+            Education Higher: Education Higher
+            Elections: Elections
+            Energy: Energy
+            Environment: Environment
+            Family: Family
+            Food Stamps: Food Stamps
+            Foreign Affairs: Foreign Affairs
+            Gun Violence Prevention: Gun Violence Prevention
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Insurance Health: Insurance Health
+            Insurance Other: Insurance Other
+            Interior: Interior
+            Judiciary: Judiciary
+            Labor: Labor
+            LGBTQ: LGBTQ
+            Medicaid: Medicaid
+            Medicare: Medicare
+            Military: Military
+            NASA: NASA
+            National Security: National Security
+            Native Americans: Native Americans
+            Nutrition: Nutrition
+            Patents: Patents
+            Pensions: Pensions
+            Public Lands: Public Lands
+            Securities: Securities
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Water: Water
+            Welfare: Welfare
+            "Women's Issues": "Women's Issues"
     - click_on:
         - selector: div#form-78DF37A0-0A52-CA9A-8830-4C5F450E15B2 form div.control-group input[type=submit]
     - wait:

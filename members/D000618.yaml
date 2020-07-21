@@ -1,7 +1,6 @@
 bioguide: D000618
 contact_form:
   method: post
-  action: http://www.daines.senate.gov/connect/email-steve
   steps:
     - visit: "http://www.daines.senate.gov/connect/email-steve"
     - find:
@@ -16,11 +15,11 @@ contact_form:
     - find:
         - selector: input#input-AB59F0AE-4040-F985-52CD-AA63153C7925
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: "#input-AB59F0AE-4040-F985-52CD-AA63153C7925"
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: "#input-AB59F0ED-4040-F985-52CD-265D9CF13F5E"
           value: $NAME_LAST
           required: true
@@ -56,8 +55,12 @@ contact_form:
           selector: "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51"
           value: $MESSAGE
           required: true
-          options:
-            blacklist: ":"
+    - javascript:
+        - name: Message
+          selectors: [ "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51" ]
+          values: [ "$MESSAGE" ]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
+          required: true
     - select:
         - name: Your Prefix
           selector: "#input-AB59F08A-4040-F985-52CD-7633AA11C65E"
@@ -261,7 +264,5 @@ contact_form:
     - find:
         - selector: "#form-4873565B-4040-F985-52CD-58F5E3BCC94D"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for submitting your request to our office."

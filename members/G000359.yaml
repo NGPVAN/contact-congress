@@ -44,7 +44,7 @@ contact_form:
       - name: Message
         selectors: [ "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F" ]
         values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\\bset\\b/ig,'determine')"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
         required: true
     - select:
       - name: Your Prefix
@@ -107,7 +107,5 @@ contact_form:
     - wait:
       - value: 2
   success:
-    headers:
-      status: 200
     body:
       contains: "Your message has been received."

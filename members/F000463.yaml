@@ -8,11 +8,11 @@ contact_form:
         selector: input#field_54F8542E-F6DB-417C-9677-E57F2F190899
         value: $NAME_PREFIX
         required: false
-      - name: first
+      - name: First Name
         selector: input#field_2A913E5F-016D-49CA-B284-B4A1B186F01D
         value: $NAME_FIRST
         required: true
-      - name: last
+      - name: Last Name
         selector: input#field_2E235441-E702-4D0D-A75B-85D6F316586C
         value: $NAME_LAST
         required: true
@@ -51,7 +51,7 @@ contact_form:
       - name: Message
         selectors: [ "#field_BFF13EA3-37AD-467A-BB61-750F5CCE59E8" ]
         values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
         required: true
     - select:
       - name: topic
@@ -92,7 +92,5 @@ contact_form:
       - value: Submit
         selector: form#form_C78405EB-DE4E-4361-ABA2-0CEFF767863A div.buttonHolder input.btn-primary
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for contacting"

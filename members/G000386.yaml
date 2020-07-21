@@ -1,15 +1,14 @@
 bioguide: G000386
 contact_form:
   method: post
-  action: "https://www.grassley.senate.gov/form_process/questions-and-comments-thank-you"
   steps:
     - visit: "https://www.grassley.senate.gov/constituents/questions-and-comments"
     - fill_in:
-        - name: first
+        - name: First Name
           selector: "#first"
           value: $NAME_FIRST
           required: true
-        - name: last
+        - name: Last Name
           selector: "#last"
           value: $NAME_LAST
           required: true
@@ -17,15 +16,15 @@ contact_form:
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: Email
+        - name: Verify Email
           selector: "#email2"
           value: $EMAIL
           required: true
-        - name: addr1
+        - name: Street Address
           selector: "#addr1"
           value: $ADDRESS_STREET
           required: true
-        - name: addr2
+        - name: Street Address 2
           selector: "#addr2"
           value: $ADDRESS_STREET_2
           required: false
@@ -41,8 +40,6 @@ contact_form:
           selector: "#phone"
           value: $PHONE
           required: false
-          options:
-            blacklist: "."
         - name: subject
           selector: "#subject"
           value: $SUBJECT
@@ -50,6 +47,12 @@ contact_form:
         - name: message
           selector: textarea#message
           value: $MESSAGE
+          required: true
+    - javascript:
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["textarea#message"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
@@ -117,7 +120,5 @@ contact_form:
         - selector: "#page-title"
           value: Thank You
   success:
-    headers:
-      status: 200
     body:
       contains: Thank You

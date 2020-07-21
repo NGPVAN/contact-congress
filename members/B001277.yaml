@@ -70,7 +70,7 @@ contact_form:
         selector: "#mailing_zipCode"
         value: "$ADDRESS_ZIP5"
         required: true
-      - name: phone_number
+      - name: phone number
         selector: "#phone_number"
         value: "$PHONE"
       - name: email

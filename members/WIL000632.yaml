@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/67/summerfield/contact/"
+    - visit: "http://legis.wisconsin.gov/assembly/67/summerfield/contact-forms/contact-my-capitol-office/"
     - fill_in:
         - name: Name
           selector: div .name input
@@ -30,10 +30,8 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - value: newsletter
-          selector: input[type='radio'][value='No']
         - value: Submit
-          selector: "input[type='submit'][value='Submit']"
+          selector: "#contour_form_c9bef31a5db14e2081f5d95b910fe9c2  form div  div.contourNavigation.row-fluid  div  input"
     - wait:
         - value: 8
   success:

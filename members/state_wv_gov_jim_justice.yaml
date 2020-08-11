@@ -1,49 +1,55 @@
 bioguide: state_wv_gov_jim_justice
 contact_form:
   method: post
-  action: ""
   steps:
-    - visit: "http://www.governor.wv.gov/Pages/SubmitaCommenttotheGovernor.aspx"
+    - visit: "https://appengine.egov.com/apps/wv/governor/contactus"
     - fill_in:
         - name: name
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff1_1_ctl00_ctl00_TextField"
+          selector: "#c035b73d-0e4b-4af1-a8ad-cfc03b4e4ebf"
           value: $NAME_FULL
           required: true
         - name: address
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff3_1_ctl00_ctl00_TextField"
+          selector: input[title='Address 1']
           value: $ADDRESS_STREET
           required: true
         - name: address2
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff4_1_ctl00_ctl00_TextField"
+          selector: input[title='Address 2']
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff5_1_ctl00_ctl00_TextField"
+          selector: input[title='City']
           value: $ADDRESS_CITY
           required: true
-        - name: state
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff6_1_ctl00_ctl00_TextField"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
         - name: zip5
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff7_1_ctl00_ctl00_TextField"
+          selector: input[title='Zip']
           value: $ADDRESS_ZIP5
           required: true
+        - name: phone
+          selector: input[title='Phone']
+          value: $PHONE
+          required: false
         - name: email
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff9_1_ctl00_ctl00_TextField"
+          selector: "#e0157e70-df14-48cc-99ee-19c1122012b8"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff10_1_ctl00_ctl00_TextField"
+          selector: input[title='Subject']
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#ctl00_PlaceHolderMain_g_1aa949c5_afad_4f93_9c5b_1c3bf27389df_ff11_1_ctl00_ctl00_TextField"
+          selector: div textarea
           value: $MESSAGE
+          required: true
+    - select:
+        - name: state
+          selector: "#bd05cff4-1211-4d80-b1c0-afbd30be7029"
+          value: West Virginia
           required: true
     - click_on:
         - value: Submit
-          selector: "#aspnetForm input[name='btnFormAction']"
+          selector: button[type='submit']
+    - find:
+        - selector: "#ctl00_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField"
   success:
     headers:
       status: 200

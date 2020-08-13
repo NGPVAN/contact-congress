@@ -48,7 +48,7 @@ contact_form:
       - name: Message
         selectors: [ "#field_E8E82E9B-F02E-44A6-84CB-BB70F34C9310" ]
         values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(set up)\\b/ig, 'implemented')"]
+        commands: ["elements[0].value = values[0].replace(/\\b(set)\\b/ig,'determine')"]
         required: true
     - select:
       - name: Your Prefix

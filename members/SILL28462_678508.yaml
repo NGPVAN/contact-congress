@@ -1,0 +1,50 @@
+bioguide: SILL28462_678508
+contact_form:
+  method: post
+  steps:
+    - visit: "https://repbradstephens.com/share-your-concerns/"
+    - find:
+        - selector: span.name_first input
+    - fill_in:
+        - name: First Name
+          selector: span.name_first input
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: span.name_last input
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#input_3_5"
+          value: $EMAIL
+          required: true
+        - name: Address
+          selector: span.address_line_1 input
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address 2
+          selector: span.address_line_2 input
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: span.address_city input
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: span.address_zip input
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Message
+          selector: div textarea
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#gform_submit_button_3"
+    - find:
+        - value: "#gform_confirmation_message_3"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thanks for contacting us! We will get in touch with you shortly.

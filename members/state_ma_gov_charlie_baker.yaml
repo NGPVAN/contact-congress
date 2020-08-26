@@ -3,6 +3,15 @@ contact_form:
   method: post
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
+    - select:
+      - name: Comment select
+        selector: "#field90831234"
+        value: Comment
+        required: true  
+      - name: Topic
+        selector: "#field90831245"
+        value: Other
+        required: true     
     - fill_in:
         - name: First Name
           selector: input#field49751862
@@ -45,14 +54,9 @@ contact_form:
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#field49752026
+          selector: div textarea.fsRequired
           value: $MESSAGE
           required: true
-    - select:
-      - name: Topic
-        selector: "#field90831245"
-        value: Other
-        required: true     
     - click_on:
         - value: Submit
           selector: input#fsSubmitButton1744869

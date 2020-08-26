@@ -52,6 +52,11 @@ contact_form:
         selectors: ["#input-466BAE61-E646-3957-206E-507B30B9CC9C", "#input-466BB01B-E6B3-9F1C-54B0-74E30CA82B2D", "#input-46FB1CCB-BE54-C379-D785-A4F0D5700E52"]
         commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/['á']/g, 'a').replace(/[èé]/g,'e').replace(/[ñ]/g, 'n').replace(/[']/g, '').replace(/(%2[0C])/g, ''); }"]
         required: true
+      - name: leading-1-phone-replace
+        values: ["$PHONE"]
+        selectors: ["#input-466BAEC8-071D-301C-5A55-C90E1AB5F66C"]
+        commands: [ "elements[0].value = values[0].replace(/\D/g,'').length > 10 ? values[0].replace(/\D/g,'').substr(1) : values[0].replace(/\D/g,'')" ]
+        required: true
     - select:
       - name: Your Prefix
         selector: "#input-466BAFA0-D277-8380-464E-5B0ED2A514DE"

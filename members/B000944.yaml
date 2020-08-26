@@ -55,7 +55,7 @@ contact_form:
       - name: leading-1-phone-replace
         values: ["$PHONE"]
         selectors: ["#input-466BAEC8-071D-301C-5A55-C90E1AB5F66C"]
-        commands: [ "elements[0].value = values[0].replace(/\D/g,'').length > 10 ? values[0].replace(/\D/g,'').substr(1) : values[0].replace(/\D/g,'')" ]
+        commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
         required: true
     - select:
       - name: Your Prefix

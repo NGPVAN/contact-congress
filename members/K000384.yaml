@@ -109,9 +109,11 @@ contact_form:
         options:
           Agriculture: Agriculture
           Animal Welfare: Animal Welfare
+          Appropriations: Appropriations
           Arts & Humanities: Arts & Humanities
           Banking & Financial Reform: Banking & Financial Reform
           Budget: Budget
+          Business: Business
           Child Welfare: Child Welfare
           Civil Rights: Civil Rights
           Congress & Executive Office Reform: Congress & Executive Office Reform
@@ -124,6 +126,7 @@ contact_form:
           Environment & Wildlife Protection: Environment & Wildlife Protection
           Federal Employees: Federal Employees
           Foreign Aid: Foreign Aid
+          Foreign Relations: Foreign Relations
           Foreign Trade: Foreign Trade
           Gun Violence: Gun Violence
           Health Care & Affordable Care Act: Health Care & Affordable Care Act
@@ -134,8 +137,10 @@ contact_form:
           Medicare: Medicare
           Mental Health: Mental Health
           Military/Armed Services/Defense: Military/Armed Services/Defense
+          Native American Issues: Native American Issues
           Postal Issues: Postal Issues
           Press Inquiry: Press Inquiry
+          Public Lands & Natural Resources: Public Lands & Natural Resources
           Public Welfare: Public Welfare
           Science & Technology: Science & Technology
           Second Amendment Rights: Second Amendment Rights

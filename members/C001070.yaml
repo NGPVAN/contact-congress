@@ -1,31 +1,30 @@
 bioguide: C001070
 contact_form:
   method: post
-  action: /contact
   steps:
     - visit: "http://www.casey.senate.gov/contact/"
     - fill_in:
-        - name: fname
+        - name: First Name
           selector: "#fname"
           value: $NAME_FIRST
           required: true
-        - name: lname
+        - name: Last Name
           selector: "#lname"
           value: $NAME_LAST
           required: true
-        - name: mailing_streetAddress1
+        - name: Address
           selector: "#mailing_streetAddress1"
           value: $ADDRESS_STREET
           required: true
-        - name: mailing_streetAddress2
+        - name: Address2
           selector: "#mailing_streetAddress2"
           value: $ADDRESS_STREET_2
           required: false
-        - name: mailing_city
+        - name: city
           selector: "#mailing_city"
           value: $ADDRESS_CITY
           required: true
-        - name: mailing_zipCode
+        - name: zipCode
           selector: "#mailing_zipCode"
           value: $ADDRESS_ZIP5
           required: true
@@ -37,7 +36,7 @@ contact_form:
           selector: "#verify_email"
           value: $EMAIL
           required: true
-        - name: phone_number
+        - name: phone number
           selector: "#phone_number"
           value: $PHONE
           required: false
@@ -285,6 +284,7 @@ contact_form:
             Police Reform: Police Reform
             Postal Service: Postal Service
             Poverty and TANF: TANF Welfare Reform
+            Public Lands: Public Lands
             Prescription Drugs: FDA/Drugs
             Science and Technology: Science and Technology
             Small Business: Small Business

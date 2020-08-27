@@ -1,17 +1,14 @@
 bioguide: B000575
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.blunt.senate.gov/public/index.cfm/contact-roy"
-    - wait:
-      - value: 1
     - find:
       - selector: div.js-form-toggle.feedback-button a
     - click_on:
       - selector: div.js-form-toggle.feedback-button a
-    - wait:
-      - value: 2
+    - find:
+      - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
       - name: First Name
         selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
@@ -55,7 +52,6 @@ contact_form:
         required: true
         options:
           max_length: 2000
-          blacklist: ":"
     - select:
       - name: Your Prefix
         selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
@@ -207,6 +203,7 @@ contact_form:
           Civil Rights: Civil Rights
           "Congratulations/Birthdays": "Congratulations/Birthdays"
           Defense/Foreign Relations: Defense/Foreign Relations
+          Economy: Economy
           Education: Education
           Elections: Elections
           Energy: Energy

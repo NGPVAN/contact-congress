@@ -92,15 +92,16 @@ contact_form:
           required: true
           options:
             AGR: Agriculture
-            ANIMAL.RIGHTS: Animal Rights
+            ANIMAL.RIGHTS: Animals & Welfare
             BANK: Banking & Financial Services
             FIN.REFORM: Campaign and Finance Reform
             ENV.CLIMATE: Climate Change
-            CONSERVATION.LANDS: Conservation and Public Lands
+            CONSERVATION.LANDS: Conservation & Public Lands
             BUDGET: Fiscal Responsability
-            ECON: Economy and Jobs
+            ECON: Economy & Jobs
             EDU: Education
             ENE: Energy
+            ENV: Environment
             FEMA: FEMA
             FORGN: Foreign Policy
             HEA: Health Care
@@ -108,7 +109,7 @@ contact_form:
             IMM: Immigration
             TRA: Infrastructure & Transportation
             INDIAN.AFFAIRS: Indian Affairs
-            SCI.TECH: Internet and Technology
+            SCI.TECH: Internet & Technology
             JUD: Judiciary
             EQUALITY: Justice & Equality
             LABOR: Labor

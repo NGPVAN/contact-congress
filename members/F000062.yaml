@@ -8,11 +8,11 @@ contact_form:
     - find:
         - selector: input#field_0C5A1392-6512-4FA5-A213-EB7E1CBAF1AD
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: input#field_0C5A1392-6512-4FA5-A213-EB7E1CBAF1AD
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: input#field_AC791FC0-5E57-4F5E-88D4-6EF9E730F470
           value: $NAME_LAST
           required: true
@@ -56,23 +56,23 @@ contact_form:
             Banking/Finance: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_3
             Budget: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_4
             Communications/FCC: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_5
-            Defense: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_6
-            Education/Student Loans: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_7
-            Energy: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_8
-            Environment: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_9
-            Foreign Affairs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_10
+            Criminal Justice Reform: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_6
+            Defense: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_7
+            Education/Student Loans: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_8
+            Energy: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_9
+            Environment: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_10
+            Foreign Affairs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_11
             Gun Safety: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_11
-            Health: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_12
-            Homeland Security/Disaster Response: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_13
-            Housing: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_14
-            Human Services/Welfare: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_15
-            Immigration: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_16
-            Native American Affairs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_17
+            Health: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_13
+            Homeland Security/Disaster Response: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_14
+            Housing: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_15
+            Human Services/Welfare: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_16
+            Immigration: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_17
             Intelligence Committee: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_18
-            Internship: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_19
-            Judiciary, Narcotics/Illicit Drugs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_20
-            Labor: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_21
-            LGBT: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_22
+            Judiciary, Narcotics/Illicit Drugs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_19
+            Labor: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_20
+            LGBT: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_21
+            Native American Affairs: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_22
             Science/Space/Technology: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_23
             Social Security: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_24
             Taxes: input#field_302E8A41-000D-419E-991E-40C7CB96F97C_25

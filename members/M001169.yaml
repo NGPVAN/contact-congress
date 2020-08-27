@@ -9,7 +9,6 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            "Adoption": "Adoption"
             "Aging and Seniors": "Aging and Seniors"
             "Agriculture": "Agriculture"
             "Animal Rights": "Animal Rights"
@@ -63,6 +62,7 @@ contact_form:
             "Transportation": "Transportation"
             "Veterans": "Veterans"
             "Welfare/Food Stamps": "Welfare/Food Stamps"
+            "Other": "Other"
     - wait:
         - value: 3
     - find:

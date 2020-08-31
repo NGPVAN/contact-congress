@@ -1,11 +1,14 @@
 bioguide: M001169
 contact_form:
   method: post
+  usephantomjslogging: true
   steps:
     - visit: "http://www.murphy.senate.gov/contact"
+    - find:
+        - selector: "#issue-type"
     - select:
         - name: topic
-          selector: "#topic"
+          selector: "#issue-type"
           value: $TOPIC
           required: true
           options:
@@ -63,56 +66,64 @@ contact_form:
             "Veterans": "Veterans"
             "Welfare/Food Stamps": "Welfare/Food Stamps"
             "Other": "Other"
-    - wait:
-        - value: 3
     - find:
-        - selector: input#fname
+        - selector: input#input-0D9C1CBF-0FA9-F521-7BE3-D60FBF8BC532
     - fill_in:
         - name: First Name
-          selector: input#fname
+          selector: input#input-0D9C1CBF-0FA9-F521-7BE3-D60FBF8BC532
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input#lname
+          selector: input#input-021E6848-A43A-487E-E67F-09444047A2BC
           value: $NAME_LAST
           required: true
-        - name: mailing_streetAddress1
-          selector: input#mailing_streetAddress1
+        - name: Address1
+          selector: input#input-02A611A6-C6E3-A8FD-5992-EE40147D726A
           value: $ADDRESS_STREET
           required: true
-        - name: mailing_city
-          selector: input#mailing_city
+        - name: Address2
+          selector: input#input-02A611E7-D86B-7139-AD0F-692B62A62CD2
+          value: $ADDRESS_STREET
+          required: false
+        - name: city
+          selector: input#input-02A61225-E09F-EA85-FAF0-D225ED392435
           value: $ADDRESS_CITY
           required: true
-        - name: mailing_zipCode
-          selector: input#mailing_zipCode
+        - name: zipCode
+          selector: input#input-02A612A3-005B-4DF1-0308-92EB04712239
           value: $ADDRESS_ZIP5
           required: true
-        - name: email_address
+        - name: phone
+          selector: input#input-02C9EBF2-9068-15B3-76C7-3DFE96C5D370
+          value: $PHONE
+          required: false
+        - name: email
           selector: input#email
           value: $EMAIL
           required: true
         - name: verify_email
-          selector: input#verify_email
+          selector: input#input-02D398F5-DCDB-34E1-6593-048598518F1D
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#subject
+          selector: input#input-02E0E441-9477-3987-8977-A4EC9BDD0DBD
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#message
+          selector: textarea#input-02E45FD5-BD42-AF0E-8834-08C8C725558F
           value: $MESSAGE
           required: true
+          options:
+            max_length: 10000
     - javascript:
         - name: char replace
           values: ["$MESSAGE"]
-          selectors: ["textarea#message"]
+          selectors: ["textarea#input-02E45FD5-BD42-AF0E-8834-08C8C725558F"]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
-          selector: select#salutation
+          selector: select#input-021E6782-96D4-5780-E206-014F5E35C3F8
           value: $NAME_PREFIX
           required: true
           options:
@@ -120,6 +131,7 @@ contact_form:
             Ms.: Ms.
             Mrs.: Mrs.
             Miss: Miss
+            Mx.: Mx.
             Dr.: Dr.
             Professor: Professor
             Reverend: Reverend
@@ -127,14 +139,15 @@ contact_form:
             Sister: Sister
             The Honorable: The Honorable
             No Prefix: No Prefix
-    - wait:
-        - value: 1
-    - click_on:
-        - value: Send
-          selector: input#side-search-btn
     - find:
-        - selector: "h2"
-          value: "THANK YOU"
+        - selector: button.btn
+    - click_on:
+        - value: Submit
+          selector: button.btn
+    - find:
+        - selector: "#form-FE378C8B-ECA5-FC96-D7EE-18EE82AE3ABD h2"
+    - find:
+        - selector: "#form-FE378C8B-ECA5-FC96-D7EE-18EE82AE3ABD h2"
   success:
     body:
-      contains: Thanks for taking the time to share your thoughts with me.
+      excludes: Message Topic

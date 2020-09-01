@@ -4,14 +4,10 @@ contact_form:
   usephantomjslogging: true
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
-    - wait:
-      - value: 5
     - find:
       - selector: div#main_column .feedback-block.opinion a
     - click_on:
       - selector: div#main_column .feedback-block.opinion a
-      - wait:
-        - value: 4
     - find:
       - selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
     - select:
@@ -82,11 +78,11 @@ contact_form:
           options:
             IL: "IL"
     - fill_in:
-        - name: firstname
+        - name: First name
           selector: input#input-356E5F36-5056-A066-6074-9592CE92B2D2
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last name
           selector: input#input-356E5C24-5056-A066-600A-182A54465687
           value: $NAME_LAST
           required: true
@@ -108,10 +104,10 @@ contact_form:
           required: true
         - name: phone
           selector: input#input-356E5FC0-5056-A066-6013-9C5EB3043747
-          value: $PHONE
+          value: $PHONE_HYPHENS
           required: true
           options:
-            blacklist: "-.x"
+            blacklist: ".x"
         - name: email
           selector: input#email
           value: $EMAIL

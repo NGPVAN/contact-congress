@@ -1,11 +1,10 @@
 bioguide: FINS8d63d592
 contact_form:
   method: post
-  action:
   steps:
     - visit: "https://www.braun.senate.gov/contact-mike"
-    - wait:
-      - value: 1
+    - find:
+      - selector: "#edit-prefix"
     - select:
       - name: Your Prefix
         selector: "#edit-prefix"
@@ -89,6 +88,12 @@ contact_form:
       - name: Message
         selector: "#edit-message"
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#edit-message" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/(CC:)/g,'CC')"]
         required: true
     - click_on:
       - value: Submit

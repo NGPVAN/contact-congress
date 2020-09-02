@@ -5,8 +5,6 @@ contact_form:
     - visit: "https://www.bennet.senate.gov/public/index.cfm/write-to-michael"
     - find:
         - selector: input#field_52D32F87-EEB0-4B98-A147-18D485A91778
-    - wait:
-        - value: 1
     - fill_in:
         - name: First Name
           selector: input#field_52D32F87-EEB0-4B98-A147-18D485A91778
@@ -52,7 +50,7 @@ contact_form:
         - name: Message
           selectors: [ "#field_0F40B55B-8631-4AA2-8223-08DE119CD370" ]
           values: [ "$MESSAGE" ]
-          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(is not)\\b/ig,'isn\\'t').replace(/(%2[0C])/g, '');"]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(is not)\\b/ig,'isn\\'t').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC');"]
           required: true
     - select:
         - name: Your Prefix

@@ -1,11 +1,10 @@
 bioguide: FNVS41f22227
 contact_form:
   method: post
-  action:
   steps:
     - visit: "https://www.rosen.senate.gov/contact_jacky"
-    - wait:
-      - value: 1
+    - find:
+      - selector: "#edit-topic"
     - select:
       - name: Topic
         selector: "#edit-topic"
@@ -104,6 +103,12 @@ contact_form:
       - name: Message
         selector: "#edit-message"
         value: $MESSAGE
+        required: true
+    - javascript:
+      - name: Message
+        selectors: [ "#edit-message" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/(CC:)/g,'CC')"]
         required: true
     - click_on:
       - value: Submit

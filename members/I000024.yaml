@@ -147,6 +147,12 @@ contact_form:
         selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
         value: $MESSAGE
         required: true
+    - javascript:
+      - name: Message
+        selectors: [ "textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2" ]
+        values: [ "$MESSAGE" ]
+        commands: ["elements[0].value = values[0].replace(/(CC:)/g,'CC')"]
+        required: true
     - click_on:
       - value: Submit
         selector: input[type='submit'][value='Submit']

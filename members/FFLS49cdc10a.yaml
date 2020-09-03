@@ -106,6 +106,12 @@ contact_form:
         selector: "#edit-message"
         value: $MESSAGE
         required: true
+    - javascript:
+      - name: char replace
+        values: ["$MESSAGE"]
+        selectors: ["#edit-message"]
+        commands: ["elements[0].value = values[0].replace(/(CC:)/g,'CC')"]
+        required: true
     - click_on:
       - value: Submit
         selector: "#edit-actions-submit"

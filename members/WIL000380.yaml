@@ -1,7 +1,6 @@
 bioguide: WIL000380
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/61/kerkman/contact-me/"
     - fill_in:
@@ -10,20 +9,12 @@ contact_form:
           value: $NAME_FULL
           required: true
         - name: Address
-          selector: div .address input
-          value: $ADDRESS_STREET
-          required: true
-        - name: City
-          selector: div .city input
-          value: $ADDRESS_CITY
-          required: true
-        - name: Zip
-          selector: div .zip input
-          value: $ADDRESS_ZIP5
+          selector: div.address textarea
+          value: $ADDRESS_FULL
           required: true
         - name: phone
           selector: div .phonenumber input
-          value: $PHONE
+          value: $PHONE_PARENTHESES
           required: true
         - name: email
           selector: div .email input

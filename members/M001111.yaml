@@ -118,7 +118,7 @@ contact_form:
         - name: Message
           selectors: [ "#field_5722C424-8601-4ABF-A8D1-AC11B9C45F87" ]
           values: [ "$MESSAGE" ]
-          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
+          commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/[#]/g,'')"]
           required: true
     - click_on:
       - selector: form.uniForm input[type=submit]

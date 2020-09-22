@@ -107,7 +107,7 @@ contact_form:
       - selector: input[type='submit'][value='Submit']
     - click_on:
       - value: Submit
-        selector: input[type='submit'][value='Submit']
+        selector: input[type='submit'][value='Submit'] 
     - wait:
       - value: 8
   success:

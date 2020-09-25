@@ -109,7 +109,7 @@ contact_form:
       - value: Submit
         selector: input[type='submit'][value='Submit'] 
     - wait:
-      - value: 8
+      - value: 10
   success:
     body:
       contains: Your message to Senator Cornyn's office has been submitted

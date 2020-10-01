@@ -34,7 +34,7 @@ contact_form:
         required: true
       - name: phone
         selector: "#input-F80AC622-4040-F985-52CD-2ED21C242578"
-        value: $PHONE
+        value: $PHONE_HYPHENS
         required: true
       - name: email
         selector: "#email"

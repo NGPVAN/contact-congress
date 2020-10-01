@@ -1,7 +1,6 @@
 bioguide: state_tx_gov_greg_abbott
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://gov.texas.gov/apps/contact/opinion.aspx"
     - find:
@@ -9,11 +8,11 @@ contact_form:
     - click_on:
         - selector: input#ctl00_ContentPlaceHolder1_RadioButtonList1_0
     - fill_in:
-        - name: First
+        - name: First Name
           selector: input#ctl00_ContentPlaceHolder1_txtFirst
           value: $NAME_FIRST
           required: true
-        - name: Last
+        - name: Last Name
           selector: input#ctl00_ContentPlaceHolder1_txtLast
           value: $NAME_LAST
           required: true
@@ -33,10 +32,14 @@ contact_form:
           selector: input#ctl00_ContentPlaceHolder1_txtEmail
           value: $EMAIL
           required: true
-        - name: Email2
+        - name: confirm email
           selector: input#ctl00_ContentPlaceHolder1_txtEmail2
           value: $EMAIL
           required: true
+        - name: phone
+          selector: input#ctl00_ContentPlaceHolder1_txtPhone
+          value: $PHONE
+          required: false
         - name: Message
           selector: textarea#ctl00_ContentPlaceHolder1_txtMessage
           value: $MESSAGE
@@ -60,23 +63,21 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Texas Tax Relief - Franchise Tax Reduction: "114"
-            Texas Tax Relief - Property Tax Cut: "115"
-            Texas Tax Relief - Refund: "116"
-            Texas Tax Relief - Sales Tax Cut: "117"
-            Texas Tax Relief - Other: "118"
-            Education - Public: "96"
-            Environment: "100"
-            Gun Control: "113"
-            Immigration: "98"
-            Renewable Energy: "90"
-            Transportation: "101"
-            Water Issues: "105"
-            Other: "74"
+            Education - Public: Education - Public
+            Property Tax: Property Tax
+            Environment: Environment
+            Insurance: Insurance
+            Immigration: Immigration
+            Renewable Energy: Renewable Energy
+            Gun Control: Gun Control
+            Transportation: Transportation
+            Water Issues: Water Issues
+            Coronavirus: Coronavirus
+            Other: Other
+    - find:
+        - selector: input#ctl00_ContentPlaceHolder1_Button1     
     - click_on:
         - selector: input#ctl00_ContentPlaceHolder1_Button1
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank You for Contacting"

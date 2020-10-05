@@ -1,15 +1,14 @@
 bioguide: H001042
 contact_form:
   method: POST
-  action: ""
   steps:
     - visit: "https://www.hirono.senate.gov/share-your-opinion"
     - fill_in:
-      - name: firstname
+      - name: First Name
         selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
         value: $NAME_FIRST
         required: true
-      - name: lastname
+      - name: Last Name
         selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
         value: $NAME_LAST
         required: true
@@ -53,7 +52,7 @@ contact_form:
       - name: char replace
         values: ["$MESSAGE"]
         selectors: ["textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/\\(Bt\\)/g, '');}"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
         required: true
     - select:
       - name: Your Prefix

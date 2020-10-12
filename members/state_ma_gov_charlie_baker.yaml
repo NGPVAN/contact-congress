@@ -3,6 +3,8 @@ contact_form:
   method: post
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
+    - find:
+      - selector: "#field90831234"
     - select:
       - name: Comment select
         selector: "#field90831234"
@@ -60,6 +62,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: input#fsSubmitButton1744869
+    - find:
+        - selector: "#fsForm1744869 div p"
   success:
     body:
       contains: "The form was submitted successfully"

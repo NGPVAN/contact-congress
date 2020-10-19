@@ -232,6 +232,12 @@ contact_form:
           selector: "#input-EAEF05AF-98D2-6504-C198-007A3E8A4323"
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: phone
+          selectors: ["#input-EAD2D9EC-F044-C4D6-489C-84E3A7006FE9"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
+          required: true
     - find:
         - selector: "#senator-response"
     - click_on:

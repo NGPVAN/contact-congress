@@ -1,0 +1,72 @@
+bioguide: SGAG22bc8938
+contact_form:
+  method: post
+  steps:
+    - visit: "https://georgia.gov/contact-georgiagov"
+    - find:
+        - selector: "#edit-please-select-which-agency-your-request-relates-to"
+    - select:
+        - name: Agency
+          selector: "#edit-please-select-which-agency-your-request-relates-to"
+          value: Legislature
+          required: true
+    - find:
+        - selector: "#edit-please-provide-a-brief-description-about-your-request-concern"
+    - fill_in:
+        - name: message
+          selector: "#edit-please-provide-a-brief-description-about-your-request-concern"
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 500
+        - name: Your Prefix
+          selector: "#edit-prefix"
+          value: $NAME_PREFIX
+          required: false
+        - name: First Name
+          selector: "#edit-first-name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#edit-last-name"
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: "#edit-address-line-1"
+          value: $ADDRESS_STREET
+          required: false
+        - name: Address 2
+          selector: "#edit-address-line-2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "#edit-city"
+          value: $ADDRESS_CITY
+          required: false
+        - name: zip
+          selector: "#edit-zip-code"
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: phone
+          selector: "#edit-cell-phone"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "#edit-email-mail-1"
+          value: $EMAIL
+          required: true
+        - name: confirm email
+          selector: "#edit-email-mail-2"
+          value: $EMAIL
+          required: true
+    - find:
+        - selector: "#edit-writing-on-behalf-who-radios-no"
+    - click_on:
+        - value: Writing on behalf of other org
+          selector: "#edit-writing-on-behalf-who-radios-no"
+    - click_on:
+        - value: Submit
+          selector: "#edit-actions-01-submit"
+  success:
+    body:
+      contains: Your message has been received

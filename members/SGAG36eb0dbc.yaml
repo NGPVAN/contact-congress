@@ -62,8 +62,7 @@ contact_form:
     - javascript:
         - name: message
           selectors: [ "#edit-please-provide-a-brief-description-about-your-request-concern"]
-          values: [ "$MESSAGE" ]
-          commands: [ "elements[0].value = values[0].replace(/\\b\\d{5}(-\\d+})?\\b/g, '')" ]
+          commands: [ "elements[0].value = elements[0].value.replace(/\\b\\d{5}(-\\d+)?\\b/g, '')" ]
           required: true
     - find:
         - selector: "#edit-writing-on-behalf-who-radios-no"

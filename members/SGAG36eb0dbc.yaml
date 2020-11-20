@@ -59,6 +59,11 @@ contact_form:
           selector: "#edit-email-mail-2"
           value: $EMAIL
           required: true
+    - javascript:
+        - name: message
+          selectors: [ "#edit-please-provide-a-brief-description-about-your-request-concern"]
+          commands: [ "elements[0].value = elements[0].value.replace(/\\b\\d{5}(-\\d+)?\\b/g, '')" ]
+          required: true
     - find:
         - selector: "#edit-writing-on-behalf-who-radios-no"
     - click_on:

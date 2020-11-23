@@ -1,7 +1,6 @@
 bioguide: WIL000319
 contact_form:
   method: post
-  action: Contact.aspx
   steps:
     - visit: "http://legis.wisconsin.gov/senate/08/darling/contact/"
     - fill_in:
@@ -35,7 +34,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: div#contour_form_38b8736e02df466a93320efb34076ca1 input[type='submit'][value='Submit']
+          selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

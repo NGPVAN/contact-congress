@@ -1,7 +1,6 @@
 bioguide: WIL000560
 contact_form:
   method: post
-  action: Contact.aspx
   steps:
     - visit: "http://legis.wisconsin.gov/senate/13/fitzgerald/contact/"
     - fill_in:
@@ -17,9 +16,17 @@ contact_form:
           selector: div.address input
           value: $ADDRESS_STREET
           required: true
-        - name: citystatezip
-          selector: div.citystatezipcode input
-          value: $ADDRESS_CITY_STATE_ZIP
+        - name: city
+          selector: div.city input
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: div.state input
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip
+          selector: div.zip input
+          value: $ADDRESS_ZIP5
           required: true
         - name: phone
           selector: div.phone input

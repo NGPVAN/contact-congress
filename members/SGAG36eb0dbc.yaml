@@ -18,7 +18,7 @@ contact_form:
           value: $MESSAGE
           required: true
           options:
-            max_length: 500
+            max_length: 480 #lowered this to prevent final chars for getting truncated
         - name: Your Prefix
           selector: "#edit-prefix"
           value: $NAME_PREFIX

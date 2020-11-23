@@ -31,7 +31,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: "#contour_form_c9bef31a5db14e2081f5d95b910fe9c2  form div  div.contourNavigation.row-fluid  div  input"
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 8
   success:

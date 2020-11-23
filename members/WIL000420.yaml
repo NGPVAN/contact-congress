@@ -1,7 +1,6 @@
 bioguide: WIL000420
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/20/sinicki/contact/contact-form/"
     - fill_in:
@@ -34,7 +33,7 @@ contact_form:
           value: $ADDRESS_CITY_STATE_ZIP
           required: false
     - click_on:
-        - selector: input[name='submitbtn']
+        - selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

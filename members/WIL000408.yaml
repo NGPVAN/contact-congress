@@ -1,7 +1,6 @@
 bioguide: WIL000408
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/80/pope/contact/"
     - fill_in:
@@ -31,7 +30,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: div.contourNavigation div.col-md-12 input.btn
+          selector: input[type='submit'][value='Submit']
     - find:
         - selector: p.contourMessageOnSubmit
   success:

@@ -2,61 +2,55 @@ bioguide: C001095
 contact_form:
   method: post
   steps:
-    - visit: "http://www.cotton.senate.gov/?p=contact"
+    - visit: "https://www.cotton.senate.gov/contact/contact-tom"
     - fill_in:
         - name: First Name
-          selector: "#firstName"
+          selector: "#input-B03E05C4-4040-F985-52CD-9CA44623DE5E"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#lastName"
+          selector: "#input-B03E04BD-4040-F985-52CD-48E090E769DA"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: "#Address1"
+          selector: "#input-B03E05F1-4040-F985-52CD-A580E72A7D41"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: "#Address2"
+          selector: "#input-B03E0518-4040-F985-52CD-CF33EF97DA3A"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#city"
+          selector: "#input-B03E0595-4040-F985-52CD-C572364023FE"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#zip"
+          selector: "#input-B03E04CC-4040-F985-52CD-4DDB58DA474A"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#phone"
+          selector: "#input-B03E046E-4040-F985-52CD-A2F10450D58D"
           value: $PHONE
           required: true
         - name: email
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: email2
-          selector: "#vemail"
+        - name: confirm email
+          selector: "#input-B03E05A4-4040-F985-52CD-730C08912F4F"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#messageSubject"
+          selector: "#input-BC4D4A76-EAA0-9925-E36C-A9DD5D8581F2"
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#MessageBody
+          selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
           value: $MESSAGE
-          required: true
-    - javascript:
-        - name: Message
-          selectors: [ "textarea#MessageBody" ]
-          values: [ "$MESSAGE" ]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
-          selector: "#Prefix"
+          selector: "#input-B03E0527-4040-F985-52CD-C0DD6BEF325F"
           value: $NAME_PREFIX
           required: true
           options:
@@ -85,7 +79,7 @@ contact_form:
             Sister: Sister
             Technical Sergeant: Technical Sergeant
         - name: topic
-          selector: "form.-validate-form.form-contact[name='thisForm'] select[name='Subject']"
+          selector: "#input-B03E04DB-4040-F985-52CD-18F332336F99"
           value: $TOPIC
           required: true
           options:
@@ -130,7 +124,9 @@ contact_form:
             Women's Issues: Women's Issues
     - click_on:
         - value: Submit
-          selector: "input[name='Submit']"
+          selector: button.btn
+    - find:
+        - selector: "#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C"
   success:
     body:
-      contains: "Thank you! Your message has been sent."
+      contains: "Your message has been sent."

@@ -1,7 +1,6 @@
 bioguide: WIL000504
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/39/born/contact/"
     - fill_in:
@@ -26,8 +25,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: div#contour_form_f3de8afdc0ef44a3859cbc7b31b40632 div.contourNavigation input[type=submit]
-    - wait:
+        - selector: input[type='submit'][value='Submit']
         - value: 10
   success:
     headers:

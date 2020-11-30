@@ -1,7 +1,6 @@
 bioguide: WIL000571
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/87/edming/contact-me/"
     - select:
@@ -37,7 +36,7 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: input[name='submitbtn']
+        - selector: input[type='submit'][value='Submit']
   success:
     headers:
       status: 200

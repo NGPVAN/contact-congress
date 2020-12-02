@@ -201,7 +201,7 @@ contact_form:
     - find:
       - selector: div.rn_AskQuestion div.rn_Padding
     - wait:
-      - value: 5
+      - value: 8
   success:
     headers:
       status: 200

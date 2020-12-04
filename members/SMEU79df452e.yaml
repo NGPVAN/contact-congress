@@ -1,8 +1,8 @@
-bioguide: MEL000393
+bioguide: SMEU79df452e
 contact_form:
   method: post
   steps:
-    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=BillDiamond"
+    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=NedClaxton"
     - find:
       - selector: "field_2_2 div[class*='text'] input"    
     - fill_in:

@@ -1,8 +1,8 @@
-bioguide: MEL000393
+bioguide: SMEU33572_659686
 contact_form:
   method: post
   steps:
-    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=BillDiamond"
+    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=AnneCarney"
     - find:
       - selector: "field_2_2 div[class*='text'] input"    
     - fill_in:

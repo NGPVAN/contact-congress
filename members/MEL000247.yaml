@@ -1,33 +1,40 @@
 bioguide: MEL000247
 contact_form:
   method: post
-  action: "http://www.mainesenate.org/senator-contact/?senator_name=Nate+Libby#gf_2"
   steps:
-    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=Nate%20Libby"
+    - visit: "http://www.mainesenate.org/senator-contact/?senator_name=NateLibby"
+    - find:
+      - selector: "field_2_2 div[class*='text'] input"    
     - fill_in:
-        - name: name
-          selector: "#input_2_2"
+        - name: Full Name
+          selector: "#field_2_2 div[class*='text'] input"
           value: $NAME_FULL
-          required: true
-        - name: email
-          selector: "#input_2_3"
+          required: false
+        - name: Email
+          selector: li[class*='required'] div[class*='email'] input
           value: $EMAIL
           required: true
-        - name: city
-          selector: input#input_2_7
+        - name: Address
+          selector: "#field_2_8 div[class*='text'] input"
+          value: $ADDRESS_FULL
+          required: false
+        - name: City
+          selector: li[class*='required'] div[class*='text'] input
           value: $ADDRESS_CITY
           required: true
+        - name: Phone
+          selector: div[class*='phone'] input
+          value: $PHONE_PARENTHESES
+          required: false
         - name: message
-          selector: "#input_2_5"
+          selector: div[class*='textarea'] textarea
           value: $MESSAGE
           required: true
     - click_on:
         - value: Submit
-          selector: "#gform_submit_button_2"
+          selector: input[type='submit'][value='Submit']
     - find:
-        - selector: "#gform_confirmation_message_2"
+        - selector: "#gform_confirmation_wrapper_2 div[class*='confirmation_message_2']"
   success:
-    headers:
-      status: 200
     body:
-      contains: Thanks for contacting us
+      contains: "Thanks for contacting us!"

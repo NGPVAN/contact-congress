@@ -45,7 +45,7 @@ contact_form:
           required: true
         - name: Phone
           selector: input#field49751979
-          value: $PHONE
+          value: $PHONE_PARENTHESES
           required: true
         - name: Email
           selector: input#field49752019

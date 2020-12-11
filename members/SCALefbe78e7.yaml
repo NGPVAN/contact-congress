@@ -39,7 +39,7 @@ contact_form:
           options:
             max_length: 2000
           required: true
-   - javascript:
+    - javascript:
         - name: accent-replace
           values: ["$NAME_FIRST", "$NAME_LAST"]
           selectors: ["#txtFirstName", "#txtLastName"]

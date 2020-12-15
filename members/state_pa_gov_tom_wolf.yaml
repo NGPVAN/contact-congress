@@ -1,6 +1,7 @@
 bioguide: state_pa_gov_tom_wolf
 contact_form:
   method: post
+  usechrome: true
   steps:
     - visit: "https://www.governor.pa.gov/contact/#OnlineForm"
     - find:
@@ -8,7 +9,9 @@ contact_form:
     - click_on:
       - selector: "#newsletterModal2 button"
     - find:
-      - selector: "#newsletterModal2 button"
+      - selector: "#nf-form-421-cont"
+    - find:
+      - selector: "#nf-field-3191"
     - fill_in:
         - name: First Name
           selector: "#nf-field-3191"

@@ -9,8 +9,6 @@ contact_form:
     - click_on:
       - selector: "#newsletterModal2 button"
     - find:
-      - selector: "#nf-form-421-cont"
-    - find:
       - selector: "#nf-field-3191"
     - fill_in:
         - name: First Name

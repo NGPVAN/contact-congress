@@ -48,7 +48,6 @@ contact_form:
     - javascript:
         - name: subject truncation
           selectors: [ "input[name='subject']"]
-          values: [ "$SUBJECT" ]
           commands: [ "elements[0].value = elements[0].value.length > 44 ? elements[0].value.substring(0,41) + '...' : elements[0].value" ]
           required: true
     - select:
@@ -78,3 +77,5 @@ contact_form:
       status: 200
     body:
       contains:  I would like to personally thank you for contacting me
+
+

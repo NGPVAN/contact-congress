@@ -45,6 +45,11 @@ contact_form:
           selector: "textarea[name='message']"
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: subject truncation
+          selectors: [ "input[name='subject']"]
+          commands: [ "elements[0].value = elements[0].value.length > 44 ? elements[0].value.substring(0,41) + '...' : elements[0].value" ]
+          required: true
     - select:
         - name: Your Prefix
           selector: "select[name='prefix']"

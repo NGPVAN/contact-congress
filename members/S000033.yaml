@@ -131,7 +131,7 @@ contact_form:
         value: "$EMAIL"
         required: true
         options:
-          max_length: 40
+          max_length: 40 
       - name: message
         selector: "#wpcf7-f8521-p20941-o1 textarea[name='your-message']"
         value: "$MESSAGE"

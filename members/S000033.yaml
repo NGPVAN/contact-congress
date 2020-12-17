@@ -142,7 +142,7 @@ contact_form:
       - value: Submit
         selector: input[type='submit'][value='Send']
     - wait:
-      - value: 3
+      - value: 2
     - find:
       - selector: "#wpcf7-f8521-p20941-o1 div.wpcf7-response-output"
   success:

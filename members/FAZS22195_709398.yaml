@@ -1,0 +1,136 @@
+bioguide: FAZS22195_709398
+contact_form:
+  method: POST
+  steps:
+    - visit: "https://www.kelly.senate.gov/"
+    - wait:
+      - value: 3
+    - find:
+      - value: select[name='Prefix']
+    - select:
+      - name: Your Prefix
+        selector: select[name='Prefix']
+        value: "$NAME_PREFIX"
+        required: true
+        options:
+          "Mr.": "Mr."
+          "Ms.": "Ms."
+          "Mrs.": "Mrs."
+          "Miss": "Miss"
+          "Mr. and Mrs.": "Mr. and Mrs."
+          "Mx.": "Mx."
+          "Dr.": "Dr."
+    - find:
+      - selector: input[name='FirstName']
+    - fill_in:
+      - name: First Name
+        selector: input[name='FirstName']
+        value: "$NAME_FIRST"
+        required: true
+        options:
+          max_length: 40
+      - name: Last Name
+        selector: input[name='LastName']
+        value: "$NAME_LAST"
+        required: true
+        options:
+          max_length: 40
+      - name: Street Address
+        selector: input[name='Address1']
+        value: "$ADDRESS_STREET"
+        required: true
+        options:
+          max_length: 40
+      - name: Street Address2
+        selector: input[name='Address2']
+        value: "$ADDRESS_STREET_2"
+        required: false
+        options:
+          max_length: 40
+      - name: City
+        selector: input[name='City']
+        value: "$ADDRESS_CITY"
+        required: true
+        options:
+          max_length: 40
+      - name: zipCode
+        selector: input[name='ZipCode']
+        value: "$ADDRESS_ZIP5"
+        required: true
+      - name: phone number
+        selector: input[name='Telephone']
+        value: "$PHONE"
+        required: false
+        options:
+          max_length: 40
+      - name: email 
+        selector: input[name='your-email']
+        value: "$EMAIL"
+        required: true
+        options:
+          max_length: 40 
+      - name: Subject
+        selector: input[name='subject']
+        value: "$SUBJECT"
+        required: true
+        options:
+          max_length: 40 
+      - name: message
+        selector: textarea[name='your-message']
+        value: "$MESSAGE"
+        required: true
+    - select:
+      - name: Topic
+        selector: select[name='Topic']
+        value: "$TOPIC"
+        options:
+          Agriculture: Agriculture
+          Animal Rights: Animal Rights
+          Appropriations: Appropriations
+          Arts & Humanities: Arts & Humanities
+          Banking & Financial Services: Banking & Financial Services
+          Budget: Budget
+          Business and Commerce: Business and Commerce
+          Campaign/Election Reform: Campaign/Election Reform
+          Consumer Protection: Consumer Protection
+          Children: Children
+          Defense and Military: Defense and Military
+          Economic Development: Economic Development
+          Education: Education
+          Energy: Energy
+          Environment: Environment
+          Ethics Reform: Ethics Reform
+          Foreign Relations: Foreign Relations
+          Guns: Guns
+          Healthcare: Healthcare
+          Homeland Security: Homeland Security
+          Housing and Urban Affairs: Housing and Urban Affairs
+          Immigration: Immigration
+          Insurance Problems: Insurance Problems
+          Interior: Interior
+          Intelligence: Intelligence
+          Judiciary: Judiciary
+          Labor: Labor
+          Nutrition: Nutrition
+          Postal Service: Postal Service
+          Science and Innovation: Science and Innovation
+          Seniors: Seniors
+          Social Issues: Social Issues
+          Taxes: Taxes
+          Technology and Telecom: Technology and Telecom
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Women and Children: Women and Children
+    - click_on:
+      - value: Submit
+        selector: input[type='submit'][value='Send']
+    - wait:
+      - value: 15
+    - javascript:
+      - name: success message
+        commands: ["if(document.body.innerHTML.indexOf('Thank you for your message. It has been sent.') >= 0 ) { var msg = document.createElement('div'); msg.innerText='Javascript success message reached'; document.body.appendChild(msg); }"]
+        required: true
+  success:
+    body:
+      contains: "Javascript success message reached"

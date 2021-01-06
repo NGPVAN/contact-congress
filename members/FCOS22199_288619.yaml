@@ -1,9 +1,9 @@
-#US Senator Mark Kelly
-bioguide: FAZS22195_709398
+# US Senator John Hickenlooper
+bioguide: FCOS22199_288619
 contact_form:
   method: POST
   steps:
-    - visit: "https://www.kelly.senate.gov/"
+    - visit: "https://www.hickenlooper.senate.gov/"
     - wait:
       - value: 3
     - find:

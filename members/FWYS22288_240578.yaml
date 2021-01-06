@@ -1,9 +1,9 @@
-#US Senator Mark Kelly
-bioguide: FAZS22195_709398
+#US Senator Cynthia Lummis
+bioguide: FWYS22288_240578
 contact_form:
   method: POST
   steps:
-    - visit: "https://www.kelly.senate.gov/"
+    - visit: "https://www.lummis.senate.gov/"
     - wait:
       - value: 3
     - find:
@@ -70,12 +70,6 @@ contact_form:
         required: true
         options:
           max_length: 40 
-      - name: Subject
-        selector: input[name='subject']
-        value: "$SUBJECT"
-        required: true
-        options:
-          max_length: 40 
       - name: message
         selector: textarea[name='your-message']
         value: "$MESSAGE"
@@ -86,32 +80,32 @@ contact_form:
         value: "$TOPIC"
         options:
           Agriculture: Agriculture
-          Animal Rights: Animal Rights
-          Appropriations: Appropriations
-          Arts & Humanities: Arts & Humanities
-          Banking & Financial Services: Banking & Financial Services
-          Budget: Budget
-          Business and Commerce: Business and Commerce
-          Campaign/Election Reform: Campaign/Election Reform
-          Consumer Protection: Consumer Protection
-          Children: Children
+          Animals: Animals
+          Arts and Humanities: Arts and Humanities
+          Civil Rights: Civil Rights
+          Commerce: Commerce
+          Congress: Congress
+          Crime and law enforcement: Crime and law enforcement
           Defense and Military: Defense and Military
-          Economic Development: Economic Development
+          Economy: Economy
           Education: Education
           Energy: Energy
+          Emergency Management: Emergency Management
           Environment: Environment
-          Ethics Reform: Ethics Reform
-          Foreign Relations: Foreign Relations
-          Guns: Guns
-          Healthcare: Healthcare
+          Families: Families
+          Finance: Finance
+          Government: Government
+          Health: Health
           Homeland Security: Homeland Security
-          Housing and Urban Affairs: Housing and Urban Affairs
+          Housing: Housing
           Immigration: Immigration
-          Insurance Problems: Insurance Problems
-          Interior: Interior
-          Intelligence: Intelligence
-          Judiciary: Judiciary
+          International Affairs: International Affairs
           Labor: Labor
+          Law: Law
+          Public Lands: Public Lands
+          Native Americans: Native Americans
+          Social science and history: Social science and history
+          Sports and recreation: Sports and recreation
           Nutrition: Nutrition
           Postal Service: Postal Service
           Science and Innovation: Science and Innovation

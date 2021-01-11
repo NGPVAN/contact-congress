@@ -56,6 +56,8 @@ contact_form:
           value: Legislation
           required: true
     - click_on:
+        - value: Newsletter
+          selector: "#ContactForm_ContactFormConfig_SenNetLists_0__IsChecked"  #dont subscribe to newsletter
         - value: Submit
           selector: "#btnSubmit"
   success:

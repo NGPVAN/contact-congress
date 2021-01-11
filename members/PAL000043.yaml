@@ -1,67 +1,141 @@
 bioguide: PAL000043
 contact_form:
   method: post
-  action:
   steps:
-    - visit: "http://wpcontact.pasenategop.com/contact.aspx?websiteid=39"
-    - wait:
-      - value: 1
+    - visit: "https://contact1.pasenategop.com/contact/39"
+    - find:
+        - selector: "#ContactForm_FirstName"
     - fill_in:
-        - name: fname
-          selector: "input[id='txtFirstname']"
+        - name: First Name
+          selector: "#ContactForm_FirstName"
           value: $NAME_FIRST
           required: true
-        - name: lname
-          selector: "#txtLastname"
+          options:
+            max_length: 30
+        - name: Last Name
+          selector: "#ContactForm_LastName"
           value: $NAME_LAST
           required: true
+          options:
+            max_length: 50
         - name: email
-          selector: "#txtEmail"
+          selector: "#ContactForm_EmailAddress"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#txtPhone"
-          value: $PHONE_PARENTHESES
+          selector: "#ContactForm_HomePhone"
+          value: $PHONE
           required: true
         - name: address
-          selector: "#txtAddress1"
+          selector: "#ContactForm_Address1"
           value: $ADDRESS_STREET
           required: true
+          options:
+            max_length: 100
         - name: address2
-          selector: "#txtAddress2"
+          selector: "#ContactForm_Address2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#txtCity"
+          selector: "#ContactForm_City"
           value: $ADDRESS_CITY
           required: true
+          options:
+            max_length: 40
         - name: zip
-          selector: "#txtZip"
+          selector: "#ContactForm_ZipCode"
           value: $ADDRESS_ZIP5
           required: true
-        - name: subject
-          selector: "#txtSubject"
-          value: $SUBJECT
-          required: true
         - name: message
-          selector: "#txtComments"
+          selector: "#ContactForm_Comments"
           value: $MESSAGE
           required: true
-    - find:
-        - selector: div#ddlIssue a#ddlIssue_Arrow
+    - select:
+        - name: Topic
+          selector: "#issueselect"
+          value: Contact Senator Ward
+          required: true
+        - name: County
+          selector: "#countyname"
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Adams: Adams
+            Allegheny: Allegheny
+            Armstrong: Armstrong
+            Beaver: Beaver
+            Bedford: Bedford
+            Berks: Berks
+            Blair: Blair
+            Bradford: Bradford
+            Bucks: Bucks
+            Butler: Butler
+            Cambria: Cambria
+            Cameron: Cameron
+            Carbon: Carbon
+            Centre: Centre
+            Chester: Chester
+            Clarion: Clarion
+            Clearfield: Clearfield
+            Clinton: Clinton
+            Columbia: Columbia
+            Crawford: Crawford
+            Cumberland: Cumberland
+            Dauphin: Dauphin
+            Delaware: Delaware
+            Elk: Elk
+            Erie: Erie
+            Fayette: Fayette
+            Forest: Forest
+            Franklin: Franklin
+            Fulton: Fulton
+            Greene: Greene
+            Huntingdon: Huntingdon
+            Indiana: Indiana
+            Jefferson: Jefferson
+            Juniata: Juniata
+            Lackawanna: Lackawanna
+            Lancaster: Lancaster
+            Lawrence: Lawrence
+            Lebanon: Lebanon 
+            Lehigh: Lehigh 
+            Luzerne: Luzerne 
+            Lycoming: Lycoming 
+            McKean: McKean 
+            Mercer: Mercer 
+            Mifflin: Mifflin 
+            Monroe: Monroe 
+            Montgomery: Montgomery 
+            Montour: Montour 
+            Northampton: Northampton 
+            Northumberland: Northumberland
+            Perry: Perry 
+            Philadelphia: Philadelphia
+            Pike: Pike 
+            Potter: Potter 
+            Schuylkill: Schuylkill 
+            Snyder: Snyder 
+            Somerset: Somerset 
+            Sullivan: Sullivan 
+            Susquehanna: Susquehanna 
+            Tioga: Tioga 
+            Union: Union 
+            Venango: Venango
+            Warren: Warren 
+            Washington: Washington 
+            Wayne: Wayne 
+            Westmoreland: Westmoreland 
+            Wyoming: Wyoming 
+            York: York
+        - name: Municipality
+          selector: "#munc"
+          value: Unknown
+          required: true
     - click_on:
-        - selector: div#ddlIssue a#ddlIssue_Arrow
-    - wait:
-        - value: 3
-    - find:
-        - selector: div#ddlIssue_DropDown li:nth-child(2)
-    - click_on:
-        - selector: div#ddlIssue_DropDown li:nth-child(2)
-    - wait:
-      - value: 1
-    - click_on:
+        - value: Newsletter
+          selector: "#ContactForm_ContactFormConfig_SenNetLists_0__IsChecked"  #dont subscribe to newsletter
         - value: Submit
-          selector: "#bSubmit_input"
+          selector: "#btnSubmit"
   success:
     headers:
       status: 200

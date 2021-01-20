@@ -1,4 +1,4 @@
-bioguide: federal_us_firstlady_melania_trump
+bioguide: federal_us_firstlady_jill_biden
 contact_form:
   method: post
   usephantomjslogging: true
@@ -129,9 +129,9 @@ contact_form:
     - click_on:
       - selector: input[id='Contact.Contact_Us_Email_Opt_In__c']
     - find:
-      - selector: "#btnsubmit"
+      - selector: input[type='submit'][value='Send']
     - click_on:
-      - selector: "#btnsubmit"
+      - selector: input[type='submit'][value='Send']
     - wait:
       - value: 3
   success:

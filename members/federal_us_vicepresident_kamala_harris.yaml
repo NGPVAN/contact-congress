@@ -1,4 +1,4 @@
-bioguide: P000587
+bioguide: federal_us_vicepresident_kamala_harris
 contact_form:
   method: post
   usephantomjslogging: true
@@ -23,11 +23,11 @@ contact_form:
           Mrs.: Mrs.
           Dr.: Dr.
     - fill_in:
-      - name: first
+      - name: First Name
         selector: input[id='Contact.FirstName']
         value: $NAME_FIRST
         required: True
-      - name: last
+      - name: Last Name
         selector: input[id='Contact.LastName']
         value: $NAME_LAST
         required: True
@@ -129,9 +129,9 @@ contact_form:
     - click_on:
       - selector: input[id='Contact.Contact_Us_Email_Opt_In__c']
     - find:
-      - selector: "#btnsubmit"
+      - selector: input[type='submit'][value='Send']
     - click_on:
-      - selector: "#btnsubmit"
+      - selector: input[type='submit'][value='Send']
     - wait:
       - value: 3
   success:

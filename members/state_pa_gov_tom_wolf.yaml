@@ -1,7 +1,6 @@
 bioguide: state_pa_gov_tom_wolf
 contact_form:
   method: post
-  usechrome: true
   steps:
     - visit: "https://www.governor.pa.gov/contact/#OnlineForm"
     - find:
@@ -9,45 +8,45 @@ contact_form:
     - click_on:
       - selector: "#newsletterModal2 button"
     - find:
-      - selector: "#nf-field-3191"
+      - selector: div.nf-form-content input[type='text'][placeholder='First Name']
     - fill_in:
         - name: First Name
-          selector: "#nf-field-3191"
+          selector: div.nf-form-content input[type='text'][placeholder='First Name']
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#nf-field-3201"
+          selector: div.nf-form-content input[type='text'][placeholder='Last Name']
           value: $NAME_LAST
           required: true
         - name: street
-          selector: "#nf-field-3221"
+          selector: div.nf-form-content input[type='text'][placeholder='Address']
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#nf-field-3231"
+          selector: div.nf-form-content input[type='text'][placeholder='City']
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#nf-field-3261"
+          selector: div.nf-form-content input[type='text'][placeholder='Zip Code']
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: "#nf-field-3271"
+          selector: div.nf-form-content input[type='email'][placeholder='Email']
           value: $EMAIL
           required: true
+        - name: Phone
+          selector: "#nf-field-7171" 
+          value: $PHONE
+          required: true
         - name: message
-          selector: "#nf-field-3321"
+          selector: div.nf-form-content textarea
           value: $MESSAGE
           required: true
           options:
             max_length: 1000
-        - name: Phone
-          selector: "#nf-field-3281"
-          value: $PHONE
-          required: true
     - select:
         - name: Your Prefix
-          selector: select#nf-field-3181
+          selector: "#nf-field-7071"
           value: $NAME_PREFIX
           options:
             Mr.: Mr.
@@ -60,7 +59,7 @@ contact_form:
             Rev.: Rev.
             Other: Other
         - name: county
-          selector: "#nf-field-3241"
+          selector: "#nf-field-7141"
           value: $ADDRESS_COUNTY
           required: true
           options:
@@ -132,7 +131,7 @@ contact_form:
             Wyoming: Wyoming
             Yor: Yor
         - name: topic
-          selector: "#nf-field-3311"
+          selector: "#nf-field-7201"
           value: $TOPIC
           required: true
           options:
@@ -176,7 +175,7 @@ contact_form:
             Youth Educational Resources: Youth Educational Resources
     - click_on:
         - value: Submit
-          selector: "#nf-field-3331"
+          selector: input[type='button'][value='Submit']
     - find:
         - selector: div.nf-response-msg h3
   success:

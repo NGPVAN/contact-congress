@@ -1,7 +1,6 @@
 bioguide: SNDL63_579200
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.governor.nd.gov/contact-us"
     - wait:
@@ -35,7 +34,11 @@ contact_form:
         - value: Submit
           selector: "#edit-submit"
     - wait:
-       - value: 1
+        - value: 5
+    - find:
+       - selector: div.paragraph--type--bp-columns__1col div p
+    - find:
+       - selector: div.paragraph--type--bp-columns__1col div p
   success:
     headers:
       status: 200

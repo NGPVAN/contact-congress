@@ -5,109 +5,46 @@ contact_form:
   steps:
     - visit: "http://www.ohiohouse.gov/brigid-kelly/contact"
     - fill_in:
-        - name: tbxFirstName
-          selector: "#tbxFirstName"
+        - name: First Name
+          selector: "#first-name"
           value: $NAME_FIRST
           required: true
-        - name: tbxLastName
-          selector: "#tbxLastName"
+        - name: Last Name
+          selector: "#last-name"
           value: $NAME_LAST
           required: true
-        - name: tbxEmail
-          selector: "#tbxEmail"
+        - name: Email
+          selector: "#email"
           value: $EMAIL
           required: true
-        - name: tbxAddress
-          selector: "#tbxAddress"
+        - name: Address
+          selector: "#address-line-1"
           value: $ADDRESS_STREET
           required: true
-        - name: tbxCity
-          selector: "#tbxCity"
+        - name: City
+          selector: "#city"
           value: $ADDRESS_CITY
           required: true
-        - name: tbxZipCode
-          selector: "#tbxZipCode"
+        - name: ZipCode
+          selector: "#zip"
           value: $ADDRESS_ZIP5
           required: true
-        - name: tbxAreaCode
-          required: true
-          selector: "#tbxAreaCode"
-          value: "$PHONE_AREA_CODE"
-        - name: tbxPrefix
-          required: true
-          selector: "#tbxPrefix"
-          value: "$PHONE_EXCHANGE_CODE"
-        - name: tbxLineNumber
-          required: true
-          selector: "#tbxLineNumber"
-          value: "$PHONE_SUBSCRIBER_NUMBER"
-        - name: tbxSubject
-          selector: "#tbxSubject"
+        - name: Phone
+          selector: "#phone"
+          value: "$PHONE_PARENTHESES"
+          required: false
+        - name: Subject
+          selector: "#subject"
           value: $SUBJECT
           required: true
-        - name: tbxMessage
-          selector: "#tbxMessage"
+        - name: Message
+          selector: "#message"
           value: $MESSAGE
           required: true
-    - select:
-        - name: ddlState
-          selector: "#ddlState"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
           options:
-            AL: "AL"
-            AK: "AK"
-            AZ: "AZ"
-            AR: "AR"
-            CA: "CA"
-            CO: "CO"
-            CT: "CT"
-            DE: "DE"
-            DC: "DC"
-            FL: "FL"
-            GA: "GA"
-            HI: "HI"
-            ID: "ID"
-            IL: "IL"
-            IN: "IN"
-            IA: "IA"
-            KS: "KS"
-            KY: "KY"
-            LA: "LA"
-            ME: "ME"
-            MD: "MD"
-            MA: "MA"
-            MI: "MI"
-            MN: "MN"
-            MS: "MS"
-            MO: "MO"
-            MT: "MT"
-            NE: "NE"
-            NV: "NV"
-            NH: "NH"
-            NJ: "NJ"
-            NM: "NM"
-            NY: "NY"
-            NC: "NC"
-            ND: "ND"
-            OH: "OH"
-            OK: "OK"
-            OR: "OR"
-            PA: "PA"
-            RI: "RI"
-            SC: "SC"
-            SD: "SD"
-            TN: "TN"
-            TX: "TX"
-            UT: "UT"
-            VT: "VT"
-            VA: "VA"
-            WA: "WA"
-            WV: "WV"
-            WI: "WI"
-            WY: "WY"
+            max_length: 3800
     - click_on:
-        - selector: "#ibtSubmit"
+        - selector: button[type='submit']
   success:
     headers:
       status: 200

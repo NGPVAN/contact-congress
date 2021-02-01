@@ -22,42 +22,7 @@ contact_form:
           Ms.: Ms.
           Mrs.: Mrs.
           Dr.: Dr.
-    - fill_in:
-      - name: first
-        selector: input[id='Contact.FirstName']
-        value: $NAME_FIRST
-        required: True
-      - name: last
-        selector: input[id='Contact.LastName']
-        value: $NAME_LAST
-        required: True
-      - name: email
-        selector: input[id='Contact.Email']
-        value: $EMAIL
-        required: True
-      - name: phone
-        selector: input[id='Contact.HomePhone']
-        value: $PHONE
-        required: True
-      - name: street
-        selector: textarea[id='Contact.MailingStreet']
-        value: $ADDRESS_STREET
-        required: True
-      - name: city
-        selector: input[id='Contact.MailingCity']
-        value: $ADDRESS_CITY
-        required: True
-      - name: zip5
-        selector: input[id='Contact.MailingPostalCode']
-        value: $ADDRESS_ZIP5
-        required: True
-      - name: message
-        selector: textarea[id='Contact.Case.Description']
-        value: $MESSAGE
-        required: True
-        options:
-          blacklist: "\n"
-    - select:
+          Mx.: Mx.
       - name: state
         selector: select[id='Contact.MailingState']
         value: $ADDRESS_STATE_FULL
@@ -126,6 +91,42 @@ contact_form:
           West Virginia: West Virginia
           Wisconsin: Wisconsin
           Wyoming: Wyoming
+    - fill_in:
+      - name: First Name
+        selector: input[id='Contact.FirstName']
+        value: $NAME_FIRST
+        required: True
+      - name: Last Name
+        selector: input[id='Contact.LastName']
+        value: $NAME_LAST
+        required: True
+      - name: email
+        selector: input[id='Contact.Email']
+        value: $EMAIL
+        required: True
+      - name: phone
+        selector: input[id='Contact.HomePhone']
+        value: $PHONE
+        required: True
+      - name: street
+        selector: textarea[id='Contact.MailingStreet']
+        value: $ADDRESS_STREET
+        required: True
+      - name: city
+        selector: input[id='Contact.MailingCity']
+        value: $ADDRESS_CITY
+        required: True
+      - name: zip5
+        selector: input[id='Contact.MailingPostalCode']
+        value: $ADDRESS_ZIP5
+        required: True
+      - name: message
+        selector: textarea[id='Contact.Case.Description']
+        value: $MESSAGE
+        required: True
+        options:
+          blacklist: "\n"
+          max_length: 2000
     - click_on:
       - selector: input[id='Contact.Contact_Us_Email_Opt_In__c']
     - find:

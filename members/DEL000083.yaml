@@ -1,23 +1,20 @@
 bioguide: DEL000083
 contact_form:
   method: POST
-  action: ""
   steps:
-    - visit: "http://www.desenatedems.com/bryan-townsend-majority-whip.html"
+    - visit: "http://www.desenatedems.com/bryan-townsend-majority-leader.html"
     - find:
-      - selector: button[class='ctct-popup-close js-popup-close']
-    - click_on:
-      - selector: button[class='ctct-popup-close js-popup-close']
+      - selector: "#input-156968349750442372"
     - fill_in:
-      - name: firstname
+      - name: First Name
         selector: "#input-156968349750442372"
         value: $NAME_FIRST
         required: true
-      - name: lastname
+      - name: Last Name
         selector: "#input-156968349750442372-1"
         value: $NAME_LAST
         required: true
-      - name: emailaddress
+      - name: Email
         selector: "#input-217446283743303914"
         value: $EMAIL
         required: true

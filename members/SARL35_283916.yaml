@@ -1,6 +1,6 @@
+#Lt Gov Timothy Griffin
 bioguide: SARL35_283916
 contact_form:
-  method: POST
   steps:
     - visit: "https://arkansasgov.wufoo.com/forms/?formname=z1aotad5126j37h"
     - find:

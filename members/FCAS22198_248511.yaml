@@ -122,8 +122,6 @@ contact_form:
       - selector: "#js-workaround"
     - find:
       - selector: "#js-workaround"
-    - find:
-      - selector: "#js-workaround" 
   success:
     body:
       contains: "Javascript success message reached"

@@ -28,32 +28,22 @@ contact_form:
         selector: input[name='FirstName']
         value: "$NAME_FIRST"
         required: true
-        options:
-          max_length: 40
       - name: Last Name
         selector: input[name='LastName']
         value: "$NAME_LAST"
         required: true
-        options:
-          max_length: 40
       - name: Street Address
         selector: input[name='Address1']
         value: "$ADDRESS_STREET"
         required: true
-        options:
-          max_length: 40
       - name: Street Address2
         selector: input[name='Address2']
         value: "$ADDRESS_STREET_2"
         required: false
-        options:
-          max_length: 40
       - name: City
         selector: input[name='City']
         value: "$ADDRESS_CITY"
         required: true
-        options:
-          max_length: 40
       - name: zipCode
         selector: input[name='ZipCode']
         value: "$ADDRESS_ZIP5"
@@ -62,20 +52,14 @@ contact_form:
         selector: input[name='Telephone']
         value: "$PHONE"
         required: false
-        options:
-          max_length: 40
       - name: email 
         selector: input[name='your-email']
         value: "$EMAIL"
         required: true
-        options:
-          max_length: 40 
       - name: Subject
         selector: input[name='subject']
         value: "$SUBJECT"
         required: true
-        options:
-          max_length: 40 
       - name: message
         selector: textarea[name='your-message']
         value: "$MESSAGE"

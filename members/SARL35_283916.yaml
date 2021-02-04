@@ -1,0 +1,54 @@
+#Lt Gov Timothy Griffin
+bioguide: SARL35_283916
+contact_form:
+  steps:
+    - visit: "https://arkansasgov.wufoo.com/forms/?formname=z1aotad5126j37h"
+    - find:
+      - selector: "#Field1"
+    - fill_in:
+      - name: First Name
+        selector: "#Field1"
+        value: "$NAME_FIRST"
+        required: false
+      - name: Last Name
+        selector: "#Field2"
+        value: "$NAME_LAST"
+        required: false
+      - name: Street Address
+        selector: "#Field9"
+        value: "$ADDRESS_STREET"
+        required: false
+      - name: City
+        selector: "#Field9"
+        value: "$ADDRESS_CITY"
+        required: false
+      - name: zipCode
+        selector: "#Field16"
+        value: "$ADDRESS_ZIP5"
+        required: false
+      - name: phone area code
+        selector: "#Field18"
+        value: $PHONE_AREA_CODE
+        required: false
+      - name: phone exchange code
+        selector: "#Field18-1"
+        value: "$PHONE"
+        required: false
+      - name: phone subscriber
+        selector: "#Field18-2"
+        value: $PHONE_SUBSCRIBER_NUMBER
+        required: false
+      - name: email 
+        selector: "#Field17"
+        value: "$EMAIL"
+        required: true
+      - name: message
+        selector: "#Field29"
+        value: "$MESSAGE"
+        required: false
+    - click_on:
+      - value: Submit
+        selector: input[type='submit'][value='Submit']
+  success:
+    body:
+      contains: Thank you for your comments

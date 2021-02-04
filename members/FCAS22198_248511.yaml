@@ -7,7 +7,7 @@ contact_form:
     - wait:
       - value: 3
     - find:
-      - value: select[name='Prefix']
+      - selector: select[name='Prefix']
     - select:
       - name: Your Prefix
         selector: select[name='Prefix']
@@ -28,32 +28,22 @@ contact_form:
         selector: input[name='FirstName']
         value: "$NAME_FIRST"
         required: true
-        options:
-          max_length: 40
       - name: Last Name
         selector: input[name='LastName']
         value: "$NAME_LAST"
         required: true
-        options:
-          max_length: 40
       - name: Street Address
         selector: input[name='Address1']
         value: "$ADDRESS_STREET"
         required: true
-        options:
-          max_length: 40
       - name: Street Address2
         selector: input[name='Address2']
         value: "$ADDRESS_STREET_2"
         required: false
-        options:
-          max_length: 40
       - name: City
         selector: input[name='City']
         value: "$ADDRESS_CITY"
         required: true
-        options:
-          max_length: 40
       - name: zipCode
         selector: input[name='ZipCode']
         value: "$ADDRESS_ZIP5"
@@ -62,20 +52,14 @@ contact_form:
         selector: input[name='Telephone']
         value: "$PHONE"
         required: false
-        options:
-          max_length: 40
       - name: email 
         selector: input[name='your-email']
         value: "$EMAIL"
         required: true
-        options:
-          max_length: 40
       - name: Subject
         selector: input[name='subject']
         value: "$SUBJECT"
         required: true
-        options:
-          max_length: 40 
       - name: message
         selector: textarea[name='your-message']
         value: "$MESSAGE"
@@ -130,12 +114,14 @@ contact_form:
       - name: success message
         commands: ["var inter = setInterval(function() { if(document.body.innerHTML.indexOf('Thank you for your message. It has been sent.') >= 0 ) { var msg = document.createElement('div'); msg.id='js-workaround'; msg.innerText='Javascript success message reached'; document.body.appendChild(msg); clearInterval(inter); } }, 100) "]
         required: true
+    - wait: 
+      - value: 10
     - find: # these three find steps are on purpose
       - selector: "#js-workaround"
     - find:
       - selector: "#js-workaround"
     - find:
-      - selector: "#js-workaround"      
+      - selector: "#js-workaround"
   success:
     body:
       contains: "Javascript success message reached"

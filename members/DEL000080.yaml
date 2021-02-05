@@ -3,7 +3,7 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "http://www.desenatedems.com/nicole-poore-majority-leader.html"
+    - visit: "http://www.desenatedems.com/nicole-poore.html"
     - fill_in:
       - name: firstname
         selector: "#input-791799289757655834"

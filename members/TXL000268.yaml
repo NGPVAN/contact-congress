@@ -5,11 +5,11 @@ contact_form:
   steps:
     - visit: "http://www.house.state.tx.us/members/member-page/email/?district=31&session=84"
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: "input[name='name_first']"
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: "input[name='name_last']"
           value: $NAME_LAST
           required: true
@@ -31,7 +31,7 @@ contact_form:
           required: true
         - name: state
           selector: "input[name='state']"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
+          value: TX
           required: true
         - name: zipcode
           selector: "input[name='zip']"

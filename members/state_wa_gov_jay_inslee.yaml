@@ -2,6 +2,7 @@ bioguide: state_wa_gov_jay_inslee
 contact_form:
   method: post
   usephantomjslogging: true
+  driver: phantom
   steps:
     - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=FSL_WA_GOV&__fid=100021"
     - find:

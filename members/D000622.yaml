@@ -2,8 +2,6 @@
 bioguide: D000622
 contact_form:
   method: post
-  usephantomjslogging: true
-  driver: phantom
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
     - find:

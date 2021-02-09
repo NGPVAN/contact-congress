@@ -1,7 +1,6 @@
 bioguide: federal_us_president_joe_biden
 contact_form:
   method: post
-  usephantomjslogging: true
   driver: phantom
   steps:
     - visit: "https://www.whitehouse.gov/contact/"

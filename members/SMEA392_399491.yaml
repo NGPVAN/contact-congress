@@ -1,6 +1,7 @@
 bioguide: SMEA392_399491
 contact_form:
   method: post
+  driver: chrome
   steps:
     - visit: "https://www.maine.gov/ag/contact.html"
     - fill_in:

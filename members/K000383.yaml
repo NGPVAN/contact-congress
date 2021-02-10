@@ -2,7 +2,6 @@
 bioguide: K000383
 contact_form:
   method: post
-  usephantomjslogging: true
   driver: phantom
   steps:
     - visit: "http://www.king.senate.gov/contact"

@@ -4,6 +4,8 @@ contact_form:
   action: ""
   steps:
     - visit: "http://www.senatorboscola.com/contact"
+    - find:
+        - selector: "#field_qh4icy22"
     - fill_in:
         - name: First Name
           selector: "#field_qh4icy22"
@@ -14,19 +16,19 @@ contact_form:
           value: $NAME_LAST
           required: true
         - name: Address
-          selector: "#field_6ptrr_line1"
+          selector: "#field_xqd6z"
           value: $ADDRESS_STREET
           required: true
         - name: Address2
-          selector: "#field_6ptrr_line2"
+          selector: "#field_eqdk2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#field_6ptrr_city"
+          selector: "#field_2tyjk"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#field_6ptrr_zip"
+          selector: "#field_2fo4l"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
@@ -46,15 +48,11 @@ contact_form:
           selector: "#field_qbzw"
           value: Other
           required: false
-        - name: State
-          selector: "#field_6ptrr_state"
-          value: Pennsylvania
-          required: false
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 3
+    - find:
+        - selector: div h1.entry-title
   success:
     headers:
       status: 200

@@ -1,0 +1,56 @@
+bioguide: MNL000767
+contact_form:
+  driver: chrome
+  steps:
+  - visit: https://www.senate.mn/members/email-form/1217
+  - fill_in:
+    - name: First Name
+      selector: '#first_name'
+      value: $NAME_FIRST
+      required: true
+    - name: Last Name
+      selector: '#last_name'
+      value: $NAME_LAST
+      required: true
+    - name: email
+      selector: '#email'
+      value: $EMAIL
+      required: true
+    - name: street
+      selector: '#street_address_1'
+      value: $ADDRESS_STREET
+      required: true
+    - name: street2
+      selector: '#street_address_2'
+      value: $ADDRESS_STREET_2
+      required: false
+    - name: phone
+      selector: '#phone'
+      value: $PHONE_HYPHENS
+      required: false
+    - name: city
+      selector: '#city'
+      value: $ADDRESS_CITY
+      required: true
+    - name: zipcode
+      selector: '#zip'
+      value: $ADDRESS_ZIP
+      required: true
+    - name: Subject
+      selector: '#subject'
+      value: $SUBJECT
+      required: false
+    - name: Message
+      selector: '#form_message'
+      value: $MESSAGE
+      required: true
+      options:
+        max_length: 3500
+  - click_on:
+    - value: Submit
+      selector: button[type='submit']
+  - find:
+    - selector: '#swal2-content p'
+  success:
+    body:
+      contains: Your message has been sent

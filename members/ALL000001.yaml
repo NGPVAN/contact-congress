@@ -29,7 +29,7 @@ contact_form:
         - value: Submit
           selector: "#gform_submit_button_2"
     - wait:
-        - value: 1
+        - selector: "#gform_confirmation_message_2"
   success:
     headers:
       status: 200

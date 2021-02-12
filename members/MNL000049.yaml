@@ -32,7 +32,7 @@ contact_form:
       selector: '#city'
       value: $ADDRESS_CITY
       required: true
-    - name: address
+    - name: zipcode
       selector: '#zip'
       value: $ADDRESS_ZIP
       required: true

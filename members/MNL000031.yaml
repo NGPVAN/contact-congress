@@ -24,10 +24,6 @@ contact_form:
       selector: '#street_address_2'
       value: $ADDRESS_STREET_2
       required: false
-    - name: street2
-      selector: '#street_address_2'
-      value: $ADDRESS_STREET_2
-      required: false
     - name: phone
       selector: '#phone'
       value: $PHONE_HYPHENS

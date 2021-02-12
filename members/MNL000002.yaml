@@ -42,7 +42,7 @@ contact_form:
           required: true
         - name: Subject
           selector: "#subject"
-          value: $SUBJECt
+          value: $SUBJECT
           required: false
         - name: Message
           selector: "#form_message"

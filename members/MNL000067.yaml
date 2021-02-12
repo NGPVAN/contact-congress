@@ -34,7 +34,7 @@ contact_form:
       required: true
     - name: zipcode
       selector: '#zip'
-      value: $ADDRESS_ZIP
+      value: $ADDRESS_ZIP5
       required: true
     - name: Subject
       selector: '#subject'

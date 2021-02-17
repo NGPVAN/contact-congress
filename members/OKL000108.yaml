@@ -42,8 +42,8 @@ contact_form:
   - click_on:
     - value: Submit
       selector: button#btnSend
-  - wait:
-    - value: 3
+  - find:
+    - selector: "#lblSentEmail"
   success:
     headers:
       status: 200

@@ -1,6 +1,5 @@
 bioguide: C001056
 contact_form:
-  method: POST
   steps:
     - visit: "https://www.cornyn.senate.gov/node/5853"
     - find:
@@ -83,9 +82,9 @@ contact_form:
     - find:
       - selector: "#edit-submitted-e-newsletter-opt-in-1"
     - click_on:
-      - value: Newsletter opt out 
+      - name: Newsletter opt out 
         selector: "#edit-submitted-e-newsletter-opt-in-1"
-      - value: Submit
+      - name: Submit
         selector: input[type='submit'][value='Submit'] 
     - find:
       - selector: div.webform-confirmation

@@ -57,7 +57,7 @@ contact_form:
     - find:
       - selector: input[type='submit'][value='Submit'] 
     - click_on:
-      - value: Submit
+      - name: Submit
         selector: input[type='submit'][value='Submit'] 
     - find:
       - selector: div.xrmform-section-column 

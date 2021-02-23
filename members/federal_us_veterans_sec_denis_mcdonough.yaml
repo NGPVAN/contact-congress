@@ -1,0 +1,206 @@
+bioguide: federal_us_veterans_sec_denis_mcdonough
+contact_form:
+  steps:
+    - visit: "https://iris.custhelp.va.gov/app/ask/"
+    - find:
+      - selector: select[id*='vet_status']
+    - select:
+      - name: veteran-status
+        selector: select[id*='vet_status']
+        value: a General Question
+        required: true
+        options:
+          a General Question: a General Question
+    - find:
+      - selector: button[id*='Product_Button']
+    - wait:
+      - value: 2
+    - click_on:
+      - value: Topic
+        selector: button[id*='Product_Button']
+      - value: All Health
+        selector: "#ygtvt3 a"
+      - value: Health
+        selector: "#ygtvt34 a"
+      - value: Medical Care for Veterans within USA
+        selector: "#ygtvlabelel41"
+    - find:
+      - selector: button[id*='Category_Button']
+    - click_on:
+      - value: Inquiry
+        selector: button[id*='Category_Button']
+      - value: Suggestion
+        selector: "#ygtvlabelel29"
+    - select:
+      - name: response
+        selector: select[id*='form_of_response']
+        value: E-Mail
+        required: true
+        options:
+          E-Mail: E-Mail
+      - name: Prefix
+        selector: select[id*='.form_of_address']
+        value: $NAME_PREFIX
+        required: true
+        options:
+          "Mr.": Mr.
+          "Miss": Miss
+          "Mrs.": Mrs.
+          "Ms.": Ms.
+          "Dr.": Dr.
+          "Rev.": Rev.
+      - name: country
+        selector: select[id*='.country']
+        value: United States
+        required: true
+        options:
+          United States: United States
+      - name: state
+        selector: select[id*='.state']
+        value: $ADDRESS_STATE_FULL
+        required: false
+        options:
+          Alabama: Alabama
+          Alaska: Alaska
+          Alberta: Alberta
+          Arizona: Arizona
+          Arkansas: Arkansas
+          Armed Forces: Armed Forces
+          Armed Forces Americas: Armed Forces Americas
+          Armed Forces Pacific: Armed Forces Pacific
+          British Columbia: British Columbia
+          California: California
+          Colorado: Colorado
+          Connecticut: Connecticut
+          Delaware: Delaware
+          District of Columbia: District of Columbia
+          Florida: Florida
+          Georgia: Georgia
+          Hawaii: Hawaii
+          Idaho: Idaho
+          Illinois: Illinois
+          Indiana: Indiana
+          Iowa: Iowa
+          Kansas: Kansas
+          Kentucky: Kentucky
+          Louisiana: Louisiana
+          Maine: Maine
+          Manitoba: Manitoba
+          Maryland: Maryland
+          Massachusetts: Massachusetts
+          Michigan: Michigan
+          Minnesota: Minnesota
+          Mississippi: Mississippi
+          Missouri: Missouri
+          Montana: Montana
+          Nebraska: Nebraska
+          Nevada: Nevada
+          New Brunswick: New Brunswick
+          New Hampshire: New Hampshire
+          New Jersey: New Jersey
+          New Mexico: New Mexico
+          New York: New York
+          North Carolina: North Carolina
+          North Dakota: North Dakota
+          Nova Scotia: Nova Scotia
+          Ohio: Ohio
+          Oklahoma: Oklahoma
+          Ontario: Ontario
+          Oregon: Oregon
+          Pennsylvania: Pennsylvania
+          Philippines: Philippines
+          Prince Edward Island: Prince Edward Island
+          Puerto Rico: Puerto Rico
+          Quebec: Quebec
+          Rhode Island: Rhode Island
+          Saskatchewan: Saskatchewan
+          South Carolina: South Carolina
+          South Dakota: South Dakota
+          Tennessee: Tennessee
+          Texas: Texas
+          Utah: Utah
+          Vermont: Vermont
+          Virginia: Virginia
+          Washington: Washington
+          West Virginia: West Virginia
+          Wisconsin: Wisconsin
+          Wyoming: Wyoming
+          Yukon: Yukon
+          Other/Not in US: Other/Not in US
+    - fill_in:
+      - name: First Name
+        selector: input[id*='.first_name']
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input[id*='.last_name']
+        value: $NAME_LAST
+        required: true
+      - name: phone
+        selector: input[id*='.telephone_number']
+        value: $PHONE
+        required: false
+      - name: street
+        selector: input[id*='.street']
+        value: $ADDRESS_STREET
+        required: false
+      - name: city
+        selector: input[id*='.city']
+        value: $ADDRESS_CITY
+        required: false
+      - name: zip5
+        selector: input[id*='.zipcode']
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: message #this is on purpose and is intended to bypass a modal that pops up when filling out the form
+        selector: textarea[id*='Threads']
+        value: "Attempting to workaround issues with contact form. If you see this message, please contact AdvocacySupport@everyaction.com"
+        required: true
+    - javascript:
+      - name: Verify email
+        values: [ "$EMAIL" ]
+        selectors: [ "input[class='rn_Text rn_Validation rn_Hidden']" ]
+        commands: [ "elements[0].className = elements[0].className.replace('rn_Hidden', '')"]
+        required: true
+    - fill_in:
+      - name: email
+        selector: input[id*='.incomingemail']
+        value: $EMAIL
+        required: true
+    - wait:
+      - value: 2
+    - find:
+      - value: verify email
+        selector: input[id*='.incomingemail_Validate']
+    - fill_in:
+      - name: verify email
+        selector: input[id*='.incomingemail_Validate']
+        value: $EMAIL
+        required: true
+    - click_on:
+      - selector: button[id*='FormSubmit'] #future us:these steps are on purpose. We needed to open then close the modal for this to work.
+    - find:
+      - selector: button[id*='_137'][class='yui3-button yui3-button-close']
+    - find:
+      - selector: button[id*='_137'][class='yui3-button yui3-button-close']
+    - click_on:
+      - value: Close modal
+        selector: button[id*='_137'][class='yui3-button yui3-button-close']
+    - fill_in:
+      - name: message
+        selector: textarea[id*='Threads']
+        value: $MESSAGE
+        required: true      
+    - find:
+      - selector: button[id*='FormSubmit']
+    - click_on:
+      - selector: button[id*='FormSubmit']
+    - find:
+      - selector: div.rn_AskQuestion div.rn_Padding
+    - find:
+      - selector: div.rn_AskQuestion div.rn_Padding
+    - wait:
+      - value: 8
+  success:
+    body:
+      contains: "Thank you for submitting your inquiry to the Department of Veterans Affairs (VA)"

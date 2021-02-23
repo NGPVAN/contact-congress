@@ -1,0 +1,66 @@
+bioguide: SMTG48_574195
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://svc.mt.gov/gov/contact/shareopinion"
+    - fill_in:
+      - name: Prefix
+        selector: "#sockeye_prefix"
+        value: $NAME_PREFIX
+        required: false
+      - name: First Name
+        selector: "#sockeye_firstname"
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: "#sockeye_lastname"
+        value: $NAME_LAST
+        required: true
+      - name: Email
+        selector: "#sockeye_email"
+        value: $EMAIL
+        required: true
+      - name: Street
+        selector: "#sockeye_mailingaddress"
+        value: $ADDRESS_STREET
+        required: true
+      - name: City
+        selector: "#sockeye_city"
+        value: $ADDRESS_CITY
+        required: true
+      - name: ZipCode
+        selector: "#sockeye_zipcode"
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: "#sockeye_phone"
+        value: $PHONE
+        required: true
+      - name: message
+        selector: "#sockeye_comments"
+        value: $MESSAGE
+        required: true
+    - find:
+      - selector: "#s2id_sockeye_topicid"
+    - click_on:
+      - selector: "#s2id_sockeye_topicid"
+      - selector: "#s2id_autogen4_search"
+    - select:
+      - name: Topic
+        selector: "#s2id_autogen4_search"
+        value: General Comments
+        required: true
+    - find:
+      - selector: div.select2-result-label
+    - click_on:
+      - selector: div.select2-result-label
+    - find:
+      - selector: input[type='submit'][value='Submit'] 
+    - click_on:
+      - value: Submit
+        selector: input[type='submit'][value='Submit'] 
+    - find:
+      - selector: div.xrmform-section-column 
+  success:
+    body:
+      contains: Your comments have been submitted

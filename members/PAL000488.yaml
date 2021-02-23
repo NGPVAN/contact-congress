@@ -1,0 +1,47 @@
+bioguide: PAL000488
+contact_form:
+  steps:
+  - visit: https://www.pahouseformcenter.com/392/RepJackRader/SecureContact
+  - find:
+    - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
+  - fill_in:
+    - name: First Name
+      selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
+      value: $NAME_FIRST
+      required: true
+    - name: Last Name
+      selector: '#ctl00_ContentPlaceHolder1_txtLastName'
+      value: $NAME_LAST
+      required: true
+    - name: email
+      selector: '#ctl00_ContentPlaceHolder1_txtEmail'
+      value: $EMAIL
+      required: true
+    - name: phone
+      selector: '#ctl00_ContentPlaceHolder1_txtPhone'
+      value: $PHONE
+      required: true
+    - name: Address
+      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepAddress'
+      value: $ADDRESS_STREET
+      required: true
+    - name: City
+      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepCity'
+      value: $ADDRESS_CITY
+      required: true
+    - name: zip
+      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepZip'
+      value: $ADDRESS_ZIP5
+      required: true
+    - name: Message
+      selector: '#ctl00_ContentPlaceHolder1_txtAction'
+      value: $MESSAGE
+      required: true
+  - click_on:
+    - value: Submit
+      selector: '#ctl00_ContentPlaceHolder1_btnSubmitContact'
+  - find:
+    - selector: .find-rep label
+  success:
+    body:
+      contains: web submission has been received

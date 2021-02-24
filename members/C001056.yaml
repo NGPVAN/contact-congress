@@ -1,12 +1,9 @@
 bioguide: C001056
 contact_form:
-  method: POST
   steps:
-    - visit: "http://www.cornyn.senate.gov/contact"
+    - visit: "https://www.cornyn.senate.gov/node/5853"
     - find:
-      - selector: "#edit-submitted-lets-get-started-1"
-    - click_on:
-      - selector: "#edit-submitted-lets-get-started-1"
+      - selector: input#edit-submitted-first-name
     - fill_in:
       - name: First Name
         selector: input#edit-submitted-first-name
@@ -19,16 +16,6 @@ contact_form:
       - name: Email
         selector: input#edit-submitted-email
         value: $EMAIL
-        required: true
-    - click_on:
-      - selector: "#edit-submitted-e-newsletter-opt-in-1"
-      - selector: input[type='submit'][value='Next Page >']
-    - find:
-      - selector: "#edit-submitted-please-write-us-a-brief-message"
-    - fill_in:
-      - name: message
-        selector: "#edit-submitted-please-write-us-a-brief-message"
-        value: $MESSAGE
         required: true
       - name: phone
         selector: "#edit-submitted-phone-number"
@@ -46,15 +33,13 @@ contact_form:
         selector: "#edit-submitted-address-postal-code"
         value: $ADDRESS_ZIP5
         required: true
-    - javascript:
-      - name: Message
-        selectors: [ "#edit-submitted-please-write-us-a-brief-message" ]
-        values: [ "$MESSAGE" ]
-        commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/\\b(is not)\\b/ig,'isn\\'t').replace(/[%]/g,' percent')"]
+      - name: message
+        selector: "#edit-submitted-write-a-brief-message"
+        value: $MESSAGE
         required: true
     - select:
       - name: Topic
-        selector: "#edit-submitted-please-select-and-issue-youd-like-to-discuss"
+        selector: "#edit-submitted-please-select-an-issue-youd-like-to-discuss"
         value: $TOPIC
         required: true
         options:
@@ -94,22 +79,17 @@ contact_form:
         selector: "#edit-submitted-address-administrative-area"
         value: Texas
         required: true
-    - javascript:
-      - name: Preview button
-        selectors: [ "input[type='submit'][value='Preview']" ]
-        commands: ["elements[0].disabled = false"]
-        required: true
     - find:
-      - selector: input[type='submit'][value='Preview']
+      - selector: "#edit-submitted-e-newsletter-opt-in-1"
     - click_on:
-      - selector: input[type='submit'][value='Preview']
-    - find:
-      - selector: input[type='submit'][value='Submit']
-    - click_on:
-      - value: Submit
+      - name: Newsletter opt out 
+        selector: "#edit-submitted-e-newsletter-opt-in-1"
+      - name: Submit
         selector: input[type='submit'][value='Submit'] 
-    - wait:
-      - value: 10
+    - find:
+      - selector: div.webform-confirmation
+    - find:
+      - selector: div.webform-confirmation
   success:
     body:
       contains: Your message to Senator Cornyn's office has been submitted

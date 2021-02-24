@@ -158,7 +158,6 @@ contact_form:
         required: true
     - javascript:
       - name: Verify email
-        values: [ "$EMAIL" ]
         selectors: [ "input[class='rn_Text rn_Validation rn_Hidden']" ]
         commands: [ "elements[0].className = elements[0].className.replace('rn_Hidden', '')"]
         required: true

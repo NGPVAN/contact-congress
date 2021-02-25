@@ -1,77 +1,70 @@
 #US Senator Chuck Grassley
 bioguide: G000386
 contact_form:
-  method: post
   steps:
     - visit: "https://www.grassley.senate.gov/constituents/questions-and-comments"
     - fill_in:
         - name: First Name
-          selector: "#first"
+          selector: "#input-B03E05C4-4040-F985-52CD-9CA44623DE5E"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#last"
+          selector: "#input-B03E04BD-4040-F985-52CD-48E090E769DA"
           value: $NAME_LAST
           required: true
         - name: Email
-          selector: "#email"
+          selector: "#input-38364EBF-9892-191D-4674-9C787C8061C8"
           value: $EMAIL
           required: true
         - name: Verify Email
-          selector: "#email2"
+          selector: "#input-38364F09-E0F4-7035-990A-918C46D130CA"
           value: $EMAIL
           required: true
         - name: Street Address
-          selector: "#addr1"
+          selector: "#input-B03E05F1-4040-F985-52CD-A580E72A7D41"
           value: $ADDRESS_STREET
           required: true
         - name: Street Address 2
-          selector: "#addr2"
+          selector: "#input-B03E0518-4040-F985-52CD-CF33EF97DA3A"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#city"
+          selector: "#input-B03E0595-4040-F985-52CD-C572364023FE"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#zip"
+          selector: "#input-B03E04CC-4040-F985-52CD-4DDB58DA474A"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#phone"
+          selector: "#input-B03E046E-4040-F985-52CD-A2F10450D58D"
           value: $PHONE
           required: false
         - name: subject
-          selector: "#subject"
+          selector: "#input-38497382-DA67-A926-DB49-C4F4E5FD6E25"
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#message
+          selector: "#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"
           value: $MESSAGE
-          required: true
-    - javascript:
-        - name: char replace
-          values: ["$MESSAGE"]
-          selectors: ["textarea#message"]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
-          selector: "#prefix"
+          selector: "#salutations"
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
             Mr.: Mr.
             Mrs.: Mrs.
             Ms.: Ms.
             Miss: Miss
             Dr.: Dr.
-            Rev.: Rev.
+            Reverend: Reverend
             Mr. and Mrs.: Mr. and Mrs.
             Sister: Sister
             Other: Other
         - name: issue
-          selector: "#issue"
+          selector: "#issues"
           value: $TOPIC
           required: true
           options:
@@ -113,13 +106,11 @@ contact_form:
             Welfare: Welfare
             Other: Other
     - click_on:
-        - value: Send Message
-          selector: "form.fullform.validate input[type='submit'][value='Send Message']"
-    - wait:
-        - value: 1
+        - name: Send Message
+          selector: button.btn
     - find:
-        - selector: "#page-title"
-          value: Thank You
+        - selector: "#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C"
   success:
     body:
-      contains: Thank You
+      excludes: Subject
+      contains: Your message has been received

@@ -1,0 +1,59 @@
+bioguide: CTL000273
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "http://ctsenaterepublicans.com/contact-berthel/"
+    - fill_in:
+        - name: First Name
+          selector: input#input_118_1
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#input_118_2
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: input#input_118_3
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input#input_118_4
+          value: $PHONE
+          required: true
+        - name: Street
+          selector: input#input_118_5
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street 2
+          selector: input#input_118_6
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#input_118_7
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#input_118_9
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: message
+          selector: textarea#input_118_13
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: input#choice_118_12_1
+    - select:
+        - name: topic
+          selector: select#input_118_10
+          value: Other
+          required: true
+          options:
+            Other: Other
+    - click_on:
+        - selector: input#gform_submit_button_118
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for contacting Senator Berthel

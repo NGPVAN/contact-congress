@@ -53,6 +53,8 @@ contact_form:
           selector: "#Comment"
           value: $MESSAGE
           required: true
+          options: 
+            max_length: 1000
     - javascript:
         - name: phone
           selectors: [ "#PhoneNumber"]

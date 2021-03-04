@@ -1,6 +1,6 @@
 bioguide: state_pa_gov_tom_wolf
 contact_form:
-  method: post
+  driver: chrome
   steps:
     - visit: "https://www.governor.pa.gov/contact/#OnlineForm"
     - find:

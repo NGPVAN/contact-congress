@@ -1,0 +1,79 @@
+bioguide: state_md_gov_larry_hogan
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://governor.maryland.gov/contact-the-governor/"
+    - find:
+      - selector: select[name='menu-612']
+    - select:
+      - name: Topic
+        selector: select[name='menu-612']
+        value: $TOPIC
+        required: true
+        options:
+          Agriculture: Agriculture
+          Animal Welfare: Animal Welfare
+          Banking: Banking
+          Broadband: Broadband
+          Child Custody: Child Custody
+          Correctional Services: Correctional Services
+          Criminal Justice: Criminal Justice
+          Developmental Disabilities Administration: Developmental Disabilities Administration
+          Disabilities: Disabilities
+          Economic Development: Economic Development
+          Education: Education
+          Emergency Preparedness: Emergency Preparedness
+          Energy: Energy
+          Energy Assistance: Energy Assistance
+          Environment: Environment
+          Funding Request: Funding Request
+          Gaming: Gaming
+      - name: State
+        selector: select[name='state']
+        value: Maryland
+        required: true
+        options:     
+    - fill_in:
+      - name: Message
+        selector: textarea[name='textarea-your-message']
+        value: $MESSAGE
+        required: true
+      - name: First Name
+        selector: input[name='first-name']
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: input[name='last-name']
+        value: $NAME_LAST
+        required: true
+      - name: Street Address
+        selector: input[name='addr-1']
+        value: $ADDRESS_STREET
+        required: true
+      - name: Street Address 2
+        selector: input[name='addr-2']
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: City
+        selector: input[name='city']
+        value: $ADDRESS_CITY
+        required: true
+      - name: Zipcode
+        selector: input[name='zip']
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Phone
+        selector: input[name='phone']
+        value: $PHONE
+        required: false
+      - name: Email
+        selector: input[name='email']
+        value: $EMAIL
+        required: true
+    - click_on:
+      - selector: input[type='submit'][value='Submit']
+    - wait:
+      - value: 5
+  success:
+    body:
+      contains: Thank you for your message

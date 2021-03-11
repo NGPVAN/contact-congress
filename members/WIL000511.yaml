@@ -1,35 +1,46 @@
 bioguide: WIL000511
 contact_form:
-  method: post
-  action: Contact.aspx
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/79/hesselbein/contact/"
     - fill_in:
-        - name: Name
-          selector: input#f6718dda-0e45-48f9-bf8f-ecfe8a500a9e
-          value: $NAME_FULL
-          required: false
-        - name: Address
-          selector: textarea#cf4d4ed1-ace0-4e88-fbd5-5c011c2b6f19
-          value: $ADDRESS_FULL
-          required: false
-        - name: Phone
-          selector: input[id='9b3674d0-9fac-49b1-9181-a6faacebb8fe']
-          value: $PHONE
-          required: false
-        - name: Email
-          selector: input#c9204231-7756-4e10-cb50-60870fb4bb73
-          value: $EMAIL
-          required: false
-        - name: Message
-          selector: textarea#d69e4ea5-4957-4b27-f572-cae872e2dc75
-          value: $MESSAGE
-          required: false
+      - name: First Name
+        selector: div.firstname input
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: div.lastname input
+        value: $NAME_LAST
+        required: true
+      - name: Street Address
+        selector: div.streetaddress input
+        value: $ADDRESS_STREET
+        required: true
+      - name: City
+        selector: div.city input
+        value: $ADDRESS_CITY
+        required: true
+      - name: Phone
+        selector: div.phone input
+        value: $PHONE
+        required: true
+      - name: Email
+        selector: div.email input
+        value: $EMAIL
+        required: true
+      - name: Zipcode
+        selector: div.zipcode input
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Message
+        selector: div.message textarea
+        value: $MESSAGE
+        required: true
     - click_on:
-        - value: Submit
-          selector: input[type='submit'][value='Submit']
+      - selector: input[type='submit'][value='Send']
+    - find:
+      - selector: p.contourMessageOnSubmit
+    - find:
+      - selector: p.contourMessageOnSubmit
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

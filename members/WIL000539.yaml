@@ -1,7 +1,5 @@
 bioguide: WIL000539
 contact_form:
-  method: post
-  action: Contact.aspx
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/86/spiros/contact-me/"
     - fill_in:
@@ -14,25 +12,19 @@ contact_form:
           value: $EMAIL
           required: true
         - name: Address
-          selector: div.address input
-          value: $ADDRESS_STREET
-          required: true
-        - name: City
-          selector: div.city input
-          value: $ADDRESS_CITY
+          selector: div.address textarea
+          value: $ADDRESS_FULL
           required: true
         - name: Phone
           selector: div.phonenumber input
           value: $PHONE
           required: false
         - name: Message
-          selector: div textarea
+          selector: div.message textarea
           value: $MESSAGE
           required: true
     - click_on:
-        - selector: input[type='Submit'][value='Submit']
+        - selector: input[type='submit'][value='Submit']
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

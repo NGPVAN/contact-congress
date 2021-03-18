@@ -40,6 +40,8 @@ contact_form:
         selector: "#sockeye_comments"
         value: $MESSAGE
         required: true
+        options:
+          max_length: 2000
     - find:
       - selector: "#s2id_sockeye_topicid"
     - click_on:

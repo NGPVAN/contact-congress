@@ -1,7 +1,5 @@
 bioguide: TXL000203
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "http://www.senate.state.tx.us/member.php?d=31"
     - find:
@@ -28,11 +26,11 @@ contact_form:
         - name: Phone area code
           selector: "#phone1"
           value: $PHONE_AREA_CODE
-          required: false
+          required: true
         - name: Phone no area code
           selector: "#phone2"
           value: $PHONE_NO_AREA_CODE
-          required: false
+          required: true
         - name: street
           selector: "#address1"
           value: $ADDRESS_STREET

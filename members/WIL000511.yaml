@@ -1,7 +1,7 @@
 bioguide: WIL000511
 contact_form:
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/79/hesselbein/contact/"
+    - visit: "https://legis.wisconsin.gov/assembly/79/hesselbein/contact-me/"
     - fill_in:
       - name: First Name
         selector: div.firstname input

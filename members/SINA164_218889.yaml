@@ -1,7 +1,5 @@
-bioguide: SINA164_589956
+bioguide: SINA164_218889
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "https://www.in.gov/attorneygeneral/3063.htm"
     - fill_in:
@@ -52,7 +50,5 @@ contact_form:
     - find:
         - selector: div.fsSectionText
   success:
-    headers:
-      status: 200
     body:
       contains: The form was submitted successfully

@@ -1,0 +1,55 @@
+bioguide: SPAU31129_399623
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://contact1.pasenategop.com/contact/25"
+    - fill_in:
+        - name: First Name
+          selector: "#ContactForm_FirstName"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#ContactForm_LastName"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#ContactForm_EmailAddress"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#ContactForm_HomePhone"
+          value: $PHONE
+          required: true
+        - name: Address
+          selector: "#ContactForm_Address1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address_2
+          selector: "#ContactForm_Address2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#ContactForm_City"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#ContactForm_ZipCode"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Message
+          selector: "#ContactForm_Comments"
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: Topic
+          selector: "#issueselect"
+          value: General
+          required: true
+    - find:
+        - selector: "#btnSubmit"
+    - click_on:
+        - value: Submit
+          selector: "#btnSubmit"
+  success:
+    body:
+      contains: Thank you for submitting

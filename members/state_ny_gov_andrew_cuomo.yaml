@@ -1,52 +1,52 @@
 bioguide: state_ny_gov_andrew_cuomo
 contact_form:
-  method: post
-  action: ""
+  driver: phantom
   steps:
     - visit: "https://www.governor.ny.gov/content/governor-contact-form"
     - fill_in:
-        - name: firstName
-          selector: "#edit-submitted-first-name"
+        - name: First Name
+          selector: "#edit-first-name"
           value: $NAME_FIRST
           required: true
-        - name: lastName
-          selector: "#edit-submitted-last-name"
+        - name: Last Name
+          selector: "#edit-last-name"
           value: $NAME_LAST
           required: true
         - name: email
-          selector: "#edit-submitted-email"
+          selector: "#edit-email"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#edit-submitted-telephone-number"
+          selector: "#edit-telephone-number"
           value: $PHONE
           required: true
         - name: street
-          selector: "#edit-submitted-address"
+          selector: "#edit-address"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#edit-submitted-city"
+          selector: "#edit-city"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#edit-submitted-zip-code-contact"
+          selector: "#edit-zip-code-contact"
           value: $ADDRESS_ZIP5
           required: true
         - name: subject
-          selector: "#edit-submitted-subject"
+          selector: "#edit-subject"
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#edit-submitted-message"
+          selector: "#edit-message"
           value: $MESSAGE
           required: true
     - select:
         - name: Your Prefix
-          selector: "#edit-submitted-salutation"
+          selector: "#edit-salutation"
           value: $NAME_PREFIX
           required: true
           options:
+            Mx.: Mx.
             Mr.: Mr.
             Ms.: Ms.
             Mrs.: Mrs.
@@ -55,23 +55,40 @@ contact_form:
             Mrs. & Mrs.: Mrs. & Mrs.
             Blank: Blank
         - name: stateFull
-          selector: "#edit-submitted-contact-form-state"
+          selector: "#edit-contact-form-state"
           value: New York
           required: true
-          options:
-            New York: New York
         - name: topic
-          selector: "#edit-submitted-topic"
-          value: Other
+          selector: "#edit-topic"
+          value: $TOPIC
           required: true
           options:
-            Other: Other
+            agriculture: Agriculture
+            animals: Animals
+            criminal_justice: Criminal Justice
+            economic_development: Economic Development
+            education: Education
+            energy: Energy
+            environment: Environment
+            health: Health
+            homeland_security: Homeland Security
+            housing: Housing
+            human_rights: Human Rights
+            immigration: Immigration
+            infrastructure: Infrastructure
+            legislation: Legislation
+            lgbt_rights: LGBT Rights
+            other: Other
+            public_safety: Public Safety
+            taxes: Taxes
+            transportation: Transportation
+            veterans_affaris: Veterans Affairs
+    - find:
+        - selector: "#edit-actions-submit"
     - click_on:
-        - selector: div.form-actions input.webform-submit
-    - wait:
-      - value: 3
+        - selector: "#edit-actions-submit"
+    - find:
+        - selector: div h4
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you for your submission

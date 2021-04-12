@@ -1,0 +1,115 @@
+bioguide: CusHb1f7c1ae1617916375
+contact_form:
+  driver: phantom	
+  steps:	
+    - visit: "https://www.federalregister.gov/documents/2021/03/16/2021-05287/notice-of-request-for-public-comment-on-the-executive-order-on-tackling-the-climate-crisis-at-home#open-comment"	
+    - find:	
+      - selector: "#comment_comment"
+    - fill_in:	
+      - name: Comment	
+        selector: "#comment_comment"	
+        value: $MESSAGE	
+        required: true
+    - find:
+      - selector: div[data-submitter-type='individual'] input[type='radio']
+    - click_on:
+      - selector: div[data-submitter-type='individual'] input[type='radio']
+    - find:
+      - selector: "#comment_firstName" 
+    - fill_in:
+      - name: First Name	
+        selector: "#comment_firstName"	
+        value: $NAME_FIRST	
+        required: true
+      - name: Last Name	
+        selector: "#comment_lastName"	
+        value: $NAME_LAST	
+        required: true	
+      - name: City	
+        selector: "#comment_city"	
+        value: $ADDRESS_CITY	
+        required: false	
+      - name: zip5  
+        selector: "#comment_zip"  
+        value: $ADDRESS_ZIP5  
+        required: false
+      - name: phone
+        selector: "#comment_phone"  
+        value: $PHONE 
+        required: false
+    - select:
+      - name: State 
+        selector: select#comment_stateProvinceRegion  
+        value: $ADDRESS_STATE_FULL  
+        required: false
+        options:
+          AL: Alabama
+          AK: Alaska
+          AS: American Samoa
+          AZ: Arizona
+          AR: Arkansas
+          CA: California
+          CO: Colorado
+          MP: Commonwealth of the Northern Mariana Islands
+          CT: Connecticut
+          DE: Delaware
+          DC: District of Columbia
+          FL: Florida
+          GA: Georgia
+          GU: Guam
+          HI: Hawaii
+          ID: Idaho
+          IL: Illinois
+          IN: Indiana
+          IA: Iowa
+          KS: Kansas
+          KY: Kentucky
+          LA: Louisiana
+          ME: Maine
+          MD: Maryland
+          MA: Massachusetts
+          MI: Michigan
+          MN: Minnesota
+          MO: Missouri
+          MS: Mississippi
+          MT: Montana
+          NE: Nebraska
+          NV: Nevada
+          NH: New Hampshire
+          NJ: New Jersey
+          NM: New Mexico
+          NY: New York
+          NC: North Carolina
+          ND: North Dakota
+          OH: Ohio
+          OK: Oklahoma
+          OR: Oregon
+          PA: Pennsylvania
+          PR: Puerto Rico
+          RI: Rhode Island
+          SC: South Carolina
+          SD: South Dakota
+          TN: Tennessee
+          TX: Texas
+          UT: Utah
+          VT: Vermont
+          VI: Virgin Islands
+          VA: Virginia
+          WA: Washington
+          WV: West Virginia
+          WI: Wisconsin
+          WY: Wyoming
+      - name: country
+        selector: "#comment_country"
+        value: United States
+        required: false
+    - find:
+      - selector: "#comment_confirm_submission"
+    - click_on:	
+      - selector: "#comment_confirm_submission" # read agreement checkbox
+      - selector: input[type='submit'][value='Submit Comment'] # submit button
+    - find:
+      - selector: div p.comment_tracking_number
+  success:	
+    body:	
+      contains: "Comment Tracking Number"

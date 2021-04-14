@@ -1,0 +1,30 @@
+bioguide: ILL001029 
+contact_form:
+  driver: phantom
+  steps:
+  - visit: https://www.gregharris.org/wp/contact/
+  - fill_in:
+    - name: Full Name
+      selector: input[name='your-name']
+      value: $NAME_FULL
+      required: true
+    - name: email
+      selector: input[name='your-email']
+      value: $EMAIL
+      required: true
+    - name: Subject
+      selector: input[name='your-subject']
+      value: $SUBJECT
+      required: false
+    - name: Message
+      selector: textarea[name='your-message']
+      value: $MESSAGE
+      required: false
+  - click_on:
+    - value: Submit
+      selector: input[type='submit'][value='Send']
+  - find:
+    - selector: div.wpcf7-response-output
+  success:
+    body:
+      contains: Your message was sent successfully

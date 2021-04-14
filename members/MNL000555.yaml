@@ -1,8 +1,10 @@
-bioguide: SMNUa80a43b7
+bioguide: MNL000555
 contact_form:
   driver: chrome
   steps:
-  - visit: https://www.senate.mn/members/email-form/1238
+  - visit: https://www.senate.mn/members/email-form/1199
+  - find:
+    - selector: '#first_name'
   - fill_in:
     - name: First Name
       selector: '#first_name'
@@ -39,7 +41,7 @@ contact_form:
     - name: Subject
       selector: '#subject'
       value: $SUBJECT
-      required: false
+      required: true
     - name: Message
       selector: '#form_message'
       value: $MESSAGE

@@ -1,15 +1,14 @@
 #US Senator Kevin Cramer
 bioguide: FNDSe6391ff5
 contact_form:
-  method: post
-  action:
+  driver: phantom
   steps:
-    - visit: "https://www.cramer.senate.gov/contact_kevin"
+    - visit: "https://www.cramer.senate.gov/contact/contact-kevin"
     - wait:
       - value: 1
     - select:
       - name: Your Prefix
-        selector: "#edit-prefix"
+        selector: "#input-C9CE6B66-F224-060D-B946-BE8BA9954269"
         value: $NAME_PREFIX
         required: true
         options:
@@ -19,8 +18,10 @@ contact_form:
           Mr. and Mrs.: Mr. and Mrs.
           Dr.: Dr.
           Dr. and Mrs.: Dr. and Mrs.
+          Dr. and Mr.: Dr. and Mr.
+          Dr. and Dr.: Dr. and Dr.
       - name: Topic
-        selector: "#edit-topic"
+        selector: "#input-C9F6ED3F-F95C-EBBA-BFB0-7E6EC11E2DD9"
         value: $TOPIC
         required: true
         options:
@@ -29,7 +30,6 @@ contact_form:
           Animal Welfare: Animal Welfare
           Appropriations: Appropriations
           Banking: Banking
-          Casework: Casework
           Commerce: Commerce
           Budget: Budget
           Civil Rights: Civil Rights
@@ -60,52 +60,53 @@ contact_form:
           Welfare: Welfare
     - fill_in:
       - name: First name
-        selector: "#edit-first-name"
+        selector: "#input-C9CE6BA8-D702-FFF7-6452-7CD0EE375B88"
         value: $NAME_FIRST
         required: true
       - name: Last name
-        selector: "#edit-last-name"
+        selector: "#input-C9CE6BDB-0775-34FA-30F3-2E5CD0CA5EEA"
         value: $NAME_LAST
         required: true
       - name: Street
-        selector: "#edit-address-1"
+        selector: "#input-C9DE829D-CC07-EF64-4CF2-7136F6B3948C"
         value: $ADDRESS_STREET
         required: true
       - name: Street2
-        selector: "#edit-address-2"
+        selector: "#input-C9DE82D4-F0A5-B225-8A31-C303A1F7B750"
         value: $ADDRESS_STREET_2
         required: false
       - name: City
-        selector: "#edit-city"
+        selector: "#input-C9DE830A-C17B-919A-5B00-47AD79A01F99"
         value: $ADDRESS_CITY
         required: true
       - name: zip
-        selector: "#edit-zip"
+        selector: "#input-C9DE8374-F4AE-1D25-2F1B-2F397C24F58E"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: "#edit-phone"
+        selector: "#input-C9ECC0EC-91D4-C50E-7FE7-F150E6B51F76"
         value: $PHONE
         required: false
       - name: email
-        selector: "#edit-email"
+        selector: "#input-C9F1E3D0-08DA-E34E-C62B-5AE0E61DFCAD"
         value: $EMAIL
         required: true
       - name: Subject
-        selector: "#edit-subject"
+        selector: "#input-0075E019-DEF5-A372-B4C3-7F6B8FB1AA88"
         value: $SUBJECT
         required: true
       - name: Message
-        selector: "#edit-message"
+        selector: "#input-C9FF0277-B9B1-02D5-CBE0-F43708FE04C4"
         value: $MESSAGE
         required: true
     - click_on:
       - value: Submit
-        selector: "#edit-actions-submit"
-    - wait:
-      - value: 5
+        selector: button[type='submit'][class='btn']
+    - find:
+      - selector: "#form-C9C9DE2C-ABC2-FD99-A145-290021517037 div p"
+    - find:
+      - selector: "#form-C9C9DE2C-ABC2-FD99-A145-290021517037 div p"
   success:
-    headers:
-      status: 200
     body:
-      excludes: "Message Details"
+      excludes: Message Details
+      contains: Thank you for contacting my office

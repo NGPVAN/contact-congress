@@ -1,0 +1,45 @@
+bioguide: SILL28536_724516
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://www.ilhousegop.org/luftcontact"
+    - fill_in:
+        - name: message
+          selector: "#feedback_content"
+          value: $MESSAGE
+          required: true
+        - name: First Name
+          selector: "#feedback_first_name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#feedback_last_name"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#feedback_email"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "#feedback_mobile_number"
+          value: $PHONE
+          required: false
+        - name: address
+          selector: "#feedback_submitted_address"
+          value: $ADDRESS_FULL
+          required: false
+    - click_on:
+        - value: unsub1
+          selector: "#feedback_email_opt_in"
+        - value: unsub2
+          selector: "#feedback_mobile_opt_in"
+        - value: Submit
+          selector: input[type='submit'][value='Send Email']
+    - wait:
+        - value: 5
+    - find:
+      - selector: "#copyright-container div p:nth-child(1)"
+  success:
+    body:
+      excludes: Leave feedback
+      contains: state-sponsored and funded site

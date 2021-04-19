@@ -115,7 +115,7 @@ contact_form:
         commands: ["var inter = setInterval(function() { if(document.body.innerHTML.indexOf('Thank you for your message. It has been sent.') >= 0 ) { var msg = document.createElement('div'); msg.id='js-workaround'; msg.innerText='Javascript success message reached'; document.body.appendChild(msg); clearInterval(inter); } }, 100) "]
         required: true
     - wait: 
-      - value: 10
+      - value: 20
     - find: # these three find steps are on purpose
       - selector: "#js-workaround"
     - find:

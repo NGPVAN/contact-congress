@@ -1,12 +1,10 @@
 #US Senator Mitt Romney
 bioguide: FUTS344a83b6
 contact_form:
-  method: post
-  action:
   steps:
     - visit: "https://www.romney.senate.gov/contact-senator-romney"
-    - wait:
-      - value: 1
+    - find:
+      - selector: "#edit-prefix"
     - select:
       - name: Your Prefix
         selector: "#edit-prefix"
@@ -98,10 +96,10 @@ contact_form:
     - click_on:
       - value: Submit
         selector: button#edit-actions-submit
-    - wait:
-      - value: 5
+    - find:
+      - selector: div .webform-confirmation__back
+    - find:
+      - selector: div .webform-confirmation__back  # this second find is here on purporse
   success:
-    headers:
-      status: 200
     body:
-      excludes: "Message Details"
+      contains: "Thank you, your message has been sent"

@@ -1,15 +1,14 @@
 bioguide: SCAG3f267647
 contact_form:
-  method: post
   ignorewebsecurity: true
   steps:
     - visit: "https://govapps.gov.ca.gov/gov40mail/index.php"
     - fill_in:
-        - name: fname
+        - name: First Name
           selector: "#fname"
           value: $NAME_FIRST
           required: true
-        - name: lname
+        - name: Last Name
           selector: "#lname"
           value: $NAME_LAST
           required: true
@@ -71,9 +70,6 @@ contact_form:
         - name: comment
           selector: "input[type='radio'][name='comment'][value='opinion']"
           value: opinion
-        - name: reply
-          selector: "#reply"
-          value: "2"
     - click_on:
         - value: Continue
           selector: "form.content input[name='Submit']"
@@ -86,10 +82,6 @@ contact_form:
           required: true
           options:
             blacklist: "’—“"
-        - name: subject
-          selector: "input[name='newsubject']"
-          value: $SUBJECT
-          required: true
     - check:
         - name: position
           selector: "input[type='radio'][name='position'][value='2']"
@@ -102,3 +94,4 @@ contact_form:
       status: 200
     body:
       excludes: "Select an Issue"
+      contains: "You have successfully sent your message"

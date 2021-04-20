@@ -45,12 +45,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#submitButton"
-    - wait:
-        - value: 1
-    - find:
-        - selector: "tr:nth-child(3)"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Your message has been received"
+

@@ -1,6 +1,5 @@
 bioguide: SCAL32094_722712
 contact_form:
-  method: post
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD01&iframe=true"
     - fill_in:
@@ -46,10 +45,7 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#submitButton"
-    - find:
-        - selector: "tr:nth-child(3)"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Thank you for contacting the office"

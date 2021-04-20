@@ -1,7 +1,5 @@
 bioguide: SCAL17abba76
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD16"
     - fill_in:
@@ -47,12 +45,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#submitButton"
-    - wait:
-        - value: 1
-    - find:
-        - selector: "tr:nth-child(3)"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Thank you for taking the time to write"
+

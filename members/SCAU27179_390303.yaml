@@ -47,7 +47,6 @@ contact_form:
         - value: Submit
           selector: "#submitButton"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Your message has been received"

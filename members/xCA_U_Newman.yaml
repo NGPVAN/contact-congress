@@ -50,7 +50,6 @@ contact_form:
     - find:
         - selector: "tr:nth-child(3)"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Thank you for contacting my office"

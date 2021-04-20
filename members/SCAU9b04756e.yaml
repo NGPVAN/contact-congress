@@ -1,7 +1,5 @@
 bioguide: SCAU9b04756e
 contact_form:
-  method: post
-  action: ContactPopupSubmit.php
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD22&inframe=Y"
     - fill_in:
@@ -47,12 +45,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#submitButton"
-    - wait:
-        - value: 1
-    - find:
-        - selector: "tr:nth-child(3)"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Thank you for your email"
+

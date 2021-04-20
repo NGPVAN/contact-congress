@@ -1,7 +1,5 @@
 bioguide: xCA_L_Grayson
 contact_form:
-  method: post
-  action: ContactPopupSubmit.php
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD14"
     - wait:
@@ -50,7 +48,6 @@ contact_form:
         - value: Submit
           selector: "#submitButton"
   success:
-    headers:
-      status: 200
     body:
       excludes: "Select an Issue"
+      contains: "Your message has been received"

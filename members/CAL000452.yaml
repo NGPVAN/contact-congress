@@ -1,7 +1,5 @@
 bioguide: CAL000452
 contact_form:
-  method: post
-  action: ContactPopupSubmit.php
   steps:
     - visit: 'https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD17'
     - fill_in:
@@ -52,3 +50,4 @@ contact_form:
       status: 200
     body:
       excludes: 'Select an Issue'
+      contains: 'Your message has been received'

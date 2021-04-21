@@ -23,12 +23,12 @@ contact_form:
           required: true
           options:
             Animal Issues/Concerns: Animal Issues/Concerns
-            Attorney General: Attorney General
             Budget Proposal 2019-20: Budget Proposal 2019-20
             Child Protective Services: Child Protective Services
             Clemency - Commutation of Sentence: Clemency - Commutation of Sentence
             Clemency - Pardon: Clemency - Pardon
             Consumer Affairs Issues/Concerns: Consumer Affairs Issues/Concerns
+            Criminal Justice: Criminal Justice
             Death Penalty: Death Penalty
             DIR - Workers Compensation: DIR - Workers Compensation
             DMV Issues/Concerns: DMV Issues/Concerns
@@ -70,6 +70,9 @@ contact_form:
         - name: comment
           selector: "input[type='radio'][name='comment'][value='opinion']"
           value: opinion
+        - name: reply
+          selector: "#reply"
+          value: "2"
     - click_on:
         - value: Continue
           selector: "form.content input[name='Submit']"
@@ -82,6 +85,10 @@ contact_form:
           required: true
           options:
             blacklist: "’—“"
+        - name: subject # this field shows up when selected subject is OTHER
+          selector: "input[name='newsubject']"
+          value: $SUBJECT
+          required: true
     - check:
         - name: position
           selector: "input[type='radio'][name='position'][value='2']"

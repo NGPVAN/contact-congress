@@ -3,7 +3,7 @@ contact_form:
   method: POST
   action: "http://www.desenatedems.com/ajax/apps/formSubmitAjax.php"
   steps:
-    - visit: http://www.desenatedems.com/david-p-sokola.html
+    - visit: http://www.desenatedems.com/david-p-sokola-president-pro-tempore.html
     - fill_in:
       - name: firstname
         selector: "#input-626887877321285764"

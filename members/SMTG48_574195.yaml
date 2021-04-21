@@ -3,6 +3,8 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://svc.mt.gov/gov/contact/shareopinion"
+    - find:
+      - selector: "#sockeye_prefix"
     - fill_in:
       - name: Prefix
         selector: "#sockeye_prefix"

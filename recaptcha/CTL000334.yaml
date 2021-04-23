@@ -1,0 +1,51 @@
+bioguide: CTL000334
+contact_form:
+  method: post
+  action:
+  steps:
+    - visit: "https://www.cthousegop.com/dauphinais/contact-me/"
+    - fill_in:
+        - name: First name
+          selector: input#input_1_1_3
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: input#input_1_1_6
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: input#input_1_3
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input#input_1_6
+          value: $PHONE
+          required: false
+        - name: address
+          selector: input#input_1_2_1
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: input#input_1_2_3
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: input#input_1_2_5
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Subject
+          selector: input#input_1_9
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#input_1_4
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: Submit
+          selector: input#gform_submit_button_1
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thanks for contacting us!

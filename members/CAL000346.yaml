@@ -48,4 +48,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Thank you so much for taking the time"
+      contains: "Thank you so much for reaching out"

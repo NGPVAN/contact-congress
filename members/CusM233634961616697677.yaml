@@ -12,9 +12,9 @@ contact_form:
         value: $MESSAGE	
         required: true
     - find:
-      - selector: input[type='radio']
+      - selector: div[data-submitter-type="individual"] input[type='radio']
     - click_on:
-      - selector: input[type='radio']
+      - selector: div[data-submitter-type="individual"] input[type='radio']
     - find:
       - selector: "#comment_firstName" 
     - fill_in:

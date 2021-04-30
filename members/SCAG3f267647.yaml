@@ -100,5 +100,5 @@ contact_form:
     headers:
       status: 200
     body:
-      excludes: "Select an Issue"
+      excludes: "Write your message"
       contains: "You have successfully sent your message"

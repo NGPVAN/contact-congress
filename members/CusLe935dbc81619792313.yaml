@@ -1,0 +1,62 @@
+bioguide: CusLe935dbc81619792313
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://www.leg.state.nv.us/App/Opinions/81st2021/"
+    - find:
+      - selector: "#MainContent_ddlBills"
+    - select:
+      - name: Bill name
+        selector: "#MainContent_ddlBills"
+        value: SB340
+        required: true
+    - wait:
+      - value: 1
+    - find:
+      - selector: "#MainContent_rblView_0" # In Favor radio button
+    - click_on:
+      - selector: "#MainContent_rblView_0"
+    - find:
+      - selector: "#MainContent_txtComment"
+    - fill_in:
+      - name: message
+        selector: "#MainContent_txtComment"
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 2000
+      - name: First Name
+        selector: "#MainContent_txtFirstName"
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: "#MainContent_txtLastName"
+        value: $NAME_LAST
+        required: true
+      - name: Street
+        selector: "#MainContent_txtAddress"
+        value: $ADDRESS_STREET
+        required: true
+      - name: City
+        selector: "#MainContent_txtCity"
+        value: $ADDRESS_CITY
+        required: true
+      - name: ZipCode
+        selector: "#MainContent_txtZipcode"
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: "#MainContent_txtPhone"
+        value: $PHONE
+        required: false
+      - name: Email
+        selector: "#MainContent_txtEmail"
+        value: $EMAIL
+        required: false
+    - click_on:
+      - selector: "#MainContent_btnSubmit"
+    - find:
+      - selector: "#MainContent_lblMessage"
+  success:
+    body:
+      contains: Thank you for sharing your opinion

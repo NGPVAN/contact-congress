@@ -1,7 +1,6 @@
-bioguide: NJL000168
+bioguide: SNJU25472_363204
 contact_form:
-  method: post
-  action: SelectMun.asp
+  driver: phantom
   steps:
     - visit: "https://www.njleg.state.nj.us/Selectmun.asp"
     - select:
@@ -13,15 +12,15 @@ contact_form:
         - value: Submit
           selector: "#senddata"
         - value: Submit
-          selector: "#checkbox2"
+          selector: "#checkbox1"
         - value: Submit
           selector: "#senddata"
     - fill_in:
-        - name: fname
+        - name: First Name
           selector: "input[name='FirstName']"
           value: $NAME_FIRST
           required: true
-        - name: lname
+        - name: Last Name
           selector: "input[name='LastName']"
           value: $NAME_LAST
           required: true
@@ -52,7 +51,7 @@ contact_form:
         - name: email
           selector: "input[name='email']"
           value: $EMAIL
-          required: false
+          required: true
         - name: subject
           selector: "input[name='ESubject']"
           value: $SUBJECT
@@ -65,7 +64,5 @@ contact_form:
         - value: Submit
           selector: "input[type='button'][value='Submit Email']"
   success:
-    headers:
-      status: 200
     body:
       contains: Your message was successfully sent

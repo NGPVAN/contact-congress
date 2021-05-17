@@ -101,7 +101,7 @@ contact_form:
             WY: Wyoming
             UN: X - Unknown or N/A
     - click_on:
-        - selector: input[type='button'][value='Submit']
+        - selector: input[type='submit'][value='Submit']
     - find:
         - selector: div.textWrappedAroundImage h4 
   success:

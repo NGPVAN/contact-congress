@@ -47,7 +47,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 2800
+          max_length: 3000
     - javascript:
       - name: char replace
         values: ["$MESSAGE"]

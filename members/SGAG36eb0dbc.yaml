@@ -1,6 +1,6 @@
 bioguide: SGAG36eb0dbc
 contact_form:
-  method: post
+  driver: chrome
   steps:
     - visit: "https://georgia.gov/contact-georgiagov"
     - find:

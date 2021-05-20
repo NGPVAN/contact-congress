@@ -4,6 +4,10 @@ contact_form:
   steps:
     - visit: "https://georgia.gov/contact-georgiagov"
     - find:
+        - selector: div#buorg
+    - remove:
+        - selector: div#buorg # this removes a browser update msg that's messing with submissions
+    - find:
         - selector: "#edit-please-select-which-agency-your-request-relates-to"
     - select:
         - name: Agency
@@ -65,10 +69,10 @@ contact_form:
           commands: [ "elements[0].value = elements[0].value.replace(/\\b\\d{5}(-\\d+)?\\b/g, '')" ]
           required: true
     - find:
-        - selector: "#edit-writing-on-behalf-who-radios-no"
+        - selector: label[for=edit-writing-on-behalf-who-radios-no]
     - click_on:
         - value: Writing on behalf of other org
-          selector: "#edit-writing-on-behalf-who-radios-no"
+          selector: label[for=edit-writing-on-behalf-who-radios-no]
     - click_on:
         - value: Submit
           selector: "#edit-actions-01-submit"

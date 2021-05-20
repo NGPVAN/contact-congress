@@ -1,8 +1,6 @@
 #US Senator Mitch McConnell
 bioguide: M000355
 contact_form:
-  method: POST
-  action: ""
   steps:
     - visit: "https://www.mcconnell.senate.gov/public/?p=ContactForm"
     - fill_in:
@@ -47,12 +45,11 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 3000
+          max_length: 2970
     - javascript:
       - name: char replace
-        values: ["$MESSAGE"]
         selectors: ["textarea#field_1F71BC5E-19C7-4DEF-AF1D-C2DDCD1E374C"]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0])/g, '');}"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].value.replace(/(%2[0])/g, '');}"]
         required: true
     - select:
       - name: Your Prefix
@@ -133,7 +130,5 @@ contact_form:
       - value: Submit
         selector: form#form_2A1CD1E7-C5A2-44AE-8451-1A352299C051 div.buttonHolder input.btn-primary
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for sharing your thoughts with me"

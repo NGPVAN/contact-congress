@@ -1,0 +1,45 @@
+bioguide: MMNLf415fdd8
+contact_form:	
+  driver: phantom	
+  steps:	
+    - visit: "https://app.smartsheet.com/b/form/3abd61d4d87046bbba131dafe849ccab"	
+    - find:	
+        - selector: input[id='text_box_First Name']
+    - fill_in:	
+        - name: First Name
+          selector: input[id='text_box_First Name']
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name	
+          selector: input[id='text_box_Last Name']
+          value: $NAME_LAST	
+          required: false
+        - name: Phone 
+          selector: input[id='text_box_Phone number']
+          value: $PHONE 
+          required: false
+        - name: Comment
+          selector: textarea[id='textarea_Question/Comment']
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 4000
+        - name: Email
+          selector: input[id='text_box_Email address']
+          value: $EMAIL  
+          required: false
+        - name: Street  
+          selector: input[id='text_box_Address'] 
+          value: $ADDRESS_STREET 
+          required: false
+        - name: zip5  
+          selector: input[id='text_box_Zip Code']  
+          value: $ADDRESS_ZIP5  
+          required: false
+    - click_on:	
+        - selector: button[type='submit'][value='submit']
+    - wait:
+        - value: 3
+  success:	
+    body:	
+      contains: "Success"

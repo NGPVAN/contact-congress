@@ -1,7 +1,8 @@
 bioguide: WIL000511
 contact_form:
+  driver: phantom
   steps:
-    - visit: "https://legis.wisconsin.gov/assembly/79/hesselbein/contact-me/"
+    - visit: "https://legis.wisconsin.gov/assembly/79/hesselbein/contact-dianne/"
     - fill_in:
       - name: First Name
         selector: div.firstname input
@@ -32,15 +33,13 @@ contact_form:
         value: $ADDRESS_ZIP5
         required: true
       - name: Message
-        selector: div.message textarea
+        selector: div.longanswer textarea
         value: $MESSAGE
         required: true
     - click_on:
       - selector: input[type='submit'][value='Send']
     - find:
-      - selector: p.contourMessageOnSubmit
-    - find:
-      - selector: p.contourMessageOnSubmit
+      - selector: div.umbraco-forms-submitmessage
   success:
     body:
       contains: Thank you

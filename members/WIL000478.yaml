@@ -1,7 +1,6 @@
 bioguide: WIL000478
 contact_form:
-  method: post
-  action: Contact.aspx
+  driver: phantom
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/52/thiesfeldt/contact-me/"
     - fill_in:
@@ -34,10 +33,10 @@ contact_form:
           value: $MESSAGE
           required: true
     - click_on:
+        - selector: input[type='checkbox'][value='No']  # Newsletter sign-up = No
+    - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

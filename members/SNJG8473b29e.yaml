@@ -1,9 +1,9 @@
 bioguide: SNJG8473b29e
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "https://www-njlib.state.nj.us/GOV_TRANS_APPLICANTS/BTCustomServlet"
+    - wait:
+        - value: 5
     - select:
         - name: topic
           selector: select#ISSUE
@@ -123,7 +123,5 @@ contact_form:
     - wait:
         - value: 2
   success:
-    headers:
-      status: 200
     body:
       contains: I appreciate your taking the time to write to me.

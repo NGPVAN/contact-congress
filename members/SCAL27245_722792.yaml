@@ -1,6 +1,6 @@
 bioguide: SCAL27245_722792
 contact_form:
- driver: phantom
+  driver: phantom
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD54"
     - fill_in:

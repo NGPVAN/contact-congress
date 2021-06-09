@@ -1,0 +1,52 @@
+bioguide: SCAL27245_722792
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD54"
+    - fill_in:
+        - name: First Name
+          selector: "#form_name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#form_lastname"
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: "#form_address"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#form_city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: "#form_zip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: "#txtPhNumber"
+          value: $PHONE
+          required: false
+        - name: Email
+          selector: "#form_email"
+          value: $EMAIL
+          required: true
+        - name: Message
+          selector: "#comments"
+          value: $MESSAGE
+          options:
+            max_length: 2000
+          required: true
+    - javascript:
+        - name: accent-replace
+          values: ["$NAME_FIRST", "$NAME_LAST"]
+          selectors: ["#form_name", "#form_lastname"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].value.replace(/[èēéë]/g,'e').replace(/[àåáä]/g, 'a').replace(/[Á]/g, 'A').replace(/[.&,]/g, '').replace(/[ý]/g, 'y').replace(/[íï]/g, 'i').replace(/[óö]/g, 'o').replace(/[ñ]/g, 'n'); }"]
+    - click_on:
+        - value: Submit
+          selector: "#submitButton"
+  success:
+    body:
+      excludes: "Select an Issue"
+      contains: "Your message has been received"

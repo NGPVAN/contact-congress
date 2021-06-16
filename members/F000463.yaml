@@ -1,7 +1,7 @@
 #US Senator Deb Fischer
 bioguide: F000463
 contact_form:
-  method: POST
+  driver: phantom
   steps:
     - visit: "http://www.fischer.senate.gov/public/?p=email-deb"
     - fill_in:

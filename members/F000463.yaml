@@ -62,7 +62,7 @@ contact_form:
           Agriculture: Agriculture
           Banking: Banking
           Budget: Budget
-          "Defense,Terrorism": "Defense,Terrorism"
+          Defense,Terrorism: Defense,Terrorism
           Economy: Economy
           Education: Education
           Energy: Energy

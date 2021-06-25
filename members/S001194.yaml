@@ -6,6 +6,9 @@ contact_form:
     - visit: "https://www.schatz.senate.gov/contact/share-your-thoughts/form"
     - find: 
         - selector: "#input-3012F9F8-E1FF-15AC-780D-51E059038981"
+    # remove the top header to see Prefix field when debugging
+    - remove:
+        - selector: "div .SiteHeader"
     - fill_in:
         - name: First Name
           selector: "#input-3012F9F8-E1FF-15AC-780D-51E059038981"
@@ -58,6 +61,8 @@ contact_form:
           selector: "#input-3014F950-07E6-309C-4FC0-3FE72DF6CBFB"
           value: None
           required: false
+    - wait:
+        - value: 1
     - select:
         - name: Prefix
           selector: "#input-3014F950-07E6-309C-4FC0-3FE72DF6CBFB"

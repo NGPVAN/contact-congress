@@ -1,7 +1,7 @@
 #US Senator Brian Schatz
 bioguide: S001194
 contact_form:
-  driver: simple
+  driver: phantom
   steps:
     - visit: "https://www.schatz.senate.gov/contact/share-your-thoughts/form"
     - find: 

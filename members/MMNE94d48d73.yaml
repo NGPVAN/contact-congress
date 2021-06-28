@@ -51,4 +51,4 @@ contact_form:
         - value: 3
   success:	
     body:	
-      contains: "Success!"
+      contains: "Thank you for taking the time to share your feedback"

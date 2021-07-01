@@ -2,7 +2,7 @@
 bioguide: FNMS22252_266495
 contact_form:
   steps:
-    - visit: "https://www.lujan.senate.gov/"
+    - visit: "https://www.lujan.senate.gov/contact/contact-form/"
     - wait:
       - value: 3
     - find:

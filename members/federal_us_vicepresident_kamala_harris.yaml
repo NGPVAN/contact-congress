@@ -16,7 +16,7 @@ contact_form:
       - name: Your Prefix
         selector: select[id='Contact.Salutation']
         value: $NAME_PREFIX
-        required: false
+        required: False
         options:
           Mr.: Mr.
           Ms.: Ms.

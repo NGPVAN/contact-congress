@@ -10,13 +10,13 @@ contact_form:
       - name: type
         selector: select[id='Contact.Case.Who_are_you_trying_to_contact__c'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
         value: Contact the Vice President
-        required: True
+        required: true
         options:
           Contact the Vice President: Contact the Vice President
       - name: Your Prefix
         selector: select[id='Contact.Salutation']
         value: $NAME_PREFIX
-        required: False
+        required: false
         options:
           Mr.: Mr.
           Ms.: Ms.
@@ -26,7 +26,7 @@ contact_form:
       - name: state
         selector: select[id='Contact.MailingState']
         value: $ADDRESS_STATE_FULL
-        required: True
+        required: true
         options:
           Armed Forces Americas: Armed Forces Americas
           Armed Forces Europe: Armed Forces Europe
@@ -95,35 +95,35 @@ contact_form:
       - name: First Name
         selector: input[id='Contact.FirstName']
         value: $NAME_FIRST
-        required: True
+        required: true
       - name: Last Name
         selector: input[id='Contact.LastName']
         value: $NAME_LAST
-        required: True
+        required: true
       - name: email
         selector: input[id='Contact.Email']
         value: $EMAIL
-        required: True
+        required: true
       - name: phone
         selector: input[id='Contact.HomePhone']
         value: $PHONE
-        required: True
+        required: true
       - name: street
         selector: textarea[id='Contact.MailingStreet']
         value: $ADDRESS_STREET
-        required: True
+        required: true
       - name: city
         selector: input[id='Contact.MailingCity']
         value: $ADDRESS_CITY
-        required: True
+        required: true
       - name: zip5
         selector: input[id='Contact.MailingPostalCode']
         value: $ADDRESS_ZIP5
-        required: True
+        required: true
       - name: message
         selector: textarea[id='Contact.Case.Description']
         value: $MESSAGE
-        required: True
+        required: true
         options:
           blacklist: "\n"
           max_length: 2000

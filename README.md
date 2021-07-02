@@ -4,7 +4,7 @@ Used to store the form definitions used to submit contact forms for elected offi
 
 Active form definitions will exist within [`/members`](/members)
 
-For more documentation on these form definitions, see [Confluence](https://ngpvan.atlassian.net/l/c/QzP3e17x)
+For more documentation on these form definitions, see [Confluence](https://ngpvan.atlassian.net/l/c/EnE4ZkFd)
 
 ## Relationship to original contact-congress
 

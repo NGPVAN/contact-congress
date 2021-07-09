@@ -1,6 +1,6 @@
 bioguide: TXL000677
 contact_form:
-  method: post
+  driver: phantom
   steps:
     - visit: "https://house.texas.gov/members/member-page/email/?district=73&session=86"
     - fill_in:
@@ -72,15 +72,7 @@ contact_form:
             Dr: Dr
     - click_on:
         - value: Send Message
-          selector: "#email-button"
-    - find:
-       - selector: "#container"
-         value: "After confirming your information"
-    - click_on:
-        - value: Send Message
-          selector: "#email-button"
+          selector: input[type='submit'][name='Submit']
   success:
-    headers:
-      status: 200
     body:
       contains:  I would like to personally thank you for contacting me

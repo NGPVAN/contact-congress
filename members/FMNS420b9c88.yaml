@@ -1,7 +1,7 @@
 #US Senator Tina Smith
 bioguide: FMNS420b9c88
 contact_form:
-  method: POST
+  driver: phantom
   steps:
     - visit: "https://www.smith.senate.gov/share-your-opinion"
     - fill_in:
@@ -41,6 +41,8 @@ contact_form:
         selector: div input[name='subject']
         value: "$SUBJECT"
         required: true
+        options:
+          max_length: 75
       - name: Message
         selector: div textarea[name='message']
         value: "$MESSAGE"
@@ -52,29 +54,12 @@ contact_form:
         commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
         required: true
     - select:
-      - name: Your Prefix
-        selector: div select[name='prefix']
-        value: $NAME_PREFIX
-        required: true
-        options:
-          Mr.: Mr.
-          Mrs.: Mrs.
-          Ms.: Ms.
-          Mr. and Mrs.: Mr. and Mrs.
-          Dr.: Dr.
-          Dr. and Mrs.: Dr. and Mrs.
-          Reverend: Reverend
-          Sister: Sister
-          Pastor: Pastor
-          The Honorable: The Honorable
-          Representative: Representative
-          Senator: Senator
       - name: topic
         selector: div select[name='topic']
         value: "$TOPIC"
         required: true
         options:
-          General Topic Selection: General
+          General: General
           Agriculture: Agriculture
           Animal Welfare: Animal Welfare
           Arts: Arts
@@ -113,14 +98,14 @@ contact_form:
           Transportation / Infrastructure: Transportation / Infrastructure
           Veterans: Veterans
     - find:
-      - selector: button[type='submit'][value='Send message']
+      - selector: "#edit-subscribe-to-senator-tina-smith-s-newsletter-not-at-this-time"
     - click_on:
+      - value: No newsletter sign up
+        selector: "#edit-subscribe-to-senator-tina-smith-s-newsletter-not-at-this-time"
       - value: Submit
         selector: button[type='submit'][value='Send message']
     - find:
       - selector: div > div.webform-confirmation__message
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you, your message has been sent."

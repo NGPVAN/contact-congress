@@ -1,8 +1,9 @@
 # US Senator John Hickenlooper
 bioguide: FCOS22199_288619
 contact_form:
+  driver: phantom
   steps:
-    - visit: "https://www.hickenlooper.senate.gov/"
+    - visit: "https://www.hickenlooper.senate.gov/contact/contact-form/"
     - wait:
       - value: 3
     - find:

@@ -1,9 +1,11 @@
 #US Senator Marie Hirono
 bioguide: H001042
 contact_form:
-  method: POST
+  driver: phantom
   steps:
     - visit: "https://www.hirono.senate.gov/share-your-opinion"
+    - find:
+      - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
       - name: First Name
         selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
@@ -78,46 +80,42 @@ contact_form:
         value: $TOPIC
         required: true
         options:
-          - "Federal Agency Assistance"
-          - "Arts/Culture/History"
-          - "Armed Services/Defense/Military Affairs"
-          - "Agriculture"
-          - "Animal Welfare"
-          - "Civil Rights/Liberties/Minority Issues/Religion"
-          - "Congressional Procedures"
-          - "Crime and Law Enforcement"
-          - "Economy - Banking and Finance"
-          - "Economy - Budget"
-          - "Economy - Small Business and Job Creation"
-          - "Economy - Taxes"
-          - "Energy and Climate"
-          - "Environmental/Wildlife Protection"
-          - "Foreign Affairs"
-          - "Health"
-          - "Education"
-          - "Homeland Security and Emergency Management"
-          - "Housing"
-          - "Immigration"
-          - "Inauguration"
-          - "Labor"
-          - "Medicare/Medicaid"
-          - "Native Hawaiians and Native Americans"
-          - "Public Lands and National Parks"
-          - "Reproductive Health"
-          - "Science and Technology"
-          - "Social Welfare Programs"
-          - "Social Security"
-          - "Telecommunications/Internet"
-          - "Trade"
-          - "Tourism"
-          - "Veterans"
-          - "Transportation"
+          "Federal Agency Assistance": Federal Agency Assistance
+          "Arts/Culture/History": Arts/Culture/History
+          "Armed Services/Defense/Military Affairs": Armed Services/Defense/Military Affairs
+          "Agriculture": Agriculture
+          "Animal Welfare": Animal Welfare
+          "Civil Rights/Liberties/Minority Issues/Religion": Civil Rights/Liberties/Minority Issues/Religion
+          "Governmental Operations and Congressional Procedures": Governmental Operations and Congressional Procedures
+          "Crime and Law Enforcement": Crime and Law Enforcement
+          "Economy Banking and Finance": Economy Banking and Finance
+          "Economy - Budget": Economy - Budget
+          "Economy Small Business and Job Creation": Economy Small Business and Job Creation
+          "Economy - Taxes": Economy - Taxes
+          "Energy and Climate": Energy and Climate
+          "Environmental/Wildlife Protection": Environmental/Wildlife Protection
+          "Foreign Affairs": Foreign Affairs
+          "Health": Health
+          "Education": Education
+          "Homeland Security and Emergency Management": Homeland Security and Emergency Management
+          "Housing": Housing
+          "Immigration": Immigration
+          "Inauguration": Inauguration
+          "Labor": Labor
+          "Medicare/Medicaid": Medicare/Medicaid
+          "Native Hawaiians and Native Americans": Native Hawaiians and Native Americans
+          "Public Lands and National Parks": Public Lands and National Parks
+          "Reproductive Health": Reproductive Health
+          "Science and Technology": Science and Technology
+          "Social Welfare Programs": Social Welfare Programs
+          "Social Security": Social Security
+          "Telecommunications/Internet": Telecommunications/Internet
+          "Trade": Trade
+          "Tourism": Tourism
+          "Veterans": Veterans
+          "Transportation": Transportation
     - click_on:
       - selector: input[type='submit'][value='Submit']
-    - wait:
-      - value: 2
   success:
-    headers:
-      status: 200
     body:
-      contains: "Thank You"
+      contains: "Thank you for submitting"

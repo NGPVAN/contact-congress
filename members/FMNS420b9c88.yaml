@@ -63,39 +63,34 @@ contact_form:
           Agriculture: Agriculture
           Animal Welfare: Animal Welfare
           Arts: Arts
+          Appropriations: Appropriations
           Banking: Banking
-          Budget / Appropriations : Budget / Appropriations
-          Casework: Casework
+          Budget/Appropriations : Budget/Appropriations
           Child Welfare: Child Welfare
           Climate Change: Climate Change
-          Crime: Crime
           Banking: Banking
-          Eagle Scout Letter: Eagle Scout Letter
           Economy and Business: Economy and Business
           Education: Education
           Energy: Energy
           Environment: Environment
-          Flag Requests: Flag Requests
           Foreign Relations: Foreign Relations
-          Girl Scout Letter: Girl Scout Letter
-          Government / Ethics: Government / Ethics
+          Government Affairs: Government Affairs
           Health: Health
           Housing: Housing
           Immigration: Immigration
           Indian Affairs: Indian Affairs
-          Judiciary / Civil Rights: Judiciary / Civil Rights
-          Judicial Nominations / Executive Nominations: Judicial Nominations / Executive Nominations
+          Judiciary: Judiciary (Elections, Civil Rights, Crime)
           Labor: Labor
-          Medicare: Medicare
+          Medicare/Medicaid: Medicare/Medicaid
           National Security: National Security
           Postal: Postal
           Reproductive Rights: Reproductive Rights
-          Social Security: Social Security
-          Space / NASA: Space / NASA
+          Social Security/Aging: Social Security/Aging
+          NASA: NASA
           Taxes: Taxes
-          Telecommunications, Technology, and Media: Telecommunications, Technology, and Media
-          Tours: Tours
-          Transportation / Infrastructure: Transportation / Infrastructure
+          Telecommunications: Telecommunications
+          Trade: Trade
+          Transportation: Transportation
           Veterans: Veterans
     - find:
       - selector: "#edit-subscribe-to-senator-tina-smith-s-newsletter-not-at-this-time"

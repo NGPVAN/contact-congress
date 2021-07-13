@@ -1,7 +1,7 @@
 #US Senator Richard Burr
 bioguide: B001135
 contact_form:
-  method: post
+  driver: phantom
   steps:
     - visit: "http://www.burr.senate.gov/contact/email"
     - find:
@@ -175,10 +175,6 @@ contact_form:
           selector: input#input-07723B03-5056-A066-603E-BE90CECEC5C6
           value: $ADDRESS_ZIP5
           required: true
-        - name: Home phone
-          selector: input#input-07732C3A-5056-A066-6049-CE975D761F0D
-          value: $PHONE
-          required: true
         - name: email
           selector: input#email
           value: $EMAIL
@@ -223,6 +219,7 @@ contact_form:
             Energy: Energy
             Environment: Environment
             Homeland-Security: FEMA
+            Homeland-Security: Defense
             Federal-Workers: Federal Employees
             Foreign Affairs: Foreign Affairs
             Economy: Gas and Oil Prices

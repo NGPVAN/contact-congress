@@ -1,7 +1,7 @@
 #US Senator Mark Kelly
 bioguide: FAZS22195_709398
 contact_form:
-  method: POST
+  driver: phantom
   steps:
     - visit: "https://www.kelly.senate.gov/"
     - wait:

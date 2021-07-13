@@ -6,9 +6,6 @@ contact_form:
     - visit: "https://www.schatz.senate.gov/contact/share-your-thoughts/form"
     - find: 
         - selector: "#input-3012F9F8-E1FF-15AC-780D-51E059038981"
-    # remove the top header to see Prefix field when debugging
-    - remove:
-        - selector: "div .SiteHeader"
     - fill_in:
         - name: First Name
           selector: "#input-3012F9F8-E1FF-15AC-780D-51E059038981"
@@ -56,18 +53,11 @@ contact_form:
           selectors: ["#input-30403D9F-9D8B-E1D8-02F8-5D7C17B516E7"]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
-    - select: 
-        - name: Prefix (default)
-          selector: "#input-3014F950-07E6-309C-4FC0-3FE72DF6CBFB"
-          value: None
-          required: false
-    - wait:
-        - value: 1
     - select:
         - name: Prefix
           selector: "#input-3014F950-07E6-309C-4FC0-3FE72DF6CBFB"
           value: $NAME_PREFIX
-          required: false
+          required: true
           options:
             "None": "None"
             "Mr.": "Mr."
@@ -139,61 +129,55 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            - Agriculture
-            - Animal Welfare
-            - Army Corps/Public Works/Infrastructure
-            - Arts and Humanities
-            - Asians and Pacific Islanders
-            - Banking
-            - Budget
-            - Census
-            - Children/Family/Adoption
-            - Civil Rights
-            - Consumer Affairs
-            - Defense
-            - Education
-            - Elections and Campaign Finance
-            - Energy
-            - Environment
-            - Federal Workforce
-            - Flag Requests
-            - Foreign Relations
-            - Governmental Affairs
-            - Gun Control
-            - Health
-            - Homeland Security and Intelligence
-            - Help with a Federal Agency
-            - Housing
-            - Immigration
-            - Judiciary
-            - Labor
-            - Meeting Request
-            - Native Americans and Indigenous Peoples
-            - Native Hawaiians
-            - Natural Resources
-            - New Parks
-            - Oceans and Fisheries
-            - Postal Service
-            - Science and Space
-            - Seniors
-            - Small Business and Economic Development
-            - Social Security
-            - Tax
-            - Telecommunications/Internet
-            - Tourism
-            - Tour Requests
-            - Trade
-            - Transportation
-            - Veterans
-            - Welfare
-            - "Women's Issues"
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Arts and Humanities: Arts and Humanities
+            Banking: Banking
+            Budget: Budget
+            Census: Census
+            Children/Family/Adoption: Children/Family/Adoption
+            Civil Rights: Civil Rights
+            Climate Change: Climate Change
+            Defense: Defense
+            Education: Education
+            Elections and Campaign Finance: Elections and Campaign Finance
+            Energy: Energy
+            Environment: Environment
+            Federal Workforce: Federal Workforce
+            Foreign Relations: Foreign Relations
+            Gun Control: Gun Control
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Judiciary: Judiciary
+            Labor: Labor
+            Native Americans and Indigenous Peoples: Native Americans and Indigenous Peoples
+            Natural Resources: Natural Resources
+            Oceans and Fisheries: Oceans and Fisheries
+            Postal Service: Postal Service
+            Science and Space: Science and Space
+            Seniors: Seniors
+            Small Business and Economic Development: Small Business and Economic Development
+            Social Security: Social Security
+            Sports: Sports
+            Tax: Tax
+            Technology/Telecommunications: Technology/Telecommunications
+            Tourism: Tourism
+            Trade: Trade
+            Transportation & Infrastructure: Transportation & Infrastructure
+            Veterans: Veterans
+            Welfare: Welfare
+            Women's Issues: Women's Issues
     - click_on:
-        - selector: "label[for='input-3048820B-A361-6166-70F4-2D74C1E208F4']"
+        - selector: "label[for='input-3048820B-A361-6166-70F4-2D74C1E208F4']" # Yes to 'response from the Senator' radio buttons
     - click_on:
         - selector: "button[type='submit']"
     - find:
-        - selector: "h1"
-          value: "Mahalo"
+        - selector: "#form-2FD3BE59-FB41-D824-19A0-5E7461576DB6"
+    - find:
+        - selector: "#form-2FD3BE59-FB41-D824-19A0-5E7461576DB6"
   success:
     body:
       contains: Your message has been received.
+      excludes: Message Topic

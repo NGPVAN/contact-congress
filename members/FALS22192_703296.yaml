@@ -2,7 +2,7 @@
 bioguide: FALS22192_703296
 contact_form:
   steps:
-    - visit: "https://www.tuberville.senate.gov/"
+    - visit: "https://www.tuberville.senate.gov/contact/contact-form/"
     - wait:
       - value: 3
     - find:

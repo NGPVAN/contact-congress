@@ -75,38 +75,34 @@ contact_form:
         required: true
         options:
           Agriculture: AGR
-          Banking: BANK
+          Appropriations: APPROPRIA
+          Banking and Finance: BANK
           Budget: BUD
           Business: BUS
-          Condolences: COND
-          Congratulations - Military, Retirement, etc.: CONGRATS
-          Casework: CW
-          Defense: DEF
+          Criminal Justice Reform: CRIME
+          Defense & Military: DEF
           Economy: ECON
           Education: EDU
           Energy: ENE
           Environmental: ENV
-          General State Office Correspondence: GENERAL
           Governmental Reform: GOV
           Health: HEA
+          Housing: HOUSING
           Homeland Security: HOM
-          Individual Assistance: IA
+          Human Rights: HR
           Immigration: IMM
-          International Relations: INT
           Judiciary: JUD
+          Life Issues: LIFE
           Labor: LAB
-          Legal: LEG
           Medicare/Medicaid: MED
-          Military Personnel: MILP
-          Other: OTH
-          Social Issues: SOC
           Social Security: SSEC
           Taxes: TAXES
           Telecommunications: TEL
-          Transportation: TRA
+          Transportation & Infrastructure: TRA
           Trade: TRADE
           Veterans: VET
           Welfare: WEL
+          Wildlife: WILD
     - click_on:
       - value: Submit
         selector: form#form_A52D2670-5183-4901-9285-7CEDA8BB2953 div.buttonHolder input.btn-primary

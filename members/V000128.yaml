@@ -1,8 +1,7 @@
 #US Senator Chris Van Hollen
 bioguide: V000128
 contact_form:
-  method: post
-  action: ""
+  driver: phantom
   steps:
     - visit: "https://www.vanhollen.senate.gov/contact/email"
     - find:
@@ -142,7 +141,6 @@ contact_form:
             Campaign Finance: Campaign Finance
             Children: Children
             Communications: Communications
-            Congratulations: Congratulations
             Congressional Issues: Congressional Issues
             Crime: Crime
             Defense: Defense
@@ -154,13 +152,27 @@ contact_form:
             Energy: Energy
             Environment: Enviroment
             Family: Family
+            Foreign Affairs: Foreign Affairs
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Judiciary: Judiciary
+            Labor: Labor
+            NASA: NASA
             Other: Other
+            Science: Science
+            Social Security: Social Security
+            Taxes: Taxes
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Welfare: Welfare
+            Government Reform: Government Reform
     - click_on:
         - selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for submitting your Request to our office"

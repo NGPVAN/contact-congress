@@ -1,6 +1,7 @@
 #US Senator Ben Lujan
 bioguide: FNMS22252_266495
 contact_form:
+  driver: phantom
   steps:
     - visit: "https://www.lujan.senate.gov/contact/contact-form/"
     - wait:
@@ -91,32 +92,24 @@ contact_form:
         value: "$TOPIC"
         options:
           Agriculture: Agriculture
-          Animals: Animals
-          Arts and Humanities: Arts and Humanities
-          Civil Rights: Civil Rights
-          Commerce: Commerce
-          Congress: Congress
-          Crime and law enforcement: Crime and law enforcement
+          Animal Rights: Animal Rights
+          Arts & Humanities: Arts & Humanities
+          Appropriations: Appropriations
+          Banking and Financial Services: Banking and Financial Services
+          Budget: Budget
+          Business and Commerce: Business and Commerce
           Defense and Military: Defense and Military
-          Economy: Economy
+          Economic Development: Economic Development
           Education: Education
           Energy: Energy
-          Emergency Management: Emergency Management
           Environment: Environment
-          Families: Families
-          Finance: Finance
-          Government: Government
-          Health: Health
+          Foreign Relations: Foreign Relations
+          Healthcare: Healthcare
           Homeland Security: Homeland Security
-          Housing: Housing
+          Housing and Urban Affairs: Housing and Urban Affairs
           Immigration: Immigration
-          International Affairs: International Affairs
+          Judiciary: Judiciary
           Labor: Labor
-          Law: Law
-          Public Lands: Public Lands
-          Native Americans: Native Americans
-          Social science and history: Social science and history
-          Sports and recreation: Sports and recreation
           Nutrition: Nutrition
           Postal Service: Postal Service
           Science and Innovation: Science and Innovation

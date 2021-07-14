@@ -129,7 +129,7 @@ contact_form:
             Wayne: Wayne
             Westmoreland: Westmoreland
             Wyoming: Wyoming
-            Yor: Yor
+            York: York
         - name: topic
           selector: "#nf-field-7201"
           value: $TOPIC

@@ -1,22 +1,21 @@
 #US Senator Elizabeth Warren
 bioguide: W000817
 contact_form:
-  method: POST
-  action: ""
+  driver: phantom
   steps:
     - visit: "https://www.warren.senate.gov/contact/shareyouropinion"
     - find:
       - selector: input#input-33295C46-5056-A066-60A3-365F01F67D81
     - fill_in:
-      - name: firstName
+      - name: First Name
         selector: input#input-33295C46-5056-A066-60A3-365F01F67D81
         value: "$NAME_FIRST"
         required: true
-      - name: lastName
+      - name: Last Name
         selector: input#input-33295BC6-5056-A066-6083-E33EA05D3639
         value: "$NAME_LAST"
         required: true
-      - name: Address1
+      - name: Address
         selector: input#input-33295C64-5056-A066-60F7-AB4414E1DCDF
         value: "$ADDRESS_STREET"
         required: true
@@ -189,6 +188,7 @@ contact_form:
           "Domestic Violence": Domestic Violence
           "Drugs (Illegal)": Drugs (Illegal)
           "Economy": Economy
+          "Elementary and Secondary Education": Elementary and Secondary Education
           "Education - Early Childhood": Education - Early Childhood
           "Education - Elementary and Secondary": Education - Elementary and Secondary
           "Education - Post-Secondary": Education - Post-Secondary
@@ -225,7 +225,7 @@ contact_form:
           "Telecommunications": Telecommunications
           "Tour Request": Tour Request
           "Trade": Trade
-          "Transportation and Infrastructure": Transportation and Infrastructure
+          "Transportation": Transportation
           "Unemployment Insurance": Unemployment Insurance
           "Veterans": Veterans
           "Women's Issues": "Women's Issues"
@@ -235,7 +235,5 @@ contact_form:
     - wait:
         - value: 4
   success:
-    headers:
-      status: 200
     body:
       contains: "Your message has been sent"

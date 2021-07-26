@@ -8,7 +8,7 @@ contact_form:
         - name: Your Prefix
           selector: form#aspnetForm input[name='Prefix']
           value: $NAME_PREFIX
-          required: true
+          required: false
         - name: First Name
           selector: "#aspnetForm input[name='First Name']"
           value: $NAME_FIRST
@@ -36,7 +36,7 @@ contact_form:
         - name: homephone
           selector: "#aspnetForm input[name='homephone']"
           value: $PHONE
-          required: true
+          required: false
         - name: messagebody
           selector: "#messagebody"
           value: $MESSAGE

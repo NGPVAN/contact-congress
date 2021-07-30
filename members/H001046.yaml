@@ -6,6 +6,8 @@ contact_form:
     - visit: "https://www.heinrich.senate.gov/contact/write-martin"
     - wait:
         - value: 4
+    - find:
+        - selector: "#contactForm select[name='topic']"
     - select:
         - name: topic
           selector: "#contactForm select[name='topic']"
@@ -53,8 +55,11 @@ contact_form:
             "Women's Issues": "Women's Issues"
     - wait:
         - value: 3
-    - find:
-        - selector: "#continue-form"
+    - javascript:
+        - name: reveal form
+          selectors: ["#continue-form"]
+          commands: ["elements[0].style=''"]
+          required: true
     - fill_in:
         - name: First Name
           selector: "#fname"

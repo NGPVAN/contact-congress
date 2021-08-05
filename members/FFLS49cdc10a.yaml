@@ -1,27 +1,25 @@
 #US Senator Rick Scott
 bioguide: FFLS49cdc10a
 contact_form:
-  method: post
-  action:
+  driver: phantom
   steps:
-    - visit: "https://www.rickscott.senate.gov/contact_rick"
-    - wait:
-      - value: 5
+    - visit: "https://www.rickscott.senate.gov/contact/contact"
+    - find:
+      - selector: "#field_3EA91422-F58D-4F36-9192-1ADA36E8F959"
     - select:
       - name: Your Prefix
-        selector: "#edit-prefix"
+        selector: "#field_3EA91422-F58D-4F36-9192-1ADA36E8F959"
         value: $NAME_PREFIX
         required: true
         options:
           Mr.: Mr.
           Mrs.: Mrs.
           Ms.: Ms.
-      - name: State
-        selector: "#edit-state"
-        value: "FL"
-        required: true
+          Mr. and Mrs.: Mr. and Mrs.
+          Dr.: Dr.
+          Dr. and Mrs.: Dr. and Mrs.
       - name: Topic
-        selector: "#edit-topic"
+        selector: "#field_8D86B005-0005-4A1D-AD3F-A249748008EC"
         value: $TOPIC
         required: true
         options:
@@ -66,60 +64,56 @@ contact_form:
           Welfare: Welfare
     - fill_in:
       - name: First name
-        selector: "#edit-first-name"
+        selector: "#field_62365EF3-160E-48BE-8C70-15452D4481B5"
         value: $NAME_FIRST
         required: true
       - name: Last name
-        selector: "#edit-last-name"
+        selector: "#field_6CF97ED3-2504-4098-92DD-B39A205604EB"
         value: $NAME_LAST
         required: true
       - name: Street
-        selector: "#edit-address-1"
+        selector: "#field_F9546BB3-8580-4460-ADCF-3C59E4FE0874"
         value: $ADDRESS_STREET
         required: true
       - name: Street2
-        selector: "#edit-address-2"
+        selector: "#field_DFB88571-D885-428B-9EE4-B2CED9FA8380"
         value: $ADDRESS_STREET_2
         required: false
       - name: City
-        selector: "#edit-city"
+        selector: "#field_FA2CCDE2-C4EA-4CF7-A19B-F76B94267D0B"
         value: $ADDRESS_CITY
-        required: true
+        required: false
       - name: zip
-        selector: "#edit-zip"
+        selector: "#field_D533FA53-45D6-4C6A-A83D-B1A01A5DB8BC"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: "#edit-phone"
+        selector: "#field_67B03094-1024-4AB1-AD85-F836E4A84BA9"
         value: $PHONE
         required: false
       - name: email
-        selector: "#edit-email-address"
+        selector: "#field_58918E7A-F75C-4950-9075-2AD65D53271C"
         value: $EMAIL
         required: true
       - name: Subject
-        selector: "#edit-subject"
+        selector: "#field_BC3F61D8-EA04-4225-A7B0-A06CE6FFAFF4"
         value: $SUBJECT
         required: true
-        options:
-          max_length: 75
       - name: Message
-        selector: "#edit-message"
+        selector: "#field_5BEA2CE5-75D6-4043-A93F-55A46FDDB702"
         value: $MESSAGE
         required: true
     - javascript:
       - name: char replace
         values: ["$MESSAGE"]
-        selectors: ["#edit-message"]
+        selectors: ["#field_5BEA2CE5-75D6-4043-A93F-55A46FDDB702"]
         commands: ["elements[0].value = values[0].replace(/(CC:)/g,'CC')"]
         required: true
     - click_on:
       - value: Submit
-        selector: "#edit-actions-submit"
-    - wait:
-      - value: 6
+        selector: input[type='submit'][value='Submit']
+    - find:
+      - selector: "#content-body"
   success:
-    headers:
-      status: 200
     body:
-      contains: "Thank you, your message has been sent"
+      contains: "Thank you"

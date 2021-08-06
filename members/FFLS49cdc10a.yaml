@@ -104,7 +104,7 @@ contact_form:
         value: $MESSAGE
         required: true
         options:
-          max_length: 500
+          max_length: 480
     - javascript:
       - name: char replace
         values: ["$MESSAGE"]

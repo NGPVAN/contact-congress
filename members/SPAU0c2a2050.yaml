@@ -45,7 +45,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: input.frm_final_submit
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 2
     - find:

@@ -1,7 +1,6 @@
 bioguide: SPAU0c2a2050
 contact_form:
-  method: post
-  action:
+  driver: phantom
   steps:
     - visit: "http://www.senatorkearney.com/contact/"
     - wait:
@@ -53,7 +52,5 @@ contact_form:
     - wait:
         - value: 1
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you for visiting my website

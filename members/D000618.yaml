@@ -1,7 +1,6 @@
 #US Senator Steve Daines
 bioguide: D000618
 contact_form:
-  method: post
   steps:
     - visit: "http://www.daines.senate.gov/connect/email-steve"
     - find:
@@ -14,57 +13,57 @@ contact_form:
     - wait:
         - value: 2
     - find:
-        - selector: input#input-AB59F0AE-4040-F985-52CD-AA63153C7925
+        - selector: "#input-AE758CDD-5056-A066-603D-1831CB9A4A9E"
     - fill_in:
         - name: First Name
-          selector: "#input-AB59F0AE-4040-F985-52CD-AA63153C7925"
+          selector: "#input-AE758CDD-5056-A066-603D-1831CB9A4A9E"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#input-AB59F0ED-4040-F985-52CD-265D9CF13F5E"
+          selector: "#input-AE758655-5056-A066-6057-3361795D91EB"
           value: $NAME_LAST
           required: true
         - name: address
-          selector: "#input-AB5B6829-4040-F985-52CD-BF81DCC1F57D"
+          selector: "#input-AE758DCA-5056-A066-60CC-990C7C55F1AC"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: "#input-AB5B6875-4040-F985-52CD-909541CB4B6C"
+          selector: "#input-AE758BF2-5056-A066-607D-4D415B590447"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#input-AB5B68B4-4040-F985-52CD-269A4338D057"
+          selector: "#input-AE7586A3-5056-A066-605F-0D3C3097CA37"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#input-AB67BC2F-4040-F985-52CD-007A86DA4D47"
+          selector: "#input-AE7584AA-5056-A066-6024-D288D76D0401"
           value: $PHONE
           required: true
         - name: email
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: verifyemail
-          selector: "#input-AB721CE8-4040-F985-52CD-9E550E8A76AA"
+        - name: verify email
+          selector: "#input-AE758C40-5056-A066-6013-8815A8D72C35"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#input-EAAFA915-5056-A066-608E-8F1B6EC37629"
+          selector: "#input-AE758BA4-5056-A066-6020-7729DD673290"
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51"
+          selector: "#input-AE758C8F-5056-A066-607B-3567A5253A20"
           value: $MESSAGE
           required: true
     - javascript:
         - name: Message
-          selectors: [ "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51" ]
+          selectors: [ "#input-AE758C8F-5056-A066-607B-3567A5253A20" ]
           values: [ "$MESSAGE" ]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix
-          selector: "#input-AB59F08A-4040-F985-52CD-7633AA11C65E"
+          selector: "#input-AE7588C4-5056-A066-6063-84FF585691BB"
           value: $NAME_PREFIX
           required: true
           options:
@@ -203,8 +202,8 @@ contact_form:
             "Seaman": Navy - Seaman
             "Seaman Recruit": Navy - Seaman Recruit
         - name: topic
-          selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
-          value: Other
+          selector: "#input-AE7586F1-5056-A066-606E-0499DE47DE96"
+          value: $TOPIC
           required: true
           options:
             Adoption: Adoption
@@ -259,11 +258,11 @@ contact_form:
             "Women's Issues": "Women's Issues"
     - click_on:
         - value: Submit
-          selector: "input[type='submit'][value='Submit']"
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
     - find:
-        - selector: "#form-4873565B-4040-F985-52CD-58F5E3BCC94D"
+        - selector: "#form-AE758387-5056-A066-6095-BFC8C4EEE140"
   success:
     body:
       contains: "Thank you for submitting your request to our office."

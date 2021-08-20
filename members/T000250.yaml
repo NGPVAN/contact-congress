@@ -1,55 +1,54 @@
 #US Senator John Thune
 bioguide: T000250
 contact_form:
-  method: POST
   steps:
     - visit: "http://www.thune.senate.gov/public/index.cfm/contact"
     - fill_in:
-      - name: first
-        selector: input#field_E3E9333A-D709-49D7-8B96-AB512A781355
+      - name: First Name
+        selector: input#field_CAA9906A-A00C-4DB6-AD03-2DE3737B6BBE
         value: "$NAME_FIRST"
         required: true
-      - name: last
-        selector: input#field_1749496B-47EC-4AA8-97BC-16A81A93A022
+      - name: Last Name
+        selector: input#field_0BE53A08-D4BE-47C9-9937-37C63DC01A3C
         value: "$NAME_LAST"
         required: true
       - name: street
-        selector: input#field_5DF570D1-FAAA-4889-9664-95E3B68BAAC2
+        selector: input#field_6296C3DB-0826-4072-A517-8EC0E3545676
         value: "$ADDRESS_STREET"
         required: true
       - name: street2
-        selector: input#field_6AB1BF51-18E6-44BB-9609-80C7BB55E157
+        selector: input#field_287DEAA0-F456-46B9-ABD1-552FD2B07458
         value: "$ADDRESS_STREET_2"
         required: false
       - name: city
-        selector: input#field_37AEBB8F-FE3C-4331-86A2-BCFB6181ECFE
+        selector: input#field_71E1BF74-90E0-4D4F-8F75-03C38020E97B
         value: "$ADDRESS_CITY"
         required: true
       - name: zip5
-        selector: input#field_72F52A16-9C65-44C6-82BC-F516F395F529
+        selector: input#field_3D11DF91-8B7B-4E98-98E5-4B4EAA7C75C6
         value: "$ADDRESS_ZIP5"
         required: true
       - name: phone
-        selector: input#field_CBA11263-B561-4D67-A1C9-E82B29CA2046
+        selector: input#field_18E5AEA5-37A6-4BC5-9E44-42A10D0C9816
         value: "$PHONE"
         required: true
       - name: email
-        selector: input#field_35E332A5-029B-44C8-8395-6CCA8AEC364D
+        selector: input#field_A794340E-CECC-4270-963A-EFE2ACEEC6BE
         value: "$EMAIL"
         required: true
       - name: message
-        selector: textarea#field_52D20833-C7A4-455D-86B8-1BEB4C81E758
+        selector: textarea#field_BE592D9D-202D-4F5B-94A1-EA9989C9AAED
         value: "$MESSAGE"
         required: true
     - javascript:
       - name: Message
-        selectors: [ "#field_52D20833-C7A4-455D-86B8-1BEB4C81E758" ]
+        selectors: [ "#field_BE592D9D-202D-4F5B-94A1-EA9989C9AAED" ]
         values: [ "$MESSAGE" ]
         commands: ["elements[0].value = values[0].replace(/\\b(set forth in the bill)\\b/ig,'')"]
         required: true
     - select:
       - name: Your Prefix
-        selector: select#field_9947B9A9-7835-48E8-A1EC-ECC643CDAE45
+        selector: select#field_6400CFB6-17D8-424B-9778-316AE0B5AB7D
         value: "$NAME_PREFIX"
         required: false
         options:
@@ -67,7 +66,7 @@ contact_form:
           Senator: Senator
           No Prefix: No Prefix
       - name: topic
-        selector: select#field_6F8F9AF6-B16C-4ADD-9B4F-88F7A910C63F
+        selector: select#field_5CCE9A83-C2B2-44A0-92F4-3381922A7D60
         value: "$TOPIC"
         required: true
         options:
@@ -115,11 +114,9 @@ contact_form:
           "Water Issues": "WATER"
     - click_on:
       - value: Submit
-        selector: form#form_E7612147-3B8F-4921-9F83-D967043B6D2D input.btn-primary
-    - wait:
-      - value: 1
+        selector: input[type=submit][value='Submit']
+    - find:
+      - selector: "#group_8ba7a32f-75fe-4fad-81d8-ad56e4390a7e div.form"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you for taking the time to contact me through my website"

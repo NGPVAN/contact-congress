@@ -75,4 +75,4 @@ contact_form:
           selector: input[type='submit'][name='Submit']
   success:
     body:
-      contains:  I would like to personally thank you for contacting me
+      contains:  Thank you for contacting the Office

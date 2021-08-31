@@ -1,4 +1,4 @@
-bioguide: state_ny_gov_andrew_cuomo
+bioguide: SNYG58_342834
 contact_form:
   driver: phantom
   steps:
@@ -36,6 +36,8 @@ contact_form:
           selector: "#edit-subject"
           value: $SUBJECT
           required: true
+          options:
+            max_length: 255
         - name: message
           selector: "#edit-message"
           value: $MESSAGE
@@ -88,7 +90,7 @@ contact_form:
     - click_on:
         - selector: "#edit-actions-submit"
     - find:
-        - selector: div h4
+        - selector: div.region div p:first-child strong
   success:
     body:
-      contains: Thank you for your submission
+      contains: Thank you very much for your email

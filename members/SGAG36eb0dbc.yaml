@@ -15,14 +15,17 @@ contact_form:
           value: Legislature
           required: true
     - find:
-        - selector: "#edit-please-provide-a-brief-description-about-your-request-concern"
+        - selector: textarea#edit-please-provide-a-brief-description-about-your-request-concern
     - fill_in:
         - name: message
-          selector: "#edit-please-provide-a-brief-description-about-your-request-concern"
+          selector: textarea#edit-please-provide-a-brief-description-about-your-request-concern
           value: $MESSAGE
           required: true
           options:
-            max_length: 480 #lowered this to prevent final chars for getting truncated
+            max_length: 250 #edited to acount for new max char limit on this form
+    - find:
+        - selector: "#edit-prefix"
+    - fill_in:   
         - name: Your Prefix
           selector: "#edit-prefix"
           value: $NAME_PREFIX

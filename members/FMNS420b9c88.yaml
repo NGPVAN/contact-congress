@@ -99,8 +99,10 @@ contact_form:
         selector: "#edit-subscribe-to-senator-tina-smith-s-newsletter-not-at-this-time"
       - value: Submit
         selector: button[type='submit'][value='Send message']
+    - wait:
+      - value: 10
     - find:
-      - selector: div > div.webform-confirmation__message
+      - selector: div div.webform-confirmation__message
   success:
     body:
       contains: "Thank you, your message has been sent."

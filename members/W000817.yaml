@@ -57,7 +57,7 @@ contact_form:
       - name: Your Prefix
         selector: select#input-33295AD5-5056-A066-60A2-AAEB33BB2514
         value: "$NAME_PREFIX"
-        required: true
+        required: false
         options:
             Mr.: Mr.
             Ms.: Ms.

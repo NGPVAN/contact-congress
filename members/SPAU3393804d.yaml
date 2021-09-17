@@ -43,6 +43,78 @@ contact_form:
           value: $MESSAGE
           required: true
     - select:
+        - name: County
+          selector: "#countyname"
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Adams: Adams
+            Allegheny: Allegheny
+            Armstrong: Armstrong
+            Beaver: Beaver
+            Bedford: Bedford
+            Berks: Berks
+            Blair: Blair
+            Bradford: Bradford
+            Bucks: Bucks
+            Butler: Butler
+            Cambria: Cambria
+            Cameron: Cameron
+            Carbon: Carbon
+            Centre: Centre
+            Chester: Chester
+            Clarion: Clarion
+            Clearfield: Clearfield
+            Clinton: Clinton
+            Columbia: Columbia
+            Crawford: Crawford
+            Cumberland: Cumberland
+            Dauphin: Dauphin
+            Delaware: Delaware
+            Elk: Elk
+            Erie: Erie
+            Fayette: Fayette
+            Forest: Forest
+            Franklin: Franklin
+            Fulton: Fulton
+            Greene: Greene
+            Huntingdon: Huntingdon
+            Indiana: Indiana
+            Jefferson: Jefferson
+            Juniata: Juniata
+            Lackawanna: Lackawanna
+            Lancaster: Lancaster
+            Lawrence: Lawrence
+            Lebanon: Lebanon 
+            Lehigh: Lehigh 
+            Luzerne: Luzerne 
+            Lycoming: Lycoming 
+            McKean: McKean 
+            Mercer: Mercer 
+            Mifflin: Mifflin 
+            Monroe: Monroe 
+            Montgomery: Montgomery 
+            Montour: Montour 
+            Northampton: Northampton 
+            Northumberland: Northumberland
+            Perry: Perry 
+            Philadelphia: Philadelphia
+            Pike: Pike 
+            Potter: Potter 
+            Schuylkill: Schuylkill 
+            Snyder: Snyder 
+            Somerset: Somerset 
+            Sullivan: Sullivan 
+            Susquehanna: Susquehanna 
+            Tioga: Tioga 
+            Union: Union 
+            Venango: Venango
+            Warren: Warren 
+            Washington: Washington 
+            Wayne: Wayne 
+            Westmoreland: Westmoreland 
+            Wyoming: Wyoming 
+            York: York
         - name: Issue
           selector: "#issueselect"
           value: Legislation

@@ -1,7 +1,6 @@
 bioguide: PAL000004
 contact_form:
-  method: post
-  action: ""
+  driver: phantom
   steps:
     - visit: "http://www.senatorboscola.com/contact"
     - find:
@@ -54,7 +53,5 @@ contact_form:
     - find:
         - selector: div h1.entry-title
   success:
-    headers:
-      status: 200
     body:
-      contains: Thank You
+      contains: Your form was successfully submitted

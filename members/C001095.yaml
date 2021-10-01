@@ -1,7 +1,7 @@
 #US Senator Tom Cotton
 bioguide: C001095
 contact_form:
-  method: post
+  driver: phantom
   steps:
     - visit: "https://www.cotton.senate.gov/contact/contact-tom"
     - fill_in:
@@ -126,6 +126,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: button.btn
+    - wait:
+        - value: 2
     - find:
         - selector: "#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C"
   success:

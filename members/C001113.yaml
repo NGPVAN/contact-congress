@@ -1,7 +1,7 @@
 #US Senator Catherine Cortez Masto
 bioguide: C001113
 contact_form:
-  method: post
+  driver: phantom
   steps:
     - visit: "https://www.cortezmasto.senate.gov/contact/connect"
     - find:
@@ -143,4 +143,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Thank you for submitting"
+      contains: "Thank you for contacting my office"

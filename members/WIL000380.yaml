@@ -1,10 +1,10 @@
 bioguide: WIL000380
 contact_form:
-  method: post
+  driver: phantom
   steps:
     - visit: "http://legis.wisconsin.gov/assembly/61/kerkman/contact-me/"
     - fill_in:
-        - name: Name
+        - name: Full Name
           selector: div .fullname input
           value: $NAME_FULL
           required: true
@@ -28,13 +28,18 @@ contact_form:
           selector: div .comments textarea
           value: $MESSAGE
           required: true
+    - find:
+        - selector: input[type='radio'][value='No']
+    - click_on:
+        - value: Newsletter No
+          selector: input[type='radio'][value='No']
+    - find:
+        - selector: input[type='submit'][value='Submit']
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
     - wait:
         - value: 5
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

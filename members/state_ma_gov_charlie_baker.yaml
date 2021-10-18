@@ -4,14 +4,14 @@ contact_form:
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
     - find:
-      - selector: "#field90831234"
-    - select:
+      - selector: input[type=radio][value='Comment']
+    - click_on:
       - name: Comment select
-        selector: "#field90831234"
+        selector: input[type=radio][value='Comment']
         value: Comment
         required: true  
       - name: Topic
-        selector: "#field90831245"
+        selector: input[type=radio][value='Other']
         value: Other
         required: true     
     - fill_in:
@@ -54,7 +54,7 @@ contact_form:
       - name: Subject
         selector: input#field49751965
         value: $SUBJECT
-        required: true
+        required: false
     - find:
       - selector: div textarea.fsRequired
     - fill_in:

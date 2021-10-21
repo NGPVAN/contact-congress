@@ -1,21 +1,30 @@
 #US Senator Tammy Baldwin
 bioguide: B001230
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
-    - visit: "https://www.baldwin.senate.gov/feedback"
+    - visit: "https://www.baldwin.senate.gov/contact/contact-tammy"
     - find:
-      - selector: div#main_container div.opinion a.cell
-    - click_on:
-      - selector: div#main_container div.opinion a.cell
-    - find:
-      - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+      - selector: input#yourname
     - fill_in:
-      - name: first
-        selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+      - name: First Name
+        selector: input#yourname
         value: $NAME_FIRST
         required: true
-      - name: last
+      - name: zip5
+        selector: input#zip-input
+        value: $ADDRESS_ZIP5
+        required: true
+    - click_on:
+       - selector: button#zip-submit
+    - find:
+      - selector: label[for="input-FDC00FDA-BE38-FFF7-2435-28171988F9D9"]
+    - click_on:
+      - selector: label[for="input-FDC00FDA-BE38-FFF7-2435-28171988F9D9"]  # Yes to Response radio button
+    - find:
+      - selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
+    - fill_in:   
+      - name: Last Name
         selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
         value: $NAME_LAST
         required: true
@@ -30,10 +39,6 @@ contact_form:
       - name: city
         selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
         value: $ADDRESS_CITY
-        required: true
-      - name: zip5
-        selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
-        value: $ADDRESS_ZIP5
         required: true
       - name: phone
         selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
@@ -245,17 +250,15 @@ contact_form:
           Transportation: Transportation
           Veterans: Veterans
           Welfare: Welfare
-      - name: state
-        selector: select#input-B03E0669-4040-F985-52CD-11B231195172
-        value: WI
-        required: true
-    - click_on:
-      - selector: input#response
     - find:
-      - selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C div.controls input.btn
+      - selector: button.btn
     - click_on:
       - value: Send
-        selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C div.controls input.btn
+        selector: button.btn
+    - find:
+      - selector: div#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C h2
+    - find:
+      - selector: div#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C h2
   success:
     body:
-      contains: "As your United States Senator, I have made it my top priority"
+      contains: "Thank You"

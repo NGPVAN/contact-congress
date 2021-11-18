@@ -1,7 +1,8 @@
-bioguide: CAL000452
+bioguide: SCAL27209_786168
 contact_form:
+  driver: phantom
   steps:
-    - visit: 'https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD17'
+    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD18"
     - fill_in:
         - name: First Name
           selector: "#form_name"
@@ -44,10 +45,8 @@ contact_form:
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/[èēéë]/g,'e').replace(/[àåáä]/g, 'a').replace(/[Á]/g, 'A').replace(/[.&,]/g, '').replace(/[ý]/g, 'y').replace(/[íï]/g, 'i').replace(/[óö]/g, 'o').replace(/[ñ]/g, 'n'); }"]
     - click_on:
         - value: Submit
-          selector: '#submitButton'
+          selector: "#submitButton"
   success:
-    headers:
-      status: 200
     body:
-      excludes: 'Select an Issue'
-      contains: 'Your message has been received'
+      excludes: "Select an Issue"
+      contains: "Your message has been received"

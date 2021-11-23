@@ -1,9 +1,8 @@
-bioguide: WAL000063
+bioguide: SWAU22493_741208
 contact_form:
-  method: post
-  action: /pbc/memberEmail/43/2
+  driver: phantom
   steps:
-    - visit: "https://app.leg.wa.gov/pbc/memberEmail/43/2"
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/28/0"
     - find:
         - selector: "#Address_Street"
     - fill_in:
@@ -15,10 +14,6 @@ contact_form:
           selector: "#Address_City"
           value: $ADDRESS_CITY
           required: true
-        - name: state
-          selector: "#Address_State"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
-          required: true
         - name: zipcode
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
@@ -27,15 +22,15 @@ contact_form:
         - value: Validate address
           selector: "#ValidateAddressButton"
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: "#FirstName"
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: "#LastName"
           value: $NAME_LAST
           required: true
-        - name: emailaddress
+        - name: email
           selector: "#Email"
           value: $EMAIL
           required: true
@@ -51,6 +46,8 @@ contact_form:
           selector: "#CommentSubject"
           value: $SUBJECT
           required: true
+          options: 
+            max_length: 100
         - name: message
           selector: "#Comment"
           value: $MESSAGE
@@ -62,7 +59,8 @@ contact_form:
           selectors: [ "#PhoneNumber"]
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
-          required: false
+    - find:
+        - value: "#ResponseRequested_True"
     - click_on:
         - value: Response requested
           selector: "#ResponseRequested_True"
@@ -72,7 +70,5 @@ contact_form:
         - value: Send
           selector: "#FormSubmitButton"
   success:
-    headers:
-      status: 200
     body:
       contains: The following message was sent to

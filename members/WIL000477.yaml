@@ -1,23 +1,16 @@
 bioguide: WIL000477
 contact_form:
-  method: post
-  action: ""
   steps:
-    - visit: "https://legis.wisconsin.gov/assembly/05/steineke/contact/"
+    - visit: "https://legis.wisconsin.gov/assembly/05/steineke/contact-form/"
     - find:
         - selector: input[type='radio'][value='No']
-    - click_on:
-        - value: newsletter
-          selector: input[type='radio'][value='No']
-    - wait:
-        - value: 1
     - fill_in:
         - name: Name
           selector: div .name input
           value: $NAME_FULL
           required: true
         - name: Address
-          selector: div .streetaddress input
+          selector: div .address input
           value: $ADDRESS_STREET
           required: true
         - name: City
@@ -25,26 +18,20 @@ contact_form:
           value: $ADDRESS_CITY
           required: true
         - name: email
-          selector: div .email input
+          selector: div .emailorphonenumber input
           value: $EMAIL
-          required: true
-        - name: phone
-          selector: div .phonenumber input
-          value: $PHONE
           required: true
         - name: Message
           selector: div .message textarea
           value: $MESSAGE
           required: true
-    - wait:
-        - value: 1
+    - find:
+        - selector: input[type='submit'][value='Submit']
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 5
+    - find:
+        - selector: div .umbraco-forms-submitmessage
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

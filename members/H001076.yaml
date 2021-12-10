@@ -1,27 +1,17 @@
 #US Senator Maggie Hassan
 bioguide: H001076
 contact_form:
-  method: post
-  action: ""
+  driver: chrome
   steps:
     - visit: "https://www.hassan.senate.gov/contact/email"
     - find:
-        - selector: "#newsletterModal button.close"
-    - click_on:
-        - selector: "#newsletterModal button.close"
-    - find:
-        - selector: "#input-81E37B3A-078B-7365-629D-98CF0670D194"
-    - click_on:
-        - selector: "#input-81E37B3A-078B-7365-629D-98CF0670D194"
-        - selector: "#input-AA8CC6CA-DFB9-1D1C-F43E-F7DAD157AD93"
-    - find:
         - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
           value: $NAME_LAST
           required: true
@@ -71,10 +61,10 @@ contact_form:
             Mrs.: Mrs.
             Ms.: Ms.
             Professor: Professor
+            Mx. : Mx.
             Dr.: Dr.
             Reverend: Reverend
             Sister: Sister
-            Pastor: Pastor
             Rabbi: Rabbi
             Father: Father
             General: Air Force - General
@@ -264,7 +254,7 @@ contact_form:
             Welfare: Welfare
             Women's Issues: Women's Issues
     - click_on:
-        - selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C input[type=submit]
+        - selector: div.control-group button[type='submit']
     - wait:
         - value: 3
   success:

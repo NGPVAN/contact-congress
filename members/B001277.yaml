@@ -1,11 +1,11 @@
 #US Senator Richard Blumenthal
 bioguide: B001277
 contact_form:
-  method: POST
+  driver: chrome
   steps:
-    - visit: "https://www.blumenthal.senate.gov/contact/"
+    - visit: "https://www.blumenthal.senate.gov/contact/write-to-senator-blumenthal"
     - find:
-      - selector: form#contactForm select#topic
+      - selector: select#topic
     - select:
       - name: topic
         selector: select#topic
@@ -43,62 +43,61 @@ contact_form:
           "Telecommunications": "Telecommunications"
           "Trade": "Trade"
           "Transportation": "Transportation"
-    - wait:
-      - value: 3
     - find:
-      - selector: div#continue-form input#fname
+      - selector: input#fname
     - fill_in:
       - name: First Name
-        selector: "#fname"
+        selector: "#input-5C0E54FD-9A0F-A898-ABE9-77C0ED64809E"
         value: "$NAME_FIRST"
         required: true
       - name: Last Name
-        selector: "#lname"
+        selector: "#input-5C29EA3E-028C-010F-7E0E-A265D5A6DE43"
         value: "$NAME_LAST"
         required: true
       - name: Street Address
-        selector: "#mailing_streetAddress1"
+        selector: "#input-5C181C7B-F049-21D2-D2C9-B2FAEBC4C296"
         value: "$ADDRESS_STREET"
         required: true
       - name: Street Address2
-        selector: "#mailing_streetAddress2"
+        selector: "#input-5C181CAE-94D6-5C33-F621-819820CBD027"
         value: "$ADDRESS_STREET_2"
       - name: City
-        selector: "#mailing_city"
+        selector: "#input-5C181CE0-D1B4-E41B-8FC0-A0226E16AF06"
         value: "$ADDRESS_CITY"
         required: true
       - name: ZipCode
-        selector: "#mailing_zipCode"
+        selector: "#input-5C181D46-F77C-5CE6-3BA3-0C38F8DBDAE6"
         value: "$ADDRESS_ZIP5"
         required: true
       - name: phone number
-        selector: "#phone_number"
+        selector: "#input-5C1768B7-F54F-4C52-0BD9-FD81BC59D6B3"
         value: "$PHONE"
+        required: true
       - name: email
-        selector: "#email_address"
+        selector: "#email"
         value: "$EMAIL"
         required: true
       - name: verify_email
-        selector: "#verify_email"
+        selector: "#input-5C16C3F6-F764-6F51-D852-3B0199EBA75A"
         value: "$EMAIL"
         required: true
       - name: subject
-        selector: "#subject"
+        selector: "#input-5C189E34-95D2-102E-CED2-A264D066F6C3"
         value: "$SUBJECT"
         required: true
       - name: message
-        selector: textarea#comments
+        selector: "#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"
         value: $MESSAGE
         required: true
     - javascript:
         - name: char replace
           values: ["$MESSAGE"]
-          selectors: ["textarea#comments"]
+          selectors: ["#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
           required: true
     - select:
       - name: Your Prefix
-        selector: "#salutation"
+        selector: "#title"
         value: "$NAME_PREFIX"
         required: true
         options:
@@ -106,23 +105,20 @@ contact_form:
           "Mrs.": "Mrs."
           "Ms.": "Ms."
           "Miss": "Miss"
+          "Mx.": "Mx."
           "Mr. and Mrs.": "Mr. and Mrs."
+          "Mr. and Mr.": "Mr. and Mr."
           "Professor": "Professor"
           "Dean": "Dean"
           "The Honorable": "The Honorable"
           "Dr.": "Dr."
           "Dr. and Mrs.": "Dr. and Mrs."
           "Dr. and Mr.": "Dr. and Mr."
-    - wait:
-      - value: 3
     - click_on:
-      - value: Submit
-        selector: "#side-search-btn"
+      - selector: button.btn
     - find:
       - selector: "h1"
         value: "Thank You"
   success:
-    headers:
-      status: 200
     body:
       contains: "Thank you again for writing"

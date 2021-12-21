@@ -44,7 +44,7 @@ contact_form:
           "Trade": "Trade"
           "Transportation": "Transportation"
     - find:
-      - selector: input#fname
+      - selector: "#input-5C0E54FD-9A0F-A898-ABE9-77C0ED64809E"
     - fill_in:
       - name: First Name
         selector: "#input-5C0E54FD-9A0F-A898-ABE9-77C0ED64809E"

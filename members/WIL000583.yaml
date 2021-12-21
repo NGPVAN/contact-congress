@@ -1,9 +1,7 @@
 bioguide: WIL000583
 contact_form:
-  method: post
-  action: /assembly/19/brostoff/contact-me/
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/19/brostoff/contact-me/"
+    - visit: "https://legis.wisconsin.gov/assembly/19/brostoff/pages/contact-me/"
     - fill_in:
         - name: fname
           selector: "#be1b77f9-e436-44ef-97b7-28778c66ff79"
@@ -33,7 +31,5 @@ contact_form:
         - value: Submit
           selector: input[type='submit'][value='Submit']
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you

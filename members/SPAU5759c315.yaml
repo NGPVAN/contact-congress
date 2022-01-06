@@ -1,11 +1,14 @@
-bioguide: SPAU5759c315
+bioguide: SPAU5759c315 # Senator Katie Muth
 contact_form:
-  method: post
-  action:
+  driver: phantom
   steps:
     - visit: "http://www.senatormuth.com/contact/"
     - wait:
         - value: 2
+    - select:
+      - name: Issue
+        selector: "#field_x82j7"
+        value: "Constituent Services"
     - fill_in:
         - name: First Name
           selector: "#field_qh4icy22"

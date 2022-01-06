@@ -9,7 +9,10 @@ contact_form:
       - name: Comment select
         selector: input[type=radio][value='Comment']
         value: Comment
-        required: true  
+        required: true
+    - find:
+      - selector: input[type=radio][value='Other']
+    - click_on:
       - name: Topic
         selector: input[type=radio][value='Other']
         value: Other

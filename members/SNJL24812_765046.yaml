@@ -1,8 +1,8 @@
-bioguide: SNJLf1997f11
+bioguide: SNJL24812_765046
 contact_form:
   driver: chrome
   steps:
-  - visit: 'https://www.njleg.state.nj.us/legislative-roster/403/assemblywoman-speight/contact'
+  - visit: 'https://www.njleg.state.nj.us/legislative-roster/429/assemblyman-stanley/contact'
   - find:
     - selector: input#FirstName
   - fill_in:

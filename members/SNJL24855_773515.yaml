@@ -1,8 +1,8 @@
-bioguide: SNJLf1997f11
+bioguide: SNJL24855_773515
 contact_form:
   driver: chrome
   steps:
-  - visit: 'https://www.njleg.state.nj.us/legislative-roster/403/assemblywoman-speight/contact'
+  - visit: 'https://www.njleg.state.nj.us/legislative-roster/431/assemblywoman-defuccio/contact'
   - find:
     - selector: input#FirstName
   - fill_in:

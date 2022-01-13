@@ -1,71 +1,57 @@
 bioguide: NJL000086
 contact_form:
-  method: post
-  action: SelectMun.asp
+  driver: chrome
   steps:
-    - visit: "https://www.njleg.state.nj.us/Selectmun.asp"
-    - select:
-        - name: Municipality
-          selector: "#DistrictDD"
-          value: Bloomfield (District 28)
-          required: true
-    - click_on:
-        - value: Submit
-          selector: "#senddata"
-        - value: Submit
-          selector: "#checkbox2"
-        - value: Submit
-          selector: "#senddata"
-    - fill_in:
-        - name: fname
-          selector: "input[name='FirstName']"
-          value: $NAME_FIRST
-          required: true
-        - name: lname
-          selector: "input[name='LastName']"
-          value: $NAME_LAST
-          required: true
-        - name: address
-          selector: "input[name='Address']"
-          value: $ADDRESS_STREET
-          required: true
-        - name: city
-          selector: "input[name='City']"
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip
-          selector: "input[name='ZipCode']"
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone1
-          selector: "input[name='Phone1']"
-          value: $PHONE_AREA_CODE
-          required: false
-        - name: phone2
-          selector: "input[name='Phone2']"
-          value: $PHONE_EXCHANGE_CODE
-          required: false
-        - name: phone3
-          selector: "input[name='Phone3']"
-          value: $PHONE_SUBSCRIBER_NUMBER
-          required: false
-        - name: email
-          selector: "input[name='email']"
-          value: $EMAIL
-          required: false
-        - name: subject
-          selector: "input[name='ESubject']"
-          value: $SUBJECT
-          required: true
-        - name: message
-          selector: "textarea[name='Message']"
-          value: $MESSAGE
-          required: true
-    - click_on:
-        - value: Submit
-          selector: "input[type='button'][value='Submit Email']"
+  - visit: 'https://www.njleg.state.nj.us/legislative-roster/286/assemblyman-caputo/contact'
+  - find:
+    - selector: input#FirstName
+  - fill_in:
+    - name: First Name
+      selector: input#FirstName
+      value: $NAME_FIRST
+      required: true
+    - name: Last Name
+      selector: input#LastName
+      value: $NAME_LAST
+      required: true
+    - name: phone
+      selector: input#Phone
+      value: $PHONE
+      required: false
+    - name: email
+      selector: input#Email
+      value: $EMAIL
+      required: true
+    - name: address
+      selector: input#AddressStreet
+      value: $ADDRESS_STREET
+      required: false
+    - name: city
+      selector: input#City
+      value: $ADDRESS_CITY
+      required: false
+    - name: zip
+      selector: input#Zipcode
+      value: $ADDRESS_ZIP5
+      required: false
+    - name: subject
+      selector: input#EmailSubj
+      value: $SUBJECT
+      required: true
+    - name: message
+      selector: textarea#Message
+      value: $MESSAGE
+      required: true
+  - select:
+    - name: Topic
+      selector: select#SubjectArea
+      value: LEGISLATURE
+      required: false
+  - click_on:
+    - value: Submit
+      selector: button#sendemail
+  - wait:
+    - value: 3
   success:
-    headers:
-      status: 200
     body:
-      contains: Your message was successfully sent
+      contains: Form submitted successfully.

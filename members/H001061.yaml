@@ -1,57 +1,54 @@
 #US Senator John Hoeven
 bioguide: H001061
 contact_form:
-  method: POST
-  action: ""
+  driver: phantom
   steps:
-    - visit: "https://www.hoeven.senate.gov/contact/email-the-senator"
-    - wait:
-      - value: 4
+    - visit: "https://www.hoeven.senate.gov/contact/email-the-senator/form"
     - find:
-      - selector: div#form-77F3C43D-4040-F985-52CD-FEDFC04F94E5 input#input-781129F8-4040-F985-52CD-46DE47AD5D2C
+      - selector: "#input-781129F8-4040-F985-52CD-46DE47AD5D2C"
     - fill_in:
-      - name: first
-        selector: input#input-781129F8-4040-F985-52CD-46DE47AD5D2C
+      - name: First Name
+        selector: "#input-781129F8-4040-F985-52CD-46DE47AD5D2C"
         value: $NAME_FIRST
         required: true
-      - name: last
-        selector: input#input-78112A2E-4040-F985-52CD-BA5873CADBC1
+      - name: Last Name
+        selector: "#input-78112A2E-4040-F985-52CD-BA5873CADBC1"
         value: $NAME_LAST
         required: true
-      - name: street
-        selector: input#input-7811EA94-4040-F985-52CD-A0C8B5E9A7D7
+      - name: Street
+        selector: "#input-7811EA94-4040-F985-52CD-A0C8B5E9A7D7"
         value: $ADDRESS_STREET
         required: true
       - name: street2
-        selector: input#input-7811EB4F-4040-F985-52CD-CE7F1433F2BC
+        selector: "#input-7811EB4F-4040-F985-52CD-CE7F1433F2BC"
         value: $ADDRESS_STREET_2
         required: false
       - name: city
-        selector: input#input-7811EC8E-4040-F985-52CD-9F736859134A
+        selector: "#input-7811EC8E-4040-F985-52CD-9F736859134A"
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: input#input-7811ECEE-4040-F985-52CD-7531B698E92C
+        selector: "#input-7811ECEE-4040-F985-52CD-7531B698E92C"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: input#input-7812E0DC-4040-F985-52CD-9D9A4BDC8EE8
-        value: $PHONE_HYPHENS
+        selector: "#input-7812E0DC-4040-F985-52CD-9D9A4BDC8EE8"
+        value: $PHONE
         required: true
       - name: email
         selector: input#email
         value: $EMAIL
         required: true
       - name: verify_email
-        selector: input#input-7813561C-4040-F985-52CD-4A79B42F821F
+        selector: "#input-7813561C-4040-F985-52CD-4A79B42F821F"
         value: $EMAIL
         required: true
       - name: subject
-        selector: input#input-78156E99-4040-F985-52CD-A3EA1D68A55C
+        selector: "#input-78156E99-4040-F985-52CD-A3EA1D68A55C"
         value: $SUBJECT
-        required: true
+        required: false
       - name: message
-        selector: textarea#input-78163367-4040-F985-52CD-D4AD6E614C69
+        selector: "#input-78163367-4040-F985-52CD-D4AD6E614C69"
         value: $MESSAGE
         required: true
         options:
@@ -206,24 +203,20 @@ contact_form:
           Civil Rights: Civil Rights
           Communications: Communications
           Defense: Defense
-          Economic Development: Economic Development
-          Commerce: Commerce
           Education: Education
           Energy: Energy
           Environment: Environment
-          Flooding Issues: Flooding Issues
+          Emergency Management: Emergency Management
           Foreign Relations: Foreign Relations
-          Government Reform: Government Reform
-          Firearms: Firearms
+          Firearms: Guns
           Health: Health
           Homeland Security: Homeland Security
           Housing: Housing
           Immigration: Immigration
           Indian Affairs: Indian Affairs
           Insurance: Insurance
-          Judiciary and Law: Judiciary and Law
+          Judiciary and Law Enforcement: Judiciary and Law Enforcement
           Medicare: Medicare
-          Social Issues: Social Issues
           Social Security: Social Security
           Taxes: Taxes
           Trade: Trade
@@ -233,9 +226,11 @@ contact_form:
           Multiple Issues: Multiple Issues
     - click_on:
       - value: Submit
-        selector: div#form-77F3C43D-4040-F985-52CD-FEDFC04F94E5 form div.control-group > div.controls > input.btn
+        selector: input.btn
     - wait:
-      - value: 4
+      - value: 2
+    - find:
+      - selector: "#form-77F3C43D-4040-F985-52CD-FEDFC04F94E5 div"
   success:
     headers:
       status: 200

@@ -100,7 +100,7 @@ contact_form:
         required: true
     - click_on:
       - value: Submit
-        selector: div.elementor-col-100.e-form__buttons button
+        selector: section#main-box div.elementor-field-type-submit.e-form__buttons button
     - find:
       - selector: div.elementor-message-success
     - find:

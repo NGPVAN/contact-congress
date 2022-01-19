@@ -1,15 +1,16 @@
 #US Senator Mitt Romney
 bioguide: FUTS344a83b6
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://www.romney.senate.gov/contact-senator-romney"
     - find:
-      - selector: "#edit-prefix"
+      - selector: "#form-field-prefix"
     - select:
       - name: Your Prefix
-        selector: "#edit-prefix"
+        selector: "#form-field-prefix"
         value: $NAME_PREFIX
-        required: true
+        required: false
         options:
           Mr.: Mr.
           Mrs.: Mrs.
@@ -18,8 +19,12 @@ contact_form:
           Dr.: Dr.
           Dr. and Mrs.: Dr. and Mrs.
           Dr. and Mr.: Dr. and Mr.
+      - name: State
+        selector: "#form-field-state"
+        value: Utah
+        required: true
       - name: Topic
-        selector: "#edit-topic"
+        selector: "#form-field-topic"
         value: $TOPIC
         required: true
         options:
@@ -54,52 +59,54 @@ contact_form:
           Veterans: Veterans
     - fill_in:
       - name: First name
-        selector: "#edit-first-name"
+        selector: "#form-field-first_name"
         value: $NAME_FIRST
         required: true
       - name: Last name
-        selector: "#edit-last-name"
+        selector: "#form-field-last_name"
         value: $NAME_LAST
         required: true
       - name: Street
-        selector: "#edit-address-1"
+        selector: "#form-field-address_1"
         value: $ADDRESS_STREET
         required: true
       - name: Street2
-        selector: "#edit-address-2"
+        selector: "#form-field-address_2"
         value: $ADDRESS_STREET_2
         required: false
       - name: City
-        selector: "#edit-city"
+        selector: "#form-field-city"
         value: $ADDRESS_CITY
         required: true
       - name: zip
-        selector: "#edit-zip"
+        selector: "#form-field-zip_code"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: "#edit-phone"
+        selector: "#form-field-phone_number"
         value: $PHONE
-        required: false
+        required: true
       - name: email
-        selector: "#edit-email"
+        selector: "#form-field-email_address"
         value: $EMAIL
         required: true
       - name: Subject
-        selector: "#edit-subject"
+        selector: "#form-field-subject"
         value: $SUBJECT
         required: true
       - name: Message
-        selector: "#edit-message"
+        selector: "#form-field-message"
         value: $MESSAGE
         required: true
     - click_on:
       - value: Submit
-        selector: button#edit-actions-submit
+        selector: section#main-box div.elementor-field-type-submit.e-form__buttons button
     - find:
-      - selector: div .webform-confirmation__back
+      - selector: div.elementor-message-success
     - find:
-      - selector: div .webform-confirmation__back  # this second find is here on purporse
+      - selector: div.elementor-message-success # this second find is here on purporse
+    - click_on:
+      - selector: div.elementor-message-success # this click is to make sure success screenshot includes Success msg  
   success:
     body:
-      contains: "Thank you, your message has been sent"
+      contains: "The form was sent successfully"

@@ -1,0 +1,57 @@
+bioguide: SNJL24828_773442
+contact_form:
+  driver: chrome
+  steps:
+  - visit: "https://www.njleg.state.nj.us/legislative-roster/450/assemblyman-barranco/contact"
+  - find:
+    - selector: input#FirstName
+  - fill_in:
+    - name: First Name
+      selector: input#FirstName
+      value: $NAME_FIRST
+      required: true
+    - name: Last Name
+      selector: input#LastName
+      value: $NAME_LAST
+      required: true
+    - name: phone
+      selector: input#Phone
+      value: $PHONE
+      required: false
+    - name: email
+      selector: input#Email
+      value: $EMAIL
+      required: true
+    - name: address
+      selector: input#AddressStreet
+      value: $ADDRESS_STREET
+      required: false
+    - name: city
+      selector: input#City
+      value: $ADDRESS_CITY
+      required: false
+    - name: zip
+      selector: input#Zipcode
+      value: $ADDRESS_ZIP5
+      required: false
+    - name: subject
+      selector: input#EmailSubj
+      value: $SUBJECT
+      required: true
+    - name: message
+      selector: textarea#Message
+      value: $MESSAGE
+      required: true
+  - select:
+    - name: Topic
+      selector: select#SubjectArea
+      value: LEGISLATURE
+      required: false
+  - click_on:
+    - value: Submit
+      selector: button#sendemail
+  - wait:
+    - value: 3
+  success:
+    body:
+      contains: Form submitted successfully.

@@ -2,7 +2,7 @@ bioguide: SNJU31582_631485
 contact_form:
   driver: chrome
   steps:
-  - visit: "https://www.njleg.state.nj.us/legislative-roster/439/senator-durr"
+  - visit: "https://www.njleg.state.nj.us/legislative-roster/439/senator-durr/contact"
   - find:
     - selector: input#FirstName
   - fill_in:

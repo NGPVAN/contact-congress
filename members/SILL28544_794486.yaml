@@ -1,22 +1,21 @@
-bioguide: SILL4e637d71
+bioguide: SILL28544_794486
 contact_form:
-  method: post
-  action:
+  driver: phantom
   steps:
-    - visit: "http://www.ilhousegop.org/murphycontact"
+    - visit: "https://www.ilhousegop.org/hamiltoncontact"
     - fill_in:
         - name: message
           selector: "#feedback_content"
           value: $MESSAGE
-          required: false
+          required: true
         - name: First Name
           selector: "#feedback_first_name"
           value: $NAME_FIRST
-          required: false
+          required: true
         - name: Last Name
           selector: "#feedback_last_name"
           value: $NAME_LAST
-          required: false
+          required: true
         - name: email
           selector: "#feedback_email"
           value: $EMAIL
@@ -37,9 +36,10 @@ contact_form:
         - value: Submit
           selector: input[type='submit'][value='Send Email']
     - wait:
-      - value: 10
+        - value: 5
+    - find:
+      - selector: "#copyright-container div p:nth-child(1)"
   success:
-    headers:
-      status: 200
     body:
+      excludes: Leave feedback
       contains: state-sponsored and funded site

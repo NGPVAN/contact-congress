@@ -24,7 +24,7 @@ contact_form:
         - name: phone
           selector: div .phonenumber input
           value: $PHONE
-          required: false
+          required: true
         - name: Message
           selector: div .message textarea
           value: $MESSAGE

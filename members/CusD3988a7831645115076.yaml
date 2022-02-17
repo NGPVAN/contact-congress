@@ -38,5 +38,5 @@ contact_form:
         - selector: "#submit_btn"	
   success:	
     body:	
-      contains: "Success!"
+      contains: "Succes!"
       

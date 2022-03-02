@@ -1,0 +1,42 @@
+bioguide: CusR03c2471e1646239769
+contact_form:	
+  driver: simple	
+  steps:	
+    - visit: "https://ngpvan-freedom-tools.herokuapp.com/regulationsGov"	
+    - find:	
+        - selector: input#document_id	
+    - fill_in:	
+        - name: Document Id	
+          selector: "#document_id"	
+          value: "EPA-HQ-OAR-2018-0794-4581" # regsgov document id
+          required: true	
+        - name: Comment	
+          selector: "#comment"	
+          value: $MESSAGE	
+          required: true	
+        - name: First Name	
+          selector: "#firstname"	
+          value: $NAME_FIRST	
+          required: true	
+        - name: Last Name	
+          selector: "#lastname"	
+          value: $NAME_LAST	
+          required: true	
+        - name: City	
+          selector: "#city"	
+          value: $ADDRESS_CITY	
+          required: false	
+        - name: State	
+          selector: "#stateprovince"	
+          value: $ADDRESS_STATE_POSTAL_ABBREV	
+          required: false	
+        - name: zip5	
+          selector: "#zip"	
+          value: $ADDRESS_ZIP5	
+          required: false	
+    - click_on:	
+        - selector: "#submit_btn"	
+  success:	
+    body:	
+      contains: "Success!"
+      

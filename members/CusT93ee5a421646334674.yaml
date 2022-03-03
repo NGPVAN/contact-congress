@@ -1,0 +1,129 @@
+bioguide: CusT93ee5a421646334674
+contact_form:	
+  driver: chrome
+  steps:	
+    - visit: "https://www.tyson.com/contact-us/"
+    - find:
+      - selector: "button.notification__btn.ml-3.btn.btn-Primary"
+    - click:
+     - selector: "button.notification__btn.ml-3.btn.btn-Primary"
+    - find: 
+      - selector: "section.contact-form"
+    - fill_in: 
+      - name: Salutation
+        selector: "#Salutation"
+        value: $NAME_PREFIX
+        required: false 
+      - name: First Name 
+        selector: "#FirstName"
+        value: $NAME_FIRST
+        required: true 
+      - name: Last Name
+        selector: "#LastName"
+        value: $NAME_LAST
+        required: true	
+      - name: Address 1	
+        selector: "#Address1"
+        value: $ADDRESS_STREET
+        required: true	
+      - name: Address 2	
+        selector: "#Address2"
+        value: $ADDRESS_STREET2
+        required: false
+      - name: City	
+        selector: "#City"
+        value: $ADDRESS_CITY	
+        required: true
+      - name: Zip/Postal Code	
+        selector: "#Zip"	
+        value: $ADDRESS_ZIP5	
+        required: true
+      - name: Country
+        selector: "#Country"
+        value: "United States"
+        required: true
+      - name: Email	
+        selector: "#Email"	
+        value: $EMAIL	
+        required: true
+      - name: Phone	
+        selector: "#Phone"	
+        value: $PHONE	
+        required: true
+      - name: Questions/Comments	
+        selector: "#Comment"	
+        value: $MESSAGE
+        required: true
+    - javascript:
+      - name: topic
+        selectors: [ "#inquiryReason" ]
+        commands: [ "elements[0].value = 'Other'"]
+    - select:
+      - name: State/Province
+        selector: "#State" 
+        value: $ADDRESS_STATE  
+        required: true
+        options:
+          Alabama: Alabama
+          Alaska: Alaska
+          Arizona: Arizona
+          Arkansas: Arkansas
+          California: California
+          Colorado: Colorado
+          Connecticut: Connecticut
+          Delaware: Delaware
+          District of Columbia: District of Columbia
+          Florida: Florida
+          Georgia: Georgia
+          Guam: Guam
+          Hawaii: Hawaii
+          Idaho: Idaho
+          Illinois: Illinois
+          Indiana: Indiana
+          Iowa: Iowa
+          Kansas: Kansas
+          Kentucky: Kentucky
+          Louisiana: Louisiana
+          Maine: Maine
+          Maryland: Maryland
+          Massachusetts: Massachusetts
+          Michigan: Michigan
+          Minnesota: Minnesota
+          Mississippi: Mississippi
+          Missouri: Missouri
+          Montana: Montana
+          Nebraska: Nebraska
+          Nevada: Nevada
+          New Hampshire: New Hampshire
+          New Jersey: New Jersey
+          New Mexico: New Mexico
+          New York: New York
+          North Carolina: North Carolina
+          North Dakota: North Dakota
+          Ohio: Ohio
+          Oklahoma: Oklahoma
+          Ontario: Ontario
+          Oregon: Oregon
+          Pennsylvania: Pennsylvania
+          Puerto Rico: Puerto Rico
+          Rhode Island: Rhode Island
+          South Carolina: South Carolina
+          South Dakota: South Dakota
+          Tennessee: Tennessee
+          Texas: Texas
+          Utah: Utah
+          Vermont: Vermont
+          Virginia: Virginia
+          Washington: Washington
+          West Virginia: West Virginia
+          Wisconsin: Wisconsin
+          Wyoming: Wyoming
+    - find:
+      - selector: "button.contact-form__submit"
+    - click_on:
+      - selector: "button.contact-form__submit"
+    - wait:
+      - value: 2
+  success:	
+    body:
+      contains: "Thank you for contacting us!"

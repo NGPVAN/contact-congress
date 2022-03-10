@@ -1,5 +1,6 @@
 bioguide: CusJa11440fb1646939689
 contact_form:
+  driver: phantom
   method: post
   steps:
     - visit: "https://contact.no10.gov.uk/"

@@ -1,0 +1,64 @@
+bioguide: CusJa11440fb1646939689
+contact_form:
+  method: post
+  steps:
+    - visit: "https://contact.no10.gov.uk/"
+    - select:
+      - name: Subject
+        selector: "#ctl00_ContentPlaceHolderMain_cmbContactSubjects"
+        value: $TOPIC
+        required: false
+        options:
+          Contact PM Office email form
+    - fill_in:
+        - name: Name
+          selector: "#ctl00_ContentPlaceHolderMain_txtName"
+          value: $NAME_FULL
+          required: true
+        - name: Address1
+          selector: "#ctl00_ContentPlaceHolderMain_txtAddress1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address2
+          selector: "#ctl00_ContentPlaceHolderMain_txtAddress2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: Town
+          selector: "#ctl00_ContentPlaceHolderMain_txtTown"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Country
+          selector: "#ctl00_ContentPlaceHolderMain_txtCountry"
+          value: "United States"
+          required: false
+        - name: Postcode
+          selector: "#ctl00_ContentPlaceHolderMain_txtPostcode"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Email Address
+          selector: "#ctl00_ContentPlaceHolderMain_txtEmail"
+          value: $EMAIL
+          required: true
+        - name: Confirm Email Address
+          selector: "#ctl00_ContentPlaceHolderMain_txtEmailConfirm"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#ctl00_ContentPlaceHolderMain_txtSubject"
+          value: $SUBJECT
+          required: true
+        - name: Message 
+          selector: "#ctl00_ContentPlaceHolderMain_txtMessage"
+          value: $MESSAGE
+          options:
+            max_length: 1000
+          required: true
+    - find:
+    - click_on:
+        - value: Send
+          selector: "#ctl00_ContentPlaceHolderMain_butSendMessage"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you. An email has been sent to the email address you gave. Please click on the verification link within that email to send your message to the Prime Minister's Office."

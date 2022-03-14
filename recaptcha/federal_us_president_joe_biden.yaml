@@ -7,13 +7,13 @@ contact_form:
         - value: 5
     - select:
       - name: type
-        selector: select[id*='Contact.Who_are_you_trying_to_contact__c'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
+        selector: select[name='Subject'] # these selectors are formatted this way on purpose - chrome dev tools has trouble parsing the id otherwise because of the period
         value: Contact the President
         required: true
         options:
           Contact the President: Contact the President
       - name: Your Prefix
-        selector: select[id*='Contact.Salutation']
+        selector: select[name='Prefix']
         value: $NAME_PREFIX
         required: false
         options:
@@ -23,7 +23,7 @@ contact_form:
           Dr.: Dr.
           Mx.: Mx.
       - name: state
-        selector: select[id*='Contact.MailingState']
+        selector: select[name='State']
         value: $ADDRESS_STATE_FULL
         required: true
         options:
@@ -92,42 +92,44 @@ contact_form:
           Wyoming: Wyoming
     - fill_in:
       - name: First Name
-        selector: input[id*='Contact.FirstName']
+        selector: input[name='FirstName']
         value: $NAME_FIRST
         required: true
       - name: Last Name
-        selector: input[id*='Contact.LastName']
+        selector: input[name='lastName']
         value: $NAME_LAST
         required: true
       - name: email
-        selector: input[id*='Contact.Email']
+        selector: input[name='email_address']
         value: $EMAIL
         required: true
       - name: phone
-        selector: input[id*='Contact.HomePhone']
+        selector: input[name='phone']
         value: $PHONE
         required: true
       - name: street
-        selector: textarea[id*='Contact.MailingStreet']
+        selector: textarea[name='Street']
         value: $ADDRESS_STREET
         required: true
       - name: city
-        selector: input[id*='Contact.MailingCity']
+        selector: input[name='City']
         value: $ADDRESS_CITY
         required: true
+        options:
+          max_length: 40
       - name: zip5
-        selector: input[id*='Contact.MailingPostalCode']
+        selector: input[name='zipcode']
         value: $ADDRESS_ZIP5
         required: true
       - name: message
-        selector: textarea[id*='Contact.Case.Description']
+        selector: textarea[name='message']
         value: $MESSAGE
         required: true
         options:
           blacklist: "\n"
           max_length: 1900 # 100 less than actual max length of form to account for advo msg signature
     - click_on:
-      - selector: input[id*='Contact.Contact_Us_Email_Opt_In__c']
+      - selector: input[name='Optin_code']
     - find:
       - selector: input[type='submit'][value='Send']
     - click_on:

@@ -1,4 +1,5 @@
 bioguide: C001056
+driver: Phantom
 contact_form:
   steps:
     - visit: "https://www.cornyn.senate.gov/node/5853"
@@ -92,9 +93,10 @@ contact_form:
       - name: Submit
         selector: input[type='submit'][value='Submit'] 
     - find:
-      - selector: div.webform-confirmation
+      - selector: webform-submit button-primary btn btn-default signup form-submit
     - find:
-      - selector: div.webform-confirmation
+      - selector: webform-submit button-primary btn btn-default signup form-submit
   success:
     body:
       contains: Your message to Senator Cornyn's office has been submitted
+      

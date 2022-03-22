@@ -80,61 +80,24 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Abortion: Abortion
-            Adoption: Adoption
-            Aging: Aging
             Agriculture: Agriculture
-            Animal Welfare: Animal Welfare
-            Appropriations: Appropriations
-            Arts and Humanities: Arts and Humanities
-            Banking: Banking
-            Campaign Finance: Campaign Finance
-            Civil Rights: Civil Rights
-            Commerce: Commerce
-            Communications: Communications
-            Congratulations: Congratulations
-            Crime: Crime
-            Defense: Defense
-            Drugs: Drugs
-            Economy: Economy
-            Education Higher: Education Higher
-            Elections: Elections
+            Budget: Budget
+            Election Reform: Election Reform
             Energy: Energy
-            Environment: Environment
-            Family: Family
-            Food Stamps: Food Stamps
-            Foreign Affairs: Foreign Affairs
-            Gun Violence Prevention: Gun Violence Prevention
             Health: Health
-            Homeland Security: Homeland Security
             Housing: Housing
             Immigration: Immigration
-            Insurance Health: Insurance Health
-            Insurance Other: Insurance Other
-            Interior: Interior
             Judiciary: Judiciary
             Labor: Labor
-            LGBTQ: LGBTQ
-            Medicaid: Medicaid
-            Medicare: Medicare
             Military: Military
-            NASA: NASA
-            National Security: National Security
             Native Americans: Native Americans
-            Nutrition: Nutrition
-            Patents: Patents
-            Pensions: Pensions
-            Public Lands: Public Lands
-            Securities: Securities
-            Small Business: Small Business
-            Social Security: Social Security
+            Public Safety: Public Safety
             Taxes: Taxes
+            Technology: Technology
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
-            Water: Water
-            Welfare: Welfare
-            Women's Issues: Women's Issues
+            Other: Other
     - click_on:
         - selector: div#form-78DF37A0-0A52-CA9A-8830-4C5F450E15B2 form div.control-group input[type=submit]
     - wait:

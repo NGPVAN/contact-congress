@@ -4,7 +4,7 @@ contact_form:
   steps:
     - visit: "http://www.justice.gov/doj/webform/your-message-department-justice"
     - wait:
-        - value: 30
+        - value: 15
     - fill_in:
       - name: Name
         selector: "input#edit-submitted-name"

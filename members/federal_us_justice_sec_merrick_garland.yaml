@@ -3,6 +3,8 @@ contact_form:
   driver: phantom
   steps:
     - visit: "http://www.justice.gov/doj/webform/your-message-department-justice"
+    - wait:
+        - value: 30
     - fill_in:
       - name: Name
         selector: "input#edit-submitted-name"

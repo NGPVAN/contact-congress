@@ -52,7 +52,7 @@ contact_form:
           selector: "#ctl00_ContentPlaceHolderMain_txtMessage"
           value: $MESSAGE
           options:
-            max_length: 800
+            max_length: 900
           required: true
     - javascript:
       - name: char replace

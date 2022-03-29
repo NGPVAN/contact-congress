@@ -93,7 +93,7 @@ contact_form:
         - name: char replace
           values: ["$MESSAGE"]
           selectors: ["#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}"]
           required: true
     - select:
       - name: Your Prefix

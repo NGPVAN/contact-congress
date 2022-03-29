@@ -45,7 +45,7 @@ contact_form:
       - name: Message
         selectors: [ "#field_F1684590-B63E-4986-8A57-1216FEFE8B9F" ]
         values: [ "$MESSAGE" ]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}"]
         required: true
     - select:
       - name: Your Prefix

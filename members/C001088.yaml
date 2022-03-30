@@ -53,6 +53,12 @@ contact_form:
         required: true
         options:
           blacklist: ":"
+    - javascript:
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["#input-FF88260A-5056-A066-6070-B369711DCB30"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+          required: true
     - select:
       - name: Your Prefix
         selector: "#input-FF882848-5056-A066-60D7-1A3C4C6ADC8D"

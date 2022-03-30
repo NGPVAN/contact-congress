@@ -48,11 +48,11 @@ contact_form:
         value: $MESSAGE
         required: true
     - javascript:
-      - name: Message
-        selectors: [ "textarea#input-A77D42C9-5056-A066-60C2-6DCB5E08010C" ]
-        values: [ "$MESSAGE" ]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
-        required: true
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["textarea#input-A77D42C9-5056-A066-60C2-6DCB5E08010C"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+          required: true
     - select:
       - name: Your Prefix
         selector: "#input-A77D3FC9-5056-A066-60BE-03237AD34984"

@@ -60,6 +60,12 @@ contact_form:
           selector: "#input-6A735A98-CBA2-6A63-E393-69E16553D654"
           value: $MESSAGE
           required: true
+    - javascript:
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["#input-6A735A98-CBA2-6A63-E393-69E16553D654"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+          required: true
     - select:
         - name: Your Prefix
           selector: "#input-6A3EC3AE-A5E3-1F99-B0C5-03BAEEF80307"

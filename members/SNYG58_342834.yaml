@@ -85,6 +85,8 @@ contact_form:
             taxes: Taxes
             transportation: Transportation
             veterans_affaris: Veterans Affairs
+    - wait:
+        - value: 11
     - find:
         - selector: "#edit-actions-submit"
     - click_on:

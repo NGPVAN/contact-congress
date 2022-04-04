@@ -136,6 +136,8 @@ contact_form:
         selector: "#wpcf7-f8521-p20941-o1 textarea[name='your-message']"
         value: "$MESSAGE"
         required: true
+        options:
+          blacklist: "-,;—:()"
     - click_on:
       - selector: input[value='Budget']
     - click_on:

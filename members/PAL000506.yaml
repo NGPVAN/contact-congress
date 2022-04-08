@@ -1,7 +1,7 @@
 bioguide: PAL000506
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/367/RepCraigStaats/SecureContact
+  - visit: https://www.repstaats.net/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

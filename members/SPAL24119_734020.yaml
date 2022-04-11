@@ -1,7 +1,7 @@
 bioguide: SPAL24119_734020
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/440/RepPerryStambaugh/SecureContact
+  - visit: https://www.repperrystambaugh.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

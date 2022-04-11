@@ -1,7 +1,7 @@
 bioguide: PAL000512
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/339/RepJeffWheeland/SecureContact
+  - visit: https://www.repwheeland.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

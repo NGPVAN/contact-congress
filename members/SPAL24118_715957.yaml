@@ -1,7 +1,7 @@
 bioguide: SPAL24118_715957
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/380/RepDavidRowe/SecureContact
+  - visit: https://www.repdavidrowe.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

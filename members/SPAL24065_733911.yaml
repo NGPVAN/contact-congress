@@ -1,7 +1,7 @@
 bioguide: SPAL24065_733911
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/430/RepCarrieLewisDelRosso/SecureContact
+  - visit: https://www.repcarrielewisdelrosso.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

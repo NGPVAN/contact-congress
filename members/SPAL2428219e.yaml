@@ -1,7 +1,7 @@
 bioguide: SPAL2428219e
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/317/RepJimRigby/SecureContact
+  - visit: https://www.repjimrigby.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

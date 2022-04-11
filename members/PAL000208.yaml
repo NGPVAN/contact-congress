@@ -1,7 +1,7 @@
 bioguide: PAL000208
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/382/RepBradRoae/SecureContact
+  - visit: https://www.reproae.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

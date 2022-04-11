@@ -1,7 +1,7 @@
 bioguide: SPAL31392_733892
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/436/RepRobMercuri/SecureContact
+  - visit: https://www.reprobmercuri.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

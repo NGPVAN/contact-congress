@@ -1,7 +1,7 @@
 bioguide: PAL000104
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/364/RepFrankFarry/SecureContact
+  - visit: https://www.repfarry.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

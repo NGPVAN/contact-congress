@@ -1,7 +1,7 @@
 bioguide: PAL000171
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/330/RepDavidMillard/SecureContact
+  - visit: https://www.repmillard.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

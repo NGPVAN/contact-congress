@@ -1,7 +1,7 @@
 bioguide: SPAL661ba761
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/362/RepTimONeal/SecureContact
+  - visit: https://www.reponeal.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

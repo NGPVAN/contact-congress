@@ -1,7 +1,7 @@
 bioguide: SPAL24165_734390
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/431/RepAnnFlood/SecureContact
+  - visit: https://www.repannflood.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

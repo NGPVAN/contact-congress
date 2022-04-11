@@ -2,7 +2,7 @@ bioguide: PAL000460
 contact_form:
   driver: phantom
   steps:
-  - visit: https://www.pahouseformcenter.com/355/RepStevenMentzer/SecureContact
+  - visit: https://www.repmentzer.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

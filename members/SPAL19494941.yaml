@@ -1,7 +1,7 @@
 bioguide: SPAL19494941
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/345/RepClintOwlett/SecureContact
+  - visit: https://www.repowlett.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

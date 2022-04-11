@@ -1,7 +1,7 @@
 bioguide: PAL000493
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/366/RepPaulSchemel/SecureContact
+  - visit: https://www.repschemel.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

@@ -1,7 +1,7 @@
 bioguide: PAL000281
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/406/RepMarkGillen/SecureContact
+  - visit: https://www.repgillen.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

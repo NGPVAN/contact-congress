@@ -1,7 +1,7 @@
 bioguide: PAL000562
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/349/RepJonathanFritz/SecureContact
+  - visit: https://www.repfritz.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

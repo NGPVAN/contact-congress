@@ -1,7 +1,7 @@
 bioguide: PAL000218
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/425/RepStanSaylor/SecureContact
+  - visit: https://www.repsaylor.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

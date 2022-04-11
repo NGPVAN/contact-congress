@@ -1,7 +1,7 @@
 bioguide: SPAL30708_733767
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/354/RepTimBonner/SecureContact
+  - visit: https://www.repbonner.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

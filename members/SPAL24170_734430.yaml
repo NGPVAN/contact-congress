@@ -1,7 +1,7 @@
 bioguide: SPAL24170_734430
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/434/RepShelbyLabs/SecureContact
+  - visit: https://www.repshelbylabs.net/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

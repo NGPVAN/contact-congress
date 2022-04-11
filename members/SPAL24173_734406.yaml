@@ -1,7 +1,7 @@
 bioguide: SPAL24173_734406
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/437/RepTracyPennycuick/SecureContact
+  - visit: https://www.reptracypennycuick.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

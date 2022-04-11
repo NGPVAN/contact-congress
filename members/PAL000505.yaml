@@ -1,7 +1,7 @@
 bioguide: PAL000505
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/344/RepParkeWentling/SecureContact
+  - visit: https://www.repwentling.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

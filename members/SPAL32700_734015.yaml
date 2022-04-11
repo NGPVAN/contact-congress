@@ -1,7 +1,7 @@
 bioguide: SPAL32700_734015
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/309/RepJohnHershey/SecureContact
+  - visit: https://www.rephershey.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

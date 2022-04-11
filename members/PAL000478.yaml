@@ -1,7 +1,7 @@
 bioguide: PAL000478
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/372/RepJesseTopper/SecureContact
+  - visit: hhttps://www.reptopper.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

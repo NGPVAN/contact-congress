@@ -1,7 +1,7 @@
 bioguide: PAL000278
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/381/RepGeorgeDunbar/SecureContact
+  - visit: https://www.repdunbar.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

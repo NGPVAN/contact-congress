@@ -1,7 +1,7 @@
 bioguide: PAL000284
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/377/RepDoyleHeffley/SecureContact
+  - visit: https://www.repheffley.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

@@ -1,7 +1,7 @@
 bioguide: SPAL24089_733976
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/438/RepJasonSilvis/SecureContact
+  - visit: https://www.repjasonsilvis.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

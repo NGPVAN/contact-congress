@@ -1,7 +1,7 @@
 bioguide: PAL000508
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/327/RepRichIrvin/SecureContact
+  - visit: https://www.repirvin.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

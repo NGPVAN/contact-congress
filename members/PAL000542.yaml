@@ -1,7 +1,7 @@
 bioguide: PAL000542
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/415/RepMattDowling/SecureContact
+  - visit: https://www.repdowling.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

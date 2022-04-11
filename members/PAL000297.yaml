@@ -1,7 +1,7 @@
 bioguide: PAL000297
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/424/RepToddStephens/SecureContact
+  - visit: https://www.reptoddstephens.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

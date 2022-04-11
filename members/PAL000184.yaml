@@ -1,7 +1,7 @@
 bioguide: PAL000184
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/423/RepDonnaOberlander/SecureContact
+  - visit: https://www.repoberlander.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

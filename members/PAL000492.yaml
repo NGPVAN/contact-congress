@@ -1,7 +1,7 @@
 bioguide: PAL000492
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/391/RepJasonOrtitay/SecureContact
+  - visit: https://www.reportitay.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

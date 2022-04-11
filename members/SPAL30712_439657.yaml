@@ -2,7 +2,7 @@ bioguide: SPAL30712_439657
 contact_form:
   driver: phantom
   steps:
-  - visit: https://www.pahouseformcenter.com/446/RepAbbyMajor/SecureContact
+  - visit: https://www.repabbymajor.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

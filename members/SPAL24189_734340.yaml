@@ -1,7 +1,7 @@
 bioguide: SPAL24189_734340
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/442/RepCraigWilliams/SecureContact
+  - visit: https://www.repcraigwilliams.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

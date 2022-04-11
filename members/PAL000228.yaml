@@ -1,7 +1,7 @@
 bioguide: PAL000228
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/328/RepCurtSonney/SecureContact
+  - visit: https://www.repsonney.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

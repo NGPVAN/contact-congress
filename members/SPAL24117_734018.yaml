@@ -1,7 +1,7 @@
 bioguide: SPAL24117_734018
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/432/RepJoeHamm/SecureContact
+  - visit: https://www.repjoehamm.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

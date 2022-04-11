@@ -1,7 +1,7 @@
 bioguide: PAL000563
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/390/RepFrankRyan/SecureContact
+  - visit: https://www.repfrankryan.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

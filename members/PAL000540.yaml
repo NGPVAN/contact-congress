@@ -1,7 +1,7 @@
 bioguide: PAL000540
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/408/RepAaronBernstine/SecureContact
+  - visit: https://www.repbernstine.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

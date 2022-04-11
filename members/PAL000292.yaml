@@ -1,7 +1,7 @@
 bioguide: PAL000292
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/413/RepKurtMasser/SecureContact
+  - visit: https://www.repmasser.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

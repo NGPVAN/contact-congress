@@ -1,7 +1,7 @@
 bioguide: PAL000514
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/343/RepDavidZimmerman/SecureContact
+  - visit: https://www.repzimmerman.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

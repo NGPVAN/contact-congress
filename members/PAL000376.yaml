@@ -1,7 +1,7 @@
 bioguide: PAL000376
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/323/RepRyanMackenzie/SecureContact
+  - visit: https://www.repmackenzie.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

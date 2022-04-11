@@ -1,7 +1,7 @@
 bioguide: SPAL32708_734115
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/441/RepTimTwardzik/SecureContact
+  - visit: https://www.reptimtwardzik.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

@@ -1,7 +1,7 @@
 bioguide: SPAL24083_733951
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/359/RepBudCook/SecureContact
+  - visit: https://www.repbudcook.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

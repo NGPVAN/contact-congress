@@ -1,7 +1,7 @@
 bioguide: PAL000131
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/419/RepSueHelm/SecureContact
+  - visit: https://www.suehelm.net/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

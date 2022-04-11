@@ -1,7 +1,7 @@
 bioguide: PAL000533
 contact_form:
   steps:
-  - visit: https://www.pahouseformcenter.com/379/RepEricNelson/SecureContact
+  - visit: https://www.repnelson.com/contact
   - find:
     - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
   - fill_in:

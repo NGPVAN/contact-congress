@@ -53,5 +53,5 @@ contact_form:
     - selector: "#js-workaround"      
   success:
     body:
-      contains: "Javascript success message reached"
+      contains: "Offices"
       excludes: "Your Message"

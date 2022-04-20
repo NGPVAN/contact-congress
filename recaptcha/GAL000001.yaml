@@ -3,7 +3,7 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://senatoralbers.com/contacts/"
+    - visit: "http://senatoralbers.com/contact/"
     - find:
         - selector: span.menu-437 select
     - select:

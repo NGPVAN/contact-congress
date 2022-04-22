@@ -8,46 +8,46 @@ contact_form:
     - wait:
       - value: 4
     - find:
-      - selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
+      - selector: select#gform_fields_3
     - fill_in:
       - name: first
-        selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+        selector: input#input_3_19
         value: "$NAME_FIRST"
         required: true
       - name: last
-        selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
+        selector: input#input_3_20
         value: $NAME_LAST
         required: true
       - name: street
-        selector: input#input-B03E05F1-4040-F985-52CD-A580E72A7D41
+        selector: input#input_3_10
         value: $ADDRESS_STREET
         required: true
       - name: street2
-        selector: input#input-B03E0518-4040-F985-52CD-CF33EF97DA3A
+        selector: input#input_3_15
         value: $ADDRESS_STREET_2
         required: false
       - name: city
-        selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
+        selector: input#input_3_14
         value: "$ADDRESS_CITY"
         required: true
       - name: zip5
-        selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
+        selector: input#input_3_12
         value: "$ADDRESS_ZIP5"
         required: true
       - name: phone
-        selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
+        selector: input#input_3_4
         value: $PHONE
         required: true
       - name: email
-        selector: input#email
+        selector: input#input_3_3
         value: $EMAIL
         required: true
       - name: verify_email
-        selector: input#input-B03E05A4-4040-F985-52CD-730C08912F4F
+        selector: input#input_3_3_2
         value: $EMAIL
         required: true
       - name: message
-        selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
+        selector: textarea#input_3_6
         value: $MESSAGE
         required: true
     - javascript:
@@ -59,10 +59,10 @@ contact_form:
     - wait:
       - value: 10
     - select:
-      - name: Your Prefix
-        selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
+      - name: Prefix
+        selector: select#input_3_9
         value: $NAME_PREFIX
-        required: true
+        required: false
         options:
           Mr.: Mr.
           Ms.: Ms.
@@ -199,44 +199,46 @@ contact_form:
           Seaman: Navy - Seaman
           Seaman Recruit: Navy - Seaman Recruit
       - name: state
-        selector: select#input-B03E0669-4040-F985-52CD-11B231195172
+        selector: select#input_3_16
         value: $ADDRESS_STATE_POSTAL_ABBREV
         required: true
         options:
           MD: MD
       - name: topic
-        selector: select#topic
+        selector: select#input_3_5
         value: $TOPIC
         required: true
         options:
-          "Agriculture": option[value="mailtopicag"]
-          "Animal Rights": option[value="mailtopican"]
-          "Banking and Finance": option[value="mailtopbank"]
-          "Budget and Economy": option[value="mailtopicbud"]
-          "Business": option[value="mailtopicbs"]
-          "Civil Rights": option[value="mailtopiccr"]
-          "Crime and the Judiciary": option[value="mailtopicjud"]
-          "Defense and Military": option[value="mailtopicdef"]
-          "Education": option[value="mailtopiced"]
-          "Energy": option[value="mailtopicen"]
-          "Environmental Issues": option[value="mailtopicenviro"]
-          "Foreign Affairs": option[value="mailtopicforeign"]
-          "Gun Control": option[value="mailtopicgun"]
-          "Health Care": option[value="mailtopichealth"]
-          "Housing": option[value="mailtopichouse"]
-          "Pensions and Retirement": option[value="mailtopicpension"]
-          "Science and Technology": option[value="mailtopicsci"]
-          "Telecommunications": option[value="mailtotelecom"]
-          "Transportation": option[value="mailtopictran"]
-          "Veterans Issues": option[value="mailtopicvet"]
-          "Welfare": option[value="mailtopicwelfare"]
-          "Other": option[value="mailtopicother"]
+          Agriculture: Agriculture
+          Animal Rights: Animal Rights
+          Banking and Finance: Banking and Finance
+          Civil Rights: Civil Rights
+          Defense and Military: Defense and Military
+          "Economy/Jobs": "Economy/Jobs"
+          Education: Education
+          Energy: Energy
+          Environment: Environment
+          Foreign Relations: Foreign Relations
+          Gun Safety: Gun Safety
+          Health Care: Health Care
+          Housing: Housing
+          Social Security and Retirement: Social Security and Retirement
+          "Space, Science & Technology": "Space, Science & Technology"
+          Telecommunications and Cybersecurity: Telecommunications and Cybersecurity
+          Transportation: Transportation
+          Veteran: Veteran
+          Welfare and Public Assistance: Welfare and Public Assistance
+          Other: Other
     - click_on:
-      - selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C div.controls input.btn
+      - name: Would you like to sign-up for Letters from Ben?
+        selector: "#choice_3_7_1"
+    - click_on:
+      - name: submit
+        selector: "#gform_submit_button_3"
     - wait:
         - value: 4
   success:
     headers:
       status: 200
     body:
-      contains: "Your message has been received by my office"
+      contains: "Thanks for contacting us"

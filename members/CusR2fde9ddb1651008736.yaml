@@ -1,0 +1,55 @@
+bioguide: CusR2fde9ddb1651008736
+contact_form:
+  driver: chrome
+  steps:
+    - visit: https://www.arb.ca.gov/lispub/comm/iframe_bcsubform.php?listname=accii2022&comm_period=A
+    - javascript:
+        - name: ignore browser alert
+          commands: ["window.confirm = function() {return true;}"]
+          required: true
+    - fill_in:
+        - name: First Name
+          selector: "input[name='F_FNAME']"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "input[name='F_LNAME']"
+          value: $NAME_LAST
+          required: true
+        - name: Email
+          selector: "input[name='F_EMAIL']"
+          value: $EMAIL
+          required: true
+        - name: Confirm email address
+          selector: "input[name='F_EMAIL2']"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "input[name='F_PHONE']"
+          value: $PHONE
+          required: false
+        - name: Subject
+          selector: "input[name='F_SUBJECT']"
+          value: $SUBJECT
+          required: true
+    - iframe:
+        - name: message
+          selector: "#pubcommtextarea_ifr"
+    - find: 
+        - selector: "#tinymce"
+    - javascript:
+        - name: rich text area
+          selectors: [ "#tinymce"]
+          values: [ "$MESSAGE" ]
+          commands: [ "elements[0].innerHTML=values[0].replace(/\\n/g, '<br/>').replace(/\\r/g,'')" ]
+          required: true
+    - iframe:
+        - back: true
+    - click_on:
+        - value: Send Comment
+          selector: "input[type='submit'][name='bcsubmit']"
+    - wait:
+        - value: 15
+  success:
+    body:
+      contains: "Thank you for your input"

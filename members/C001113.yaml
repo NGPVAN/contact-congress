@@ -57,6 +57,11 @@ contact_form:
           required: true
           options:
             blacklist: "-,;—:()"
+    - javascript:
+        - name: char replace
+          selectors: ["textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0C])/g, '');}"]
+          required: true
     - select:
         - name: Your Prefix
           selector: select#input-78DF3ACD-C97D-140A-A757-3725A60CEDE1

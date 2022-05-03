@@ -55,11 +55,12 @@ contact_form:
           selector: textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2
           value: $MESSAGE
           required: true
+          options:
+            blacklist: "-,;—:()"
     - javascript:
         - name: char replace
-          values: ["$MESSAGE"]
           selectors: ["textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2"]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}"]
           required: true
     - select:
         - name: Your Prefix

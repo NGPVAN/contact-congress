@@ -229,9 +229,10 @@ contact_form:
           Flooding/Rivers: Flooding/Rivers
           Social Security: Social Security
           Other: Other
+    - find:
+      - selector: "button[type='submit'][class='btn']"
     - click_on:
-      - value: Submit
-        selector: input[type='submit'][value='Submit']
+      - selector: "button[type='submit'][class='btn']"
     - wait:
       - value: 2
   success:

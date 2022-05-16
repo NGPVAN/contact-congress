@@ -53,5 +53,4 @@ contact_form:
     - selector: "#js-workaround"      
   success:
     body:
-      contains: "Javascript success message reached"
-      excludes: "Your Message"
+      excludes: "Leaving this box checked verifies that you would like to receive legislative email updates"

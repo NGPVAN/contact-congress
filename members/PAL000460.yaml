@@ -39,8 +39,8 @@ contact_form:
       value: $MESSAGE
       required: true
   - click_on:
-    - value: Submit
-      selector: '#ctl00_ContentPlaceHolder1_btnSubmitContact'
+    - selector: '#ctl00_ContentPlaceHolder1_chkAddToEmailList'
+    - selector: '#ctl00_ContentPlaceHolder1_btnSubmitContact'
   - javascript:
     - name: success message
       commands: ["var inter = setInterval(function() { if(document.location.pathname === '/SubmittedContact' ) { var msg = document.createElement('div'); msg.id='js-workaround'; msg.innerText='Javascript success message reached'; document.body.appendChild(msg); clearInterval(inter); } }, 100) "]
@@ -53,4 +53,5 @@ contact_form:
     - selector: "#js-workaround"      
   success:
     body:
+      contains: "Javascript success message reached"
       excludes: "Leaving this box checked verifies that you would like to receive legislative email updates"

@@ -1,6 +1,6 @@
 bioguide: SPAU0c2a2050
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "http://www.senatorkearney.com/contact/"
     - wait:

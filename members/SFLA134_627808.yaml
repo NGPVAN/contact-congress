@@ -121,13 +121,42 @@ contact_form:
             Walton: Walton
             Washington: Washington
           required: true
+    - question:
+        - name: qna
+          question_selector: "#CaptchaLabel"
+          answer_selector: "#Captcha"
+          pairs:
+            - q: "*Is the US national language English?"
+              a: Yes
+            - q: "*How many inches are in a foot?"
+              a: 12
+            - q: "*What letter comes before M in the English alphabet?"
+              a: L
+            - q: "*The American flag has how many stars?"
+              a: 50
+            - q: "*What is 8-2"
+              a: 6
+            - q: "*What color is the sky on a clear sunny day?"
+              a: Blue
+            - q: "*What day comes after Sunday?"
+              a: Monday
+            - q: "*The American flag colors are red, white and what other color?"
+              a: Blue
+            - q: "*What day comes before Thursday?"
+              a: Wednesday
+            - q: "*What letter comes after R in the English alphabet?"
+              a: S
+            - q: "*Is Tallahassee located in the state of Florida?"
+              a: Yes
+            - q: "*What is 1 + 2?"
+              a: 3
     - click_on:
         - value: Submit
           selector: input[type='button'][value='Submit']
     - find:
-       - selector: "#txt p"
+        - selector: "#txt p"
   success:
     headers:
       status: 200
     body:
-      contains: Thank you for contacting
+      contains: Thank You

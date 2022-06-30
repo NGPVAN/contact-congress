@@ -1,0 +1,38 @@
+bioguide: WIL000316
+contact_form:
+  method: post
+  action: Contact.aspx
+  steps:
+    - visit: "http://legis.wisconsin.gov/senate/03/carpenter/contact-senator-carpenter/"
+    - fill_in:
+        - name: email
+          selector: div.email input
+          value: $EMAIL
+          required: true
+        - name: name
+          selector: div.name input
+          value: $NAME_FULL
+          required: true
+        - name: address
+          selector: div.address input
+          value: $ADDRESS_STREET
+          required: true
+        - name: citystatezip
+          selector: div.citystatezipcode input
+          value: $ADDRESS_CITY_STATE_ZIP
+          required: true
+        - name: phone
+          selector: div.phone input
+          value: $PHONE
+          required: false
+        - name: message
+          selector: div.dearsenatorcarpenter textarea
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: input[type='Submit'][value='Submit']
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you"

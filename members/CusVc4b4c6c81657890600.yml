@@ -2,7 +2,7 @@ bioguide: CusVc4b4c6c81657890600
 contact_form:
   driver: chrome
   steps:
-    - visit: "https://www.regulations.gov/commenton/AMS-FTPP-21-0044-0001"
+    - visit: "https://ngpvan-freedom-tools.herokuapp.com/regulationsGov"
     - find:
         - selector: input#document_id
     - fill_in:

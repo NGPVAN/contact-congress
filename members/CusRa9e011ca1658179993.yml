@@ -2,7 +2,7 @@ bioguide: CusRa9e011ca1658179993
 contact_form:
   driver: chrome
   steps:
-    - visit: "https://www.regulations.gov/commenton/EPA-HQ-OAR-2022-0331-0001"
+    - visit: "https://ngpvan-freedom-tools.herokuapp.com/regulationsGov"
     - find:
         - selector: input#document_id
     - fill_in:

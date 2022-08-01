@@ -5,6 +5,10 @@ contact_form:
   method: POST
   steps:
     - visit: "https://www.tester.senate.gov/contact/contact-form/"
+    - find:
+        - selector: "#choice_1_18_0"
+    - click_on:
+        - selector: "#choice_1_18_0"
     - fill_in:
         - name: First Name
           selector: "#input_1_2"
@@ -143,9 +147,6 @@ contact_form:
     - click_on:
         - value: Submit
           selector: "#gform_submit_button_1"
-    - find:
-        - selector: "p"
-          value: "Thank you"
 
   success:
     headers:

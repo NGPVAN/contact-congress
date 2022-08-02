@@ -90,6 +90,65 @@ contact_form:
             Sergeant Major: Sergeant Major
             Sister: Sister
             Technical Sergeant: Technical Sergeant
+        - name: State
+          selector: "#input_1_6_4"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Alaska: Alaska
+            Alabama: Alabama
+            Arizona: Arizona
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            District of Columbia: District of Columbia
+            Florida: Florida
+            Georgia: Georgia
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Kentucky: Kentucky
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Tennessee: Tennessee
+            Texas: Texas
+            Utah: Utah
+            Virginia: Virginia
+            Vermont: Vermont
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
+            Armed Forces Americas: Armed Forces Americas
+            Armed Forces Europe: Armed Forces Europe
+            Armed Forces Pacific: Armed Forces Pacific
         - name: Subject
           selector: "#input_1_17"
           value: "$TOPIC"

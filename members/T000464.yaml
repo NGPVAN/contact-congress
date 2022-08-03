@@ -80,8 +80,10 @@ contact_form:
             Commander: Commander
             Corporal: Corporal
             Father: Father
+            General: General
             Lieutenant: Lieutenant
             Lieutenant Colonel: Lieutenant Colonel
+            Major: Major
             Master Sergeant: Master Sergeant
             Rabbi: Rabbi
             Reverend: Reverend
@@ -155,12 +157,13 @@ contact_form:
           required: true
           options:
             "\n\t\t\t\t\t\t\tAbortion\n\t\t\t\t\t\t": "Abortion"
-            "\n\t\t\t\t\t\t\tAfghanistan\n\t\t\t\t\t\t": "Afghanistan"
             "\n\t\t\t\t\t\t\tAgriculture\n\t\t\t\t\t\t": "Agriculture"
             "\n\t\t\t\t\t\t\tAnimals\n\t\t\t\t\t\t": "Animals"
             "\n\t\t\t\t\t\t\tArts and Humanities\n\t\t\t\t\t\t": "Arts and Humanities"
+            "\n\t\t\t\t\t\t\tBanking\n\t\t\t\t\t\t": "Banking"
             "\n\t\t\t\t\t\t\tBudget\n\t\t\t\t\t\t": "Budget"
             "\n\t\t\t\t\t\t\tBusiness\n\t\t\t\t\t\t": "Business"
+            "\n\t\t\t\t\t\t\tCampaign Finance Reform\n\t\t\t\t\t\t": "Campaign Finance Reform"
             "\n\t\t\t\t\t\t\tChildren/Family\n\t\t\t\t\t\t": "Children/Family"
             "\n\t\t\t\t\t\t\tCivil Rights\n\t\t\t\t\t\t": "Civil Rights"
             "\n\t\t\t\t\t\t\tCommerce\n\t\t\t\t\t\t": "Commerce"
@@ -173,15 +176,14 @@ contact_form:
             "\n\t\t\t\t\t\t\tFamily\n\t\t\t\t\t\t": "Family"
             "\n\t\t\t\t\t\t\tFinance\n\t\t\t\t\t\t": "Finance"
             "\n\t\t\t\t\t\t\tForeign Affairs\n\t\t\t\t\t\t": "Foreign Affairs"
-            "\n\t\t\t\t\t\t\tForest Jobs and Recreation Act\n\t\t\t\t\t\t": "Forest Jobs and Recreation Act"
             "\n\t\t\t\t\t\t\tGuns\n\t\t\t\t\t\t": "Guns"
             "\n\t\t\t\t\t\t\tHealth\n\t\t\t\t\t\t": "Health"
             "\n\t\t\t\t\t\t\tHomeland Security\n\t\t\t\t\t\t": "Homeland Security"
             "\n\t\t\t\t\t\t\tHousing\n\t\t\t\t\t\t": "Housing"
             "\n\t\t\t\t\t\t\tIndian Affairs\n\t\t\t\t\t\t": "Indian Affairs"
+            "\n\t\t\t\t\t\t\tIntelligence\n\t\t\t\t\t\t": "Intelligence"
             "\n\t\t\t\t\t\t\tInternship\n\t\t\t\t\t\t": "Internship"
             "\n\t\t\t\t\t\t\tImmigration\n\t\t\t\t\t\t": "Immigration"
-            "\n\t\t\t\t\t\t\tIraq\n\t\t\t\t\t\t": "Iraq"
             "\n\t\t\t\t\t\t\tJudiciary\n\t\t\t\t\t\t": "Judiciary"
             "\n\t\t\t\t\t\t\tLabor\n\t\t\t\t\t\t": "Labor"
             "\n\t\t\t\t\t\t\tLaw and Justice\n\t\t\t\t\t\t": "Law and Justice"
@@ -194,14 +196,12 @@ contact_form:
             "\n\t\t\t\t\t\t\tScience and Technology\n\t\t\t\t\t\t": "Science and Technology"
             "\n\t\t\t\t\t\t\tSeniors\n\t\t\t\t\t\t": "Seniors"
             "\n\t\t\t\t\t\t\tSocial Security\n\t\t\t\t\t\t": "Social Security"
-            "\n\t\t\t\t\t\t\tTANF\n\t\t\t\t\t\t": "TANF"
             "\n\t\t\t\t\t\t\tTaxes\n\t\t\t\t\t\t": "Taxes"
             "\n\t\t\t\t\t\t\tTrade\n\t\t\t\t\t\t": "Trade"
             "\n\t\t\t\t\t\t\tTransportation\n\t\t\t\t\t\t": "Transportation"
             "\n\t\t\t\t\t\t\tTour Request\n\t\t\t\t\t\t": "Tour Request"
             "\n\t\t\t\t\t\t\tVeterans\n\t\t\t\t\t\t": "Veterans"
             "\n\t\t\t\t\t\t\tWelfare\n\t\t\t\t\t\t": "Welfare"
-            "\n\t\t\t\t\t\t\tWolves\n\t\t\t\t\t\t": "Wolves"
             "\n\t\t\t\t\t\t\tWomen's Issues\n\t\t\t\t\t\t": "Women's Issues"
     - click_on:
         - value: Submit

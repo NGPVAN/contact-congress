@@ -22,6 +22,10 @@ contact_form:
           selector: "#input_1_6_1"
           value: "$ADDRESS_STREET"
           required: true
+        - name: Address2
+          selector: "#input_1_6_2"
+          value: "$ADDRESS_STREET2"
+          required: false
         - name: city
           selector: "#input_1_6_3"
           value: "$ADDRESS_CITY"
@@ -40,7 +44,7 @@ contact_form:
           required: true
         - name: vemail
           selector: "#input_1_9_2"
-          value: "$VEMAIL"
+          value: "$EMAIL"
           required: true
         - name: Subject
           selector: "#input_1_11"
@@ -97,6 +101,7 @@ contact_form:
           value: $ADDRESS_STATE_FULL
           required: true
           options:
+            Required: Required
             Alaska: Alaska
             Alabama: Alabama
             Arizona: Arizona

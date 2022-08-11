@@ -1,6 +1,6 @@
 bioguide: state_ma_gov_charlie_baker
 contact_form:
-  driver: chrome
+  driver: phantom
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
     - find:

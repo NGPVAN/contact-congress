@@ -2,64 +2,10 @@
 bioguide: C000141
 contact_form:
   method: POST
-  action: ""
   steps:
-    - visit: "https://www.cardin.senate.gov/contact/email-ben"
-    - wait:
-      - value: 4
+    - visit: "https://www.cardin.senate.gov/email-ben/"
     - find:
       - selector: select#gform_fields_3
-    - fill_in:
-      - name: first
-        selector: input#input_3_19
-        value: "$NAME_FIRST"
-        required: true
-      - name: last
-        selector: input#input_3_20
-        value: $NAME_LAST
-        required: true
-      - name: street
-        selector: input#input_3_10
-        value: $ADDRESS_STREET
-        required: true
-      - name: street2
-        selector: input#input_3_15
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: city
-        selector: input#input_3_14
-        value: "$ADDRESS_CITY"
-        required: true
-      - name: zip5
-        selector: input#input_3_12
-        value: "$ADDRESS_ZIP5"
-        required: true
-      - name: phone
-        selector: input#input_3_4
-        value: $PHONE
-        required: true
-      - name: email
-        selector: input#input_3_3
-        value: $EMAIL
-        required: true
-      - name: verify_email
-        selector: input#input_3_3_2
-        value: $EMAIL
-        required: true
-      - name: message
-        selector: textarea#input_3_6
-        value: $MESSAGE
-        required: true
-        options:
-          blacklist: "-,;—:()"
-    - javascript:
-      - name: char replace
-        values: ["$MESSAGE"]
-        selectors: ["textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
-        required: true
-    - wait:
-      - value: 10
     - select:
       - name: Prefix
         selector: select#input_3_9
@@ -69,6 +15,7 @@ contact_form:
           Mr.: Mr.
           Ms.: Ms.
           Mrs.: Mrs.
+          Miss: Miss
           Professor: Professor
           Dr.: Dr.
           Father: Father
@@ -215,32 +162,94 @@ contact_form:
           Animal Rights: Animal Rights
           Banking and Finance: Banking and Finance
           Civil Rights: Civil Rights
+          Criminal Justice: Criminal Justice
           Defense and Military: Defense and Military
-          "Economy/Jobs": "Economy/Jobs"
+          "Economy and Jobs": "Economy and Jobs"
           Education: Education
           Energy: Energy
           Environment: Environment
+          Federal Budget: Federal Budget
+          Federal Courts and Judicial Nominations: Federal Courts and Judicial Nominations
+          Federal Employees: Federal Employees
           Foreign Relations: Foreign Relations
           Gun Safety: Gun Safety
+          Immigration: Immigration 
           Health Care: Health Care
+          Homeland Security and Cybersecurity: Homeland Security and Cybersecurity
           Housing: Housing
+          Labor: Labor
+          Politics and Political Campaigns: Politics and Political Campaigns
+          Safety Net and Public Assistance: Safety Net and Public Assistance
           Social Security and Retirement: Social Security and Retirement
-          "Space, Science & Technology": "Space, Science & Technology"
-          Telecommunications and Cybersecurity: Telecommunications and Cybersecurity
+          "Space, Science & Technology": "Space, Science and Technology"
+          Tax Policy and Reform: Tax Policy and Reform
+          Telecommunications: Telecommunications
           Transportation: Transportation
-          Veteran: Veteran
-          Welfare and Public Assistance: Welfare and Public Assistance
+          Veterans: Veterans
+          Voting Rights: Voting Rights
           Other: Other
+    - fill_in:
+      - name: first
+        selector: input#input_3_19
+        value: "$NAME_FIRST"
+        required: true
+      - name: last
+        selector: input#input_3_20
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#input_3_10
+        value: $ADDRESS_STREET
+        required: true
+      - name: street2
+        selector: input#input_3_15
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input#input_3_14
+        value: "$ADDRESS_CITY"
+        required: true
+      - name: zip5
+        selector: input#input_3_12
+        value: "$ADDRESS_ZIP5"
+        required: true
+      - name: phone
+        selector: input#input_3_4
+        value: $PHONE
+        required: true
+      - name: email
+        selector: input#input_3_3
+        value: $EMAIL
+        required: true
+      - name: verify_email
+        selector: input#input_3_3_2
+        value: $EMAIL
+        required: true
+      - name: message
+        selector: textarea#input_3_6
+        value: $MESSAGE
+        required: true
+        options:
+          blacklist: "-,;—:()"
+    - javascript:
+      - name: char replace
+        values: ["$MESSAGE"]
+        selectors: ["textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+        required: true
+    - find: 
+       - selector: "#label_3_7_1"
     - click_on:
       - name: Would you like to sign-up for Letters from Ben?
-        selector: "#choice_3_7_1"
+        selector: "#label_3_7_1"
+    - find: 
+       - selector: "#gform_submit_button_3"
     - click_on:
       - name: submit
         selector: "#gform_submit_button_3"
-    - wait:
-        - value: 4
   success:
     headers:
       status: 200
     body:
-      contains: "Thanks for contacting us"
+      excludes: "Please Note"
+      contains: "Thanks for contacting us! We will get in touch with you shortly."

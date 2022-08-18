@@ -17,6 +17,8 @@ contact_form:
           selector: input#field90831245_7
           value: Other
           required: true
+    - find:
+        - selector: input#fsForm1744869
     - fill_in:
         - name: First Name
           selector: input#field49751862
@@ -48,7 +50,7 @@ contact_form:
           required: true
         - name: Phone
           selector: input#field49751979
-          value: $PHONE
+          value: $PHONE_PARENTHESES
           required: true
         - name: Email
           selector: input#field49752019

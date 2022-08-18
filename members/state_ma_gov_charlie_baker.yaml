@@ -4,74 +4,76 @@ contact_form:
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
     - find:
-      - selector: input[type=radio][value='Comment']
+        - selector: input#field90831234_1
     - click_on:
-      - name: Comment select
-        selector: input[type=radio][value='Comment']
-        value: Comment
-        required: true
+        - name: Comment select
+          selector: input#field90831234_1
+          value: Comment
+          required: true
     - find:
-      - selector: input[type=radio][value='Other']
+        - selector: input#field90831245_7
     - click_on:
-      - name: Topic
-        selector: input[type=radio][value='Other']
-        value: Other
-        required: true     
+        - name: Category
+          selector: input#field90831245_7
+          value: Other
+          required: true
+    - find:
+        - selector: input#fsForm1744869
     - fill_in:
-      - name: First Name
-        selector: input#field49751862
-        value: $NAME_FIRST
-        required: true
-      - name: Last Name
-        selector: input#field49751877
-        value: $NAME_LAST
-        required: true
-      - name: Address
-        selector: input#field49751885
-        value: $ADDRESS_STREET
-        required: true
-      - name: Address2
-        selector: input#field49751887
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: City
-        selector: input#field49751935
-        value: $ADDRESS_CITY
-        required: true
-      - name: State
-        selector: input#field49751937
-        value: $ADDRESS_STATE_POSTAL_ABBREV
-        required: true
-      - name: zip5
-        selector: input#field49752148
-        value: $ADDRESS_ZIP5
-        required: true
-      - name: Phone
-        selector: input#field49751979
-        value: $PHONE_PARENTHESES
-        required: true
-      - name: Email
-        selector: input#field49752019
-        value: $EMAIL
-        required: true
-      - name: Subject
-        selector: input#field49751965
-        value: $SUBJECT
-        required: false
+        - name: First Name
+          selector: input#field49751862
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#field49751877
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: input#field49751885
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address2
+          selector: input#field49751887
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: input#field49751935
+          value: $ADDRESS_CITY
+          required: true
+        - name: State
+          selector: input#field49751937
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+        - name: zip5
+          selector: input#field49752148
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: input#field49751979
+          value: $PHONE_PARENTHESES
+          required: true
+        - name: Email
+          selector: input#field49752019
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: input#field49751965
+          value: $SUBJECT
+          required: false
     - find:
-      - selector: div textarea.fsRequired
+        - selector: div textarea.fsRequired
     - fill_in:
-      - name: message
-        selector: div textarea.fsRequired
-        value: $MESSAGE
-        required: true
+        - name: message
+          selector: div textarea.fsRequired
+          value: $MESSAGE
+          required: true
     - find:
-      - selector: input#fsSubmitButton1744869
+        - selector: input#fsSubmitButton1744869
     - click_on:
-      - value: Submit
-        selector: input#fsSubmitButton1744869
+        - value: Submit
+          selector: input#fsSubmitButton1744869
     - find:
-      - selector: "#fsForm1744869 div p"
+        - selector: "#fsForm1744869 div p"
   success:
     body:
       contains: "The form was submitted successfully"

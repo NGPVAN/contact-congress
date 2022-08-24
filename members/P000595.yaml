@@ -5,24 +5,11 @@ contact_form:
   action: "https://www.peters.senate.gov/contact/email-gary"
   steps:
     - visit: "https://www.peters.senate.gov/contact/email-gary"
-    - wait:
-        - value: 2
-    - find:
-        - selector: select#actions
-    - select:
-        - name: actions
-          selector: "#actions"
-          value: Comment on an Issue
-          required: true
-          options:
-            Comment on an Issue: Comment on an Issue
-    - wait:
-        - value: 3
     - fill_in:
         - name: Your Prefix
           selector: input#input-260E577D-5056-A066-6070-226296904340
           value: $NAME_PREFIX
-          required: true
+          required: false
         - name: firstname
           selector: "#input-AB59F0AE-4040-F985-52CD-AA63153C7925"
           value: $NAME_FIRST
@@ -69,63 +56,66 @@ contact_form:
           required: true
     - javascript:
         - name: Message
-          selectors: [ "#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51" ]
-          values: [ "$MESSAGE" ]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}"]
+          selectors: ["#input-ADE64E73-4040-F985-52CD-A3AB6BCD2C51"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}",
+            ]
           required: true
     - select:
         - name: topic
           selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
-          value: Economic Policy
+          value: $TOPIC
           required: true
           options:
-            Arts and Humanities: Arts and Humanities
-            Animal Protection: Animal Protection
-            Agriculture: Agriculture
-            Auto Industry: Auto Industry
-            "Children's Issues": "Children's Issues"
-            Civil Rights: Civil Rights
-            Consumer Protection / Cybersecurity: Consumer Protection / Cybersecurity
-            Criminal Justice Reform: Criminal Justice Reform
-            Defense and Military: Defense and Military
-            Drug Policy: Drug Policy
-            Economic Policy: Economic Policy
-            Education: Education
-            Election and Campaign Finance Reform: Election and Campaign Finance Reform
-            Energy: Energy
-            Environment: Environment
-            Financial Regulation and Banking: Financial Regulation and Banking
-            Foreign Policy: Foreign Policy
-            Gun Safety: Gun Safety
-            Health Care / Public Health: Health Care / Public Health
-            Homeland Security: Homeland Security
-            Housing: Housing
-            Immigration: Immigration
-            Jobs and Employment: Jobs and Employment
-            Judiciary: Judiciary
-            Labor: Labor
-            Law Enforcement / Crime: Law Enforcement / Crime
-            LGTBQ Issues: LGTBQ Issues
-            Manufacturing: Manufacturing
-            Medicaid: Medicaid
-            Medicare: Medicare
-            Native Americans: Native Americans
-            Pensions / Retirement Security: Pensions / Retirement Security
-            Postal Services: Postal Services
-            Poverty: Poverty
-            Religion: Religion
-            Reproductive Rights / Family Planning: Reproductive Rights / Family Planning
-            Science and NASA: Science and NASA
-            Social Security: Social Security
-            Taxes: Taxes
-            Telecommunications / Internet: Telecommunications / Internet
-            Trade: Trade
-            Transportation: Transportation
-            Veterans: Veterans
-            "Women's Issues": "Women's Issues"
+            ADOPT- GENERAL: Adoption
+            AGRI- GENERAL: Agriculture
+            ANIM PROT- GENERAL: Animal Protection
+            APPROPS- GENERAL: Appropriation
+            ARTS- GENERAL: Arts
+            BANK- GENERAL: Banking
+            BUDG- GENERAL: Budget
+            CIV RIGHTS- GENERAL: Civil Rights
+            CONGRATS: Congratulatory Correspondence
+            CSMR PROT- GENERAL: Consumer Protection
+            CRIME- GENERAL: Crime
+            DEF- GENERAL: Defense and Military
+            ECON- GENERAL: Economy
+            EDU- GENERAL: Education
+            CAMPAIGN: Election Security
+            ENR- GENERAL: Energy
+            ENVR- GENERAL: Environment
+            FOR AFF- GENERAL: Foreign Affairs
+            GUN SAFETY: Gun Safety
+            HEAL- GENERAL: Health
+            HOM- GENERAL: Homeland Security
+            HOUS- GENERAL: Housing
+            IMMG- General: Immigration
+            JUDIC- GENERAL: Judiciary
+            LAB- GENERAL: Labor/Employment
+            MDCA- GENERAL: Medicaid
+            MDCR- GENERAL: Medicare
+            PENSION- GENERAL: Pensions and Retirement Security
+            POST ISSUES: Postal ServiceS
+            SCI- GENERAL: Science
+            SOC SECUR- GENERAL: Social Security
+            STATES ISSUES: State Issues
+            TAX- GENERAL: Taxes
+            COMMS- GENERAL: Telecommunications
+            TRADE- GENERAL: Trade
+            TRANSP- GENERAL: Transportation
+            TRIB ISSUES: Tribal Issues
+            VET- GENERAL: Veterans
+            WELF- GENERAL: Welfare
+            WOM ISSUES: Women's Issues
+    - wait:
+        - value: 5
+    - find:
+        - selector: button.btn
     - click_on:
         - value: Submit
-          selector: div#sam-main input[type='submit']
+          selector: button.btn
     - wait:
         - value: 5
   success:

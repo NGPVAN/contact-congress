@@ -7,52 +7,54 @@ contact_form:
     - visit: "https://www.peters.senate.gov/contact/email-gary"
     - wait:
         - value: 3
+    - find:
+        - selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
     - select:
-        - name: topic
+        - name: Message Topic
           selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
           value: $TOPIC
           required: true
           options:
-            ADOPT- GENERAL: Adoption
-            AGRI- GENERAL: Agriculture
-            ANIM PROT- GENERAL: Animal Protection
-            APPROPS- GENERAL: Appropriation
-            ARTS- GENERAL: Arts
-            BANK- GENERAL: Banking
-            BUDG- GENERAL: Budget
-            CIV RIGHTS- GENERAL: Civil Rights
-            CONGRATS: Congratulatory Correspondence
-            CSMR PROT- GENERAL: Consumer Protection
-            CRIME- GENERAL: Crime
-            DEF- GENERAL: Defense and Military
-            ECON- GENERAL: Economy
-            EDU- GENERAL: Education
-            CAMPAIGN: Election Security
-            ENR- GENERAL: Energy
-            ENVR- GENERAL: Environment
-            FOR AFF- GENERAL: Foreign Affairs
-            GUN SAFETY: Gun Safety
-            HEAL- GENERAL: Health
-            HOM- GENERAL: Homeland Security
-            HOUS- GENERAL: Housing
-            IMMG- General: Immigration
-            JUDIC- GENERAL: Judiciary
-            LAB- GENERAL: Labor/Employment
-            MDCA- GENERAL: Medicaid
-            MDCR- GENERAL: Medicare
-            PENSION- GENERAL: Pensions and Retirement Security
-            POST ISSUES: Postal ServiceS
-            SCI- GENERAL: Science
-            SOC SECUR- GENERAL: Social Security
-            STATES ISSUES: State Issues
-            TAX- GENERAL: Taxes
-            COMMS- GENERAL: Telecommunications
-            TRADE- GENERAL: Trade
-            TRANSP- GENERAL: Transportation
-            TRIB ISSUES: Tribal Issues
-            VET- GENERAL: Veterans
-            WELF- GENERAL: Welfare
-            WOM ISSUES: Women's Issues
+            Adoption: Adoption
+            Agriculture: Agriculture
+            Animal Protection: Animal Protection
+            Appropriation: Appropriation
+            Arts: Arts
+            Banking: Banking
+            Budget: Budget
+            Civil Rights: Civil Rights
+            Congratulatory Correspondence: Congratulatory Correspondence
+            Consumer Protection: Consumer Protection
+            Crime: Crime
+            Defense and Military: Defense and Military
+            Economy: Economy
+            Education: Education
+            Election Security: Election Security
+            Energy: Energy
+            Enviroment: Environment
+            Foreign Affairs: Foreign Affairs
+            Gun Safety: Gun Safety
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Judiciary: Judiciary
+            Labor/Employment: Labor/Employment
+            Medicaid: Medicaid
+            Medicare: Medicare
+            Pensions and Retirement Security: Pensions and Retirement Security
+            Postal Services: Postal Services
+            Science: Science
+            Social Security: Social Security
+            States Issues: State Issues
+            Taxes: Taxes
+            Telecommunications: Telecommunications
+            Trade: Trade
+            Transportation: Transportation
+            Tribal Issues: Tribal Issues
+            Veterans: Veterans
+            Welfare: Welfare
+            Women's Issues: Women's Issues
     - fill_in:
         - name: Your Prefix
           selector: input#input-260E577D-5056-A066-6070-226296904340

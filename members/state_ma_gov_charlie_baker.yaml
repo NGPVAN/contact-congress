@@ -1,8 +1,10 @@
 bioguide: state_ma_gov_charlie_baker
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.mass.gov/forms/email-the-governors-office"
+    - wait:
+        - value: 3
     - find:
         - selector: input#field90831234_1
     - click_on:
@@ -17,6 +19,8 @@ contact_form:
           selector: input#field90831245_7
           value: Other
           required: true
+    - wait:
+        - value: 3
     - find:
         - selector: input#fsForm1744869
     - fill_in:

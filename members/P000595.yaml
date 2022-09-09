@@ -10,9 +10,9 @@ contact_form:
     - find:
         - selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
     - select:
-        - name: Message Topic
+        - name: topic
           selector: "#input-AB8156A0-4040-F985-52CD-49CE65770EFC"
-          value: $TOPIC
+          value: Economy
           required: true
           options:
             Adoption: Adoption

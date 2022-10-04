@@ -4,49 +4,49 @@ contact_form:
   steps:
     - visit: "https://gov.texas.gov/apps/contact/opinion.aspx"
     - find:
-        - selector: input#ctl00_ContentPlaceHolder1_RadioButtonList1_0
+        - selector: input#addressType1
     - click_on:
-        - selector: input#ctl00_ContentPlaceHolder1_RadioButtonList1_0
+        - selector: input#addressType1
     - fill_in:
         - name: First Name
-          selector: input#ctl00_ContentPlaceHolder1_txtFirst
+          selector: input#ContactDto_FirstName
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input#ctl00_ContentPlaceHolder1_txtLast
+          selector: input#ContactDto_LastName
           value: $NAME_LAST
           required: true
         - name: Address
-          selector: input#ctl00_ContentPlaceHolder1_txtAddress
+          selector: input#ContactDto_Address
           value: $ADDRESS_STREET
           required: true
         - name: City
-          selector: input#ctl00_ContentPlaceHolder1_txtCity
+          selector: input#ContactDto_City
           value: $ADDRESS_CITY
           required: true
         - name: Zip
-          selector: input#ctl00_ContentPlaceHolder1_txtZip
+          selector: input#ContactDto_ZipCode
           value: $ADDRESS_ZIP5
           required: true
         - name: Email
-          selector: input#ctl00_ContentPlaceHolder1_txtEmail
+          selector: input#ContactDto_Email
           value: $EMAIL
           required: true
         - name: confirm email
-          selector: input#ctl00_ContentPlaceHolder1_txtEmail2
+          selector: input#ContactDto_ConfirmEmail
           value: $EMAIL
           required: true
         - name: phone
-          selector: input#ctl00_ContentPlaceHolder1_txtPhone
+          selector: input#ContactDto_Phone
           value: $PHONE
           required: false
-        - name: Message
-          selector: textarea#ctl00_ContentPlaceHolder1_txtMessage
+        - name: Comments
+          selector: textarea#ContactDto_Comments
           value: $MESSAGE
           required: true
     - select:
         - name: Your Prefix
-          selector: select#ctl00_ContentPlaceHolder1_DropDownList1
+          selector: select#ContactDto_Prefix
           value: $NAME_PREFIX
           required: true
           options:
@@ -58,26 +58,59 @@ contact_form:
             Dr.: Dr.
             The Honorable: The Honorable
             None: None
+        - name: State
+          selector: select#ContactDto_State
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            TX: "TX"
         - name: topic
-          selector: select#ctl00_ContentPlaceHolder1_DropDownList2
+          selector: select#ContactDto_Issue
           value: $TOPIC
           required: true
           options:
-            Education - Public: Education - Public
-            Property Tax: Property Tax
+            Agriculture and livestock: Agriculture and Livestock
+            Border Security: Border Security
+            Business and Commerce: Business and Commerce
+            Ceremonial Items: Ceremonial Items
+            Civil Law and Rights: Civil Law and Rights
+            Corrections: Corrections
+            Criminal Law and Justice: Criminal Law and Justice
+            Culture and History: Culture and History
+            Education: Education
+            Elections: Elections
+            Emergency Management: Emergency Management
+            Energy: Energy
             Environment: Environment
+            Finance and Spending: Finance and Spending
+            Governor: Governor
+            Health: Health
+            Higher Education: Higher Education
+            Human Services: Human Services
             Insurance: Insurance
-            Immigration: Immigration
-            Renewable Energy: Renewable Energy
-            Gun Control: Gun Control
+            Judiciary: Judiciary
+            Legislature: Legislature
+            Local Government: Local Government
+            Military and Veterans: Military and Veterans
+            Parks and Wildlife: Parks and Wildlife
+            Public Safety: Public Safety
+            Regulated Industries: Regulated Industries
+            Regulated Occupations: Regulated Occupations
+            Retirement Systems: Retirement Systems
+            Scheduling Requests: Scheduling Requests
+            Taxes and Revenue: Taxes and Revenue
+            Texas Government: Texas Government
             Transportation: Transportation
-            Water Issues: Water Issues
-            Coronavirus: Coronavirus
+            US Government: US Government
+            Utilities: Utilities
+            Workforce: Workforce
             Other: Other
+    - wait:
+        - value: 5
     - find:
-        - selector: input#ctl00_ContentPlaceHolder1_Button1     
+        - selector: input#submit
     - click_on:
-        - selector: input#ctl00_ContentPlaceHolder1_Button1
+        - selector: input#submit
   success:
     body:
       contains: "Thank You for Contacting"

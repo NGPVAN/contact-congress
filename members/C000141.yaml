@@ -164,7 +164,7 @@ contact_form:
           Civil Rights: Civil Rights
           Criminal Justice: Criminal Justice
           Defense and Military: Defense and Military
-          "Economy and Jobs": "Economy and Jobs"
+          Economy and Jobs: Economy and Jobs
           Education: Education
           Energy: Energy
           Environment: Environment
@@ -181,7 +181,7 @@ contact_form:
           Politics and Political Campaigns: Politics and Political Campaigns
           Safety Net and Public Assistance: Safety Net and Public Assistance
           Social Security and Retirement: Social Security and Retirement
-          "Space, Science & Technology": "Space, Science and Technology"
+          Space, Science & Technology: Space, Science and Technology
           Tax Policy and Reform: Tax Policy and Reform
           Telecommunications: Telecommunications
           Transportation: Transportation
@@ -240,12 +240,14 @@ contact_form:
     - find: 
        - selector: "#label_3_7_1"
     - click_on:
-      - name: Would you like to sign-up for Letters from Ben?
+      - value: Would you like to sign-up for Letters from Ben?
         selector: "#label_3_7_1"
+    - wait: 
+      - value: 5
     - find: 
        - selector: "#gform_submit_button_3"
     - click_on:
-      - name: submit
+      - value: Submit
         selector: "#gform_submit_button_3"
   success:
     headers:

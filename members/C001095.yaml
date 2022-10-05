@@ -123,6 +123,8 @@ contact_form:
             Veterans: Veterans
             Welfare: Welfare
             Women's Issues: Women's Issues
+    - wait:
+        - value: 5
     - click_on:
         - value: Submit
           selector: button.btn

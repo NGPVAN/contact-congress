@@ -1,69 +1,12 @@
 #US Senator Steve Daines
 bioguide: D000618
 contact_form:
+  driver: chrome
   steps:
     - visit: "http://www.daines.senate.gov/connect/email-steve"
-    - find:
-        - selector: select#actiontog
-    - select:
-        - name: Share
-          selector: select#actiontog
-          value: Share
-          required: true
-    - wait:
-        - value: 2
-    - find:
-        - selector: "#input-AE758CDD-5056-A066-603D-1831CB9A4A9E"
-    - fill_in:
-        - name: First Name
-          selector: "#input-AE758CDD-5056-A066-603D-1831CB9A4A9E"
-          value: $NAME_FIRST
-          required: true
-        - name: Last Name
-          selector: "#input-AE758655-5056-A066-6057-3361795D91EB"
-          value: $NAME_LAST
-          required: true
-        - name: address
-          selector: "#input-AE758DCA-5056-A066-60CC-990C7C55F1AC"
-          value: $ADDRESS_STREET
-          required: true
-        - name: city
-          selector: "#input-AE758BF2-5056-A066-607D-4D415B590447"
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip
-          selector: "#input-AE7586A3-5056-A066-605F-0D3C3097CA37"
-          value: $ADDRESS_ZIP5
-          required: true
-        - name: phone
-          selector: "#input-AE7584AA-5056-A066-6024-D288D76D0401"
-          value: $PHONE
-          required: true
-        - name: email
-          selector: "#email"
-          value: $EMAIL
-          required: true
-        - name: verify email
-          selector: "#input-AE758C40-5056-A066-6013-8815A8D72C35"
-          value: $EMAIL
-          required: true
-        - name: subject
-          selector: "#input-AE758BA4-5056-A066-6020-7729DD673290"
-          value: $SUBJECT
-          required: true
-        - name: message
-          selector: "#input-AE758C8F-5056-A066-607B-3567A5253A20"
-          value: $MESSAGE
-          required: true
-    - javascript:
-        - name: Message
-          selectors: [ "#input-AE758C8F-5056-A066-607B-3567A5253A20" ]
-          values: [ "$MESSAGE" ]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
-          required: true
     - select:
         - name: Your Prefix
-          selector: "#input-AE7588C4-5056-A066-6063-84FF585691BB"
+          selector: "#form-field-field_5703f4a"
           value: $NAME_PREFIX
           required: true
           options:
@@ -201,8 +144,64 @@ contact_form:
             "Seaman Apprentice": Navy - Seaman Apprentice
             "Seaman": Navy - Seaman
             "Seaman Recruit": Navy - Seaman Recruit
+        - name: state
+          selector: "#form-field-state"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Alabama: Alabama
+            Alaska: Alaska
+            Arizona: Arizona
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            District of Columbia: District of Columbia
+            Florida: Florida
+            Georgia: Georgia
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Kentucky: Kentucky
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Tennessee: Tennessee
+            Texas: Texas
+            Utah: Utah
+            Vermont: Vermont
+            Virginia: Virginia
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
         - name: topic
-          selector: "#input-AE7586F1-5056-A066-606E-0499DE47DE96"
+          selector: "#form-field-topic"
           value: $TOPIC
           required: true
           options:
@@ -210,7 +209,7 @@ contact_form:
             Aging: Aging
             Agriculture: Agriculture
             Animal Welfare: Animal Welfare
-            Appropriations: Appropriations
+            Budget/Appropriations: Budget/Appropriations
             Banking/Securities: Banking/Securities
             Campaign Finance: Campaign Finance
             Children: Children
@@ -257,13 +256,56 @@ contact_form:
             Veterans: Veterans
             Welfare: Welfare
             "Women's Issues": "Women's Issues"
-    - click_on:
-        - value: Submit
-          selector: input[type='submit'][value='Submit']
+    - find:
+        - selector: "#form-field-first_name"
+    - fill_in:
+        - name: First Name
+          selector: "#form-field-first_name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#form-field-last_name"
+          value: $NAME_LAST
+          required: true
+        - name: address
+          selector: "#form-field-address"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#form-field-city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#form-field-zip_code"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: "#form-field-email"
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: "#form-field-subject"
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: "#form-field-message"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: [ "#form-field-message" ]
+          values: [ "$MESSAGE" ]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '');}"]
+          required: true
     - wait:
         - value: 3
-    - find:
-        - selector: "#form-AE758387-5056-A066-6095-BFC8C4EEE140"
+    - click_on:
+        - value: Submit
+          selector: button.elementor-button
+    - wait: 
+        - value: 3
   success:
+    headers:
+      status: 200
     body:
-      contains: "Thank you for submitting your request to our office."
+      contains: ""

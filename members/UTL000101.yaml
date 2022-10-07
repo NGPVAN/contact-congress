@@ -3,15 +3,20 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://house.utah.gov/rep/WILSOBR"
+    - visit: "https://house.utleg.gov/contact/"
+    - find:
+        - selector: select#leg-list
+    - select:
+        - name: Your Representative
+          selector: select#leg-list
+          value: $TOPIC
+          required: true
+          options:
+            Wilson, Brad R.: Wilson, Brad R.
     - fill_in:
         - name: Name
           selector: input[name='your-name']
           value: $NAME_FULL
-          required: true
-        - name: phone
-          selector: input[name='your-phone']
-          value: $PHONE
           required: true
         - name: email
           selector: input[name='your-email']
@@ -21,21 +26,15 @@ contact_form:
           selector: input[name='your-subject']
           value: $SUBJECT
           required: true
-        - name: Address
-          selector: input[name='your-address']
-          value: $ADDRESS_FULL
-          required: true
-        - name: zip
-          selector: input[name='your-zip']
-          value: $ADDRESS_ZIP5
-          required: true
         - name: message
           selector: textarea[name='your-message']
           value: $MESSAGE
           required: true
+    - find:
+        - selector: input[type='submit'][value='Submit']
     - click_on:
         - value: Submit
-          selector: input[type='submit'][value='Send Message']
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 4
   success:

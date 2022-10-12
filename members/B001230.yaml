@@ -207,6 +207,12 @@ contact_form:
           Seaman Apprentice: Navy - Seaman Apprentice
           Seaman: Navy - Seaman
           Seaman Recruit: Navy - Seaman Recruit
+      - name: state
+        selector: input-B03E0669-4040-F985-52CD-11B231195172
+        value: $ADDRESS_STATE_POSTAL_ABBREV
+        required: true
+        options:
+          WI: WI
       - name: topic
         selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
         value: $TOPIC
@@ -255,8 +261,8 @@ contact_form:
     - click_on:
       - value: Send
         selector: button.btn
-    - wait:
-      - value: 10
+      - wait:
+      - value: 5
     - find:
       - selector: div#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C h2
     - find:

@@ -232,7 +232,7 @@ contact_form:
     - javascript:
       - name: char replace
         values: ["$MESSAGE"]
-        selectors: ["textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2"]
+        selectors: ["textarea#input_3_6"]
         commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
         required: true
     - find: 

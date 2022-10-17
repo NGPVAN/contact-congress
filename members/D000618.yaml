@@ -1,7 +1,6 @@
 #US Senator Steve Daines
 bioguide: D000618
 contact_form:
-  driver: chrome
   steps:
     - visit: "http://www.daines.senate.gov/connect/email-steve"
     - select:

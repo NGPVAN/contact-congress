@@ -156,35 +156,6 @@ contact_form:
         value: $TOPIC
         required: true
         options:
-          Agriculture: Agriculture
-          Animal Rights: Animal Rights
-          Banking and Finance: Banking and Finance
-          Civil Rights: Civil Rights
-          Criminal Justice: Criminal Justice
-          Defense and Military: Defense and Military
-          Economy and Jobs: Economy and Jobs
-          Education: Education
-          Energy: Energy
-          Environment: Environment
-          Federal Budget: Federal Budget
-          Federal Courts and Judicial Nominations: Federal Courts and Judicial Nominations
-          Federal Employees: Federal Employees
-          Foreign Relations: Foreign Relations
-          Gun Safety: Gun Safety
-          Immigration: Immigration 
-          Health Care: Health Care
-          Homeland Security and Cybersecurity: Homeland Security and Cybersecurity
-          Housing: Housing
-          Labor: Labor
-          Politics and Political Campaigns: Politics and Political Campaigns
-          Safety Net and Public Assistance: Safety Net and Public Assistance
-          Social Security and Retirement: Social Security and Retirement
-          Space, Science & Technology: Space, Science and Technology
-          Tax Policy and Reform: Tax Policy and Reform
-          Telecommunications: Telecommunications
-          Transportation: Transportation
-          Veterans: Veterans
-          Voting Rights: Voting Rights
           Other: Other
     - fill_in:
       - name: first

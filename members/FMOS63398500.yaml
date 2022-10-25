@@ -5,118 +5,121 @@ contact_form:
   steps:
     - visit: "https://www.hawley.senate.gov/contact-senator-hawley"
     - wait:
-      - value: 1
+        - value: 1
     - find:
-      - value: "#edit-prefix"
+        - value: "#edit-prefix"
     - select:
-      - name: Your Prefix
-        selector: "#edit-prefix"
-        value: $NAME_PREFIX
-        required: true
-        options:
-          Mr.: Mr.
-          Mrs.: Mrs.
-          Ms.: Ms.
-          Mr. and Mrs.: Mr. and Mrs.
-          Dr.: Dr.
-      - name: Topic
-        selector: "#edit-topic"
-        value: $TOPIC
-        required: true
-        options:
-          Abortion: Abortion
-          Adoption: Adoption
-          Agriculture: Agriculture
-          Animal Welfare: Animal Welfare
-          Banking: Banking
-          Budget/Spending: Budget/Spending
-          Civil Rights: Civil Rights
-          Crime/Drugs: Crime/Drugs
-          Defense: Defense
-          Economy: Economy
-          Education (Higher): Education (Higher)
-          Education (K-12): Education (K-12)
-          Elections: Elections
-          Energy: Energy
-          Environment: Environment
-          Family Values: Family Values
-          Foreign Relations: Foreign Relations
-          Health: Health
-          Homeland Security: Homeland Security
-          Housing: Housing
-          Immigration: Immigration
-          Intelligence: Intelligence
-          Judiciary: Judiciary
-          Labor: Labor
-          Medicare: Medicare
-          Parks & Public Lands: Parks and Public Lands
-          Pensions/Retirement: Pensions/Retirement
-          Postal: Postal
-          Regulatory Reform: Regulatory Reform
-          Religion: Religion
-          Science/Technology: Science/Technology
-          Second Ammendment: Second Ammendment
-          Social Security: Social Security
-          Supreme Court: Supreme Court
-          Taxes: Taxes
-          Telecom: Telecom
-          Trade: Trade
-          Transportation: Transportation
-          Veterans: Veterans
-          Water/Rivers: Water/Rivers
-          Welfare: Welfare
+        - name: Your Prefix
+          selector: "#edit-prefix"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Mr. and Mrs.: Mr. and Mrs.
+            Dr.: Dr.
+        - name: Topic
+          selector: "#edit-topic"
+          value: $TOPIC
+          required: true
+          options:
+            Abortion: Abortion
+            Adoption: Adoption
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Banking: Banking
+            Budget/Spending: Budget/Spending
+            Civil Rights: Civil Rights
+            Crime/Drugs: Crime/Drugs
+            Defense: Defense
+            Economy: Economy
+            Education (Higher): Education (Higher)
+            Education (K-12): Education (K-12)
+            Elections: Elections
+            Energy: Energy
+            Environment: Environment
+            Family Values: Family Values
+            Foreign Relations: Foreign Relations
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Intelligence: Intelligence
+            Judiciary: Judiciary
+            Labor: Labor
+            Medicare: Medicare
+            Parks & Public Lands: Parks and Public Lands
+            Pensions/Retirement: Pensions/Retirement
+            Postal: Postal
+            Regulatory Reform: Regulatory Reform
+            Religion: Religion
+            Science/Technology: Science/Technology
+            Second Ammendment: Second Ammendment
+            Social Security: Social Security
+            Supreme Court: Supreme Court
+            Taxes: Taxes
+            Telecom: Telecom
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Water/Rivers: Water/Rivers
+            Welfare: Welfare
     - fill_in:
-      - name: First name
-        selector: "#edit-first-name"
-        value: $NAME_FIRST
-        required: true
-      - name: Last name
-        selector: "#edit-last-name"
-        value: $NAME_LAST
-        required: true
-      - name: Street
-        selector: "#edit-address-1"
-        value: $ADDRESS_STREET
-        required: true
-      - name: Street2
-        selector: "#edit-address-2"
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: City
-        selector: "#edit-city"
-        value: $ADDRESS_CITY
-        required: true
-      - name: zip
-        selector: "#edit-zip"
-        value: $ADDRESS_ZIP5
-        required: true
-      - name: phone
-        selector: "#edit-phone"
-        value: $PHONE
-        required: false
-      - name: email
-        selector: "#edit-email"
-        value: $EMAIL
-        required: true
-      - name: Subject
-        selector: "#edit-subject"
-        value: $SUBJECT
-        required: true
-      - name: Message
-        selector: "#edit-message"
-        value: $MESSAGE
-        required: true
+        - name: First name
+          selector: "#edit-first-name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#edit-last-name"
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: "#edit-address-1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#edit-address-2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#edit-city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#edit-zip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#edit-phone"
+          value: $PHONE
+          required: false
+        - name: email
+          selector: "#edit-email"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#edit-subject"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#edit-message"
+          value: $MESSAGE
+          required: true
     - javascript:
-      - name: Message
-        selectors: [ "#edit-message" ]
-        values: [ "$MESSAGE" ]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}"]
-        required: true
+        - name: Message
+          selectors: ["#edit-message"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
     - click_on:
-      - value: Submit
-        selector: button#edit-actions-submit
+        - value: Submit
+          selector: button#edit-actions-submit
     - wait:
-      - value: 5
+        - value: 10
   success:
     headers:
       status: 200

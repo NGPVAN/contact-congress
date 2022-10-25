@@ -120,6 +120,8 @@ contact_form:
     - click_on:
         - value: Submit
           selector: button#edit-actions-submit
+    - wait:
+        - value: 5
   success:
     headers:
       status: 200

@@ -4,42 +4,38 @@ contact_form:
   steps:
     - visit: "https://www.governor.pa.gov/contact/#OnlineForm"
     - find:
-      - selector: "#newsletterModal2 button"
-    - click_on:
-      - selector: "#newsletterModal2 button"
-    - find:
-      - selector: div.nf-form-content input[type='text'][placeholder='First Name']
+        - selector: "#nf-field-7081"
     - fill_in:
         - name: First Name
-          selector: div.nf-form-content input[type='text'][placeholder='First Name']
+          selector: "#nf-field-7081"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: div.nf-form-content input[type='text'][placeholder='Last Name']
+          selector: "#nf-field-7091"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: div.nf-form-content input[type='text'][placeholder='Address']
+          selector: "#nf-field-7111"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: div.nf-form-content input[type='text'][placeholder='City']
+          selector: "#nf-field-7121"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: div.nf-form-content input[type='text'][placeholder='Zip Code']
+          selector: "#nf-field-7151"
           value: $ADDRESS_ZIP5
-          required: true
+          required: false
         - name: email
-          selector: div.nf-form-content input[type='email'][placeholder='Email']
+          selector: "#nf-field-7161"
           value: $EMAIL
           required: true
         - name: Phone
-          selector: "#nf-field-7171" 
+          selector: "#nf-field-7171"
           value: $PHONE
           required: true
         - name: message
-          selector: div.nf-form-content textarea
+          selector: "#nf-field-7211"
           value: $MESSAGE
           required: true
           options:
@@ -135,47 +131,46 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Aging: Aging
             Agriculture: Agriculture
-            Attorney: Attorney General
-            Auditor General: Auditor General
-            Banking and Securities: Banking and Securities
-            Board of Pardons: Board of Pardons
-            Community and Economic Development: Community and Economic Development
-            Conservation and Natural Resources: Conservation and Natural Resources
-            Corrections: Corrections
-            Education: Education
-            Emergency Management Agency: Emergency Management Agency
-            Environmental Protection: Environmental Protection
-            Fish and Boat Commission: Fish and Boat Commission
-            Game Commission: Game Commission
-            Governor’s Budget FY15-16: Governor’s Budget FY15-16
-            Greetings/Proclamations/Letters: Greetings/Proclamations/Letters
+            Animal welfare: Animal welfare
+            Banking: Banking
+            Broadband: Broadband
+            Child custody: Child custody
+            Correctional services: Correctional services
+            Criminal justice: Criminal justice
+            Early childhood education Pre-k: Early childhood education/Pre-K
+            Economic development: Economic development
+            Education k-12: Education (K-12)
+            Emergency preparedness: Emergency preparedness
+            Energy: Energy
+            Energy assistance: Energy assistance
+            Environment: Environment
+            Gaming: Gaming
+            Greeting: Greeting/Proclamation request
             Health: Health
             Human Services: Human Services
-            Inspector General: Inspector General
-            Insurance: Insurance
-            Invite the Governor: Invite the Governor
-            Labor & Industry: Labor & Industry
+            Infrastructure: Infrastructure
+            Insurance any kinf except health: Insurance (any kind except health)
+            Jobs: Jobs
             Legislation: Legislation
+            LGBT issues: LGBT issues
             Military and Veteran Affairs: Military and Veteran Affairs
-            Office of General Counsel: Office of General Counsel
-            Office of the Budget: Office of the Budget
-            Policy: Policy
-            Probation and Parole: Probation and Parole
-            Public Utility Commission: Public Utility Commission
-            Revenue: Revenue
-            Right to Know Request: Right to Know Request
-            State: State
-            State Police: State Police
+            Other: Other
+            Parks and recreation: Parks and recreation
+            Public safety: Public safety
+            Public Utilities: Public Utilities
+            Stakeholder outreach: Stakeholder Outreach
+            Taxes: Taxes
+            Tourism: Tourism
             Transportation: Transportation
-            Treasury: Treasury
-            Turnpike: Turnpike
-            Web Other: Web Other
-            Youth Educational Resources: Youth Educational Resources
+            Unemployment: Unemployment
+            Voting: Voting
+            Women's issues: Women's issues
     - click_on:
         - value: Submit
-          selector: input[type='button'][value='Submit']
+          selector: "#nf-field-7221"
+    - wait:
+        - value: 5
     - find:
         - selector: div.nf-response-msg h3
   success:

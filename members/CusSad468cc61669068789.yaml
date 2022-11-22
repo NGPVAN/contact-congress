@@ -1,0 +1,35 @@
+bioguide: CusSad468cc61669068789
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.flrules.org/Gateway/View_notice.asp?id=26536986"
+    - find:
+        - selector: input[type='submit'][value='Make Comment']
+    - click_on:
+        - selector: input[type='submit'][value='Make Comment']
+    - fill_in:
+        - name: first name
+          selector: input[name='fname']
+          value: $NAME_FIRST
+          required: false
+        - name: last name
+          selector: input[name='lname']
+          value: $NAME_LAST
+          required: false
+        - name: email
+          selector: input[name='email']
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input[name='commenttitle']
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea[name='comment']
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: input[type='submit'][value='Submit Comment']
+  success:
+    body:
+      contains: "Your comment has been sent to the agency."

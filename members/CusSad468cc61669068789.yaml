@@ -32,4 +32,4 @@ contact_form:
         - selector: input[type='submit'][value='Submit Comment']
   success:
     body:
-      contains: "Success!"
+      contains: "Your comment has been sent to the agency."

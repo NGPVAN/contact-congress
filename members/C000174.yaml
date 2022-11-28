@@ -128,4 +128,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "so much for contacting me"
+      contains: "Thank you so much for contacting me"

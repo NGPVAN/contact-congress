@@ -61,7 +61,7 @@ contact_form:
         - name: Your Prefix
           selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
             Mr.: Mr.
             Mrs.: Mrs.

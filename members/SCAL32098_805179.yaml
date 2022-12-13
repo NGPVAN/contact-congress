@@ -1,7 +1,7 @@
-bioguide: SCAL27263_727357
+bioguide: SCAL32098_805179
 contact_form:
   steps:
-    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD73"
+    - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD10"
     - fill_in:
         - name: First Name
           selector: "#form_name"
@@ -51,4 +51,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Thank you for taking the time to share your thoughts and ideas."
+      contains: "Your message has been received"

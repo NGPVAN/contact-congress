@@ -39,7 +39,7 @@ contact_form:
         - name: Subject
           selector: "#subject"
           value: $SUBJECT
-          required: false
+          required: true
         - name: Message
           selector: "#form_message"
           value: $MESSAGE
@@ -48,7 +48,7 @@ contact_form:
             max_length: 3500
     - click_on:
         - value: Submit
-          selector: button[type='submit']
+          selector: "div.col-md-12 button.btn"
     - find:
         - selector: "#swal2-content p"
   success:

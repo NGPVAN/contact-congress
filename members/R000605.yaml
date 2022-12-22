@@ -248,4 +248,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: "Thank you for submitting"
+      contains: "Thank you for submitting your request"

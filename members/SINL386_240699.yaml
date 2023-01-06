@@ -6,44 +6,44 @@ contact_form:
     - visit: "https://www.in.gov/lg/2333.htm"
     - fill_in:
         - name: First Name
-          selector: input#field47542374-first
+          selector: input#field125010404-first
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input#field47542374-last
+          selector: input#field125010404-last
           value: $NAME_LAST
           required: true
         - name: Middle Name Initial
-          selector: input#field47542374-initial
-          value: '.'
+          selector: input#field125010404-initial
+          value: "."
           required: true
         - name: Street
-          selector: input#field47542910-address
+          selector: input#field125010406-address
           value: $ADDRESS_STREET
           required: false
         - name: City
-          selector: input#field47542910-city
+          selector: input#field125010406-city
           value: $ADDRESS_CITY
           required: false
         - name: Zip
-          selector: input#field47542910-zip
+          selector: input#field125010406-zip
           value: $ADDRESS_ZIP5
           required: false
         - name: Phone
-          selector: input#field47542986
+          selector: input#field125010408
           value: $PHONE
           required: true
         - name: email
-          selector: input#field47542999
+          selector: input#field125010409
           value: $EMAIL
           required: true
         - name: Message
-          selector: textarea#field47543171
+          selector: textarea#field125010410
           value: $MESSAGE
           required: true
     - select:
         - name: Topic
-          selector: select#field47538935
+          selector: select#field125010402
           value: $TOPIC
           options:
             Administration, Department of: Administration, Department of
@@ -240,8 +240,8 @@ contact_form:
             Wells: Wells
             required: false
     - click_on:
-        - value: Send Email
-          selector: input#fsSubmitButton2534168
+        - value: Submit Form
+          selector: input#fsSubmitButton4807689
     - wait:
         - value: 3
   success:

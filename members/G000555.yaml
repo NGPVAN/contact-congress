@@ -7,7 +7,7 @@ contact_form:
     - wait:
         - value: 8
     - find:
-        - selector: "##input_3_1"
+        - selector: "#input_3_1"
     - fill_in:
         - name: First Name
           selector: "#input_3_1"

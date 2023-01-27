@@ -7,99 +7,160 @@ contact_form:
     - wait:
         - value: 8
     - find:
-        - selector: "#input-A5AD3024-5056-A066-60BD-27089EC367B6"
+        - selector: "##input_3_1"
     - fill_in:
         - name: First Name
-          selector: "#input-A5AD3024-5056-A066-60BD-27089EC367B6"
+          selector: "#input_3_1"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#input-A5AD2D97-5056-A066-609C-2BE7421DED54"
+          selector: "#input_3_3"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: "#input-A5AD3726-5056-A066-6040-8733FE9F1C74"
+          selector: "#input_3_5"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: "#input-A5AD3697-5056-A066-609E-516677574915"
+          selector: "#input_3_7"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#input-A5AD3598-5056-A066-602E-1929FB800695"
+          selector: "#input_3_7"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#input-A5AD3404-5056-A066-6010-890AB748A186"
+          selector: "#input_3_9"
           value: $ADDRESS_ZIP5
           required: true
         - name: email
-          selector: input#email
+          selector: "#input_3_31"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#input-A5AD3157-5056-A066-6044-877D1CC4A989"
+          selector: "#input_3_10"
           value: $PHONE
           required: true
         - name: message
-          selector: "#input-A5AD3307-5056-A066-6029-D7EBFF775924"
+          selector: "#input_3_23"
           value: $MESSAGE
           required: true
     - javascript:
         - name: Message
-          selectors: [ "#input-A5AD3307-5056-A066-6029-D7EBFF775924" ]
+          selectors: [ "#input_3_23" ]
           values: [ "$MESSAGE" ]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'');}"]
           required: true
     - select:
         - name: Your Prefix
-          selector: "#input-A5AD3428-5056-A066-6005-7CBE3BA4A089"
+          selector: "#input_3_4"
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
             Mr.: Mr.
-            Miss: Miss
-            Dr.: Dr.
-            Mrs.: Mrs.
             Ms.: Ms.
-            Pastor: Pastor
-            Rev.: Rev.
-            Other: Other
-    - picker:
+            Mrs.: Mrs. 
+            Mx: Mx
+            X.: X. 
+            Dr: Dr. 
+        - name: state
+          selector: "#input_3_32"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options: 
+            AL: AL
+            AK: AK
+            AZ: AZ
+            AR: AR
+            CA: CA
+            CO: CO
+            CT: CT
+            DE: DE
+            DC: DC
+            FL: FL
+            GA: GA
+            HI: HI
+            ID: ID
+            IL: IL
+            IN: IN 
+            IA: IA
+            KS: KS
+            KY: KY
+            LA: LA
+            ME: ME
+            MD: MD
+            MA: MA
+            MI: MI
+            MN: MN
+            MS: MS
+            MO: MO
+            MT: MT
+            NE: NE
+            NV: NV
+            NH: NH
+            NJ: NJ
+            NM: NM
+            NJ: NJ
+            NM: NM
+            NY: NY
+            NC: NC
+            ND: ND
+            OH: OH
+            OK: OK
+            OR: OR
+            PA: PA
+            RI: RI
+            SC: SC
+            SD: SD
+            TN: TN
+            TX: TX 
+            UT: UT
+            VT: VT
+            VA: VA
+            WA: WA
+            WV: WV
+            WI: WI
+            WY: WY
+            American Samoa: American Samoa
+            Guam: Guam 
+            Northern Mariana Islands: Northern Mariana Islands
+            Puerto Rico: Puerto Rico 
+            U.S. Virgin Island: U.S. Virgin Islands
         - name: Topic
+          selector: "#input_3_20"
           value: $TOPIC
           required: true
           options:
-            Agriculture/Nutrition: "#issue-0"
-            Animals Issues: "#issue-1"
-            Arts & Humanities: "#issue-2"
-            Banking/Finance: "#issue-3"
-            Campaign/Election Reform: "#issue-4"
-            Children: "#issue-5"
-            Civil/LGBT Rights: "#issue-6"
-            Defense/Military: "#issue-7"
-            Economy: "#issue-8"
-            Education: "#issue-9"
-            Energy: "#issue-10"
-            Environment: "#issue-11"
-            Foreign Relations/International Affairs: "#issue-12"
-            Government Reform: "#issue-13"
-            Gun Control: "#issue-14"
-            Health/Healthcare: "#issue-15"
-            Homeland Security: "#issue-16"
-            Housing: "#issue-17"
-            Immigration: "#issue-18"
-            Judiciary: "#issue-19"
-            Labor & Pensions: "#issue-20"
-            Medicare/Medicaid: "#issue-21"
-            Science/Technology/Telecommunications: "#issue-22"
-            Social Security: "#issue-23"
-            Taxes: "#issue-24"
-            Trade: "#issue-25"
-            Transportation: "#issue-26"
-            Veterans: "#issue-27"
-            Welfare: "#issue-28"
-            Women's Issues: "#issue-29"
+            AGRINUT: Agriculture/Nutrition
+            ANI: Animals Issues
+            ART: Arts & Humanities
+            BANKFIN: Banking/Finance
+            CAMPAIGN FINANCE: Campaign/Election Reform
+            CHILDREN: Children
+            CIVILRIGHTS: Civil/LGBT Rights
+            DEF: Defense/Military
+            ECON: Economy
+            EDU: Education
+            ENERGY: Energy
+            ENV: Environment
+            FOREGIN RELATIONS: Foreign Relations/International Affairs
+            GOV: Government Reform
+            GUN CONTROL: Gun Control
+            HEA: Health/Healthcare
+            HOM: Homeland Security
+            IMM: Housing
+            IMM: Immigration
+            JUD: Judiciary
+            LABOR: Labor & Pensions
+            MEDICARE: Medicare/Medicaid
+            SCITECTEL: Science/Technology/Telecommunications
+            SOCIAL SECURITY: Social Security
+            TAX: Taxes
+            TRADE: Trade
+            TRANSPORTATION: Transportation
+            VETERANS: Veterans
+            WELFARE: Welfare
+            WOMEN: Women's Issues
     - find:
         - selector: input[type='submit'][value='Submit']
     - click_on:
@@ -108,4 +169,4 @@ contact_form:
         - value: 4
   success:
     body:
-      contains: Thank you for contacting my office
+      contains: Your Email Has Been Received

@@ -54,7 +54,7 @@ contact_form:
     - select:
         - name: state
           selector: "#edit-contact-form-state"
-          value: New York
+          value: $ADDRESS_STATE_FULL
           required: true
           options:
             VT: Vermont

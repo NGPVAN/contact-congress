@@ -51,4 +51,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Thank you for taking the time to share your thoughts and ideas."
+      contains: "Your message has been received."

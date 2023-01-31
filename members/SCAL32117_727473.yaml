@@ -51,4 +51,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Your message has been received"
+      contains: "Thank you for contacting the office"

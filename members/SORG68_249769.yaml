@@ -1,0 +1,78 @@
+#Governor Tina Kotek
+bioguide: SORG68_249769
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.oregon.gov/gov/Pages/share-your-opinion.aspx"
+    - fill_in:
+        - name: First Name
+          selector: "#firstName"
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name
+          selector: "#lastName"
+          value: $NAME_LAST
+          required: false
+        - name: street
+          selector: "#address1"
+          value: $ADDRESS_STREET
+          required: false
+        - name: street
+          selector: "#address2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: false
+        - name: zip5
+          selector: "#zip"
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: false
+        - name: phone
+          selector: "#homephone"
+          value: $PHONE
+          required: false
+        - name: message
+          selector: "#messagebody"
+          value: $MESSAGE
+          required: false
+    - select:
+        - name: state
+          selector: "#state"
+          value: $ADDRESS_STATE_FULL
+          required: false
+          options:
+            OR: Oregon
+        - name: topic
+          selector: "#issue"
+          value: $TOPIC
+          required: false
+          options:
+            AG: Agriculture and Animal Welfare
+            COVID: COVID-19
+            ECO: Economy and Jobs
+            EDU: Education
+            ENG: Energy
+            FED: Federal Issues
+            HC: Health Care
+            HSS: Human and Social Services
+            DIV: Immigration and Diversity
+            MIL: Military and Emergency Management
+            NAT: Natural Resources and Wildlife
+            BENE: Public Employee Benefits
+            PS: Public Safety
+            TAX: Taxes
+            TRANS: Transportation
+    - find:
+        - selector: .gov-btn
+    - click_on:
+        - selector: .gov-btn
+  success:
+    body:
+      excludes: "All information provided"
+      contains: "Thank you for contacting"

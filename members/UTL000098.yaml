@@ -22,6 +22,10 @@ contact_form:
           selector: input[name='your-email']
           value: $EMAIL
           required: true
+        - name: zipcode
+          selector: input[name='zip-code']
+          value: $ADDRESS_ZIP5
+          required: true
         - name: subject
           selector: input[name='your-subject']
           value: $SUBJECT

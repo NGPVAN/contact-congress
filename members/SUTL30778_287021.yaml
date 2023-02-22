@@ -1,0 +1,47 @@
+bioguide: SUTL30778_287021
+  method: post
+  action: ""
+  steps:
+    - visit: "https://house.utleg.gov/contact/"
+    - find:
+        - selector: select#leg-list
+    - select:
+        - name: Your Representative
+          selector: select#leg-list
+          value: $TOPIC
+          required: true
+          options:
+            Walter, R. Neil: Walter, R. Neil
+    - fill_in:
+        - name: Name
+          selector: input[name='your-name']
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: input[name='your-email']
+          value: $EMAIL
+          required: true
+        - name: zipcode
+          selector: input[name='zip-code']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: subject
+          selector: input[name='your-subject']
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea[name='your-message']
+          value: $MESSAGE
+          required: true
+    - find:
+        - selector: input[type='submit'][value='Submit']
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Submit']
+    - wait:
+        - value: 4
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you for your message.

@@ -1,0 +1,280 @@
+#US Senator Bob Casey
+bioguide: C001070
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://www.casey.senate.gov/contact/share"
+    - find:
+        - selector: input#input-3C478E70-917F-5EED-EC38-62904ABEBE43
+    - fill_in:
+        - name: First Name
+          selector: input#input-3C478E70-917F-5EED-EC38-62904ABEBE43
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#input-3C478D05-B458-1E21-1C7C-EBFD03360285
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#input-3C478CDD-EE28-DFC3-6C5F-A7ADE035B1B1
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#input-3C478CB7-CCC7-2833-99B8-FBFB1CC49589
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#input-3C479068-C653-C536-3360-0831F9676225
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#input-3C4790AB-E218-6A59-2A8B-F6B3463A7AFD
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input#input-3C478E08-E94C-CA5D-529A-D92A74912057
+          value: $PHONE
+          required: false
+        - name: email
+          selector: input#email
+          value: $EMAIL
+          required: true
+        - name: confirm_email
+          selector: input#input-3C478E2B-F065-1BF5-8579-E13C9EE9E0D4
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input#input-3C479022-ED70-196C-B809-FB51A91746E6
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#input-3C478FD9-04CE-6840-A608-F510A7249134
+          value: $MESSAGE
+          required: true
+          options:
+            blacklist: "-,;—:()"
+    - javascript:
+        - name: char replace
+          selectors: ["textarea#input-3C478FD9-04CE-6840-A608-F510A7249134"]
+          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}"]
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: select#input-3C478E4E-B4A2-F91A-17F3-3862979355B9
+          value: $NAME_PREFIX
+          required: true
+          options:
+            None: None
+            Mr.: Mr.
+            Miss: Miss
+            Ms.: Ms. 
+            Mrs.: Mrs.
+            Mx.: Mx. 
+            Professor: Professor
+            Dr.: Dr.
+            Father: Father
+            Sister: Sister
+            Rabbi: Rabbi
+            Reverend: Reverend
+            Pastor: Pastor
+            Imam: Imam
+            Senator: Senator
+            Representative: Representative
+            General: Air Force - General
+            Lieutenant General: Air Force - Lieutenant General
+            Major General: Air Force - Major General
+            Brigadier General: Air Force - Brigadier General
+            Colonel: Air Force - Colonel
+            Lieutenant Colonel: Air Force - Lieutenant Colonel
+            Major: Air Force - Major
+            Captain: Air Force - Captain
+            First Lieutenant: Air Force - First Lieutenant
+            Second Lieutenant: Air Force - Second Lieutenant
+            Chief Master Sergeant of the Air Force: Air Force - Chief Master Sergeant of the Air Force
+            Command Chief Master Sergeant: Air Force - Command Chief Master Sergeant
+            First Sergeant (E-9): Air Force - First Sergeant (E-9)
+            Chief Master Sergeant: Air Force - Chief Master Sergeant
+            First Sergeant (E-8): Air Force - First Sergeant (E-8)
+            Senior Master Sergeant: Air Force - Senior Master Sergeant
+            First Sergeant (E-7): Air Force - First Sergeant (E-7)
+            Master Sergeant: Air Force - Master Sergeant
+            Technical Sergeant: Air Force - Technical Sergeant
+            Staff Sergeant: Air Force - Staff Sergeant
+            Senior Airman: Air Force - Senior Airman
+            Airman First Class: Air Force - Airman First Class
+            Airman: Air Force - Airman
+            Airman Basic: Air Force - Airman Basic
+            General: Army - General
+            Lieutenant General: Army - Lieutenant General
+            Major General: Army - Major General
+            Brigadier General: Army - Brigadier General
+            Colonel: Army - Colonel
+            Lieutenant Colonel: Army - Lieutenant Colonel
+            Major: Army - Major
+            Captain: Army - Captain
+            First Lieutenant: Army - First Lieutenant
+            Second Lieutenant: Army - Second Lieutenant
+            Chief Warrant Officer 5: Army - Chief Warrant Officer 5
+            Chief Warrant Officer 4: Army - Chief Warrant Officer 4
+            Chief Warrant Officer 3: Army - Chief Warrant Officer 3
+            Chief Warrant Officer 2: Army - Chief Warrant Officer 2
+            Warrant Officer: Army - Warrant Officer
+            Sergeant Major of the Army: Army - Sergeant Major of the Army
+            Command Sergeant Major: Army - Command Sergeant Major
+            Sergeant Major: Army - Sergeant Major
+            First Sergeant: Army - First Sergeant
+            Master Sergeant: Army - Master Sergeant
+            Sergeant First Class: Army - Sergeant First Class
+            Staff Sergeant: Army - Staff Sergeant
+            Sergeant: Army - Sergeant
+            Specialist: Army - Specialist
+            Corporal: Army - Corporal
+            Private First Class: Army - Private First Class
+            Private (E-2): Army - Private (E-2)
+            Private: Army - Private
+            Admiral: Coast Guard - Admiral
+            Lieutenant Junior Grade: Coast Guard - Lieutenant Junior Grade
+            Ensign: Coast Guard - Ensign
+            Chief Warrant Officer 4: Coast Guard - Chief Warrant Officer 4
+            Chief Warrant Officer 3: Coast Guard - Chief Warrant Officer 3
+            Chief Warrant Officer 2: Coast Guard - Chief Warrant Officer 2
+            Master Chief Petty Officer of the Coast Guard: Coast Guard - Master Chief Petty Officer of the Coast Guard
+            Fleet/Command Master Chief Petty Officer: Coast Guard - Fleet/Command Master Chief Petty Officer
+            Master Chief Petty Officer: Coast Guard - Master Chief Petty Officer
+            Senior Chief Petty Officer: Coast Guard - Senior Chief Petty Officer
+            Chief Petty Officer: Coast Guard - Chief Petty Officer
+            Petty Officer First Class: Coast Guard - Petty Officer First Class
+            Petty Officer Second Class: Coast Guard - Petty Officer Second Class
+            Petty Officer Third Class: Coast Guard - Petty Officer Third Class
+            Seaman: Coast Guard - Seaman
+            Seaman Apprentice: Coast Guard - Seaman Apprentice
+            Seaman Recruit: Coast Guard - Seaman Recruit
+            General: Marine Corps - General
+            Lieutenant General: Marine Corps - Lieutenant General
+            Major General: Marine Corps - Major General
+            Brigadier General: Marine Corps - Brigadier General
+            Colonel: Marine Corps - Colonel
+            Lieutenant Colonel: Marine Corps - Lieutenant Colonel
+            Major: Marine Corps - Major
+            Captain: Marine Corps - Captain
+            First Lieutenant: Marine Corps - First Lieutenant
+            Second Lieutenant: Marine Corps - Second Lieutenant
+            Chief Warrant Officer 5: Marine Corps - Chief Warrant Officer 5
+            Chief Warrant Officer 4: Marine Corps - Chief Warrant Officer 4
+            Chief Warrant Officer 3: Marine Corps - Chief Warrant Officer 3
+            Chief Warrant Officer 2: Marine Corps - Chief Warrant Officer 2
+            Warrant Officer 1: Marine Corps - Warrant Officer 1
+            Sergeant Major of the Marine Corps: Marine Corps - Sergeant Major of the Marine Corps
+            Sergeant Major: Marine Corps - Sergeant Major
+            Master Gunnery Sergeant: Marine Corps - Master Gunnery Sergeant
+            First Sergeant: Marine Corps - First Sergeant
+            Master Sergeant: Marine Corps - Master Sergeant
+            Gunnery Sergeant: Marine Corps - Gunnery Sergeant
+            Staff Sergeant: Marine Corps - Staff Sergeant
+            Sergeant: Marine Corps - Sergeant
+            Corporal: Marine Corps - Corporal
+            Lance Corporal: Marine Corps - Lance Corporal
+            Private First Class: Marine Corps - Private First Class
+            Private: Marine Corps - Private
+            Admiral: Navy - Admiral
+            Vice Admiral: Navy - Vice Admiral
+            Rear Admiral, Upper Half: Navy - Rear Admiral, Upper Half
+            Rear Admiral, Lower Half: Navy - Rear Admiral, Lower Half
+            Captain: Navy - Captain
+            Commander: Navy - Commander
+            Lieutenant Commander: Navy - Lieutenant Commander
+            Lieutenant: Navy - Lieutenant
+            Lieutenant Junior Grade: Navy - Lieutenant Junior Grade
+            Ensign: Navy - Ensign
+            Chief Warrant Officer 5: Navy - Chief Warrant Officer 5
+            Chief Warrant Officer 4: Navy - Chief Warrant Officer 4
+            Chief Warrant Officer 3: Navy - Chief Warrant Officer 3
+            Chief Warrant Officer 2: Navy - Chief Warrant Officer 2
+            Warrant Officer 1: Navy - Warrant Officer 1
+            Fleet/Command Master Chief Petty Officer: Navy - Fleet/Command Master Chief Petty Officer
+            Master Chief Petty Officer: Navy - Master Chief Petty Officer
+            Senior Chief Petty Officer: Navy - Senior Chief Petty Officer
+            Chief Petty Officer: Navy - Chief Petty Officer
+            Petty Officer First Class: Navy - Petty Officer First Class
+            Petty Officer Second Class: Navy - Petty Officer Second Class
+            Petty Officer Third Class: Navy - Petty Officer Third Class
+            Seaman Apprentice: Navy - Seaman Apprentice
+            Seaman: Navy - Seaman
+            Seaman Recruit: Navy - Seaman Recruit
+            General: Space Force - General
+            Lieutenant General: Space Force - Lieutenant General
+            Major General: Space Force - Major General
+            Brigadier General: Space Force - Brigadier General
+            Colonel: Space Force - Colonel
+            Lieutenant Colonel: Space Force - Lieutenant Colonel
+            Major: Space Force - Major
+            Captain: Space Force - Captain
+            First Lieutenant: Space Force - First Lieutenant
+            Second Lieutenant: Space Force - Second Lieutenant
+            Chief Master Sergeant of the Space Force: Space Force - Chief Master Sergeant of the Space Force
+            Chief Master Sergeant: Space Force - Chief Master Sergeant
+            Senior Master Sergeant: Space Force - Senior Master Sergeant
+            Master Sergeant: Space Force - Master Sergeant
+            Technical Sergeant: Space Force - Technical Sergeant
+            Sergeant: Space Force - Sergeant
+            Specialist 4: Space Force - Specialist 4
+            Specialist 3: Space Force - Specialist 3
+            Specialist 2: Space Force - Specialist 2
+            Specialist 1: Space Force - Specialist 1
+        - name: topic
+          selector: select#input-3C478C8F-9CED-FCC9-0426-93952AE9FBDF
+          value: $TOPIC
+          required: true
+          options:
+            Agriculture & Farming: Agriculture & Farming
+            Animal Welfare: Animal Welfare
+            Arts & Humanities: Arts & Humanities
+            Banking & Financial Services: Banking & Financial Services
+            Budget: Budget
+            Campaigns & Elections: Campaigns & Elections
+            Children: Children
+            Civil Rights: Civil Rights
+            Civil Service: Civil Service
+            Climate & Environment: Climate & Enviroment
+            Consumer Protection: Consumer Protection
+            Criminal Justice: Criminal Justice
+            Defense & Military: Defense & Military
+            Disabilities & Accessibility: Disabilities & Accessibility
+            Economy: Economy
+            Education: Education
+            Energy: Energy
+            Food & Nutrition: Food & Nutrition
+            Foreign Affairs: Foreign Affairs
+            Gun Violence: Gun Violence
+            Health Care: Health Care
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Jobs & Labor: Jobs & Labor
+            Judiciary: Judiciary
+            Medicare & Medicaid: Medicare & Medicaid
+            Natural Distasters & Emegrency Response: Natural Disasters & Emergency Response
+            Parks & Interior: Parks & Interior
+            Postal Service: Postal Service
+            Poverty: Poverty
+            Public Assistance Programs: Public Assistance Programs
+            Retirment & Pensions: Retirement & Pensions
+            Science & Research: Science & Research
+            Seniors & Long Term Care: Seniors & Long Term Care
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Technology & Cybersecurity: Technology & Cybersecurity
+            Telecommunications & Utilites: Telecommunications & Utilities
+            Trade: Trade
+            Transportation and Infrastructure: Transportation & Infrastructure
+            Veterans Affairs: Veterans Affairs
+    - click_on:
+        - selector: div.controls .btn
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank You

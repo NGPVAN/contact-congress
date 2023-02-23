@@ -1,7 +1,7 @@
 #US Senator Bob Casey
 bioguide: C001070
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.casey.senate.gov/contact/share"
     - find:

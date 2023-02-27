@@ -1,0 +1,57 @@
+bioguide: SNYU36736_488588
+contact_form:
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.nysenate.gov/senators/nathalia-fernandez/contact"
+    - find:
+        - selector: input#edit-first-name
+    - wait:
+        - value: 1
+    - fill_in:
+        - name: First Name
+          selector: input#edit-first-name
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#edit-last-name
+          value: $NAME_LAST
+          required: true
+        - name: Subject
+          selector: input#edit-subject
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: textarea#edit-email-body
+          value: $MESSAGE
+          required: true
+        - name: Email
+          selector: input#edit-from-email
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: input#edit-phone
+          value: $PHONE
+          required: false
+        - name: Address
+          selector: input#edit-address
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: input#edit-city
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: input#edit-zip
+          value: $ADDRESS_ZIP5
+          required: true
+    - click_on:
+        - value: submit
+          selector: button#edit-submit
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Your message has been submitted

@@ -11,7 +11,7 @@ bioguide: SUTL22862_576095
           value: $TOPIC
           required: true
           options:
-            Pierucci, Candace B.: Pierucci, Candace B.
+            Pierucci, Candice B.: Pierucci, Candice B.
     - fill_in:
         - name: Name
           selector: input[name='your-name']

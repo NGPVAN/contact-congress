@@ -46,7 +46,7 @@ contact_form:
         - name: subject
           selector: input#input-3C479022-ED70-196C-B809-FB51A91746E6
           value: $SUBJECT
-          required: true
+          required: false
         - name: message
           selector: textarea#input-3C478FD9-04CE-6840-A608-F510A7249134
           value: $MESSAGE
@@ -264,6 +264,8 @@ contact_form:
             Trade: Trade
             Transportation and Infrastructure: Transportation & Infrastructure
             Veterans Affairs: Veterans Affairs
+    - find: 
+        - selector: div.controls .btn
     - click_on:
         - selector: div.controls .btn
     - wait:

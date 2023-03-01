@@ -1,0 +1,116 @@
+bioguide: CusSd5b05f841677683838
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.agriculture.senate.gov/farm-bill-input"
+    - find:
+        - selector: input#input-0E37A07C-5056-A066-60E9-497A1DE3E985
+    - fill_in:
+        - name: First Name
+          selector: input#input-0E37A07C-5056-A066-60E9-497A1DE3E985
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#input-0E37A0D7-5056-A066-607A-5BD316E78C50
+          value: $NAME_LAST
+          required: true
+        - name: Farm name
+          selector: input#input-0E3842CE-5056-A066-60E3-BB29D7C37CD8
+          value: $SUBJECT
+          required: true
+        - name: email
+          selector: input#email
+          value: $EMAIL
+          required: true
+        - name: confirm_email
+          selector: input#input-0E3D2435-5056-A066-601A-641BE5649E02
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input#input-0E3DBAFC-5056-A066-609B-D5CADDC1F296
+          value: $PHONE
+          required: false
+        - name: street
+          selector: input#input-0E3E38AF-5056-A066-6068-BC1AA00B8253
+          value: $ADDRESS_STREET
+          required: false
+        - name: street2
+          selector: input#input-0E3E390D-5056-A066-6034-41F6B1312D90
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#input-0E3E396B-5056-A066-606A-4CBD2FF9CDB1
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#input-0E3E3A2A-5056-A066-60FD-F45DF62CD98F
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: message
+          selector: textarea#input-0E4A40A6-5056-A066-6075-D4D2C38A6E54
+          value: $MESSAGE
+          required: false
+    - select:
+        - name: state
+          selector: select#input-0E3E39CA-5056-A066-6085-61A7C96300BB
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            AL: AL
+            AK: AK
+            AZ: AZ
+            CA: CA
+            CO: CO
+            CT: CT
+            DE: DE
+            DC: DC
+            FL: FL
+            GA: GA
+            HI: HI
+            ID: ID
+            IL: IL
+            IN: IN
+            IA: IA
+            KS: KS
+            KY: KY
+            LA: LA
+            ME: ME
+            MD: MD
+            MA: MA
+            MI: MI
+            MN: MN
+            MS: MS
+            MO: MO
+            MT: MT
+            NE: NE
+            NV: NV
+            NH: NH
+            NJ: NJ
+            NM: NM
+            NY: NY
+            NC: NC
+            ND: ND
+            OH: OH
+            OK: OR
+            PA: PA
+            RI: RI
+            SC: SC
+            SD: SD
+            TN: TN
+            TX: TX
+            UT: UT
+            VT: VT
+            VA: VA
+            WA: WA
+            WV: WV
+            WI: WI
+            WY: WY
+    - click_on:
+        - selector: div.controls .btn
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank You

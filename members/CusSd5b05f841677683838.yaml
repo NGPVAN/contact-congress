@@ -103,7 +103,7 @@ contact_form:
             WY: WY
         - name: Farm name
           selector: input#input-0E3842CE-5056-A066-60E3-BB29D7C37CD8
-          value: $TOPIC
+          value: $SUBJECT
           required: true
           options:
             Individual: Individual

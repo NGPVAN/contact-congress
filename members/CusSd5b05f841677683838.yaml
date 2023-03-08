@@ -14,6 +14,10 @@ contact_form:
           selector: input#input-0E37A0D7-5056-A066-607A-5BD316E78C50
           value: $NAME_LAST
           required: true
+        - name: Farm name
+          selector: input#input-0E3842CE-5056-A066-60E3-BB29D7C37CD8
+          value: $SUBJECT
+          required: true
         - name: email
           selector: input#email
           value: $EMAIL
@@ -101,12 +105,6 @@ contact_form:
             WV: WV
             WI: WI
             WY: WY
-        - name: Farm name
-          selector: input#input-0E3842CE-5056-A066-60E3-BB29D7C37CD8
-          value: $TOPIC
-          required: true
-          options:
-            Individual: Individual
     - click_on:
         - selector: div.controls .btn
     - wait:

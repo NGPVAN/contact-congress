@@ -3,7 +3,11 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://senate.texas.gov/memberform.php?auth=UC5j0KFk9EBsgv8DW1AVW3X28ZoummFDDqxcJ0YCz9c6XzpfOtLymaTERX3bXUYmi26IfzkyP98UFM6QwSBFg01DHzJTujE6fDp8OmBAT9im5Klu8TYWvRMw1YI%3D&lang=en"
+    - visit: "https://senate.texas.gov/member.php?d=7&lang=en"
+    - find:
+        - selector: "#mem_rcol_top p a"
+    - click_on:
+        - selector: "#mem_rcol_top p a"
     - fill_in:
         - name: email
           selector: "#sender"
@@ -59,11 +63,8 @@ contact_form:
           required: true
     - javascript:
         - name: subject truncation
-          selectors: ["#subject"]
-          commands:
-            [
-              "elements[0].value = elements[0].value.length > 50 ? elements[0].value.substring(0,47) + '...' : elements[0].value",
-            ]
+          selectors: [ "#subject"]
+          commands: [ "elements[0].value = elements[0].value.length > 50 ? elements[0].value.substring(0,47) + '...' : elements[0].value" ]
           required: true
     - click_on:
         - value: Send Message

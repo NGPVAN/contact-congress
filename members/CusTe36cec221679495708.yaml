@@ -27,6 +27,7 @@ contact_form:
         - name: address 2
           selector: "#id_authorAddress2"
           value: $ADDRESS_STREET_2
+          required: false
         - name: email
           selector: "#id_authorEmail"
           value: $EMAIL

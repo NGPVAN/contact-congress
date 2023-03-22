@@ -1,0 +1,105 @@
+bioguide: CusTe36cec221679495708
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://parkplanning.nps.gov/commentForm.cfm?documentID=126168"
+    - fill_in:
+        - name: city
+          selector: "#id_authorCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zipcode
+          selector: "#id_authorPostalCode"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: first name
+          selector: "#id_authorFirstName"
+          value: $NAME_FIRST
+          required: false
+        - name: last name
+          selector: "#id_authorLastName"
+          value: $NAME_LAST
+          required: false
+        - name: address 1
+          selector: "#id_authorAddress1"
+          value: $ADDRESS_STREET
+          required: false
+        - name: address 2
+          selector: "#id_authorAddress2"
+          value: $ADDRESS_STREET_2
+        - name: email
+          selector: "#id_authorEmail"
+          value: $EMAIL
+          required: false
+        - name: message
+          selector: "#id_pubComments"
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: state
+          selector: "#id_authorStateProvDD"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            AL: Alaska
+            AK: Alabama
+            AS: American Samoa
+            AZ: Arizona
+            AR: Arkansas
+            CA: California
+            CO: Colorado
+            MP: Commonwealth of the Northern Mariana Islands
+            CT: Connecticut
+            DE: Delaware
+            DC: District of Columbia
+            FL: Florida
+            GA: Georgia
+            GU: Guam
+            HI: Hawaii
+            ID: Idaho
+            IL: Illinois
+            IN: Indiana
+            IA: Iowa
+            KS: Kansas
+            KY: Kentucky
+            LA: Louisiana
+            ME: Maine
+            MD: Maryland
+            MA: Massachusetts
+            MI: Michigan
+            MN: Minnesota
+            MS: Mississippi
+            MO: Missouri
+            MT: Montana
+            NE: Nebraska
+            NV: Nevada
+            NH: New Hampshire
+            NJ: New Jersey
+            NM: New Mexico
+            NY: New York
+            NC: North Carolina
+            ND: North Dakota
+            OH: Ohio
+            OK: Oklahoma
+            OR: Oregon
+            PA: Pennsylvania
+            PR: Puerto Rico
+            RI: Rhode Island
+            SC: South Carolina
+            SD: South Dakota
+            TN: Tennessee
+            TX: Texas
+            UT: Utah
+            VA: Virginia
+            VT: Vermont
+            VI: Virgin Islands
+            WA: Washington
+            WV: West Virginia
+            WI: Wisconsin
+            WY: Wyoming
+            UN: X - Unknown or N/A
+    - click_on:
+        - selector: "#id_submitButton"
+  success:
+    body:
+      contains: "Thank You!"

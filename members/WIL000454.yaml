@@ -3,37 +3,35 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/32/august/contact-info/"
+    - visit: "https://legis.wisconsin.gov/assembly/32/august/contact/"
     - fill_in:
         - name: first
-          selector: div.firstname > div > input
+          selector: "#FirstName"
           value: $NAME_FIRST
           required: true
         - name: last
-          selector: div.lastname > div > input
+          selector: "#LastName"
           value: $NAME_LAST
           required: true
         - name: email
-          selector: div.email > div > input
+          selector: "#Email"
           value: $EMAIL
           required: true
-        - name: street
-          selector: div.address > div > input
-          value: $ADDRESS_STREET
-          required: true
         - name: phone
-          selector: div.phonenumber > div > input
+          selector: "#Telephone"
           value: $PHONE
-          required: true
+          required: false
         - name: message
-          selector: div.comments > div > input
+          selector: "#Message"
           value: $MESSAGE
-          required: true
+          required: false
     - click_on:
         - value: Submit
-          selector: div#contour_form_ContactMe input[name='submitbtn']
+          selector: div.buttons .btn
+    - wait:
+        - value: 5
   success:
     headers:
       status: 200
     body:
-      contains: "I read every email I receive, and I try to personally respond to every contact."
+      contains: "Thank you for your submission!"

@@ -1,46 +1,51 @@
 bioguide: WIL000448
 contact_form:
-  method: post
   steps:
     - visit: "http://legis.wisconsin.gov/senate/07/larson/contact/"
-    - find:
-        - selector: div .email input
     - fill_in:
-        - name: email
-          selector: div .email input
-          value: $EMAIL
-          required: true
-        - name: Full Name
-          selector: div .name input
-          value: $NAME_FULL
-          required: true
-        - name: address
-          selector: div .address input
-          value: $ADDRESS_STREET
-          required: false
-        - name: citystatezip
-          selector: div .citystatezipcode input
-          value: $ADDRESS_CITY_STATE_ZIP
-          required: false
-        - name: phone
-          selector: div .phonenumber input
-          value: $PHONE
-          required: false
-        - name: subject
-          selector: div .messagesubject input
+        - name: issue
+          selector: "input[id='174e5a66-2e85-4364-da49-fc8f722526de']"
           value: $SUBJECT
-          required: false
-        - name: Message
-          selector: div .dearsenatorlarson textarea
+          required: true
+        - name: message
+          selector: "textarea[id='2607374e-a9c7-4cea-f31f-54c76d2abcd5']"
           value: $MESSAGE
           required: true
+        - name: first name
+          selector: "input[id='fcfd7988-36af-4cf8-c1ac-aaac6d053798']"
+          value: $NAME_FIRST
+          required: true
+        - name: last name
+          selector: "input[id='a48e933a-9f4b-439c-fd1e-ef86b296facd']"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "input[id='b4bcca0d-c84f-4791-c032-4d1d1bf6b356']"
+          value: $EMAIL
+          required: true
+        - name: address
+          selector: "input[id='fc32bd94-ff3e-423d-a242-260529b35f86']"
+          value: $ADDRESS_FULL
+          required: true
+        - name: address 2
+          selector: "input[id='b7ee2548-3b14-4cbc-8f74-8de13c4d5c45']"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "input[id='54a360be-50a1-4740-c624-a50112ffe9e4']"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "input[id='ef7f0bc3-4c59-4898-f66e-30ae73825313']"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "input[id='955374e7-ce5c-4d80-f99f-c561a56ee188']"
+          value: $PHONE
+          required: false
     - click_on:
         - value: Submit
-          selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 5
+          selector: "input[type='submit'][value='Submit']"
   success:
-    headers:
-      status: 200
     body:
-      contains: Thank you
+      contains: Thank you for requesting my assistance

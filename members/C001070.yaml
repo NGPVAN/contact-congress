@@ -265,9 +265,9 @@ contact_form:
             Transportation and Infrastructure: Transportation & Infrastructure
             Veterans Affairs: Veterans Affairs
     - find: 
-        - selector: div.controls .btn
+        - selector: div.controls button.btn
     - click_on:
-        - selector: div.controls .btn
+        - selector: div.controls button.btn
     - wait:
         - value: 3
   success:

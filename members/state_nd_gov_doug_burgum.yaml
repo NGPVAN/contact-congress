@@ -1,11 +1,12 @@
 bioguide: state_nd_gov_doug_burgum
 contact_form:
+  driver: chrome
   method: post
   action: ""
   steps:
     - visit: "https://www.governor.nd.gov/contact-us"
     - wait:
-       - value: 3
+        - value: 3
     - fill_in:
         - name: First name
           selector: "#edit-your-first-name"
@@ -35,7 +36,7 @@ contact_form:
         - value: Submit
           selector: button[type='submit'][value='Submit']
     - wait:
-       - value: 3
+        - value: 3
   success:
     headers:
       status: 200

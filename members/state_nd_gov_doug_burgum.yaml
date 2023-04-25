@@ -6,7 +6,7 @@ contact_form:
   steps:
     - visit: "https://www.governor.nd.gov/contact-us"
     - wait:
-        - value: 3
+        - value: 10
     - fill_in:
         - name: First name
           selector: "#edit-your-first-name"

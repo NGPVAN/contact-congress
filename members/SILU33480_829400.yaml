@@ -1,0 +1,81 @@
+bioguide: SILU33480_829400
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "http://www.senatorfaraci.com/contact-us"
+    - fill_in:
+        - name: prefix
+          selector: "input#prefix"
+          value: $NAME_PREFIX
+          required: false
+        - name: First Name
+          selector: "input#firstName"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "input#lastName"
+          value: $NAME_LAST
+          required: true
+        - name: address
+          selector: "input#address"
+          value: $ADDRESS_FULL
+          required: true
+        - name: city
+          selector: "input#city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: "input#state"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+        - name: zip
+          selector: "input#zipCode"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Phone
+          selector: "input#phone"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "input#email"
+          value: $EMAIL
+          required: true
+        - name: message
+          selector: "textarea#essay1"
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: topic
+          selector: "select#issue"
+          value: $TOPIC
+          required: true
+          options:
+            "2nd Amendment Issues": "2nd Amendment Issues"
+            "Agriculture": "Agriculture"
+            "Budget": "Budget"
+            "Economic Development": "Economic Development"
+            "Education": "Education"
+            "Employment": "Employment"
+            "Energy": "Energy"
+            "Environment": "Environment"
+            "Federal Issues": "Federal Issues"
+            "Healthcare": "Healthcare"
+            "Housing": "Housing"
+            "Human Rights": "Human Rights"
+            "Licensing": "Licensing"
+            "Local Government": "Local Government"
+            "Natural Resources": "Natural Resources"
+            "Other": "Other"
+            "Pensions": "Pensions"
+            "Public Safety": "Public Safety"
+            "Public Utilities": "Public Utilities"
+            "Seniors": "Seniors"
+            "Taxes": "Taxes"
+            "Transportation": "Transportation"
+            "Veterans": "Veterans"
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Send']
+  success:
+    body:
+      contains: Thank you for your submission!

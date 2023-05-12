@@ -1,4 +1,5 @@
 bioguide: SUTL22835_293034
+contact_form:
   method: post
   action: ""
   steps:
@@ -11,7 +12,7 @@ bioguide: SUTL22835_293034
           value: $TOPIC
           required: true
           options:
-            Briscoe, Joel K.: Briscoe, Joel K. 
+            Briscoe, Joel K.: Briscoe, Joel K.
     - fill_in:
         - name: Name
           selector: input[name='your-name']

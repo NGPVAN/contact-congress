@@ -1,0 +1,41 @@
+bioguide: MWAE480a6821
+contact_form:
+  driver: phantom
+  steps:
+    - visit: "https://app.smartsheet.com/b/form/8e61f25fdfd1467bb016151a1529dd3e"
+    - find:
+        - selector: input[id='text_box_First Name']
+    - fill_in:
+        - name: First Name
+          selector: input[id='text_box_First Name']
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input[id='text_box_Last Name']
+          value: $NAME_LAST
+          required: false
+        - name: Phone
+          selector: input[id='text_box_Phone Number']
+          value: $PHONE
+          required: true
+        - name: Email
+          selector: input[id='text_box_Email Address']
+          value: $EMAIL
+          required: true
+        - name: Home address
+          selector: input[id='text_box_Home Address']
+          value: $ADDRESS_FULL
+          required: false
+        - name: Comment
+          selector: textarea[id='textarea_What Would You Like To Speak With Us About?']
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 4000
+    - click_on:
+        - selector: button[type='submit'][value='submit']
+    - wait:
+        - value: 3
+  success:
+    body:
+      contains: "Thank you for contacting The Mayors Office"

@@ -1,4 +1,5 @@
 bioguide: SUTL30751_404818
+contact_form:
   method: post
   action: ""
   steps:
@@ -11,7 +12,7 @@ bioguide: SUTL30751_404818
           value: $TOPIC
           required: true
           options:
-            Romero, Angela: Romero, Angela 
+            Romero, Angela: Romero, Angela
     - fill_in:
         - name: Name
           selector: input[name='your-name']

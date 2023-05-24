@@ -1,4 +1,5 @@
 bioguide: SUTL22881_492965
+contact_form:
   method: post
   action: ""
   steps:
@@ -11,7 +12,7 @@ bioguide: SUTL22881_492965
           value: $TOPIC
           required: true
           options:
-            Chew, Scott H.:  Chew, Scott H.
+            Chew, Scott H.: Chew, Scott H.
     - fill_in:
         - name: Name
           selector: input[name='your-name']

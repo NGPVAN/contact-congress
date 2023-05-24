@@ -1,4 +1,5 @@
 bioguide: SUTL23533_736117
+contact_form:
   method: post
   action: ""
   steps:
@@ -11,7 +12,7 @@ bioguide: SUTL23533_736117
           value: $TOPIC
           required: true
           options:
-            Petersen, Michael J.: Petersen, Michael J. 
+            Petersen, Michael J.: Petersen, Michael J.
     - fill_in:
         - name: Name
           selector: input[name='your-name']

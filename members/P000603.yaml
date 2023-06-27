@@ -1,0 +1,178 @@
+#US Senator Rand Paul
+bioguide: P000603
+contact_form:
+  steps:
+    - visit: "https://www.paul.senate.gov/connect/"
+    - fill_in:
+        - name: first
+          selector: input[name='FirstName']
+          value: $NAME_FIRST
+          required: true
+        - name: last
+          selector: input[name='LastName']
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input[name='Address1']
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input[name='Address2']
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input[name='City']
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input[name='ZipCode']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input[name='Telephone']
+          value: $PHONE
+          required: false
+        - name: email
+          selector: input[name='your-email']
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input[name='subject']
+          value: $SUBJECT
+          required: true
+        - name: comments
+          selector: textarea[name='your-message']
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: select[name='your-message']
+          value: $NAME_PREFIX
+          required: false
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Miss: Miss
+            Mr. and Mrs.: Mr. and Mrs.
+            Dr.: Dr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Dr. and Mr.: Dr. and Mr.
+            Reverend: Reverend
+            Rev. and Mrs.: Rev. and Mrs.
+            Rev. and Mr.: Rev. and Mr.
+            Sister: Sister
+            Pastor: Pastor
+            The Honorable: The Honorable
+            Representative: Representative
+            Senator: Senator
+            Admiral: Admiral
+            Captain: Captain
+            Colonel: Colonel
+            Commander: Commander
+            Corporal: Corporal
+            Father: Father
+            First Lieutenant: First Lieutenant
+            General: General
+            Major: Major
+            Major General: Major General
+            PFC: PFC
+            Rabbi: Rabbi
+            Sergeant: Sergeant
+        - name: Legislative Issue
+          selector: select[name='Topic']
+          value: $TOPIC
+          required: true
+          options:
+            Abortion: Abortion
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Apporpirations and Budget: Appropriations and Budget
+            Arts and Humanities: Arts and Humanities
+            Banking: Banking
+            Judicial Nominations: Judicial Nominations
+            Crime and Law Enforcement: Crime and Law Enforcement
+            National Security, Armed Services, and Intelligence: National Security, Armed Services, and Intelligence
+            Economic and Rural Development: Economic and Rural Development
+            Education: Education
+            Energy and Natural Resources: Energy and Natural Resources
+            Environment: Environment
+            Foreign Affairs: Foreign Affairs
+            FEMA: FEMA
+            Guns / Second Amendment: Guns / Second Amendment
+            Healthcare: Healthcare
+            Homeland Security: Homeland Security
+            Immigration: Immigration
+            Labor and Pensions: Labor and Pensions
+            Postal Issues: Postal Issues
+            Science, Space, and Technology: Science, Space, and Technology
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Internet, Radio, and Television: Internet, Radio, and Television
+            Transportation: Transportation
+            Trade and Commerce: Trade and Commerce
+            Veterans Issues: Veterans Issues
+            Constitutional Issues: Constitutional Issues
+        - name: state
+          selector: select[name='State']
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Kentucky: Kentucky
+            Arizona: Arizona
+            Alabama: Alabama
+            Alaska: Alaska
+            Arkansas: Arkansas
+            California: California
+            Colorado: Colorado
+            Connecticut: Connecticut
+            Delaware: Delaware
+            Washington DC: Washington DC
+            Florida: Florida
+            Georgia: Georgia
+            Hawaii: Hawaii
+            Idaho: Idaho
+            Illinois: Illinois
+            Indiana: Indiana
+            Iowa: Iowa
+            Kansas: Kansas
+            Tennessee: Tennessee
+            Louisiana: Louisiana
+            Maine: Maine
+            Maryland: Maryland
+            Massachusetts: Massachusetts
+            Michigan: Michigan
+            Minnesota: Minnesota
+            Mississippi: Mississippi
+            Missouri: Missouri
+            Montana: Montana
+            Nebraska: Nebraska
+            Nevada: Nevada
+            New Hampshire: New Hampshire
+            New Jersey: New Jersey
+            New Mexico: New Mexico
+            New York: New York
+            North Carolina: North Carolina
+            North Dakota: North Dakota
+            Ohio: Ohio
+            Oklahoma: Oklahoma
+            Oregon: Oregon
+            Pennsylvania: Pennsylvania
+            Rhode Island: Rhode Island
+            South Carolina: South Carolina
+            South Dakota: South Dakota
+            Texas: Texas
+            Utah: Utah
+            Vermont: Vermont
+            Virginia: Virginia
+            Washington: Washington
+            West Virginia: West Virginia
+            Wisconsin: Wisconsin
+            Wyoming: Wyoming
+    - click_on:
+        - value: Submit
+          selector: input[type='submit'][value='Send']
+  success:
+    body:
+      contains: "Thank you for your message. It has been sent."

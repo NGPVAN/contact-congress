@@ -1,53 +1,57 @@
 bioguide: NJL000078
 contact_form:
-  method: post
-  action: SelectMun.asp
+  driver: chrome
   steps:
-    - visit: "http://pennacchio.senatenj.com/contact.php"
-    - fill_in:
-        - name: name
-          selector: "input[name='your-name']"
-          value: $NAME_FULL
-          required: true
-        - name: email
-          selector: "input[name='your-email']"
-          value: $EMAIL
-          required: true
-        - name: city
-          selector: "input[name='your-town']" 
-          value: $ADDRESS_CITY
-          required: true
-        - name: subject
-          selector: "input[name='your-subject']"
-          value: $SUBJECT
-          required: false
-        - name: message
-          selector: "textarea[name='your-message']"
-          value: $MESSAGE
-          required: true
-    - recaptcha:
-      - name: recaptcha_response_field
-        grid_selector: "#rc-imageselect-target"
-        img_selector: "#rc-imageselect-target img.rc-image-tile-3"
-        phrase_selector: "html body div.rc-imageselect-desc > strong"  
-        phrase_selector_fallback: "html body div.rc-imageselect-desc-no-canonical > strong"
-        simple_img_selector: "html body div.rc-defaultchallenge-payload > img"
-        simple_textbox_selector: "#default-response"
-        audio_selector: "html body a.rc-audiochallenge-download-link"
-        audio_response_selector: "#audio-response"
-        audio_switch_selector: "#recaptcha-audio-button"     
-        checkbox_iframe_selector: "div.g-recaptcha div div iframe[src^='https://www.google.com/recaptcha/api2/anchor']"
-        checkbox_selector: "div.recaptcha-checkbox-checkmark"
-        main_iframe_selector: "iframe[src^='https://www.google.com/recaptcha/api2/frame']"
-        verify_selector: "#recaptcha-verify-button"
-        value: $CAPTCHA_SOLUTION
-        types: [image, audio]
-        required: true
-    - click_on:
-        - value: Submit
-          selector: ".wpcf7-submit"
+  - visit: 'https://www.njleg.state.nj.us/legislative-roster/305/senator-pennacchio/contact'
+  - find:
+    - selector: input#FirstName
+  - fill_in:
+    - name: First Name
+      selector: input#FirstName
+      value: $NAME_FIRST
+      required: true
+    - name: Last Name
+      selector: input#LastName
+      value: $NAME_LAST
+      required: true
+    - name: phone
+      selector: input#Phone
+      value: $PHONE
+      required: false
+    - name: email
+      selector: input#Email
+      value: $EMAIL
+      required: true
+    - name: address
+      selector: input#AddressStreet
+      value: $ADDRESS_STREET
+      required: false
+    - name: city
+      selector: input#City
+      value: $ADDRESS_CITY
+      required: false
+    - name: zip
+      selector: input#Zipcode
+      value: $ADDRESS_ZIP5
+      required: false
+    - name: subject
+      selector: input#EmailSubj
+      value: $SUBJECT
+      required: true
+    - name: message
+      selector: textarea#Message
+      value: $MESSAGE
+      required: true
+  - select:
+    - name: Topic
+      selector: select#SubjectArea
+      value: LEGISLATURE
+      required: false
+  - click_on:
+    - value: Submit
+      selector: button#sendemail
+  - wait:
+    - value: 3
   success:
-    headers:
-      status: 200
     body:
-      contains: Your message was sent successfully
+      contains: Form submitted successfully.

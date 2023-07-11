@@ -1,7 +1,6 @@
 #US Senator Kristen Gillibrand
 bioguide: G000555
 contact_form:
-  driver: chrome
   method: post
   steps:
     - visit: "https://www.gillibrand.senate.gov/contact/email-me"

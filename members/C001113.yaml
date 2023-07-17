@@ -60,7 +60,10 @@ contact_form:
     - javascript:
         - name: char replace
           selectors: ["textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2"]
-          commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}",
+            ]
           required: true
     - select:
         - name: Your Prefix
@@ -81,27 +84,27 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Agriculture: Agriculture
-            Budget: Budget
-            Children: Children
-            Election Reform: Election Reform
-            Energy/Environment: Energy/Environment
-            Finance: Finance
+            AGRICULTURE: Agriculture
+            BUD: Budget
+            CHILDREN: Children
+            ELECTION REFORM: Election Reform
+            ENERGY/ENVIRONMENT: Energy/Environment
+            FINANCE: Finance
             Health: Health
-            Housing: Housing
-            Immigration: Immigration
-            Judiciary: Judiciary
-            Labor: Labor
-            Military: Military
-            Native Americans: Native Americans
-            Public Safety: Public Safety
-            Retirement: Retirement
-            Taxes: Taxes
-            Technology: Technology
-            Trade: Trade
-            Transportation: Transportation
-            Veterans: Veterans
-            Other: Other
+            HOUSING: Housing
+            IMMIGRATION: Immigration
+            JUD: Judiciary
+            LAB: Labor
+            DEFENSE: Defense
+            NATIVE AMERICANS: Native Americans
+            PUBLIC SAFETY: Public Safety
+            RETIREMENT: Retirement
+            TAX: Taxes
+            TECHNOLOGY: Technology
+            TRADE: Trade
+            TRANSPORTATION: Transportation
+            VET: Veterans
+            OTH: Other
     - click_on:
         - selector: div#form-78DF37A0-0A52-CA9A-8830-4C5F450E15B2 form div.control-group input[type=submit]
     - wait:

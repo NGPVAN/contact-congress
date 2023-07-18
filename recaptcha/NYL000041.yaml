@@ -1,7 +1,6 @@
 bioguide: NYL000041
 contact_form:
   method: post
-  action: ""
   steps:
     - visit: "https://www.nysenate.gov/senators/thomas-f-omara/contact"
     - find:

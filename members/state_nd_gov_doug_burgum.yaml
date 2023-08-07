@@ -36,7 +36,7 @@ contact_form:
         - value: Submit
           selector: button[type='submit'][value='Submit']
     - wait:
-        - value: 3
+        - value: 5
   success:
     headers:
       status: 200

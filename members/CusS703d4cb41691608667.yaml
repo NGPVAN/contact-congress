@@ -3,9 +3,9 @@ contact_form:
   steps:
     - visit: "https://icc.illinois.gov/docket/P2023-0055/public-comments"
     - find:
-        - selector: col-md-12 .btn
+        - selector: a.btn.btn-outline-primary
     - click_on:
-        - selector: col-md-12 .btn
+        - selector: a.btn.btn-outline-primary
     - fill_in:
         - name: Full Name
           selector: "#CSName"

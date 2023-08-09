@@ -17,7 +17,7 @@ contact_form:
           required: true
         - name: email
           selector: "#CSEMail"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
+          value: $EMAIL
           required: true
         - name: comment
           selector: "#CSComment"

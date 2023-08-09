@@ -9,7 +9,7 @@ contact_form:
     - fill_in:
         - name: Full Name
           selector: "#CSName"
-          value: $NAME_FIRST
+          value: $NAME_FULL
           required: true
         - name: City
           selector: "#CSCity"

@@ -1,0 +1,30 @@
+bioguide: CusS703d4cb41691608667
+contact_form:
+  steps:
+    - visit: "https://icc.illinois.gov/docket/P2023-0055/public-comments"
+    - find:
+        - selector: a.btn.btn-outline-primary
+    - click_on:
+        - selector: a.btn.btn-outline-primary
+    - fill_in:
+        - name: Full Name
+          selector: "#CSName"
+          value: $NAME_FULL
+          required: true
+        - name: City
+          selector: "#CSCity"
+          value: $ADDRESS_CITY
+          required: true
+        - name: email
+          selector: "#CSEMail"
+          value: $EMAIL
+          required: true
+        - name: comment
+          selector: "#CSComment"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: input[type='submit'][value='Submit']
+  success:
+    body:
+      contains: "Your comment has been successfully submitted"

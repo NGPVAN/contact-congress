@@ -9,7 +9,7 @@ contact_form:
       - value: 1
     - select:
       - name: Your Prefix
-        selector: "#edit-prefix"
+        selector: "#input_3_3"
         value: $NAME_PREFIX
         required: true
         options:
@@ -34,8 +34,68 @@ contact_form:
           Second Lieutenant: Second Lieutenant
           Sergeant Major: Sergeant Major
           Technical Sergeant: Technical Sergeant
+      - name: state
+        selector: "#input_3_9"
+        value: $ADDRESS_STATE_FULL
+        required: true
+        options:
+          Alabama: Alabama
+          Alaska: Alaska
+          American Samoa: American Samoa
+          Arizona: Arizona
+          Arkansas: Arkansas
+          California: California
+          Colorado: Colorado
+          Connecticut: Connecticut
+          Delaware: Delaware
+          District of Columbia: District of Columbia
+          Florida: Florida
+          Georgia: Georgia
+          Hawaii: Hawaii
+          Idaho: Idaho
+          Illinois: Illinois
+          Indiana: Indiana
+          Iowa: Iowa
+          Kansas: Kansas
+          Kentucky: Kentucky
+          Louisiana: Louisiana
+          Maine: Maine
+          Maryland: Maryland
+          Massachusetts: Massachusetts
+          Michigan: Michigan
+          Minnesota: Minnesota
+          Mississippi: Mississippi
+          Missouri: Missouri
+          Montana: Montana
+          Nebraska: Nebraska
+          Nevada: Nevada
+          New Hampshire: New Hampshire
+          New Jersey: New Jersey
+          New Mexico: New Mexico
+          New York: New York
+          North Carolina: North Carolina
+          North Dakota: North Dakota
+          Ohio: Ohio
+          Oklahoma: Oklahoma
+          Oregon: Oregon
+          Pennsylvania: Pennsylvania
+          Rhode Island: Rhode Island
+          South Carolina: South Carolina
+          South Dakota: South Dakota
+          Tennessee: Tennessee
+          Texas: Texas
+          Utah: Utah
+          Vermont: Vermont
+          Virginia: Virginia
+          Washington: Washington
+          West Virginia: West Virginia
+          Wisconsin: Wisconsin
+          Wyoming: Wyoming
+          Armed Forces Americas: Armed Forces Americas
+          Armed Forces Europe: Armed Forces Europe
+          Armed Forces Europe: Armed Forces Europe
       - name: Topic
-        selector: "#edit-issue"
+        selector: "#input_3_12"
         value: $TOPIC
         required: true
         options:
@@ -83,54 +143,54 @@ contact_form:
           Veterans: Veterans
     - fill_in:
       - name: First name
-        selector: "#edit-first-name"
+        selector: "#input_3_4"
         value: $NAME_FIRST
         required: true
       - name: Last name
-        selector: "#edit-last-name"
+        selector: "#input_3_5"
         value: $NAME_LAST
         required: true
       - name: Street
-        selector: "#edit-address-1"
+        selector: "#input_3_6"
         value: $ADDRESS_STREET
         required: true
       - name: Street2
-        selector: "#edit-address-2"
+        selector: "#input_3_7"
         value: $ADDRESS_STREET_2
         required: false
       - name: City
-        selector: "#edit-city"
+        selector: "#input_3_8"
         value: $ADDRESS_CITY
         required: true
       - name: zip
-        selector: "#edit-zip"
+        selector: "#input_3_10"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: "#edit-phone"
+        selector: "#input_3_17"
         value: $PHONE
         required: true
       - name: email
-        selector: "#edit-email"
+        selector: "#input_3_18"
         value: $EMAIL
         required: true
       - name: Subject
-        selector: "#edit-subject"
+        selector: "#input_3_13"
         value: $SUBJECT
         required: true
       - name: Message
-        selector: "#edit-message"
+        selector: "#input_3_14"
         value: $MESSAGE
         required: true
         options:
           blacklist: "-,;—:()"
     - click_on:
       - value: Response Requested
-        selector: "#edit-response-requested-no"
+        selector: "#choice_3_15_1"
       - value: Sign Up
-        selector: "#edit-sign-up-for-updates-no"
+        selector: "#choice_3_16_1"
       - value: Submit
-        selector: "#edit-actions-submit"
+        selector: "#gform_submit_button_3"
     - wait:
       - value: 6
   success:

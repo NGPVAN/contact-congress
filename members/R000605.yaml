@@ -1,15 +1,16 @@
 #US Senator Mike Rounds
 bioguide: R000605
 contact_form:
+  driver: chrome
   method: post
   action: http://www.rounds.senate.gov/contact/email-mike
   steps:
     - visit: "http://www.rounds.senate.gov/contact/email-mike"
     - find:
-        - selector: "#actions"
+        - selector: "#issue-dropdowns"
     - select:
         - name: topic
-          selector: "#actions"
+          selector: "#issue-dropdowns"
           value: "Share"
           required: true
           options:
@@ -102,9 +103,9 @@ contact_form:
             TRD: Trade
             VET: Veterans Affairs
         - name: "prefix"
-          selector: "#input-AB59F08A-4040-F985-52CD-7633AA11C65E"
+          selector: "#prefixselect"
           value: $NAME_PREFIX
-          required: true
+          required: false
           options:
             Mr.: Mr.
             Ms.: Ms.
@@ -243,7 +244,7 @@ contact_form:
             Navy - Seaman Recruit: Navy - Seaman Recruit
     - click_on:
         - value: Submit
-          selector: "input[value='Submit']"
+          selector: div.controls .btn
   success:
     headers:
       status: 200

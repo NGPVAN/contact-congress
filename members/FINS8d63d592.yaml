@@ -1,14 +1,15 @@
 #US Senator Mike Braun
 bioguide: FINS8d63d592
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://www.braun.senate.gov/contact-mike"
     - find:
-        - selector: "#edit-prefix"
+        - selector: "#input_2_39"
     - select:
         - name: Your Prefix
-          selector: "#edit-prefix"
+          selector: "#input_2_39"
           value: $NAME_PREFIX
           required: true
           options:
@@ -18,7 +19,7 @@ contact_form:
             Mr. and Mrs.: Mr. and Mrs.
             Dr.: Dr.
         - name: Topic
-          selector: "#edit-topic"
+          selector: "#input_2_17"
           value: $TOPIC
           required: true
           options:
@@ -49,50 +50,60 @@ contact_form:
             Veterans: Veterans
             Welfare: Welfare
             Wages: Wages
+        - name: state
+          selector: "#input_2_6_4"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Indiana: Indiana
     - fill_in:
         - name: First name
-          selector: "#edit-first-name"
+          selector: "#input_2_2"
           value: $NAME_FIRST
           required: true
         - name: Last name
-          selector: "#edit-last-name"
+          selector: "#input_2_3"
           value: $NAME_LAST
           required: true
         - name: Street
-          selector: "#edit-address-1"
+          selector: "#input_2_6_1"
           value: $ADDRESS_STREET
           required: true
         - name: Street2
-          selector: "#edit-address-2"
+          selector: "#input_2_6_2"
           value: $ADDRESS_STREET_2
           required: false
         - name: City
-          selector: "#edit-city"
+          selector: "#input_2_6_3"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#edit-zip"
+          selector: "#input_2_6_5"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#edit-phone"
+          selector: "#input_2_7"
           value: $PHONE
           required: false
         - name: email
-          selector: "#edit-email"
+          selector: "#input_2_9"
           value: $EMAIL
           required: true
+        - name: email
+          selector: "#input_2_9_2"
+          value: $EMAIL
+          required: false
         - name: Subject
-          selector: "#edit-subject"
+          selector: "#input_2_11"
           value: $SUBJECT
           required: true
         - name: Message
-          selector: "#edit-message"
+          selector: "#input_2_12"
           value: $MESSAGE
           required: true
     - javascript:
         - name: char replace
-          selectors: ["#edit-message"]
+          selectors: ["#input_2_12"]
           values: ["$MESSAGE"]
           commands:
             [
@@ -101,13 +112,10 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: button#edit-actions-submit
-    - wait:
-        - value: 5
-    - find:
-        - selector: div.field--item p
+          selector: "#gform_submit_button_2"
+
   success:
     headers:
       status: 200
     body:
-      contains: Thank you, your message has been sent.
+      contains: Your message has been sent.

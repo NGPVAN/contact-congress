@@ -84,7 +84,7 @@ contact_form:
         - name: phone
           selector: "#input_2_7"
           value: $PHONE
-          required: false
+          required: required
         - name: email
           selector: "#input_2_9"
           value: $EMAIL

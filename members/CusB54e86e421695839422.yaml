@@ -8,7 +8,7 @@ contact_form:
     - fill_in:
         - name: Document Id
           selector: "#document_id"
-          value: "NHTSA-2023-0022-1509" # regsgov document id
+          value: "NHTSA-2023-0022-0004" # regsgov document id
           required: true
         - name: Comment
           selector: "#comment"

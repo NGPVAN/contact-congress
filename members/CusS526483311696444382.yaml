@@ -3,7 +3,7 @@ contact_form:
   method: post
   driver: chrome
   steps:
-    - visit: "https://eplanning.blm.gov/eplanning-ui/project/2015144/570/8003942/comment"
+    - visit: "https://eplanning.blm.gov/eplanning-ui/project/2015144/595/8003942/comment"
     - find:
         - selector: "#comment"
     - fill_in:

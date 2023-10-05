@@ -53,7 +53,7 @@ contact_form:
           required: true
     - select:
         - name: state
-          selector: "#edit-contact-form-state"
+          selector: "#form-field-field_dd4016c"
           value: $ADDRESS_STATE_FULL
           required: true
           options:
@@ -121,4 +121,4 @@ contact_form:
         - selector: span.elementor-button-text
   success:
     body:
-      contains: ""
+      contains: "Your submission was successful"

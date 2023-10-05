@@ -53,7 +53,7 @@ contact_form:
           required: true
     - select:
         - name: state
-          selector: "#edit-contact-form-state"
+          selector: "#form-field-field_dd4016c"
           value: $ADDRESS_STATE_FULL
           required: true
           options:

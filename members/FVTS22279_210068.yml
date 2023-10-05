@@ -121,4 +121,4 @@ contact_form:
         - selector: span.elementor-button-text
   success:
     body:
-      contains: ""
+      contains: "Your submission was successful"

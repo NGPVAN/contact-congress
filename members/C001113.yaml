@@ -1,65 +1,65 @@
 #US Senator Catherine Cortez Masto
 bioguide: C001113
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.cortezmasto.senate.gov/contact/connect"
     - find:
-        - selector: div#main_column div.opinion a.btn
+        - selector: div#elementor-tab-title-1151
     - click_on:
-        - selector: div#main_column div.opinion a.btn
+        - selector: div#elementor-tab-title-1151
     - find:
-        - selector: input#input-78DF3A81-B287-CC2A-5900-56C22D85E462
+        - selector: input#input_2_2
     - fill_in:
         - name: First Name
-          selector: input#input-78DF3A81-B287-CC2A-5900-56C22D85E462
+          selector: input#input_2_2
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input#input-78DF39C6-93C1-552A-DC26-5EE4EE82C938
+          selector: input#input_2_3
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#input-78DF3A96-A657-0521-883B-58CE5FEBC4FA
+          selector: input#input_2_6_1
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#input-78DF3AF2-C0DC-7FF3-6CE9-24E379BB88B9
+          selector: input#input_2_6_2
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#input-78DF3ADE-917F-8844-388A-9DA79F33248A
+          selector: input#input_2_6_3
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#input-78DF39D2-E140-6A64-6C46-DFC42EC825B1
+          selector: input#input_2_6_5
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: input#input-78DF3A8C-B76A-17D9-5156-9170FE970E05
+          selector: input#input_2_41
           value: $PHONE
           required: true
         - name: email
-          selector: input#email
+          selector: input#input_2_9
           value: $EMAIL
           required: true
         - name: confirm_email
-          selector: input#input-78DF39F6-0CBF-AAEB-3E6B-D606CD8AA55B
+          selector: input#input_2_9_2
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#input-78F5B663-987A-E8DA-A3D9-0CA96474A5A1
+          selector: input#input_2_11
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2
+          selector: textarea#input_2_12
           value: $MESSAGE
           required: true
           options:
             blacklist: "-,;—:()"
     - javascript:
         - name: char replace
-          selectors: ["textarea#input-78DF3A4F-C8ED-2264-6E6C-A51B1269E6D2"]
+          selectors: ["textarea#input_2_12"]
           commands:
             [
               "for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}",
@@ -67,7 +67,7 @@ contact_form:
           required: true
     - select:
         - name: Your Prefix
-          selector: select#input-78DF3ACD-C97D-140A-A757-3725A60CEDE1
+          selector: select#input_2_39
           value: $NAME_PREFIX
           required: true
           options:
@@ -80,33 +80,33 @@ contact_form:
             The Honorable: The Honorable
             Dr.: Dr.
         - name: topic
-          selector: select#input-78DF39AC-9674-30FF-2AB3-2FD8BE463378
+          selector: select#input_2_17
           value: $TOPIC
           required: true
           options:
-            AGRICULTURE: Agriculture
-            BUD: Budget
-            CHILDREN: Children
-            ELECTION REFORM: Election Reform
-            ENERGY/ENVIRONMENT: Energy/Environment
-            FINANCE: Finance
+            Agriculture: Agriculture
+            Budget: Budget
+            Children: Children
+            Election Reform: Election Reform
+            Energy/Environment: Energy/Environment
+            Finance: Finance
             Health: Health
-            HOUSING: Housing
-            IMMIGRATION: Immigration
-            JUD: Judiciary
-            LAB: Labor
-            DEFENSE: Defense
-            NATIVE AMERICANS: Native Americans
-            PUBLIC SAFETY: Public Safety
-            RETIREMENT: Retirement
-            TAX: Taxes
-            TECHNOLOGY: Technology
-            TRADE: Trade
-            TRANSPORTATION: Transportation
-            VET: Veterans
-            OTH: Other
+            Housing: Housing
+            Immigration: Immigration
+            Judicial: Judiciary
+            Lab: Labor
+            Defense: Defense
+            Native Americans: Native Americans
+            Public Safety: Public Safety
+            Retirement: Retirement
+            Taxes: Taxes
+            Technology: Technology
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Other: Other
     - click_on:
-        - selector: div#form-78DF37A0-0A52-CA9A-8830-4C5F450E15B2 form div.control-group input[type=submit]
+        - selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
   success:

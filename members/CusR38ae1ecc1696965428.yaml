@@ -38,7 +38,7 @@ contact_form:
     - select:
         - name: state
           selector: "#id_authorStateProvDD"
-          value: ADDRESS_STATE_FULL
+          value: $ADDRESS_STATE_FULL
           required: true
           options:
             AL: Alaska

@@ -34,10 +34,6 @@ contact_form:
           selector: "#city"
           value: $ADDRESS_CITY
           required: false
-        - name: State
-          selector: "#state"
-          value: $ADDRESS_STATE_FULL
-          required: false
     - click_on: 
         - selector: "#state"
     - fill_in:

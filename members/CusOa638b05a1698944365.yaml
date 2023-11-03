@@ -34,16 +34,16 @@ contact_form:
           selector: "#city"
           value: $ADDRESS_CITY
           required: false
-    - click_on: 
+    - click_on:
         - selector: "#state"
     - fill_in:
         - name: State
           selector: "#state input"
           value: $ADDRESS_STATE_FULL
           required: false
-    - wait: 
+    - wait:
         - value: 1
-    - click_on: 
+    - click_on:
         - selector: ".ng-option"
     - find:
         - selector: "div.standard-btns button.btn.btn-primary"
@@ -61,9 +61,6 @@ contact_form:
         - selector: "#comment-receipt-page h4"
     - wait:
         - value: 2
-  success:
-    body:
-      contains: "Your Submission ID"
   success:
     body:
       contains: "Your Submission ID"

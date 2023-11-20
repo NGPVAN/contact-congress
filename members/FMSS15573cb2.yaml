@@ -4,125 +4,125 @@ contact_form:
   method: POST
   action: ""
   steps:
-    - visit: "https://www.hydesmith.senate.gov/content/contact-senator"
+    - visit: "https://www.hydesmith.senate.gov/contact-senator"
     - fill_in:
-      - name: First Name
-        selector: "#edit-first-name"
-        value: "$NAME_FIRST"
-        required: true
-      - name: Last Name
-        selector: "#edit-last-name"
-        value: "$NAME_LAST"
-        required: true
-      - name: Street
-        selector: "#edit-address-1"
-        value: "$ADDRESS_STREET"
-        required: true
-      - name: street2
-        selector: "#edit-address-2"
-        value: "$ADDRESS_STREET_2"
-        required: false
-      - name: City
-        selector: "#edit-city"
-        value: "$ADDRESS_CITY"
-        required: true
-      - name: zip5
-        selector: "#edit-zip"
-        value: "$ADDRESS_ZIP5"
-        required: true
-      - name: Phone Number
-        selector: "#edit-phone"
-        value: "$PHONE_HYPHENS"
-        required: false
-      - name: Email
-        selector: "#edit-email"
-        value: "$EMAIL"
-        required: true
-      - name: Message
-        selector: "#edit-message"
-        value: "$MESSAGE"
-        required: true
+        - name: First Name
+          selector: "#edit-first-name"
+          value: "$NAME_FIRST"
+          required: true
+        - name: Last Name
+          selector: "#edit-last-name"
+          value: "$NAME_LAST"
+          required: true
+        - name: Street
+          selector: "#edit-address-1"
+          value: "$ADDRESS_STREET"
+          required: true
+        - name: street2
+          selector: "#edit-address-2"
+          value: "$ADDRESS_STREET_2"
+          required: false
+        - name: City
+          selector: "#edit-city"
+          value: "$ADDRESS_CITY"
+          required: true
+        - name: zip5
+          selector: "#edit-zip"
+          value: "$ADDRESS_ZIP5"
+          required: true
+        - name: Phone Number
+          selector: "#edit-phone"
+          value: "$PHONE_HYPHENS"
+          required: false
+        - name: Email
+          selector: "#edit-email"
+          value: "$EMAIL"
+          required: true
+        - name: Message
+          selector: "#edit-message"
+          value: "$MESSAGE"
+          required: true
     - select:
-      - name: Your Prefix
-        selector: "#edit-prefix"
-        value: $NAME_PREFIX
-        required: true
-        options:
-          Mr.: Mr.
-          Mrs.: Mrs.
-          Ms.: Ms.
-          Mr. and Mrs.: Mr. and Mrs.
-          Dr.: Dr.
-          Dr. and Mrs.: Dr. and Mrs.
-      - name: Topic
-        selector: "#edit-topic"
-        value: "$TOPIC"
-        required: true
-        options:
-          Abortion: Abortion
-          Adoption: Adoption
-          Aging: Aging
-          Agriculture: Agriculture
-          Animal Welfare: Animal Welfare
-          Appropriations: Appropriations
-          Banking: Banking
-          Budget: Budget
-          Campaign Finance: Campaign Finance
-          Children: Children
-          Civil Rights: Civil Rights
-          Commerce: Commerce
-          Communications: Communications
-          Congratulations: Congratulations
-          Congressional Issues: Congressional Issues
-          Crime: Crime
-          Defense: Defense
-          Drugs: Drugs
-          Economy: Economy
-          Education Higher: Education Higher
-          Education K through 12: Education K through 12
-          Elections: Elections
-          Energy: Energy
-          Environment: Environment
-          Family: Family
-          Food Stamps: Food Stamps
-          Foreign Affairs: Foreign Affairs
-          Gun Control: Gun Control
-          Health: Health
-          Homeland Security: Homeland Security
-          Housing: Housing
-          Immigration: Immigration
-          Insurance Health: Insurance Health
-          Insurance Other: Insurance Other
-          Interior: Interior
-          Iran: Iran
-          Iraq: Iraq
-          Judiciary: Judiciary
-          Labor: Labor
-          Medicaid: Medicaid
-          Medicare: Medicare
-          Military: Military
-          National Security: National Security
-          NASA: NASA
-          Nutrition: Nutrition
-          Other: Other
-          Patents: Patents
-          Pensions: Pensions
-          Securities: Securities
-          Small Business: Small Business
-          Social Security: Social Security
-          Taxes: Taxes
-          Tobacco: Tobacco
-          Trade: Trade
-          Transportation: Transportation
-          Veterans: Veterans
-          Welfare: Welfare
+        - name: Your Prefix
+          selector: "#edit-prefix"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Mr. and Mrs.: Mr. and Mrs.
+            Dr.: Dr.
+            Dr. and Mrs.: Dr. and Mrs.
+        - name: Topic
+          selector: "#edit-topic"
+          value: "$TOPIC"
+          required: true
+          options:
+            Abortion: Abortion
+            Adoption: Adoption
+            Aging: Aging
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Appropriations: Appropriations
+            Banking: Banking
+            Budget: Budget
+            Campaign Finance: Campaign Finance
+            Children: Children
+            Civil Rights: Civil Rights
+            Commerce: Commerce
+            Communications: Communications
+            Congratulations: Congratulations
+            Congressional Issues: Congressional Issues
+            Crime: Crime
+            Defense: Defense
+            Drugs: Drugs
+            Economy: Economy
+            Education Higher: Education Higher
+            Education K through 12: Education K through 12
+            Elections: Elections
+            Energy: Energy
+            Environment: Environment
+            Family: Family
+            Food Stamps: Food Stamps
+            Foreign Affairs: Foreign Affairs
+            Gun Control: Gun Control
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Immigration: Immigration
+            Insurance Health: Insurance Health
+            Insurance Other: Insurance Other
+            Interior: Interior
+            Iran: Iran
+            Iraq: Iraq
+            Judiciary: Judiciary
+            Labor: Labor
+            Medicaid: Medicaid
+            Medicare: Medicare
+            Military: Military
+            National Security: National Security
+            NASA: NASA
+            Nutrition: Nutrition
+            Other: Other
+            Patents: Patents
+            Pensions: Pensions
+            Securities: Securities
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Tobacco: Tobacco
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Welfare: Welfare
     - wait:
-      - value: 1
+        - value: 1
     - click_on:
-      - value: Submit
-        selector: "#edit-actions-submit"
+        - value: Submit
+          selector: "#edit-actions-submit"
     - wait:
-      - value: 5
+        - value: 5
   success:
     headers:
       status: 200

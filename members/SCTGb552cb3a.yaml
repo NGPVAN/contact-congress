@@ -1,0 +1,108 @@
+#Connecticut Governor Ned Lamont
+bioguide: SCTGb552cb3a
+contact_form:
+  method: POST
+  action: ""
+  steps:
+    - visit: "https://iqconnect.lmhostediq.com/iqextranet/EForm.aspx?__cid=lmhostedCTGov&__fid=100003&iframe=Y"
+    - find:
+        - selector: "#qi_1_first_name"
+    - fill_in:
+        - name: First Name
+          selector: "#qi_1_first_name"
+          value: "$NAME_FIRST"
+          required: true
+        - name: Last Name
+          selector: "#qi_1_last_name"
+          value: "$NAME_LAST"
+          required: true
+        - name: Street
+          selector: "#qi_1_addr_1"
+          value: "$ADDRESS_STREET"
+          required: true
+        - name: street2
+          selector: "#edit-address-2"
+          value: "$ADDRESS_STREET_2"
+          required: false
+        - name: City
+          selector: "#qi_1_city"
+          value: "$ADDRESS_CITY"
+          required: true
+        - name: zip5
+          selector: "#qi_1_zip"
+          value: "$ADDRESS_ZIP5"
+          required: true
+        - name: Phone Number
+          selector: "#qi_1_hphone"
+          value: "$PHONE"
+          required: true
+        - name: Email
+          selector: "#qi_1_email"
+          value: "$EMAIL"
+          required: true
+        - name: Message
+          selector: "#qi_3"
+          value: "$MESSAGE"
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: "select#qi_1_prefix"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            0_Miss: Miss
+            1_Mr.: Mr.
+            2_Mr. and Mrs.: Mr. and Mrs.
+            3_Mrs.: Mrs.
+            4_Ms.: Ms.
+        - name: state
+          selector: "select#qi_1_state"
+          value: $STATE_ADDRESS_FULL
+          required: true
+          options:
+            7_CT: Connecticut
+        - name: Issue
+          selector: "select#qi_2"
+          value: "$TOPIC"
+          required: true
+          options:
+            0_AHCT: Access Health CT
+            1_BANKINGGEN: Banking - General
+            2_BUDGETGEN: Budget - 2024
+            3_CORONAVIRUS: Coronavirus - Disease
+            4_CORRECTGEN: Correction - General
+            5_DDSGEN: Developmental Services
+            6_DECD: Economic Development
+            7_DMVGEN: DMV - General
+            8_EDUCGEN: Education
+            9_ENERGYGEN: Energy - General
+            10_ENVIROGEN: Environment
+            11_COMMENTSGEN: General Comments
+            12_HEALTHGEN: Healthcare Issues
+            13_HOUSINGGEN: Housing - General
+            14_INSURANCEGEN: Insurance - General
+            15_JUDICIALGEN: Judicial - General
+            16_JUDICIALLEGALMATTER: Legislative - Issue
+            17_LABORGENERAL: Labor - General
+            18_LABORUNEMPLOYMENT: Labor - Unemployment
+            19_LEG 2024: Legislation - 2024
+            20_LEGISLATIVEISSUE: Legislative - Issue
+            21_PUBSAFEGEN: Public Safety
+            22_REVSVCTAXES: Revenue Services - General
+            23_REVSVCSTAXES: Revenue Services - Taxes
+            24_DSSGEN: Social Services
+            25_DOTGEN: Transportation - General
+            26_VETGENERAL: Veterans
+            27_PFML: PFML -- Paid Family Medical Leave
+    - wait:
+        - value: 1
+    - click_on:
+        - value: Submit
+          selector: "#btn_submit"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Summary of Information"

@@ -1,0 +1,39 @@
+bioguide: CusNac2e2ca01701200103
+contact_form:
+  method: post
+  steps:
+    - visit: "https://eplanning.blm.gov/eplanning-ui/project/57323/595/8004057/comment"
+    - find:
+        - selector: "#comment"
+    - fill_in:
+        - name: Message
+          selector: "#comment"
+          value: $MESSAGE
+          required: true
+        - name: First Name
+          selector: "#first-name"
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name
+          selector: "#last-name"
+          value: $NAME_LAST
+          required: false
+    - find:
+        - selector: "div.standard-btns button.btn.btn-primary"
+    - click_on:
+        - selector: "div.standard-btns button.btn.btn-primary"
+    - find:
+        - selector: "#withhold-pii-yes"
+    - click_on:
+        - selector: "#withhold-pii-yes"
+    - find:
+        - selector: "#comment-view-page button.btn.btn-primary"
+    - click_on:
+        - selector: "#comment-view-page button.btn.btn-primary"
+    - find:
+        - selector: "#comment-receipt-page h4"
+    - wait:
+        - value: 2
+  success:
+    body:
+      contains: "Your Submission ID"

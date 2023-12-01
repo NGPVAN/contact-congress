@@ -1,32 +1,58 @@
 bioguide: MNL000555
 contact_form:
-  method: post
-  action:
+  driver: chrome
   steps:
-    - visit: "http://www.mnsenaterepublicans.com/our-senators/bill-weber/"
-    - fill_in:
-      - name: name
-        selector: input#us_form_1_name
-        value: "$NAME_FULL"
-        required: true
-      - name: email
-        selector: input#us_form_1_email
-        value: "$EMAIL"
-        required: true
-      - name: message
-        selector: textarea#us_form_1_message
-        value: "$MESSAGE"
-        required: true
-    - math:
-      - name: math_qna
-        question_selector: label[for=us_form_1_captcha]
-        answer_selector: input#us_form_1_captcha
-    - click_on:
-      - selector: form.w-form-h button.w-btn
+    - visit: https://www.senate.mn/members/email-form/1199
     - find:
-      - selector: div.type_success
+        - selector: "#first_name"
+    - fill_in:
+        - name: First Name
+          selector: "#first_name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#last_name"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: street
+          selector: "#street_address_1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: "#street_address_2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: phone
+          selector: "#phone"
+          value: $PHONE_HYPHENS
+          required: false
+        - name: city
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zipcode
+          selector: "#zip"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Subject
+          selector: "#subject"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#form_message"
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 3500
+    - click_on:
+        - value: Submit
+          selector: "div.col-md-12 button.btn"
+    - find:
+        - selector: "#swal2-content p"
   success:
-    headers:
-      status: 200
     body:
-      contains: "Your message was sent"
+      contains: Your message has been sent

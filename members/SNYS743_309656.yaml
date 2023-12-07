@@ -1,0 +1,32 @@
+bioguide: SNYS743_309656
+contact_form:
+  steps:
+    - visit: "https://dos.ny.gov/form/contact-us"
+    - find:
+        - selector: "#edit-your-name"
+    - fill_in:
+        - name: First Name
+          selector: "#edit-your-name"
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: "#edit-your-email"
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: "#edit-subject"
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: "textarea#edit-message"
+          value: $MESSAGE
+          required: true
+
+    - click_on:
+        - value: Submit
+          selector: "#edit-submit"
+    - wait:
+        - value: 4
+  success:
+    body:
+      contains: "Thank you for submitting"

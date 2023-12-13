@@ -3,7 +3,7 @@ bioguide: SMNU33807_524016
 contact_form:
   driver: chrome
   steps:
-    - visit: https://www.senate.mn/members/email-form/1259
+    - visit: "https://www.senate.mn/members/email-form/1222"
     - fill_in:
         - name: First Name
           selector: "#first_name"
@@ -54,4 +54,4 @@ contact_form:
         - selector: "#swal2-content p"
   success:
     body:
-      contains: Your message has been sent
+      contains: "Your message has been sent"

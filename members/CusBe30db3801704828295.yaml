@@ -1,0 +1,45 @@
+bioguide: CusBe30db3801704828295
+contact_form:
+  steps:
+    - visit: "https://www.arb.ca.gov/lispub/comm/iframe_bcsubform.php?listname=lcfs2024"
+    - fill_in:
+        - name: First Name
+          selector: "input[name='F_FNAME']"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "input[name='F_LNAME']"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "input[name='F_EMAIL']"
+          value: $EMAIL
+          required: true
+        - name: email
+          selector: "input[name='F_EMAIL2']"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "input[name='F_PHONE']"
+          value: $PHONE
+          required: false
+        - name: Subject
+          selector: "input[name='F_SUBJECT']"
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: "textarea[name='F_MSG_BODY']"
+          value: $MESSAGE
+          required: false
+    - javascript:
+        - name: ignore browser alert
+          commands: ["window.confirm = function() {return true;}"]
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "input[value='Send Comment']"
+    - wait:
+        - value: 5
+  success:
+    body:
+      contains: "Thank you for your input"

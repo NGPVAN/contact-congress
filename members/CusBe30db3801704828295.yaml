@@ -42,4 +42,4 @@ contact_form:
         - value: 5
   success:
     body:
-      contains: "Your comment as shown below has been forwarded"
+      contains: "Thank you for your input"

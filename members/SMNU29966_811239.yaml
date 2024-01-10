@@ -1,8 +1,9 @@
-bioguide: MNL000032
+#MN State Senator Nicole Mitchell
+bioguide: SMNU29966_811239
 contact_form:
   driver: chrome
   steps:
-    - visit: https://www.senate.mn/members/email-form/1032
+    - visit: http://www.senate.mn/members/email-form/1269
     - fill_in:
         - name: First Name
           selector: "#first_name"

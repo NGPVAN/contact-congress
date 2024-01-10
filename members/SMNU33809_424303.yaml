@@ -1,10 +1,9 @@
-bioguide: MNL000555
+#MN State Senator John Hoffman
+bioguide: SMNU33809_424303
 contact_form:
   driver: chrome
   steps:
-    - visit: https://www.senate.mn/members/email-form/1199
-    - find:
-        - selector: "#first_name"
+    - visit: https://www.senate.mn/members/email-form/1205
     - fill_in:
         - name: First Name
           selector: "#first_name"

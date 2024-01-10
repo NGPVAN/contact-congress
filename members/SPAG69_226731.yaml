@@ -1,0 +1,179 @@
+#Governor Josh Shapiro
+bioguide: SPAG69_226731
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.governor.pa.gov/contact/"
+    - find:
+        - selector: "#nf-field-7081"
+    - fill_in:
+        - name: First Name
+          selector: "#nf-field-7081"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#nf-field-7091"
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: "#nf-field-7111"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#nf-field-7121"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#nf-field-7151"
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: email
+          selector: "#nf-field-7161"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "#nf-field-7171"
+          value: $PHONE
+          required: true
+        - name: message
+          selector: "#nf-field-7211"
+          value: $MESSAGE
+          required: true
+          options:
+            max_length: 1000
+    - select:
+        - name: Your Prefix
+          selector: "#nf-field-7071"
+          value: $NAME_PREFIX
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Miss: Miss
+            Ms.: Ms.
+            Dr.: Dr.
+            Prof.: Prof
+            Rabbi: Rabbi
+            Rev.: Rev.
+            Other: Other
+        - name: county
+          selector: "#nf-field-7141"
+          value: $ADDRESS_COUNTY
+          required: true
+          options:
+            Adams: Adams
+            Allegheny: Allegheny
+            Armstrong: Armstrong
+            Beaver: Beaver
+            Bedford: Bedford
+            Berks: Berks
+            Blair: Blair
+            Bradford: Bradford
+            Bucks: Bucks
+            Butler: Butler
+            Cambria: Cambria
+            Cameron: Cameron
+            Carbon: Carbon
+            Centre: Centre
+            Chester: Chester
+            Clarion: Clarion
+            Clearfield: Clearfield
+            Clinton: Clinton
+            Columbia: Columbia
+            Crawfor: Crawford
+            Cumberland: Cumberland
+            Dauphin: Dauphin
+            Delaware: Delaware
+            Elk: Elk
+            Erie: Erie
+            Fayette: Fayette
+            Forest: Forest
+            Franklin: Franklin
+            Fulton: Fulton
+            Greene: Greene
+            Huntingdon: Huntingdon
+            Indiana: Indiana
+            Jefferson: Jefferson
+            Juniata: Juniata
+            Lackawanna: Lackawanna
+            Lancaster: Lancaster
+            Lawrence: Lawrence
+            Lebanon: Lebanon
+            Lehigh: Lehigh
+            Luzerne: Luzerne
+            Lycoming: Lycoming
+            McKean: McKean
+            Mercer: Mercer
+            Mifflin: Mifflin
+            Monroe: Monroe
+            Montgomery: Montgomery
+            Montour: Montour
+            Northampton: Northampton
+            Northumberland: Northumberland
+            Perry: Perry
+            Philadelphia: Philadelphia
+            Pike: Pike
+            Potter: Potter
+            Schuylkill: Schuylkill
+            Snyder: Snyder
+            Somerset: Somerset
+            Sullivan: Sullivan
+            Susquehanna: Susquehanna
+            Tioga: Tioga
+            Union: Union
+            Venango: Venango
+            Warren: Warren
+            Washington: Washington
+            Wayne: Wayne
+            Westmoreland: Westmoreland
+            Wyoming: Wyoming
+            York: York
+        - name: topic
+          selector: "#nf-field-7201"
+          value: $TOPIC
+          required: true
+          options:
+            Agriculture: Agriculture
+            Animal welfare: Animal welfare
+            Banking: Banking
+            Broadband: Broadband
+            Child custody: Child custody
+            Correctional services: Correctional services
+            Criminal justice: Criminal justice
+            Early childhood education Pre-k: Early childhood education/Pre-K
+            Economic development: Economic development
+            Education k-12: Education (K-12)
+            Emergency preparedness: Emergency preparedness
+            Energy: Energy
+            Energy assistance: Energy assistance
+            Environment: Environment
+            Gaming: Gaming
+            Greeting: Greeting/Proclamation request
+            Health: Health
+            Human Services: Human Services
+            Infrastructure: Infrastructure
+            Insurance any kinf except health: Insurance (any kind except health)
+            Jobs: Jobs
+            Legislation: Legislation
+            LGBT issues: LGBT issues
+            Military and Veteran Affairs: Military and Veteran Affairs
+            Other: Other
+            Parks and recreation: Parks and recreation
+            Public safety: Public safety
+            Public Utilities: Public Utilities
+            Stakeholder outreach: Stakeholder Outreach
+            Taxes: Taxes
+            Tourism: Tourism
+            Transportation: Transportation
+            Unemployment: Unemployment
+            Voting: Voting
+            Women's issues: Women's issues
+    - click_on:
+        - value: Submit
+          selector: "#nf-field-7221"
+    - wait:
+        - value: 10
+    - find:
+        - selector: div.nf-response-msg h3
+  success:
+    body:
+      contains: "Your form has been successfully submitted"

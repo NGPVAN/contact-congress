@@ -1,0 +1,65 @@
+bioguide: CusJ1ca7b46b1705087585
+contact_form:
+  method: post
+  steps:
+    - visit: "https://eplanning.blm.gov/eplanning-ui/project/2018002/595/8020037/comment"
+    - find:
+        - selector: "#comment"
+    - fill_in:
+        - name: Message
+          selector: "#comment"
+          value: $MESSAGE
+          required: true
+        - name: First Name
+          selector: "#first-name"
+          value: $NAME_FIRST
+          required: false
+        - name: Last Name
+          selector: "#last-name"
+          value: $NAME_LAST
+          required: false
+    - find:
+        - selector: "#additional-info"
+    - click_on:
+        - selector: "#additional-info"
+    - find:
+        - selector: "#line1"
+    - fill_in:
+        - name: Street Address
+          selector: "#line1"
+          value: $ADDRESS_STREET
+          required: false
+        - name: City
+          selector: "#city"
+          value: $ADDRESS_CITY
+          required: false
+    - click_on:
+        - selector: "#state"
+    - fill_in:
+        - name: State
+          selector: "#state input"
+          value: $ADDRESS_STATE_FULL
+          required: false
+    - wait:
+        - value: 1
+    - click_on:
+        - selector: ".ng-option"
+    - find:
+        - selector: "div.standard-btns button.btn.btn-primary"
+    - click_on:
+        - selector: "div.standard-btns button.btn.btn-primary"
+    - find:
+        - selector: "#withhold-pii-yes"
+    - click_on:
+        - selector: "#withhold-pii-yes"
+    - find:
+        - selector: "#comment-view-page button.btn.btn-primary"
+    - click_on:
+        - selector: "#comment-view-page button.btn.btn-primary"
+    - find:
+        - selector: "#comment-receipt-page h4"
+    - wait:
+        - value: 2
+  success:
+    body:
+      contains: "Your Submission ID"

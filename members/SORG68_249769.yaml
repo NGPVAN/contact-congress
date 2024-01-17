@@ -4,6 +4,8 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://www.oregon.gov/gov/Pages/share-your-opinion.aspx"
+    - find:
+        - selector: "#firstName"
     - fill_in:
         - name: First Name
           selector: "#firstName"

@@ -1,5 +1,6 @@
 bioguide: CusL410a83c31705014826
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://eplanning.blm.gov/eplanning-ui/project/2018002/595/8020037/comment"

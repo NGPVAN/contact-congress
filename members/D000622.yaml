@@ -6,14 +6,14 @@ contact_form:
   steps:
     - visit: "https://www.duckworth.senate.gov/connect/email-tammy"
     - find:
-      - selector: div#main_column .feedback-block.opinion a
+        - selector: div#main_column .feedback-block.opinion a
     - click_on:
-      - selector: div#main_column .feedback-block.opinion a
+        - selector: div#main_column .feedback-block.opinion a
     - find:
-      - selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
+        - selector: select#input-EC0FF59D-F7B9-A668-58EF-05CFD96A0ABF
     - select:
         - name: Your Prefix
-          selector: select#input-356E605B-5056-A066-609C-BFFE9DAB1A8B
+          selector: select#input-EC0FF59D-F7B9-A668-58EF-05CFD96A0ABF
           value: $NAME_PREFIX
           required: true
           options:
@@ -28,7 +28,7 @@ contact_form:
             Rabbi: Rabbi
             Reverend: Reverend
         - name: topic
-          selector: select#input-356E5B93-5056-A066-6052-9F850C8A291E
+          selector: select#input-EC0FF559-A2D6-DC0E-6E44-EC87559E809C
           value: $TOPIC
           required: true
           options:
@@ -73,38 +73,38 @@ contact_form:
             Veterans: "Veterans"
             White House: "White House"
         - name: state
-          selector: select#input-356E5B73-5056-A066-60BE-0B9B6F422B57
+          selector: select#input-EC0FF32F-93B3-1635-0601-807655FED063
           value: $ADDRESS_STATE_POSTAL_ABBREV
           required: true
           options:
             IL: "IL"
     - fill_in:
         - name: First name
-          selector: input#input-356E5F36-5056-A066-6074-9592CE92B2D2
+          selector: input#input-EC0FF52F-A150-E664-CED9-88E2666AB07A
           value: $NAME_FIRST
           required: true
         - name: Last name
-          selector: input#input-356E5C24-5056-A066-600A-182A54465687
+          selector: input#input-EC0FF36A-E576-EA30-61EC-4116E7DED84F
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#input-356E5FDD-5056-A066-6081-FE972EE9E9DA
+          selector: input#input-EC0FF642-E251-9E23-21B8-8255AEB01677
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#input-356E60B4-5056-A066-6053-80525DD9BEE9
+          selector: input#input-EC0FF468-BCCD-66C0-E849-97E9719F9BA1
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#input-356E6078-5056-A066-6034-4DED94E3369A
+          selector: input#input-EC0FF3B8-B2A6-6339-030B-FD935CCB4D72
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#input-356E5C4B-5056-A066-6054-8C59ADECA3EF
+          selector: input#input-EC0FF4F7-E507-0840-DFC0-F3B3198FCADE
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: input#input-356E5FC0-5056-A066-6013-9C5EB3043747
+          selector: input#input-EC0FF53D-FF45-B6C1-C68C-21B35BDC0880
           value: $PHONE_HYPHENS
           required: true
           options:
@@ -113,25 +113,28 @@ contact_form:
           selector: input#email
           value: $EMAIL
           required: true
-        - name: email
-          selector: input#input-356E5F19-5056-A066-6018-AC66D9FFA755
+        - name: verify email
+          selector: input#input-EC0FF573-CF10-3E7D-25BC-B5E4EA290E1B
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#input-356E5DA0-5056-A066-60C3-EF69B2E21E53
+          selector: input#input-EC0FF60D-CC0A-9D2D-E69A-268D800B6EA7
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888
+          selector: textarea#input-EC0FF566-EE8B-6306-F448-C9DB6C6B32A1
           value: $MESSAGE
           required: true
     - javascript:
-      - name: char replace
-        values: ["$MESSAGE"]
-        selectors: ["textarea#input-356E5E00-5056-A066-603C-9FAC0F3B6888"]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(CC:)/g,'CC');}"]
-        required: true
-    - click_on: 
+        - name: char replace
+          values: ["$MESSAGE"]
+          selectors: ["textarea#input-EC0FF566-EE8B-6306-F448-C9DB6C6B32A1"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(CC:)/g,'CC');}",
+            ]
+          required: true
+    - click_on:
         - selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3

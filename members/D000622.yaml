@@ -136,8 +136,10 @@ contact_form:
           required: true
     - click_on:
         - selector: input[type='submit'][value='Submit']
-    - wait:
-        - value: 3
+    - find:
+        - selector: div#main_column .feedback-block.opinion a
+    - click_on:
+        - selector: div#main_column .feedback-block.opinion a
   success:
     body:
       contains: "Thank you for contacting my office"

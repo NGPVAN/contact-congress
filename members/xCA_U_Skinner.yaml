@@ -1,5 +1,6 @@
 bioguide: xCA_U_Skinner
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD09"
     - fill_in:

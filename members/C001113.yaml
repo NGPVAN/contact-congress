@@ -79,6 +79,12 @@ contact_form:
             Dean: Dean
             The Honorable: The Honorable
             Dr.: Dr.
+        - name: state
+          selector: select#input_2_6_4
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Nevada: Nevada
         - name: topic
           selector: select#input_2_17
           value: $TOPIC

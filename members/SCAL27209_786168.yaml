@@ -1,6 +1,6 @@
 bioguide: SCAL27209_786168
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD18"
     - fill_in:

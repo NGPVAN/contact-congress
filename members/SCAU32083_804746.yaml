@@ -1,5 +1,6 @@
 bioguide: SCAU32083_804746
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD04"
     - fill_in:

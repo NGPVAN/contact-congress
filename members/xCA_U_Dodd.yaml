@@ -1,5 +1,6 @@
 bioguide: xCA_U_Dodd
 contact_form:
+  driver: chrome
   steps:
     - visit: "http://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD03"
     - fill_in:

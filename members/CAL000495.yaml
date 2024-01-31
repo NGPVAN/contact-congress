@@ -1,5 +1,6 @@
 bioguide: CAL000495
 contact_form:
+  driver: chrome
   steps:
     - visit: "http://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD07"
     - fill_in:

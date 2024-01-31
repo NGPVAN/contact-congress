@@ -1,5 +1,6 @@
 bioguide: SCAU27166_510772
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD15"
     - fill_in:

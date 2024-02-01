@@ -1,5 +1,6 @@
 bioguide: SCAL30877_805642
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD51"
     - fill_in:

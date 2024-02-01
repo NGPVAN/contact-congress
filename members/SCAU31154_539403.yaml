@@ -1,5 +1,6 @@
 bioguide: SCAU31154_539403
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD23"
     - fill_in:

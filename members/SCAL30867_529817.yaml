@@ -1,5 +1,6 @@
 bioguide: SCAL30867_529817
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD24"
     - fill_in:
@@ -51,4 +52,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Your message has been received"
+      contains: "I appreciate you taking the time"

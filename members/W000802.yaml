@@ -131,10 +131,10 @@ contact_form:
           Airman: Airman
       - name: state
         selector: select#input_2_8_4
-        value: RI
+        value: $ADDRESS_STATE_FULL
         required: true
         options:
-          RI: RI
+          Rhode Island: Rhode Island
     - click_on:
       - selector: input#gform_submit_button_2
     - wait:

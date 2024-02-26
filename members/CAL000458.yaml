@@ -1,5 +1,6 @@
 bioguide: CAL000458
 contact_form:
+  driver: chrome
   steps:
     - visit: "http://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=AD03"
     - fill_in:

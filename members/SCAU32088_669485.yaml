@@ -1,5 +1,6 @@
 bioguide: SCAU32088_669485
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD18"
     - fill_in:

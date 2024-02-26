@@ -1,5 +1,6 @@
 bioguide: SCAU32093_247950
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=SD40"
     - fill_in:

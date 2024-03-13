@@ -1,0 +1,167 @@
+#US Senator Laphonza Butler
+bioguide: FCAS22197_452286
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.butler.senate.gov/share-your-opinion/"
+    - click_on: 
+      - selector: .eicon-close
+    - fill_in:
+      - name: Your Prefix
+        selector: select#form-field-name
+        value: $NAME_PREFIX
+        required: false
+      - name: first
+        selector: input#form-field-field_1d46919
+        value: $NAME_FIRST
+        required: true
+      - name: last
+        selector: input#form-field-field_bdcaff9
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#form-field-field_00c2cf4
+        value: $ADDRESS_STREET
+        required: true
+      - name: street2
+        selector: input#form-field-field_1a731d3
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input#form-field-field_5ce9e4e
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input#form-field-field_1037219
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: input#form-field-field_9411e2b
+        value: $PHONE
+        required: false
+      - name: email
+        selector: input#form-field-email
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: input#form-field-field_65932fe
+        value: $SUBJECT
+        required: true
+      - name: message
+        selector: textarea#form-field-field_01539f0
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 2970
+    - javascript:
+      - name: char replace
+        selectors: ["textarea#form-field-field_01539f0"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].value.replace(/(%2[0])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+        required: true
+    - select:
+      - name: topic
+        selector: select#form-field-message
+        value: $TOPIC
+        required: true
+        options:
+          AGR: Agriculture
+          PHONE CALL: PHONE CALL
+          AN: Animal Welfare
+          ART: Arts, Museums, & Libraries
+          BANK: Banking & Financial Services
+          CHEM: Chemical Safety
+          CIVIL: Civil Rights & Discrimination (including LGBTQ+)
+          CONSUMER: Consumer Product Safety
+          CRIMJUS: Criminal Justice
+          DEF: Defense & Military
+          DISARESP: Disaster Response
+          EDU: Education
+          ELECT: Election Reform & Voting Rights
+          ENDSPEC: Endangered Species
+          ENE: Energy & Climate
+          ENV: Environment
+          FEDCOURT: Federal Court Nominations
+          FR: Foreign Relations
+          FT: Foreign Trade
+          ADOPT: Foster Care & Adoption
+          GUN: Gun Violence Prevention
+          HEA: Health Care
+          HOUSE: Housing
+          IMM: Immigration 
+          LAB: Labor, Unions, and Workers
+          NUT: Nutrition
+          POST: Postal Service
+          LANDS: Public Lands & Forestry
+          REPRO: Reproductive Freedom
+          SCI: Science & Space Policy
+          SSEC: Social Security
+          TAX: Taxes 
+          TEL: Telecommunications
+          TRA: Transportation
+          NATIVE: Tribal Communities/Native American Affairs
+          VET: Veterans
+          WATER: Water
+      - name: state
+        selector: select#form-field-field_dd4016c
+        value: $ADDRESS_STATE_FULL
+        required: true
+        options:
+          AL: Alabama
+          AK: Alaska
+          AZ: Arizona
+          AR: Arkansas
+          CA: California
+          CO: Colorado
+          CT: Connecticut
+          DE: Delaware
+          DC: Washington DC
+          FL: Florida
+          GA: Georgia
+          Hi: Hawaii
+          ID: Idaho
+          IL: Illinois
+          IN: Indiana
+          IA: Iowa
+          KS: Kansas
+          KY: Kentucky
+          LA: Louisiana
+          ME: Maine
+          MD: Maryland
+          MA: Massachussetts
+          MI: Michigan
+          MN: Minnesota
+          MS: Mississippi
+          MO: Missouri
+          MT: Montana
+          NE: Nebraska
+          NV: Nevada
+          NH: New Hampshire
+          NJ: New Jersey
+          NM: New Mexico
+          NY: New York
+          NC: North Carolina
+          ND: North Dakota
+          OH: Ohio
+          OK: Oklahoma
+          OR: Oregon
+          PA: Pennsylvania
+          RI: Rhode Island
+          SC: South Carolina
+          SD: South Dakota
+          TN: Tennessee
+          TX: Texas
+          UT: Utah
+          VT: Vermont
+          VA: Virginia
+          WA: Washington
+          WV: West Virginia
+          WI: Wisconsin
+          WY: Wyoming
+    - click_on:
+      - value: Submit
+        selector: .elementor-field-type-submit
+    - wait: 
+      - value: 5
+  success:
+    body:
+      contains: "Your submission was successful"

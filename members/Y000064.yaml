@@ -1,67 +1,53 @@
 #US Senator Todd Young
 bioguide: Y000064
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "https://www.young.senate.gov/contact/email-todd"
     - find:
-        - selector: div a#contactbuddin
-    - click_on:
-        - selector: div a#contactbuddin
-    - wait:
-        - value: 1
-    - find:
-        - selector: button[class='close'][aria-label='Close']
-    - click_on:
-        - selector: button[class='close'][aria-label='Close']
-    - wait:
-        - value: 2
-    - find:
-        - selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+        - selector: input#input_1_1
     - fill_in:
         - name: firstname
-          selector: input#input-B03E05C4-4040-F985-52CD-9CA44623DE5E
+          selector: input#input_1_1
           value: $NAME_FIRST
           required: true
         - name: lastname
-          selector: input#input-B03E04BD-4040-F985-52CD-48E090E769DA
+          selector: input#input_1_4
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#input-B03E05F1-4040-F985-52CD-A580E72A7D41
+          selector: input#input_1_6_1
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#input-B03E0518-4040-F985-52CD-CF33EF97DA3A
+          selector: input#input_1_6_2
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#input-B03E0595-4040-F985-52CD-C572364023FE
+          selector: input#input_1_6_3
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#input-B03E04CC-4040-F985-52CD-4DDB58DA474A
+          selector: input#input_1_6_5
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: input#input-B03E046E-4040-F985-52CD-A2F10450D58D
+          selector: input#input_1_7
           value: $PHONE
           required: true
         - name: email
-          selector: input#email
+          selector: input#input_1_9
           value: $EMAIL
           required: true
         - name: verifyemail
-          selector: input#input-B03E05A4-4040-F985-52CD-730C08912F4F
+          selector: input#input_1_9_2
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#input-78803FD6-BD54-3C62-213B-D4FBABCB2E0C
+          selector: input#input_1_11
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
+          selector: textarea#input_1_13
           value: $MESSAGE
           required: true
     - javascript:
@@ -71,8 +57,14 @@ contact_form:
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
           required: true
     - select:
+        - name: state
+          selector: select#input_1_6_4
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Indiana: Indiana
         - name: Your Prefix
-          selector: select#input-B03E0527-4040-F985-52CD-C0DD6BEF325F
+          selector: select#input_1_3
           value: $NAME_PREFIX
           required: true
           options:
@@ -211,7 +203,7 @@ contact_form:
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
         - name: topic
-          selector: select#input-B03E04DB-4040-F985-52CD-18F332336F99
+          selector: select#input_1_12
           value: $TOPIC
           required: true
           options:
@@ -255,10 +247,8 @@ contact_form:
             Welfare: Welfare
             "Women's Issues": "Women's Issues"
     - click_on:
-        - selector: input#input-AA8CC6CA-DFB9-1D1C-F43E-F7DAD157AD93
-    - click_on:
         - value: Submit
-          selector: form#B03E03FC-4040-F985-52CD-BCD7E00A8A6C div.control-group div.controls input.btn
+          selector: input[type='submit'][value='Submit']
     - wait:
         - value: 3
   success:

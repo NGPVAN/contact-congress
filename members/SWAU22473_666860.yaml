@@ -1,0 +1,77 @@
+bioguide: SWAU22473_666860
+contact_form:
+  steps:
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/8/0"
+    - fill_in:
+        - name: street
+          selector: "#Address_Street"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#Address_City"
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: "#Address_State"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+        - name: zipcode
+          selector: "#Address_Zip"
+          value: $ADDRESS_ZIP5
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Validate address
+          selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
+    - fill_in:
+        - name: firstname
+          selector: "#FirstName"
+          value: $NAME_FIRST
+          required: true
+        - name: lastname
+          selector: "#LastName"
+          value: $NAME_LAST
+          required: true
+        - name: emailaddress
+          selector: "#Email"
+          value: $EMAIL
+          required: true
+        - name: confirmemailaddress
+          selector: "#ConfirmEmail"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#PhoneNumber"
+          value: $PHONE
+          required: false
+        - name: subject
+          selector: "#CommentSubject"
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: "#Comment"
+          value: $MESSAGE
+          required: true
+          options: 
+            max_length: 1000
+    - javascript:
+        - name: phone
+          selectors: [ "#PhoneNumber"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
+          required: false
+    - click_on:
+        - selector: "label[for='ResponseRequested_False']"
+    - click_on:
+        - value: Send
+          selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: Thank you

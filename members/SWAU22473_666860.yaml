@@ -1,10 +1,9 @@
-bioguide: SWAU6a67071f
+bioguide: SWAU22473_666860
 contact_form:
-  method: post
   steps:
-    - visit: "https://app.leg.wa.gov/pbc/memberEmail/6/0"
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/8/0"
     - fill_in:
-        - name: Street
+        - name: street
           selector: "#Address_Street"
           value: $ADDRESS_STREET
           required: true
@@ -23,20 +22,20 @@ contact_form:
     - wait: 
         - value: 2
     - click_on:
-        - value: Validate Address Button
+        - value: Validate address
           selector: "#ValidateAddressButton"
     - wait: 
         - value: 3
     - fill_in:
-        - name: First Name
+        - name: firstname
           selector: "#FirstName"
           value: $NAME_FIRST
           required: true
-        - name: Last Name
+        - name: lastname
           selector: "#LastName"
           value: $NAME_LAST
           required: true
-        - name: email address
+        - name: emailaddress
           selector: "#Email"
           value: $EMAIL
           required: true
@@ -56,8 +55,14 @@ contact_form:
           selector: "#Comment"
           value: $MESSAGE
           required: true
-          options:
+          options: 
             max_length: 1000
+    - javascript:
+        - name: phone
+          selectors: [ "#PhoneNumber"]
+          values: [ "$PHONE" ]
+          commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
+          required: false
     - click_on:
         - selector: "label[for='ResponseRequested_False']"
     - click_on:

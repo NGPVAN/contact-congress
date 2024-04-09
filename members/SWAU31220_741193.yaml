@@ -20,6 +20,8 @@ contact_form:
     - click_on:
         - value: Validate address
           selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
     - fill_in:
         - name: First Name
           selector: "#FirstName"

@@ -2,8 +2,6 @@ bioguide: SWAU22493_741208
 contact_form:
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/28/0"
-    - find:
-        - selector: "#Address_Street"
     - fill_in:
         - name: street
           selector: "#Address_Street"

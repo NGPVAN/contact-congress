@@ -71,4 +71,5 @@ contact_form:
         - value: 2
   success:
     body:
-      contains: Thank you 
+      contains: Thank you
+      

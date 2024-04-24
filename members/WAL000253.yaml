@@ -1,7 +1,5 @@
 bioguide: WAL000253
 contact_form:
-  method: post
-  action: ""
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/22/0"
     - fill_in:
@@ -21,9 +19,13 @@ contact_form:
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
           required: true
+    - wait: 
+        - value: 2
     - click_on:
         - value: Validate address
           selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
     - fill_in:
         - name: firstname
           selector: "#FirstName"
@@ -61,17 +63,15 @@ contact_form:
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
-    - find:
-        - selector: input#ResponseRequested_True
     - click_on:
-        - selector: input#ResponseRequested_True
-    - wait:
-        - value: 2
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: The following message was sent to
+      contains: Thank you 

@@ -1,7 +1,7 @@
-bioguide: WAL000008
+bioguide: SWAU32231_199856
 contact_form:
   steps:
-    - visit: "https://app.leg.wa.gov/pbc/memberEmail/29/0"
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/44/0"
     - fill_in:
         - name: street
           selector: "#Address_Street"

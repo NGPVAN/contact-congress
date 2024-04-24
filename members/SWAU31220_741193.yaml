@@ -1,10 +1,7 @@
 bioguide: SWAU31220_741193
 contact_form:
-  driver: phantom
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/16/0"
-    - find:
-        - selector: "#Address_Street"
     - fill_in:
         - name: street
           selector: "#Address_Street"
@@ -18,9 +15,13 @@ contact_form:
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
           required: true
+    - wait: 
+        - value: 2
     - click_on:
         - value: Validate address
           selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
     - fill_in:
         - name: First Name
           selector: "#FirstName"
@@ -59,16 +60,13 @@ contact_form:
           selectors: [ "#PhoneNumber"]
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
-    - find:
-        - value: "#ResponseRequested_True"
     - click_on:
-        - value: Response requested
-          selector: "#ResponseRequested_True"
-    - wait:
-      - value: 2
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
   success:
     body:
-      contains: The following message was sent to
+      contains: Thank you

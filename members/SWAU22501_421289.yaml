@@ -1,9 +1,9 @@
-bioguide: WAL000008
+bioguide: SWAU22501_421289
 contact_form:
   steps:
-    - visit: "https://app.leg.wa.gov/pbc/memberEmail/29/0"
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/36/0"
     - fill_in:
-        - name: street
+        - name: Street
           selector: "#Address_Street"
           value: $ADDRESS_STREET
           required: true
@@ -27,15 +27,15 @@ contact_form:
     - wait: 
         - value: 3
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: "#FirstName"
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: "#LastName"
           value: $NAME_LAST
           required: true
-        - name: emailaddress
+        - name: email address
           selector: "#Email"
           value: $EMAIL
           required: true
@@ -55,7 +55,7 @@ contact_form:
           selector: "#Comment"
           value: $MESSAGE
           required: true
-          options: 
+          options:
             max_length: 1000
     - javascript:
         - name: phone
@@ -74,4 +74,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: Thank you
+      contains: Thank you 

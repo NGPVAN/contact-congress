@@ -1,7 +1,9 @@
-bioguide: WAL000008
+bioguide: SWAU22488_360191
 contact_form:
   steps:
-    - visit: "https://app.leg.wa.gov/pbc/memberEmail/29/0"
+    - visit: "https://app.leg.wa.gov/pbc/memberEmail/23/0"
+    - find:
+        - selector: "#Address_Street"
     - fill_in:
         - name: street
           selector: "#Address_Street"
@@ -10,10 +12,6 @@ contact_form:
         - name: city
           selector: "#Address_City"
           value: $ADDRESS_CITY
-          required: true
-        - name: state
-          selector: "#Address_State"
-          value: $ADDRESS_STATE_POSTAL_ABBREV
           required: true
         - name: zipcode
           selector: "#Address_Zip"
@@ -27,15 +25,15 @@ contact_form:
     - wait: 
         - value: 3
     - fill_in:
-        - name: firstname
+        - name: First Name
           selector: "#FirstName"
           value: $NAME_FIRST
           required: true
-        - name: lastname
+        - name: Last Name
           selector: "#LastName"
           value: $NAME_LAST
           required: true
-        - name: emailaddress
+        - name: email
           selector: "#Email"
           value: $EMAIL
           required: true
@@ -51,18 +49,19 @@ contact_form:
           selector: "#CommentSubject"
           value: $SUBJECT
           required: true
+          options: 
+            max_length: 100
         - name: message
           selector: "#Comment"
           value: $MESSAGE
           required: true
           options: 
-            max_length: 1000
+            max_length: 900 # 100 less than actual form max to make sure supporter's signature info is not cut off
     - javascript:
         - name: phone
           selectors: [ "#PhoneNumber"]
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
-          required: false
     - click_on:
         - selector: "label[for='ResponseRequested_False']"
     - click_on:
@@ -71,7 +70,5 @@ contact_form:
     - wait: 
         - value: 2
   success:
-    headers:
-      status: 200
     body:
-      contains: Thank you
+      contains: Thank you 

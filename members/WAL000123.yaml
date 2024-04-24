@@ -1,7 +1,5 @@
 bioguide: WAL000123
 contact_form:
-  method: post
-  action: /pbc/memberEmail/18/0
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/18/0"
     - fill_in:

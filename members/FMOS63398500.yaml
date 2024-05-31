@@ -7,10 +7,10 @@ contact_form:
     - wait:
         - value: 1
     - find:
-        - value: "#edit-prefix"
+        - value: "#input_8_3"
     - select:
         - name: Your Prefix
-          selector: "#edit-prefix"
+          selector: "#input_8_3"
           value: $NAME_PREFIX
           required: true
           options:
@@ -20,7 +20,7 @@ contact_form:
             Mr. and Mrs.: Mr. and Mrs.
             Dr.: Dr.
         - name: Topic
-          selector: "#edit-topic"
+          selector: "#input_8_16"
           value: $TOPIC
           required: true
           options:
@@ -65,50 +65,56 @@ contact_form:
             Veterans: Veterans
             Water/Rivers: Water/Rivers
             Welfare: Welfare
+        - name: state
+          selector: "#input_8_9"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Missouri: Missouri
     - fill_in:
         - name: First name
-          selector: "#edit-first-name"
+          selector: "#input_8_4"
           value: $NAME_FIRST
           required: true
         - name: Last name
-          selector: "#edit-last-name"
+          selector: "#input_8_5"
           value: $NAME_LAST
           required: true
         - name: Street
-          selector: "#edit-address-1"
+          selector: "#input_8_6"
           value: $ADDRESS_STREET
           required: true
         - name: Street2
-          selector: "#edit-address-2"
+          selector: "#input_8_7"
           value: $ADDRESS_STREET_2
           required: false
         - name: City
-          selector: "#edit-city"
+          selector: "#input_8_8"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#edit-zip"
+          selector: "#input_8_10"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#edit-phone"
+          selector: "#input_8_11"
           value: $PHONE
           required: false
         - name: email
-          selector: "#edit-email"
+          selector: "#input_8_14"
           value: $EMAIL
           required: true
         - name: Subject
-          selector: "#edit-subject"
+          selector: "#input_8_19"
           value: $SUBJECT
           required: true
         - name: Message
-          selector: "#edit-message"
+          selector: "#input_8_21"
           value: $MESSAGE
           required: true
     - javascript:
         - name: Message
-          selectors: ["#edit-message"]
+          selectors: ["#input_8_21"]
           values: ["$MESSAGE"]
           commands:
             [
@@ -117,13 +123,11 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: button#edit-actions-submit
+          selector: "#gform_submit_button_8"
     - wait:
         - value: 5
-    - find:
-        - selector: div.page-title h1
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you, your message has been sent"
+      contains: "Thanks for contacting us" 

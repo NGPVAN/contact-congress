@@ -1,6 +1,6 @@
 bioguide: SNYG58_342834
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.governor.ny.gov/content/governor-contact-form"
     - fill_in:

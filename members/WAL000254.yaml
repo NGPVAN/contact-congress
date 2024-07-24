@@ -1,7 +1,6 @@
 bioguide: WAL000254
 contact_form:
-  method: post
-  action: ""
+  driver: chrome
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/43/1"
     - fill_in:
@@ -64,9 +63,9 @@ contact_form:
     - wait:
         - value: 2
     - find:
-        - selector: input#ResponseRequested_True
+        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
     - click_on:
-        - selector: input#ResponseRequested_True
+        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
     - wait:
         - value: 2
     - click_on:

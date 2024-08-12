@@ -52,4 +52,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Hi"
+      contains: "Thank you for contacting"

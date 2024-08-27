@@ -203,12 +203,10 @@ contact_form:
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
         - name: topic
-          selector: select#input_1_12
+          selector: select#input_1_15
           value: $TOPIC
           required: true
           options:
-            Adoption: Adoption
-            Aging: Aging
             Agriculture: Agriculture
             Animal Welfare: Animal Welfare
             Appropriations: Appropriations
@@ -218,11 +216,11 @@ contact_form:
             Commerce: Commerce
             Defense: Defense
             Economy: Economy
+            Education: Education
             Energy: Energy
             Environment: Environment
             Finance: Finance
             Foreign Affairs: Foreign Affairs
-            Gun Control: Gun Control
             Health: Health
             Homeland Security: Homeland Security
             Housing: Housing
@@ -233,19 +231,17 @@ contact_form:
             Medicaid: Medicaid
             Medicare: Medicare
             Military: Military
-            NASA: NASA
             Nutrition: Nutrition
             Patents: Patents
             Pensions: Pensions
+            Gun Control: Second Amendment
             Small Business: Small Business
-            Social: Social
             Taxes: Taxes
             Telecommunications: Telecommunications
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
             Welfare: Welfare
-            "Women's Issues": "Women's Issues"
     - click_on:
         - value: Submit
           selector: input[type='submit'][value='Submit']

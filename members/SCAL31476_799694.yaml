@@ -52,4 +52,4 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "We have recieved your message"
+      contains: "We have received your message"

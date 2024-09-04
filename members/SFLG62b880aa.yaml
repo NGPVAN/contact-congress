@@ -1,0 +1,40 @@
+bioguide: SFLG62b880aa
+contact_form:
+  driver: chrome
+  steps: 
+    - visit: "https://www.flgov.com/email-the-governor/"
+    - wait: 
+        - value: 3
+    - fill_in: 
+        - name: name
+          selector: input[name='name-1']
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: input[name='email-1']
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: input[name='phone-1']
+          value: $PHONE
+          required: false
+        - name: Subject
+          selector: input[name='text-1']
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector:  textarea[name='textarea-1']
+          value: $MESSAGE
+          required: true
+    - wait: 
+        - value: 3
+    - click_on:
+        - value: send message
+          selector: .forminator-button-submit
+    - wait: 
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for contacting"

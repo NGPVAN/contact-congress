@@ -1,0 +1,45 @@
+bioguide: SFLL30312_815985
+contact_form:
+  steps: 
+    - visit: "https://www.myfloridahouse.gov/Sections/Representatives/contactmember.aspx?MemberId=4881"
+    - fill_in: 
+        - name: name
+          selector: "#Name"
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: "#EmailAddress"
+          value: $EMAIL
+          required: true
+        - name: address
+          selector: "#Address"
+          value: $ADDRESS_STREET
+          required: false
+        - name: address 2
+          selector: "#Address2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "#City"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#Zip"
+          value: $ADDRESS_ZIP5
+          required: false
+        - name: phone
+          selector: "#Phone"
+          value: $PHONE
+          required: false
+        - name: message
+          selector: "#Message"
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - value: send e-mail
+          selector: "#btnSubmit"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "has been successfully sent"

@@ -4,7 +4,7 @@ contact_form:
   driver: chrome
   method: post
   steps:
-    - visit: "https://www.helmy.senate.gov/"
+    - visit: "https://www.helmy.senate.gov/share-your-opinion/"
     - find:
         - selector: "#form-field-name"
     - fill_in:

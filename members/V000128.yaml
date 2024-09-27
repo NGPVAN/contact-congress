@@ -1,13 +1,13 @@
 #US Senator Chris Van Hollen
 bioguide: V000128
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.vanhollen.senate.gov/contact/email"
     - find:
-        - selector: ul#listblocks .opinion a
+      - selector: .ButtonBlock__button
     - click_on:
-      - selector: ul#listblocks .opinion a
+      - selector: .ButtonBlock__button
       - wait:
         - value: 2
     - find:
@@ -157,7 +157,7 @@ contact_form:
             Education K through 12: Education K through 12
             Elections: Elections
             Energy: Energy
-            Environment: Enviroment
+            Environment: Environment
             Family: Family
             Foreign Affairs: Foreign Affairs
             Health: Health
@@ -177,7 +177,7 @@ contact_form:
             Welfare: Welfare
             Government Reform: Government Reform
     - click_on:
-        - selector: input[type='submit'][value='Submit']
+        - selector: div.controls .btn
     - wait:
         - value: 3
   success:

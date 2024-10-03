@@ -1,50 +1,56 @@
 bioguide: SPAU3393804d
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
-    - visit: "https://contact1.pasenategop.com/contact/28"
+    - visit: "https://wpcontact01.pasenategop.com/contact/28"
     - find:
-        - selector: "#ContactForm_FirstName"
+        - selector: input[name='FirstName']
     - fill_in:
         - name: First Name
-          selector: "#ContactForm_FirstName"
+          selector: input[name='FirstName']
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#ContactForm_LastName"
+          selector: input[name='LastName']
           value: $NAME_LAST
           required: true
-        - name: Address
-          selector: "#ContactForm_Address1"
-          value: $ADDRESS_STREET
-          required: true
-        - name: Address2
-          selector: "#ContactForm_Address2"
-          value: $ADDRESS_STREET_2
-          required: false
-        - name: city
-          selector: "#ContactForm_City"
-          value: $ADDRESS_CITY
-          required: true
-        - name: zip
-          selector: "#ContactForm_ZipCode"
-          value: $ADDRESS_ZIP5
-          required: true
         - name: email
-          selector: "#ContactForm_EmailAddress"
+          selector: input[name='email']
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#ContactForm_HomePhone"
+          selector: input[name='tel']
           value: $PHONE
           required: true
+        - name: Address
+          selector: input[name='address-line1']
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address2
+          selector: input[name='address-line2']
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input[name='city']
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: input[name='postal-code']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: subject
+          selector: input[name='contactForm.Subject']
+          value: $SUBJECT
+          required: true
         - name: message
-          selector: "#ContactForm_Comments"
+          selector: textarea[name='contactForm.Comments']
           value: $MESSAGE
           required: true
+    - wait: 
+        - value: 2
     - select:
         - name: County
-          selector: "#countyname"
+          selector: select[name='county']
           value: $ADDRESS_COUNTY
           required: true
           options:
@@ -116,14 +122,18 @@ contact_form:
             Wyoming: Wyoming 
             York: York
         - name: Issue
-          selector: "#issueselect"
-          value: Legislation
+          selector: select[name='selectedIssueId']
+          value: $TOPIC
           required: true
+          options: 
+            Legislation: Legislation
     - click_on:
         - value: No Newsletter sign up
-          selector: "#ContactForm_ContactFormConfig_SenNetLists_0__IsChecked"
+          selector: input[name='contactConfig.SenNetLists[0].IsChecked']
         - value: Submit
           selector: "#btnSubmit"
+    - wait: 
+        - value: 4
   success:
     body:
       contains: Thank you for taking the time

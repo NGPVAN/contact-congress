@@ -127,11 +127,14 @@ contact_form:
           required: true
           options: 
             Legislation: Legislation
+    - wait: 
+        - value: 2
     - click_on:
         - value: No Newsletter sign up
           selector: input[name='contactConfig.SenNetLists[0].IsChecked']
+    - click_on:
         - value: Submit
-          selector: "#btnSubmit"
+          selector: input[type='submit'][value='Submit']
     - wait: 
         - value: 4
   success:

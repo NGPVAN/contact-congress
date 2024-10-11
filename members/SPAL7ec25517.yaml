@@ -50,4 +50,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: your message has been received
+      contains: Thanks

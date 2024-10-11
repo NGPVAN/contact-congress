@@ -44,4 +44,4 @@ contact_form:
     - selector: .find-rep label
   success:
     body:
-      contains: your online message has been received
+      contains: Thank

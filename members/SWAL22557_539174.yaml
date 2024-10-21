@@ -60,7 +60,7 @@ contact_form:
           required: false
     - click_on:
         - value: Response requested
-          selector: "#ResponseRequested_True"
+          selector: "label[for='ResponseRequested_False']"
     - wait:
       - value: 2
     - click_on:

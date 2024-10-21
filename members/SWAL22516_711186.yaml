@@ -1,5 +1,6 @@
 bioguide: SWAL22516_711186
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/1/1"
@@ -58,7 +59,7 @@ contact_form:
           required: false
     - click_on:
         - selector: "#ValidateAddressButton"
-        - selector: input#ResponseRequested_True
+        - selector: "label[for='ResponseRequested_False']"
     - wait:
         - value: 4
     - click_on:

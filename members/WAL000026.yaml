@@ -1,5 +1,6 @@
 bioguide: WAL000026
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/14/0"
     - fill_in:

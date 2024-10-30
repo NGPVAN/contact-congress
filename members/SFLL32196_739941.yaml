@@ -1,5 +1,6 @@
 bioguide: SFLL32196_739941
 contact_form:
+  driver: chrome
   steps: 
     - visit: "https://myfloridahouse.gov/Sections/Representatives/contactmember.aspx?MemberId=4764"
     - fill_in: 

@@ -1,0 +1,77 @@
+bioguide: MNYE13282860_99262685
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.nyc.gov/office-of-the-mayor/mayor-contact.page"
+    - select:
+        - name: topic
+          selector: select[name=Topic]
+          value: $TOPIC
+          required: true
+          options:
+            BUD: Budget
+            ED: Education 
+            ENVIRONMENT: Environmental 
+            VIEWS: General Views 
+            HOMELESS: Homelessness
+            HOUSING: Housing
+            IDEAS: Ideas or Suggestions
+            PUBLICSAFETY: Public Safety
+            QOL: Quality of Life 
+            CASE: Request for Assistance 
+            TRANSPORT: Traffic Safety 
+            TRANSPORT: Transportation
+            OTHER: Other 
+    - fill_in: 
+        - name: message
+          selector: textarea[name='MSG']
+          value: $MESSAGE
+          required: true
+        - name: prefix
+          selector: input[name='PREFIX']
+          value: $PREFIX
+          required: false
+        - name: first
+          selector: input[name='FIRST']
+          value: $NAME_FIRST
+          required: false
+        - name: last
+          selector: input[name='lAST']
+          value: $NAME_LAST
+          required: false
+        - name: address1
+          selector: input[name='ADDR1']
+          value: $ADDRESS_STREET1
+          required: false
+        - name: address2
+          selector: input[name='ADDR1']
+          value: $ADDRESS_STREET2
+          required: false
+        - name: city
+          selector: input[name='CITY']
+          value: $ADDRESS_CITY
+          required: false
+        - name: zipcode
+          selector: input[name='ZIP']
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input[name='PHONE_B']
+          value: $PHONE
+          required: false
+        - name: email
+          selector: input[name='EMAIL']
+          value: $EMAIL
+          required: true
+    - wait:
+        - value: 5
+    - click_on:
+        - value: Submit
+          selector: button.btn.btn-form-submit
+    - wait:
+        - value: 2
+  success:
+    body:
+      contains: "Thank You"
+        
+        

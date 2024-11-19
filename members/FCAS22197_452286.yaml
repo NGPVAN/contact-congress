@@ -4,6 +4,8 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://www.butler.senate.gov/share-your-opinion/"
+    - wait: 
+      - value: 2
     - click_on: 
       - selector: .eicon-close
     - fill_in:
@@ -65,7 +67,6 @@ contact_form:
         required: true
         options:
           AGR: Agriculture
-          PHONE CALL: PHONE CALL
           AN: Animal Welfare
           ART: Arts, Museums, & Libraries
           BANK: Banking & Financial Services

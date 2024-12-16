@@ -110,6 +110,8 @@ contact_form:
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
+    - wait: 
+        - value: 2
     - click_on:
         - selector: "#gform_submit_button_2"
     - wait:

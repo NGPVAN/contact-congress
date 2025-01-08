@@ -6,95 +6,91 @@ contact_form:
     - visit: "http://www.durbin.senate.gov/contact/email"
     - select:
         - name: actions
-          selector: "#actions"
+          selector: "#topicissues"
           value: $TOPIC
           required: true
           options:
+            ABORTION: Abortion
+            ACASTORIES: Affordable Care Act Stories
+            AG00: Agriculture
+            AN00: Animal Rights
+            BK00: Banking/Credit
+            BUDGET: Budget, Federal
+            AA005: Business/Commerce
+            CR00: Campaign Finance/Elections
+            CF00: Children Issues
+            JC00: Civil Rights and Liberties
+            JC00: Crime/Drugs
+            DE00: Defense/Military
+            DIETSUP: Dietary Supplements
+            EC00: Economy
+            ED00: Education
+            EN00: Energy
+            EV00: Environment
+            FP00: Foreign Policy
+            GU00: Guns
+            HE00: Health
+            HM00: Homeland Security
+            HS00: Housing
+            IM00: Immigration
+            FP00: Iraq
+            JC00: Judicial Nominations
+            LA00: Labor/Employment
+            TE00: Media/Telecommunications
+            HE00: Medicare
+            FP00: Middle East
+            GA00: Postal Service
+            SS00: Social Security/Seniors
             Student Debt Stories: Student Debt Stories
-            Abortion: Abortion
-            Affordable Care Act Stories: Affordable Care Act Stories
-            Agriculture: Agriculture
-            Animal Rights: Animal Rights
-            Banking/Credit: Banking/Credit
-            "Budget, Federal": "Budget, Federal"
-            Business/Commerce: Business/Commerce
-            Campaign Finance/Elections: Campaign Finance/Elections
-            Children Issues: Children Issues
-            Civil Rights and Liberties: Civil Rights and Liberties
-            Crime/Drugs: Crime/Drugs
-            Defense/Military: Defense/Military
-            Dietary Supplements: Dietary Supplements
-            Economy: Economy
-            Education: Education
-            Energy: Energy
-            Environment: Environment
-            Foreign Policy: Foreign Policy
-            Guns: Guns
-            Health: Health
-            Homeland Security: Homeland Security
-            Housing: Housing
-            Immigration: Immigration
-            Iraq: Iraq
-            Judicial Nominations: Judicial Nominations
-            Labor/Employment: Labor/Employment
-            Media/Telecommunications: Media/Telecommunications
-            Medicare: Medicare
-            Middle East: Middle East
-            Postal Service: Postal Service
-            Social Security/Seniors: Social Security/Seniors
-            Taxes: Taxes
-            Trade: Trade
-            Transportation: Transportation
-            Veterans: Veterans
-            War: War
-            Welfare: Welfare
-            "Women's Issues": "Women's Issues"
-            Other: Other
+            TX00: Taxes
+            TR00: Trade
+            TN00: Transportation
+            VA00: Veterans
+            FP00: War
+            WE00: Welfare
+            WM00: Women's Issues
+            OT00: Other
     - find:
-        - selector: "#fname"
+        - selector: "#input-9A6D9EFF-C5B9-43AE-BB7D-45AA94C0A712"
     - fill_in:
         - name: First Name
-          selector: "#fname"
+          selector: "#input-9A6D9EFF-C5B9-43AE-BB7D-45AA94C0A712"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#lname"
+          selector: "#input-0798EB9C-EFB8-4A76-914C-7A997B55638D"
           value: $NAME_LAST
           required: true
         - name: Street Address1
-          selector: "#mailing_streetAddress1"
+          selector: "#input-44D88FC9-4E92-4595-83B2-6454E29B4E1E"
           value: $ADDRESS_STREET
           required: true
         - name: StreetAddress2
-          selector: "#mailing_streetAddress2"
+          selector: "#input-D3B9CA9F-C832-4651-BCC5-4520ADBB72CA"
           value: $ADDRESS_STREET_2
           required: false
         - name: City
-          selector: "#mailing_city"
+          selector: "#input-FF61F49E-9758-43DD-A943-11C33EA203E1"
           value: $ADDRESS_CITY
           required: true
         - name: ZipCode
-          selector: "#mailing_zipCode"
+          selector: "#input-A15F268F-D94A-4FB5-8378-8AA10C927CE0"
           value: $ADDRESS_ZIP5
           required: true
         - name: home_phone_number
-          selector: "#home_phone_number"
+          selector: "#input-D9B6481B-F956-4197-8715-8247B03BB36A"
           value: $PHONE
           required: true
         - name: email
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: verify_email
-          selector: "#verify_email"
-          value: $EMAIL
-          required: true
         - name: subjecttext
-          selector: "#subjecttext"
+          selector: "#input-CB7E9D81-2598-47CA-B041-B1C09EBFE681"
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#message
+          selector: "textarea#input-2ED44860-E200-4A7A-91BF-01BEF2FD8E60"
           value: $MESSAGE
           required: true
     - javascript:
@@ -105,7 +101,7 @@ contact_form:
           required: true
     - select:
         - name: Your Prefix
-          selector: "#salutation"
+          selector: "#input-CF630D98-B981-406D-8C31-965FBE03BA42"
           value: $NAME_PREFIX
           required: true
           options:
@@ -244,13 +240,16 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
+    - select: 
+       - name: state
+         selector: "#input-162A312B-5B50-40A5-BC01-331E52108F1D"
+         value: $ADDRESS_STATE_POSTAL_ABBREV
+         required: true
+         options: 
+            IL: IL
     - click_on:
-        - selector: "#response"
-        - value: Send
-          selector: "#side-search-btn"
-    - find:
-        - value: Thank you
-          selector: "p"
+        - value: submit
+          selector: input[type='submit']
   success:
     body:
       contains: Thank you

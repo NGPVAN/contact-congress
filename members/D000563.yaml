@@ -4,6 +4,8 @@ contact_form:
   method: post
   steps:
     - visit: "http://www.durbin.senate.gov/contact/email"
+    - find: 
+        - selector: "#topicissues"
     - select:
         - name: actions
           selector: "#topicissues"
@@ -240,12 +242,11 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
-    - select: 
-       - name: state
-         selector: "#input-162A312B-5B50-40A5-BC01-331E52108F1D"
-         value: $ADDRESS_STATE_POSTAL_ABBREV
-         required: true
-         options: 
+        - name: state
+          selector: "#input-162A312B-5B50-40A5-BC01-331E52108F1D"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options: 
             IL: IL
     - click_on:
         - value: submit

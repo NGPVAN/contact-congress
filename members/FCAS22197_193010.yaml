@@ -4,60 +4,6 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://www.schiff.senate.gov/contact/"
-    - wait: 
-      - value: 2
-    - fill_in:
-      - name: first
-        selector: input#input_2_2
-        value: $NAME_FIRST
-        required: true
-      - name: last
-        selector: input#input_2_3
-        value: $NAME_LAST
-        required: true
-      - name: street
-        selector: input#input_2_6_1
-        value: $ADDRESS_STREET
-        required: true
-      - name: street2
-        selector: input#input_2_6_2
-        value: $ADDRESS_STREET_2
-        required: false
-      - name: city
-        selector: input#input_2_6_3
-        value: $ADDRESS_CITY
-        required: true
-      - name: zip5
-        selector: input#input_2_6_5
-        value: $ADDRESS_ZIP5
-        required: true
-      - name: phone
-        selector: input#input_2_41
-        value: $PHONE
-        required: true
-      - name: email
-        selector: input#input_2_9
-        value: $EMAIL
-        required: true
-      - name: verify email
-        selector: input#input_2_9_2
-        value: $EMAIL
-        required: true
-      - name: subject
-        selector: input#input_2_11
-        value: $SUBJECT
-        required: true
-      - name: message
-        selector: textarea#input_2_12
-        value: $MESSAGE
-        required: true
-        options:
-          max_length: 2970
-    - javascript:
-      - name: char replace
-        selectors: ["textarea#form-field-field_01539f0"]
-        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].value.replace(/(%2[0])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
-        required: true
     - select:
       - name: prefix
         selector: select#input_2_39
@@ -75,28 +21,6 @@ contact_form:
           Dean: Dean
           The Honorable: The Honorable
           Dr.: Dr. 
-      - name: topic
-        selector: select#input_2_17
-        value: $TOPIC
-        required: true
-        options:
-          AG: Agriculture
-          BUD: Budget
-          CHILD: Children
-          CF: Election Reform
-          ENV: Energy/Environment
-          HE: Health
-          HOUSING: Housing
-          IMM: Immigrant
-          JUD: Judiciary
-          LAB: Labor
-          DEF: Defense
-          LAB: Retirement
-          TAX: Taxes
-          TEL: Technology
-          TRD: Trade
-          TRAN: Transportation
-          VET: Veteran
       - name: state
         selector: select#input_2_6_4
         value: $ADDRESS_STATE_FULL
@@ -153,13 +77,89 @@ contact_form:
           WV: West Virginia
           WI: Wisconsin
           WY: Wyoming
+      - name: topic
+        selector: select#input_2_17
+        value: $TOPIC
+        required: true
+        options:
+          AG: Agriculture
+          BUD: Budget
+          CHILD: Children
+          CF: Election Reform
+          ENV: Energy/Environment
+          HE: Health
+          HOUSING: Housing
+          IMM: Immigrant
+          JUD: Judiciary
+          LAB: Labor
+          DEF: Defense
+          LAB: Retirement
+          TAX: Taxes
+          TEL: Technology
+          TRD: Trade
+          TRAN: Transportation
+          VET: Veteran
+    - fill_in:
+      - name: first
+        selector: input#input_2_2
+        value: $NAME_FIRST
+        required: true
+      - name: last
+        selector: input#input_2_3
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#input_2_6_1
+        value: $ADDRESS_STREET
+        required: true
+      - name: street2
+        selector: input#input_2_6_2
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input#input_2_6_3
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input#input_2_6_5
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: input#input_2_41
+        value: $PHONE
+        required: false
+      - name: email
+        selector: input#input_2_9
+        value: $EMAIL
+        required: true
+      - name: verify email
+        selector: input#input_2_9_2
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: input#input_2_11
+        value: $SUBJECT
+        required: true
+      - name: message
+        selector: textarea#input_2_12
+        value: $MESSAGE
+        required: true
+        options:
+          max_length: 2970
+    - javascript:
+      - name: char replace
+        selectors: ["textarea#form-field-field_01539f0"]
+        commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].value.replace(/(%2[0])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
+        required: true
     - wait: 
-      - value: 2
+      - value: 3
     - click_on:
-      - value: Submit
+      - value: newsletter
+        selector: "#choice_2_43_1"
+      - value: submit
         selector: "#gform_submit_button_2"
     - wait: 
-      - value: 7
+      - value: 4
   success:
     body:
       contains: "Thank you"

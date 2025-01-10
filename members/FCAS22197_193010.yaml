@@ -107,10 +107,10 @@ contact_form:
       - value: 12
     - click_on:
       - value: newsletter
-        selector: input#choice_2_43_1
+        selector: div.gchoice.gchoice_2_43_1 .gfield-choice-input
     - click_on: 
       - value: submit
-        selector: input#gform_submit_button_2
+        selector: div.gform_footer.top_label .gform_button.button
   success:
     body:
       contains: "Thank you"

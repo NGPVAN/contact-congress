@@ -1,5 +1,6 @@
 bioguide: SWALbe6b8c5f
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/32/2"
@@ -20,6 +21,14 @@ contact_form:
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
           required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Validate address
+          selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
+    - fill_in:
         - name: First Name
           selector: "#FirstName"
           value: $NAME_FIRST
@@ -57,13 +66,12 @@ contact_form:
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
     - click_on:
-        - selector: "#ValidateAddressButton"
-        - selector: input#ResponseRequested_True
-    - wait:
-        - value: 4
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
   success:
     headers:
       status: 200

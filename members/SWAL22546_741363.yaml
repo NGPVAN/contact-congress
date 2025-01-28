@@ -1,6 +1,6 @@
 bioguide: SWAL22546_741363
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/16/1"
     - find:
@@ -60,7 +60,7 @@ contact_form:
           required: false
     - click_on:
         - value: Response requested
-          selector: "#ResponseRequested_True"
+          selector: "label[for='ResponseRequested_False']"
     - wait:
       - value: 2
     - click_on:

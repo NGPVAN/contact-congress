@@ -1,10 +1,11 @@
 bioguide: SWALa1f88278
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/5/2"
-    - fill_in:
-        - name: Street
+     - fill_in:
+        - name: street
           selector: "#Address_Street"
           value: $ADDRESS_STREET
           required: true
@@ -20,15 +21,23 @@ contact_form:
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
           required: true
-        - name: First Name
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Validate address
+          selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
+    - fill_in:
+        - name: firstname
           selector: "#FirstName"
           value: $NAME_FIRST
           required: true
-        - name: Last Name
+        - name: lastname
           selector: "#LastName"
           value: $NAME_LAST
           required: true
-        - name: email address
+        - name: emailaddress
           selector: "#Email"
           value: $EMAIL
           required: true
@@ -48,7 +57,7 @@ contact_form:
           selector: "#Comment"
           value: $MESSAGE
           required: true
-          options:
+          options: 
             max_length: 1000
     - javascript:
         - name: phone
@@ -57,15 +66,15 @@ contact_form:
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
     - click_on:
-        - selector: "#ValidateAddressButton"
-        - selector: input#ResponseRequested_True
-    - wait:
-        - value: 4
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
   success:
     headers:
       status: 200
     body:
-      contains: The following message was sent to
+      contains: Thank you 
+

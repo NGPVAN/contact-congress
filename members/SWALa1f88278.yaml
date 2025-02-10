@@ -4,7 +4,7 @@ contact_form:
   method: post
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/5/2"
-     - fill_in:
+    - fill_in:
         - name: street
           selector: "#Address_Street"
           value: $ADDRESS_STREET

@@ -1,5 +1,6 @@
 bioguide: SWAU36495_480104
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://app.leg.wa.gov/pbc/memberEmail/38/0"
     - fill_in:

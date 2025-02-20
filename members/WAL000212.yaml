@@ -1,5 +1,6 @@
 bioguide: WAL000212
 contact_form:
+  driver: chrome
   method: post
   action: /pbc/memberEmail/35/1
   steps:
@@ -62,13 +63,12 @@ contact_form:
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
     - click_on:
-        - value: Response requested
-          selector: "#ResponseRequested_True"
-    - wait:
-      - value: 2
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
+    - wait: 
+        - value: 2
   success:
     headers:
       status: 200

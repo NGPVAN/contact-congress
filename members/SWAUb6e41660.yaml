@@ -64,10 +64,8 @@ contact_form:
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
-    - find:
-        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
     - click_on:
-        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
+        - selector: "label[for='ResponseRequested_False']"
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"

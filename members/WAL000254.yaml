@@ -20,9 +20,13 @@ contact_form:
           selector: "#Address_Zip"
           value: $ADDRESS_ZIP5
           required: true
+    - wait: 
+        - value: 2
     - click_on:
         - value: Validate address
           selector: "#ValidateAddressButton"
+    - wait: 
+        - value: 3
     - fill_in:
         - name: firstname
           selector: "#FirstName"
@@ -60,14 +64,11 @@ contact_form:
           values: [ "$PHONE" ]
           commands: [ "elements[0].value = values[0].replace(/\\D/g,'').length > 10 ? values[0].replace(/\\D/g,'').substr(1) : values[0].replace(/\\D/g,'')" ]
           required: false
-    - wait:
-        - value: 2
-    - find:
-        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
     - click_on:
-        - selector: div#ResponseRequested_EmailForm #ResponseRequested_False
+        - value: Response requested
+          selector: "label[for='ResponseRequested_False']"
     - wait:
-        - value: 2
+      - value: 2
     - click_on:
         - value: Send
           selector: "#FormSubmitButton"
@@ -75,4 +76,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: The following message was sent to
+      contains: Thank you 

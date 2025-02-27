@@ -77,4 +77,4 @@ contact_form:
     headers:
       status: 200
     body:
-      contains: The following message was sent to
+      contains: Thank you

@@ -1,47 +1,55 @@
 bioguide: SPAL24162_734365
 contact_form:
+  driver: chrome
   steps:
-  - visit: https://www.repmiloumackenziepa.com/contact
-  - find:
-    - selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
-  - fill_in:
-    - name: First Name
-      selector: '#ctl00_ContentPlaceHolder1_txtFirstName'
-      value: $NAME_FIRST
-      required: true
-    - name: Last Name
-      selector: '#ctl00_ContentPlaceHolder1_txtLastName'
-      value: $NAME_LAST
-      required: true
-    - name: email
-      selector: '#ctl00_ContentPlaceHolder1_txtEmail'
-      value: $EMAIL
-      required: true
-    - name: phone
-      selector: '#ctl00_ContentPlaceHolder1_txtPhone'
-      value: $PHONE
-      required: true
-    - name: Address
-      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepAddress'
-      value: $ADDRESS_STREET
-      required: true
-    - name: City
-      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepCity'
-      value: $ADDRESS_CITY
-      required: true
-    - name: zip
-      selector: '#ctl00_ContentPlaceHolder1_txtFindYourRepZip'
-      value: $ADDRESS_ZIP5
-      required: true
-    - name: Message
-      selector: '#ctl00_ContentPlaceHolder1_txtAction'
-      value: $MESSAGE
-      required: true
-  - click_on:
-    - value: Submit
-      selector: '#ctl00_ContentPlaceHolder1_btnSubmitContact'
-  - find:
-    - selector: .find-rep label
+    - visit: https://www.repmiloumackenziepa.com/contact
+    - wait: 
+      - value: 3
+    - fill_in:
+      - name: First Name
+        selector: "#firstName "
+        value: $NAME_FIRST
+        required: true
+      - name: Last Name
+        selector: "#lastName"
+        value: $NAME_LAST
+        required: true
+      - name: email
+        selector: "#email"
+        value: $EMAIL
+        required: true
+      - name: phone
+        selector: "#homePhone"
+        value: $PHONE
+        required: true
+      - name: Address
+        selector: "#address"
+        value: $ADDRESS_STREET
+        required: true
+      - name: City
+        selector: "#city"
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip
+        selector: "#zipCode"
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: Message
+        selector: "#message"
+        value: $MESSAGE
+        required: true
+    - select: 
+      - name: state
+        selector: "#state"
+        value: $ADDRESS_STATE_POSTAL_ABBREV
+        required: true
+        options: 
+          PA: PA
+    - wait: 
+      - value: 2
+    - click_on:
+      - value: Submit
+        selector: "button[type='submit']"
   success:
     body:
       contains: Thank

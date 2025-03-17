@@ -46,10 +46,10 @@ contact_form:
         options: 
           PA: PA
     - wait: 
-      - value: 2
+      - value: 3
     - click_on:
       - value: Submit
-        selector: "button[type='submit']"
+        selector: button.btn.alt-bg
   success:
     body:
       contains: Thank

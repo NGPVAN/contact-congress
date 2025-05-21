@@ -1,7 +1,7 @@
 bioguide: WIL000539
 contact_form:
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/86/spiros/contact-me/"
+    - visit: "https://legis.wisconsin.gov/assembly/86/spiros/contact-john/"
     - fill_in:
         - name: Name
           selector: div.name input
@@ -12,8 +12,12 @@ contact_form:
           value: $EMAIL
           required: true
         - name: Address
-          selector: div.address textarea
-          value: $ADDRESS_FULL
+          selector: div.address input
+          value: $ADDRESS_STREET
+          required: true
+        - name: Address
+          selector: div.address2 input
+          value: $ADDRESS_STREET_2
           required: true
         - name: Phone
           selector: div.phonenumber input
@@ -23,6 +27,8 @@ contact_form:
           selector: div.message textarea
           value: $MESSAGE
           required: true
+    - wait: 
+        - value: 2
     - click_on:
         - selector: input[type='submit'][value='Submit']
   success:

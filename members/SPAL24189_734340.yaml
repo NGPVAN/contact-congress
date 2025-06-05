@@ -44,7 +44,7 @@ contact_form:
     - value: Submit
       selector: div.main-content.form button.btn.alt-bg
   - wait: 
-    - value: 2
+    - value: 4
   success:
     body:
       contains: Thank

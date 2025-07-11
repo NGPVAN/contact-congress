@@ -4,8 +4,8 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://www.cortezmasto.senate.gov/contact/connect"
-    - find:
-        - selector: div#elementor-tab-title-1151
+    - wait:
+        - value: 3
     - click_on:
         - selector: div#elementor-tab-title-1151
     - find:

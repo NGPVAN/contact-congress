@@ -1,0 +1,61 @@
+bioguide: SMIG6ec544b4
+contact_form:
+  driver: chrome
+  steps: 
+    - visit: "https://somgovweb.state.mi.us/GovRelations/ContactGovernor.aspx"
+    - wait: 
+        - value: 3
+    - click_on: 
+        - selector: '#optOpinion'
+    - fill_in: 
+        - name: name
+          selector: '#ctl00_Content_CitRequestFirstName'
+          value: $NAME_FIRST
+          required: true
+        - name: last name
+          selector: '#ctl00_Content_CitRequestLastName'
+          value: $NAME_LAST
+          required: true
+        - name: address
+          selector: '#ctl00_Content_CitRequestAddress'
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: '#ctl00_Content_CitRequestCity'
+          value: $ADDRESS_CITY
+          required: 
+        - name: zip code
+          selector: '#ctl00_Content_CitRequestZipCode'
+          value: $ADDRESS_ZIP5
+          required:  
+        - name: phone
+          selector: '#ctl00_Content_CitRequestPhone'
+          value: $PHONE
+          required: true
+        - name: email
+          selector: '#ctl00_Content_CitRequestEmail'
+          value: $EMAIL
+          required:
+        - name: message
+          selector:  '#ctl00_Content_CitRequestText'
+          value: $MESSAGE
+          required: true
+    - select: 
+        - name: state
+          selector: '#ctl00_Content_CitRequestState'
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            MI: Michigan
+    - wait: 
+        - value: 3
+    - click_on:
+        - value: send message
+          selector: '#ctl00_Content_btnSubmit'
+    - wait: 
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Request submitted" 

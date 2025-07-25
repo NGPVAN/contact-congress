@@ -49,5 +49,5 @@ contact_form:
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Thank you for contacting my office"
+      contains: "Thank you"
 

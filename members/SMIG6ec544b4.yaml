@@ -23,11 +23,11 @@ contact_form:
         - name: city
           selector: '#ctl00_Content_CitRequestCity'
           value: $ADDRESS_CITY
-          required: 
+          required: true
         - name: zip code
           selector: '#ctl00_Content_CitRequestZipCode'
           value: $ADDRESS_ZIP5
-          required:  
+          required: true
         - name: phone
           selector: '#ctl00_Content_CitRequestPhone'
           value: $PHONE
@@ -35,7 +35,7 @@ contact_form:
         - name: email
           selector: '#ctl00_Content_CitRequestEmail'
           value: $EMAIL
-          required:
+          required: true
         - name: message
           selector:  '#ctl00_Content_CitRequestText'
           value: $MESSAGE

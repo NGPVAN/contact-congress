@@ -3,59 +3,57 @@ contact_form:
   driver: chrome
   steps: 
     - visit: "https://somgovweb.state.mi.us/GovRelations/ContactGovernor.aspx"
-    - wait: 
-        - value: 3
     - click_on: 
-        - selector: '#optOpinion'
+        - selector: .label-text
     - fill_in: 
         - name: name
-          selector: '#ctl00_Content_CitRequestFirstName'
+          selector: "#firstName"
           value: $NAME_FIRST
           required: true
         - name: last name
-          selector: '#ctl00_Content_CitRequestLastName'
+          selector: "#lastName"
           value: $NAME_LAST
           required: true
         - name: address
-          selector: '#ctl00_Content_CitRequestAddress'
+          selector: "#StreetAddress"
           value: $ADDRESS_STREET
           required: true
         - name: city
-          selector: '#ctl00_Content_CitRequestCity'
+          selector: "#city"
           value: $ADDRESS_CITY
           required: true
         - name: zip code
-          selector: '#ctl00_Content_CitRequestZipCode'
+          selector: "#zipCode"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: '#ctl00_Content_CitRequestPhone'
+          selector: "#Phone"
           value: $PHONE
           required: true
         - name: email
-          selector: '#ctl00_Content_CitRequestEmail'
+          selector: "#email"
           value: $EMAIL
           required: true
         - name: message
-          selector:  '#ctl00_Content_CitRequestText'
+          selector:  "#descriptionOfIssue"
           value: $MESSAGE
           required: true
     - select: 
         - name: state
-          selector: '#ctl00_Content_CitRequestState'
+          selector: "#state"
           value: $ADDRESS_STATE_FULL
           required: true
           options: 
             MI: Michigan
     - wait: 
-        - value: 3
+        - value: 2
     - click_on:
         - value: send message
-          selector: '#ctl00_Content_btnSubmit'
+          selector: button.btn
     - wait: 
-        - value: 3
+        - value: 4
   success:
     headers:
       status: 200
     body:
-      contains: 'Thank you'
+      contains: "Thank you"

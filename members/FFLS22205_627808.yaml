@@ -7,7 +7,7 @@ contact_form:
       - name: Prefix
         selector: input#input_2_5
         value: $NAME_PREFIX
-        required: true
+        required: false
       - name: first
         selector: input#input_2_6
         value: $NAME_FIRST

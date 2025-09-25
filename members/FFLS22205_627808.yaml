@@ -35,7 +35,7 @@ contact_form:
       - name: phone
         selector: input#input_2_13
         value: $PHONE
-        required: true
+        required: false
       - name: email
         selector: input#input_2_14
         value: $EMAIL

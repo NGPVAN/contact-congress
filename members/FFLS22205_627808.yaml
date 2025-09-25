@@ -1,0 +1,131 @@
+#US Senator Ashley Moody
+bioguide: FFLS22205_627808
+contact_form:
+  steps:
+    - visit: "https://www.moody.senate.gov/contact-us/"
+    - fill_in:
+      - name: Prefix
+        selector: input#input_2_5
+        value: $NAME_PREFIX
+        required: true
+      - name: first
+        selector: input#input_2_6
+        value: $NAME_FIRST
+        required: true
+      - name: last
+        selector: input#input_2_7
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: input#input_2_8
+        value: $ADDRESS_STREET
+        required: true
+      - name: street2
+        selector: input#input_2_9
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: input#input_2_10
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: input#input_2_12
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: input#input_2_13
+        value: $PHONE
+        required: true
+      - name: email
+        selector: input#input_2_14
+        value: $EMAIL
+        required: true
+      - name: subject
+        selector: input#input_2_15
+        value: $SUBJECT
+        required: true
+      - name: message
+        selector: textarea#input_2_4
+        value: $MESSAGE
+        required: true
+    - select:
+      - name: topic
+        selector: select#input_2_3
+        value: $TOPIC
+        required: true
+        options:
+          "AGR": Agriculture
+          "AN": Animals 
+          "ART": Arts
+          "BANK": Banking 
+          "BUD": Budget and Economy 
+          "CAMPFI": Campaign Finance 
+          "CASEWORK": Help with a Federal Agency 
+          "CFR": Campaign Finance Reform
+          "CIVIL": Civil Rights/Humanities
+          "CIVILSERV": Civil Service/Postal
+          "CONG": Congress and Elections
+          "CONGRESS": Congressional Issues
+          "CTC": Child Tax Credit
+          "CWC-OPT-IN": CWC-Opt-in
+          "DEF": Defense and Military
+          "DEFENSE": Defense 
+          "ECON": Economy 
+          "ED.HIGH": Education Higher
+          "EDU": Education 
+          "EFORM RESPONSE": eForm RESPONSE
+          "ENE": Energy 
+          "E-NEWS REPLY": E-News Reply 
+          "ENEWS SUBSCRIBE": E-News Reply 
+          "ENV": Environmental
+          "FAM": Family/Marriage
+          "FED": Federal Employees
+          "FLAG": Flag Request
+          "FOOD": Food Safety
+          "FR": Foreign Relations
+          "GOV": Governmental Reform
+          "GUNS": GUNS
+          "HEALTH": Health 
+          "HUD": Housing & Urban Development
+          "IMM": Immigration 
+          "INFRASTRUCTURE": Infrastructure
+          "INT": International Relations
+          "INTERNSHIP REQUEST": Internship Request 
+          "IRS": IRS
+          "JOBS": Jobs and the Economy 
+          "JUD": Judiciary 
+          "LABOR": Labor
+          "LGBT": LGBT
+          "MIL": Military 
+          "NRN": No Response Necessary 
+          "NRN-CWC": CWC-No Response Necessary
+          "NRN-WEBSITE": Website-No Response Neccessary
+          "Office Registry": Office Registry Web Form
+          "OTHER": Other Issues
+          "PASSPORTS": Passport Casework
+          "POST": Post Office
+          "REGISTER TO RESPOND": REGISTER to RESPOND
+          "RESPONSE REPLY": Response Reply 
+          "SCI": Science and Technology
+          "SEC": Security 
+          "SENIORS": Senior Citizens
+          "SERVICES REPLY": Services Reply 
+          "SM.BUS": Small Business 
+          "SOC": Social Issues
+          "SOC Services": Social Services
+          "SPAM OPT-OUT": Spam Opt-Out
+          "SSEC": Social Security
+      - name: state 
+        selector: select#input_2_11
+        value: $ADDRESS_STATE_FULL
+        required: true
+        options: 
+          "Florida": Florida   
+    - wait: 
+      - value: 4
+    - click_on:
+      - value: Submit
+        selector: input#gform_submit_button_2
+  success:
+    body:
+      contains: "Thanks for contacting"

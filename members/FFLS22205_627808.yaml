@@ -54,67 +54,50 @@ contact_form:
         value: $TOPIC
         required: true
         options:
+          "APPROPRIA": Appropriations/Budget
           "AGR": Agriculture
           "AN": Animals 
-          "ART": Arts
-          "BANK": Banking 
-          "BUD": Budget and Economy 
-          "CAMPFI": Campaign Finance 
-          "CASEWORK": Help with a Federal Agency 
-          "CFR": Campaign Finance Reform
-          "CIVIL": Civil Rights/Humanities
-          "CIVILSERV": Civil Service/Postal
+          "ART": Arts and Humanities
+          "BANK": Banking & Financial Services
+          "BORDER.SEC": Border Security
+          "CAMPFI": Campaign Finance and Reform
+          "CENSORSHIP": Censorship
+          "CIVIL": Constitutional/Civil Rights
           "CONG": Congress and Elections
-          "CONGRESS": Congressional Issues
-          "CTC": Child Tax Credit
-          "CWC-OPT-IN": CWC-Opt-in
           "DEF": Defense and Military
           "DEFENSE": Defense 
-          "ECON": Economy 
           "ED.HIGH": Education Higher
-          "EDU": Education 
-          "EFORM RESPONSE": eForm RESPONSE
+          "EDU.K12": Education K-12 
           "ENE": Energy 
-          "E-NEWS REPLY": E-News Reply 
-          "ENEWS SUBSCRIBE": E-News Reply 
           "ENV": Environmental
-          "FAM": Family/Marriage
-          "FED": Federal Employees
-          "FLAG": Flag Request
-          "FOOD": Food Safety
-          "FR": Foreign Relations
           "GOV": Governmental Reform
-          "GUNS": Guns
           "HEALTH": Health 
-          "HUD": Housing & Urban Development
+          "HOM": Homeland Security
+          "HOUSING": Housing 
+          "Medicaid": Medicaid
+          "Medicare": Medicare
+          "NAT.SEC": National Security
+          "NASA": NASA
           "IMM": Immigration 
           "INFRASTRUCTURE": Infrastructure
-          "INT": International Relations
-          "INTERNSHIP REQUEST": Internship Request 
-          "IRS": IRS
+          "INT": International Affairs
+          "IRS": IRS & Tax
           "JOBS": Jobs and the Economy 
-          "JUD": Judiciary 
+          "JUDGES": Judges
+          "JUD": Judicial
           "LABOR": Labor
           "LGBT": LGBT
-          "MIL": Military 
-          "NRN": No Response Necessary 
-          "NRN-CWC": CWC-No Response Necessary
-          "NRN-WEBSITE": Website-No Response Neccessary
-          "Office Registry": Office Registry Web Form
           "OTHER": Other Issues
-          "PASSPORTS": Passport Casework
           "POST": Post Office
-          "REGISTER TO RESPOND": REGISTER to RESPOND
-          "RESPONSE REPLY": Response Reply 
+          "GUN": Second Amendment
           "SCI": Science and Technology
-          "SEC": Security 
-          "SENIORS": Senior Citizens
-          "SERVICES REPLY": Services Reply 
           "SM.BUS": Small Business 
           "SOC": Social Issues
-          "SOC Services": Social Services
-          "SPAM OPT-OUT": Spam Opt-Out
           "SSEC": Social Security
+          "TRADE": Trade 
+          "TRA": Transportation
+          "VET": Veterans
+          "WILD": Wildlife
       - name: state 
         selector: select#input_2_11
         value: $ADDRESS_STATE_FULL

@@ -1,6 +1,7 @@
 #US Senator Ashley Moody
 bioguide: FFLS22205_627808
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://www.moody.senate.gov/contact-us/"
     - fill_in:
@@ -35,7 +36,7 @@ contact_form:
       - name: phone
         selector: input#input_2_13
         value: $PHONE
-        required: true
+        required: false
       - name: email
         selector: input#input_2_14
         value: $EMAIL

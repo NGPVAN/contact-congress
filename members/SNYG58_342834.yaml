@@ -1,0 +1,114 @@
+bioguide: SNYG58_342834
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.governor.ny.gov/content/governor-contact-form"
+    - select:
+        - name: Your Prefix
+          selector: "#edit-salutation"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mx.: Mx.
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Mr. & Mrs.: Mr. & Mrs.
+            Mr. & Mr.: Mr. & Mr.
+            Mrs. & Mrs.: Mrs. & Mrs.
+            Blank: Blank
+    - fill_in:
+        - name: First Name
+          selector: "#edit-first-name"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#edit-last-name"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#edit-email"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#edit-telephone-number"
+          value: $PHONE
+          required: true
+        - name: street
+          selector: "#edit-address"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "#edit-city"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: "#edit-zip-code-contact"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: subject
+          selector: "#edit-subject"
+          value: $SUBJECT
+          required: true
+          options:
+            max_length: 255
+        - name: message
+          selector: "#edit-message"
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: stateFull
+          selector: "#edit-contact-form-state"
+          value: New York
+          required: true
+        - name: topic
+          selector: "#edit-topic"
+          value: $TOPIC
+          required: true
+          options:
+            agriculture: Agriculture
+            animals: Animals
+            banking_insurance: Banking/Insurance
+            broadband: Broadband
+            correctional_services: Correction Services 
+            COVID-19: COVID-19
+            criminal_justice: Criminal Justice
+            economic_development: Economic Development
+            education: Education
+            energy: Energy
+            environment: Environment
+            health: Health
+            higher_education: Higher Education
+            homeland_security: Homeland Security
+            housing: Housing
+            human_rights: Human Rights
+            immigration: Immigration
+            infrastructure: Infrastructure
+            jobs: Jobs
+            legislation: Legislation
+            lgbt_rights: LGBT Rights
+            military_naval_affairs: Military & Naval Affairs
+            mwbe: MWBE
+            other: Other
+            parks_and_recreation: Parks and Recreation
+            public_safety: Public Safety
+            public_utilities: Public Utilities 
+            regional_affairs: Regional Affairs
+            taxes: Taxes
+            tourism: Tourism
+            transportation: Transportation
+            unemployment: Unemployment
+            veterans_affaris: Veterans Affairs
+            women_s_issues: Women's Issues 
+            worker_exploitation: Worker Exploitation
+    - wait:
+        - value: 8
+    - find:
+        - selector: "#edit-actions-submit"
+    - click_on:
+        - selector: "#edit-actions-submit"
+    - find:
+        - selector: div.region div p:first-child strong
+  success:
+    body:
+      contains: Thank you very much for your email

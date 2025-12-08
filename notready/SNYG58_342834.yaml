@@ -3,6 +3,20 @@ contact_form:
   driver: chrome
   steps:
     - visit: "https://www.governor.ny.gov/content/governor-contact-form"
+    - select:
+        - name: Your Prefix
+          selector: "#edit-salutation"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mx.: Mx.
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Mr. & Mrs.: Mr. & Mrs.
+            Mr. & Mr.: Mr. & Mr.
+            Mrs. & Mrs.: Mrs. & Mrs.
+            Blank: Blank
     - fill_in:
         - name: First Name
           selector: "#edit-first-name"
@@ -43,19 +57,6 @@ contact_form:
           value: $MESSAGE
           required: true
     - select:
-        - name: Your Prefix
-          selector: "#edit-salutation"
-          value: $NAME_PREFIX
-          required: true
-          options:
-            Mx.: Mx.
-            Mr.: Mr.
-            Ms.: Ms.
-            Mrs.: Mrs.
-            Mr. & Mrs.: Mr. & Mrs.
-            Mr. & Mr.: Mr. & Mr.
-            Mrs. & Mrs.: Mrs. & Mrs.
-            Blank: Blank
         - name: stateFull
           selector: "#edit-contact-form-state"
           value: New York
@@ -67,26 +68,41 @@ contact_form:
           options:
             agriculture: Agriculture
             animals: Animals
+            banking_insurance: Banking/Insurance
+            broadband: Broadband
+            correctional_services: Correction Services 
+            COVID-19: COVID-19
             criminal_justice: Criminal Justice
             economic_development: Economic Development
             education: Education
             energy: Energy
             environment: Environment
             health: Health
+            higher_education: Higher Education
             homeland_security: Homeland Security
             housing: Housing
             human_rights: Human Rights
             immigration: Immigration
             infrastructure: Infrastructure
+            jobs: Jobs
             legislation: Legislation
             lgbt_rights: LGBT Rights
+            military_naval_affairs: Military & Naval Affairs
+            mwbe: MWBE
             other: Other
+            parks_and_recreation: Parks and Recreation
             public_safety: Public Safety
+            public_utilities: Public Utilities 
+            regional_affairs: Regional Affairs
             taxes: Taxes
+            tourism: Tourism
             transportation: Transportation
+            unemployment: Unemployment
             veterans_affaris: Veterans Affairs
+            women_s_issues: Women's Issues 
+            worker_exploitation: Worker Exploitation
     - wait:
-        - value: 11
+        - value: 8
     - find:
         - selector: "#edit-actions-submit"
     - click_on:

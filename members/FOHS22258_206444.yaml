@@ -66,7 +66,11 @@ contact_form:
           value: $ADDRESS_STATE_FULL
           required: true
           options: 
+<<<<<<< HEAD
             Missouri: Ohio
+=======
+            Ohio: Ohio
+>>>>>>> cce3dfd7 (eva-21222: Update Jon Husted)
         - name: Topic
           selector: "#form-field-message"
           value: $TOPIC

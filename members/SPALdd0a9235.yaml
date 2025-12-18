@@ -1,6 +1,7 @@
 bioguide: SPALdd0a9235
 contact_form:
   method: post
+  driver: chrome
   action:
   steps:
     - visit: "http://www.repstruzzi.com/contact"
@@ -10,40 +11,46 @@ contact_form:
         - value: 1
     - fill_in:
         - name: First Name
-          selector: "#ctl00_ContentPlaceHolder1_txtFirstName"
+          selector: "#firstName"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#ctl00_ContentPlaceHolder1_txtLastName"
+          selector: "#lastName"
           value: $NAME_LAST
           required: true
         - name: email
-          selector: "#ctl00_ContentPlaceHolder1_txtEmail"
+          selector: "#email"
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#ctl00_ContentPlaceHolder1_txtPhone"
+          selector: "#homePhone"
           value: $PHONE
           required: true
         - name: Address
-          selector: "#ctl00_ContentPlaceHolder1_txtFindYourRepAddress"
+          selector: "#address"
           value: $ADDRESS_STREET
           required: true
         - name: City
-          selector: "#ctl00_ContentPlaceHolder1_txtFindYourRepCity"
+          selector: "#city"
           value: $ADDRESS_CITY
           required: true
         - name: zip
-          selector: "#ctl00_ContentPlaceHolder1_txtFindYourRepZip"
+          selector: "#zipCode"
           value: $ADDRESS_ZIP5
           required: true
         - name: Message
-          selector: "#ctl00_ContentPlaceHolder1_txtAction"
+          selector: "#message"
           value: $MESSAGE
           required: true
+    - javascript: 
+        - selector: ["#button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
     - click_on:
         - value: Submit
-          selector: "#ctl00_ContentPlaceHolder1_btnSubmitContact"
+          selector: "button.btn"
     - wait:
         - value: 1
   success:
@@ -51,3 +58,4 @@ contact_form:
       status: 200
     body:
       contains: Thank
+

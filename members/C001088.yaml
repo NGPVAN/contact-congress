@@ -2,53 +2,54 @@
 bioguide: C001088
 contact_form:
   method: POST
+  driver: chrome
   steps:
     - visit: "https://www.coons.senate.gov/contact/share-your-opinion"
     - find:
-      - selector: "#input-FF88275E-5056-A066-608F-B6EF2D7F5129"
+      - selector: "#input_2_39"
     - fill_in:
       - name: First Name
-        selector: "#input-FF88275E-5056-A066-608F-B6EF2D7F5129"
+        selector: "#input_2_2"
         value: $NAME_FIRST
         required: true
       - name: Last Name
-        selector: "#input-FF8824D9-5056-A066-6042-D99D7CEAA2BC"
+        selector: "#input_2_3"
         value: $NAME_LAST
         required: true
       - name: Email
-        selector: "#email"
+        selector: "#input_2_9"
         value: $EMAIL
         required: true
       - name: verify_email
-        selector: "#input-FF882560-5056-A066-60DF-9C3CD4FE1ADF"
+        selector: "#input_2_9_2"
         value: $EMAIL
         required: true
       - name: phone
-        selector: "#input-FF882786-5056-A066-608C-BB8B5B68A0D4"
+        selector: "#input_2_41"
         value: $PHONE
         required: true
       - name: street
-        selector: "#input-FF8827AE-5056-A066-6032-D1283B1BFC86"
+        selector: "#input_2_6_1"
         value: $ADDRESS_STREET
         required: true
       - name: street2
-        selector: "#input-FF8828DC-5056-A066-609F-72EAACE2E1FB"
+        selector: "#input_2_6_2"
         value: $ADDRESS_STREET_2
         required: false
       - name: city
-        selector: "#input-FF882891-5056-A066-60BC-62384E97C895"
+        selector: "#input_2_6_3"
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: "#input-FF8824F9-5056-A066-6083-362FD35DCACE"
+        selector: "#input_2_6_5"
         value: $ADDRESS_ZIP5
         required: true
       - name: Subject
-        selector: "#input-17D0611B-5056-A066-608B-2951F7B97365"
+        selector: "#input_2_11"
         value: $SUBJECT
         required: true
       - name: message
-        selector: "#input-FF88260A-5056-A066-6070-B369711DCB30"
+        selector: "#input_2_12"
         value: $MESSAGE
         required: true
         options:
@@ -56,12 +57,18 @@ contact_form:
     - javascript:
         - name: char replace
           values: ["$MESSAGE"]
-          selectors: ["#input-FF88260A-5056-A066-6070-B369711DCB30"]
+          selectors: ["#input_2_12"]
           commands: ["for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(-)/g,'').replace(/(%2[0C])/g, '').replace(/(CC:)/g,'CC').replace(/[(]/g,'[').replace(/[)]/g,']');}"]
           required: true
     - select:
+      - name: State
+        selector: "#input_2_6_4"
+        value: $ADDRESS_STATE_FULL
+        required: true
+        options: 
+          Delaware: Delaware
       - name: Your Prefix
-        selector: "#input-FF882848-5056-A066-60D7-1A3C4C6ADC8D"
+        selector: "#input_2_39"
         value: $NAME_PREFIX
         required: true
         options:
@@ -138,50 +145,57 @@ contact_form:
           Airman First Class: Airman First Class
           Airman: Airman
       - name: topic
-        selector: "#input-FF882414-5056-A066-60CD-8CEF5C561EBD"
+        selector: "#input_2_17"
         value: $TOPIC
         required: true
         options:
-          Abortion/Reproductive Health: Abortion/Reproductive Health
-          Agriculture: Agriculture
-          Animal Welfare: Animal Welfare
-          Banking and Financial Services: Banking and Financial Services
-          Budget and Appropriations: Budget and Appropriations
-          Civil Rights: Civil Rights
-          Climate Change: Climate Change
-          Crime and Law Enforcement: Crime and Law Enforcement
-          Defense: Defense
-          Deficit Reduction: Deficit Reduction
-          Domestic Violence: Domestic Violence
-          Drugs: Drugs
-          Economy: Economy
-          Education: Education
-          Energy: Energy
-          Environment: Environment
-          Foreign Policy: Foreign Policy
-          Guns: Guns
-          Health Care: Health Care
-          Homeland Security: Homeland Security
-          Immigration: Immigration
-          Jobs: Jobs
-          Labor: Labor
-          LGBT Equality: LGBT Equality
-          Manufacturing: Manufacturing
-          Military Operations: Military Operations
-          Seniors, Social Security and Medicare: Seniors, Social Security and Medicare
-          Taxes: Taxes
-          Trade: Trade
-          Transportation and Infrastructure: Transportation and Infrastructure
-          Veterans: Veterans
-          Miscellaneous: Miscellaneous
-          National Service: National Service
+          AGRI: Agriculture
+          ANIMAL: Animal Welfare
+          APPROPS/BUDGET: Apporpriations/Federal Budget
+          BANK: Banking and Financial Services
+          CAMPAIGN/ELECTIONS: Campaigns and Elections
+          CRIME: Crime and Law Enforcement
+          DEF: Defense and Military
+          DOGE: Department of Government Efficiency
+          DOMVIO: Domestic Violence
+          ECON: Economy 
+          EDU: Education
+          ENERGY: Energy
+          ENVIRO: Environment
+          FEM: Federal Emergency Management
+          FED: Federal Workforce
+          FP: Foreign Policy
+          GUN: Guns
+          HEALTH: Health Care
+          HOUSING: Housing
+          IMMIG: Immigration
+          JUDICIARY: Judiciary
+          LABOR: Labor
+          LGBTQ: LGBTQ Equality
+          NUTRITION: Nutrition & SNAP/WIC
+          PERSCRIP: Perscription Drugs
+          RELIGION: Religion
+          REPRODUCTIVE: Reproductive Health
+          SENIOR: Social Security and Pensions
+          TAX: Taxes 
+          TEL: Telecommunications
+          TRADE: Trade
+          TRANSPO: Transportation and Infrastructure
+          VET: Veterans
+          MISC: Miscellaneous
+    - find: 
+      - selector: "#gform_submit_button_2"
+    - javascript: 
+      - selector: ["gform_submit_button_2"]
+        commands:  ["document.querySelector('#gform_submit_button_2').scrollIntoView({block:'center'});"]
+        required: true
+    - wait: 
+      - value: 2
     - click_on:
       - value: Submit
-        selector: input[type='submit'][value='Submit']
-    - find:
-      - selector: div p:nth-child(2)
+        selector: "#gform_submit_button_2"
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for submitting your Request to our office."
+      contains: "Thank You"

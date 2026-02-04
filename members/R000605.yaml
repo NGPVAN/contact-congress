@@ -242,6 +242,10 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
+    - javascript: 
+        - selector: ["div.controls .btn"] 
+          commands: ["document.querySelector('div.controls .btn').scrollIntoView({block:'center'});"]
+          required: true
     - click_on:
         - value: Submit
           selector: div.controls .btn

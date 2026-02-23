@@ -3,18 +3,42 @@ contact_form:
   method: post
   action: /assembly/01/kitchens/contact-me/
   steps:
-    - visit: "http://legis.wisconsin.gov/assembly/01/kitchens/contact-me/"
+    - visit: "https://legis.wisconsin.gov/assembly/01/kitchens/contact/"
     - fill_in:
-        - name: name
-          selector: "input[id='8158dc83-4143-4d5b-8770-f4d298b943ce']"
+        - name: first name
+          selector: "input[id='d6539137-fb6d-432f-a7db-d0bd4173b16b']"
+          value: $NAME_FULL
+          required: true
+        - name: last name
+          selector: "input[id='93b5245a-9b4b-4928-aadc-4aaa3114ff49']"
           value: $NAME_FULL
           required: true
         - name: email
-          selector: "input[id='f52f77ed-db9a-4e02-b619-77ea64543f39']"
+          selector: "input[id='058e9407-0681-4960-ad37-834a79ee0502']"
           value: $EMAIL
           required: true
+        - name: phone
+          selector: "input[id='035e5b03-75a4-4d48-f3c2-3b02b936decb']"
+          value: $PHONE
+          required: true
+        - name: address
+          selector: "input[id='f7ff17f6-1202-46d5-d063-7298499d74db']"
+          value: $ADDRESS_STREET
+          required: true
+        - name: city
+          selector: "input[id='48c0a9f4-73ed-410a-ca31-38968b9e117b']"
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: "input[id='c0d0746a-0c45-4692-d3b0-ca7e0e5116d2']"
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: state
+          selector: "input[id='10541cf2-4209-42ad-e4c3-0232034db971']"
+          value: $ADDRESS_ZIP5
+          required: true
         - name: message
-          selector: "textarea[id='e21fc7b8-a9e9-47e9-a0b9-33e07f659c22']"
+          selector: "textarea[id='447c78e0-2c7b-4c77-a230-f989f5640c4f']"
           value: $MESSAGE
           required: true
     - click_on:

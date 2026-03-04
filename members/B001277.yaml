@@ -1,0 +1,163 @@
+# US Senator Richard Blumenthal
+bioguide: B001277
+contact_form:
+  method: post
+  driver: chrome
+  steps:
+    - visit: "https://www.blumenthal.senate.gov/contact/write-to-senator-blumenthal"
+    - wait:
+        - value: 1
+    - fill_in:
+        - name: First name
+          selector: "#input-5C0E54FD-9A0F-A898-ABE9-77C0ED64809E"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#input-5C29EA3E-028C-010F-7E0E-A265D5A6DE43"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#input-5C1768B7-F54F-4C52-0BD9-FD81BC59D6B3"
+          value: $PHONE
+          required: true
+        - name: verify email
+          selector: "#input-5C16C3F6-F764-6F51-D852-3B0199EBA75A"
+          value: $EMAIL
+          required: true
+        - name: Street
+          selector: "#input-5C181C7B-F049-21D2-D2C9-B2FAEBC4C296"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#input-5C181CAE-94D6-5C33-F621-819820CBD027"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#input-5C181CE0-D1B4-E41B-8FC0-A0226E16AF06"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#input-5C181D46-F77C-5CE6-3BA3-0C38F8DBDAE6"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Subject
+          selector: "#input-5C189E34-95D2-102E-CED2-A264D066F6C3"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: ["#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
+    - select:
+        - name: Title
+          selector: "#title"
+          value: $PREFIX
+          required: true
+          options: 
+            Mr.: Mr. 
+            Mrs.: Mrs
+            Ms.: Ms.
+            Miss: Miss
+            Mx.: Mx
+            Mr. and Mrs.: Mr. and Mrs. 
+            Mr. and Mr.: Mr. and Mr. 
+            Mrs. and Mrs: Mrs. and Mrs. 
+            Dean: Dean
+            Dr.: Dr. 
+            Dr. and Dr.: Dr. and Dr. 
+            Dr. and Mrs.: Dr. and Mrs. 
+            Professor: Professor
+            The Honorable: The Honorable
+        - name: state
+          selector: "#input-5C181D14-B9F4-E721-1765-478CC4EE5CD8"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            CT: CT
+        - name: Topic
+          selector: "#topic"
+          value: $TOPIC
+          required: true
+          options:
+            SENIOR: Aging
+            AGR: Agriculture and Nutrition
+            ANI: Animal Welfare
+            ARTS: Arts and Humanities
+            BAN: Banking and Finance
+            BUD: Budget
+            CENSUS: Census
+            CHILD: Child Care and Welfare
+            CIVIL: Civil Rights
+            CMRCE: Commerce
+            CONSMR: Consumer Protection
+            CRIME: Criminal Justice
+            DEF: Defense
+            DIS: Disability
+            DOMV: Domestic Violence
+            ECON: Economy
+            EDU: Education
+            ELEC: Election Reform
+            ENE: Energy
+            ENV: Environment and Climate
+            Foreign Affairs: Foreign Affairs
+            GUN: Gun Violence Prevention
+            HEA: Health Care
+            HOUSING: Housing
+            IMM: Immigration
+            INFRA: Infrastructure
+            INTELL: Intellectual Property
+            JUDNOM: Judicial Nominations
+            JUD: Judiciary
+            LABOR: Labor
+            LGBTQ: LGBTQ+ Rights
+            LYME: Lyme Disease
+            MEDICAID: Medicaid
+            MEDICARE: Medicare
+            MIL: Military
+            NATA: Native Americans
+            OCEANS: Oceans and Fisheries
+            OTHER: Other
+            PENSIONS: Pensions
+            POSTAL: Postal Issues
+            PRIVACY: Privacy
+            ABO: Reproductive Rights
+            SCI: Science
+            SMALLBUS: Small Business
+            SSEC: Social Security
+            SPORTS: Sports
+            TAX: Taxes
+            TECH: Technology
+            TEL: Telecommunications
+            TRADE: Trade
+            TRA: Transportation
+            VET: Veterans
+            WOMEN: Women’s Issues
+    - javascript: 
+        - selector: ["button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Submit
+          selector: "button.btn"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank You" 

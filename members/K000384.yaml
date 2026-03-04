@@ -1,0 +1,210 @@
+# US Senator Tim Kaine
+bioguide: K000384
+contact_form:
+  method: post
+  driver: chrome
+  steps:
+    - visit: "https://www.kaine.senate.gov/contact/share-your-opinion"
+    - wait:
+        - value: 1
+    - fill_in:
+        - name: First name
+          selector: "#input-C37493FA-32C9-4AC5-8741-DBB15B656231"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#input-FA29AA7F-6264-43AD-93A0-A9C8E4137B5C"
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: "#input-0EAD335B-9386-4CE4-BEEC-4EB7A25154B0"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#input-583DF856-3CB3-48AC-BEF8-A4D9DD108695"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#input-FDAA72A6-BACD-478E-B29C-71F3517BEC76"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#input-7C66D390-A85C-4BB2-B6D4-D4B2A84642BB"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#input-74E0EC54-C170-4BCB-96AC-0A9CDECF046D"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#input-6113487C-5FF6-4D9E-BE80-52D0AF0F5877"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#input-B11EA673-0986-41A8-96BF-81980A38B3F6"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: ["#input-B11EA673-0986-41A8-96BF-81980A38B3F6"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
+    - select:
+        - name: prefix
+          selector: "#prefixtoggle"
+          value: $NAME_PREFIX
+          required: true
+          options: 
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Mx.: Mx.
+            Miss: Miss
+            Mr. and Mrs.: Mr. and Mrs.
+            Dr.: Dr.
+            Professor: Professor
+            Senator: Senator
+            Governor: Governor
+            Congressman: Congressman
+            Congresswoman: Congresswoman
+            Delegate: Delegate
+            Father: Father
+            Sister: Sister
+            Rabbi: Rabbi
+            Reverend: Reverend
+            Rev Dr: Rev. Dr.
+            Admiral: Admiral
+            Airman: Airman
+            Brigadier General: Brigadier General
+            Captain: Captain
+            Chief Petty Officer: Chief Petty Officer
+            Chief Warrant Officer: Chief Warrant Officer
+            Colonel: Colonel
+            Commander: Commander
+            Corporal: Corporal
+            Ensign: Ensign
+            Fleet Admiral: Fleet Admiral
+            General: General
+            Lieutenant: Lieutenant
+            Lieutenant Colonel: Lieutenant Colonel
+            Lieutenant Commander: Lieutenant Commander
+            Lieutenant General: Lieutenant General
+            Major: Major
+            Major General: Major General
+            Petty Officer: Petty Officer
+            Private: Private
+            Rear Admiral: Rear Admiral
+            Seaman: Seaman
+            Sergeant: Sergeant
+            Vice Admiral: Vice Admiral
+            Warrant Officer: Warrant Officer
+            Other: Other
+        - name: Topic
+          selector: "#input-7B718140-BE58-48FA-AB5C-74CC385B8D07"
+          value: $TOPIC
+          required: true
+          options:
+            ABORT: Abortion
+            AGR: Agriculture
+            AN: Animal Welfare
+            APPROP: Appropriations
+            ART: Arts & Humanities
+            BANK: Banking & Financial Reform
+            BUD: Budget
+            BUSN: Business
+            CFR: Campaign Finance Reform
+            CHILD: Children's Issues
+            CIVIL: Civil Rights
+            CONG: Congress & Executive Office Reform
+            CRIME: Crime & Law Enforcement
+            CYBER: Cybersecurity
+            DC: D.C. Issues
+            DIS: Disabilities
+            DR: Disaster Relief
+            DV: Domestic Violence/Sexual Assault
+            ECON: Economy
+            EDU: Education
+            ELECT: Election Issues
+            EM: Emergency Management
+            ENE: Energy
+            ENV: Environment & Wildlife Protection
+            FED: Federal Employees
+            FA: Foreign Aid
+            FR: Foreign Relations
+            GUN: Gun Violence
+            HEA: Health
+            HOM: Homeland Security
+            HUD: Housing
+            IMM: Immigration
+            IP: Intellectual Property
+            INTEL: Intelligence
+            JUD: Judicial Issues & Nominations
+            LAB: Labor
+            LGBT: LGBT
+            MEDI: Medicare
+            MH: Mental Health
+            DEF: Military/Armed Services/Defense
+            NAI: Native American Issues
+            NUTRI: Nutrition/SNAP
+            PEN: Pensions
+            POST: Postal Issues
+            PLNR: Public Lands & Natural Resources
+            RULES: Rules & Ethics
+            SCI: Science & Technology
+            SECAMEND: Second Amendment Rights
+            SM.BUS: Small Business
+            SSEC: Social Security
+            SPACE: Space
+            TAXES: Taxes
+            TELE: Telecommunications & Internet
+            TRADE: Trade
+            TRA: Transportation & Infrastructure
+            VET: Veterans
+            VOTE: Voting Rights
+            WORK: Workforce & Labor
+        - name: state
+          selector: "#input-7924F194-C509-4A20-AABE-20E48C6841D9"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options: 
+            VA: VA
+    - javascript: 
+        - selector: ["button.btn"] 
+          commands: 
+            - "var el = document.querySelector('#input-569786FF-5652-42DE-A5EE-A7FBD312BC39');"
+            - "if(el){"
+            - "  el.scrollIntoView({block:'center'});"
+            - "  el.value = 'Y';"
+            - "  el.dispatchEvent(new Event('change', { bubbles: true }));"
+            - "}"
+          required: true
+    - javascript:
+        - selector: ["#newslettertoggle"]
+          commands:
+            - "var el = document.querySelector('#newslettertoggle');"
+            - "if(el){"
+            - "  el.scrollIntoView({block:'center'});"
+            - "  el.value = 'EMAIL.OPTOUT';"
+            - "  el.dispatchEvent(new Event('change', { bubbles: true }));"
+            - "}"
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Submit
+          selector: "button.btn"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you" 

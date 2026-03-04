@@ -20,13 +20,13 @@ contact_form:
           selector: "#email"
           value: $EMAIL
           required: true
-        - name: phone
-          selector: "#input-5C1768B7-F54F-4C52-0BD9-FD81BC59D6B3"
-          value: $PHONE
-          required: true
         - name: verify email
           selector: "#input-5C16C3F6-F764-6F51-D852-3B0199EBA75A"
           value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#input-5C1768B7-F54F-4C52-0BD9-FD81BC59D6B3"
+          value: $PHONE
           required: true
         - name: Street
           selector: "#input-5C181C7B-F049-21D2-D2C9-B2FAEBC4C296"
@@ -83,7 +83,7 @@ contact_form:
             The Honorable: The Honorable
         - name: state
           selector: "#input-5C181D14-B9F4-E721-1765-478CC4EE5CD8"
-          value: $ADDRESS_STATE_FULL
+          value: $ADDRESS_STATE_POSTAL_ABBREV
           required: true
           options: 
             CT: CT

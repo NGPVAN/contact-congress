@@ -1,0 +1,244 @@
+# US Senator Mike Crapo
+bioguide: C000880
+contact_form:
+  method: post
+  steps:
+    - visit: "https://www.crapo.senate.gov/contact/email-me"
+    - wait:
+        - value: 1
+    - fill_in:
+        - name: First name
+          selector: "#input-781129F8-4040-F985-52CD-46DE47AD5D2C"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#input-78112A2E-4040-F985-52CD-BA5873CADBC1"
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: "#input-7811EA94-4040-F985-52CD-A0C8B5E9A7D7"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#input-7811EB4F-4040-F985-52CD-CE7F1433F2BC"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#input-7811EC8E-4040-F985-52CD-9F736859134A"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#input-7811ECEE-4040-F985-52CD-7531B698E92C"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: verify email
+          selector: "#input-7813561C-4040-F985-52CD-4A79B42F821F"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#input-7812E0DC-4040-F985-52CD-9D9A4BDC8EE8"
+          value: $PHONE
+          required: true
+        - name: Subject
+          selector: "#input-78156E99-4040-F985-52CD-A3EA1D68A55C"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#input-5C18D021-0988-F2BB-1F6A-3665652A79E9"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: ["#input-78163367-4040-F985-52CD-D4AD6E614C69"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
+    - select:
+        - name: Prefix
+          selector: "#input-781129BE-4040-F985-52CD-9967749C1AD6"
+          value: $PREFIX
+          required: true
+          options: 
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Professor: Professor
+            Dr.: Dr.
+            Father: Father
+            Sister: Sister
+            Rabbi: Rabbi
+            Reverend: Reverend
+            General: Air Force - General
+            Lieutenant General: Air Force - Lieutenant General
+            Major General: Air Force - Major General
+            Brigadier General: Air Force - Brigadier General
+            Colonel: Air Force - Colonel
+            Lieutenant Colonel: Air Force - Lieutenant Colonel
+            Major: Air Force - Major
+            Captain: Air Force - Captain
+            First Lieutenant: Air Force - First Lieutenant
+            Second Lieutenant: Air Force - Second Lieutenant
+            Chief Master Sergeant of the Air Force: Air Force - Chief Master Sergeant of the Air Force
+            Command Chief Master Sergeant: Air Force - Command Chief Master Sergeant
+            First Sergeant (E-9): Air Force - First Sergeant (E-9)
+            Chief Master Sergeant: Air Force - Chief Master Sergeant
+            First Sergeant (E-8): Air Force - First Sergeant (E-8)
+            Senior Master Sergeant: Air Force - Senior Master Sergeant
+            First Sergeant (E-7): Air Force - First Sergeant (E-7)
+            Master Sergeant: Air Force - Master Sergeant
+            Technical Sergeant: Air Force - Technical Sergeant
+            Staff Sergeant: Air Force - Staff Sergeant
+            Senior Airman: Air Force - Senior Airman
+            Airman First Class: Air Force - Airman First Class
+            Airman: Air Force - Airman
+            Airman Basic: Air Force - Airman Basic
+            General: Army - General
+            Lieutenant General: Army - Lieutenant General
+            Major General: Army - Major General
+            Brigadier General: Army - Brigadier General
+            Colonel: Army - Colonel
+            Lieutenant Colonel: Army - Lieutenant Colonel
+            Major: Army - Major
+            Captain: Army - Captain
+            First Lieutenant: Army - First Lieutenant
+            Second Lieutenant: Army - Second Lieutenant
+            Chief Warrant Officer - 5: Army - Chief Warrant Officer - 5
+            Chief Warrant Officer - 4: Army - Chief Warrant Officer - 4
+            Chief Warrant Officer - 3: Army - Chief Warrant Officer - 3
+            Chief Warrant Officer - 2: Army - Chief Warrant Officer - 2
+            Warrant Officer: Army - Warrant Officer
+            Sergeant Major of the Army: Army - Sergeant Major of the Army
+            Command Sergeant Major: Army - Command Sergeant Major
+            Sergeant Major: Army - Sergeant Major
+            First Sergeant: Army - First Sergeant
+            Master Sergeant: Army - Master Sergeant
+            Sergeant First Class: Army - Sergeant First Class
+            Staff Sergeant: Army - Staff Sergeant
+            Sergeant: Army - Sergeant
+            Corporal: Army - Corporal
+            Specialist: Army - Specialist
+            Private First Class: Army - Private First Class
+            Private (E-2): Army - Private (E-2)
+            Private: Army - Private
+            Admiral: Coast Guard - Admiral
+            Vice Admiral: Coast Guard - Vice Admiral
+            Rear Admiral, Upper Half: Coast Guard - Rear Admiral, Upper Half
+            Rear Admiral, Lower Half: Coast Guard - Rear Admiral, Lower Half
+            Captain: Coast Guard - Captain
+            Commander: Coast Guard - Commander
+            Lieutenant Commander: Coast Guard - Lieutenant Commander
+            Lieutenant: Coast Guard - Lieutenant
+            Lieutenant Junior Grade: Coast Guard - Lieutenant Junior Grade
+            Ensign: Coast Guard - Ensign
+            Chief Warrant Officer - 4: Coast Guard - Chief Warrant Officer - 4
+            Chief Warrant Officer - 3: Coast Guard - Chief Warrant Officer - 3
+            Chief Warrant Officer - 2: Coast Guard - Chief Warrant Officer - 2
+            Master Chief Petty Officer of the Coast Guard: Coast Guard - Master Chief Petty Officer of the Coast Guard
+            Master Chief Petty Officer: Coast Guard - Master Chief Petty Officer
+            Senior Chief Petty Officer: Coast Guard - Senior Chief Petty Officer
+            Chief Petty Officer: Coast Guard - Chief Petty Officer
+            Petty Officer First Class: Coast Guard - Petty Officer First Class
+            Petty Officer Second Class: Coast Guard - Petty Officer Second Class
+            Petty Officer Third Class: Coast Guard - Petty Officer Third Class
+            Seaman: Coast Guard - Seaman
+            Seaman Apprentice: Coast Guard - Seaman Apprentice
+            Seaman Recruit: Coast Guard - Seaman Recruit
+            General: Marine Corps - General
+            Lieutenant General: Marine Corps - Lieutenant General
+            Major General: Marine Corps - Major General
+            Brigadier General: Marine Corps - Brigadier General
+            Colonel: Marine Corps - Colonel
+            Lieutenant Colonel: Marine Corps - Lieutenant Colonel
+            Major: Marine Corps - Major
+            Captain: Marine Corps - Captain
+            First Lieutenant: Marine Corps - First Lieutenant
+            Second Lieutenant: Marine Corps - Second Lieutenant
+            Chief Warrant Officer - 5: Marine Corps - Chief Warrant Officer - 5
+            Chief Warrant Officer - 4: Marine Corps - Chief Warrant Officer - 4
+            Chief Warrant Officer - 3: Marine Corps - Chief Warrant Officer - 3
+            Chief Warrant Officer - 2: Marine Corps - Chief Warrant Officer - 2
+            Warrant Officer: Marine Corps - Warrant Officer
+            Sergeant Major of the Marine Corps: Marine Corps - Sergeant Major of the Marine Corps
+            Sergeant Major: Marine Corps - Sergeant Major
+            Master Gunnery Sergeant: Marine Corps - Master Gunnery Sergeant
+            First Sergeant: Marine Corps - First Sergeant
+            Master Sergeant: Marine Corps - Master Sergeant
+            Gunnery Sergeant: Marine Corps - Gunnery Sergeant
+            Staff Sergeant: Marine Corps - Staff Sergeant
+            Sergeant: Marine Corps - Sergeant
+            Corporal: Marine Corps - Corporal
+            Lance Corporal: Marine Corps - Lance Corporal
+            Private First Class: Marine Corps - Private First Class
+            Private: Marine Corps - Private
+            Admiral: Navy - Admiral
+            Vice Admiral: Navy - Vice Admiral
+            Rear Admiral, Upper Half: Navy - Rear Admiral, Upper Half
+            Rear Admiral, Lower Half: Navy - Rear Admiral, Lower Half
+            Captain: Navy - Captain
+            Commander: Navy - Commander
+            Lieutenant Commander: Navy - Lieutenant Commander
+            Lieutenant: Navy - Lieutenant
+            Lieutenant Junior Grade: Navy - Lieutenant Junior Grade
+            Ensign: Navy - Ensign
+            Chief Warrant Officer - 4: Navy - Chief Warrant Officer - 4
+            Chief Warrant Officer - 3: Navy - Chief Warrant Officer - 3
+            Chief Warrant Officer - 2: Navy - Chief Warrant Officer - 2
+            Master Chief Petty Officer of the Navy: Navy - Master Chief Petty Officer of the Navy
+            Master Chief Petty Officer: Navy - Master Chief Petty Officer
+            Senior Chief Petty Officer: Navy - Senior Chief Petty Officer
+            Chief Petty Officer: Navy - Chief Petty Officer
+            Petty Officer First Class: Navy - Petty Officer First Class
+            Petty Officer Second Class: Navy - Petty Officer Second Class
+            Petty Officer Third Class: Navy - Petty Officer Third Class
+            Seaman Apprentice: Navy - Seaman Apprentice
+            Seaman: Navy - Seaman
+            Seaman Recruit: Navy - Seaman Recruit
+        - name: state
+          selector: "#input-7811ECC3-4040-F985-52CD-78395AB8ADBB"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            ID: ID
+        - name: Topic
+          selector: "#issuetoggle"
+          value: $TOPIC
+          required: true
+          options:
+            AG: Agriculture
+            BN: Banking & Credit
+            BU: Budget & Taxes
+            CM: Business, Commerce & Labor
+            CG: Congress, Federal & Postal Employees
+            ED: Education, Science & Technology
+            EN: Energy
+            EV: Environment, Nat. Resources & Wildlife
+            FA: Foreign Affairs, Military & Veterans
+            HC: Health Care
+            HS: Homeland Security & Immigration
+            JU: Judiciary & Crime
+            NA: Native Americans
+            MD: Social Safety Net
+            EMAIL: Not Listed/Other
+    - javascript: 
+        - selector: ["button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Submit
+          selector: "button.btn"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank You" 

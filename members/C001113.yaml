@@ -1,0 +1,133 @@
+#US Senator Catherine Cortez Masto
+bioguide: C001113
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.cortezmasto.senate.gov/contact/connect"
+    - wait: 
+        - value: 2
+    - javascript: 
+        - selector: ["div#elementor-tab-title-1151"] 
+          commands: ["document.querySelector('div#elementor-tab-title-1151')?.scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 1
+    - click_on:
+        - selector: "div#elementor-tab-title-1151"
+    - wait: 
+        - value: 2
+    - fill_in:
+        - name: First Name
+          selector: input#input_2_2
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#input_2_3
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#input_2_6_1
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#input_2_6_2
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#input_2_6_3
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#input_2_6_5
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input#input_2_41
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#input_2_9
+          value: $EMAIL
+          required: true
+        - name: confirm_email
+          selector: input#input_2_9_2
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input#input_2_11
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#input_2_12
+          value: $MESSAGE
+          required: true
+          options:
+            blacklist: "-,;—:()"
+    - javascript:
+        - name: char replace
+          selectors: ["textarea#input_2_12"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = elements[i].replace(/(%2[0])/g, '');}",
+            ]
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: select#input_2_39
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Miss: Miss
+            Professor: Professor
+            Dean: Dean
+            The Honorable: The Honorable
+            Dr.: Dr.
+        - name: state
+          selector: select#input_2_6_4
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Nevada: Nevada
+        - name: topic
+          selector: select#input_2_17
+          value: $TOPIC
+          required: true
+          options:
+            Agriculture: Agriculture
+            Budget: Budget
+            Children: Children
+            Election Reform: Election Reform
+            Energy/Environment: Energy/Environment
+            Finance: Finance
+            Health: Health
+            Housing: Housing
+            Immigration: Immigration
+            Judicial: Judiciary
+            Lab: Labor
+            Defense: Defense
+            Native Americans: Native Americans
+            Public Safety: Public Safety
+            Retirement: Retirement
+            Taxes: Taxes
+            Technology: Technology
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+    - javascript: 
+        - selector: ["#gform_submit_button_2"] 
+          commands: ["document.querySelector('#gform_submit_button_2').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - selector: "#gform_submit_button_2"
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for contacting my office"

@@ -202,7 +202,7 @@ contact_form:
             Seaman Recruit: Navy - Seaman Recruit
         - name: state
           selector: "#input-7811ECC3-4040-F985-52CD-78395AB8ADBB"
-          value: $ADDRESS_STATE_FULL
+          value: $ADDRESS_STATE_POSTAL_ABBREV
           required: true
           options: 
             ID: ID

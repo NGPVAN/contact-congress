@@ -1,0 +1,176 @@
+# US Senator Chris Murphy
+bioguide: M001169
+contact_form:
+  method: post
+  driver: chrome
+  steps:
+    - visit: "https://www.murphy.senate.gov/contact"
+    - wait:
+        - value: 1
+    - select: 
+        - name: Topic
+          selector: "#issue-type"
+          value: $TOPIC
+          required: true
+          options:
+            Academy Nominations: Academy Nominations
+            Adoption: Adoption
+            Aging and Seniors: Aging and Seniors
+            Agriculture: Agriculture
+            Animal Rights: Animal Rights
+            Arts, Museums and Humanities: Arts
+            Budget: Budget
+            Campaign Finance: Campaign Finance
+            Casework: Casework
+            Child Welfare: Children and Family
+            Civil Rights: Civil Rights and Racial Equity
+            Environment: Climate Change and the Environment
+            Commemorative/Congratulatory: Commemorative/Congratulatory
+            Commerce: Commerce
+            Crime: Crime
+            Defense & Military: Defense
+            Disabilities: Disability Rights
+            Education Higher: Education Higher
+            Education K through 12: Education K through 12
+            Energy: Energy
+            Financial Services: Financial Services
+            FORAFFS: Foreign Affairs
+            Government Ethics: Government Ethics
+            Government Reform: Government Reform
+            Gun Violence Prevention: Gun Violence Prevention
+            Health Reform: Health
+            Health Insurance/ACA: Health Insurance
+            Homeland Security: Homeland Security
+            Housing: Housing
+            Illegal Drugs: Illegal Drugs
+            Immigration Reform: Immigration
+            Intellectual Property/Patents: Intellectual Property/Patents
+            Parks, Monuments & Public Lands: Interior/Forestry
+            Internships: Internships & Senate Page Program
+            Jobs: Jobs
+            Judiciary: Judiciary
+            Labor: Labor
+            LGBTQ + Rights: LGBTQ + Rights
+            LIHEAP: LIHEAP
+            Medicare: Medicare/Medicaid
+            Mental Health: Mental/Behavioral Health
+            Military: Military
+            Native Americans: Native Americans
+            Pensions: Pensions
+            Postal: Postal
+            Prescription Drugs: Prescription Drugs
+            Choice & Womens Health: Women's Issues/Reproductive Rights
+            Science: Science and Space
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Telecommunications: Telecommunications
+            Tobacco: Tobacco
+            Tours and Tickets: Tours and Tickets
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Welfare/Food Stamps: Welfare/Food Stamps
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Submit
+          selector: "button.btn"
+    - wait: 
+        - value: 1
+    - fill_in:
+        - name: First name
+          selector: "#input-0D9C1CBF-0FA9-F521-7BE3-D60FBF8BC532"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#input-021E6848-A43A-487E-E67F-09444047A2BC"
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: "#input-02A611A6-C6E3-A8FD-5992-EE40147D726A"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#input-02A611E7-D86B-7139-AD0F-692B62A62CD2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#input-02A61225-E09F-EA85-FAF0-D225ED392435"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#input-02A612A3-005B-4DF1-0308-92EB04712239"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#input-02C9EBF2-9068-15B3-76C7-3DFE96C5D370"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: verify email
+          selector: "#input-02D398F5-DCDB-34E1-6593-048598518F1D"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#input-02E0E441-9477-3987-8977-A4EC9BDD0DBD"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#input-02E45FD5-BD42-AF0E-8834-08C8C725558F"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: ["#input-02E45FD5-BD42-AF0E-8834-08C8C725558F"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
+    - select:
+        - name: prefix
+          selector: "#prefixtoggle"
+          value: $NAME_PREFIX
+          required: true
+          options: 
+            Mr.: Mr.
+            Ms.: Ms.
+            Mrs.: Mrs.
+            Miss: Miss
+            Mx.: Mx. 
+            Dr.: Dr. 
+            Father: Father
+            Imam: Imam
+            Professor: Professor
+            Reverend: Reverend
+            Rabbi: Rabbi
+            Sister: Sister
+            The Honorable: The Honorable
+            NONE: No Prefix
+        - name: state
+          selector: "#input-02A61263-CB93-EA3B-18F7-572F08EA57F4"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options: 
+            CT: CT
+    - javascript: 
+        - selector: ["button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 1
+    - click_on:
+        - value: Submit
+          selector: "button.btn"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you"

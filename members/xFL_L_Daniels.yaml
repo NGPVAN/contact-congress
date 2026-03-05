@@ -1,7 +1,8 @@
 bioguide: xFL_L_Daniels
 contact_form:
+  driver: chrome
   steps: 
-    - visit: "https://www.myfloridahouse.gov/Sections/Representatives/contactmember.aspx?MemberId=4652"
+    - visit: "https://www.flhouse.gov/Sections/Representatives/contactmember.aspx?MemberId=4652&SessionId=113"
     - fill_in: 
         - name: name
           selector: "#Name"

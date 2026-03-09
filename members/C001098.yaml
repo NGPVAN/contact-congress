@@ -6,7 +6,7 @@ contact_form:
   steps:
     - visit: "https://www.cruz.senate.gov/contact/write-ted/form"
     - wait:
-        - value: 1
+        - value: 3
     - fill_in:
         - name: First name
           selector: "#input-B03E05C4-4040-F985-52CD-9CA44623DE5E"
@@ -119,6 +119,8 @@ contact_form:
           required: true
           options: 
             TX: TX
+    - wait: 
+        - value: 4
     - javascript: 
         - selector: ["button.btn"] 
           commands: 

@@ -122,7 +122,7 @@ contact_form:
     - wait: 
         - value: 4
     - javascript: 
-        - selector: ["button.btn"] 
+        - selector: ["input-6AF62838-5056-A066-60CC-D012F4F72835"] 
           commands: 
             - "var el = document.querySelector('#input-6AF62838-5056-A066-60CC-D012F4F72835');"
             - "if(el){"
@@ -137,7 +137,7 @@ contact_form:
         - value: Submit
           selector: "button.btn"
     - wait:
-        - value: 5
+        - value: 2
     - javascript:
         - selector: ["body"]
           commands:
@@ -158,6 +158,8 @@ contact_form:
             - "  document.body.appendChild(m);"
             - "}"
           required: true
+    - wait: 
+        - value: 4
   success:
     headers:
       status: 200

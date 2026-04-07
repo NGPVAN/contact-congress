@@ -1,13 +1,10 @@
 #US Senator Shelley Capito
 bioguide: C001047
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://www.capito.senate.gov/contact/share-your-opinion"
-    - find:
-        - selector: "#covid-alert .row.justify-content-end > div > button"
-    - click_on:
-        - selector: "#covid-alert .row.justify-content-end > div > button"
     - find:
         - selector: "#input-AB59F0AE-4040-F985-52CD-AA63153C7925"
     - fill_in:
@@ -300,9 +297,15 @@ contact_form:
             Veterans: Veterans
             Welfare: Welfare
             Women's Issues: Women's Issues
+    - javascript: 
+        - selector: ["button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
     - click_on:
         - value: Submit
-          selector: .btn
+          selector: button.btn
     - wait:
         - value: 1
     - find:

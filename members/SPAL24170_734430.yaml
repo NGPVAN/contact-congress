@@ -45,6 +45,10 @@ contact_form:
             required: true
             options: 
               PA: PA
+      - javascript: 
+          - selector: ["button.btn.alt-bg"] 
+            commands: ["document.querySelector('button.btn.alt-bg').scrollIntoView({block:'center'});"]
+            required: true
       - wait: 
           - value: 3
       - click_on:

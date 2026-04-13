@@ -1,0 +1,65 @@
+bioguide: MNYE99046338_99292863
+contact_form:
+  driver: chrome
+  method: post
+  steps:
+    - visit: "http://statenislandusa.com/contact.html"
+    - find:
+        - selector: "#input-882732264458227767"
+    - fill_in:
+        - name: First Name
+          selector: "#input-882732264458227767"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#input-882732264458227767-1"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#input-915514902405061960"
+          value: $EMAIL
+          required: true
+        - name: street
+          selector: "#input-823284665569401089"
+          value: $ADDRESS_STREET
+          required: true
+        - name: street_2
+          selector: "#input-823284665569401089-1"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "#input-823284665569401089-2"
+          value: $ADDRESS_CITY
+          required: true
+        - name: state
+          selector: "#input-823284665569401089-3"
+          value: $ADDRESS_STATE_FULL
+          required: true
+        - name: zip5
+          selector: "#input-823284665569401089-4"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#input-645665189738563046"
+          value: $PHONE
+          required: true
+        - name: email_verify
+          selector: "#input-915514902405061960"
+          value: $EMAIL
+          required: true
+        - name: message
+          selector: "#input-644604157586460405"
+          value: $MESSAGE
+          required: true
+    - wait: 
+        - value: 3
+    - click_on:
+        - value: Submit
+          selector: a.wsite-button
+    - wait:
+        - value: 1
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you."

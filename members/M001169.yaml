@@ -166,12 +166,13 @@ contact_form:
     - find: 
         - selector: "button.btn"
     - wait: 
-        - value: 2
-    - click-on: 
-        - value: Submit
-          selector: "button.btn"
+        - value: 4
+    - javascript:
+        - selector: ["button.btn"]
+          commands: ["document.querySelector('button.btn').dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));"]
+          required: true
     - wait:
-        - value: 2
+        - value: 5
   success:
     headers:
       status: 200

@@ -163,9 +163,11 @@ contact_form:
         - selector: ["button.btn"] 
           commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
           required: true
+    - find: 
+        - selector: "button.btn"
     - wait: 
         - value: 2
-    - click_on:
+    - click-on: 
         - value: Submit
           selector: "button.btn"
     - wait:

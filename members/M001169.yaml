@@ -13,7 +13,6 @@ contact_form:
           value: $TOPIC
           required: true
           options:
-            Academy Nominations: Academy Nominations
             Adoption: Adoption
             Aging and Seniors: Aging and Seniors
             Agriculture: Agriculture
@@ -159,13 +158,13 @@ contact_form:
           options: 
             CT: CT
     - wait: 
-        - value: 3
+        - value: 2
     - javascript: 
         - selector: ["button.btn"] 
           commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
           required: true
     - wait: 
-        - value: 4
+        - value: 2
     - click_on:
         - value: Submit
           selector: "button.btn"

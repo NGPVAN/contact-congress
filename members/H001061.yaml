@@ -1,61 +1,61 @@
 #US Senator John Hoeven
 bioguide: H001061
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.hoeven.senate.gov/contact/email-the-senator/form"
     - find:
-      - selector: "#input-781129F8-4040-F985-52CD-46DE47AD5D2C"
+      - selector: "#input_14_3"
     - fill_in:
       - name: First Name
-        selector: "#input-781129F8-4040-F985-52CD-46DE47AD5D2C"
+        selector: "#input_14_3"
         value: $NAME_FIRST
         required: true
       - name: Last Name
-        selector: "#input-78112A2E-4040-F985-52CD-BA5873CADBC1"
+        selector: "#input_14_4"
         value: $NAME_LAST
         required: true
       - name: Street
-        selector: "#input-7811EA94-4040-F985-52CD-A0C8B5E9A7D7"
+        selector: "#input_14_6_1"
         value: $ADDRESS_STREET
         required: true
       - name: street2
-        selector: "#input-7811EB4F-4040-F985-52CD-CE7F1433F2BC"
+        selector: "#input_14_6_2"
         value: $ADDRESS_STREET_2
         required: false
       - name: city
-        selector: "#input-7811EC8E-4040-F985-52CD-9F736859134A"
+        selector: "#input_14_6_3"
         value: $ADDRESS_CITY
         required: true
       - name: zip5
-        selector: "#input-7811ECEE-4040-F985-52CD-7531B698E92C"
+        selector: "#input_14_6_5"
         value: $ADDRESS_ZIP5
         required: true
       - name: phone
-        selector: "#input-7812E0DC-4040-F985-52CD-9D9A4BDC8EE8"
+        selector: "#input_14_7"
         value: $PHONE
         required: true
       - name: email
-        selector: input#email
+        selector: "#input_14_9"
         value: $EMAIL
         required: true
       - name: verify_email
-        selector: "#input-7813561C-4040-F985-52CD-4A79B42F821F"
+        selector: "#input_14_9_2"
         value: $EMAIL
         required: true
       - name: subject
-        selector: "#input-78156E99-4040-F985-52CD-A3EA1D68A55C"
+        selector: "#input_14_11"
         value: $SUBJECT
         required: false
       - name: message
-        selector: "#input-78163367-4040-F985-52CD-D4AD6E614C69"
+        selector: "#input_14_14"
         value: $MESSAGE
         required: true
         options:
           blacklist: ":"
     - select:
       - name: Your Prefix
-        selector: select#input-781129BE-4040-F985-52CD-9967749C1AD6
+        selector: select#input_14_5
         value: $NAME_PREFIX
         required: true
         options:
@@ -194,7 +194,7 @@ contact_form:
           Navy - Seaman: Navy - Seaman
           Navy - Seaman Recruit: Navy - Seaman Recruit
       - name: topic
-        selector: select#input-7815E456-4040-F985-52CD-EBDC0E13DD74
+        selector: select#input_14_12
         value: $TOPIC
         required: true
         options:
@@ -224,13 +224,20 @@ contact_form:
           Veterans Affairs: Veterans Affairs
           Welfare: Welfare
           Multiple Issues: Multiple Issues
+    - javascript: 
+        - selector: ["#gform_submit_button_14"] 
+          commands: ["document.querySelector('#gform_submit_button_14').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+      - value: 4
+    - click_on: 
+      - value: newsletter
+        selector: "#choice_14_13_1"
     - click_on:
       - value: Submit
-        selector: input.btn
+        selector: "#gform_submit_button_14"
     - wait:
       - value: 2
-    - find:
-      - selector: "#form-77F3C43D-4040-F985-52CD-FEDFC04F94E5 div"
   success:
     headers:
       status: 200

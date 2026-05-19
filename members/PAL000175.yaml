@@ -45,11 +45,17 @@ contact_form:
             required: true
             options: 
               PA: PA
+      - javascript: 
+        - selector: ["button.btn"] 
+          commands: ["document.querySelector('button.btn').scrollIntoView({block:'center'});"]
+          required: true
       - wait: 
-          - value: 3
+          - value: 2
       - click_on:
           - value: Submit
             selector: button.btn.alt-bg
+      - wait: 
+          - value: 3
   success:
     body:
       contains: Thank

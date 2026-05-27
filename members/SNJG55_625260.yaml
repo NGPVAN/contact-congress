@@ -1,0 +1,143 @@
+# Governor Mikie Sherill
+bioguide: SNJG55_625260
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www-njlib.nj.gov/GOV_TRANS_APPLICANTS/BTCustomServlet"
+    - select: 
+        - name: topic
+          selector: "#ISSUE"
+          value: $TOPIC
+          required: true
+          options: 
+            Addiction Services: Addiction Services
+            Agriculture: Agriculture
+            Arts and History: Arts and History
+            Banking: Banking
+            Birth/Death Certificates: Birth/Death Certificates
+            Business: Business
+            Child Support: Child Support
+            Children and Families: Children and Families
+            Civil Service Commission: Civil Service Commission
+            Community Affairs: Community Affairs
+            Consumer Affairs: Consumer Affairs
+            CORONAVIRUS - COVID 19: CORONAVIRUS - COVID 19
+            Corrections: Corrections
+            Developmental Disabilities: Developmental Disabilities
+            Division on Elections: Division on Elections
+            Education: Education
+            Environment: Environment
+            EZPass: EZPass
+            Family Care/Medicaid: Family Care/Medicaid
+            Garden State Parkway: Garden State Parkway
+            Health: Health
+            Housing: Housing
+            Human Services: Human Services
+            Insurance: Insurance
+            Labor: Labor
+            Law and Public Safety: Law and Public Safety
+            Licensing Boards: Licensing Boards
+            Lottery: Lottery
+            Mental Health Services: Mental Health Services
+            Military Affairs: Military Affairs
+            Motor Vehicle Commission: Motor Vehicle Commission
+            Motor Vehicles: Motor Vehicles
+            NJTransit: NJTransit
+            Pensions and Retirements: Pensions and Retirements
+            Public Utilities: Public Utilities
+            Requesting Proclamations / Special Letter: Requesting Proclamations / Special Letter
+            Superstorm Sandy/CDBG: Superstorm Sandy/CDBG
+            Taxation: Taxation
+            Temporary Disability: Temporary Disability
+            Transportation: Transportation
+            Treasury: Treasury
+            Unclaimed Property: Unclaimed Property
+            Unemployment: Unemployment
+            Veterans Affairs: Veterans Affairs
+            Other: Other
+        - name: prefix
+          selector: "#qi_1_prefix"
+          value: $NAME_PREFIX
+          required: false
+          options: 
+            Captain: Captain
+            Chief: Chief
+            Councilman: Councilman
+            Councilwoman: Councilwoman
+            Dame: Dame
+            Doctor: Doctor
+            Dr.: Dr.
+            Dr. and Mr.: Dr. and Mr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Father: Father
+            Friend: Friend
+            Friends: Friends
+            Miss: Miss
+            Monsignor: Monsignor
+            Mr.: Mr.
+            Mr. and Mrs.: Mr. and Mrs.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Mx.: Mx.
+            Pastor: Pastor
+            Rabbi: Rabbi
+            Rev.: Rev.
+            Reverend: Reverend
+            Sir: Sir
+            Sister: Sister
+            The Honorable: The Honorable
+        - name: state
+          selector: "#STATE"
+          value: $ADDRESS_STATE_FULL
+          required: false
+          options: 
+            NJ: New Jersey
+    - fill_in:
+        - name: First Name
+          selector: "#FIRSTNAME"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#LASTNAME"
+          value: $NAME_LAST
+          required: true
+        - name: Address
+          selector: "#ADDR1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: City
+          selector: "#CITY"
+          value: $ADDRESS_CITY
+          required: true
+        - name: Zip
+          selector: "#ZIP"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: Email
+          selector: "#EMAIL"
+          value: $EMAIL
+          required: true
+        - name: Phone
+          selector: "#Phone_H"
+          value: $PHONE
+          required: true
+        - name: subject
+          selector: "#WFUD_Subject"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#WFNOTE"
+          value: $MESSAGE
+          required: true
+    - wait: 
+        - value: 3
+    - javascript: 
+        - selector: [".btn.btn-default"] 
+          commands: ["document.querySelector('#btn_submit').scrollIntoView({block:'center'});"]
+          required: true
+    - click_on:
+        - value: Submit
+          selector: ".btn.btn-default
+  success:
+    body:
+      contains: "As Governor"

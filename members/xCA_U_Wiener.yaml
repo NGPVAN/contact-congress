@@ -47,9 +47,13 @@ contact_form:
         - selector: ["#submitButton"] 
           commands: ["document.querySelector('submitButton').scrollIntoView({block:'center'});"]
           required: true
+    - wait: 
+        - value: 3
     - click_on:
         - value: Submit
-          selector: "#submitButton"
+          selector: "#submitButton.btn.btn-primary"
+    - wait: 
+        - value: 3
   success:
     body:
       excludes: "Select an Issue"

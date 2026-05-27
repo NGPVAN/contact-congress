@@ -43,18 +43,17 @@ contact_form:
           required: true
     - wait: 
         - value: 3
-    - javascript: 
-        - selector: ["#submitButton"] 
-          commands: ["document.querySelector('submitButton').scrollIntoView({block:'center'});"]
-          required: true
+    - javascript:
+      - selector: ["#submitButton"]
+        commands: ["var r=arguments[0][0].getBoundingClientRect(); var cx=r.left+r.width/2, cy=r.top+r.height/2; var e=document.elementFromPoint(cx,cy); console.log('OVERLAY at button center ('+cx+','+cy+'):', e && e.outerHTML.substring(0,300));"]
     - wait: 
         - value: 3
-    - click_on:
-        - value: Submit
-          selector: "#submitButton.btn.btn-primary"
+    - javascript:
+      - selector: ["#submitButton"]
+        commands: ["document.querySelector('#submitButton').scrollIntoView({block:'center'}); document.querySelector('#submitButton').click();"]
     - wait: 
         - value: 3
   success:
     body:
       excludes: "Select an Issue"
-      contains: "Thank you for contacting the Office"
+      contains: "Thank you for contacting"

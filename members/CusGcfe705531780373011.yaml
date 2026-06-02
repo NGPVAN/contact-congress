@@ -1,0 +1,60 @@
+#EarthJustice Custom Target 13549
+bioguide: CusGcfe705531780373011
+contact_form:
+  driver: chrome
+  method: post
+  action: ""
+  steps:
+    - visit: "https://mienviro.michigan.gov/ncore/external/publicnotice/info/4645993131151403844/comments"
+    - find:
+        - selector: '[property-name="comments"] textarea'
+    - fill_in:
+        - name: full name
+          selector: '[property-name="name"] input'
+          value: $NAME_FULL
+          required: true
+        - name: email
+          selector: '[property-name="email"] input'
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: '[property-name="phone"] input'
+          value: $PHONE
+          required: false
+        - name: street
+          selector: '[property-name="address1"] input'
+          value: $ADDRESS_STREET
+          required: false
+        - name: street2
+          selector: '[property-name="address2"] input'
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: '[property-name="city"] input'
+          value: $ADDRESS_CITY
+          required: false
+        - name: zip5
+          selector: '[property-name="zipCode"] input'
+          value: $ADDRESS_ZIP5
+          required: false
+    - wait:
+        - value: 1
+    - select:
+        - name: state
+          selector: '[property-name="stateId"] select'
+          value: $ADDRESS_STATE_FULL
+          required: true
+    - fill_in:
+        - name: message
+          selector: '[property-name="comments"] textarea'
+          value: $MESSAGE
+          required: true
+    - click_on:
+        - selector: 'button.btn-save.form-action'
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "4000 characters remaining"

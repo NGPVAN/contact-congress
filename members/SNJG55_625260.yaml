@@ -137,7 +137,7 @@ contact_form:
           required: true
     - click_on:
         - value: Submit
-          selector: ".btn.btn-default
+          selector: ".btn.btn-default"
   success:
     body:
       contains: "As Governor"

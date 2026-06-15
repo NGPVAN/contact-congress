@@ -1,0 +1,127 @@
+#US Senator Bill Hagerty
+bioguide: FTNS31848_333606
+contact_form:
+  method: POST
+  action: ""
+  steps:
+    - visit: "https://www.hagerty.senate.gov/email-me/"
+    - wait:
+      - value: 1
+    - fill_in:
+      - name: first
+        selector: "input[name='FirstName']"
+        value: $NAME_FIRST
+        required: true
+      - name: last
+        selector: "input[name='LastName']"
+        value: $NAME_LAST
+        required: true
+      - name: street
+        selector: "input[name='Address1']"
+        value: $ADDRESS_STREET
+        required: true
+      - name: street 2
+        selector: "input[name='Address2']"
+        value: $ADDRESS_STREET_2
+        required: false
+      - name: city
+        selector: "input[name='City']"
+        value: $ADDRESS_CITY
+        required: true
+      - name: zip5
+        selector: "input[name='ZipCode']"
+        value: $ADDRESS_ZIP5
+        required: true
+      - name: phone
+        selector: "input[name='Telephone']"
+        value: $PHONE
+        required: true
+      - name: email
+        selector: "input[name='your-email']"
+        value: $EMAIL
+        required: true
+      - name: verify_email
+        selector: "input[name='your-email']"
+        value: $EMAIL
+        required: true
+      - name: subject 
+        selector: "input[name='subject']"
+        value: $SUBJECT 
+        required: true
+      - name: message
+        selector: "textarea[name='your-message']"
+        value: $MESSAGE
+        required: true
+    - select:
+      - name: Your Prefix
+        selector: "select[name='Prefix']"
+        value: $NAME_PREFIX
+        required: true
+        options:
+          "Mr.": "Mr."
+          "Ms.": "Ms."
+          "Mrs.": "Mrs."
+          "Miss": "Miss"
+          "Mr. and Mrs.": "Mr. and Mrs."
+          "Mx.": "Mx"
+          "Dr.": "Dr."
+      - name: Issue
+        selector: "select[name='Topic']"
+        value: $TOPIC
+        required: true
+        options: 
+          Agriculture: Agriculture
+          Animal Rights: Animal Rights
+          Appropriations: Appropriations
+          Arts & Humanities: Arts & Humanities
+          Banking & Financial Services: Banking & Financial Services
+          Budget: Budget
+          Business and Commerce: Business and Commerce
+          Campaign/Election Reform: Campaign/Election Reform
+          Consumer Protection: Consumer Protection
+          Children: Children
+          Defense and Military: Defense and Military
+          Economic Development: Economic Development
+          Education: Education
+          Energy: Energy
+          Environment: Environment
+          Ethics Reform: Ethics Reform
+          Foreign Relations: Foreign Relations
+          Guns: Guns
+          Healthcare: Healthcare
+          Homeland Security: Homeland Security
+          Housing and Urban Affairs: Housing and Urban Affairs
+          Immigration: Immigration
+          Insurance Problems: Insurance Problems
+          Interior: Interior
+          Intelligence: Intelligence
+          Judiciary: Judiciary
+          Labor: Labor
+          Nutrition: Nutrition
+          Postal Service: Postal Service
+          Science and Innovation: Science and Innovation
+          Seniors: Seniors
+          Social Issues: Social Issues
+          Taxes: Taxes
+          Technology and Telecom: Technology and Telecom
+          Trade: Trade
+          Transportation: Transportation
+          Veterans: Veterans
+          Women and Children: Women and Children
+      - name: state
+        selector: "select[name='State']"
+        value: $ADDRESS_STATE_FULL
+        required: true
+        options:
+          Tennessee: Tennessee
+    - wait: 
+      - value: 2
+    - click_on:
+      - selector: input[type='submit'][value='Send']
+    - wait:
+      - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you for your message."

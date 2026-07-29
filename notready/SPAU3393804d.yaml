@@ -1,67 +1,142 @@
 bioguide: SPAU3393804d
 contact_form:
-  method: post
+  driver: chrome
   steps:
-    - visit: "https://contact1.pasenategop.com/contact/28"
+    - visit: "https://wpcontact01.pasenategop.com/contact/28"
     - find:
-        - selector: "#ContactForm_FirstName"
+        - selector: input[name='FirstName']
     - fill_in:
         - name: First Name
-          selector: "#ContactForm_FirstName"
+          selector: input[name='FirstName']
           value: $NAME_FIRST
           required: true
-          options:
-            max_length: 30
         - name: Last Name
-          selector: "#ContactForm_LastName"
+          selector: input[name='LastName']
           value: $NAME_LAST
           required: true
-          options:
-            max_length: 50
         - name: email
-          selector: "#ContactForm_EmailAddress"
+          selector: input[name='email']
           value: $EMAIL
           required: true
         - name: phone
-          selector: "#ContactForm_HomePhone"
+          selector: input[name='tel']
           value: $PHONE
           required: true
-        - name: address
-          selector: "#ContactForm_Address1"
+        - name: Address
+          selector: input[name='address-line1']
           value: $ADDRESS_STREET
           required: true
-          options:
-            max_length: 100
-        - name: address2
-          selector: "#ContactForm_Address2"
+        - name: Address2
+          selector: input[name='address-line2']
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#ContactForm_City"
+          selector: input[name='city']
           value: $ADDRESS_CITY
           required: true
-          options:
-            max_length: 40
         - name: zip
-          selector: "#ContactForm_ZipCode"
+          selector: input[name='postal-code']
           value: $ADDRESS_ZIP5
           required: true
+        - name: subject
+          selector: input[name='contactForm.Subject']
+          value: $SUBJECT
+          required: true
         - name: message
-          selector: "#ContactForm_Comments"
+          selector: textarea[name='contactForm.Comments']
           value: $MESSAGE
           required: true
+    - wait: 
+        - value: 2
     - select:
-        - name: Topic
-          selector: "#issueselect"
-          value: Legislation
+        - name: County
+          selector: select[name='county']
+          value: $ADDRESS_COUNTY
           required: true
+          options:
+            Adams: Adams
+            Allegheny: Allegheny
+            Armstrong: Armstrong
+            Beaver: Beaver
+            Bedford: Bedford
+            Berks: Berks
+            Blair: Blair
+            Bradford: Bradford
+            Bucks: Bucks
+            Butler: Butler
+            Cambria: Cambria
+            Cameron: Cameron
+            Carbon: Carbon
+            Centre: Centre
+            Chester: Chester
+            Clarion: Clarion
+            Clearfield: Clearfield
+            Clinton: Clinton
+            Columbia: Columbia
+            Crawford: Crawford
+            Cumberland: Cumberland
+            Dauphin: Dauphin
+            Delaware: Delaware
+            Elk: Elk
+            Erie: Erie
+            Fayette: Fayette
+            Forest: Forest
+            Franklin: Franklin
+            Fulton: Fulton
+            Greene: Greene
+            Huntingdon: Huntingdon
+            Indiana: Indiana
+            Jefferson: Jefferson
+            Juniata: Juniata
+            Lackawanna: Lackawanna
+            Lancaster: Lancaster
+            Lawrence: Lawrence
+            Lebanon: Lebanon 
+            Lehigh: Lehigh 
+            Luzerne: Luzerne 
+            Lycoming: Lycoming 
+            McKean: McKean 
+            Mercer: Mercer 
+            Mifflin: Mifflin 
+            Monroe: Monroe 
+            Montgomery: Montgomery 
+            Montour: Montour 
+            Northampton: Northampton 
+            Northumberland: Northumberland
+            Perry: Perry 
+            Philadelphia: Philadelphia
+            Pike: Pike 
+            Potter: Potter 
+            Schuylkill: Schuylkill 
+            Snyder: Snyder 
+            Somerset: Somerset 
+            Sullivan: Sullivan 
+            Susquehanna: Susquehanna 
+            Tioga: Tioga 
+            Union: Union 
+            Venango: Venango
+            Warren: Warren 
+            Washington: Washington 
+            Wayne: Wayne 
+            Westmoreland: Westmoreland 
+            Wyoming: Wyoming 
+            York: York
+        - name: Issue
+          selector: select[name='selectedIssueId']
+          value: $TOPIC
+          required: true
+          options: 
+            Legislation: Legislation
+    - wait: 
+        - value: 2
     - click_on:
-        - value: Newsletter
-          selector: "#ContactForm_ContactFormConfig_SenNetLists_0__IsChecked"  #dont subscribe to newsletter
+        - value: No Newsletter sign up
+          selector: input[name='contactConfig.SenNetLists[0].IsChecked']
+    - click_on:
         - value: Submit
-          selector: "#btnSubmit"
+          selector: input[type='submit'][value='Submit']
+    - wait: 
+        - value: 4
   success:
-    headers:
-      status: 200
     body:
       contains: Thank you for taking the time

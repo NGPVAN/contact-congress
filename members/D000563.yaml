@@ -132,6 +132,8 @@ contact_form:
       - selector: ["input[type='submit'][value='Send']"]
         commands: ["document.querySelector(\"input[type='submit'][value='Send']\").scrollIntoView({block:'center'}); document.querySelector(\"input[type='submit'][value='Send']\").click();"]
         required: true
+    - wait:
+        - value: 3
   success:
     body:
       contains: Thank you

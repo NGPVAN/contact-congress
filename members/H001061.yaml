@@ -3,7 +3,7 @@ bioguide: H001061
 contact_form:
   driver: chrome
   steps:
-    - visit: "https://www.hoeven.senate.gov/contact/email-the-senator/form"
+    - visit: "https://www.hoeven.senate.gov/contact/contact-the-senator/comment-on-an-issue-before-the-senate"
     - find:
       - selector: "#input_14_3"
     - fill_in:

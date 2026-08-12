@@ -8,7 +8,7 @@ contact_form:
     - select:
         - name: start
           selector: select#field_8AECE1B7-0DB4-497B-95C5-E5102C91B9D1
-          value: Comment or Ask Questions about Specific Issues or Legislation
+          value: $TOPIC
           required: true
           options:
             Comment or Ask Questions about Specific Issues or Legislation: Comment or Ask Questions about Specific Issues or Legislation

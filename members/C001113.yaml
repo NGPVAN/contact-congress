@@ -7,13 +7,13 @@ contact_form:
     - wait: 
         - value: 2
     - javascript: 
-        - selector: ["div#elementor-tab-title-1151"] 
-          commands: ["document.querySelector('div#elementor-tab-title-1151')?.scrollIntoView({block:'center'});"]
+        - selector: ["span.e-n-tab-title-text"] 
+          commands: ["document.querySelector('span.e-n-tab-title-text')?.scrollIntoView({block:'center'});"]
           required: true
     - wait: 
         - value: 1
     - click_on:
-        - selector: "div#elementor-tab-title-1151"
+        - selector: "span.e-n-tab-title-text"
     - wait: 
         - value: 2
     - fill_in:

@@ -1,0 +1,111 @@
+#US Senator Deb Fischer
+bioguide: F000463
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.fischer.senate.gov/public/?p=email-deb"
+    - fill_in:
+        - name: Your Prefix
+          selector: input#field_828C0B56-43F9-4F3E-A757-7CDD23DFB85C
+          value: $NAME_PREFIX
+          required: false
+        - name: First Name
+          selector: input#field_E947A1A8-7A71-4295-AA00-FD0FE886E40D
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input#field_5983BF37-51BC-4E85-A4B1-29557AFF3FF4
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: input#field_4E708D5F-94D4-4CD4-81A3-D1D9FEA89A03
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: input#field_8B95DE5E-4BA8-4E1E-A4EA-9A104D378522
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: input#field_C4BD9743-4A63-47F2-B92B-180E85F228BC
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: input#field_3ADFB964-53E1-4036-9896-18F1A806B01A
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: input#field_4911ED7C-5FBC-4A64-9382-B346870CCB16
+          value: $PHONE
+          required: true
+        - name: email
+          selector: input#field_D37EA3F0-FB86-4F3D-9F93-CC358449C2A5
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: input#field_E3A78E09-F120-4566-85E0-B35D0ECCC988
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#field_6AF13719-60D3-4199-BE64-495D74906948
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: state
+          selector: select#field_0EB9F380-2AF2-42DA-B8A5-9425ADFE1093
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Nevada: Nebraska 
+        - name: topic
+          selector: select#field_97476198-7AB2-410A-A664-FA9606739644
+          value: $TOPIC
+          required: true
+          options:
+            Agriculture: Agriculture
+            Banking: Banking
+            Budget: Budget
+            Defense: "Defense,Terrorism"
+            Economy: Economy
+            Education: Education
+            Energy: Energy
+            Environment: Environment
+            Government: Federal Government
+            Foreign Affairs: Foreign Affairs
+            Health: Health
+            Housing: Housing
+            Immigration: Immigration
+            Intelligence: Intelligence/National Security
+            Judiciary: Judiciary
+            Labor: "Labor,Unemployment Issues"
+            Healthcare: Medicaid/Medicare
+            Science and Technology: Science and Technology
+            Senior Issues: Senior Issues
+            Second Amendment Rights: Second Amendment Rights
+            Small Business: Small Business
+            Social Security: Social Security
+            Taxes: Taxes
+            Communications: Telecommunications
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans' Affairs
+            Welfare: Welfare
+            Other: Other
+    - javascript: 
+        - selector: ["field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1"] 
+          commands: ["document.querySelector('field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1')?.scrollIntoView({block:'center'});"]
+          required: true
+    - click_on: 
+      - value: newsletter
+        selector: "#field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1"
+    - find: 
+      - selector: "div.buttonHolder.controls .btn.btn-primary"
+    - click_on:
+      - value: Submit
+        selector: "div.buttonHolder.controls .btn.btn-primary"
+    - wait:
+      - value: 2
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you"

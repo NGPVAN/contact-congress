@@ -41,10 +41,6 @@ contact_form:
           selector: input#field_D37EA3F0-FB86-4F3D-9F93-CC358449C2A5
           value: $EMAIL
           required: true
-        - name: confirm_email
-          selector: input#input_2_9_2
-          value: $EMAIL
-          required: true
         - name: subject
           selector: input#field_E3A78E09-F120-4566-85E0-B35D0ECCC988
           value: $SUBJECT
@@ -55,7 +51,7 @@ contact_form:
           required: true
     - select:
         - name: state
-          selector: select#input_2_6_4
+          selector: select#field_0EB9F380-2AF2-42DA-B8A5-9425ADFE1093
           value: $ADDRESS_STATE_FULL
           required: true
           options: 

@@ -194,6 +194,12 @@ contact_form:
             Navy - Seaman Apprentice: Navy - Seaman Apprentice
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
+        - name: state
+          selector: "#input-34F91D5A-4040-F985-52CD-20577F8880CF"
+          value: $ADDRESS_STATE_POSTAL_ABBREV
+          required: true
+          options:
+            AK: AK
         - name: topic
           selector: "#input-3663600D-4040-F985-52CD-8F1E7A767A1F"
           value: Government

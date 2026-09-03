@@ -1,0 +1,42 @@
+#EarthJustice Custom Target 14514
+bioguide: CusFf1ccfc6f1788366937
+contact_form:
+  driver: chrome
+  method: post
+  action: ""
+  steps:
+    - visit: "https://www.federalregister.gov/documents/2026/08/20/2026-16965/special-areas-roadless-area-conservation#open-comment"
+    - find:
+        - selector: "#comment_comment"
+    - fill_in:
+        - name: comment
+          selector: "#comment_comment"
+          value: $MESSAGE
+          required: true
+        - name: email
+          selector: "#comment_email"
+          value: $EMAIL
+          required: true
+    - click_on:
+        - name: radio
+          selector: '[data-submitter-type="individual"] input[type="radio"]'
+    - fill_in: 
+        - name: first name
+          selector: "#comment_firstName"
+          value: $NAME_FIRST
+          required: true
+        - name: last name
+          selector: "#comment_lastName"
+          value: $NAME_LAST
+          required: true
+    - click_on:
+        - selector: "#comment_confirm_submission"
+    - click_on:
+        - selector: "#comment_submit_action"
+    - wait:
+        - value: 3
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thank you"

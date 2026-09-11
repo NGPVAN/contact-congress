@@ -6,52 +6,52 @@ contact_form:
     - visit: "https://www.cotton.senate.gov/contact/contact-tom"
     - fill_in:
         - name: First Name
-          selector: "#input-B03E05C4-4040-F985-52CD-9CA44623DE5E"
+          selector: "#input_2_3"
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: "#input-B03E04BD-4040-F985-52CD-48E090E769DA"
+          selector: "#input_2_4"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: "#input-B03E05F1-4040-F985-52CD-A580E72A7D41"
+          selector: "#input_2_5_1"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: "#input-B03E0518-4040-F985-52CD-CF33EF97DA3A"
+          selector: "#input_2_5_2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#input-B03E0595-4040-F985-52CD-C572364023FE"
+          selector: "#input_2_5_3"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#input-B03E04CC-4040-F985-52CD-4DDB58DA474A"
+          selector: "#input_2_5_5"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#input-B03E046E-4040-F985-52CD-A2F10450D58D"
+          selector: "#input_2_6"
           value: $PHONE
           required: true
         - name: email
-          selector: "#email"
+          selector: "#input_2_13"
           value: $EMAIL
           required: true
         - name: confirm email
-          selector: "#input-B03E05A4-4040-F985-52CD-730C08912F4F"
+          selector: "#input_2_13_2"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#input-BC4D4A76-EAA0-9925-E36C-A9DD5D8581F2"
+          selector: "#input_2_11"
           value: $SUBJECT
           required: true
         - name: message
-          selector: textarea#input-B03E05B4-4040-F985-52CD-8DF0BC10EEE2
+          selector: textarea#input_2_12
           value: $MESSAGE
           required: true
     - select:
         - name: Your Prefix
-          selector: "#input-B03E0527-4040-F985-52CD-C0DD6BEF325F"
+          selector: "#input_2_2"
           value: $NAME_PREFIX
           required: true
           options:
@@ -79,8 +79,14 @@ contact_form:
             Sergeant Major: Sergeant Major
             Sister: Sister
             Technical Sergeant: Technical Sergeant
+        - name: state
+          selector: "#input_2_5_4"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            Arkansas: Arkansas
         - name: topic
-          selector: "#input-B03E04DB-4040-F985-52CD-18F332336F99"
+          selector: "#input_2_10"
           value: $TOPIC
           required: true
           options:
@@ -124,14 +130,13 @@ contact_form:
             Welfare: Welfare
             Women's Issues: Women's Issues
     - wait:
-        - value: 5
-    - click_on:
-        - value: Submit
-          selector: button.btn
+        - value: 3
+    - javascript:
+        - selector: ["#gform_submit_button_2"]
+          commands: ["document.querySelector('#gform_submit_button_2').click();"]
+          required: true
     - wait:
         - value: 2
-    - find:
-        - selector: "#form-B03E03FC-4040-F985-52CD-BCD7E00A8A6C"
   success:
     body:
       contains: "Your message has been sent."

@@ -1,0 +1,138 @@
+#US Senator Darline Graham 
+bioguide: FSCS31836_967864
+contact_form:
+  driver: chrome
+  steps:
+    - visit: "https://www.dgraham.senate.gov/"
+    - fill_in:
+        - name: First Name
+          selector: "#input_3_5"
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: "#input_3_6"
+          value: $NAME_LAST
+          required: true
+        - name: street
+          selector: "#input_3_7_1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: street2
+          selector: "#input_3_7_2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: city
+          selector: "#input_3_7_3"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip5
+          selector: "#input_3_7_5"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#input_3_8"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "#input_3_9"
+          value: $EMAIL
+          required: true
+        - name: subject
+          selector: "#input_3_12"
+          value: $SUBJECT
+          required: true
+        - name: message
+          selector: textarea#input_3_11
+          value: $MESSAGE
+          required: true
+    - select:
+        - name: Your Prefix
+          selector: "#input_3_3"
+          value: $NAME_PREFIX
+          required: true
+          options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Mr. and Mrs.: Mr. and Mrs.
+            Miss: Miss
+            Dr.: Dr.
+            Dr. and Mrs.: Dr. and Mrs.
+            Dr. and Mr.: Dr. and Mr.
+            Admiral: Admiral
+            Captain: Captain
+            Chief Master Sergeant: Chief Master Sergeant
+            Colonel: Colonel
+            Commander: Commander
+            Corporal: Corporal
+            Father: Father
+            Lieutenant: Lieutenant
+            Lieutenant Colonel: Lieutenant Colonel
+            Master Sergeant: Master Sergeant
+            Reverend: Reverend
+            Sergeant: Sergeant
+            Second Lieutenant: Second Lieutenant
+            Sergeant Major: Sergeant Major
+            Sister: Sister
+            Technical Sergeant: Technical Sergeant
+        - name: state
+          selector: "#input_3_7_4"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+            South Carolina: South Carolina
+        - name: topic
+          selector: "#input_3_10"
+          value: $TOPIC
+          required: true
+          options:
+            Abortion: Abortion
+            Agriculture: Agriculture
+            Animal Welfare: Animal Welfare
+            Banking: Banking
+            Budget: Budget
+            Civil Rights: Civil Rights
+            Congratulations: Congratulations
+            Crime: Crime
+            Education: Education
+            Elections: Elections
+            Energy: Energy
+            Environment: Environment
+            Family: Family
+            Government Affairs: Government Affairs
+            Guns: Guns
+            Health: Health
+            Homeland Security: Homeland Security
+            Housing: Housing
+            International Relations: International Relations
+            Judiciary: Judiciary
+            Labor: Labor
+            Medicaid: Medicaid
+            Medicare: Medicare
+            Military: Military
+            NASA: NASA
+            Natural Resources: Natural Resources
+            Other: Other
+            Patents: Patents
+            Religious Issues: Religious Issues
+            Request: Request
+            Social Issues: Social Issues
+            Social Security: Social Security
+            Taxes: Taxes
+            Telecommunications: Telecommunications
+            Trade: Trade
+            Transportation: Transportation
+            Veterans: Veterans
+            Welfare: Welfare
+            Women's Issues: Women's Issues
+    - wait:
+        - value: 3
+    - javascript:
+        - selector: ["#gform_submit_button_3"]
+          commands: ["document.querySelector('#gform_submit_button_3').click();"]
+          required: true
+    - wait:
+        - value: 2
+  success:
+    body:
+      contains: "Thank you"

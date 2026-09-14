@@ -6,57 +6,57 @@ contact_form:
   steps:
     - visit: "http://www.sullivan.senate.gov/contact/email"
     - find:
-        - selector: "#input-34F91EAB-4040-F985-52CD-81AE445C8C28"
+        - selector: "#input_10_2"
     - wait:
-        - value: 6
+        - value: 3
     - fill_in:
         - name: firstname
-          selector: "#input-34F91EAB-4040-F985-52CD-81AE445C8C28"
+          selector: "#input_10_2"
           value: $NAME_FIRST
           required: true
         - name: lastname
-          selector: "#input-34F91D9B-4040-F985-52CD-2BBDF2DA8EF0"
+          selector: "#input_10_3"
           value: $NAME_LAST
           required: true
         - name: street
-          selector: "#input-34F91ED4-4040-F985-52CD-C3FA09EEEFCE"
+          selector: "#input_10_5_1"
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: "#input-34F91F66-4040-F985-52CD-574570D30C9E"
+          selector: "#input_10_5_2"
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: "#input-34F91F3D-4040-F985-52CD-3F9525D2040D"
+          selector: "#input_10_5_3"
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: "#input-34F91DAF-4040-F985-52CD-D8C0BD03571F"
+          selector: "#input_10_5_5"
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: "#input-34F91EBF-4040-F985-52CD-4B44900C300D"
+          selector: "#input_10_6"
           value: $PHONE
           required: true
         - name: email
-          selector: "#email"
+          selector: "#input_10_13"
           value: $EMAIL
           required: true
         - name: email2
-          selector: "#input-34F91DEC-4040-F985-52CD-2C02CC403B72"
+          selector: "#input_10_13_2"
           value: $EMAIL
           required: true
         - name: subject
-          selector: "#input-366BBEB4-4040-F985-52CD-93A060BA3C65"
+          selector: "#input_10_11"
           value: $SUBJECT
           required: true
         - name: message
-          selector: "#input-367803F9-4040-F985-52CD-372C846843B5"
+          selector: "#input_10_12"
           value: $MESSAGE
           required: true
     - select:
         - name: Your Prefix
-          selector: "#input-34F91F24-4040-F985-52CD-C65030493AD6"
+          selector: "#input_10_1"
           value: $NAME_PREFIX
           required: true
           options:
@@ -195,14 +195,14 @@ contact_form:
             Navy - Seaman: Navy - Seaman
             Navy - Seaman Recruit: Navy - Seaman Recruit
         - name: state
-          selector: "#input-34F91D5A-4040-F985-52CD-20577F8880CF"
+          selector: "#input_10_5_4"
           value: $ADDRESS_STATE_POSTAL_ABBREV
           required: true
           options:
             AK: AK
         - name: topic
-          selector: "#input-3663600D-4040-F985-52CD-8F1E7A767A1F"
-          value: Government
+          selector: "#input_10_14"
+          value: $TOPIC
           required: true
           options:
             Abortion: Abortion
@@ -239,14 +239,17 @@ contact_form:
             Veterans: Veterans
             "Women & Children": "Women & Children"
     - wait:
-        - value: 9
-    - click_on:
-        - value: Submit
-          selector: .btn
+        - value: 4
+    - javascript: 
+        - selector: ["#gform_submit_button_10"] 
+          commands: ["document.querySelector('#gform_submit_button_10').scrollIntoView({block:'center'});"]
+          required: true
+    - click_on: 
+        - selector: "#gform_submit_button_10"
     - wait:
-        - value: 9
+        - value: 4
   success:
     headers:
       status: 200
     body:
-      contains: "Thank you for submitting your Request to our office."
+      contains: "Thank you for submitting your request to our office."

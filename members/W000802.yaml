@@ -135,8 +135,11 @@ contact_form:
         required: true
         options:
           Rhode Island: Rhode Island
-    - click_on:
-      - selector: input#gform_submit_button_2
+    - javascript:
+        - name: submit
+          selectors: ["#gform_submit_button_2"]
+          commands: ["elements[0].click()"]
+          required: true
     - wait:
       - value: 4
   success:

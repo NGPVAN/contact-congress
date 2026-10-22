@@ -265,9 +265,12 @@ contact_form:
             Veterans: Veterans
             Welfare: Welfare
             "Women's Issues": "Women's Issues"
-    - click_on:
-        - value: Submit
-          selector: "input[type='submit'][value='Submit']"
+    - wait:
+        - value: 3
+    - javascript:
+        - selector: ["#gform_submit_button_2"]
+          commands: ["document.querySelector('#gform_submit_button_2').click();"]
+          required: true
     - wait:
         - value: 4
   success:

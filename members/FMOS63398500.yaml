@@ -1,6 +1,7 @@
 #US Senator Josh Hawley
 bioguide: FMOS63398500
 contact_form:
+  driver: chrome
   method: post
   steps:
     - visit: "https://www.hawley.senate.gov/contact-senator-hawley"

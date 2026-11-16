@@ -1,12 +1,11 @@
 #US Senator Tim Scott
 bioguide: S001184
 contact_form:
+  driver: chrome
   method: post
   action: ""
   steps:
     - visit: "http://www.scott.senate.gov/contact/email-me"
-    - wait:
-        - value: 3
     - find:
         - selector: "#input_14_2"
     - fill_in:
@@ -44,7 +43,7 @@ contact_form:
           required: true
         - name: phone
           selector: "#input_14_7"
-          value: $PHONE_HYPHENS
+          value: $PHONE
           required: true
         - name: subject
           selector: "#input_14_11"
@@ -242,18 +241,13 @@ contact_form:
             TEL: Telecommunications
             TRADE: Trade
             TRA: Transportation
-    - find:
-        - selector: "#choice_14_14_1"
-    - click_on:
-        - selector: "#choice_14_14_1"
-        - find:
-        - selector: "#choice_14_18_1"
-    - click_on:
-        - selector: "#choice_14_18_1"
-    - find:
-        - selector: "#gform_submit_button_14"
-    - click_on:
-        - selector: "#gform_submit_button_14"
+    - wait: 
+        - value: 2
+    - javascript:
+        - name: submit
+          selectors: ["#gform_submit_button_14"]
+          commands: ["elements[0].click();"]
+          required: true 
     - wait:
         - value: 3
   success:

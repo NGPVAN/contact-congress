@@ -1,6 +1,7 @@
 #US Senator Todd Young
 bioguide: Y000064
 contact_form:
+  driver: chrome
   steps:
     - visit: "https://www.young.senate.gov/contact/email-todd"
     - find:
@@ -242,9 +243,11 @@ contact_form:
             Transportation: Transportation
             Veterans: Veterans
             Welfare: Welfare
-    - click_on:
-        - value: Submit
-          selector: input[type='submit'][value='Submit']
+    - javascript:
+        - name: submit
+          selectors: ["#gform_submit_button_1"]
+          commands: ["elements[0].click();"]
+          required: true 
     - wait:
         - value: 3
   success:

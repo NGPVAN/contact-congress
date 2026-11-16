@@ -2,7 +2,7 @@
 bioguide: B001288
 contact_form:
   method: post
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.booker.senate.gov/contact/write-to-cory/form"
     - find:

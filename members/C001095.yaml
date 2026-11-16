@@ -1,7 +1,7 @@
 #US Senator Tom Cotton
 bioguide: C001095
 contact_form:
-  driver: phantom
+  driver: chrome
   steps:
     - visit: "https://www.cotton.senate.gov/contact/contact-tom"
     - fill_in:

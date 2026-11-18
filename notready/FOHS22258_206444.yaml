@@ -1,0 +1,152 @@
+# US Senator Jon Husted
+bioguide: FOHS22258_206444
+contact_form:
+  method: post
+  driver: chrome
+  steps:
+    - visit: "https://www.husted.senate.gov/contact/contact-jon/"
+    - wait:
+        - value: 1
+    - fill_in:
+        - name: Prefix
+          selector: "#input_2_44"
+          value: $PREFIX
+          required: true
+        - name: First name
+          selector: "#input_2_2"
+          value: $NAME_FIRST
+          required: true
+        - name: Last name
+          selector: "#input_2_3"
+          value: $NAME_LAST
+          required: true
+        - name: Street
+          selector: "#input_2_6_1"
+          value: $ADDRESS_STREET
+          required: true
+        - name: Street2
+          selector: "#input_2_6_2"
+          value: $ADDRESS_STREET_2
+          required: false
+        - name: City
+          selector: "#input_2_6_3"
+          value: $ADDRESS_CITY
+          required: true
+        - name: zip
+          selector: "#input_2_6_5"
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: phone
+          selector: "#input_2_41"
+          value: $PHONE
+          required: true
+        - name: email
+          selector: "#input_2_9"
+          value: $EMAIL
+          required: true
+        - name: Subject
+          selector: "#input_2_11"
+          value: $SUBJECT
+          required: true
+        - name: Message
+          selector: "#input_2_12"
+          value: $MESSAGE
+          required: true
+    - javascript:
+        - name: Message
+          selectors: ["#input_2_12"]
+          values: ["$MESSAGE"]
+          commands:
+            [
+              "for(var i = 0; i < elements.length; i++) { elements[i].value = values[i].replace(/\\b(set forth in the bill)\\b/ig,'').replace(/(%2[0C])/g, '').replace(/(;)/g,'').replace(/(—)/g,'').replace(/(%2d)/g,'');}",
+            ]
+          required: true
+    - select:
+        - name: state
+          selector: "#input_2_6_4"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options: 
+            Ohio: Ohio
+        - name: Topic
+          selector: "#input_2_17"
+          value: $TOPIC
+          required: true
+          options:
+            AGR: Agriculture
+            AN: Animals
+            BANK: Banking
+            BUD: Budget and Economy
+            CAMPFI: Campaign Finance
+            CASEWORK: Help with a Federal Agency
+            CIVIL: Civil Rights/Humanities
+            CIVILSERV: Civil Service/Postal
+            CONG: Congress and Elections
+            CTC: Child Tax Credit 
+            CWC-OPT-in: CWC-Opt-in
+            DEF: Defense and Military
+            DEFENSE: Defense
+            ECON: Economy
+            ED.Higher: Education (Higher)
+            EDU: Education
+            EFORM RESPONSE: eForm RESPONSE
+            ENE: Energy
+            E-NEWS REPLY: E-News Reply
+            ENEWS SUBSCRIBE: E-News Subscribe
+            ENV: Environmental 
+            FAM: Family/Marriage
+            FED: Federal Employees
+            FLAG: Flag Request
+            FOOD: Food Safety
+            FR: Foreign Relations
+            GOV: Governmental Reform
+            GUN: Guns
+            HEALTH: Health
+            HOM: Homeland Security
+            HOUSING: Housing 
+            HUD: Housing & Urban Development
+            IMM: Immigration
+            INFRASTRUCTURE: Infrastructure
+            INT: International Relations
+            INTERNSHIP REQUEST: Internship Request
+            IRS: IRS
+            JOBS: Jobs and the Economy 
+            JUD: Judiciary
+            LABOR: Labor
+            LGBT: LGBT
+            MIL: Military
+            NRN: No Response Necessary
+            NRN-CWC: CWC-No Response Necessary 
+            NRN-WEBSITE: Website-No Response Necessary
+            OFFICE REGISTRY: Office Registry Web form
+            OTHER: Other Issues
+            PASSPORTS: Passports
+            POST: Post
+            REGISTER TO RESPOND: REGISTER TO RESPOND
+            RESPONSE REPLY: Response Reply
+            SCI: Science and Technology
+            SEC: Security
+            SENIORS: Senior Citizens
+            SERVICES REPLY: Services Reply
+            SM.BUS: Small Business
+            SOC: Social Issues
+            SOC SERVICES: Social Services
+            SPAM OPT-OUT: Spam Opt-OUT
+            SSEC: Social Security
+            VET: Veterans
+    - javascript: 
+        - selector: ["#gform_submit_button_2"] 
+          commands: ["document.querySelector('#gform_submit_button_2').scrollIntoView({block:'center'});"]
+          required: true
+    - wait: 
+        - value: 2
+    - click_on:
+        - value: Submit
+          selector: "#gform_submit_button_2"
+    - wait:
+        - value: 5
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Your submission was successful" 

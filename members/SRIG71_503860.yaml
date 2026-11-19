@@ -1,11 +1,11 @@
 # Rhode Island Governor Dan McKee
 bioguide: SRIG71_503860
 contact_form:
-  usePhantomJSLogging: true
+  driver: chrome
   steps:
     - visit: "https://governor.ri.gov/contact"
-    - iframe: 
-        - selector: "iframe.contact-form"
+    - iframe:
+        - selector: "iframe[src*='EForm.aspx']"
           back: false
     - fill_in:
         - name: First Name
@@ -46,45 +46,26 @@ contact_form:
         - name: prefix
           selector: "#qi_1_prefix"
           value: $NAME_PREFIX
-          required: false
+          required: true
           options: 
-            0_Miss: 0_Miss
-            1_Mr.: 1_Mr. 
-            2_Mr. and Mrs.: Mr. and Mrs. 
-            3_Mrs.: Mrs. 
-            4_Ms.: Ms. 
-            5_Mx: Mx 
+              0_Miss: Miss
+              1_Mr.: Mr. 
+              2_Mr. and Mrs.: Mr. and Mrs. 
+              3_Mrs.: Mrs. 
+              4_Ms.: Ms. 
+              5_Mx.: Mx.
+        - name: state
+          selector: "#qi_1_state"
+          value: $ADDRESS_STATE_FULL
+          required: true
+          options:
+              48_RI: Rhode Island
         - name: Topic
-          selector: "#qi_4"
+          selector: "#qi_3"
           value: $TOPIC
           required: true
           options:
-              0_Agriculture: Agriculture
-              1_Animal: Animal
-              2_Budget: Budget
-              3_Commerce/Business/Economic Development: Commerce/Business/Economic Development
-              4_Education/Schools: Education/Schools
-              5_Emergency Preparedness: Emergency Preparedness
-              6_Energy: Energy
-              7_Environment: Environment
-              8_Federal Government: Federal Government
-              9_Gun Control: Gun Control
-              10_Health Care: Health Care
-              11_Housing: Housing
-              12_Immigration: Immigration
-              13_Issue with a State Agency: Issue with a State Agency
-              14_Legal/Crime/Law Enforcement: Legal/Crime/Law Enforcement
-              15_Legislative Bills and Comments: Legislative Bills and Comments
-              16_Licensing: Licensing
-              17_Mortgage/Loans/Banking/Foreclosure: Mortgage/Loans/Banking/Foreclosure
-              18_Natural Resources: Natural Resources
-              19_Parks and Recreation: Parks and Recreation
-              20_Social Services: Social Services
-              21_Taxes: Taxes
-              22_Transportation: Transportation
-              23_Tribal: Tribal
-              24_Utilities: Utilities
-              25_Veterans: Veterans
+              16_COMMENTS: COMMENTS -- General Comments or Concerns
     - wait: 
         - value: 3
     - javascript: 
@@ -96,4 +77,4 @@ contact_form:
           selector: "#btn_submit"
   success:
     body:
-      contains: "Thank you"
+      contains: "Thank for"

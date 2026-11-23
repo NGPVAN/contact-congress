@@ -3,61 +3,63 @@ bioguide: F000463
 contact_form:
   driver: chrome
   steps:
-    - visit: "https://www.fischer.senate.gov/public/?p=email-deb"
+    - visit: "https://www.fischer.senate.gov/connect/email-deb/"
+    - find: 
+        - selector: input#input_7_13
     - fill_in:
         - name: Your Prefix
-          selector: input#field_828C0B56-43F9-4F3E-A757-7CDD23DFB85C
+          selector: input#input_7_13
           value: $NAME_PREFIX
           required: false
         - name: First Name
-          selector: input#field_E947A1A8-7A71-4295-AA00-FD0FE886E40D
+          selector: input#input_7_3
           value: $NAME_FIRST
           required: true
         - name: Last Name
-          selector: input#field_5983BF37-51BC-4E85-A4B1-29557AFF3FF4
+          selector: input#input_7_4
           value: $NAME_LAST
           required: true
         - name: street
-          selector: input#field_4E708D5F-94D4-4CD4-81A3-D1D9FEA89A03
+          selector: input#input_7_5_1
           value: $ADDRESS_STREET
           required: true
         - name: street2
-          selector: input#field_8B95DE5E-4BA8-4E1E-A4EA-9A104D378522
+          selector: input#input_7_5_2
           value: $ADDRESS_STREET_2
           required: false
         - name: city
-          selector: input#field_C4BD9743-4A63-47F2-B92B-180E85F228BC
+          selector: input#input_7_5_3
           value: $ADDRESS_CITY
           required: true
         - name: zip5
-          selector: input#field_3ADFB964-53E1-4036-9896-18F1A806B01A
+          selector: input#input_7_5_5
           value: $ADDRESS_ZIP5
           required: true
         - name: phone
-          selector: input#field_4911ED7C-5FBC-4A64-9382-B346870CCB16
+          selector: input#input_7_7
           value: $PHONE
           required: true
         - name: email
-          selector: input#field_D37EA3F0-FB86-4F3D-9F93-CC358449C2A5
+          selector: input#input_7_8
           value: $EMAIL
           required: true
         - name: subject
-          selector: input#field_E3A78E09-F120-4566-85E0-B35D0ECCC988
-          value: $SUBJECT
+          selector: "#input_7_10"
+          value: $SUBJECT 
           required: true
         - name: message
-          selector: textarea#field_6AF13719-60D3-4199-BE64-495D74906948
+          selector: textarea#input_7_11
           value: $MESSAGE
           required: true
     - select:
         - name: state
-          selector: select#field_0EB9F380-2AF2-42DA-B8A5-9425ADFE1093
+          selector: select#input_7_5_4
           value: $ADDRESS_STATE_FULL
           required: true
           options: 
-            Nevada: Nebraska 
+            Nebraska: Nebraska 
         - name: topic
-          selector: select#field_97476198-7AB2-410A-A664-FA9606739644
+          selector: select#input_7_9
           value: $TOPIC
           required: true
           options:
@@ -90,18 +92,10 @@ contact_form:
             Veterans: Veterans' Affairs
             Welfare: Welfare
             Other: Other
-    - javascript: 
-        - selector: ["field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1"] 
-          commands: ["document.querySelector('field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1')?.scrollIntoView({block:'center'});"]
-          required: true
-    - click_on: 
-      - value: newsletter
-        selector: "#field_30CF3855-89A6-4667-B7AF-B79D9ED3E0C0_1"
-    - find: 
-      - selector: "div.buttonHolder.controls .btn.btn-primary"
-    - click_on:
-      - value: Submit
-        selector: "div.buttonHolder.controls .btn.btn-primary"
+    - javascript:
+        - commands:
+            - "document.querySelector('#choice_7_12_1')?.click()"
+            - "document.querySelector('#gform_submit_button_7').click()"
     - wait:
       - value: 2
   success:
